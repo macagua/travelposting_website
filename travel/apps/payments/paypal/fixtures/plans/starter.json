@@ -1,0 +1,37 @@
+{
+  "product_id": "PROD-5HE61420H0633793H",
+  "name": "Starter (Promoción)",
+  "status": "ACTIVE",
+  "description": "Plan Starter of Travel and Solutions.\n Ideal para pequeñas empresas.",
+  "billing_cycles": [
+    {
+      "pricing_scheme": {
+        "fixed_price": {
+          "currency_code": "EUR",
+          "value": "189.00"
+        }
+      },
+      "tenure_type": "REGULAR",
+      "sequence": 1,
+      "total_cycles": 3,
+      "frequency": {
+        "interval_unit": "YEAR",
+        "interval_count": 1
+      }
+    }
+  ],
+  "payment_preferences": {
+    "auto_bill_outstanding": true,
+    "setup_fee": {
+      "currency_code": "EUR",
+      "value": "0.00"
+    },
+    "setup_fee_failure_action": "CONTINUE",
+    "payment_failure_threshold": 2
+  },
+  "taxes": {
+    "percentage": "29.00",
+    "inclusive": true
+  },
+  "quantity_supported": false
+}

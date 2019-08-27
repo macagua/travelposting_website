@@ -1,0 +1,52 @@
+{
+  "product_id": "PROD-2SE12032CP922312N",
+  "name": "Advanced (Ap. 01.09.19)",
+  "status": "ACTIVE",
+  "description": "Plan Advanced of Travel and Solutions.\n Ideal para medianas empresas ",
+  "billing_cycles": [
+    {
+      "pricing_scheme": {
+        "fixed_price": {
+          "currency_code": "EUR",
+          "value": "49.99"
+        }
+      },
+      "tenure_type": "TRIAL",
+      "sequence": 1,
+      "total_cycles": 2,
+      "frequency": {
+        "interval_unit": "MONTH",
+        "interval_count": 3
+      }
+    },
+    {
+      "pricing_scheme": {
+        "fixed_price": {
+          "currency_code": "EUR",
+          "value": "69.99"
+        }
+      },
+      "tenure_type": "REGULAR",
+      "sequence": 2,
+      "total_cycles": 2,
+      "frequency": {
+        "interval_unit": "MONTH",
+        "interval_count": 3
+      }
+    }
+  ],
+  "payment_preferences": {
+    "auto_bill_outstanding": true,
+    "setup_fee": {
+      "currency_code": "EUR",
+      "value": "0.00"
+    },
+    "setup_fee_failure_action": "CONTINUE",
+    "payment_failure_threshold": 2
+  },
+  "taxes": {
+    "percentage": "29.00",
+    "inclusive": true
+  },
+  "quantity_supported": false
+}
