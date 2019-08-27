@@ -23,8 +23,9 @@ To install the packages to work with django cms use the following command
 ```bash
 pipenv --python 3.7.4 install 
 ```
+Now you should see the .env-example file and put your data and change name to .env for run the project. 
 
-
+Enjoy 
 ## Usage
 
 
