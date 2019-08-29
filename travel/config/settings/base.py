@@ -16,17 +16,9 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-<<<<<<< HEAD
-=======
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
->>>>>>> 00b2abd83c689f3491bd6e446bcce5d050e814ba
 ROOT_DIR = (
         environ.Path(__file__) - 3
 )
-sys.path.insert(0, os.path.join(ROOT_DIR, 'apps'))
 
 APPS_DIR = ROOT_DIR.path("apps/")
 
