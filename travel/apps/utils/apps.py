@@ -3,5 +3,5 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UtilsConfig(AppConfig):
-    name = 'tour.utils'
+    name = 'apps.utils'
     verbose_name = _('Utilidades')

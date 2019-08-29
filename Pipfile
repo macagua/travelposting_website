@@ -8,7 +8,6 @@ verify_ssl = true
 [packages]
 django-environ = "*"
 aldryn-newsblog = "*"
-psycopg2 = "==2.7.7"
 djangocms-column = "*"
 djangocms-file = "*"
 djangocms-link = "*"
@@ -32,6 +31,9 @@ google-auth-httplib2 = "*"
 django-impersonate = "*"
 ipdb = "*"
 django-favicon-plus = "==0.0.8"
+django-cors-headers = "*"
+django-htmlmin = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,5 +1,4 @@
 import os  # isort:skip
-import sys
 import environ
 from django.utils.translation import gettext_lazy as _
 
@@ -17,11 +16,6 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-
 ROOT_DIR = (
         environ.Path(__file__) - 3
 )
@@ -37,21 +31,23 @@ if READ_DOT_ENV_FILE:
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'aco9^u2jlyve=4ck7=le2xby7!v&t*-g+&7wist$$7*fqz1*@*'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 ROOT_URLCONF = 'config.urls'
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+# DATABASES
+# ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
+
+MIGRATION_MODULES = {
+
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -167,17 +163,22 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'djangocms_admin_style',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.admin',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+]
+
+THIRD_PARTY = [
     'favicon',
+    #below app is here accordinf to the docs for cms
+    'apps.accounts.apps.AccountsConfig',
     'cms',
     'aldryn_apphooks_config',
     'aldryn_categories',
@@ -203,20 +204,20 @@ INSTALLED_APPS = [
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
-    'config',
-]
-
-THIRD_PARTY = [
+    'impersonate',
 
 ]
 
-PROJ_APPS = [
-    'apps.accounts',
+LOCAL_APPS = [
+    'apps.landing_page.apps.LandingPageConfig',
+    'apps.utils.apps.UtilsConfig',
+    'apps.payments.apps.PaymentsConfig',
 ]
 
-INSTALLED_APPS += THIRD_PARTY + PROJ_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
+# Authentication options
+AUTH_USER_MODEL = 'accounts.CustomerUser'
 
 THUMBNAIL_HIGH_RESOLUTION = True
 
@@ -248,16 +249,6 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
-
-# DATABASES
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {"default": env.db("DATABASE_URL")}
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
-
-MIGRATION_MODULES = {
-
-}
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
