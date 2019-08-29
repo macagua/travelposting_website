@@ -32,6 +32,7 @@ google-auth-httplib2 = "*"
 django-impersonate = "*"
 ipdb = "*"
 django-favicon-plus = "==0.0.8"
+django-startapps-command = "*"
 
 [requires]
 python_version = "3.7"
