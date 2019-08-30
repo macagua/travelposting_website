@@ -232,6 +232,24 @@ CMS_LANGUAGES = {
             'hide_untranslated': False,
         },
     ],
+    2: [
+        {
+            'code': 'en',
+            'name': gettext('en'),
+            'redirect_on_fallback': True,
+            'public': True,
+            'hide_untranslated': False,
+        },
+    ],
+    3: [
+        {
+            'code': 'de',
+            'name': gettext('de'),
+            'redirect_on_fallback': True,
+            'public': True,
+            'hide_untranslated': False,
+        },
+    ],
     'default': {
         'redirect_on_fallback': True,
         'public': True,
