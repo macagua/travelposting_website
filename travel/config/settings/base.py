@@ -161,6 +161,7 @@ MIDDLEWARE = [
     'cms.middleware.language.LanguageCookieMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'impersonate.middleware.ImpersonateMiddleware',
 ]
 
 DJANGO_APPS = [
