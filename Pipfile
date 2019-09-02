@@ -35,6 +35,7 @@ django-cors-headers = "*"
 django-htmlmin = "*"
 psycopg2 = "==2.7.7"
 django-startapps-command = "*"
+django-modeltranslation = "*"
 
 [requires]
 python_version = "3.7"
