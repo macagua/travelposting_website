@@ -36,6 +36,11 @@ django-htmlmin = "*"
 psycopg2 = "==2.7.7"
 django-startapps-command = "*"
 django-modeltranslation = "*"
+django-money = "*"
+py-moneyed = "*"
+easy-thumbnails = "*"
+django-bootstrap-datepicker-plus = "*"
+django-jet = "*"
 
 [requires]
 python_version = "3.7"
