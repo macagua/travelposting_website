@@ -114,10 +114,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(os.path.dirname(__file__), 'config/templates').replace('\\', '/'),
-            os.path.join(os.getcwd(), 'config/templates/'),
-            os.path.join(os.getcwd(), 'config/templates/'),
-            os.path.join(os.getcwd(), 'config/templates/admin'),
+            os.path.join(os.path.dirname(__file__), 'main/templates').replace('\\', '/'),
+            os.path.join(os.getcwd(), 'main/templates/'),
+            os.path.join(os.getcwd(), 'main/templates/'),
+            os.path.join(os.getcwd(), 'main/templates/admin'),
         ],
         'OPTIONS': {
             'context_processors': [
