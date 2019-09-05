@@ -114,10 +114,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(os.path.dirname(__file__), 'main/templates').replace('\\', '/'),
-            os.path.join(os.getcwd(), 'main/templates/'),
-            os.path.join(os.getcwd(), 'main/templates/'),
-            os.path.join(os.getcwd(), 'main/templates/admin'),
+            os.path.join(os.path.dirname(__file__), 'config/templates').replace('\\', '/'),
+            os.path.join(os.getcwd(), 'config/templates/'),
+            os.path.join(os.getcwd(), 'config/templates/'),
+            os.path.join(os.getcwd(), 'config/templates/admin'),
         ],
         'OPTIONS': {
             'context_processors': [
@@ -262,9 +262,8 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
+    ('home/corporate-agency.html', 'Landing'),
     ('fullwidth.html', 'Fullwidth'),
-    ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
 )
 
 CMS_PERMISSION = True
