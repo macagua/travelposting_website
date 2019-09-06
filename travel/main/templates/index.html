@@ -11,6 +11,8 @@
            data-hs-bgv-type="youtube"
            data-hs-bgv-id="0qisGSwZym4"
            data-hs-bgv-loop="true">
+           <img src="{% static 'img/hamburg.jpg' %}">
+
       </div>
       <!-- End Video Background -->
 
@@ -20,79 +22,28 @@
           <div class="container d-md-flex align-items-md-center min-height-md-100vh text-center space-3 space-top-md-4 space-top-lg-3">
             <div class="row justify-content-md-center w-100">
               <div class="col-md-10">
-                <!-- Fancybox -->
-                <a class="js-fancybox u-media-player" href="javascript:;"
-                   data-src="//vimeo.com/167434033"
-                   data-speed="700"
-                   data-animate-in="zoomIn"
-                   data-animate-out="zoomOut"
-                   data-caption="Front - Responsive Website Template">
-                 <span class="u-media-player__icon u-media-player__icon--lg">
-                  <span class="fas fa-play u-media-player__icon-inner"></span>
-                 </span>
-                </a>
-                <!-- End Fancybox -->
+
 
                 <!-- Info -->
                 <div class="mt-4 mb-7">
-                  <h1 class="display-4 text-white font-weight-normal">Let's get you started</h1>
-                  <p class="lead text-white">Attract more visitors, and win more business with Front template.</p>
+                  <h1 class="display-4 text-white font-weight-normal">{% trans 'Lets get you started' %}</h1>
+                  <p class="lead text-white">
+                    {% blocktrans %}  
+                        Hamburg is a city in northern Germany, a metropolis with a maritime character, known as The Pearl of the North (Hamburg unser Perle) so the Germans say especially the Hamburgers.
+                    {% endblocktrans %}
+                </p>
                 </div>
                 <!-- End Info -->
 
                 <!-- Form -->
-                <form class="js-validate">
-                  <div class="form-row mb-2">
-                    <div class="col-sm-6 col-lg mb-2">
-                      <div class="js-form-message">
-                        <label class="sr-only" for="signupSrName">Name</label>
-                        <div class="input-group input-group-borderless">
-                          <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Name" aria-label="Name" required
-                                 data-msg="Name must contain only letters.">
+                <center>
+                    <form class="js-validate">
+                        <div class="col col-lg-4">
+                        <button type="submit" class="btn btn-block btn-white transition-3d-hover">{% trans 'Sign Up' %}</button>
                         </div>
-                      </div>
                     </div>
-
-                    <div class="col-sm-6 col-lg mb-2">
-                      <div class="js-form-message">
-                        <label class="sr-only" for="signupSrPhone">Phone</label>
-                        <div class="input-group input-group-borderless">
-                          <input type="tel" class="form-control" name="phone" id="signupSrPhone" placeholder="Phone" aria-label="Phone" required
-                                 data-msg="Phone number must contain only digits.">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg mb-2">
-                      <div class="js-form-message">
-                        <label class="sr-only" for="signupSrEmail">Email</label>
-                        <div class="input-group input-group-borderless">
-                          <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required
-                                 data-msg="Please enter a valid email address.">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg mb-2">
-                      <button type="submit" class="btn btn-block btn-white transition-3d-hover">Get Started</button>
-                    </div>
-                  </div>
-
-                  <!-- Checkbox -->
-                  <div class="js-form-message">
-                    <div class="custom-control custom-checkbox text-muted">
-                      <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required
-                             data-msg="Please accept our Terms and Conditions.">
-                      <label class="custom-control-label text-white" for="termsCheckbox">
-                        <small>
-                          * By clicking "Get Started", I agree to the
-                          <a class="link-white" href="../pages/terms.html">Terms and Conditions</a>
-                        </small>
-                      </label>
-                    </div>
-                  </div>
-                  <!-- End Checkbox -->
-                </form>
+                    </form>
+                </center>
                 <!-- End Form -->
               </div>
             </div>
