@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags i18n menu_tags sekizai_tags favtags staticfiles %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,35 +6,98 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        <meta name="description" content="Traveland Solutions">
+        <meta name="author" content="Traveland Solutions">
+        <meta name="keywords" content="HTML,CSS,JavaScript">
+        <meta name="theme-color" content="#2F3BA2" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="traveland">
+        {% block meta %}{% endblock %}
         <!-- Favicon -->
         <link rel="shortcut icon" href="https://htmlstream.com/preview/front-v2.9.1/favicon.ico">
-
+        {% block feed %}
+        {% endblock feed %}
         <!-- Google Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-        <!-- CSS Implementing Plugins -->
-        <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.9.1/assets/vendor/font-awesome/css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.9.1/assets/vendor/animate.css/animate.min.css">
-        <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.9.1/assets/vendor/hs-megamenu/src/hs.megamenu.css">
-        <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.9.1/assets/vendor/fancybox/jquery.fancybox.css">
-        <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.9.1/assets/vendor/hs-bg-video/hs-bg-video.css">
-        <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.9.1/assets/vendor/slick-carousel/slick/slick.css">
-
-        <!-- CSS Front Template -->
-        <link rel="stylesheet" href="https://htmlstream.com/preview/front-v2.9.1/assets/css/theme.css">
-        <style type="text/css">
-        </style>
         {% render_block "css" %}
+        <!-- CSS Implementing Plugins -->
+        <link rel="stylesheet" href="{% static 'assets/vendor/font-awesome/css/fontawesome-all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/animate.css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/hs-megamenu/src/hs.megamenu.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fancybox/jquery.fancybox.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/hs-bg-video/hs-bg-video.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/slick-carousel/slick/slick.css' %}">
+        <!-- CSS Front Template -->
+        <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
     </head>
     <body>
         {% cms_toolbar %}
-        <div class="container">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-            {% block content %}{% endblock content %}
-        </div>
-        {% render_block "js" %}
+        {% include 'menu/menu.html' %}
+        {% block content %}{% endblock content %}
+        {% include 'footer.html' %}
+        <!-- JS Global Compulsory -->
+        <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/popper.js/dist/umd/popper.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+        <!-- JS Implementing Plugins -->
+        <script src="{% static 'assets/vendor/hs-megamenu/src/hs.megamenu.js' %}"></script>
+        <script src="{% static 'assets/vendor/svg-injector/dist/svg-injector.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/hs-bg-video/hs-bg-video.js' %}"></script>
+        <script src="{% static 'assets/vendor/hs-bg-video/vendor/player.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/fancybox/jquery.fancybox.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/slick-carousel/slick/slick.js' %}"></script>
+        <!-- JS Front -->
+        <script src="{% static 'assets/js/hs.core.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.header.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.unfold.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.bg-video.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.validation.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.fancybox.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.slick-carousel.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.svg-injector.js' %}"></script>
+        <script src="{% static 'assets/js/components/hs.go-to.js' %}"></script>
+        <!-- JS Plugins Init. -->
+        <script>
+            $(window).on('load', function () {
+              // initialization of HSMegaMenu component
+              $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 767.98,
+                hideTimeOut: 0
+              });
+            
+              // initialization of svg injector module
+              $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+            });
+            
+            $(document).on('ready', function () {
+              // initialization of header
+              $.HSCore.components.HSHeader.init($('#header'));
+            
+              // initialization of unfold component
+              $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+            
+              // initialization of video on background
+              $.HSCore.components.HSBgVideo.init('.js-bg-video');
+            
+              // initialization of form validation
+              $.HSCore.components.HSValidation.init('.js-validate');
+            
+              // initialization of fancybox
+              $.HSCore.components.HSFancyBox.init('.js-fancybox');
+            
+              // initialization of slick carousel
+              $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+            
+              // initialization of go to
+              $.HSCore.components.HSGoTo.init('.js-go-to');
+            });
+        </script>
+        {% block extrajs %} {% endblock extrajs %}
     </body>
 </html>

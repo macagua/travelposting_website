@@ -262,8 +262,7 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
-    ('home/corporate-agency.html', 'Landing'),
-    ('fullwidth.html', 'Fullwidth'),
+    ('index.html', 'Landing'),
 )
 
 CMS_PERMISSION = True

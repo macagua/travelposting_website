@@ -1,0 +1,491 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block content %}
+{% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
+  <main id="content" role="main">
+    <!-- Hero Section -->
+    <div class="gradient-overlay-half-primary-video-v1">
+      <!-- Video Background -->
+      <div class="js-bg-video d-none d-md-block position-absolute w-100 h-100"
+           data-hs-bgv-type="youtube"
+           data-hs-bgv-id="0qisGSwZym4"
+           data-hs-bgv-loop="true">
+      </div>
+      <!-- End Video Background -->
+
+      <div class="position-relative z-index-2">
+        <!-- Content -->
+        <div class="d-md-flex">
+          <div class="container d-md-flex align-items-md-center min-height-md-100vh text-center space-3 space-top-md-4 space-top-lg-3">
+            <div class="row justify-content-md-center w-100">
+              <div class="col-md-10">
+                <!-- Fancybox -->
+                <a class="js-fancybox u-media-player" href="javascript:;"
+                   data-src="//vimeo.com/167434033"
+                   data-speed="700"
+                   data-animate-in="zoomIn"
+                   data-animate-out="zoomOut"
+                   data-caption="Front - Responsive Website Template">
+                 <span class="u-media-player__icon u-media-player__icon--lg">
+                  <span class="fas fa-play u-media-player__icon-inner"></span>
+                 </span>
+                </a>
+                <!-- End Fancybox -->
+
+                <!-- Info -->
+                <div class="mt-4 mb-7">
+                  <h1 class="display-4 text-white font-weight-normal">Let's get you started</h1>
+                  <p class="lead text-white">Attract more visitors, and win more business with Front template.</p>
+                </div>
+                <!-- End Info -->
+
+                <!-- Form -->
+                <form class="js-validate">
+                  <div class="form-row mb-2">
+                    <div class="col-sm-6 col-lg mb-2">
+                      <div class="js-form-message">
+                        <label class="sr-only" for="signupSrName">Name</label>
+                        <div class="input-group input-group-borderless">
+                          <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Name" aria-label="Name" required
+                                 data-msg="Name must contain only letters.">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg mb-2">
+                      <div class="js-form-message">
+                        <label class="sr-only" for="signupSrPhone">Phone</label>
+                        <div class="input-group input-group-borderless">
+                          <input type="tel" class="form-control" name="phone" id="signupSrPhone" placeholder="Phone" aria-label="Phone" required
+                                 data-msg="Phone number must contain only digits.">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg mb-2">
+                      <div class="js-form-message">
+                        <label class="sr-only" for="signupSrEmail">Email</label>
+                        <div class="input-group input-group-borderless">
+                          <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required
+                                 data-msg="Please enter a valid email address.">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg mb-2">
+                      <button type="submit" class="btn btn-block btn-white transition-3d-hover">Get Started</button>
+                    </div>
+                  </div>
+
+                  <!-- Checkbox -->
+                  <div class="js-form-message">
+                    <div class="custom-control custom-checkbox text-muted">
+                      <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required
+                             data-msg="Please accept our Terms and Conditions.">
+                      <label class="custom-control-label text-white" for="termsCheckbox">
+                        <small>
+                          * By clicking "Get Started", I agree to the
+                          <a class="link-white" href="../pages/terms.html">Terms and Conditions</a>
+                        </small>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- End Checkbox -->
+                </form>
+                <!-- End Form -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Content -->
+
+        <!-- Bottom Content -->
+        <div class="position-absolute right-0 bottom-0 left-0 mb-4">
+          <div class="container text-center">
+            <!-- Button -->
+            <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left mr-1">
+              <span class="media align-items-center">
+                <span class="fab fa-apple fa-2x mr-3"></span>
+                <span class="media-body">
+                  <span class="d-block">Download on the</span>
+                  <strong class="font-size-1">App Store</strong>
+                </span>
+              </span>
+            </button>
+            <!-- End Button -->
+
+            <!-- Button -->
+            <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left ml-1">
+              <span class="media align-items-center">
+                <span class="fab fa-google-play fa-2x mr-3"></span>
+                <span class="media-body">
+                  <span class="d-block">Get it on</span>
+                  <strong class="font-size-1">Google Play</strong>
+                </span>
+              </span>
+            </button>
+            <!-- End Button -->
+          </div>
+        </div>
+        <!-- End Bottom Content -->
+      </div>
+
+      <div class="d-lg-none position-absolute top-0 right-0 bottom-0 left-0 bg-img-hero" style="background-image: url({% static 'assets/img/1920x1080/img20.jpg' %});"></div>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Icon Blocks Section -->
+    <div class="container space-2 space-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <span class="btn btn-xs btn-soft-primary btn-pill mb-2">Front Features</span>
+        <h2 class="font-weight-normal">A template built for you</h2>
+        <p class="mb-0">Enhance your brand with easy-to-use powerful customization features.</p>
+      </div>
+      <!-- End Title -->
+
+      <div class="row justify-content-center mx-gutters-2">
+        <div class="col-sm-6 col-lg-4 mb-7 mb-lg-0">
+          <!-- Icon Blocks -->
+          <div class="text-center px-5">
+            <figure id="featuresSVG1" class="svg-preloader max-width-27 w-100 mx-auto mb-4">
+              <img class="js-svg-injector" src="{% static 'assets/svg/illustrations/server-woman.svg' %}" alt="Image Description"
+                   data-parent="#featuresSVG1">
+            </figure>
+
+            <div class="mb-4">
+              <h3 class="h5">Professional Design</h3>
+              <p class="mb-md-0">Achieve virtually any design and layout from within the one template.</p>
+            </div>
+
+            <a class="btn btn-sm btn-soft-primary btn-pill transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
+              Get Front
+              <span class="fas fa-angle-right ml-2"></span>
+            </a>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-7 mb-lg-0">
+          <!-- Icon Blocks -->
+          <div class="text-center px-5">
+            <figure id="featuresSVG2" class="svg-preloader max-width-27 w-100 mx-auto mb-4">
+              <img class="js-svg-injector" src="{% static 'assets/svg/illustrations/full-stack.svg' %}" alt="Image Description"
+                   data-parent="#featuresSVG2">
+            </figure>
+
+            <div class="mb-4">
+              <h3 class="h5">Unlimited Power</h3>
+              <p class="mb-md-0">Find what you need in one template and combine features at will.</p>
+            </div>
+
+            <a class="btn btn-sm btn-soft-primary btn-pill transition-3d-hover" href="{% static 'starter/index.html">
+              Front Power
+              <span class="fas fa-angle-right ml-2"></span>
+            </a>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <!-- Icon Blocks -->
+          <div class="text-center px-5">
+            <figure id="featuresSVG3" class="svg-preloader max-width-27 w-100 mx-auto mb-4">
+              <img class="js-svg-injector" src="{% static 'assets/svg/illustrations/business-woman.svg'  %}" alt="Image Description"
+                   data-parent="#featuresSVG3">
+            </figure>
+
+            <div class="mb-4">
+              <h3 class="h5">Goal Driven</h3>
+              <p class="mb-md-0">The time has come to bring those ideas and plans to life.</p>
+            </div>
+
+            <a class="btn btn-sm btn-soft-primary btn-pill transition-3d-hover" href="../pages/hire-us.html">
+              Hire Front
+              <span class="fas fa-angle-right ml-2"></span>
+            </a>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+      </div>
+    </div>
+    <!-- End Icon Blocks Section -->
+
+    <!-- Testimonials Section -->
+    <div class="bg-img-hero-bottom" style="background-image: url({% static 'assets/img/1920x800/img11.jpg' %});">
+      <div class="container">
+        <div class="row justify-content-md-end">
+          <div class="col-md-6 col-lg-5 col-xl-4 space-top-3 mb-n9">
+            <!-- Testimonials -->
+            <div class="card border-0 bg-primary text-white shadow-primary-lg">
+              <div class="card-body p-7">
+                <div class="js-slick-carousel u-slick"
+                     data-pagi-classes="text-right u-slick__pagination u-slick__pagination--white mt-2 mb-0">
+                  <!-- Testimonials -->
+                  <div class="js-slide">
+                    <!-- SVG Quote -->
+                    <figure class="mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
+                         viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
+                        <path class="fill-white" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
+                          C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
+                          c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
+                          C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z"/>
+                      </svg>
+                    </figure>
+                    <!-- End SVG Quote -->
+
+                    <!-- Text -->
+                    <blockquote class="h6 font-weight-normal text-lh-md mb-4">The template is really nice and offers quite a large set of options. It's beautiful and the coding is done quickly and seamlessly. Thank you!</blockquote>
+                    <!-- End Text -->
+
+                    <!-- Author -->
+                    <div class="media">
+                      <div class="u-avatar mr-3">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="h6 mb-0">Maria Muszynska</h4>
+                        <p class="small text-white-70">Google</p>
+                      </div>
+                    </div>
+                    <!-- End Author -->
+                  </div>
+                  <!-- End Testimonials -->
+
+                  <!-- Testimonials -->
+                  <div class="js-slide">
+                    <!-- SVG Quote -->
+                    <figure class="mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
+                         viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
+                        <path class="fill-white" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
+                          C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
+                          c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
+                          C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z"/>
+                      </svg>
+                    </figure>
+                    <!-- End SVG Quote -->
+
+                    <!-- Text -->
+                    <blockquote class="h6 font-weight-normal text-lh-md mb-4">If you can design one thing you can design everything with Front. Just believe it.</blockquote>
+                    <!-- End Text -->
+
+                    <!-- Author -->
+                    <div class="media">
+                      <div class="u-avatar mr-3">
+                        <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img3.jpg' %}" alt="Image Description">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="h6 mb-0">Alex Pottorf</h4>
+                        <p class="small text-white-70">Github</p>
+                      </div>
+                    </div>
+                    <!-- End Author -->
+                  </div>
+                  <!-- End Testimonials -->
+                </div>
+              </div>
+            </div>
+            <!-- End Testimonials -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Testimonials Section -->
+
+    <!-- Team Section -->
+    <div class="container space-top-3 space-bottom-2 space-bottom-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <span class="btn btn-xs btn-soft-primary btn-pill mb-2">Our Team</span>
+        <h2 class="font-weight-normal">Trust the professionals</h2>
+        <p>Our top professionals are ready to help with your business</p>
+      </div>
+      <!-- End Title -->
+
+      <!-- Team Carousel -->
+      <div class="js-slick-carousel u-slick u-slick--gutters-3 mb-5"
+           data-slides-show="4"
+           data-slides-scroll="1"
+           data-pagi-classes="d-lg-none text-center u-slick__pagination mb-7"
+           data-responsive='[{
+             "breakpoint": 992,
+             "settings": {
+               "slidesToShow": 3
+             }
+           }, {
+             "breakpoint": 768,
+             "settings": {
+               "slidesToShow": 2
+             }
+           }, {
+             "breakpoint": 554,
+             "settings": {
+               "slidesToShow": 1
+             }
+           }]'>
+        <div class="js-slide pb-4">
+          <!-- Team -->
+          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img1.jpg' %}" alt="Image Description">
+          <div class="card border-0 shadow-sm mt-n6 mx-3">
+            <div class="card-body text-center p-4">
+              <h3 class="h6 mb-1">Maria Muszynska</h3>
+              <p class="font-size-1 mb-0">Lead Designer</p>
+            </div>
+          </div>
+          <!-- End Team -->
+        </div>
+
+        <div class="js-slide pb-4">
+          <!-- Team -->
+          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img2.jpg' %}" alt="Image Description">
+          <div class="card border-0 shadow-sm mt-n6 mx-3">
+            <div class="card-body text-center p-4">
+              <h3 class="h6 mb-1">Jack Wayley</h3>
+              <p class="font-size-1 mb-0">CEO, Director</p>
+            </div>
+          </div>
+          <!-- End Team -->
+        </div>
+
+        <div class="js-slide pb-4">
+          <!-- Team -->
+          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img3.jpg' %}" alt="Image Description">
+          <div class="card border-0 shadow-sm mt-n6 mx-3">
+            <div class="card-body text-center p-4">
+              <h3 class="h6 mb-1">Emmely Jackson</h3>
+              <p class="font-size-1 mb-0">Marketer</p>
+            </div>
+          </div>
+          <!-- End Team -->
+        </div>
+
+        <div class="js-slide pb-4">
+          <!-- Team -->
+          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img4.jpg' %}" alt="Image Description">
+          <div class="card border-0 shadow-sm mt-n6 mx-3">
+            <div class="card-body text-center p-4">
+              <h3 class="h6 mb-1">Mark McManus</h3>
+              <p class="font-size-1 mb-0">Project Manager</p>
+            </div>
+          </div>
+          <!-- End Team -->
+        </div>
+      </div>
+      <!-- End Team Carousel -->
+
+      <!-- Hire Us -->
+      <div class="text-center">
+        <div class="d-sm-inline-flex align-items-center shadow-sm rounded-pill p-2 pr-3">
+          <span class="btn btn-xs btn-soft-primary btn-pill mb-2 mb-sm-0 mr-2">New</span>
+          <span class="d-block d-sm-inline-block">
+            We are hiring.
+            <a href="../pages/hire-us.html">Send your application.</a>
+          </span>
+        </div>
+      </div>
+      <!-- End Hire Us -->
+    </div>
+    <!-- End Team Section -->
+
+    <!-- Devices v2 Section -->
+    <div id="SVGdevicesV2" class="svg-preloader gradient-half-primary-v1 u-devices-v2">
+      <div class="container space-2 space-md-3 position-relative z-index-2">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+          <span class="btn btn-lg btn-icon btn-white rounded-circle mb-4">
+            <span class="fas fa-paper-plane text-primary btn-icon__inner"></span>
+          </span>
+          <h2 class="h1 text-white">Device <span class="font-weight-semi-bold">friendly</span> features</h2>
+          <p class="lead text-white-70 mb-0">Your website is fully responsive so visitors can view your content from their choice of device.</p>
+        </div>
+        <!-- End Title -->
+      </div>
+
+      <!-- Devices v2 -->
+      <div class="d-none d-lg-block">
+        <!-- SVG Tablet Mockup -->
+        <div class="u-devices-v2__tablet">
+          <div class="w-75 u-devices-v2__tablet-svg">
+            <figure class="ie-devices-v2-tablet">
+              <img class="js-svg-injector" src="{% static 'assets/svg/components/tablet.svg' %}" alt="Image Description"
+                   data-img-paths='[
+                     {"targetId": "#SVGtabletImg1", "newPath": "{% static 'assets/img/533x711/img1.jpg' %}"}
+                   ]'
+                   data-parent="#SVGdevicesV2">
+            </figure>
+          </div>
+        </div>
+        <!-- End SVG Tablet Mockup -->
+
+        <!-- SVG Phone Mockup -->
+        <div class="u-devices-v2__phone">
+          <div class="w-75 u-devices-v2__phone-svg">
+            <figure class="ie-devices-v2-iphone">
+              <img class="js-svg-injector" src="{% static 'assets/svg/components/iphone.svg' %}" alt="Image Description"
+                   data-img-paths='[
+                     {"targetId": "#SVGiphoneImg1", "newPath": "{% static 'assets/img/282x500/img1.jpg' %}' %}"}
+                   ]'
+                   data-parent="#SVGdevicesV2">
+            </figure>
+          </div>
+        </div>
+        <!-- End SVG Phone Mockup -->
+      </div>
+      <!-- End Devices v2 -->
+
+      <!-- SVG Background Shape -->
+      <figure class="w-100 content-centered-y position-absolute right-0 bottom-0">
+        <img class="js-svg-injector" src="{% static 'assets/svg/components/process-pointer-1.svg' %}" alt="Image Description"
+             data-parent="#SVGdevicesV2">
+      </figure>
+      <!-- End SVG Background Shape -->
+    </div>
+    <!-- End Devices v2 Section -->
+
+    <!-- Subscribe Section -->
+    <div class="container space-2 space-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+        <div class="mb-9">
+          <span class="btn btn-xs btn-soft-primary btn-pill mb-2">Subscribe</span>
+          <h2 class="font-weight-normal">Stay in the know</h2>
+          <p class="mb-0">Subscribe now and get special offers on the latest developments from Front.</p>
+        </div>
+      </div>
+      <!-- End Title -->
+
+      <!-- Form -->
+      <form class="js-validate w-lg-75 mx-lg-auto">
+        <div class="form-row">
+          <div class="col-sm-4 mb-2 mb-sm-0">
+            <div class="js-form-message">
+              <label class="sr-only" for="signupSrName">Name</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Name" aria-label="Name" required
+                       data-msg="Name must contain only letters.">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 mb-2 mb-sm-0">
+            <div class="js-form-message">
+              <label class="sr-only" for="signupSrEmail">Email</label>
+              <div class="input-group">
+                <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required
+                       data-msg="Please enter a valid email address.">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-block btn-primary transition-3d-hover">Get Started</button>
+          </div>
+        </div>
+      </form>
+      <!-- End Form -->
+    </div>
+    <!-- End Subscribe Section -->
+  </main>
+{% endblock content %}
