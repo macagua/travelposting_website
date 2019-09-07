@@ -1,26 +1,26 @@
-{% load cms_tags i18n menu_tags sekizai_tags favtags staticfiles %}
+{% load cms_tags menu_tags sekizai_tags favtags staticfiles i18n %}
 <!DOCTYPE html>
-<html>
+<html class="has-fixed-top" lang="es">
     <head>
-        <title>{% block title %}Travelposting{% endblock title %}</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Traveland Solutions">
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="manifest" href="{% static "manifest.json" %}">
+        {% block feed %}
+        {% endblock feed %}
+        <meta name="description" content="Traveland Solutions ">
         <meta name="author" content="Traveland Solutions">
         <meta name="keywords" content="HTML,CSS,JavaScript">
         <meta name="theme-color" content="#2F3BA2" />
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="traveland">
+        <meta name="apple-mobile-web-app-title" content="TRAVELAND">
         {% block meta %}{% endblock %}
         <!-- Favicon -->
-        <link rel="shortcut icon" href="https://htmlstream.com/preview/front-v2.9.1/favicon.ico">
-        {% block feed %}
-        {% endblock feed %}
+        {% placeFavicon %}
+        {% render_block "css" %}
         <!-- Google Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-        {% render_block "css" %}
         <!-- CSS Implementing Plugins -->
         <link rel="stylesheet" href="{% static 'assets/vendor/font-awesome/css/fontawesome-all.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
@@ -33,10 +33,16 @@
         <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
     </head>
     <body>
-        {% cms_toolbar %}
+        {% cms_toolbar %}     
+
         {% include 'menu/menu.html' %}
+
         {% block content %}{% endblock content %}
+
         {% include 'footer.html' %}
+
+
+        {% render_block "js" %}
         <!-- JS Global Compulsory -->
         <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
         <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
