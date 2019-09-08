@@ -1,8 +1,7 @@
 {% extends "base.html" %}
-{% load cms_tags %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 {% block content %}
-{% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
   <main id="content" role="main">
     <!-- Hero Section -->
     <div class="gradient-overlay-half-primary-video-v1">
@@ -14,7 +13,7 @@
                  <img src="{% static 'img/hamburg.jpg'%}">
             </div>
             <!-- End Video Background -->
-      
+
             <div class="position-relative z-index-2">
               <!-- Content -->
               <div class="d-md-flex">
@@ -22,20 +21,15 @@
                   <div class="row justify-content-md-center w-100">
                     <div class="col-md-10">
                       <!-- Fancybox -->
-                      
+
                       <!-- End Fancybox -->
-      
+
                       <!-- Info -->
                       <div class="mt-4 mb-7">
-                        <h1 class="display-4 text-white font-weight-normal">{% trans 'Lets get you started' %}</h1>
-                        <p class="lead text-white">                    
-                            {% blocktrans %}  
-                                Hamburg is a city in northern Germany, a metropolis with a maritime character, known as The Pearl of the North (Hamburg unser Perle) so the Germans say especially the Hamburgers.
-                            {% endblocktrans %}
-        </p>
+                        <h1 class="display-4 text-white font-weight-normal">{% trans 'Live and share your experience' %}</h1>
                       </div>
                       <!-- End Info -->
-      
+
                       <!-- Form -->
                       <form class="js-validate">
                         <div class="form-row mb-2">
@@ -47,7 +41,7 @@
                               </div>
                             </div>
                           </div>
-      
+
                           <div class="col-sm-6 col-lg mb-2">
                             <div class="js-form-message">
                               <label class="sr-only" for="signupSrPhone">{% trans 'Country' %}</label>
@@ -61,7 +55,7 @@
                             <button type="submit" class="btn btn-block btn-white transition-3d-hover">{% trans 'Search offer' %}</button>
                           </div>
                         </div>
-    
+
                       </form>
                       <!-- End Form -->
                     </div>
@@ -69,35 +63,35 @@
                 </div>
               </div>
               <!-- End Content -->
-      
+
 
         <div class="position-absolute right-0 bottom-0 left-0 mb-4">
-                <div class="container text-center">
-                  <!-- Button -->
-                  <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left mr-1">
-                    <span class="media align-items-center">
-                      <span class="fab fa-apple fa-2x mr-3"></span>
-                      <span class="media-body">
-                        <span class="d-block">Download on the</span>
-                        <strong class="font-size-1">App Store</strong>
-                      </span>
-                    </span>
-                  </button>
-                  <!-- End Button -->
-      
-                  <!-- Button -->
-                  <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left ml-1">
-                    <span class="media align-items-center">
-                      <span class="fab fa-google-play fa-2x mr-3"></span>
-                      <span class="media-body">
-                        <span class="d-block">Get it on</span>
-                        <strong class="font-size-1">Google Play</strong>
-                      </span>
-                    </span>
-                  </button>
-                  <!-- End Button -->
-                </div>
-              </div>
+          <div class="container text-center">
+            <!-- Button -->
+            <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left mr-1">
+              <span class="media align-items-center">
+                <span class="fab fa-apple fa-2x mr-3"></span>
+                <span class="media-body">
+                  <span class="d-block">Download on the</span>
+                  <strong class="font-size-1">App Store</strong>
+                </span>
+              </span>
+            </button>
+            <!-- End Button -->
+
+            <!-- Button -->
+            <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left ml-1">
+              <span class="media align-items-center">
+                <span class="fab fa-google-play fa-2x mr-3"></span>
+                <span class="media-body">
+                  <span class="d-block">Get it on</span>
+                  <strong class="font-size-1">Google Play</strong>
+                </span>
+              </span>
+            </button>
+            <!-- End Button -->
+          </div>
+        </div>
       </div>
 
       <div class="d-lg-none position-absolute top-0 right-0 bottom-0 left-0 bg-img-hero" style="background-image: url({% static 'assets/img/1920x1080/img20.jpg' %});"></div>
@@ -116,11 +110,11 @@
                       <p style="text-align: justify; text-justify: inter-word;">Our potential in its favor is based on the ease we have of capturing new stakeholders for your products thanks to the constant trips we make and the tourism and technology fairs in which we are present, as is the case of the Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin Germany, or the Fitur in Madrid Spain among others.</p>
                     </div>
                     <!-- End Title -->
-      
+
                     <a class="btn btn-sm btn-primary btn-wide transition-3d-hover" href="#">{% trans 'Find out More' %} <span class="fas fa-angle-right ml-2"></span></a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-6 position-relative">
                   <!-- Image Gallery -->
                   <div class="row mx-gutters-2">
@@ -136,12 +130,12 @@
                       </a>
                       <!-- End Fancybox -->
                     </div>
-      
+
                     <div class="col-7 px-2 mb-3">
                       <!-- Fancybox -->
                       <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{% static 'img/berlin.jpg' %}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #02" data-speed="700">
                         <img class="img-fluid rounded" src="{% static 'img/berlin.jpg' %}" alt="Image Description">
-      
+
                         <span class="u-media-viewer__container">
                           <span class="u-media-viewer__icon">
                             <span class="fas fa-plus u-media-viewer__icon-inner"></span>
@@ -150,12 +144,12 @@
                       </a>
                       <!-- End Fancybox -->
                     </div>
-      
+
                     <div class="col-5 offset-1 px-2 mb-3">
                       <!-- Fancybox -->
                       <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{% static 'img/bogota.jpg' %}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #03" data-speed="700">
                         <img class="img-fluid rounded" src="{% static 'img/bogota.jpg'%}" alt="Image Description">
-      
+
                         <span class="u-media-viewer__container">
                           <span class="u-media-viewer__icon">
                             <span class="fas fa-plus u-media-viewer__icon-inner"></span>
@@ -164,12 +158,12 @@
                       </a>
                       <!-- End Fancybox -->
                     </div>
-      
+
                     <div class="col-5 px-2 mb-3">
                       <!-- Fancybox -->
                       <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{% static 'img/greece.jpg' %}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #04" data-speed="700">
                         <img class="img-fluid rounded" src="{% static 'img/greece.jpg' %}" alt="{% trans 'Greece' %}">
-      
+
                         <span class="u-media-viewer__container">
                           <span class="u-media-viewer__icon">
                             <span class="fas fa-plus u-media-viewer__icon-inner"></span>
@@ -180,7 +174,7 @@
                     </div>
                   </div>
                   <!-- End Image Gallery -->
-      
+
                   <!-- SVG Background Shape -->
                   <div id="SVGbgShapeID1" class="w-100 content-centered-y z-index-n1" style="">
                     <figure class="ie-soft-triangle-shape">
@@ -276,237 +270,297 @@
     </div>
     <!-- End Icon Blocks Section -->
 
-    <!-- Testimonials Section -->
-    <div class="bg-img-hero-bottom" style="background-image: url({% static 'assets/img/1920x800/img11.jpg' %});">
-      <div class="container">
-        <div class="row justify-content-md-end">
-          <div class="col-md-6 col-lg-5 col-xl-4 space-top-3 mb-n9">
-            <!-- Testimonials -->
-            <div class="card border-0 bg-primary text-white shadow-primary-lg">
-              <div class="card-body p-7">
-                <div class="js-slick-carousel u-slick"
-                     data-pagi-classes="text-right u-slick__pagination u-slick__pagination--white mt-2 mb-0">
-                  <!-- Testimonials -->
-                  <div class="js-slide">
-                    <!-- SVG Quote -->
-                    <figure class="mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
-                         viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
-                        <path class="fill-white" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
-                          C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
-                          c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
-                          C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z"/>
-                      </svg>
-                    </figure>
-                    <!-- End SVG Quote -->
+    <!-- Portfolio Section -->
+    <div class="container-fluid space-2 space-bottom-md-3 px-sm-5">
+      <div class="u-cubeportfolio">
+        <!-- Filter -->
+        <ul id="filterControls" class="list-inline cbp-l-filters-alignRight text-center">
+          <li class="list-inline-item cbp-filter-item cbp-filter-item-active u-cubeportfolio__item" data-filter="*">All</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".branding">Branding</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".abstract">Abstract</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".graphic">Graphic</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">Illustration</li>
+        </ul>
+        <!-- End Filter -->
 
-                    <!-- Text -->
-                    <blockquote class="h6 font-weight-normal text-lh-md mb-4">The template is really nice and offers quite a large set of options. It's beautiful and the coding is done quickly and seamlessly. Thank you!</blockquote>
-                    <!-- End Text -->
-
-                    <!-- Author -->
-                    <div class="media">
-                      <div class="u-avatar mr-3">
-                      </div>
-                      <div class="media-body">
-                        <h4 class="h6 mb-0">Maria Muszynska</h4>
-                        <p class="small text-white-70">Google</p>
-                      </div>
-                    </div>
-                    <!-- End Author -->
+        <!-- Content -->
+        <div class="cbp"
+             data-layout="grid"
+             data-controls="#filterControls"
+             data-animation="quicksand"
+             data-x-gap="32"
+             data-y-gap="32"
+             data-load-more-selector="#cubeLoadMore"
+             data-load-more-action="auto"
+             data-load-items-amount="2"
+             data-media-queries='[
+              {"width": 1500, "cols": 4},
+              {"width": 1100, "cols": 4},
+              {"width": 800, "cols": 3},
+              {"width": 480, "cols": 2},
+              {"width": 300, "cols": 1}
+            ]'>
+          <!-- Item -->
+          <div class="cbp-item rounded graphic">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x360/img1.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Remind Me More</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Tiberiu Neamu
+                    </p>
                   </div>
-                  <!-- End Testimonials -->
-
-                  <!-- Testimonials -->
-                  <div class="js-slide">
-                    <!-- SVG Quote -->
-                    <figure class="mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
-                         viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
-                        <path class="fill-white" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
-                          C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
-                          c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
-                          C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z"/>
-                      </svg>
-                    </figure>
-                    <!-- End SVG Quote -->
-
-                    <!-- Text -->
-                    <blockquote class="h6 font-weight-normal text-lh-md mb-4">If you can design one thing you can design everything with Front. Just believe it.</blockquote>
-                    <!-- End Text -->
-
-                    <!-- Author -->
-                    <div class="media">
-                      <div class="u-avatar mr-3">
-                        <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img3.jpg' %}" alt="Image Description">
-                      </div>
-                      <div class="media-body">
-                        <h4 class="h6 mb-0">Alex Pottorf</h4>
-                        <p class="small text-white-70">Github</p>
-                      </div>
-                    </div>
-                    <!-- End Author -->
-                  </div>
-                  <!-- End Testimonials -->
                 </div>
               </div>
-            </div>
-            <!-- End Testimonials -->
+            </a>
           </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded branding">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x270/img1.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Workout Buddy</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Tiberiu Neamu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded abstract illustration">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x270/img7.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Tiger</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic illustration">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x360/img3.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Tiger</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded abstract illustration">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x270/img3.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Tiger</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic illustration">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x270/img6.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Tiger</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded branding">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x360/img18.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Workout Buddy</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Tiberiu Neamu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded abstract illustration">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x360/img12.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Tiger</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x270/img5.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Remind Me More</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Tiberiu Neamu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded branding">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x360/img17.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Workout Buddy</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Tiberiu Neamu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded branding">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x360/img16.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Workout Buddy</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Tiberiu Neamu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic">
+            <a class="cbp-caption" href="single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="https://htmlstream.com/preview/front-v2.9.1/assets/img/380x270/img2.jpg" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Remind Me More</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Tiberiu Neamu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
         </div>
+        <!-- End Content -->
+
+        <div class="space-bottom-2"></div>
+
+        <!-- Load More Button -->
+        <div id="cubeLoadMore" class="text-center">
+          <a href="https://htmlstream.com/preview/front-v2.9.1/assets/ajax/portfolio-masonry-1/load-more.html" class="cbp-l-loadMore-link link" rel="nofollow">
+            <span class="cbp-l-loadMore-defaultText">
+              Load More
+              <span class="link__icon ml-1">
+                <span class="link__icon-inner">&#43;</span>
+              </span>
+            </span>
+            <span class="cbp-l-loadMore-loadingText">Loading...</span>
+            <span class="cbp-l-loadMore-noMoreLoading">No more works</span>
+          </a>
+        </div>
+        <!-- End Load More Button -->
       </div>
     </div>
-    <!-- End Testimonials Section -->
-
-    <!-- Team Section -->
-    <div class="container space-top-3 space-bottom-2 space-bottom-md-3">
-      <!-- Title -->
-      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-        <span class="btn btn-xs btn-soft-primary btn-pill mb-2">Our Team</span>
-        <h2 class="font-weight-normal">Trust the professionals</h2>
-        <p>Our top professionals are ready to help with your business</p>
-      </div>
-      <!-- End Title -->
-
-      <!-- Team Carousel -->
-      <div class="js-slick-carousel u-slick u-slick--gutters-3 mb-5"
-           data-slides-show="4"
-           data-slides-scroll="1"
-           data-pagi-classes="d-lg-none text-center u-slick__pagination mb-7"
-           data-responsive='[{
-             "breakpoint": 992,
-             "settings": {
-               "slidesToShow": 3
-             }
-           }, {
-             "breakpoint": 768,
-             "settings": {
-               "slidesToShow": 2
-             }
-           }, {
-             "breakpoint": 554,
-             "settings": {
-               "slidesToShow": 1
-             }
-           }]'>
-        <div class="js-slide pb-4">
-          <!-- Team -->
-          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img1.jpg' %}" alt="Image Description">
-          <div class="card border-0 shadow-sm mt-n6 mx-3">
-            <div class="card-body text-center p-4">
-              <h3 class="h6 mb-1">Maria Muszynska</h3>
-              <p class="font-size-1 mb-0">Lead Designer</p>
-            </div>
-          </div>
-          <!-- End Team -->
-        </div>
-
-        <div class="js-slide pb-4">
-          <!-- Team -->
-          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img2.jpg' %}" alt="Image Description">
-          <div class="card border-0 shadow-sm mt-n6 mx-3">
-            <div class="card-body text-center p-4">
-              <h3 class="h6 mb-1">Jack Wayley</h3>
-              <p class="font-size-1 mb-0">CEO, Director</p>
-            </div>
-          </div>
-          <!-- End Team -->
-        </div>
-
-        <div class="js-slide pb-4">
-          <!-- Team -->
-          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img3.jpg' %}" alt="Image Description">
-          <div class="card border-0 shadow-sm mt-n6 mx-3">
-            <div class="card-body text-center p-4">
-              <h3 class="h6 mb-1">Emmely Jackson</h3>
-              <p class="font-size-1 mb-0">Marketer</p>
-            </div>
-          </div>
-          <!-- End Team -->
-        </div>
-
-        <div class="js-slide pb-4">
-          <!-- Team -->
-          <img class="img-fluid w-100 rounded" src="{% static 'assets/img/350x400/img4.jpg' %}" alt="Image Description">
-          <div class="card border-0 shadow-sm mt-n6 mx-3">
-            <div class="card-body text-center p-4">
-              <h3 class="h6 mb-1">Mark McManus</h3>
-              <p class="font-size-1 mb-0">Project Manager</p>
-            </div>
-          </div>
-          <!-- End Team -->
-        </div>
-      </div>
-      <!-- End Team Carousel -->
-
-      <!-- Hire Us -->
-      <div class="text-center">
-        <div class="d-sm-inline-flex align-items-center shadow-sm rounded-pill p-2 pr-3">
-          <span class="btn btn-xs btn-soft-primary btn-pill mb-2 mb-sm-0 mr-2">New</span>
-          <span class="d-block d-sm-inline-block">
-            We are hiring.
-            <a href="../pages/hire-us.html">Send your application.</a>
-          </span>
-        </div>
-      </div>
-      <!-- End Hire Us -->
-    </div>
-    <!-- End Team Section -->
-
-    <!-- Devices v2 Section -->
-    <div id="SVGdevicesV2" class="svg-preloader gradient-half-primary-v1 u-devices-v2">
-      <div class="container space-2 space-md-3 position-relative z-index-2">
-        <!-- Title -->
-        <div class="w-md-80 w-lg-50 text-center mx-md-auto">
-          <span class="btn btn-lg btn-icon btn-white rounded-circle mb-4">
-            <span class="fas fa-paper-plane text-primary btn-icon__inner"></span>
-          </span>
-          <h2 class="h1 text-white">Device <span class="font-weight-semi-bold">friendly</span> features</h2>
-          <p class="lead text-white-70 mb-0">Your website is fully responsive so visitors can view your content from their choice of device.</p>
-        </div>
-        <!-- End Title -->
-      </div>
-
-      <!-- Devices v2 -->
-      <div class="d-none d-lg-block">
-        <!-- SVG Tablet Mockup -->
-        <div class="u-devices-v2__tablet">
-          <div class="w-75 u-devices-v2__tablet-svg">
-            <figure class="ie-devices-v2-tablet">
-              <img class="js-svg-injector" src="{% static 'assets/svg/components/tablet.svg' %}" alt="Image Description"
-                   data-img-paths='[
-                     {"targetId": "#SVGtabletImg1", "newPath": "{% static 'assets/img/533x711/img1.jpg' %}"}
-                   ]'
-                   data-parent="#SVGdevicesV2">
-            </figure>
-          </div>
-        </div>
-        <!-- End SVG Tablet Mockup -->
-
-        <!-- SVG Phone Mockup -->
-        <div class="u-devices-v2__phone">
-          <div class="w-75 u-devices-v2__phone-svg">
-            <figure class="ie-devices-v2-iphone">
-              <img class="js-svg-injector" src="{% static 'assets/svg/components/iphone.svg' %}" alt="Image Description"
-                   data-img-paths='[
-                     {"targetId": "#SVGiphoneImg1", "newPath": "{% static 'assets/img/282x500/img1.jpg' %}' %}"}
-                   ]'
-                   data-parent="#SVGdevicesV2">
-            </figure>
-          </div>
-        </div>
-        <!-- End SVG Phone Mockup -->
-      </div>
-      <!-- End Devices v2 -->
-
-      <!-- SVG Background Shape -->
-      <figure class="w-100 content-centered-y position-absolute right-0 bottom-0">
-        <img class="js-svg-injector" src="{% static 'assets/svg/components/process-pointer-1.svg' %}" alt="Image Description"
-             data-parent="#SVGdevicesV2">
-      </figure>
-      <!-- End SVG Background Shape -->
-    </div>
-    <!-- End Devices v2 Section -->
+    <!-- End Portfolio Section -->
 
     <!-- Subscribe Section -->
     <div class="container space-2 space-md-3">
@@ -537,8 +591,7 @@
             <div class="js-form-message">
               <label class="sr-only" for="signupSrEmail">Email</label>
               <div class="input-group">
-                <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required
-                       data-msg="Please enter a valid email address.">
+                <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required data-msg="Please enter a valid email address.">
               </div>
             </div>
           </div>
