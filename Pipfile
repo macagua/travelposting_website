@@ -41,6 +41,7 @@ py-moneyed = "*"
 easy-thumbnails = "*"
 django-bootstrap-datepicker-plus = "*"
 django-jet = "*"
+paypalrestsdk = "*"
 
 [requires]
 python_version = "3.7"
