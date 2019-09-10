@@ -1,0 +1,19 @@
+<div>
+  {% for field in form %}
+    {% if not field.is_hidden %}
+      {% ifnotequal field.name 'DELETE' %}
+        <div class="form-group">
+          <label class="col-xs-5 control-label" for="{{ field.id_for_label }}">{{ field.label }}:</label>
+          <div class="col-xs-7">
+            {{ field }}
+            <span class="help-block m-b-none">{{ field.help_text|safe }}</span>
+            {{ field.errors|safe }}
+          </div>
+        </div>
+      {% endifnotequal %}
+    {% else %}
+      {{ field }}
+    {% endif %}
+  {% endfor %}
+  <div class="hr-line-dashed"></div>
+</div>

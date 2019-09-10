@@ -1,0 +1,17 @@
+<div class="border-bottom booking" id="booking-{{ num }}">
+  {% for field in form %}
+    {% if not field.is_hidden %}
+      <div class="form-group">
+        <label class="{% ifnotequal field.name 'days' %}col-sm-5{% endifnotequal %}
+        col-xs-3 control-label" for="{{ field.id_for_label }}">{{ field.label }}:</label>
+        <div class="{% ifnotequal field.name 'days' %}col-sm-7{% endifnotequal %} col-xs-9">
+          {{ field }}
+          <span class="help-block m-b-none">{{ field.help_text|safe }}</span>
+          {{ field.errors|safe }}
+        </div>
+      </div>
+    {% else %}
+      {{ field }}
+    {% endif %}
+  {% endfor %}
+</div>

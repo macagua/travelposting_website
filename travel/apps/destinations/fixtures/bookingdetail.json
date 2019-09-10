@@ -1,0 +1,32 @@
+[
+{
+    "model": "destinations.bookingdetail",
+    "pk": 1,
+    "fields": {
+        "destination_detail": 3,
+        "start_date": "2019-06-11",
+        "end_date": "2019-06-12",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "1400.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 2,
+    "fields": {
+        "destination_detail": 1,
+        "start_date": "2019-06-11",
+        "end_date": "2019-06-11",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "5.0500",
+        "mode": "default",
+        "is_active": "1"
+    }
+}
+]

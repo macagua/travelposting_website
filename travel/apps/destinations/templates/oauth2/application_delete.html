@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<form method="post"
+      action="{% url 'oauth2-application-delete' application.pk %}">{% csrf_token %}
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span
+        aria-hidden="true">×</span><span class="sr-only">{% trans 'Cerrar' %}</span></button>
+    <h4 class="modal-title">{{ application }}</h4>
+{#    <small class="font-bold">Eliminar este contrato</small>#}
+  </div>
+  <div class="modal-body">
+    <p>
+      {% blocktrans %}
+        ¿Está seguro de eliminar la aplicación {{ application }}?
+      {% endblocktrans %}
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-danger">{% trans 'Eliminar' %}</button>
+    <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'Cerrar' %}
+    </button>
+  </div>
+</form>

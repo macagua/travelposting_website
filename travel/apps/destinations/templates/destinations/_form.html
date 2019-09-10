@@ -1,0 +1,240 @@
+{% extends 'destinations/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Agregar Destino' %}{% endblock %}
+
+{% block css %}
+  {{ block.super }}
+  {{ form.media.css }}
+  {{ tour_data_inlineformset.media.css }}
+  {{ tour_data_inlineformset.0.tab_data_inlineformset.media.css }}
+  {{ destination_detail_inlineformset.0.general_inlineformset.media.css }}
+{% endblock %}
+
+{% block content %}
+  <div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <form role="form" method="post" class="form-horizontal" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ tour_data_inlineformset.management_form }}
+          {{ header_inlineformset.management_form }}
+          {{ destination_detail_inlineformset.management_form }}
+          <div class="col-sm-9">
+            <div class="tabs-container">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a class="{% if form.errors or form.non_field_errors %}danger{% endif %}"
+                     data-toggle="tab" href="#product" aria-expanded="true">
+                    {% trans 'Producto' %}</a>
+                </li>
+                <li class="">
+                  {% with tour_data=tour_data_inlineformset %}
+                    {% with tab_data=tour_data.0.tab_data_inlineformset %}
+                      <a class="{% if tour_data.total_error_count or tab_data.total_error_count %}danger{% endif %}"
+                         data-toggle="tab" href="#tourData" aria-expanded="false">{% trans 'Tour Data' %}</a>
+                    {% endwith %}
+                  {% endwith %}
+                </li>
+                <li class="">
+                  <a class="{% if header_inlineformset.total_error_count %}danger{% endif %}"
+                     data-toggle="tab" href="#headerSection" aria-expanded="false">
+                    {% trans 'Header Section' %}</a>
+                </li>
+                <li class="">
+                  {% with detail=destination_detail_inlineformset %}
+                    {% with general=detail.0.general_inlineformset %}
+                      {% with inventario=detail.0.inventario_inlineformset %}
+                        {% with booking=detail.0.booking_inlineformset %}
+                          <a class="{% if detail.total_error_count or general.total_error_count or inventario.total_error_count or booking.total_error_count %}danger{% endif %}"
+                             data-toggle="tab" href="#destinationDetail" aria-expanded="false">
+                            {% trans 'Detalles del Producto' %}</a>
+                        {% endwith %}
+                      {% endwith %}
+                    {% endwith %}
+                  {% endwith %}
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div id="product" class="tab-pane active">
+                  <div class="panel-body">
+                    <div class="ibox float-e-margins">
+                      <div class="ibox-content">
+                        <p>{% trans 'Ingrese los datos solicitados' %}:</p>
+                        {% for hidden_field in form.hidden_fields %}
+                          {{ hidden_field }}
+                        {% endfor %}
+                        {% for field in form.visible_fields %}
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label"
+                                   for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                            <div class="col-lg-10">
+                              {{ field }}
+                              <span class="help-block m-b-none">{{ field.help_text|safe }}</span>
+                              {{ field.errors|safe }}
+                            </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="tourData" class="tab-pane">
+                  <div class="panel-body">
+                    <div class="ibox float-e-margins">
+                      <div id="id_inline_tour_data" class="ibox-content">
+                        <p>{% trans 'Registre los datos del tour' %}:</p>
+                        <p>
+                          {#                          <a href="#" onclick="addPartner(event)">Agregar otro </a>#}
+                        </p>
+                        {{ tour_data_inlineformset.non_form_errors|safe }}
+                        {{ tour_data_inlineformset.0.tab_data_inlineformset.non_form_errors|safe }}
+                        {% for form in tour_data_inlineformset %}
+                          {% include 'destinations/tour_data/_form.html' with num=forloop.counter0 %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="panel-group" id="accordion">
+                      {{ tour_data_inlineformset.0.tab_data_inlineformset.management_form }}
+                      {% for form in tour_data_inlineformset.0.tab_data_inlineformset %}
+                        {% include 'destinations/tab_data/_form.html' with num=forloop.counter0 %}
+                      {% endfor %}
+                    </div>
+                    <a class="btn btn-info btn-block full-width" href="#" onclick="addTabData(event)">
+                      {% trans 'Agregar otro tab' %}
+                    </a>
+                  </div>
+                </div>
+                <div id="headerSection" class="tab-pane">
+                  <div class="panel-body">
+                    <div class="ibox float-e-margins">
+                      <div id="id_inline_header" class="ibox-content">
+                        <p>{% trans 'Registre los datos del Header' %}:</p>
+                        <p>
+                          {# <a href="#" onclick="addPartner(event)">Agregar otro </a>#}
+                        </p>
+                        {{ header_inlineformset.non_form_errors|safe }}
+                        {% for form in header_inlineformset %}
+                          {% include 'destinations/header/_form.html' with num=forloop.counter0 %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="destinationDetail" class="tab-pane">
+                  <div class="panel-body">
+                    <div class="ibox float-e-margins">
+                      <div id="id_inline_destination_detail" class="ibox-content">
+                        <p>{% trans 'Registre los detalles del producto' %}:</p>
+                        <p>
+                          {# <a href="#" onclick="addPartner(event)">Agregar otro </a>#}
+                        </p>
+                        {{ destination_detail_inlineformset.non_form_errors|safe }}
+                        {% for form in destination_detail_inlineformset %}
+                          {% include 'destinations/destination_detail/_form.html' with num=forloop.counter0 %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="tabs-container">
+                        <div class="tabs-left">
+                          <ul class="nav nav-tabs" style="margin-right: 0">
+                            <li class="active">
+                              {% with general=destination_detail_inlineformset.0.general_inlineformset %}
+                                <a class="{% if general.total_error_count %}danger{% endif %}" data-toggle="tab"
+                                   href="#general">
+                                  <i class="fa fa-wrench"></i> {% trans 'General' %}
+                                </a>
+                              {% endwith %}
+                            </li>
+                            <li class="">
+                              {% with inventario=destination_detail_inlineformset.0.inventario_inlineformset %}
+                                <a class="{% if inventario.total_error_count %}danger{% endif %}" data-toggle="tab"
+                                   href="#inventario">
+                                  <i class="fa fa-book"></i> {% trans 'Inventario' %}
+                                </a>
+                              {% endwith %}
+                            </li>
+                            <li class="">
+                              {% with booking=destination_detail_inlineformset.0.booking_inlineformset %}
+                                <a class="{% if booking.total_error_count %}danger{% endif %}" data-toggle="tab"
+                                   href="#booking">
+                                  <i class="fa fa-cog"></i> {% trans 'Tour Booking' %}
+                                </a>
+                              {% endwith %}
+                            </li>
+                          </ul>
+                          <div class="tab-content ">
+                            <div id="general" class="tab-pane active">
+                              <div class="panel-body">
+                                {{ destination_detail_inlineformset.0.general_inlineformset.management_form }}
+                                {{ destination_detail_inlineformset.0.general_inlineformset.non_form_errors|safe }}
+                                {% for form in destination_detail_inlineformset.0.general_inlineformset %}
+                                  {% include 'destinations/destination_detail/general/_form.html' %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                            <div id="inventario" class="tab-pane">
+                              <div class="panel-body">
+                                {{ destination_detail_inlineformset.0.inventario_inlineformset.management_form }}
+                                {{ destination_detail_inlineformset.0.inventario_inlineformset.non_form_errors|safe }}
+                                {% for form in destination_detail_inlineformset.0.inventario_inlineformset %}
+                                  {% include 'destinations/destination_detail/inventario/_form.html' %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                            <div id="booking" class="tab-pane">
+                              <div class="panel-body">
+                                {{ destination_detail_inlineformset.0.booking_inlineformset.management_form }}
+                                {{ destination_detail_inlineformset.0.booking_inlineformset.non_form_errors|safe }}
+                                {% for form in destination_detail_inlineformset.0.booking_inlineformset %}
+                                  {% include 'destinations/destination_detail/booking/_form.html' with num=forloop.counter0 %}
+                                {% endfor %}
+                                <p>
+                                  <a class="btn btn-w-m btn-info" href="#" onclick="addPeriod(event)">
+                                  {% trans 'Add period' %}
+                                  </a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="ibox" style="margin-top: 50px;">
+              <div class="ibox-content">
+                <button class="btn btn-primary btn-block" type="submit">
+                  <strong>{{ submit }}</strong></button>
+                <a href="#" class="btn btn-white btn-block"><strong>{% trans 'Cancelar' %}</strong></a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {% include 'destinations/footer.html' %}
+  </div>
+{% endblock %}
+
+{% block js %}
+  {{ block.super }}
+  {{ tour_data_inlineformset.media.js }}
+  {{ tour_data_inlineformset.0.tab_data_inlineformset.media.js }}
+  {{ destination_detail_inlineformset.0.general_inlineformset.media.js }}
+  <script type="template/tab_data">
+    {% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
+  </script>
+  <script type="template/booking">
+    {% include 'destinations/destination_detail/booking/_form.html' with form=destination_detail_inlineformset.0.booking_inlineformset.empty_form  num='__prefix__' %}
+  </script>
+  <script>initSummernote();</script>
+{% endblock %}

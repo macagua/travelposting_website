@@ -48,6 +48,9 @@ MIGRATION_MODULES = {
 
 }
 
+FIXTURE_DIRS = (
+   os.path.join(ROOT_DIR, 'fixtures'),
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -76,6 +79,8 @@ LANGUAGES = [
     ('en', _('English')),
     ('de', _('German')),
 ]
+
+URL_NAME_LANGS = LANGUAGES
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 LOCALE_PATHS = [
@@ -206,6 +211,7 @@ THIRD_PARTY = [
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
+    'django_summernote',
     'impersonate',
 
 ]
@@ -215,6 +221,7 @@ LOCAL_APPS = [
     'apps.utils.apps.UtilsConfig',
     'apps.payments.apps.PaymentsConfig',
     'apps.destinations',
+    'apps.api',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS

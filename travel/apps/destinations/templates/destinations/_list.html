@@ -1,0 +1,131 @@
+{% extends 'destinations/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'Lista de Destinos' %}{% endblock %}
+
+{% block content %}
+  <div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="p-w-md m-t-sm">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ibox">
+              <div class="ibox-content">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label class="control-label" for="product_name">{% trans 'Nombre del destino' %}</label>
+                      <input type="text" id="product_name" name="product_name" value="" placeholder="{% trans 'Nombre del destino' %}"
+                             class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="form-group">
+                      <label class="control-label" for="price">{% trans 'Precio' %}</label>
+                      <input type="number" id="price" name="price" value="" placeholder="{% trans 'Precio' %}" class="form-control">
+                    </div>
+                  </div>
+{#                  <div class="col-sm-2">#}
+{#                    <div class="form-group">#}
+{#                      <label class="control-label" for="quantity">Fecha</label>#}
+{#                      <input type="text" id="quantity" name="quantity" value="" placeholder="Fecha"#}
+{#                             class="form-control">#}
+{#                    </div>#}
+{#                  </div>#}
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label class="control-label" for="status">{% trans 'Status' %}</label>
+                      <select name="status" id="status" class="form-control">
+                        <option value="1" selected="">{% trans 'Pendiente' %}</option>
+                        <option value="0">{% trans 'Publicado' %}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <tbody>
+                    {% for object in object_list %}
+                      <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{% url 'destinations:update' object.pk %}">{{ object.name }}</a></td>
+                        <td>{{ object.details.inventario.sku }}</td>
+                        <td>
+                          {% if object.details.inventario.quantity %}
+                            <p>
+                              <span class="text-navy">{% trans 'Hay existencia' %}</span>
+                              <span>({{ object.details.inventario.quantity }})</span>
+                            </p>
+                          {% endif %}
+                        </td>
+                        <td>
+                          {% if object.details.general.sale_price %}
+                            <del><span>{{ object.details.general.regular_price }}</span></del>
+                            <ins><span>{{ object.details.general.sale_price }}</span></ins>
+                          {% else %}
+                            <span>{{ object.details.general.regular_price }}</span>
+                          {% endif %}
+                        </td>
+                        <td>
+                          <a href="{% url 'destinations:delete' object.pk %}" class="btn btn-white btn-sm"
+                             data-toggle="modal" data-target="#modal"><i class="fa fa-trash"></i>
+                            {% trans 'Eliminar' %} </a>
+                          <a class="btn btn-white btn-sm" href="{% url 'destinations:gallery-list' object.pk %}">
+                            <i class="fa fa-photo"></i>
+                            {% trans 'Galería' %}
+                          </a>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                    {% comment %}
+                    <tr>
+                      <td>2</td>
+                      <td>Alpha project</td>
+                      <td>Alice Jackson</td>
+                      <td>$963,486</td>
+                      <td>Nec Euismod In Company</td>
+                      <td><strong>40%</strong></td>
+                      <td>Jul 16, 2015</td>
+                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Betha project</td>
+                      <td>John Smith</td>
+                      <td>$996,824</td>
+                      <td>Erat Volutpat</td>
+                      <td><strong>75%</strong></td>
+                      <td>Jul 18, 2015</td>
+                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Gamma project</td>
+                      <td>Anna Jordan</td>
+                      <td>$105,192</td>
+                      <td>Tellus Ltd</td>
+                      <td><strong>18%</strong></td>
+                      <td>Jul 22, 2015</td>
+                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                    </tr>
+                    {% endcomment %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% include 'destinations/modal.html' %}
+        </div>
+      </div>
+    </div>
+    {% include 'destinations/footer.html' %}
+  </div>
+{% endblock %}
+
+{% block js %}
+  {{ block.super }}
+  <script type="text/javascript" src="{% static 'destinations/js/modal.js' %}"></script>
+{% endblock %}

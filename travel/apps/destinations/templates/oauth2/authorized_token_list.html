@@ -1,0 +1,44 @@
+{% extends 'destinations/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Tokens Autorizados' %}{% endblock %}
+
+{% block content %}
+  <div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="p-w-md m-t-sm">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ibox">
+              <div class="ibox-content">
+                <div class="block-center">
+                  <h3>{% trans 'Tokens' %}</h3>
+                  <ul>
+                    {% for authorized_token in authorized_tokens %}
+                      <li>
+                        {{ authorized_token.application }}
+                        (<a data-toggle="modal" data-target="#modal"
+                            href="{% url 'oauth2-authorized-token-revoke' authorized_token.pk %}">
+                          {% trans 'revocar' %}
+                      </a>)
+                      </li>
+                      <ul>
+                        {% for scope_name, scope_description in authorized_token.scopes.items %}
+                          <li>{{ scope_name }}: {{ scope_description }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% empty %}
+                      <li>{% trans 'No hay ningún token autorizado' %}.</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'destinations/modal.html' %}
+{% endblock %}

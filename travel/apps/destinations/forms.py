@@ -5,7 +5,7 @@ from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput
 from oauth2_provider.models import Application
 
-from apps.destinations.models import (
+from tour.destinations.models import (
     TourData,
     HeaderSection,
     Destination,
@@ -15,8 +15,8 @@ from apps.destinations.models import (
     BookingDetail,
     Photo,
 )
-from apps.accounts.forms import BaseBootstrapForm
-from apps.destinations.widgets import BootstrapMoneyWidget
+from tour.accounts.forms import BaseBootstrapForm
+from tour.destinations.widgets import BootstrapMoneyWidget
 
 
 class DestinationForm(forms.ModelForm):

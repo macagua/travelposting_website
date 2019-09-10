@@ -42,6 +42,8 @@ easy-thumbnails = "*"
 django-bootstrap-datepicker-plus = "*"
 django-jet = "*"
 paypalrestsdk = "*"
+django-nested-admin = "*"
+django-summernote = "*"
 
 [requires]
 python_version = "3.7"
