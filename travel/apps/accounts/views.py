@@ -81,3 +81,7 @@ def password(request):
 def passwordsuccess(request):
     return render(request, 'accounts/registration/forgot_password_success.html')
 
+def passwordconfirm(request):
+    return render(request, 'accounts/registration/password_reset_confirm.html')
+
+
