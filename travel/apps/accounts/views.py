@@ -77,3 +77,7 @@ def isuccess(request):
 
 def password(request):    
     return render(request, 'accounts/registration/forgot_password.html')
+
+def passwordsuccess(request):
+    return render(request, 'accounts/registration/forgot_password_success.html')
+

@@ -38,6 +38,11 @@ urlpatterns = [
         views.password,
         name='password-reset',
     ),
+    path(
+        'password_reset/success/',
+        views.passwordsuccess,
+        name='password-reset-success',
+    ),
 
 
 ]
