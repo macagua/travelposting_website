@@ -84,4 +84,7 @@ def passwordsuccess(request):
 def passwordconfirm(request):
     return render(request, 'accounts/registration/password_reset_confirm.html')
 
+def passworddone(request):
+    return render(request, 'accounts/registration/password_reset_done.html')
+
 
