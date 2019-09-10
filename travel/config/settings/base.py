@@ -136,6 +136,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'sekizai.context_processors.sekizai',
                 'django.template.context_processors.static',
+                'apps.landing_page.context_processor.get_ip',
                 'cms.context_processors.cms_settings',
             ],
             'loaders': [
@@ -172,6 +173,7 @@ MIDDLEWARE = [
 DJANGO_APPS = [
     'djangocms_admin_style',
     'modeltranslation',
+    'nested_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -180,7 +182,6 @@ DJANGO_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
-    'nested_admin',
 ]
 
 THIRD_PARTY = [
@@ -218,7 +219,7 @@ THIRD_PARTY = [
 ]
 
 LOCAL_APPS = [
-    'apps.landing_page.apps.LandingPageConfig',
+    'apps.landing_page',
     'apps.utils.apps.UtilsConfig',
     'apps.payments.apps.PaymentsConfig',
     'apps.destinations',

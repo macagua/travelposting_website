@@ -40,22 +40,7 @@
                     </center>
                 </div>
                 <!-- End Testimonials Carousel Main -->
-                <!-- Clients -->
-                <div class="position-absolute right-0 bottom-0 left-0 text-center p-5">
-                    <h4 class="h6 text-white-70 mb-3">Front partners</h4>
-                    <div class="d-flex justify-content-center">
-                        <div class="mx-4">
-                            <img class="u-clients" src="{% static 'assets/svg/clients-logo/slack-white.svg'%}" alt="Image Description">
-                        </div>
-                        <div class="mx-4">
-                            <img class="u-clients" src="{% static 'assets/svg/clients-logo/google-white.svg' %}" alt="Image Description">
-                        </div>
-                        <div class="mx-4">
-                            <img class="u-clients" src="{% static 'assets/svg/clients-logo/spotify-white.svg' %}" alt="Image Description">
-                        </div>
-                    </div>
-                </div>
-                <!-- End Clients -->
+                
             </div>
         </div>
         <div class="container">
@@ -65,8 +50,8 @@
                     <form class="js-validate mt-6">
                         <!-- Title -->
                         <div class="mb-7">
-                            <h1 class="h3 text-primary font-weight-normal mb-0">Welcome to <span class="font-weight-semi-bold">Front</span></h1>
-                            <p>Fill out the form to get started.</p>
+                            <h1 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome to' %} <span class="font-weight-semi-bold">Travelposting</span></h1>
+                            <p>{% trans 'Fill out the form to get started.' %}</p>
                         </div>
                         <!-- End Title -->
                         <!-- Form Group -->
@@ -83,7 +68,7 @@
                         <div class="row align-items-center mb-5">
                             <div class="col-5 col-sm-6">
                                 <span class="small text-muted">Already have an account?</span>
-                                <a class="small" href="login.html">Login</a>
+                                <a class="small" href="{% url 'accounts:login' %}">Login</a>
                             </div>
                             <div class="col-7 col-sm-6 text-right">
                                 <button type="submit" class="btn btn-primary transition-3d-hover">{% trans "Signup" %}</button>
