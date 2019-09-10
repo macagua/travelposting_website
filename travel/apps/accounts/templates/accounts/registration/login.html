@@ -16,8 +16,8 @@
                 <!-- End White Logo -->
                 <!-- Button -->
                 <div class="ml-auto">
-                    <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
-                    {% trans 'Login' %}
+                        <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'accounts:login' %}">
+                            {% trans 'Login' %}
                     </a>
                 </div>
                 <!-- End Button -->
@@ -48,7 +48,7 @@
                     <form class="js-validate mt-5">
                         <!-- Title -->
                         <div class="mb-7">
-                            <h2 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome' %} <span class="font-weight-semi-bold">{% trans 'back' %}</span></h2>
+                            <h2 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome' %} <span class="font-weight-semi-bold">{% trans 'to Travelposting' %}</span></h2>
                             <p>{% trans 'Login to manage your account.' %}</p>
                         </div>
                         <!-- End Title -->
@@ -94,4 +94,5 @@
     </div>
     <!-- End Form -->
 </main>
-<!-- ========== END MAIN ========== -->{% endblock %}
+<!-- ========== END MAIN ========== -->
+{% endblock %}
