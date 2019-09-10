@@ -74,3 +74,6 @@ class RegisterView(SubscriptionView, RegistrationView):
 
 def isuccess(request):    
     return render(request, 'accounts/registration/succes_register.html')
+
+def password(request):    
+    return render(request, 'accounts/registration/forgot_password.html')

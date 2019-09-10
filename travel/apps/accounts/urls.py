@@ -33,7 +33,11 @@ urlpatterns = [
         name='logout',
     ),
     path('register/success/', views.isuccess),
-
+    path(
+        'password_reset/',
+        views.password,
+        name='password-reset',
+    ),
 
 
 ]
