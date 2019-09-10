@@ -1,0 +1,96 @@
+{% load i18n %}
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+          <span><img alt="image" class="img-circle" src="#"/></span>
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <span class="clear">
+                <span class="block m-t-xs">
+                  <strong class="font-bold">{{ request.user.get_full_name }}</strong>
+                </span>
+                <span class="text-muted text-xs block">
+                  {% if request.user.is_staff %}
+                    {% trans 'Admin' %}
+                  {% else %}
+                    {% trans 'Empresa' %}
+                  {% endif %}
+                  <b class="caret"></b>
+                </span>
+              </span>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight m-t-xs">
+            <li><a href="{% url 'accounts:user-details' request.user.pk %}">{% trans 'Información' %}</a></li>
+            <li><a href="{% url 'accounts:password-change' %}">{% trans 'Cambiar contraseña' %}</a></li>
+            <li><a href="{% url 'accounts:logout' %}">{% trans 'Cerrar sesión' %}</a></li>
+{#            <li class="divider"></li>#}
+{#            <li><a href="login.html">Logout</a></li>#}
+          </ul>
+        </div>
+        <div class="logo-element">T&S</div>
+      </li>
+      <li class="">
+        <a href="#">
+          <i class="fa fa-globe fa-lg"></i>
+          <span class="nav-label">{% trans 'Destinos' %}</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul class="nav nav-second-level">
+          <li class=""><a href="{% url 'destinations:list' %}">{% trans 'Sus destinos' %}</a></li>
+          <li class=""><a href="{% url 'destinations:create' %}">{% trans 'Registrar destino' %}</a></li>
+        </ul>
+      </li>
+      <li class="">
+        <a href="#">
+          <i class="fa fa-certificate fa-lg"></i>
+          <span class="nav-label">{% trans 'Aplicaciones' %}</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul class="nav nav-second-level">
+          <li class=""><a href="{% url 'oauth2-application-list' %}">{% trans 'Aplicaciones registradas' %}</a></li>
+          <li class=""><a href="{% url 'oauth2-application-create' %}">{% trans 'Registrar aplicación' %}</a></li>
+          <li class=""><a href="{% url 'oauth2-authorized-token-list' %}">{% trans 'Tokens autorizados' %}</a></li>
+        </ul>
+      </li>
+{#      <li>#}
+{#        <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span#}
+{#            class="fa arrow"></span></a>#}
+{#        <ul class="nav nav-second-level collapse">#}
+{#          <li>#}
+{#            <a href="#">Third Level <span class="fa arrow"></span></a>#}
+{#            <ul class="nav nav-third-level">#}
+{#              <li>#}
+{#                <a href="#">Third Level Item</a>#}
+{#              </li>#}
+{#              <li>#}
+{#                <a href="#">Third Level Item</a>#}
+{#              </li>#}
+{#              <li>#}
+{#                <a href="#">Third Level Item</a>#}
+{#              </li>#}
+{#            </ul>#}
+{#          </li>#}
+{#          <li><a href="#">Second Level Item</a></li>#}
+{#          <li>#}
+{#            <a href="#">Second Level Item</a></li>#}
+{#          <li>#}
+{#            <a href="#">Second Level Item</a></li>#}
+{#        </ul>#}
+{#      </li>#}
+{#      <li>#}
+{#        <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span#}
+{#            class="label label-info pull-right">62</span></a>#}
+{#      </li>#}
+{#      <li class="landing_link">#}
+{#        <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span#}
+{#            class="nav-label">Landing Page</span>#}
+{#          <span class="label label-warning pull-right">NEW</span></a>#}
+{#      </li>#}
+{#      <li class="special_link">#}
+{#        <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>#}
+{#      </li>#}
+    </ul>
+  </div>
+</nav>

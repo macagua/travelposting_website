@@ -1,0 +1,808 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-11 10:08-0400\n"
+"PO-Revision-Date: 2019-06-27 13:37-0428\n"
+"Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
+
+#: destinations/apps.py:7
+msgid "App Destinos"
+msgstr "App Destinations"
+
+#: destinations/fields.py:21
+#, python-format
+msgid "'%(day)s' is a day invalid"
+msgstr ""
+
+#: destinations/fields.py:27
+msgid "Sunday"
+msgstr "Sunday"
+
+#: destinations/fields.py:27
+msgid "Monday"
+msgstr "Monday"
+
+#: destinations/fields.py:27
+msgid "Tuesday"
+msgstr "Tuesday"
+
+#: destinations/fields.py:27
+msgid "Wednesday"
+msgstr "Wednesday"
+
+#: destinations/fields.py:28
+msgid "Thursday"
+msgstr "Thursday"
+
+#: destinations/fields.py:28
+msgid "Friday"
+msgstr "Friday"
+
+#: destinations/fields.py:28
+msgid "Saturday"
+msgstr "Saturday"
+
+#: destinations/fields.py:36
+msgid "String for storage days of lists"
+msgstr "String for storage days of lists "
+
+#: destinations/forms.py:22
+msgid "Nombre del tour"
+msgstr "Name of the tour"
+
+#: destinations/forms.py:96
+msgid "Option"
+msgstr "Option"
+
+#: destinations/forms.py:118
+#, python-format
+msgid "El tab '%(tab)s' se encuentra duplicado, debe estar una sola vez."
+msgstr "The tab '%(tab)s'it is duplicated, it must be only once."
+
+#: destinations/forms.py:227 destinations/models.py:97
+#: destinations/models.py:168
+msgid "Nombre"
+msgstr "First name"
+
+#: destinations/forms.py:228
+msgid "Tipo de aut."
+msgstr "Type of aut"
+
+#: destinations/forms.py:229
+#: destinations/templates/oauth2/application_detail.html:39
+msgid "Redirect uris"
+msgstr "Redirect uris"
+
+#: destinations/models.py:72
+msgid "Usuario"
+msgstr "User"
+
+#: destinations/models.py:73
+msgid "name"
+msgstr "name"
+
+#: destinations/models.py:74
+msgid "Short description"
+msgstr "Short description"
+
+#: destinations/models.py:75
+msgid "description"
+msgstr "description"
+
+#: destinations/models.py:76
+msgid "is_deleted"
+msgstr "is_deleted"
+
+#: destinations/models.py:84 destinations/models.py:96
+#: destinations/models.py:131 destinations/models.py:185
+#: destinations/models.py:215
+msgid "Destino"
+msgstr "Destination"
+
+#: destinations/models.py:85
+#: destinations/templates/destinations/navbar_left.html:37
+msgid "Destinos"
+msgstr "Destinations"
+
+#: destinations/models.py:91 destinations/models.py:259
+msgid "SKU"
+msgstr "SKU"
+
+#: destinations/models.py:98
+msgid "Sort"
+msgstr "Sort"
+
+#: destinations/models.py:99 destinations/models.py:169
+msgid "Descripción"
+msgstr "Description"
+
+#: destinations/models.py:99
+msgid "Sin comentario"
+msgstr "No comment"
+
+#: destinations/models.py:100
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: destinations/models.py:101 destinations/models.py:188
+#: destinations/models.py:193
+msgid "Imagen"
+msgstr "Image"
+
+#: destinations/models.py:110
+msgid "Foto"
+msgstr "Photo"
+
+#: destinations/models.py:111
+msgid "Fotos"
+msgstr "Photos"
+
+#: destinations/models.py:115
+msgid "Name"
+msgstr "Surname"
+
+#: destinations/models.py:116
+msgid "Description"
+msgstr "Description"
+
+#: destinations/models.py:125 destinations/models.py:132
+msgid "Badge"
+msgstr "Badge"
+
+#: destinations/models.py:126
+msgid "Badges"
+msgstr "Badges"
+
+#: destinations/models.py:133
+msgid "Ultimo minuto"
+msgstr "Last minute"
+
+#: destinations/models.py:134
+msgid "Deal del Mes"
+msgstr "Deal of the Month"
+
+#: destinations/models.py:135
+msgid "FamTrip"
+msgstr "Famtrip"
+
+#: destinations/models.py:136
+msgid "Congresos"
+msgstr "Congress"
+
+#: destinations/models.py:137
+msgid "Eventos"
+msgstr "Event"
+
+#: destinations/models.py:138
+msgid "Hotel"
+msgstr "Hotel"
+
+#: destinations/models.py:139
+msgid "Movilidad"
+msgstr "Mobility"
+
+#: destinations/models.py:140
+msgid "Ocio +"
+msgstr "Leisure"
+
+#: destinations/models.py:148 destinations/models.py:153
+msgid "Tour"
+msgstr "Tour"
+
+#: destinations/models.py:149
+msgid "Tours"
+msgstr "Tours"
+
+#: destinations/models.py:155
+msgid "Option tab"
+msgstr "Option tab"
+
+#: destinations/models.py:156
+msgid "Content"
+msgstr "Content"
+
+#: destinations/models.py:163
+msgid "Tabs"
+msgstr "Tabs"
+
+#: destinations/models.py:164
+msgid "Tab"
+msgstr "Tab"
+
+#: destinations/models.py:170
+msgid "Plantilla"
+msgstr "Template"
+
+#: destinations/models.py:179
+msgid "Opciones de las tabs"
+msgstr "Tabs options"
+
+#: destinations/models.py:180
+msgid "Opción de la tab"
+msgstr "Tab option"
+
+#: destinations/models.py:186
+msgid "Display mode"
+msgstr "Display mode"
+
+#: destinations/models.py:187 destinations/models.py:202
+msgid "Default"
+msgstr "Default"
+
+#: destinations/models.py:189
+msgid "Slider"
+msgstr "Slider"
+
+#: destinations/models.py:190
+msgid "From list"
+msgstr "From list"
+
+#: destinations/models.py:192
+msgid "Subtitle"
+msgstr "Subtitle"
+
+#: destinations/models.py:194
+msgid "Parallax"
+msgstr "Parallax"
+
+#: destinations/models.py:195
+msgid "Imagen repeat"
+msgstr "Imagen repeat "
+
+#: destinations/models.py:196
+msgid "Repeat"
+msgstr "Repeat"
+
+#: destinations/models.py:197
+msgid "No repeat"
+msgstr "No repeat"
+
+#: destinations/models.py:198
+msgid "Repeat horizontally"
+msgstr "Repeat horizontally"
+
+#: destinations/models.py:199
+msgid "Repeat vertically"
+msgstr "Repeat vertically"
+
+#: destinations/models.py:201
+msgid "Mask"
+msgstr "Mask"
+
+#: destinations/models.py:209
+msgid "Secciones del encabezado"
+msgstr "Header sections"
+
+#: destinations/models.py:210
+msgid "Sección del encabezado"
+msgstr "Header section"
+
+#: destinations/models.py:216
+msgid "Variable tour"
+msgstr "Variable tour"
+
+#: destinations/models.py:217
+msgid "Virtual"
+msgstr "Virtual"
+
+#: destinations/models.py:218
+msgid "Descargable"
+msgstr "Downloadable"
+
+#: destinations/models.py:224
+msgid "Detalles del destino"
+msgstr "Details of the destination"
+
+#: destinations/models.py:225 destinations/models.py:230
+#: destinations/models.py:258 destinations/models.py:284
+msgid "Detalle del destino"
+msgstr "Detail of the destination"
+
+#: destinations/models.py:231
+msgid "Precio normal"
+msgstr "Normal price"
+
+#: destinations/models.py:233
+msgid "Precio rebajado"
+msgstr "Reduced price"
+
+#: destinations/models.py:235
+msgid "Fecha de rebaja inicial"
+msgstr "Initial discount date"
+
+#: destinations/models.py:236
+msgid "Fecha de rebaja final"
+msgstr "Final discount date"
+
+#: destinations/models.py:237
+msgid "Estado del impuesto"
+msgstr "Tax status"
+
+#: destinations/models.py:238
+msgid "Imponible"
+msgstr "Taxable"
+
+#: destinations/models.py:239
+msgid "Envio solamente"
+msgstr "Shipping only"
+
+#: destinations/models.py:240
+msgid "Ninguno"
+msgstr "None"
+
+#: destinations/models.py:242
+msgid "Clase de impuesto"
+msgstr "Tax class"
+
+#: destinations/models.py:243
+msgid "Estandar"
+msgstr "Standard"
+
+#: destinations/models.py:244
+msgid "Reduced Rate"
+msgstr "Reduced Rate"
+
+#: destinations/models.py:245
+msgid "Zero Rate"
+msgstr "Zero Rate"
+
+#: destinations/models.py:252
+msgid "Detalles generales"
+msgstr "General details"
+
+#: destinations/models.py:253
+msgid "Detalle general"
+msgstr "General detail"
+
+#: destinations/models.py:260
+msgid "¿Gestión de inventario?"
+msgstr "Inventory management?"
+
+#: destinations/models.py:261
+msgid "Activa la gestión de inventario por cada producto"
+msgstr "Activate inventory management for each product"
+
+#: destinations/models.py:262
+msgid "Cantidad de inventario"
+msgstr "Quantity of inventory"
+
+#: destinations/models.py:263
+msgid "¿Permitir reservas?"
+msgstr "Allow reservations?"
+
+#: destinations/models.py:264
+msgid "No permitir"
+msgstr "Do not allow"
+
+#: destinations/models.py:265
+msgid "Permitir, pero se avisara al cliente"
+msgstr "Allow, but the customer is notified"
+
+#: destinations/models.py:266
+msgid "Permitir"
+msgstr "Allow"
+
+#: destinations/models.py:268
+msgid "Umbral de pocas existencias"
+msgstr "Low stock threshold"
+
+#: destinations/models.py:269
+msgid "Vendido individualmente"
+msgstr "Sold individually"
+
+#: destinations/models.py:271
+msgid ""
+"Activa esto para permitir que solo se pueda comprar uno de estos artículos "
+"en cada pedido"
+msgstr ""
+"Activate this to allow only one of these items to be purchased on each order"
+
+#: destinations/models.py:278
+msgid "Detalles de inventario"
+msgstr "Inventory details"
+
+#: destinations/models.py:279
+msgid "Detalle de inventario"
+msgstr "Inventory detail"
+
+#: destinations/models.py:285
+msgid "Start date"
+msgstr "Start date"
+
+#: destinations/models.py:286
+msgid "End date"
+msgstr "End date"
+
+#: destinations/models.py:287
+msgid "Días"
+msgstr "Días"
+
+#: destinations/models.py:288
+msgid "Number of tickets per tour"
+msgstr "Number of tickets per tour"
+
+#: destinations/models.py:289
+msgid "Special price"
+msgstr "Special price"
+
+#: destinations/models.py:291
+msgid "Mode"
+msgstr "Mode"
+
+#: destinations/models.py:292
+msgid "Week days"
+msgstr "Week days"
+
+#: destinations/models.py:293
+msgid "Exact dates"
+msgstr "Exact dates"
+
+#: destinations/models.py:295
+msgid "Is active"
+msgstr "Is active"
+
+#: destinations/models.py:296
+#: destinations/templates/destinations/gallery/_list.html:133
+msgid "No"
+msgstr "No"
+
+#: destinations/models.py:297
+msgid "Yes"
+msgstr "Yes"
+
+#: destinations/models.py:305
+msgid "Booking details"
+msgstr "Booking details"
+
+#: destinations/models.py:306
+msgid "Booking detail"
+msgstr "Booking detail"
+
+#: destinations/templates/destinations/_delete.html:7
+#: destinations/templates/destinations/_delete.html:20
+#: destinations/templates/oauth2/application_delete.html:7
+#: destinations/templates/oauth2/application_delete.html:20
+#: destinations/templates/oauth2/authorized_token_revoke.html:7
+#: destinations/templates/oauth2/authorized_token_revoke.html:19
+msgid "Cerrar"
+msgstr "Close"
+
+#: destinations/templates/destinations/_delete.html:13
+#, python-format
+msgid ""
+"\n"
+"        ¿Está seguro de elimnar el destino %(object)s?\n"
+"      "
+msgstr ""
+"\n"
+"Are you sure to delete the destination %(object)s?"
+
+#: destinations/templates/destinations/_delete.html:19
+#: destinations/templates/destinations/_list.html:74
+#: destinations/templates/destinations/gallery/_list.html:129
+#: destinations/templates/destinations/tab_data/_form.html:17
+#: destinations/templates/oauth2/application_delete.html:19
+#: destinations/templates/oauth2/application_detail.html:49
+#: destinations/templates/oauth2/authorized_token_revoke.html:18
+msgid "Eliminar"
+msgstr "Remove"
+
+#: destinations/templates/destinations/_form.html:4
+msgid "Agregar Destino"
+msgstr "Add Destination"
+
+#: destinations/templates/destinations/_form.html:31
+msgid "Producto"
+msgstr "Product"
+
+#: destinations/templates/destinations/_form.html:37
+msgid "Tour Data"
+msgstr "Tour Data"
+
+#: destinations/templates/destinations/_form.html:44
+msgid "Header Section"
+msgstr "Header Section"
+
+#: destinations/templates/destinations/_form.html:53
+msgid "Detalles del Producto"
+msgstr "Product Details"
+
+#: destinations/templates/destinations/_form.html:65
+#: destinations/templates/oauth2/application_form.html:16
+msgid "Ingrese los datos solicitados"
+msgstr "Enter the requested data"
+
+#: destinations/templates/destinations/_form.html:88
+msgid "Registre los datos del tour"
+msgstr "Record the tour data"
+
+#: destinations/templates/destinations/_form.html:106
+msgid "Agregar otro tab"
+msgstr "Record the tour data"
+
+#: destinations/templates/destinations/_form.html:114
+msgid "Registre los datos del Header"
+msgstr "Register the Header data"
+
+#: destinations/templates/destinations/_form.html:130
+msgid "Registre los detalles del producto"
+msgstr "Record the product details"
+
+#: destinations/templates/destinations/_form.html:148
+msgid "General"
+msgstr "general"
+
+#: destinations/templates/destinations/_form.html:156
+msgid "Inventario"
+msgstr "Inventory"
+
+#: destinations/templates/destinations/_form.html:164
+msgid "Tour Booking"
+msgstr "Tour Booking"
+
+#: destinations/templates/destinations/_form.html:197
+msgid "Add period"
+msgstr "Add period"
+
+#: destinations/templates/destinations/_form.html:216
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: destinations/templates/destinations/_list.html:4
+msgid "Lista de Destinos"
+msgstr "List of Destinations"
+
+#: destinations/templates/destinations/_list.html:19
+#: destinations/templates/destinations/_list.html:20
+msgid "Nombre del destino"
+msgstr "Name of the destination"
+
+#: destinations/templates/destinations/_list.html:26
+#: destinations/templates/destinations/_list.html:27
+msgid "Precio"
+msgstr "Price"
+
+#: destinations/templates/destinations/_list.html:39
+msgid "Status"
+msgstr "Status"
+
+#: destinations/templates/destinations/_list.html:41
+msgid "Pendiente"
+msgstr "Pending"
+
+#: destinations/templates/destinations/_list.html:42
+msgid "Publicado"
+msgstr "Published"
+
+#: destinations/templates/destinations/_list.html:58
+msgid "Hay existencia"
+msgstr "There is existence"
+
+#: destinations/templates/destinations/_list.html:77
+#: destinations/templates/destinations/gallery/_list.html:5
+#: destinations/templates/destinations/gallery/_list.html:41
+msgid "Galería"
+msgstr "Gallery"
+
+#: destinations/templates/destinations/base.html:8
+msgid ""
+"Travelposting Solutions.\n"
+"    Ingrese sus destinos turísticos a nivel mundial"
+msgstr ""
+"Travelposting Solutions.\n"
+"Enter your tourist destinations worldwide"
+
+#: destinations/templates/destinations/footer.html:8
+msgid ""
+"\n"
+"      &copy; 2018 All Rights Reserved Site Map Disclaimer.\n"
+"    "
+msgstr ""
+"\n"
+"&copy; 2018 - 2020 All Rights Reserved Site Map Disclaimer."
+
+#: destinations/templates/destinations/gallery/_list.html:128
+msgid "Agregar imágenes"
+msgstr "Add images"
+
+#: destinations/templates/destinations/gallery/_list.html:130
+msgid "Escribe un comentario"
+msgstr "Write a comment"
+
+#: destinations/templates/destinations/gallery/_list.html:131
+msgid "Mostrar detalles"
+msgstr "Show details"
+
+#: destinations/templates/destinations/gallery/_list.html:134
+msgid "Si"
+msgstr "Yes"
+
+#: destinations/templates/destinations/gallery/_list.html:135
+msgid "Confirmar acción"
+msgstr "Confirm action"
+
+#: destinations/templates/destinations/gallery/_list.html:136
+msgid "¿Está seguro que desea eliminar este registro?"
+msgstr "Are you sure you want to delete this record?"
+
+#: destinations/templates/destinations/navbar_left.html:16
+msgid "Admin"
+msgstr "Admin"
+
+#: destinations/templates/destinations/navbar_left.html:18
+msgid "Empresa"
+msgstr "Company"
+
+#: destinations/templates/destinations/navbar_left.html:25
+msgid "Información"
+msgstr "information"
+
+#: destinations/templates/destinations/navbar_left.html:26
+msgid "Cambiar contraseña"
+msgstr "Change Password"
+
+#: destinations/templates/destinations/navbar_left.html:27
+#: destinations/templates/destinations/navbar_top.html:112
+msgid "Cerrar sesión"
+msgstr "Sign off"
+
+#: destinations/templates/destinations/navbar_left.html:41
+msgid "Sus destinos"
+msgstr "Your destinations"
+
+#: destinations/templates/destinations/navbar_left.html:42
+msgid "Registrar destino"
+msgstr "Register destination"
+
+#: destinations/templates/destinations/navbar_left.html:48
+msgid "Aplicaciones"
+msgstr "Applications"
+
+#: destinations/templates/destinations/navbar_left.html:52
+msgid "Aplicaciones registradas"
+msgstr "Registered applications"
+
+#: destinations/templates/destinations/navbar_left.html:53
+#: destinations/templates/oauth2/application_list.html:24
+#: destinations/views.py:230
+msgid "Registrar aplicación"
+msgstr "Register application"
+
+#: destinations/templates/destinations/navbar_left.html:54
+msgid "Tokens autorizados"
+msgstr "Authorized tokens"
+
+#: destinations/templates/destinations/navbar_top.html:9
+msgid "Search for something"
+msgstr "Search for something"
+
+#: destinations/templates/destinations/sidebar.html:6
+msgid "OAuth2"
+msgstr "OAuth2"
+
+#: destinations/templates/destinations/sidebar.html:13
+msgid "Applications"
+msgstr "Applications"
+
+#: destinations/templates/destinations/tab_data/_form.html:9
+msgid "Adicional tab"
+msgstr "Additional tab"
+
+#: destinations/templates/oauth2/application_delete.html:13
+#, python-format
+msgid ""
+"\n"
+"        ¿Está seguro de eliminar la aplicación %(application)s?\n"
+"      "
+msgstr ""
+"\n"
+"Are you sure to delete the application %(application)s?"
+
+#: destinations/templates/oauth2/application_detail.html:4
+msgid "Detalles de Aplicación"
+msgstr "Application Details"
+
+#: destinations/templates/oauth2/application_detail.html:19
+msgid "Client Id"
+msgstr "Client Id"
+
+#: destinations/templates/oauth2/application_detail.html:24
+msgid "Client secret"
+msgstr "Client secret"
+
+#: destinations/templates/oauth2/application_detail.html:29
+msgid "Client type"
+msgstr "Client type"
+
+#: destinations/templates/oauth2/application_detail.html:34
+msgid "Tipo de autenticación"
+msgstr "Type of authentication"
+
+#: destinations/templates/oauth2/application_detail.html:45
+msgid "Atrás"
+msgstr "Behind"
+
+#: destinations/templates/oauth2/application_detail.html:47
+msgid "Editar"
+msgstr "Edit"
+
+#: destinations/templates/oauth2/application_form.html:34
+msgid "Guardar"
+msgstr "save"
+
+#: destinations/templates/oauth2/application_list.html:4
+msgid "Aplicaciones Autorizadas"
+msgstr "Authorized Applications"
+
+#: destinations/templates/oauth2/application_list.html:16
+msgid "Tus aplicaciones registradas"
+msgstr "Your registered applications"
+
+#: destinations/templates/oauth2/application_list.html:28
+msgid "Sin aplicaciones registradas"
+msgstr "No registered applications"
+
+#: destinations/templates/oauth2/application_list.html:29
+msgid "Presiona aquí"
+msgstr "Click here"
+
+#: destinations/templates/oauth2/application_list.html:30
+msgid "si quieres registrar una aplicación"
+msgstr "if you want to register an application"
+
+#: destinations/templates/oauth2/authorized_token_list.html:4
+msgid "Tokens Autorizados"
+msgstr "Authorized Tokens"
+
+#: destinations/templates/oauth2/authorized_token_list.html:16
+msgid "Tokens"
+msgstr "Tokens"
+
+#: destinations/templates/oauth2/authorized_token_list.html:23
+msgid "revocar"
+msgstr "revoke"
+
+#: destinations/templates/oauth2/authorized_token_list.html:32
+msgid "No hay ningún token autorizado"
+msgstr "There is no authorized token"
+
+#: destinations/templates/oauth2/authorized_token_revoke.html:8
+#, python-format
+msgid "Token de %(object.application)s"
+msgstr "Token of %(object.application)s"
+
+#: destinations/templates/oauth2/authorized_token_revoke.html:13
+#, python-format
+msgid ""
+"\n"
+"        ¿Está seguro de revocar el acceso del token de %(object.application)s?</p>\n"
+"      "
+msgstr ""
+"\n"
+"Are you sure to revoke access to the token from %(object.application)s?</p>"
+
+#: destinations/views.py:148
+msgid "Agregar destino"
+msgstr "Add destination"
+
+#: destinations/views.py:158
+msgid "Actualizar destino"
+msgstr "Update destination"
+
+#: destinations/views.py:244
+msgid "Actualizar"
+msgstr "To update"

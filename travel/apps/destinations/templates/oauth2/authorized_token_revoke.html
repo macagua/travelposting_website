@@ -1,0 +1,22 @@
+{% load i18n %}
+
+<form method="post"
+      action="{% url 'oauth2-authorized-token-revoke' object.pk %}">{% csrf_token %}
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span
+        aria-hidden="true">×</span><span class="sr-only">{% trans 'Cerrar' %}</span></button>
+    <h4 class="modal-title">{% blocktrans %}Token de {{ object.application }}{% endblocktrans %}</h4>
+    {#    <small class="font-bold">Eliminar este contrato</small>#}
+  </div>
+  <div class="modal-body">
+    <p>
+      {% blocktrans %}
+        ¿Está seguro de revocar el acceso del token de {{ object.application }}?</p>
+      {% endblocktrans %}
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-danger">{% trans 'Eliminar' %}</button>
+    <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'Cerrar' %}
+    </button>
+  </div>
+</form>

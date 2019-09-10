@@ -1,0 +1,20 @@
+<div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      {% for field in form %}
+        {% if not field.is_hidden %}
+          {% ifnotequal field.name 'DELETE' %}
+            <label class="checkbox-inline" for="{{ field.id_for_label }}">
+              {{ field }}
+              {{ field.label }}
+            </label>
+{#            {{ field.errors|safe }}#}
+          {% endifnotequal %}
+        {% else %}
+          {{ field }}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="hr-line-dashed"></div>
+</div>

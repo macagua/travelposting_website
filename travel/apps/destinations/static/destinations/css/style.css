@@ -1,0 +1,11 @@
+.tabs-left .panel-body .form-group {
+    max-height: 2.5em;
+}
+
+.tabs-container .nav-tabs > li > a.danger {
+    color: #ed5565;
+}
+
+.tab-pane > .panel-body .booking {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,10 @@
+<div class="padding center">
+  <ul class="inline bordered">
+    {% for statistic in module.children %}
+    <li>
+      <div class="big">{{ statistic.value }}</div>
+      <div class="dim">{{ statistic.title }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

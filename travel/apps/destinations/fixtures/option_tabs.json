@@ -1,0 +1,35 @@
+[
+{
+    "model": "destinations.optiontabdata",
+    "pk": 1,
+    "fields": {
+        "name": "Itinerario",
+        "description": "Detalles de los itinerarios que posee el destino tur\u00edstico.",
+        "template": "<p><p>[timeline]</p><p>[timeline_item item_number=\"<b>ingrese el n\u00famero</b>\" title=\"<b>ingrese el nombre</b>\"]\r\n\r\n</p><p><b><strong>Ingrese el nombre...<br></strong></b></p><p>&nbsp;&nbsp; <b><strong>Ingrese la descripci\u00f3n</strong></b></p><ul><li>...<br></li>\r\n     <li>...</li>\r\n</ul>\r\n[/timeline_item]</p><p>&nbsp;[/timeline]<p></p></p>",
+        "created_at": "2019-04-30T15:05:58.916Z",
+        "updated_at": "2019-05-03T12:34:20.962Z"
+    }
+},
+{
+    "model": "destinations.optiontabdata",
+    "pk": 2,
+    "fields": {
+        "name": "Mapa",
+        "description": "Mapa del destino, embed de google maps donde se pueda observar el destino mediante google maps.",
+        "template": "",
+        "created_at": "2019-04-30T15:06:21.566Z",
+        "updated_at": "2019-05-03T12:34:35.660Z"
+    }
+},
+{
+    "model": "destinations.optiontabdata",
+    "pk": 3,
+    "fields": {
+        "name": "Reservar",
+        "description": "Formulario para la reservaci\u00f3n del paquete tur\u00edstico.",
+        "template": "<p>[NEXForms id=\"62\"]</p>",
+        "created_at": "2019-04-30T15:06:53.751Z",
+        "updated_at": "2019-04-30T15:06:53.751Z"
+    }
+}
+]

@@ -16,8 +16,8 @@
                 <!-- End White Logo -->
                 <!-- Button -->
                 <div class="ml-auto">
-                    <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'accounts:login' %}" >
-                    {% trans 'Login' %}
+                    <a class="btn btn-sm btn-primary transition-3d-hover" href="/">
+                    {% trans 'Go back' %}
                     </a>
                 </div>
                 <!-- End Button -->
@@ -47,7 +47,7 @@
             <div class="row no-gutters">
                 <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
                     <!-- Form -->
-                    <form class="js-validate mt-5">
+                    <form class="js-validate mt-6">
                         <!-- Title -->
                         <div class="mb-7">
                             <h1 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome to' %} <span class="font-weight-semi-bold">Travelposting</span></h1>
@@ -55,31 +55,14 @@
                         </div>
                         <!-- End Title -->
                         <!-- Form Group -->
+                        {% for field in form %}
                         <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrEmail">Email address</label>
-                            <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="Email address" aria-label="Email address" required
-                                data-msg="Please enter a valid email address."
-                                data-error-class="u-has-error"
-                                data-success-class="u-has-success">
+                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+                            <span class="u-has-error">{{ field.errors }}</span>
+                            <span class="u-has-success">{{ field.help_text }}</span>
                         </div>
-                        <!-- End Form Group -->
-                        <!-- Form Group -->
-                        <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrPassword">Password</label>
-                            <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
-                                data-msg="Your password is invalid. Please try again."
-                                data-error-class="u-has-error"
-                                data-success-class="u-has-success">
-                        </div>
-                        <!-- End Form Group -->
-                        <!-- Form Group -->
-                        <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrConfirmPassword">Confirm password</label>
-                            <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
-                                data-msg="Password does not match the confirm password."
-                                data-error-class="u-has-error"
-                                data-success-class="u-has-success">
-                        </div>
+                        {% endfor %}
                         <!-- End Form Group -->
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
@@ -88,7 +71,7 @@
                                 <a class="small" href="login.html">Login</a>
                             </div>
                             <div class="col-7 col-sm-6 text-right">
-                                <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+                                <button type="submit" class="btn btn-primary transition-3d-hover">{% trans "Signup" %}</button>
                             </div>
                         </div>
                         <!-- End Button -->
@@ -108,7 +91,6 @@
         $(document).on('ready', function () {
           // initialization of slick carousel
           $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-    
           // initialization of form validation
           $.HSCore.components.HSValidation.init('.js-validate', {
             rules: {
