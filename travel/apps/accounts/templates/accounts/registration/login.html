@@ -11,12 +11,12 @@
                 <!-- White Logo -->
                 <img src="{% static 'img/logo-round-0.5x.png' %}" width="30">
                 <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" href="index.html" aria-label="Front">
-                    <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
+                <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
                 </a>
                 <!-- End White Logo -->
                 <!-- Button -->
                 <div class="ml-auto">
-                    <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'login' %}" >
+                    <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
                     {% trans 'Login' %}
                     </a>
                 </div>
@@ -34,19 +34,17 @@
         <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 height-lg-100vh px-0">
             <div class="w-100 p-5">
                 <!-- Testimonials Carousel Main -->
-                <div  class="mb-4">
+                <div class="mb-4">
                     <center>
                         <img src="{% static 'img/logo-round.png'%}" width="300">
                     </center>
                 </div>
-                <!-- End Testimonials Carousel Main -->
-                
                 <!-- Clients -->
                 <div class="position-absolute right-0 bottom-0 left-0 text-center p-5">
-                    <h4 class="h6 text-white-70 mb-3">Front partners</h4>
+                    <h4 class="h6 text-white-70 mb-3">{% trans 'Front partners' %}</h4>
                     <div class="d-flex justify-content-center">
                         <div class="mx-4">
-                            <img class="u-clients" src="{% static 'assets/svg/clients-logo/slack-white.svg'%}" alt="Image Description">
+                            <img class="u-clients" src="{% static 'assets/svg/clients-logo/slack-white.svg' %}" alt="Image Description">
                         </div>
                         <div class="mx-4">
                             <img class="u-clients" src="{% static 'assets/svg/clients-logo/google-white.svg' %}" alt="Image Description">
@@ -66,45 +64,41 @@
                     <form class="js-validate mt-5">
                         <!-- Title -->
                         <div class="mb-7">
-                            <h1 class="h3 text-primary font-weight-normal mb-0">Welcome to <span class="font-weight-semi-bold">Front</span></h1>
-                            <p>Fill out the form to get started.</p>
+                            <h2 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome' %} <span class="font-weight-semi-bold">{% trans 'back' %}</span></h2>
+                            <p>{% trans 'Login to manage your account.' %}</p>
                         </div>
                         <!-- End Title -->
                         <!-- Form Group -->
                         <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrEmail">Email address</label>
-                            <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="Email address" aria-label="Email address" required
-                                data-msg="Please enter a valid email address."
+                            <label class="form-label" for="signinSrEmail">{% trans 'Email address' %}</label>
+                            <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="{% trans 'Email address' %}" aria-label="{% trans 'Email address' %}" required
+                                data-msg="{% trans 'Please enter a valid email address.' %}'"
                                 data-error-class="u-has-error"
                                 data-success-class="u-has-success">
                         </div>
                         <!-- End Form Group -->
                         <!-- Form Group -->
                         <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrPassword">Password</label>
+                            <label class="form-label" for="signinSrPassword">
+                            <span class="d-flex justify-content-between align-items-center">
+                            {% trans 'Password' %}
+                            <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">{% trans 'Forgot Password?' %}</a>
+                            </span>
+                            </label>
                             <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
-                                data-msg="Your password is invalid. Please try again."
-                                data-error-class="u-has-error"
-                                data-success-class="u-has-success">
-                        </div>
-                        <!-- End Form Group -->
-                        <!-- Form Group -->
-                        <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrConfirmPassword">Confirm password</label>
-                            <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
-                                data-msg="Password does not match the confirm password."
+                                data-msg="{% trans 'Your password is invalid. Please try again.'%}'"
                                 data-error-class="u-has-error"
                                 data-success-class="u-has-success">
                         </div>
                         <!-- End Form Group -->
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
-                            <div class="col-5 col-sm-6">
-                                <span class="small text-muted">Already have an account?</span>
-                                <a class="small" href="login.html">Login</a>
+                            <div class="col-6">
+                                <span class="small text-muted">{% trans 'Don\'t have an account?' %}</span>
+                                <a class="small" href="{% url 'accounts:register' %}">{% trans 'Signup' %}</a>
                             </div>
-                            <div class="col-7 col-sm-6 text-right">
-                                <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+                            <div class="col-6 text-right">
+                                <button type="submit" class="btn btn-primary transition-3d-hover">{% trans 'Get Started' %}</button>
                             </div>
                         </div>
                         <!-- End Button -->
@@ -116,23 +110,4 @@
     </div>
     <!-- End Form -->
 </main>
-<!-- ========== END MAIN ========== -->
-{% endblock content %}
-{% block extrajs %}
-  <!-- JS Plugins Init. -->
-  <script>
-        $(document).on('ready', function () {
-          // initialization of slick carousel
-          $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-    
-          // initialization of form validation
-          $.HSCore.components.HSValidation.init('.js-validate', {
-            rules: {
-              confirmPassword: {
-                equalTo: '#signupPassword'
-              }
-            }
-          });
-        });
-      </script>
-{% endblock extrajs %}
+<!-- ========== END MAIN ========== -->{% endblock %}

@@ -30,6 +30,12 @@ from config.settings import local as settings
 
 logger = logging.getLogger(__name__)
 
+
+class LoginView(auth_views.LoginView):
+    template_name = 'accounts/registration/login.html'
+
+
+
 class RegisterView(SubscriptionView, RegistrationView):
     #email_body_template = 'accounts/registration/activation_email_body.html'
     #html_email_template_name = 'accounts/registration/activation_email_body.html'
