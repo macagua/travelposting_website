@@ -1,0 +1,56 @@
+{% load cms_tags %}
+{% for choice in instance.apps.destinations_set.all %}
+  {{choice}}
+{% endfor %}
+<div class="row grid">
+  <div class="col-sm-6 col-md-4 mb-5">
+    <!-- Card Info -->
+    <div class="card border-0 shadow-soft h-100">
+      <img class="card-img-top" src="../../assets/img/480x320/img35.jpg" alt="Image Description">
+      <div class="card-body p-5">
+        <div class="max-width-15 w-100 mb-3">
+          <img class="img-fluid" src="../../assets/svg/clients-logo/amazon-original.svg" alt="Logo">
+        </div>
+        <p class="mb-0">Amazon launched their enterprise platform and built a powerful user experience.</p>
+      </div>
+      <div class="card-footer bg-light border-0 py-4 px-5">
+        <a href="customer-story.html">Read Story <small class="fas fa-arrow-right ml-1"></small></a>
+      </div>
+    </div>
+    <!-- End Card Info -->
+  </div>
+
+  <div class="col-sm-6 col-md-4 mb-5">
+    <!-- Card Info -->
+    <div class="card border-0 shadow-soft h-100">
+      <img class="card-img-top" src="../../assets/img/480x320/img31.jpg" alt="Image Description">
+      <div class="card-body p-5">
+        <div class="max-width-15 w-100 mb-3">
+          <img class="img-fluid" src="../../assets/svg/clients-logo/mapbox-original.svg" alt="Logo">
+        </div>
+        <p class="mb-0">Mapbox empowers marketers to create digital marketing dashboards easily and share them with their team.</p>
+      </div>
+      <div class="card-footer bg-light border-0 py-4 px-5">
+        <a href="customer-story.html">Read Story <small class="fas fa-arrow-right ml-1"></small></a>
+      </div>
+    </div>
+    <!-- End Card Info -->
+  </div>
+
+  <div class="col-sm-6 col-md-4 mb-5">
+    <!-- Card Info -->
+    <div class="card border-0 shadow-soft h-100">
+      <img class="card-img-top" src="../../assets/img/480x320/img32.jpg" alt="Image Description">
+      <div class="card-body p-5">
+        <div class="max-width-15 w-100 mb-3">
+          <img class="img-fluid" src="../../assets/svg/clients-logo/netflix-original.svg" alt="Logo">
+        </div>
+        <p class="mb-0">Netflix's mission is to create a planet run by the sun. In order to achieve this goal, they needed to find a way to make solar simple.</p>
+      </div>
+      <div class="card-footer bg-light border-0 py-4 px-5">
+        <a href="customer-story.html">Read Story <small class="fas fa-arrow-right ml-1"></small></a>
+      </div>
+    </div>
+    <!-- End Card Info -->
+  </div>
+</div>
