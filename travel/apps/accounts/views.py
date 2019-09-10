@@ -72,3 +72,5 @@ class RegisterView(SubscriptionView, RegistrationView):
         html_body = loader.render_to_string('accounts/registration/notify_register_admin_body.html', context)
         mail_managers(subject, 'Nuevo usuario registrado', html_message=html_body)
 
+def isuccess(request):    
+    return render(request, 'accounts/registration/succes_register.html')

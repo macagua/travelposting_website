@@ -14,6 +14,7 @@
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
   {% render_block "css" %}
   <!-- CSS Implementing Plugins -->
+  {% block extracss %}
   <link rel="stylesheet" href="{% static 'assets/vendor/font-awesome/css/fontawesome-all.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/vendor/animate.css/animate.min.css' %}">
@@ -21,8 +22,11 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+  {% endblock %}
 </head>
+{% block body %}
 <body>
+{% endblock body%}
     {% cms_toolbar %}     
     {% block content %}
     {% endblock %}    

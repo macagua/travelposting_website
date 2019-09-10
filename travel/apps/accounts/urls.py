@@ -32,6 +32,8 @@ urlpatterns = [
         logout_then_login,
         name='logout',
     ),
+    path('register/success/', views.isuccess),
+
 
 
 ]
