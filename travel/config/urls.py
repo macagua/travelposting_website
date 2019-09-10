@@ -26,13 +26,13 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(
-        r'^admin/',
-        admin.site.urls,
+        r'^nested_admin/',
+        include('nested_admin.urls'),
     ),
 
     url(
-        r'^nested_admin/',
-        include('nested_admin.urls'),
+        r'^admin/',
+        admin.site.urls,
     ),
 
     url(
@@ -48,6 +48,11 @@ urlpatterns += i18n_patterns(
     url(
         r'^accounts/',
         include("apps.accounts.urls", namespace='accounts'),
+    ),
+
+    path(
+        'api/',
+        include('apps.api.urls', namespace='api'),
     ),
 
     url(
