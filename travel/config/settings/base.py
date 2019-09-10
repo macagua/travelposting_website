@@ -180,6 +180,7 @@ DJANGO_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'nested_admin',
 ]
 
 THIRD_PARTY = [

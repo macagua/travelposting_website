@@ -3,8 +3,18 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdminMixin
 from jet.admin import CompactInline
 
-from .models import OptionTabData, Destination, Photo, TourData, HeaderSection, DestinationDetail, TabData, \
-    GeneralDetail, InventarioDetail, BookingDetail
+from .models import (
+    OptionTabData,
+    Destination,
+    Photo,
+    TourData,
+    HeaderSection,
+    DestinationDetail,
+    TabData,
+    GeneralDetail,
+    InventarioDetail,
+    BookingDetail,
+)
 
 
 class NestedCompactInline(nested_admin.NestedInlineModelAdminMixin, CompactInline):
