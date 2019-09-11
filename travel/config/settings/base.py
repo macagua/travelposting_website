@@ -173,7 +173,6 @@ MIDDLEWARE = [
 DJANGO_APPS = [
     'djangocms_admin_style',
     'modeltranslation',
-    'nested_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -215,6 +214,8 @@ THIRD_PARTY = [
     'djangocms_video',
     'django_summernote',
     'impersonate',
+    'rest_framework',
+    'nested_admin',
 
 ]
 
@@ -312,3 +313,13 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
     }
 }
+
+#PRICES SETTINGS:
+SHORT_DATE_FORMAT = "d/m/y"
+DEFAULT_CURRENCY = 'USD'
+CURRENCIES = ('USD', 'EUR')
+CURRENCY_DECIMAL_PLACES = 4
+CURRENCY_CHOICES = [
+    ('USD', 'USD $'),
+    ('EUR', 'EUR €'),
+]

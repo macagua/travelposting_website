@@ -1,7 +1,6 @@
-from oauth2_provider.views import TokenView
 from rest_framework.routers import DefaultRouter
 
-from tour.api.views import DestinationViewSet
+from apps.api.views import DestinationViewSet
 from django.urls import path, include
 
 
@@ -13,11 +12,5 @@ urlpatterns = [
     path(
         '',
         include(router.urls),
-    ),
-
-    path(
-        'oauth2/token/',
-        TokenView.as_view(),
-        name='token',
     ),
 ]

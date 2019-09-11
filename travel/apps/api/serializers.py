@@ -4,7 +4,7 @@ from drf_writable_nested import WritableNestedModelSerializer
 from html_json_forms.serializers import JSONFormSerializer
 from rest_framework import serializers
 
-from tour.destinations.models import (
+from apps.destinations.models import (
     Destination,
     TourData,
     TabData,

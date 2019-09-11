@@ -6,6 +6,9 @@ from easy_thumbnails.fields import ThumbnailerImageField
 
 from apps.accounts.models import CustomerUser
 from apps.destinations.fields import DaysCommaField
+from cms.models import CMSPlugin
+
+
 
 TEMPLATE_DESCRIPTION = """
 <strong>Ingrese su título aquí...</strong><br><br>
@@ -116,6 +119,7 @@ class Destination(models.Model):
         return f"{self.details.inventario.sku}".upper()
 
     get_sku.short_description = _('SKU')
+
 
 
 class Photo(models.Model):
