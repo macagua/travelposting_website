@@ -1,8 +1,5 @@
-import nested_admin
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdminMixin
-from jet.admin import CompactInline
-
 from .models import (
     OptionTabData,
     Destination,
@@ -16,25 +13,20 @@ from .models import (
     BookingDetail,
 )
 
-
-class NestedCompactInline(nested_admin.NestedInlineModelAdminMixin, CompactInline):
-    pass
-
-
 @admin.register(OptionTabData)
 class OptionTabDataAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
     list_display = ('name', 'description')
     summernote_fields = ('template',)
 
 
-class PhotoInline(NestedCompactInline):
+class PhotoInline(admin.TabularInline):
     model = Photo
     max_num = 12
     min_num = 0
     extra = 1
 
 
-class TabDataInline(SummernoteModelAdminMixin, nested_admin.NestedStackedInline):
+class TabDataInline(SummernoteModelAdminMixin, admin.ModelAdmin):
     summernote_fields = ('content',)
     model = TabData
     max_num = 4
@@ -42,37 +34,37 @@ class TabDataInline(SummernoteModelAdminMixin, nested_admin.NestedStackedInline)
     extra = 0
 
 
-class TourDataInline(nested_admin.NestedStackedInline):
+class TourDataInline(admin.TabularInline):
     model = TourData
     inlines = [TabDataInline]
 
 
-class HeaderSectionInline(nested_admin.NestedTabularInline):
+class HeaderSectionInline(admin.TabularInline):
     model = HeaderSection
 
 
-class GeneralDetailInline(nested_admin.NestedStackedInline):
+class GeneralDetailInline(admin.TabularInline):
     model = GeneralDetail
 
 
-class InventarioDetailInline(nested_admin.NestedStackedInline):
+class InventarioDetailInline(admin.ModelAdmin):
     model = InventarioDetail
 
 
-class BookingDetailInline(nested_admin.NestedStackedInline):
+class BookingDetailInline(admin.ModelAdmin):
     model = BookingDetail
     max_num = 10
     min_num = 0
     extra = 1
 
 
-class DestinationDetailInline(nested_admin.NestedTabularInline):
+class DestinationDetailInline(admin.TabularInline):
     model = DestinationDetail
     inlines = [GeneralDetailInline, InventarioDetailInline, BookingDetailInline]
 
 
 @admin.register(Destination)
-class DestinationAdmin(SummernoteModelAdminMixin, nested_admin.NestedModelAdmin):
+class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
     list_display = ('name', 'get_sku', 'user', 'is_deleted')
     list_filter = (('user', admin.RelatedFieldListFilter), ('is_deleted', admin.BooleanFieldListFilter))
     search_fields = ('user__email', 'user__first_name', 'name', 'description')

@@ -34,6 +34,7 @@
         <!-- CSS Front Template -->
 
         <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+        {% block extracss %} {% endblock extracss %}
     </head>
     <body>
         {% cms_toolbar %}     

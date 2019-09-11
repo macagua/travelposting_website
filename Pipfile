@@ -44,6 +44,10 @@ django-jet = "*"
 paypalrestsdk = "*"
 django-nested-admin = "*"
 django-summernote = "*"
+django-rest-framework = "*"
+django-filter = "*"
+drf-writable-nested = "*"
+html-json-forms = "*"
 
 [requires]
 python_version = "3.7"

@@ -9,8 +9,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from tour.api import serializers
-from tour.destinations.models import Photo
+from apps.api import serializers
+from apps.destinations.models import Photo
 
 
 logger = logging.getLogger(__name__)
