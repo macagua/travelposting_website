@@ -18,6 +18,7 @@
 						<hr>
 
 						<div class="row gallery-items onyx-pagination" items-count="9" items-count-resp="4">
+{% for i in "x"|rjust:"20" %}
 						<!-- Gallery item -->
 						<div class="col-sm-6 col-md-4 mb-5 gallery-item-outer" 
 						    data-filter="2017"
@@ -42,6 +43,7 @@
 						    </div>
 						    <!-- End Card Info -->
 						  </div>
+{% endfor %}
 						<!-- end Gallery item -->
 						</div>
 
