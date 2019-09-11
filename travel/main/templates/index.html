@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block extracss %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.6/venobox.min.css">
+<link rel="stylesheet" href="{% static 'css/destinations.css' %}">
+{% endblock extracss %}
 {% block content %}
     <!-- Hero Section -->
     <div class="gradient-overlay-half-primary-video-v1">
@@ -99,7 +103,7 @@
     <!-- End Hero Section -->
     <!--START SECTION LIST SERVICES-->
     <div class="container space-top-3 space-bottom-md-3 space-bottom-2">
-      {% include "services/destination/all.html"%}
+      {% include "services/destination/test.html"%}
     </div>
     <!--END SECTION LIST SERVICES-->
 
@@ -247,6 +251,12 @@
     <!-- End Subscribe Section -->
 {% endblock content %}
 {% block extrajs %}
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.6/venobox.min.js"></script>
+<script src="{% static 'js/destinations.js' %}"></script>
+
 <script>
 const list = {
   b1: {

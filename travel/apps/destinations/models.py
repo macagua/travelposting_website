@@ -120,11 +120,6 @@ class Destination(models.Model):
 
     get_sku.short_description = _('SKU')
 
-class DestinationsPlugin(CMSPlugin):
-    name = models.ForeignKey('destinations.Destination', on_delete=models.CASCADE,)
-
-    def __unicode__(self):
-      return self.destination.name
 
 
 class Photo(models.Model):

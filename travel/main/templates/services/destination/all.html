@@ -1,17 +1,20 @@
-{% load cms_tags %}
-{% for choice in instance.apps.destinations_set.all %}
-  {{choice}}
-{% endfor %}
+{% load cms_tags staticfiles i18n %}
 <div class="row grid">
-  <div class="col-sm-6 col-md-4 mb-5">
+  <div class="destination col-sm-6 col-md-4 mb-5" 
+    data-popularity=""
+    data-predetermined=""
+    data-averagerate=""
+    data-last =""
+    data-lowtohigh=""
+    data-hightolow=""
+    >
     <!-- Card Info -->
     <div class="card border-0 shadow-soft h-100">
-      <img class="card-img-top" src="../../assets/img/480x320/img35.jpg" alt="Image Description">
+      <img class="card-img-top" src="{% static 'assets/img/1920x1080/img20.jpg' %}" alt="Image Description">
       <div class="card-body p-5">
-        <div class="max-width-15 w-100 mb-3">
-          <img class="img-fluid" src="../../assets/svg/clients-logo/amazon-original.svg" alt="Logo">
-        </div>
-        <p class="mb-0">Amazon launched their enterprise platform and built a powerful user experience.</p>
+        <h4 class="text-primary" class="mb-0">
+          <span class="font-weight-semi-bold">Dervins{{destination.name}}</span>
+        </h4>
       </div>
       <div class="card-footer bg-light border-0 py-4 px-5">
         <a href="customer-story.html">Read Story <small class="fas fa-arrow-right ml-1"></small></a>
@@ -28,10 +31,10 @@
         <div class="max-width-15 w-100 mb-3">
           <img class="img-fluid" src="../../assets/svg/clients-logo/mapbox-original.svg" alt="Logo">
         </div>
-        <p class="mb-0">Mapbox empowers marketers to create digital marketing dashboards easily and share them with their team.</p>
+        <p class="mb-0"></p>
       </div>
       <div class="card-footer bg-light border-0 py-4 px-5">
-        <a href="customer-story.html">Read Story <small class="fas fa-arrow-right ml-1"></small></a>
+        <a href="customer-story.html">{% trans "See more"%} <small class="fas fa-arrow-right ml-1"></small></a>
       </div>
     </div>
     <!-- End Card Info -->
