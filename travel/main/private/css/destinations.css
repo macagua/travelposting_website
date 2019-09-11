@@ -469,3 +469,7 @@ div.gallery-container .onyx-pagination > div > *:before {
     font-style: italic;
     font-size: .825rem;
 }
+
+.destinations {
+    display:none;
+}
