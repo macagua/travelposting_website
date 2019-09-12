@@ -406,7 +406,7 @@ class GeneralDetail(models.Model):
     regular_price = MoneyField(
         _('Precio normal'),
         max_digits=19,
-        decimal_places=4,
+        decimal_places=2,
         default_currency='USD',
         default=Money(0, 'USD'),
     )

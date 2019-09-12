@@ -11,8 +11,7 @@ from django.urls import path
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.static import serve
+from django.conf.urls.static import static
 
 admin.autodiscover()
 
@@ -63,7 +62,4 @@ urlpatterns += i18n_patterns(
 
 # This is only needed when using runserver.
 if settings.DEBUG:
-    urlpatterns = [
-        url(r'^media/(?P<path>.*)$', serve,
-            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ] + staticfiles_urlpatterns() + urlpatterns
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

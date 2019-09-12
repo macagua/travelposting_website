@@ -71,7 +71,7 @@ class DaysCommaField(models.CharField):
             super(DaysCommaField, self).validate(val, model_instance)
 
     def get_prep_value(self, value: list):
-        return f'{self.separator}'.join([str(v) for v in value])
+        return f'{self.separator}'
 
     def formfield(self, **kwargs):
         defaults = {
