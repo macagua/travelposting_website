@@ -1,0 +1,1910 @@
+[
+{
+    "model": "landing_page.plan",
+    "pk": 1,
+    "fields": {
+        "paypal_id": "P-7PG20514B93299724LVFSXNA",
+        "name": "Professional (Ap. 01.10.19)",
+        "name_es": "Professional (Ap. 01.10.19)",
+        "name_en": "Professional (Ap. 01.10.19)",
+        "name_de": "Professional (Ab. 01.10.19)",
+        "active": true,
+        "order": 1,
+        "created_at": "2019-05-24T18:56:00.568Z",
+        "updated_at": "2019-08-24T23:18:10.889Z"
+    }
+},
+{
+    "model": "landing_page.plan",
+    "pk": 2,
+    "fields": {
+        "paypal_id": "P-3NW51080GF250143BLVFSWOY",
+        "name": "Advanced (Ap. 15.09.19)",
+        "name_es": "Advanced (Ap. 15.09.19)",
+        "name_en": "Advanced (Ap. 15.09.19)",
+        "name_de": "Advanced (Ab. 15.09.19)",
+        "active": true,
+        "order": 2,
+        "created_at": "2019-05-24T20:17:17.585Z",
+        "updated_at": "2019-08-24T23:18:40.901Z"
+    }
+},
+{
+    "model": "landing_page.plan",
+    "pk": 3,
+    "fields": {
+        "paypal_id": "P-3J530921WK462794HLVPCLFY",
+        "name": "Starter",
+        "name_es": "Starter",
+        "name_en": "Starter",
+        "name_de": "Starter",
+        "active": true,
+        "order": 3,
+        "created_at": "2019-05-24T20:17:29.774Z",
+        "updated_at": "2019-08-24T23:18:44.718Z"
+    }
+},
+{
+    "model": "landing_page.plan",
+    "pk": 4,
+    "fields": {
+        "paypal_id": "P-22F28756444336034LVFSW7A",
+        "name": "Starter Discount",
+        "name_es": "Starter Discount",
+        "name_en": "Starter Discount",
+        "name_de": "Starter Discount",
+        "active": false,
+        "order": 0,
+        "created_at": "2019-08-03T00:50:36.001Z",
+        "updated_at": "2019-08-24T23:16:49.249Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 1,
+    "fields": {
+        "plan": 1,
+        "feature": 1,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-24T18:56:00.569Z",
+        "updated_at": "2019-05-28T14:36:31.588Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 2,
+    "fields": {
+        "plan": 1,
+        "feature": 2,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-24T18:56:00.570Z",
+        "updated_at": "2019-05-24T18:56:00.570Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 3,
+    "fields": {
+        "plan": 1,
+        "feature": 3,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-24T18:56:00.571Z",
+        "updated_at": "2019-05-24T18:56:00.571Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 4,
+    "fields": {
+        "plan": 1,
+        "feature": 4,
+        "order": 4,
+        "active": true,
+        "created_at": "2019-05-24T18:56:00.740Z",
+        "updated_at": "2019-05-24T18:56:00.740Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 5,
+    "fields": {
+        "plan": 1,
+        "feature": 13,
+        "order": 5,
+        "active": true,
+        "created_at": "2019-05-24T21:04:06.367Z",
+        "updated_at": "2019-05-24T21:04:06.367Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 6,
+    "fields": {
+        "plan": 1,
+        "feature": 18,
+        "order": 6,
+        "active": true,
+        "created_at": "2019-05-24T21:04:06.368Z",
+        "updated_at": "2019-05-24T21:04:06.368Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 7,
+    "fields": {
+        "plan": 1,
+        "feature": 22,
+        "order": 7,
+        "active": true,
+        "created_at": "2019-05-24T21:04:06.369Z",
+        "updated_at": "2019-05-24T21:04:06.370Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 8,
+    "fields": {
+        "plan": 1,
+        "feature": 26,
+        "order": 8,
+        "active": true,
+        "created_at": "2019-05-24T21:04:06.643Z",
+        "updated_at": "2019-05-24T21:04:06.643Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 9,
+    "fields": {
+        "plan": 2,
+        "feature": 31,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T15:15:11.202Z",
+        "updated_at": "2019-05-28T15:15:11.202Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 10,
+    "fields": {
+        "plan": 2,
+        "feature": 11,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-28T15:15:11.225Z",
+        "updated_at": "2019-05-28T15:15:11.225Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 11,
+    "fields": {
+        "plan": 2,
+        "feature": 3,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-28T15:15:11.331Z",
+        "updated_at": "2019-05-28T15:15:11.331Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 12,
+    "fields": {
+        "plan": 2,
+        "feature": 7,
+        "order": 4,
+        "active": true,
+        "created_at": "2019-05-28T15:15:11.332Z",
+        "updated_at": "2019-05-28T15:15:11.332Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 13,
+    "fields": {
+        "plan": 2,
+        "feature": 13,
+        "order": 5,
+        "active": true,
+        "created_at": "2019-05-28T15:15:11.333Z",
+        "updated_at": "2019-05-28T15:15:11.333Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 14,
+    "fields": {
+        "plan": 2,
+        "feature": 22,
+        "order": 6,
+        "active": true,
+        "created_at": "2019-05-28T15:15:11.334Z",
+        "updated_at": "2019-05-28T15:15:11.334Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 15,
+    "fields": {
+        "plan": 2,
+        "feature": 26,
+        "order": 7,
+        "active": true,
+        "created_at": "2019-05-28T15:15:11.335Z",
+        "updated_at": "2019-05-28T15:15:11.336Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 16,
+    "fields": {
+        "plan": 3,
+        "feature": 10,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T15:52:09.676Z",
+        "updated_at": "2019-05-28T15:53:18.076Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 18,
+    "fields": {
+        "plan": 3,
+        "feature": 40,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-28T15:52:09.678Z",
+        "updated_at": "2019-05-28T15:57:27.149Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 19,
+    "fields": {
+        "plan": 3,
+        "feature": 42,
+        "order": 4,
+        "active": false,
+        "created_at": "2019-05-28T15:52:09.679Z",
+        "updated_at": "2019-08-06T10:44:55.613Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 20,
+    "fields": {
+        "plan": 3,
+        "feature": 43,
+        "order": 5,
+        "active": true,
+        "created_at": "2019-05-28T15:52:09.778Z",
+        "updated_at": "2019-08-11T11:37:41.479Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 21,
+    "fields": {
+        "plan": 3,
+        "feature": 22,
+        "order": 7,
+        "active": true,
+        "created_at": "2019-05-28T15:52:09.779Z",
+        "updated_at": "2019-08-11T11:30:18.954Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 22,
+    "fields": {
+        "plan": 3,
+        "feature": 26,
+        "order": 8,
+        "active": true,
+        "created_at": "2019-05-28T15:52:09.781Z",
+        "updated_at": "2019-05-28T15:57:27.155Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 23,
+    "fields": {
+        "plan": 3,
+        "feature": 18,
+        "order": 6,
+        "active": true,
+        "created_at": "2019-05-28T15:57:27.156Z",
+        "updated_at": "2019-05-28T15:57:27.157Z"
+    }
+},
+{
+    "model": "landing_page.planfeature",
+    "pk": 24,
+    "fields": {
+        "plan": 3,
+        "feature": 39,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-28T15:57:27.158Z",
+        "updated_at": "2019-05-28T15:57:27.158Z"
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 1,
+    "fields": {
+        "name": "Ideal for large companies",
+        "name_es": "Ideal para grandes empresas",
+        "name_en": "Ideal for large companies",
+        "name_de": "Ideal f\u00fcr gro\u00dfe Unternehmen",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T18:51:29.456Z",
+        "updated_at": "2019-08-24T22:25:25.652Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 3,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 2,
+    "fields": {
+        "name": "\u20ac 249.99 + tax for 6 months, then \u20ac 349.99 /month.",
+        "name_es": "\u20ac 249.99 + imp. durante 6 meses, despu\u00e9s \u20ac 349,99 /mes.",
+        "name_en": "\u20ac 249.99 + tax for 6 months, then \u20ac 349.99 /month.",
+        "name_de": "249,99 \u20ac + Steuer f\u00fcr 6 Monate, dann 349,99 \u20ac /Monat.",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T18:51:38.219Z",
+        "updated_at": "2019-08-24T22:28:34.767Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 5,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 3,
+    "fields": {
+        "name": "No membership fee",
+        "name_es": "Sin cuota de afiliaci\u00f3n",
+        "name_en": "No membership fee",
+        "name_de": "Kein Mitgliedsbeitrag",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T18:51:49.900Z",
+        "updated_at": "2019-08-24T22:26:05.129Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 4,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 4,
+    "fields": {
+        "name": "Connect with 25,000 companies",
+        "name_es": "Con\u00e9ctate con 25.000 empresas",
+        "name_en": "Connect with 25,000 companies",
+        "name_de": "Mit 25.000 Unternehmen in Kontakt treten",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T18:52:09.285Z",
+        "updated_at": "2019-08-24T22:04:03.896Z",
+        "lft": 1,
+        "rght": 12,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 5,
+    "fields": {
+        "name": "Promote your tourist destinations online in three languages (Spanish / English / German)",
+        "name_es": "Promueve tus destinos tur\u00edsticos online en tres idiomas (Espa\u00f1ol / Ingles / Aleman)",
+        "name_en": "Promote your tourist destinations online in three languages (Spanish / English / German)",
+        "name_de": "Bewerben Sie Ihre Reiseziele online in drei Sprachen (Spanisch / Englisch / Deutsch).",
+        "parent": 4,
+        "validated_plan": 1,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-24T18:52:34.536Z",
+        "updated_at": "2019-08-24T22:05:44.401Z",
+        "lft": 2,
+        "rght": 9,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 6,
+    "fields": {
+        "name": "Search in the tourism sector, national and international",
+        "name_es": "B\u00fasqueda en el sector turismo, nacional e internacional",
+        "name_en": "Search in the tourism sector, national and international",
+        "name_de": "Suche im Tourismusbereich, national und international",
+        "parent": 4,
+        "validated_plan": 1,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-24T18:52:53.177Z",
+        "updated_at": "2019-08-24T22:24:26.094Z",
+        "lft": 10,
+        "rght": 11,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 7,
+    "fields": {
+        "name": "Connect with 5,000 companies",
+        "name_es": "Con\u00e9ctate con 5.000 empresas",
+        "name_en": "Connect with 5,000 companies",
+        "name_de": "Mit 5.000 Unternehmen in Kontakt treten",
+        "parent": 5,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T18:53:12.095Z",
+        "updated_at": "2019-08-24T22:20:19.500Z",
+        "lft": 3,
+        "rght": 8,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 8,
+    "fields": {
+        "name": "Promote your tourist destinations online",
+        "name_es": "Promueve tus destinos tur\u00edsticos online",
+        "name_en": "Promote your tourist destinations online",
+        "name_de": "Bewerben Sie Ihre Reiseziele online.",
+        "parent": 7,
+        "validated_plan": 2,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-24T18:53:26.242Z",
+        "updated_at": "2019-08-24T22:21:38.603Z",
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 1,
+        "level": 3
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 9,
+    "fields": {
+        "name": "Search in the tourism sector, national and international",
+        "name_es": "B\u00fasqueda en el sector turismo, nacional e internacional",
+        "name_en": "Search in the tourism sector, national and international",
+        "name_de": "Suche im Tourismusbereich, national und international",
+        "parent": 7,
+        "validated_plan": 2,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-24T18:53:38.901Z",
+        "updated_at": "2019-08-24T22:22:20.040Z",
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 1,
+        "level": 3
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 10,
+    "fields": {
+        "name": "Ideal for small businesses",
+        "name_es": "Ideal para peque\u00f1as empresas",
+        "name_en": "Ideal for small businesses",
+        "name_de": "Ideal f\u00fcr kleine Unternehmen",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T20:19:14.472Z",
+        "updated_at": "2019-08-24T22:29:16.273Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 6,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 11,
+    "fields": {
+        "name": "\u20ac 49.99 + tax for 6 months, then \u20ac 69.99 /month",
+        "name_es": "\u20ac 49.99 + imp. durante 6 meses, despu\u00e9s \u20ac 69,99 /mes",
+        "name_en": "\u20ac 49.99 + tax for 6 months, then \u20ac 69.99 /month",
+        "name_de": "49,99 \u20ac + Steuer f\u00fcr 6 Monate, dann 69,99 \u20ac /Monat",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T20:19:33.100Z",
+        "updated_at": "2019-08-24T22:30:38.250Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 7,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 12,
+    "fields": {
+        "name": "Annual Membership \u20ac 158,99 + taxes",
+        "name_es": "Afiliaci\u00f3n Anual \u20ac 158,99 + impuestos",
+        "name_en": "Annual Membership \u20ac 158,99 + taxes",
+        "name_de": "Jahresmitgliedschaft \u20ac 158,99 + Steuern",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T20:19:51.851Z",
+        "updated_at": "2019-08-24T22:32:34.520Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 8,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 13,
+    "fields": {
+        "name": "ONLINE ADVERTISING",
+        "name_es": "PUBLICIDAD EN L\u00cdNEA",
+        "name_en": "ONLINE ADVERTISING",
+        "name_de": "ONLINE-WERBUNG",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T20:20:37.671Z",
+        "updated_at": "2019-08-24T22:34:27.137Z",
+        "lft": 1,
+        "rght": 18,
+        "tree_id": 9,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 14,
+    "fields": {
+        "name": "Get three hundred (300) advertising space for your destinations on our website travelposting.com",
+        "name_es": "Obt\u00e9n trescientos (300) espacio publicitarios para tus destinos en nuestra p\u00e1gina web travelposting.com",
+        "name_en": "Get three hundred (300) advertising space for your destinations on our website travelposting.com",
+        "name_de": "Auf unserer Website travelposting.com erhalten Sie dreihundert (300) Werbefl\u00e4chen f\u00fcr Ihre Ziele.",
+        "parent": 13,
+        "validated_plan": 1,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-24T20:21:02.447Z",
+        "updated_at": "2019-08-24T22:41:26.398Z",
+        "lft": 16,
+        "rght": 17,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 15,
+    "fields": {
+        "name": "Three (3) spaces of 90 x 75 mm",
+        "name_es": "Tres (3) espacios de 90 x 75 mm",
+        "name_en": "Three (3) spaces of 90 x 75 mm",
+        "name_de": "Drei (3) Abst\u00e4nde von 90 x 75 mm",
+        "parent": 13,
+        "validated_plan": 1,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-24T20:21:26.540Z",
+        "updated_at": "2019-08-24T22:37:04.955Z",
+        "lft": 10,
+        "rght": 11,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 16,
+    "fields": {
+        "name": "Four (4) spaces of 50 x 297 mm annually in the digital magazine travelposting.net",
+        "name_es": "Cuatro (4) espacios de 50 x 297 mm anual en la revista digital travelposting.net",
+        "name_en": "Four (4) spaces of 50 x 297 mm annually in the digital magazine travelposting.net",
+        "name_de": "Vier (4) Pl\u00e4tze \u00e0 50 x 297 mm j\u00e4hrlich im digitalen Magazin travelposting.net",
+        "parent": 13,
+        "validated_plan": 1,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-24T20:21:45.129Z",
+        "updated_at": "2019-08-24T22:40:23.061Z",
+        "lft": 16,
+        "rght": 17,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 17,
+    "fields": {
+        "name": "You can change your advertising space every month",
+        "name_es": "Puede cambiar su espacio publicitario cada mes",
+        "name_en": "You can change your advertising space every month",
+        "name_de": "Sie k\u00f6nnen Ihre Werbefl\u00e4che jeden Monat \u00e4ndern.",
+        "parent": 13,
+        "validated_plan": 1,
+        "order": 4,
+        "active": true,
+        "created_at": "2019-05-24T20:24:23.650Z",
+        "updated_at": "2019-08-24T22:39:46.592Z",
+        "lft": 16,
+        "rght": 17,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 18,
+    "fields": {
+        "name": "ONLINE + PRINT ADVERTISING",
+        "name_es": "PUBLICIDAD ONLINE + IMPRESA",
+        "name_en": "ONLINE + PRINT ADVERTISING",
+        "name_de": "ONLINE- + PRINTWERBUNG",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T20:24:48.307Z",
+        "updated_at": "2019-08-24T22:44:38.238Z",
+        "lft": 1,
+        "rght": 12,
+        "tree_id": 10,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 19,
+    "fields": {
+        "name": "Five (5) spaces of 90 x 75 mm",
+        "name_es": "Cinco (5) espacios de 90 x 75 mm",
+        "name_en": "Five (5) spaces of 90 x 75 mm",
+        "name_de": "F\u00fcnf (5) Zwischenr\u00e4ume von 90 x 75 mm",
+        "parent": 18,
+        "validated_plan": 1,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-24T20:25:21.501Z",
+        "updated_at": "2019-08-24T22:45:14.698Z",
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 10,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 20,
+    "fields": {
+        "name": "Ten (10) spaces of 50 x 297 mm annually in the digital magazine travelposting.net",
+        "name_es": "Diez (10) espacios de 50 x 297 mm anual en la revista digital travelposting.net",
+        "name_en": "Ten (10) spaces of 50 x 297 mm annually in the digital magazine travelposting.net",
+        "name_de": "Zehn (10) Pl\u00e4tze \u00e0 50 x 297 mm j\u00e4hrlich im digitalen Magazin travelposting.net",
+        "parent": 18,
+        "validated_plan": 1,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-24T20:25:40.147Z",
+        "updated_at": "2019-08-24T22:49:53.850Z",
+        "lft": 10,
+        "rght": 11,
+        "tree_id": 10,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 21,
+    "fields": {
+        "name": "You can change your advertising space every month",
+        "name_es": "Puede cambiar su espacio publicitario cada mes",
+        "name_en": "You can change your advertising space every month",
+        "name_de": "Sie k\u00f6nnen Ihre Werbefl\u00e4che jeden Monat \u00e4ndern.",
+        "parent": 18,
+        "validated_plan": 1,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-24T20:25:55.100Z",
+        "updated_at": "2019-08-24T22:49:11.264Z",
+        "lft": 10,
+        "rght": 11,
+        "tree_id": 10,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 22,
+    "fields": {
+        "name": "SUPPORT",
+        "name_es": "SOPORTE",
+        "name_en": "SUPPORT",
+        "name_de": "SUPPORT",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T20:31:08.093Z",
+        "updated_at": "2019-08-24T22:50:39.007Z",
+        "lft": 1,
+        "rght": 18,
+        "tree_id": 11,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 23,
+    "fields": {
+        "name": "Service via e-mail",
+        "name_es": "Servicio v\u00eda e-mail",
+        "name_en": "Service via e-mail",
+        "name_de": "Service per E-Mail",
+        "parent": 22,
+        "validated_plan": 1,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-24T20:31:31.553Z",
+        "updated_at": "2019-08-24T22:51:46.460Z",
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 24,
+    "fields": {
+        "name": "Skype",
+        "name_es": "Skype",
+        "name_en": "Skype",
+        "name_de": "Skype",
+        "parent": 22,
+        "validated_plan": 1,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-24T20:31:50.632Z",
+        "updated_at": "2019-08-11T11:33:39.240Z",
+        "lft": 14,
+        "rght": 15,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 25,
+    "fields": {
+        "name": "FAQ List",
+        "name_es": "Lista FAQ",
+        "name_en": "FAQ List",
+        "name_de": "FAQ-Liste",
+        "parent": 22,
+        "validated_plan": null,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-24T20:32:12.866Z",
+        "updated_at": "2019-08-24T22:53:35.597Z",
+        "lft": 14,
+        "rght": 15,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 26,
+    "fields": {
+        "name": "PAYMENT",
+        "name_es": "PAGO",
+        "name_en": "PAYMENT",
+        "name_de": "ZAHLUNG",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-24T20:32:30.613Z",
+        "updated_at": "2019-08-24T22:54:53.187Z",
+        "lft": 1,
+        "rght": 20,
+        "tree_id": 12,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 27,
+    "fields": {
+        "name": "Monthly Invoicing",
+        "name_es": "Facturaci\u00f3n mensual",
+        "name_en": "Monthly Invoicing",
+        "name_de": "Monatliche Rechnungsstellung",
+        "parent": 26,
+        "validated_plan": 1,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-24T20:32:57.321Z",
+        "updated_at": "2019-08-24T23:00:13.613Z",
+        "lft": 14,
+        "rght": 15,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 28,
+    "fields": {
+        "name": "Bank Transfer (only in the EU / Outside the EU will have an extra tax surcharge of 29%)",
+        "name_es": "Transferencia Bancaria (solo en la EU / Fuera de EU tendr\u00e1 un sobre valor por impuestos extras del 29%)",
+        "name_en": "Bank Transfer (only in the EU / Outside the EU will have an extra tax surcharge of 29%)",
+        "name_de": "Bank\u00fcberweisung (nur innerhalb der EU / au\u00dferhalb der EU wird ein zus\u00e4tzlicher Steuerzuschlag von 29% erhoben)",
+        "parent": 26,
+        "validated_plan": null,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-24T20:33:14.911Z",
+        "updated_at": "2019-08-24T22:58:15.220Z",
+        "lft": 12,
+        "rght": 13,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 29,
+    "fields": {
+        "name": "Online payments by credit card / Paypal / Payoneer",
+        "name_es": "Pagos Online con tarjeta de cr\u00e9dito / Paypal / Payoneer",
+        "name_en": "Online payments by credit card / Paypal / Payoneer",
+        "name_de": "Online-Zahlungen per Kreditkarte / Paypal / Payphone / Payoneer",
+        "parent": 26,
+        "validated_plan": null,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-24T20:33:32.883Z",
+        "updated_at": "2019-08-24T22:59:25.803Z",
+        "lft": 14,
+        "rght": 15,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 30,
+    "fields": {
+        "name": "30-day money-back guarantee",
+        "name_es": "Garant\u00eda de reembolso 30 d\u00edas",
+        "name_en": "30-day money-back guarantee",
+        "name_de": "30 Tage Geld-zur\u00fcck-Garantie",
+        "parent": 26,
+        "validated_plan": 1,
+        "order": 4,
+        "active": true,
+        "created_at": "2019-05-24T20:33:46.033Z",
+        "updated_at": "2019-08-24T22:58:49.553Z",
+        "lft": 14,
+        "rght": 15,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 31,
+    "fields": {
+        "name": "ideal for medium sized companies",
+        "name_es": "ideal para medianas empresas",
+        "name_en": "ideal for medium sized companies",
+        "name_de": "ideal f\u00fcr mittelst\u00e4ndische Unternehmen",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-28T15:11:29.851Z",
+        "updated_at": "2019-08-24T23:02:02.102Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 13,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 32,
+    "fields": {
+        "name": "Get one hundred (100) advertising spaces for your destinations on our travelposting.com website as well as on our Instagram and Facebook social networks.",
+        "name_es": "Obt\u00e9n cien (100) espacios publicitarios para tus destinos en nuestra p\u00e1gina web travelposting.com as\u00ed como en nuestras redes sociales de Instagram y Facebook.",
+        "name_en": "Get one hundred (100) advertising spaces for your destinations on our travelposting.com website as well as on our Instagram and Facebook social networks.",
+        "name_de": "Holen Sie sich hundert (100) Werbefl\u00e4chen f\u00fcr Ihre Ziele auf unserer Website travelposting.com sowie in unseren sozialen Netzwerken Instagram und Facebook.",
+        "parent": 13,
+        "validated_plan": 2,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T15:21:57.860Z",
+        "updated_at": "2019-08-24T22:35:57.452Z",
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 33,
+    "fields": {
+        "name": "Two (2) spaces of 50 x 297 mm annually in the digital magazine travelposting.net",
+        "name_es": "Dos (2) espacios de 50 x 297 mm anual en la revista digital travelposting.net",
+        "name_en": "Two (2) spaces of 50 x 297 mm annually in the digital magazine travelposting.net",
+        "name_de": "Zwei (2) Pl\u00e4tze von 50 x 297 mm j\u00e4hrlich im digitalen Magazin travelposting.net",
+        "parent": 13,
+        "validated_plan": 2,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-28T15:22:31.402Z",
+        "updated_at": "2019-08-24T22:38:35.448Z",
+        "lft": 12,
+        "rght": 13,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 34,
+    "fields": {
+        "name": "You can change your advertising space every three (3) months",
+        "name_es": "Puede cambiar su espacio publicitario cada tres (3) mes",
+        "name_en": "You can change your advertising space every three (3) months",
+        "name_de": "Sie k\u00f6nnen Ihre Werbefl\u00e4che alle drei (3) Monate \u00e4ndern.",
+        "parent": 13,
+        "validated_plan": 2,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-28T15:23:02.114Z",
+        "updated_at": "2019-08-24T22:43:18.795Z",
+        "lft": 14,
+        "rght": 15,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 35,
+    "fields": {
+        "name": "E-mail service on working days",
+        "name_es": "Servicio v\u00eda e-mail en d\u00edas laborales",
+        "name_en": "E-mail service on working days",
+        "name_de": "Service per E-Mail an Werktagen",
+        "parent": 22,
+        "validated_plan": 2,
+        "order": 3,
+        "active": true,
+        "created_at": "2019-05-28T15:23:55.147Z",
+        "updated_at": "2019-08-24T22:54:24.713Z",
+        "lft": 16,
+        "rght": 17,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 36,
+    "fields": {
+        "name": "Skype",
+        "name_es": "Skype",
+        "name_en": "Skype",
+        "name_de": "Skype",
+        "parent": 22,
+        "validated_plan": 2,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-28T15:24:23.907Z",
+        "updated_at": "2019-08-24T22:52:55.933Z",
+        "lft": 12,
+        "rght": 13,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 37,
+    "fields": {
+        "name": "Quarterly billing",
+        "name_es": "Facturaci\u00f3n trimestral",
+        "name_en": "Quarterly billing",
+        "name_de": "Viertelj\u00e4hrliche Abrechnung",
+        "parent": 26,
+        "validated_plan": 2,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T15:43:01.308Z",
+        "updated_at": "2019-08-24T22:55:39.868Z",
+        "lft": 8,
+        "rght": 9,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 38,
+    "fields": {
+        "name": "30-day money-back guarantee",
+        "name_es": "Garant\u00eda de reembolso 30 d\u00edas",
+        "name_en": "30-day money-back guarantee",
+        "name_de": "30 Tage Geld-zur\u00fcck-Garantie",
+        "parent": 26,
+        "validated_plan": 2,
+        "order": 4,
+        "active": true,
+        "created_at": "2019-05-28T15:44:06.470Z",
+        "updated_at": "2019-08-24T23:00:48.433Z",
+        "lft": 16,
+        "rght": 17,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 39,
+    "fields": {
+        "name": "\u20ac 0 / 6 months free (CUPON discount), then 39.99 \u20ac/month",
+        "name_es": "\u20ac 0 / 6 meses gratis (CUPON de descuento), despu\u00e9s 39,99 \u20ac/mes",
+        "name_en": "\u20ac 0 / 6 months free (CUPON discount), then 39.99 \u20ac/month",
+        "name_de": "0 / 6 Monate kostenlos (CUPON Rabatt), dann 39,99 \u20ac/Monat",
+        "parent": null,
+        "validated_plan": 4,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-28T15:49:12.879Z",
+        "updated_at": "2019-08-24T23:02:36.371Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 14,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 40,
+    "fields": {
+        "name": "Annual Membership \u20ac 189.99 + National taxes 19% and International 29%",
+        "name_es": "Afiliaci\u00f3n Anual \u20ac 189,99 + impuestos Nacionales 19% e Internacionales 29%",
+        "name_en": "Annual Membership \u20ac 189.99 + National taxes 19% and International 29%",
+        "name_de": "J\u00e4hrliche Mitgliedschaft 189,99 \u20ac + Nationale Steuern 19% und internationale Steuern 29%",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-28T15:50:31.707Z",
+        "updated_at": "2019-08-24T23:02:50.026Z",
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 15,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 41,
+    "fields": {
+        "name": "Promotes one hundred (100) tourist destinations annually",
+        "name_es": "Promueve cien (100) destinos tur\u00edsticos anualmente",
+        "name_en": "Promotes one hundred (100) tourist destinations annually",
+        "name_de": "F\u00f6rdert j\u00e4hrlich hundert (100) Reiseziele.",
+        "parent": null,
+        "validated_plan": null,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-05-28T15:51:20.560Z",
+        "updated_at": "2019-08-24T23:03:33.499Z",
+        "lft": 1,
+        "rght": 4,
+        "tree_id": 16,
+        "level": 0
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 42,
+    "fields": {
+        "name": "Search of fifty (50) T&S affiliated agencies in the tourism sector, national and international.",
+        "name_es": "B\u00fasqueda de cincuenta (50) agencias afiliadas a T&S en el sector turismo, nacional e internacional.",
+        "name_en": "Search of fifty (50) T&S affiliated agencies in the tourism sector, national and international.",
+        "name_de": "Suche nach f\u00fcnfzig (50) T&S-Tochteragenturen im Tourismusbereich, national und international.",
+        "parent": 41,
+        "validated_plan": null,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T16:22:17.576Z",
+        "updated_at": "2019-08-24T23:04:31.901Z",
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 16,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 43,
+    "fields": {
+        "name": "Get ten (10) advertising spaces for your destinations on our travelposting.com website as well as on our Instagram and Facebook social networks.",
+        "name_es": "Obt\u00e9n diez (10) espacios publicitarios para tus destinos en nuestra pagina web travelposting.com as\u00ed como tambi\u00e9n en nuestras redes sociales de Instagram y Facebook.",
+        "name_en": "Get ten (10) advertising spaces for your destinations on our travelposting.com website as well as on our Instagram and Facebook social networks.",
+        "name_de": "Holen Sie sich zehn (10) Werbefl\u00e4chen f\u00fcr Ihre Ziele auf unserer Website travelposting.com sowie in unseren sozialen Netzwerken Instagram und Facebook.",
+        "parent": 13,
+        "validated_plan": 3,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T16:28:30.776Z",
+        "updated_at": "2019-08-24T22:36:16.755Z",
+        "lft": 8,
+        "rght": 9,
+        "tree_id": 9,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 44,
+    "fields": {
+        "name": "Get one (1) space of 15 x 10 mm per year on our website travelandsolutions.com",
+        "name_es": "Obt\u00e9n un (1) espacio de 15 x 10 mm anual en nuestra p\u00e1gina web travelandsolutions.com",
+        "name_en": "Get one (1) space of 15 x 10 mm per year on our website travelandsolutions.com",
+        "name_de": "Holen Sie sich einen (1) Platz von 15 x 10 mm pro Jahr auf unserer Website travelandsolutions.com.",
+        "parent": 18,
+        "validated_plan": 3,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T16:31:57.604Z",
+        "updated_at": "2019-08-24T22:45:54.890Z",
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 10,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 45,
+    "fields": {
+        "name": "You can change your advertising space every four (4) months",
+        "name_es": "Puede cambiar su espacio publicitario cada cuatro (4) meses",
+        "name_en": "You can change your advertising space every four (4) months",
+        "name_de": "Sie k\u00f6nnen Ihre Werbefl\u00e4che alle vier (4) Monate \u00e4ndern.",
+        "parent": 18,
+        "validated_plan": 3,
+        "order": 2,
+        "active": true,
+        "created_at": "2019-05-28T16:32:35.072Z",
+        "updated_at": "2019-08-24T22:48:35.234Z",
+        "lft": 8,
+        "rght": 9,
+        "tree_id": 10,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 46,
+    "fields": {
+        "name": "E-mail service on working days",
+        "name_es": "Servicio v\u00eda e-mail en d\u00edas laborales",
+        "name_en": "E-mail service on working days",
+        "name_de": "Service per E-Mail an Werktagen",
+        "parent": 22,
+        "validated_plan": 3,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T16:33:10.931Z",
+        "updated_at": "2019-08-24T22:52:40.999Z",
+        "lft": 8,
+        "rght": 9,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 47,
+    "fields": {
+        "name": "Annual Membership Billing",
+        "name_es": "Facturaci\u00f3n anual de la membres\u00eda",
+        "name_en": "Annual Membership Billing",
+        "name_de": "Jahresmitgliedschaft Abrechnung",
+        "parent": 26,
+        "validated_plan": 3,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-05-28T16:53:07.379Z",
+        "updated_at": "2019-08-24T22:57:18.495Z",
+        "lft": 10,
+        "rght": 11,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 48,
+    "fields": {
+        "name": "Fifteen (15) Day Money Back Guarantee",
+        "name_es": "Garant\u00eda de reembolso de quince (15) d\u00edas",
+        "name_en": "Fifteen (15) Day Money Back Guarantee",
+        "name_de": "F\u00fcnfzehn (15) Tage Geld-zur\u00fcck-Garantie",
+        "parent": 26,
+        "validated_plan": 3,
+        "order": 4,
+        "active": true,
+        "created_at": "2019-05-28T16:54:09.059Z",
+        "updated_at": "2019-08-24T23:01:25.606Z",
+        "lft": 18,
+        "rght": 19,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 49,
+    "fields": {
+        "name": "WhatsApp",
+        "name_es": "WhatsApp",
+        "name_en": "WhatsApp",
+        "name_de": "WhatsApp",
+        "parent": 22,
+        "validated_plan": 1,
+        "order": 1,
+        "active": true,
+        "created_at": "2019-08-11T11:27:53.953Z",
+        "updated_at": "2019-08-24T22:52:44.527Z",
+        "lft": 10,
+        "rght": 11,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 50,
+    "fields": {
+        "name": "Quarterly billing of membership payments",
+        "name_es": "Facturaci\u00f3n trimestral de los pagos de afiliaci\u00f3n",
+        "name_en": "Quarterly billing of membership payments",
+        "name_de": "Viertelj\u00e4hrliche Abrechnung der Mitgliedsbeitr\u00e4ge",
+        "parent": 26,
+        "validated_plan": 3,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-08-11T11:42:04.875Z",
+        "updated_at": "2019-08-11T11:42:40.334Z",
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 12,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.feature",
+    "pk": 51,
+    "fields": {
+        "name": "Live Chat",
+        "name_es": "Live Chat",
+        "name_en": "Live Chat",
+        "name_de": "Live-Chat",
+        "parent": 22,
+        "validated_plan": 1,
+        "order": 0,
+        "active": true,
+        "created_at": "2019-08-11T11:44:32.890Z",
+        "updated_at": "2019-08-24T22:51:01.100Z",
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 11,
+        "level": 1
+    }
+},
+{
+    "model": "landing_page.service",
+    "pk": 1,
+    "fields": {
+        "name": "Destinations",
+        "name_es": "Destinos",
+        "name_en": "Destinations",
+        "name_de": "Reiseziele",
+        "icon": "fa-map-signs",
+        "active": true,
+        "order": 1,
+        "created_at": "2019-05-28T17:18:30.689Z",
+        "updated_at": "2019-08-24T23:16:00.072Z",
+        "description": "Make your destinations known to many more people interested in traveling through our portal Travelposting.com. We bring public to advertising",
+        "description_es": "D\u00e9 a conocer sus destinos a muchas m\u00e1s personas interesadas en viajar a trav\u00e9s de nuestro portal Travelposting.com. Le acercamos publico a publicidad",
+        "description_en": "Make your destinations known to many more people interested in traveling through our portal Travelposting.com. We bring public to advertising",
+        "description_de": "Machen Sie Ihre Reiseziele bekannt \u00fcber unser Portal Travelposting.com Wir bringen ihre Reiseziele \u00fcber unsere Werbung in der \u00d6ffentlichkeit."
+    }
+},
+{
+    "model": "landing_page.service",
+    "pk": 2,
+    "fields": {
+        "name": "Advertising",
+        "name_es": "Publicidad",
+        "name_en": "Advertising",
+        "name_de": "Werbung",
+        "icon": "fa-users",
+        "active": true,
+        "order": 2,
+        "created_at": "2019-05-28T17:19:06.638Z",
+        "updated_at": "2019-08-20T06:03:58.793Z",
+        "description": "Now your advertising can reach more people and potential customers in the future thanks to our digital and face-to-face services.",
+        "description_es": "Ahora su publicidad podr\u00e1 llegar a m\u00e1s personas y posibles clientes en el futuro gracias a nuestros servicios digitales y presenciales.",
+        "description_en": "Now your advertising can reach more people and potential customers in the future thanks to our digital and face-to-face services.",
+        "description_de": "Jetzt kann Ihre Werbung dank unserer digitalen und pers\u00f6nlichen Dienstleistungen in Zukunft mehr Menschen und potenzielle Kunden erreichen."
+    }
+},
+{
+    "model": "landing_page.service",
+    "pk": 3,
+    "fields": {
+        "name": "Online Services",
+        "name_es": "Servicios Online",
+        "name_en": "Online Services",
+        "name_de": "Online-Dienste",
+        "icon": "fa-share-alt",
+        "active": true,
+        "order": 3,
+        "created_at": "2019-05-28T17:19:45.952Z",
+        "updated_at": "2019-08-20T06:03:31.535Z",
+        "description": "With the advice of our experts, you will no longer have excuses for not being present on the web or social networks presenting their destinations.",
+        "description_es": "Con la asesor\u00eda de nuestros expertos, ya no tendr\u00e1 mas excusas para no estar presente en la web o en las redes sociales presentando sus destinos.",
+        "description_en": "With the advice of our experts, you will no longer have excuses for not being present on the web or social networks presenting their destinations.",
+        "description_de": "Mit dem Rat unserer Experten haben Sie keine Ausreden mehr, nicht im Internet pr\u00e4sent zu sein oder soziale Netzwerke, die ihre Ziele pr\u00e4sentieren."
+    }
+},
+{
+    "model": "landing_page.service",
+    "pk": 4,
+    "fields": {
+        "name": "Marketing",
+        "name_es": "Marketing",
+        "name_en": "Marketing",
+        "name_de": "Marketing",
+        "icon": "fa-bullhorn",
+        "active": true,
+        "order": 4,
+        "created_at": "2019-05-28T17:20:47.365Z",
+        "updated_at": "2019-08-20T06:03:04.476Z",
+        "description": "Let us help you create advertising campaigns that help you attract more people to your website or product.",
+        "description_es": "Perm\u00edtanos ayudarle a crear campa\u00f1as publicitarias que le ayuden a atraer m\u00e1s interesados a su p\u00e1gina web o su producto.",
+        "description_en": "Let us help you create advertising campaigns that help you attract more people to your website or product.",
+        "description_de": "Lassen Sie uns Ihnen helfen, Werbekampagnen zu erstellen, die Ihnen helfen, mehr Menschen f\u00fcr Ihre Website oder Ihr Produkt zu gewinnen."
+    }
+},
+{
+    "model": "landing_page.statistic",
+    "pk": 1,
+    "fields": {
+        "name": "Countries around the world",
+        "name_es": "Pa\u00edses alrededor del mundo",
+        "name_en": "Countries around the world",
+        "name_de": "L\u00e4nder auf der ganzen Welt",
+        "icon": "fa-globe",
+        "active": true,
+        "order": 1,
+        "created_at": "2019-05-29T14:34:38.944Z",
+        "updated_at": "2019-08-20T06:09:19.185Z",
+        "value": "180",
+        "value_es": null,
+        "value_en": "180",
+        "value_de": null,
+        "counter": true
+    }
+},
+{
+    "model": "landing_page.statistic",
+    "pk": 2,
+    "fields": {
+        "name": "Monthly Registrations",
+        "name_es": "Registros mensuales",
+        "name_en": "Monthly Registrations",
+        "name_de": "Monatliche Registrierungen",
+        "icon": "fa-user-plus",
+        "active": true,
+        "order": 2,
+        "created_at": "2019-05-29T14:35:01.052Z",
+        "updated_at": "2019-08-20T06:09:58.686Z",
+        "value": "+/-5.000",
+        "value_es": null,
+        "value_en": "+/-5.000",
+        "value_de": null,
+        "counter": true
+    }
+},
+{
+    "model": "landing_page.statistic",
+    "pk": 3,
+    "fields": {
+        "name": "Online Registered Agencies",
+        "name_es": "Agencias registradas online",
+        "name_en": "Online Registered Agencies",
+        "name_de": "Online registrierte Agenturen",
+        "icon": "fa-map-marker",
+        "active": true,
+        "order": 3,
+        "created_at": "2019-05-29T14:35:40.100Z",
+        "updated_at": "2019-08-20T06:10:28.742Z",
+        "value": "102.777",
+        "value_es": null,
+        "value_en": "102.777",
+        "value_de": null,
+        "counter": true
+    }
+},
+{
+    "model": "landing_page.statistic",
+    "pk": 4,
+    "fields": {
+        "name": "Online support according to affiliation",
+        "name_es": "Soporte online seg\u00fan afiliaci\u00f3n",
+        "name_en": "Online support according to affiliation",
+        "name_de": "Online-Support nach Zugeh\u00f6rigkeit",
+        "icon": "fa-envelope",
+        "active": true,
+        "order": 4,
+        "created_at": "2019-05-29T14:36:09.701Z",
+        "updated_at": "2019-08-20T06:11:02.910Z",
+        "value": "24/7",
+        "value_es": null,
+        "value_en": "24/7",
+        "value_de": null,
+        "counter": false
+    }
+},
+{
+    "model": "landing_page.testimony",
+    "pk": 1,
+    "fields": {
+        "author": "Diego Marin",
+        "comment": "Thanks to the possibility of being able to promote my destinations outside Colombia, I have been able to contact more potential allies to work internationally.",
+        "comment_es": "Gracias a la posibilidad de poder promocionar mis destinos fuera de Colombia he podido contactar m\u00e1s aliados potenciales para trabajar a nivel internacional.",
+        "comment_en": "Thanks to the possibility of being able to promote my destinations outside Colombia, I have been able to contact more potential allies to work internationally.",
+        "comment_de": "Dank der M\u00f6glichkeit, meine Ziele au\u00dferhalb Kolumbiens zu bewerben, konnte ich mehr potenzielle Verb\u00fcndete kontaktieren, um international zu arbeiten.",
+        "place": "Huilaruta45 - Colombia",
+        "place_es": "Huilaruta45 - Colombia",
+        "place_en": "Huilaruta45 - Colombia",
+        "place_de": "Huilaruta45 - Kolumbien",
+        "photo": "landing/testimonies/avatar_diego_marin.jpeg",
+        "active": true,
+        "order": 1,
+        "created_at": "2019-05-29T13:36:29.339Z",
+        "updated_at": "2019-08-20T06:13:54.883Z"
+    }
+},
+{
+    "model": "landing_page.testimony",
+    "pk": 2,
+    "fields": {
+        "author": "Hotel Casa Hotel",
+        "comment": "Travel&Solutions has given us the opportunity to show our hotel, the good gastronomy we offer and the service we have.",
+        "comment_es": "Travel&Solutions nos ha brindado la oportunidad de poder mostrar nuestro hotel, la buena gastronom\u00eda qu\u00e9 brindamos y el servicio que tenemos.",
+        "comment_en": "Travel&Solutions has given us the opportunity to show our hotel, the good gastronomy we offer and the service we have.",
+        "comment_de": "Travel&Solutions hat uns die M\u00f6glichkeit gegeben, unser Hotel, die gute Gastronomie, die wir anbieten, und unseren Service zu zeigen.",
+        "place": "Ibague Colombia",
+        "place_es": "Ibague Colombia",
+        "place_en": "Ibague Colombia",
+        "place_de": "Ibague Kolumbien",
+        "photo": "landing/testimonies/Logo-casamorales-footer.png",
+        "active": true,
+        "order": 2,
+        "created_at": "2019-05-29T13:36:59.122Z",
+        "updated_at": "2019-08-20T06:14:54.355Z"
+    }
+},
+{
+    "model": "landing_page.testimony",
+    "pk": 3,
+    "fields": {
+        "author": "An\u00f3nimo",
+        "comment": "We always knew that the more people who visited our beaches, the more customers would visit us and get to know this paradise.",
+        "comment_es": "Siempre supimos que mientras m\u00e1s personas conocieran nuestras playas, mas serian los clientes que nos visitar\u00edan y conocer\u00edan este para\u00edso.",
+        "comment_en": "We always knew that the more people who visited our beaches, the more customers would visit us and get to know this paradise.",
+        "comment_de": "Wir wussten immer, dass je mehr Menschen unsere Str\u00e4nde besuchten, desto mehr Kunden w\u00fcrden uns besuchen und dieses Paradies kennenlernen.",
+        "place": "Playitas, Ecuador",
+        "place_es": "Playitas, Ecuador",
+        "place_en": "Playitas, Ecuador",
+        "place_de": "Playitas, Ecuador",
+        "photo": "landing/testimonies/plants-690579.jpg",
+        "active": true,
+        "order": 3,
+        "created_at": "2019-05-29T13:37:36.244Z",
+        "updated_at": "2019-08-20T06:16:09.822Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 1,
+    "fields": {
+        "title": "Discover the advantages of having everything in one portal",
+        "title_es": "Descubra las ventajas de tener todo en un s\u00f3lo portal",
+        "title_en": "Discover the advantages of having everything in one portal",
+        "title_de": "Entdecken Sie die Vorteile, alles in einem Portal zu haben.",
+        "description": "From his contacts all over the world,\r\nthe creation or improvement of your website, \r\nyour own app, your email service and much more!\r\nAll in one place and at reasonable prices.",
+        "description_es": "Desde sus contactos en todo el mundo,\r\nla creaci\u00f3n o mejora de su p\u00e1gina web, \r\nsu propia app, su servicio de correo electr\u00f3nico y mucho m\u00e1s!\r\nTodo en un solo lugar y a precios razonables.",
+        "description_en": "From his contacts all over the world,\r\nthe creation or improvement of your website, \r\nyour own app, your email service and much more!\r\nAll in one place and at reasonable prices.",
+        "description_de": "Von seinen Kontakten auf der ganzen Welt,\r\ndie Erstellung oder Verbesserung Ihrer Website, \r\nIhre eigene App, Ihren E-Mail-Service und vieles mehr!\r\nAlles an einem Ort und zu vern\u00fcnftigen Preisen.",
+        "image": "landing/slider/mesa-de-trabajo_w.jpg",
+        "active": true,
+        "order": 1,
+        "type": "h",
+        "site": null,
+        "created_at": "2019-05-29T15:29:10.878Z",
+        "updated_at": "2019-08-20T06:05:48.901Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 2,
+    "fields": {
+        "title": "Always advancing towards your success",
+        "title_es": "Siempre avanzando hacia su \u00e9xito",
+        "title_en": "Always advancing towards your success",
+        "title_de": "Stets auf dem Weg zu Ihrem Erfolg",
+        "description": "Our programmers work with dedication\r\nso that this year you can dispose of tools \r\nto ensure a more efficient way of running your business.",
+        "description_es": "Nuestros programadores trabajan con dedicaci\u00f3n\r\npara que este a\u00f1o usted puede disponer de herramientas \r\nque le garanticen una forma m\u00e1s eficiente de manejar su empresa.",
+        "description_en": "Our programmers work with dedication\r\nso that this year you can dispose of tools \r\nto ensure a more efficient way of running your business.",
+        "description_de": "Unsere Programmierer arbeiten mit Engagement.\r\ndamit Sie in diesem Jahr \u00fcber Werkzeuge verf\u00fcgen k\u00f6nnen. \r\num eine effizientere Art der Unternehmensf\u00fchrung zu gew\u00e4hrleisten.",
+        "image": "landing/slider/team-pro.jpg",
+        "active": true,
+        "order": 2,
+        "type": "h",
+        "site": null,
+        "created_at": "2019-05-29T15:30:17.183Z",
+        "updated_at": "2019-08-20T06:07:11.812Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 4,
+    "fields": {
+        "title": "HUILA RUTA 45",
+        "title_es": null,
+        "title_en": "HUILA RUTA 45",
+        "title_de": null,
+        "description": "Agencia de viajes en el Huila",
+        "description_es": null,
+        "description_en": "Agencia de viajes en el Huila",
+        "description_de": null,
+        "image": "landing/slider/cont_ruta45.jpg",
+        "active": true,
+        "order": 2,
+        "type": "c",
+        "site": "https://travelposting.com/tours/descubra-el-huila-con-su-ruta-45/",
+        "created_at": "2019-06-13T13:43:18.060Z",
+        "updated_at": "2019-08-02T14:19:48.677Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 5,
+    "fields": {
+        "title": "Group for culture and tourism in Latin America",
+        "title_es": "Agrupacion para la cultura y el turismo en America latina",
+        "title_en": "Group for culture and tourism in Latin America",
+        "title_de": "Gruppe f\u00fcr Kultur und Tourismus in Lateinamerika",
+        "description": "Descripcion",
+        "description_es": "",
+        "description_en": "Descripcion",
+        "description_de": "",
+        "image": "landing/slider/cont_actual.jpg",
+        "active": true,
+        "order": 4,
+        "type": "c",
+        "site": "https://travelposting.com/tours/2do-congreso-actual/",
+        "created_at": "2019-06-13T15:40:53.641Z",
+        "updated_at": "2019-08-20T06:07:56.655Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 6,
+    "fields": {
+        "title": "Casa Morales",
+        "title_es": null,
+        "title_en": "Casa Morales",
+        "title_de": null,
+        "description": "Descripcion",
+        "description_es": null,
+        "description_en": "Descripcion",
+        "description_de": null,
+        "image": "landing/slider/cont_cmorales.jpg",
+        "active": true,
+        "order": 5,
+        "type": "c",
+        "site": "https://travelposting.com/tours/hotel-casa-morales/",
+        "created_at": "2019-06-13T15:41:43.810Z",
+        "updated_at": "2019-08-02T14:19:48.689Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 7,
+    "fields": {
+        "title": "CTA",
+        "title_es": null,
+        "title_en": "CTA",
+        "title_de": null,
+        "description": "Descripcion",
+        "description_es": null,
+        "description_en": "Descripcion",
+        "description_de": null,
+        "image": "landing/slider/cont_CTA.jpg",
+        "active": true,
+        "order": 1,
+        "type": "c",
+        "site": "https://travelposting.com/tours/cpc_2019/",
+        "created_at": "2019-06-13T15:42:08.684Z",
+        "updated_at": "2019-08-02T14:35:00.048Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 8,
+    "fields": {
+        "title": "FasTours",
+        "title_es": null,
+        "title_en": "FasTours",
+        "title_de": null,
+        "description": "Descripcion panama",
+        "description_es": null,
+        "description_en": "Descripcion panama",
+        "description_de": null,
+        "image": "landing/slider/cont_fastours.jpg",
+        "active": true,
+        "order": 7,
+        "type": "c",
+        "site": null,
+        "created_at": "2019-06-13T15:42:36.521Z",
+        "updated_at": "2019-08-02T14:19:48.693Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 9,
+    "fields": {
+        "title": "Feliu Travel",
+        "title_es": null,
+        "title_en": "Feliu Travel",
+        "title_de": null,
+        "description": "Agencia de viaje",
+        "description_es": null,
+        "description_en": "Agencia de viaje",
+        "description_de": null,
+        "image": "landing/slider/cont_feliu.jpg",
+        "active": true,
+        "order": 8,
+        "type": "c",
+        "site": "https://travelposting.com/tours/india-dubai/",
+        "created_at": "2019-06-13T15:43:15.020Z",
+        "updated_at": "2019-08-02T14:19:48.695Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 10,
+    "fields": {
+        "title": "Guajira Tours",
+        "title_es": null,
+        "title_en": "Guajira Tours",
+        "title_de": null,
+        "description": "Colombia",
+        "description_es": null,
+        "description_en": "Colombia",
+        "description_de": null,
+        "image": "landing/slider/cont_guajira.jpg",
+        "active": true,
+        "order": 9,
+        "type": "c",
+        "site": "https://travelposting.com/tours/tvp-gt-002/",
+        "created_at": "2019-06-13T15:43:40.379Z",
+        "updated_at": "2019-08-02T14:19:48.698Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 11,
+    "fields": {
+        "title": "Esmeralda Plaza",
+        "title_es": null,
+        "title_en": "Esmeralda Plaza",
+        "title_de": null,
+        "description": "Hotel",
+        "description_es": null,
+        "description_en": "Hotel",
+        "description_de": null,
+        "image": "landing/slider/cont_hesmeralda.jpg",
+        "active": true,
+        "order": 10,
+        "type": "c",
+        "site": "https://travelposting.com/tours/hotel-esmeralda-plaza/",
+        "created_at": "2019-06-13T15:44:05.295Z",
+        "updated_at": "2019-08-02T14:19:48.700Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 12,
+    "fields": {
+        "title": "Ibercaribe Tour",
+        "title_es": null,
+        "title_en": "Ibercaribe Tour",
+        "title_de": null,
+        "description": "Descripcion",
+        "description_es": null,
+        "description_en": "Descripcion",
+        "description_de": null,
+        "image": "landing/slider/cont_ibercaribe.jpg",
+        "active": true,
+        "order": 11,
+        "type": "c",
+        "site": null,
+        "created_at": "2019-06-13T15:44:30.841Z",
+        "updated_at": "2019-08-02T14:19:48.702Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 13,
+    "fields": {
+        "title": "Indigo",
+        "title_es": null,
+        "title_en": "Indigo",
+        "title_de": null,
+        "description": "TravelTours",
+        "description_es": null,
+        "description_en": "TravelTours",
+        "description_de": null,
+        "image": "landing/slider/cont_indigo.jpg",
+        "active": true,
+        "order": 12,
+        "type": "c",
+        "site": null,
+        "created_at": "2019-06-13T15:45:00.505Z",
+        "updated_at": "2019-08-02T14:19:48.704Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 14,
+    "fields": {
+        "title": "Indo Routes",
+        "title_es": null,
+        "title_en": "Indo Routes",
+        "title_de": null,
+        "description": "Descripcion",
+        "description_es": null,
+        "description_en": "Descripcion",
+        "description_de": null,
+        "image": "landing/slider/cont_indo.jpg",
+        "active": true,
+        "order": 13,
+        "type": "c",
+        "site": null,
+        "created_at": "2019-06-13T15:45:27.051Z",
+        "updated_at": "2019-08-02T14:19:48.711Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 15,
+    "fields": {
+        "title": "Turismo STV",
+        "title_es": null,
+        "title_en": "Turismo STV",
+        "title_de": null,
+        "description": "Agencia de Viajes",
+        "description_es": null,
+        "description_en": "Agencia de Viajes",
+        "description_de": null,
+        "image": "landing/slider/cont_t-stv_CynUwgz.jpg",
+        "active": true,
+        "order": 14,
+        "type": "c",
+        "site": null,
+        "created_at": "2019-06-13T15:45:53.758Z",
+        "updated_at": "2019-08-02T14:19:48.714Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 16,
+    "fields": {
+        "title": "Viaja y Aprende",
+        "title_es": null,
+        "title_en": "Viaja y Aprende",
+        "title_de": null,
+        "description": "Viaja y aprende, Agencia de Viajes en Panama",
+        "description_es": null,
+        "description_en": "Viaja y aprende, Agencia de Viajes en Panama",
+        "description_de": null,
+        "image": "landing/slider/cont_viaja_y_a.jpg",
+        "active": true,
+        "order": 3,
+        "type": "c",
+        "site": "https://travelposting.com/tours/plan-avistamiento-de-ballenas/",
+        "created_at": "2019-07-11T09:55:45.896Z",
+        "updated_at": "2019-08-02T14:31:52.866Z"
+    }
+},
+{
+    "model": "landing_page.slider",
+    "pk": 18,
+    "fields": {
+        "title": "Latinoamericana",
+        "title_es": null,
+        "title_en": "Latinoamericana",
+        "title_de": null,
+        "description": "Latinoamericana, la forma m\u00e1s efectiva de enviar y recibir dinero en latinoamerica y el mundo.",
+        "description_es": null,
+        "description_en": "Latinoamericana, la forma m\u00e1s efectiva de enviar y recibir dinero en latinoamerica y el mundo.",
+        "description_de": null,
+        "image": "landing/slider/cont_latinoamericana.jpg",
+        "active": true,
+        "order": 6,
+        "type": "c",
+        "site": "http://latinoamericana.info",
+        "created_at": "2019-08-02T14:39:16.828Z",
+        "updated_at": "2019-08-02T14:39:16.828Z"
+    }
+}
+]
