@@ -1,12 +1,10 @@
 from django import template
-from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
 from apps.destinations.models import Destination, Badge
 register = template.Library()
 
 @register.inclusion_tag('services/destination/destinations.html', takes_context=True)
 def destinations_list(context):
-    list_destinations = Destination.objects.all()[:4]
+    list_destinations = Destination.objects.all().order_by('?')[:4]
     return {
         'list': list_destinations,
         'request': context.request,
