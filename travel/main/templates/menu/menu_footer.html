@@ -1,0 +1,6 @@
+{% load i18n menu_tags staticfiles %}
+{% for child in children %}
+<li>
+    <a class="list-group-item list-group-item-action" href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+</li>
+{% endfor%}
