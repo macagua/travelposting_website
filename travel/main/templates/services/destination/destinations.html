@@ -2,8 +2,21 @@
     <div class="overflow-hidden">
             <div class="container space-2 space-md-3">
               <div class="row justify-content-between align-items-center">
+                <div id="about-us" class="col-lg-5 mb-7 mb-lg-0 destinations" style="display:block;">
+                  <div class="pr-md-4">
+                    <!-- Title -->
+                    <div class="mb-7">
+                      <span class="btn btn-xs btn-soft-success btn-pill mb-2">{% trans 'About' %}</span>
+                      <h2 class="text-primary">Travel<span class="font-weight-semi-bold">Posting</span></h2>
+                      <p style="text-align: justify; text-justify: inter-word;">Our potential in its favor is based on the ease we have of capturing new stakeholders for your products thanks to the constant trips we make and the tourism and technology fairs in which we are present, as is the case of the Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin Germany, or the Fitur in Madrid Spain among others.</p>
+                    </div>
+                    <!-- End Title -->
+
+                    <a class="btn btn-sm btn-primary btn-wide transition-3d-hover" href="#">{% trans 'Find out More' %} <span class="fas fa-angle-right ml-2"></span></a>
+                  </div>
+                </div>
                 {% for destination in list%}
-                <div id="destination_{{forloop.counter}}" {%if forloop.counter == 1 %}style="display:block;"{%else%} style="display:none;"{%endif%}class="col-lg-5 mb-7 mb-lg-0 destinations">
+                <div id="destination_{{forloop.counter}}" class="col-lg-5 mb-7 mb-lg-0 destinations">
                   <div class="pr-md-4">
                     <!-- Title -->
                     <div class="mb-7">
@@ -27,7 +40,7 @@
                       <div class="{% img_class forloop.counter %} px-2 mb-3 image_destination" data-target="#destination_{{forloop.counter}}">
                       <!-- Fancybox -->
                       <a class="u-media-viewer" href="javascript:;" data-src="{{ destination.first_pic }}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #01" data-speed="700">
-                        <img class="img-fluid rounded" src="{{ destination.first_pic }}" alt="Image Description">
+                        <img class="img-fluid rounded" src="{{ destination.first_pic }}" alt="{{ destination.name }}">
                         <span class="u-media-viewer__container">
                           <span class="u-media-viewer__icon">
                             <span class="fas fa-plus u-media-viewer__icon-inner"></span>
