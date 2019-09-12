@@ -120,6 +120,16 @@ class Destination(models.Model):
 
     get_sku.short_description = _('SKU')
 
+    @property
+    def first_pic(self):
+        pic = ''
+        try:
+            pic = Photo.objects.filter(destination=self).first()
+            pic = pic.image.url
+        except:
+            pass
+        return pic
+
 
 
 class Photo(models.Model):

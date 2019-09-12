@@ -26,8 +26,8 @@
                    {% for destination in list %}
                       <div class="{% img_class forloop.counter %} px-2 mb-3 image_destination" data-target="#destination_{{forloop.counter}}">
                       <!-- Fancybox -->
-                      <a class="u-media-viewer" href="javascript:;" data-src="{% static 'img/brasil.jpg'%}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #01" data-speed="700">
-                        <img class="img-fluid rounded" src="{% static 'img/brasil.jpg' %}" alt="Image Description">
+                      <a class="u-media-viewer" href="javascript:;" data-src="{{ destination.first_pic }}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #01" data-speed="700">
+                        <img class="img-fluid rounded" src="{{ destination.first_pic }}" alt="Image Description">
                         <span class="u-media-viewer__container">
                           <span class="u-media-viewer__icon">
                             <span class="fas fa-plus u-media-viewer__icon-inner"></span>
