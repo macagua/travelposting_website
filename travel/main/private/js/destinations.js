@@ -431,6 +431,16 @@
 	
 	$(document).ready(function() {
 		Onyx.init();
+		var destinations;
+		var i;
+		$(".image_destination").hover(function(){
+		   destinations= document.getElementsByClassName("destinations");
+		  for (i = 0; i < destinations.length; i++) {
+		    destinations[i].style.display = "none";
+		  }
+  		 $($(this).data("target")).show()
+
+		});
 	});
 
 }(jQuery);

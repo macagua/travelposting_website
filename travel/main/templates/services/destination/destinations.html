@@ -1,0 +1,60 @@
+{%load i18n staticfiles destinations_tags %}
+    <div class="overflow-hidden">
+            <div class="container space-2 space-md-3">
+              <div class="row justify-content-between align-items-center">
+                {% for destination in list%}
+                <div id="destination_{{forloop.counter}}" {%if forloop.counter == 1 %}style="display:block;"{%else%} style="display:none;"{%endif%}class="col-lg-5 mb-7 mb-lg-0 destinations">
+                  <div class="pr-md-4">
+                    <!-- Title -->
+                    <div class="mb-7">
+                      <h4 class="text-primary"><span class="font-weight-semi-bold">{{destination.name}}</span></h4>
+                      <p style="text-align: justify; text-justify: inter-word;">
+                        {{destination.short_description}}
+                      </p>
+                    </div>
+                    <!-- End Title -->
+
+                    <a class="btn btn-sm btn-primary btn-wide transition-3d-hover" href="#">{% trans 'See more' %} <span class="fas fa-angle-right ml-2"></span></a>
+                  </div>
+                </div>
+                {%endfor%}
+
+                <div class="col-lg-6 position-relative">
+
+                  <!-- Image Gallery -->
+                  <div class="row mx-gutters-2">
+                   {% for destination in list %}
+                      <div class="{% img_class forloop.counter %} px-2 mb-3 image_destination" data-target="#destination_{{forloop.counter}}">
+                      <!-- Fancybox -->
+                      <a class="u-media-viewer" href="javascript:;" data-src="{% static 'img/brasil.jpg'%}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #01" data-speed="700">
+                        <img class="img-fluid rounded" src="{% static 'img/brasil.jpg' %}" alt="Image Description">
+                        <span class="u-media-viewer__container">
+                          <span class="u-media-viewer__icon">
+                            <span class="fas fa-plus u-media-viewer__icon-inner"></span>
+                          </span>
+                        </span>
+                      </a>
+                      <!-- End Fancybox -->
+                    </div>
+                   {%endfor%}
+                  </div>
+                  <!-- End Image Gallery -->
+
+                  <!-- SVG Background Shape -->
+                  <div id="SVGbgShapeID1" class="w-100 content-centered-y z-index-n1" style="">
+                    <figure class="ie-soft-triangle-shape">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1109.8 797.1" style="enable-background:new 0 0 1109.8 797.1;" xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#SVGbgShapeID1">
+      <style type="text/css">
+          .soft-triangle-shape-0{fill:#377DFF;}
+      </style>
+      <path class="soft-triangle-shape-0 fill-primary" opacity=".1" d="M105.1,267.1C35.5,331.5-3.5,423,0.3,517.7C6.1,663,111,831.9,588.3,790.8c753-64.7,481.3-358.3,440.4-398.3  c-4-3.9-7.9-7.9-11.7-12L761.9,104.8C639.4-27.6,432.5-35.6,299.9,87L105.1,267.1z"></path>
+      </svg>
+                    </figure>
+                  </div>
+                  <!-- End SVG Background Shape -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+
