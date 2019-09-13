@@ -57,6 +57,7 @@
         <script src="{% static 'assets/vendor/jquery-validate/jquery.validate.min.js' %}"></script>
         <script src="{% static 'assets/vendor/slick-carousel/slick/slick.js' %}"></script>
         <script src="{% static 'assets/vendor/svg-injector/svg-injector.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
         <!-- JS Front -->
         <script src="{% static 'assets/js/hs.core.js' %}"></script>
         <script src="{% static 'assets/js/components/hs.bg-video.js' %}"></script>
@@ -85,7 +86,7 @@
               $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
             });
 
-            $(document).on('ready', function () {
+          
               // initialization of header
               $.HSCore.components.HSHeader.init($('#header'));
 
@@ -112,7 +113,7 @@
 
               // initialization of go to
               $.HSCore.components.HSGoTo.init('.js-go-to');
-            });
+         
         </script>
         {% block extrajs %} {% endblock extrajs %}
     </body>

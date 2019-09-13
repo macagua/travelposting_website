@@ -3,7 +3,6 @@
 {%load destinations_tags%}
 {% block title %}{% trans 'Travelposting' %}{% endblock title %}
 {% block extracss %} 
-<link rel="stylesheet" href="{% static 'assets/vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/destinations.css' %}">
 {% endblock extracss %}
 {% block content %}
@@ -160,31 +159,5 @@
     <!-- End Subscribe Section -->
 {% endblock content %}
 {% block extrajs %}
-<script src="{% static 'assets/js/components/hs.cubeportfolio.js' %}"></script>
-<script src="{% static 'assets/js/components/hs.svg-injector.js' %}"></script>
-<script src="{% static 'assets/js/components/hs.go-to.js' %}"></script>
 <script src="{% static 'js/destinations.js' %}"></script>
-
-<script>
-
-    $(document).on('ready', function () {
-      // initialization of header
-      $.HSCore.components.HSHeader.init($('#header'));
-
-      // initialization of unfold component
-      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-      // initialization of form validation
-      $.HSCore.components.HSValidation.init('.js-validate');
-
-      // initialization of fancybox
-      $.HSCore.components.HSFancyBox.init('.js-fancybox');
-
-      // initialization of cubeportfolio
-      $.HSCore.components.HSCubeportfolio.init('.cbp');
-
-      // initialization of go to
-      $.HSCore.components.HSGoTo.init('.js-go-to');
-    });
-</script>
 {% endblock extrajs %}

@@ -1,5 +1,5 @@
- {%load i18n destination_tags %}
- <!-- Portfolio Section -->
+ {%load i18n destinations_tags staticfiles %}
+ <!-- categories Section -->
     <div class="container space-top-2 space-top-md-3 space-bottom-2">
       <!-- Title -->
       <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-4">
@@ -12,15 +12,15 @@
         <ul id="filterControls" class="list-inline cbp-l-filters-alignRight text-center">
           <li class="list-inline-item cbp-filter-item cbp-filter-item-active u-cubeportfolio__item" data-filter="*">{% trans "All" %}</li>
           <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".branding">{% trans "Adventure" %}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".abstract">{% trans "Walks"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".walks">{% trans "Walks"%}</li>
           <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".graphic">{% trans "Congresses & +"%}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Famtrip"%}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Lodging"%}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Backpackers"%}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Countries"%}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Beaches"%}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Tours"%}</li>
-          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Uncategorized"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".famtrip">{% trans "Famtrip"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".lodging">{% trans "Lodging"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".backpackers">{% trans "Backpackers"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".countries">{% trans "Countries"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".beaches">{% trans "Beaches"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".tours">{% trans "Tours"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".uncategorized">{% trans "Uncategorized"%}</li>
         </ul>
         <!-- End Filter -->
 
@@ -37,19 +37,19 @@
                 {"width": 480, "cols": 2},
                 {"width": 300, "cols": 1}
               ]'>
-          {% for categorie in list %}
-          <!-- Item -->
+
+           <!-- Item -->
           <div class="cbp-item rounded graphic">
-            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+            <a class="cbp-caption" href="#">
               <div class="cbp-caption-defaultWrap">
-                <img src="{{categorie.image}}" alt="{{categorie.shor_description}}">
+                <img src="{% static "img/categories/adventure.jpg"%}" alt="Image Description">
               </div>
               <div class="cbp-caption-activeWrap bg-primary">
                 <div class="cbp-l-caption-alignCenter">
                   <div class="cbp-l-caption-body">
-                    <h4 class="h6 text-white mb-0">{{categorie.name}}</h4>
+                    <h4 class="h6 text-white mb-0">Adventure</h4>
                     <p class="small text-white-70 mb-0">
-                      {{categorie.shor_description}}
+                      esto es aventura
                     </p>
                   </div>
                 </div>
@@ -57,10 +57,150 @@
             </a>
           </div>
           <!-- End Item -->
-          {%endfor%}
+
+          <!-- Item -->
+          <div class="cbp-item rounded branding">
+            <a class="cbp-caption" href="#">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{% static "img/categories/backpackers.jpg"%}" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Backpackers</h4>
+                    <p class="small text-white-70 mb-0">
+                      aqui backpackers
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded abstract">
+            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{% static "img/categories/beaches.jpg"%}" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Beaches</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic illustration">
+            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{% static "img/categories/congress.jpg"%}" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Congresses</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic illustration">
+            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{% static "img/categories/countries.jpg"%}" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Countries</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic illustration">
+            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{% static "img/categories/fam-trip.jpg"%}" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Fam Trip</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic illustration">
+            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{% static "img/categories/lodging.jpg"%}" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Lodging</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item rounded graphic walks">
+            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{% static "img/categories/walks.jpg"%}" alt="Image Description">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">Walks</h4>
+                    <p class="small text-white-70 mb-0">
+                      by Cosmin Capitanu
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+  
         </div>
         <!-- End Content -->
       </div>
       <!-- End Cubeportfolio -->
     </div>
-    <!-- End Portfolio Section -->
+<!-- End Portfolio Section -->

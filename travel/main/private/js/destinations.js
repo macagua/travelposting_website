@@ -3,7 +3,6 @@
 	"use strict";
 
 	$(document).ready(function() {
-		Onyx.init();
 		var destinations;
 		var i;
 		$( ".image_destination" )

@@ -69,8 +69,32 @@ TEMPLATE_DESCRIPTION = """
 </table>
 """
 
+"""
+class Categorie(models.Model):
+    name = models.CharField(
+        _('name'),
+        max_length=50,
+    )
 
+    short_description= models.CharField(
+        _('Short Description'),
+        max_length=50,
+    )
+
+    image =  models.ImageField(
+        _('Image'),
+        upload_to="gallery/categorie/",
+    )
+"""
 class Destination(models.Model):
+    """
+    categorie = models.ForeignKey(
+        Categorie,
+        on_delete=models.CASCADE,
+        verbose_name=_("Categorie"),
+    )
+    """
+
     user = models.ForeignKey(
         CustomerUser,
         on_delete=models.CASCADE,
