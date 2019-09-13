@@ -3,7 +3,7 @@
 {%load destinations_tags%}
 {% block title %}{% trans 'Travelposting' %}{% endblock title %}
 {% block extracss %} 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.6/venobox.min.css">
+<link rel="stylesheet" href="{% static 'assets/vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/destinations.css' %}">
 {% endblock extracss %}
 {% block content %}
@@ -160,32 +160,31 @@
     <!-- End Subscribe Section -->
 {% endblock content %}
 {% block extrajs %}
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.6/venobox.min.js"></script>
+<script src="{% static 'assets/js/components/hs.cubeportfolio.js' %}"></script>
+<script src="{% static 'assets/js/components/hs.svg-injector.js' %}"></script>
+<script src="{% static 'assets/js/components/hs.go-to.js' %}"></script>
 <script src="{% static 'js/destinations.js' %}"></script>
 
 <script>
-const list = {
-  b1: {
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imageURL: 'url(./assets/img/image.jpg)'
-  },
-  b2: {
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imageURL: 'url(./assets/img/image.jpg)'
-  },
-  b3: {
 
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imageURL: 'url(./assets/img/image.jpg)'
-  },
-};
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
 
-const keys = Object.keys(list);
-const randomIndex = keys[Math.floor(Math.random() * keys.length)];
-const item = list[randomIndex];
-console.log(item.author);
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate');
+
+      // initialization of fancybox
+      $.HSCore.components.HSFancyBox.init('.js-fancybox');
+
+      // initialization of cubeportfolio
+      $.HSCore.components.HSCubeportfolio.init('.cbp');
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
 </script>
 {% endblock extrajs %}

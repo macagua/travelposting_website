@@ -1,59 +1,66 @@
-{% load cms_tags staticfiles i18n %}
+ {%load i18n destination_tags %}
+ <!-- Portfolio Section -->
+    <div class="container space-top-2 space-top-md-3 space-bottom-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-4">
+        <h2 class="text-primary">{% trans "Our"%} <span class="font-weight-semi-bold">{% trans "Categories"%}</span></h2>
+      </div>
+      <!-- End Title -->
+      <!-- Cubeportfolio -->
+      <div class="u-cubeportfolio">
+        <!-- Filter -->
+        <ul id="filterControls" class="list-inline cbp-l-filters-alignRight text-center">
+          <li class="list-inline-item cbp-filter-item cbp-filter-item-active u-cubeportfolio__item" data-filter="*">{% trans "All" %}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".branding">{% trans "Adventure" %}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".abstract">{% trans "Walks"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".graphic">{% trans "Congresses & +"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Famtrip"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Lodging"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Backpackers"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Countries"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Beaches"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Tours"%}</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".illustration">{% trans "Uncategorized"%}</li>
+        </ul>
+        <!-- End Filter -->
 
-
-					<div class="gallery-container">
-
-						<!-- Gallery filters -->
-						<div class="filters-container text-center">
-							<select name="" class="year-select">
-								<option data-filter="*" selected="selected">{% trans "Default Order" %}</option>
-								<option data-filter="2017">{% trans "Sort by popularity" %}</option>
-								<option data-filter="2016">{% trans "Sort by average ranking"%}</option>
-								<option data-filter="2015">{% trans "Sort by last"%}</option>
-								<option data-filter="2016">{% trans "Sort by price: Low to High"%}</option>
-								<option data-filter="2015">{% trans "Sort by price: High to Low"%}</option>
-							</select>
-						</div>
-						<!-- /Gallery filters -->
-
-						<hr>
-
-						<div class="row gallery-items onyx-pagination" items-count="9" items-count-resp="4">
-{% for i in "x"|rjust:"20" %}
-						<!-- Gallery item -->
-						<div class="col-sm-6 col-md-4 mb-5 gallery-item-outer" 
-						    data-filter="2017"
-						    data-popularity=""
-						    data-predetermined=""
-						    data-averagerate=""
-						    data-last =""
-						    data-lowtohigh=""
-						    data-hightolow=""
-						    >
-						    <!-- Card Info -->
-						    <div class="card border-0 shadow-soft h-100 gallery-item press">
-						      <img class="card-img-top" src="{% static 'img/blank.gif' %}" data-original="{% static 'assets/img/1920x1080/img20.jpg' %}" alt="Image Description">
-						      <div class="card-body p-5">
-						        <h4 class="text-primary" class="mb-0">
-						          <span class="font-weight-semi-bold">Dervins{{destination.name}}</span>
-						        </h4>
-						      </div>
-						      <div class="card-footer bg-light border-0 py-4 px-5">
-						        <a href="#">{% trans "See more" %} <small class="fas fa-arrow-right ml-1"></small></a>
-						      </div>
-						    </div>
-						    <!-- End Card Info -->
-						  </div>
-{% endfor %}
-						<!-- end Gallery item -->
-						</div>
-
-					</div>
-
-	                <div class="pagination">
-	                    <a href="#" class="active"><i class="fa fa-arrow-back"></i></a>
-	                    <a href="#" class="active">1</a>
-	                    <a href="#">2</a>
-	                    <a href="#">3</a>
-	                    <a href="#"><i class="ion-ios-arrow-forward"></i></a>
-	                </div>
+        <!-- Content -->
+        <div class="cbp"
+              data-controls="#filterControls"
+              data-animation="quicksand"
+              data-x-gap="15"
+              data-y-gap="15"
+              data-media-queries='[
+                {"width": 1500, "cols": 4},
+                {"width": 1100, "cols": 4},
+                {"width": 800, "cols": 3},
+                {"width": 480, "cols": 2},
+                {"width": 300, "cols": 1}
+              ]'>
+          {% for categorie in list %}
+          <!-- Item -->
+          <div class="cbp-item rounded graphic">
+            <a class="cbp-caption" href="../portfolio/single-page-simple.html">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{{categorie.image}}" alt="{{categorie.shor_description}}">
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0">{{categorie.name}}</h4>
+                    <p class="small text-white-70 mb-0">
+                      {{categorie.shor_description}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- End Item -->
+          {%endfor%}
+        </div>
+        <!-- End Content -->
+      </div>
+      <!-- End Cubeportfolio -->
+    </div>
+    <!-- End Portfolio Section -->
