@@ -6,8 +6,6 @@ from easy_thumbnails.fields import ThumbnailerImageField
 
 from apps.accounts.models import CustomerUser
 from apps.destinations.fields import DaysCommaField
-from cms.models import CMSPlugin
-
 
 
 TEMPLATE_DESCRIPTION = """
@@ -69,7 +67,6 @@ TEMPLATE_DESCRIPTION = """
 </table>
 """
 
-"""
 class Categorie(models.Model):
     name = models.CharField(
         _('name'),
@@ -85,15 +82,16 @@ class Categorie(models.Model):
         _('Image'),
         upload_to="gallery/categorie/",
     )
-"""
+
+
 class Destination(models.Model):
-    """
     categorie = models.ForeignKey(
         Categorie,
         on_delete=models.CASCADE,
         verbose_name=_("Categorie"),
+        blank=True,
+        null=True,
     )
-    """
 
     user = models.ForeignKey(
         CustomerUser,

@@ -11,6 +11,7 @@ from .models import (
     GeneralDetail,
     InventarioDetail,
     BookingDetail,
+    Categorie,
 )
 
 @admin.register(OptionTabData)
@@ -75,3 +76,8 @@ class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
     def delete_model(self, request, obj):
         obj.is_deleted = True
         obj.save()
+
+
+@admin.register(Categorie)
+class OptionTabDataAdmin(admin.ModelAdmin):
+    list_display = ('name', 'short_description', 'image')
