@@ -1,7 +1,7 @@
 {%load i18n destinations_tags staticfiles %}
 
 <div class="bg-light">
-    <div class="container space-md-3">
+    <div class="container space-md-1">
       <!-- Title -->
       <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
         <span class="btn btn-xs btn-soft-primary btn-pill mb-2">{% trans 'Testimonials' %}</span>
@@ -22,73 +22,25 @@
            }]">  
       <div class="slick-list " style="padding: 0px;"><div class="slick-track" style="opacity: 1; width: 1520px; transform: translate3d(0px, 0px, 0px);"><div class="js-slide my-4 slick-slide" style="width: 350px;" tabindex="-1" role="tabpanel" id="slick-slide10" aria-describedby="slick-slide-control10" data-slick-index="0" aria-hidden="true">
           <!-- Testimonials -->
+          {% for testimony in list %}
           <div class="u-slick-zoom__slide text-center">
             <div class="card border-0 shadow-sm">
               <div class="card-body p-7">
-                <p class="mb-0">The template is really nice and offers quite a large set of options. It's beautiful and the coding is done quickly and seamlessly. Thank you!</p>
+                <p class="mb-0">{{ testimony.comment }}</p>
               </div>
             </div>
             <div class="position-relative z-index-2 mt-n5 mb-3">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img1.jpg' %}" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="/main/media/{{ testimony.photo }}" alt="Image Description">
               </div>
             </div>
-            <h4 class="h6 mb-0">Maria Muszynska</h4>
-            <p class="small">Google</p>
+            <h4 class="h6 mb-0">{{ testimony.author }}</h4>
+            <p class="small">{{ testimony.place }}</p>
           </div>
           <!-- End Testimonials -->
         </div><div class="js-slide my-4 slick-slide slick-current slick-center" style="width: 350px;" tabindex="0" role="tabpanel" id="slick-slide11" aria-describedby="slick-slide-control11" data-slick-index="1" aria-hidden="true">
-          <!-- Testimonials -->
-          <div class="u-slick-zoom__slide text-center">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-7">
-                <p class="mb-0">The template is really nice and offers quite a large set of options. It's beautiful and the coding is done quickly and seamlessly. Thank you!</p>
-              </div>
-            </div>
-            <div class="position-relative z-index-2 mt-n5 mb-3">
-              <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img2.jpg' %}" alt="Image Description">
-              </div>
-            </div>
-            <h4 class="h6 mb-0">Massalha Shady</h4>
-            <p class="small">Apple</p>
-          </div>
-          <!-- End Testimonials -->
-        </div><div class="js-slide my-4 slick-slide" style="width: 350px;" tabindex="0" role="tabpanel" id="slick-slide12" aria-describedby="slick-slide-control12" data-slick-index="2" aria-hidden="true">
-          <!-- Testimonials -->
-          <div class="u-slick-zoom__slide text-center">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-7">
-                <p class="mb-0">The template is really nice and offers quite a large set of options. It's beautiful and the coding is done quickly and seamlessly. Thank you!</p>
-              </div>
-            </div>
-            <div class="position-relative z-index-2 mt-n5 mb-3">
-              <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img3.jpg' %}" alt="Image Description">
-              </div>
-            </div>
-            <h4 class="h6 mb-0">Mark McManus</h4>
-            <p class="small">Microsoft</p>
-          </div>
-          <!-- End Testimonials -->
-        </div><div class="js-slide my-4 slick-slide" style="width: 350px;" tabindex="0" role="tabpanel" id="slick-slide13" aria-describedby="slick-slide-control13" data-slick-index="3" aria-hidden="true">
-          <!-- Testimonials -->
-          <div class="u-slick-zoom__slide text-center">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-7">
-                <p class="mb-0">The template is really nice and offers quite a large set of options. It's beautiful and the coding is done quickly and seamlessly. Thank you!</p>
-              </div>
-            </div>
-            <div class="position-relative z-index-2 mt-n5 mb-3">
-              <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img4.jpg' %}" alt="Image Description">
-              </div>
-            </div>
-            <h4 class="h6 mb-0">Alex Pottorf</h4>
-            <p class="small">Github</p>
-          </div>
-          <!-- End Testimonials -->
-        </div></div></div><ul class="js-pagination text-center u-slick__pagination mt-7 mb-0" style="" role="tablist"><li class="" role="presentation"><span></span></li><li class="slick-active-right slick-active slick-current" role="presentation"><span></span></li><li role="presentation" class=""><span></span></li><li role="presentation" class=""><span></span></li></ul></div>
+        {% endfor %}
+
       <!-- End Slick Carousel -->
     </div>
   </div>

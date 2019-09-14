@@ -30,7 +30,7 @@ def img_class(did):
 
 @register.inclusion_tag('services/destination/testimonials.html', takes_context=True)
 def testimonials_list(context):
-    list_testimonials = Badge.objects.all()
+    list_testimonials = Testimony.objects.all()
     return {
         'list': list_testimonials,
         'request': context.request,
