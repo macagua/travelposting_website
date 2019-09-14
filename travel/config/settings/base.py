@@ -273,6 +273,7 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ## Customize this
     ('index.html', 'Landing'),
+    ('about.html', 'About us'),
 )
 
 CMS_PERMISSION = True

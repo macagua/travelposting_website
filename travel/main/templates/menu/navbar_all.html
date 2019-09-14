@@ -1,0 +1,33 @@
+{% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
+<header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md"
+data-header-fix-moment="500"
+data-header-fix-effect="slide">
+    <div class="u-header__section">
+        <div id="logoAndNav" class="container">
+            <!-- Nav -->
+            <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                <!-- White Logo -->
+                <img src="{% static 'img/logo@0.5x.png' %}" width="30">
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
+                <span class="u-header__navbar-brand-text" style="color: #1e2022;">{% trans 'Travelposting' %}</span>
+                </a>
+                <!-- End White Logo -->
+                <!-- End On Scroll Logo -->
+                <!-- Responsive Toggle Button -->
+                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="navBar"
+                    data-toggle="collapse"
+                    data-target="#navBar">
+                <span id="hamburgerTrigger" class="u-hamburger__box">
+                <span class="u-hamburger__inner"></span>
+                </span>
+                </button>
+                <!-- End Responsive Toggle Button -->
+                {% show_menu 0 10 10 10 "menu/menu.html" %}
+            </nav>
+            <!-- End Nav -->
+        </div>
+    </div>
+</header>
