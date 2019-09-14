@@ -111,31 +111,19 @@
                 <h2 class="font-weight-normal mb-0">{% trans 'Contact us' %}</h2>
               </div>
 
-              <form class="js-validate" novalidate="novalidate">
                 <!-- Form Group -->
-                <div class="form-group">
-                  <div class="js-form-message">
-                    <input type="text" class="form-control" name="fullname" placeholder="Full name" aria-label="Full name" required="" data-msg="Name must contain only letters." data-error-class="u-has-error" data-success-class="u-has-success">
-                  </div>
-                </div>
+
+                    <i class="fa fa-map-marker-alt"></i> {% placeholder 'contact_ubication' %}<br><br>
+                    <i class="fa fa-phone"></i> {% placeholder 'contact_phone' %}<br><br>
+                    <i class="fab fa-whatsapp"></i> {% placeholder 'contact_whatsapp' %}<br><br>
+                    <i class="fa fa-envelope widget-contact-info__item__icon__email"></i> {% placeholder 'contact_email'%}<br><br>
+                    <i class="fab fa-skype"></i> {% placeholder 'contact_skype' %}
+
+
                 <!-- End Form Group -->
 
-                <!-- Form Group -->
-                <div class="form-group">
-                  <div class="js-form-message">
-                    <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Email" required="" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
-                  </div>
-                </div>
-                <!-- End Form Group -->
 
-                <div class="media align-items-center mt-4">
-                  <button type="submit" class="btn btn-primary btn-wide transition-3d-hover mr-3">Send</button>
-                  <div class="media-body">
-                    <small class="d-block text-muted">or call us</small>
-                    <span class="d-block text-primary font-weight-semi-bold">+1 (062) 109-9222</span>
-                  </div>
                 </div>
-              </form>
             </div>
           </div>
           <!-- End Content -->
