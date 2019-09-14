@@ -1,5 +1,6 @@
 from django import template
 from apps.destinations.models import Destination, Badge
+from apps.landing_page.models import Testimony
 register = template.Library()
 
 @register.inclusion_tag('services/destination/destinations.html', takes_context=True)
@@ -26,3 +27,11 @@ def img_class(did):
         4:"col-5"
     }
     return div[did]
+
+@register.inclusion_tag('services/destination/testimonials.html', takes_context=True)
+def testimonials_list(context):
+    list_testimonials = Badge.objects.all()
+    return {
+        'list': list_testimonials,
+        'request': context.request,
+    }

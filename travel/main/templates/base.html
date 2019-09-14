@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="{% static 'assets/vendor/font-awesome/css/fontawesome-all.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/vendor/animate.css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css' %}">
         <link rel="stylesheet" href="{% static 'assets/vendor/hs-megamenu/src/hs.megamenu.css' %}">
         <link rel="stylesheet" href="{% static 'assets/vendor/fancybox/jquery.fancybox.css' %}">
         <link rel="stylesheet" href="{% static 'assets/vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
@@ -58,6 +59,7 @@
         <script src="{% static 'assets/vendor/slick-carousel/slick/slick.js' %}"></script>
         <script src="{% static 'assets/vendor/svg-injector/svg-injector.min.js' %}"></script>
         <script src="{% static 'assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>
         <!-- JS Front -->
         <script src="{% static 'assets/js/hs.core.js' %}"></script>
         <script src="{% static 'assets/js/components/hs.bg-video.js' %}"></script>
@@ -104,7 +106,7 @@
 
               // initialization of slick carousel
               $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-
+              
               // initialization of cubeportfolio
               $.HSCore.components.HSCubeportfolio.init('.cbp');
 
@@ -113,8 +115,11 @@
 
               // initialization of go to
               $.HSCore.components.HSGoTo.init('.js-go-to');
-         
-        </script>
+
+       
+                      
+              </script>
+
         {% block extrajs %} {% endblock extrajs %}
     </body>
 </html>
