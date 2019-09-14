@@ -1,13 +1,41 @@
-{% load i18n menu_tags staticfiles %}
-    {% for child in children %}
-        <li class="nav-item u-header__nav-item">
-            <a class="nav-link u-header__nav-link" href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+{% load i18n menu_tags cms_tags staticfiles %}
+<!-- Navigation -->
+<div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+    <ul class="navbar-nav u-header__navbar-nav">
+        {% for child in children %}
+        <!-- no child pages  -->
+        {% if child.is_leaf_node %}
+        <li class="nav-item u-header__nav-item"><a class="nav-link u-header__nav-link" href="{{ child.get_absolute_url }}">{{child.get_menu_title }}</a></li>
+        {% endif %}
+        {% if not child.is_leaf_node or child.ancestor %}
 
+        <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+            <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">{{child.get_menu_title }}</a>
+            <!-- Pages - Submenu -->
+            <ul id="pagesSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer animated fadeOut" aria-labelledby="blogMegaMenu" style="min-width: 230px; display: none;">
+                <!-- Account -->
+                {% if child.get_descendants %}
+                {% for kid in child.get_descendants %}
+                <li>
+                    <a class="nav-link u-header__sub-menu-nav-link"  href="{{ kid.get_absolute_url }}" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesAccount">{{kid.get_menu_title }}</a>
+                </li>
+                {% endfor %}
+                {% endif %}
+
+                <!-- End Account -->
+
+            </ul>
+            <!-- End Pages - Submenu -->
         </li>
-    {% endfor %}
-<!-- Button -->
-<li class="nav-item u-header__nav-last-item">
-    <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'accounts:register' %}">
-    {% trans 'Register' %}
-    </a>
-</li>
+        {% endif %}
+        {% endfor %}
+        <!-- Button -->
+        <li class="nav-item u-header__nav-last-item">
+            <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'accounts:register' %}">
+            {% trans 'Register' %}
+            </a>
+        </li>
+        <!-- End Button -->
+    </ul>
+</div>
+<!-- End Navigation -->

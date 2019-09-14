@@ -1,5 +1,5 @@
 {% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
-<header id="header" class="u-header u-header-center-aligned-nav u-header--bg-transparent u-header--white-nav-links-md u-header--sub-menu-dark-bg-md u-header--abs-top"
+<header id="header" class="u-header u-header--bg-transparent u-header--abs-top u-header--white-nav-links-md u-header--show-hide"
     data-header-fix-moment="500"
     data-header-fix-effect="slide">
     <div class="u-header__section">
@@ -8,20 +8,33 @@
             <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
                 <!-- White Logo -->
                 <img src="{% static 'img/logo-round-0.5x.png' %}" width="30">
-                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" href="index.html" aria-label="Front">
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
                 <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
                 </a>
                 <!-- End White Logo -->
-
-                <!-- Navigation -->
-                <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                    <ul class="navbar-nav u-header__navbar-nav">
-                        <!-- Home -->
-                        {% show_menu 0 100 100 100 "menu/menu.html" %}
-                        <!-- End Button -->
-                    </ul>
-                </div>
-                <!-- End Navigation -->
+                <!-- Default Logo -->
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-collapsed" href="index.html" aria-label="Front">
+                <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
+                </a>
+                <!-- End Default Logo -->
+                <!-- On Scroll Logo -->
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-on-scroll" href="index.html" aria-label="Front">
+                <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
+                </a>
+                <!-- End On Scroll Logo -->
+                <!-- Responsive Toggle Button -->
+                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="navBar"
+                    data-toggle="collapse"
+                    data-target="#navBar">
+                <span id="hamburgerTrigger" class="u-hamburger__box">
+                <span class="u-hamburger__inner"></span>
+                </span>
+                </button>
+                <!-- End Responsive Toggle Button -->
+                {% show_menu 0 10 10 10 "menu/menu.html" %}
             </nav>
             <!-- End Nav -->
         </div>
