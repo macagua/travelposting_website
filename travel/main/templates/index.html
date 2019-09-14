@@ -99,6 +99,51 @@
 <!-- start SECTION LIST TESTIMONIAL -->
     {% testimonials_list %}
 <!-- END SECTION LIST TESTIMONIAL-->
+<!-- CONTACT -->
+<div class="bg-img-hero" style="background-image: url({% static 'assets/img/1920x1080/img8.jpg'%});">
+    <div class="container space-2 space-md-3">
+      <div class="row justify-content-end">
+        <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5">
+          <!-- Content -->
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-7">
+              <div class="mb-4">
+                <h2 class="font-weight-normal mb-0">{% trans 'Contact us' %}</h2>
+              </div>
+
+              <form class="js-validate" novalidate="novalidate">
+                <!-- Form Group -->
+                <div class="form-group">
+                  <div class="js-form-message">
+                    <input type="text" class="form-control" name="fullname" placeholder="Full name" aria-label="Full name" required="" data-msg="Name must contain only letters." data-error-class="u-has-error" data-success-class="u-has-success">
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div class="form-group">
+                  <div class="js-form-message">
+                    <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Email" required="" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <div class="media align-items-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-wide transition-3d-hover mr-3">Send</button>
+                  <div class="media-body">
+                    <small class="d-block text-muted">or call us</small>
+                    <span class="d-block text-primary font-weight-semi-bold">+1 (062) 109-9222</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- End Content -->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ENDCONTACT-->
 <!-- Subscribe Section -->
 <div class="container space-2 space-md-3">
     <!-- Title -->
