@@ -275,6 +275,7 @@ CMS_TEMPLATES = (
     ('index.html', 'Landing'),
     ('about.html', 'About us'),
     ('datenschutz.html', 'Datenshutz'),
+    ('tours.html', 'Tour'),
 )
 
 CMS_PERMISSION = True
