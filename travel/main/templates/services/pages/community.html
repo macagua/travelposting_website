@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+
+
+    <div class="container space-1">
+      <div class="row align-items-lg-center">
+        <div class="col-lg-5 mb-9 mb-lg-0">
+          <!-- Info -->
+          <div class="mb-4">
+            <h1 class="h1"><strong class="text-primary">{% trans "Comunity"%}Front marketing</strong></h1>
+            <p>{% trans "Our community is not yet open to the general public, for now it is a project that we will be making known on social networks as of 02.10.19"%}</p>
+          </div>
+          <!-- End Info -->
+        </div>
+
+        <div id="SVGNonStandardHeroShape" class="col-lg-7 svg-preloader">
+          <div class="px-lg-5">
+            <!-- SVG Illustration -->
+            <figure class="ie-non-standard-hero-shape">
+              <img class="js-svg-injector" src="{% static "img/non-standard-hero-shape.svg"%}" alt="Comunity"
+                   data-img-paths='[
+                     {"targetId": "#SVGNonStandardHeroShapeImg1", "newPath": "{% static "img/comunity.jpg"%}"},
+                     {"targetId": "#SVGNonStandardHeroShapeImg2", "newPath": "{% static "img/comunity.jpg"%}"}
+                   ]'
+                   data-parent="#SVGNonStandardHeroShape">
+            </figure>
+            <!-- End SVG Illustration -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero Section -->
+
+    
+  <div class="container space-2 space-md-3">
+     <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <h2 class="h3 font-weight-medium">{% trans "Discover our benefits"%}</h2>
+      </div>
+      <!-- End Title -->
+       <div id="basicsAccordion">
+        <!-- Card -->
+        <div class="card mb-3">
+          <div class="card-header card-collapse" id="basicsHeadingOne">
+            <h5 class="mb-0">
+              <button type="button" class="btn btn-link btn-block d-flex justify-content-between card-btn p-3"
+                      data-toggle="collapse"
+                      data-target="#basicsCollapseOne"
+                      aria-expanded="true"
+                      aria-controls="basicsCollapseOne">
+                {% trans "Welcome to our Travelposting Community."%}
+
+                <span class="card-btn-arrow">
+                  <span class="fas fa-arrow-down small"></span>
+                </span>
+              </button>
+            </h5>
+          </div>
+          <div id="basicsCollapseOne" class="collapse show"
+               aria-labelledby="basicsHeadingOne"
+               data-parent="#basicsAccordion">
+            <div class="card-body">
+             {% trans "The purpose of our Community is to be able to offer you tourist packages at a very good price, since by having a good number of members in our community we can negotiate much better prices so that each of you has the opportunity to enjoy without spending much money" %}
+            </div>
+          </div>
+        </div>
+        <!-- End Card -->
+
+      <!-- Card -->
+      <div class="card mb-3">
+        <div class="card-header card-collapse" id="basicsHeadingTwo">
+          <h5 class="mb-0">
+            <button type="button" class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                    data-toggle="collapse"
+                    data-target="#basicsCollapseTwo"
+                    aria-expanded="false"
+                    aria-controls="basicsCollapseTwo">
+              {% trans "My duties"%}
+
+              <span class="card-btn-arrow">
+                <span class="fas fa-arrow-down small"></span>
+              </span>
+            </button>
+          </h5>
+        </div>
+        <div id="basicsCollapseTwo" class="collapse"
+             aria-labelledby="basicsHeadingTwo"
+             data-parent="#basicsAccordion">
+          <div class="card-body">
+            {% blocktrans %}
+              1 • By being members of the Community we commit ourselves to give our Feedback to the Travel Agencies, Resorts or Companies that offer us to test their services for a very low price.
+
+              2 • Our Feedback can no longer be already, all good or NOT no no, all bad, you must commit to give feedback (real recommendation) from your point of view to the Hotels or any company of the tourism sector that invites us.
+
+              3 • You must link and comment on the Hotel, Resort or company that invites us to your social networks at least two, (Example Instagram or facebook, or Instagram and Travelposting), to publicize the company that invites us
+
+              4 • You must fill in your Feedback / Recommendation form at the end of the trip, or maximum seven days after the end of the trip.
+            {% endblocktrans %}
+
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+
+      <!-- Card -->
+      <div class="card mb-3">
+        <div class="card-header card-collapse" id="basicsHeadingThree">
+          <h5 class="mb-0">
+            <button type="button" class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                    data-toggle="collapse"
+                    data-target="#basicsCollapseThree"
+                    aria-expanded="false"
+                    aria-controls="basicsCollapseThree">
+              {% trans "My benefits"%}
+
+              <span class="card-btn-arrow">
+                <span class="fas fa-arrow-down small"></span>
+              </span>
+            </button>
+          </h5>
+        </div>
+        <div id="basicsCollapseThree" class="collapse"
+             aria-labelledby="basicsHeadingThree"
+             data-parent="#basicsAccordion">
+          <div class="card-body">
+           {% blocktrans %}
+            1 • Travel with discounts of 20% up to 50% discount on the tourist package of your choice
+
+            2 • Be able to invite your friends to register on the travelposting page and can travel with you and also save up to 50%
+
+            3 • Participate free in all draws that travelposting makes in reference to the tourism sector
+
+            4 • Receive free trial products that companies in the tourism sector make available to the community
+
+            5 • Be able to go out in advertising magazines that travelposting airs
+
+            6 • Attend events that travelposting concerning organized tourism
+
+            7 • Get discounts on purchases made with the Travelposting Card *
+
+            * The prepaid credit card will be being released after completing the minimum amount of 1500 members.
+
+            It is your chance to help us grow, the longer we are, the faster we can get our credit card.
+
+            From now we wish you much enjoyment in your travels with us and to prepare bags that your next destination is waiting for you.
+          {% endblocktrans %}
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+    </div>
+  </div>
+
+    <!-- Icon Blocks Section -->
+    <div class="container space-2 space-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <h1 class="h3 font-weight-medium">{% trans "WHY CHOOSE US?" %}</h1>
+      </div>
+      <!-- End Title -->
+
+      <div class="row justify-content-lg-center">
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pr-lg-5">
+            <figure id="icon9" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon9">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Various destinations" %}</h3>
+              <p class="mb-1">{% trans "Discover new destinations that will seduce you and you want to return to them." %}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Value for money"%}</h3>
+              <p class="mb-1">{% trans "Take advantage of the offers that we will be offering you for your trips."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Beautiful places"%}</h3>
+              <p class="mb-1">{% trans "Travel and know beautiful places taken out of a fairy tale."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Quick bookings"%}</h3>
+              <p class="mb-1">{% trans "Make your reservation directly and without intermediaries that cost your trip."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Support team"%}</h3>
+              <p class="mb-1">{% trans "Enjoy your trip 100% without worrying about anything."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Keep in touch"%}</h3>
+              <p class="mb-1">{% trans "Enjoy the support provided by our affiliates during your trip."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+      </div>
+    </div>
+    <!-- End Icon Blocks Section -->
+
+
+    <!-- Icon Blocks Section -->
+    <div class="container space-2 space-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <h1 class="h3 font-weight-medium">{% trans "WHAT CAN YOU WIN BY REGISTERING IN OUR COMMUNITY?" %}</h1>
+      </div>
+      <!-- End Title -->
+
+      <div class="row justify-content-lg-center">
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pr-lg-5">
+            <figure id="icon9" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon9">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Savings on your trips" %}</h3>
+              <p class="mb-1">{% trans "Save while traveling and enjoying with your family or on your business trip." %}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Birthday raffles."%}</h3>
+              <p class="mb-1">{% trans "Do not worry if others do not greet you, we will remember you."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Tailor-made discounts"%}</h3>
+              <p class="mb-1">{% trans "Enjoy offers from our Travelposting affiliated companies."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Win travel packages"%}</h3>
+              <p class="mb-1">{% trans "There is always a destination we would like to offer and nothing better than earning it."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Participate in raffles"%}</h3>
+              <p class="mb-1">{% trans "We want many to be the winners and few remain at home."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-7">
+          <!-- Icon Blocks -->
+          <div class="media pl-lg-5">
+            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+                   data-parent="#icon3">
+            </figure>
+            <div class="media-body">
+              <h3 class="h5">{% trans "Preparing something else"%}</h3>
+              <p class="mb-1">{% trans "With many benefits, such as the Travelposting card, which will give you discounts."%}</p>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+      </div>
+    </div>
+    <!-- End Icon Blocks Section -->
+ 
+     <div class="container space-2 space-md-3">
+     <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <h2 class="h3 font-weight-medium">{% trans "Sign up for Travelposting and enjoy its benefits"%}</h2>
+      </div>
+    </div>
+
