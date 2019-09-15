@@ -1,28 +1,5 @@
 @charset "UTF-8";
 
-
-
-/************************************************************
-
-    Common elements
-
-*************************************************************/
-
-
-/* Forms elements
-*************************************/
-select.year-select {
-    border: 1px solid #b6b6b6;
-    padding: .35rem 1rem .25rem .5rem;
-    border-radius: 4px;
-    text-transform: uppercase;
-    vertical-align: middle;
-    color: #777;
-    font-size: .825rem;
-    margin-bottom: .35rem;
-}
-
-
 /* Filters
 *************************************/
 .no-results {
@@ -472,4 +449,23 @@ div.gallery-container .onyx-pagination > div > *:before {
 
 .destinations {
     display:none;
+}
+
+
+.cbp-l-caption-alignCenter .cbp-l-caption-body {
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    padding: 15px 0;
+}
+.cbp-l-caption-alignLeft .cbp-l-caption-body {
+    float: left;
+}
+
+.cbp-l-caption-alignRight .cbp-l-caption-body {
+    float: right;
+}
+
+.cbp-l-caption-alignRight .cbp-l-caption-body {
+    padding: 12px 30px;
 }

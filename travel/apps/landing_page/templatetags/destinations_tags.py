@@ -1,5 +1,5 @@
 from django import template
-from apps.destinations.models import Destination, Badge
+from apps.destinations.models import Destination, Categorie
 from apps.landing_page.models import Testimony
 register = template.Library()
 
@@ -13,7 +13,7 @@ def destinations_list(context):
 
 @register.inclusion_tag('services/destination/categories.html', takes_context=True)
 def categories_list(context):
-    list_categories = Badge.objects.all()
+    list_categories = Categorie.objects.filter(status=True)
     return {
         'list': list_categories,
         'request': context.request,
@@ -35,3 +35,7 @@ def testimonials_list(context):
         'list': list_testimonials,
         'request': context.request,
     }
+
+@register.simple_tag()
+def found_categorie(alias):
+    return Destination.count_categorie(alias)

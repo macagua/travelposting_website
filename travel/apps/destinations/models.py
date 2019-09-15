@@ -73,6 +73,13 @@ class Categorie(models.Model):
         max_length=50,
     )
 
+    alias = models.CharField(
+        _('Alias'),
+        null=True,
+        blank=True,
+        max_length=20,
+    )
+    
     short_description= models.CharField(
         _('Short Description'),
         max_length=50,
@@ -83,6 +90,10 @@ class Categorie(models.Model):
         upload_to="gallery/categorie/",
     )
 
+    status = models.BooleanField(
+     _('Status'),
+    default=True
+    )
 
 class Destination(models.Model):
     categorie = models.ForeignKey(
@@ -151,6 +162,10 @@ class Destination(models.Model):
         except:
             pass
         return pic
+    
+    @staticmethod
+    def count_categorie(alias):
+        return Destination.objects.filter(categorie__alias=alias).count()
 
 
 
