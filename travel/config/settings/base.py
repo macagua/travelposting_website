@@ -274,6 +274,7 @@ CMS_TEMPLATES = (
     ## Customize this
     ('index.html', 'Landing'),
     ('about.html', 'About us'),
+    ('datenschutz.html', 'Datenshutz'),
 )
 
 CMS_PERMISSION = True
