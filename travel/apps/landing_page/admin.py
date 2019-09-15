@@ -12,7 +12,8 @@ from apps.landing_page.models import (
     Slider,
     PlanFeature,
     PriceType,
-    Price
+    Price,
+    Magazine
 )
 
 BASE_LIST = ('order', 'active')
@@ -93,3 +94,10 @@ class PriceAdmin(admin.ModelAdmin):
     search_fields = ['type']
 
 admin.site.register(Price, PriceAdmin)
+
+class MagazineAdmin(admin.ModelAdmin):
+    list_display = ('name', 'editor', 'files', 'status', 'order',)
+    list_display_links = ('name',  'files', 'order',)
+    list_filter = ('name','editor',)
+    search_fields = ['name', 'editor', 'status']
+admin.site.register(Magazine, MagazineAdmin)

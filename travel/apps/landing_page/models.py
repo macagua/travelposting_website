@@ -9,6 +9,7 @@ from mptt.fields import TreeForeignKey
 from mptt.managers import TreeManager
 from mptt.models import MPTTModel
 from mptt.querysets import TreeQuerySet
+from filer.fields.image import FilerImageField
 
 
 '''This models is for the price type'''
@@ -363,3 +364,24 @@ class Slider(models.Model):
         ordering = ('order', 'created_at')
         verbose_name_plural = _("sliders")
         verbose_name = _("slider")
+
+
+
+class Magazine(models.Model):
+    name = models.CharField(_('Name'), max_length=50)
+    editor = models.CharField(_('Editor'), max_length=50)
+    files = FilerImageField(null=True, blank=True, on_delete=False)
+    status = models.BooleanField(_('is active?'), default=True)
+    order = models.PositiveSmallIntegerField(
+        _('order'),
+        default=1,
+    )
+
+
+    class Meta:
+        ordering = ('name','order',)
+        verbose_name = _('Megazine')
+        verbose_name_plural = _('Megazines')
+
+    def __str__(self):
+        return f"{self.name}"
