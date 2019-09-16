@@ -3,7 +3,6 @@
 <html class="has-fixed-top" lang="es">
     <head>
         <meta charset="UTF-8" />
-
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="{% static "manifest.json" %}">
         {% block feed %}
@@ -38,18 +37,15 @@
     <body>
         {% cms_toolbar %}     
         {% block navbar %}
-          {% include 'menu/navbar.html' %}
+        {% include 'menu/navbar.html' %}
         {% endblock navbar %}
         <main id="content" role="main">
-          {% block content %}{% endblock content %}
-          <a class="js-go-to u-go-to animated js-animation-was-fired slideInUp" href="#" data-position="{&quot;bottom&quot;: 15, &quot;right&quot;: 15 }" data-type="fixed" data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown" style="display: inline-block; position: fixed; bottom: 15px; right: 15px;">
-              <span class="fas fa-arrow-up u-go-to__inner"></span>
-          </a>
+            {% block content %}{% endblock content %}
+            <a class="js-go-to u-go-to animated js-animation-was-fired slideInUp" href="#" data-position="{&quot;bottom&quot;: 15, &quot;right&quot;: 15 }" data-type="fixed" data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown" style="display: inline-block; position: fixed; bottom: 15px; right: 15px;">
+            <span class="fas fa-arrow-up u-go-to__inner"></span>
+            </a>
         </main>
-
         {% include 'footer.html' %}
-
-
         {% render_block "js" %}
         <!-- JS Global Compulsory -->
         <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
@@ -88,43 +84,58 @@
                 breakpoint: 767.98,
                 hideTimeOut: 0
               });
-
+            
               // initialization of svg injector module
               $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
             });
-
-          
+            
+            $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+            
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+            afterOpen: function () {
+            $(this).find('input[type="search"]').focus();
+            }
+            });
+            
+            // initialization of show animations
+            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+            
+            // initialization of malihu scrollbar
+            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+            
               // initialization of header
               $.HSCore.components.HSHeader.init($('#header'));
-
+            
               // initialization of unfold component
               $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
+            
               // initialization of video on background
               $.HSCore.components.HSBgVideo.init('.js-bg-video');
-
+            
               // initialization of form validation
               $.HSCore.components.HSValidation.init('.js-validate');
-
+            
               // initialization of fancybox
               $.HSCore.components.HSFancyBox.init('.js-fancybox');
-
+            
               // initialization of slick carousel
               $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+            
+              // initialization of forms
+              $.HSCore.components.HSFocusState.init();
               
               // initialization of cubeportfolio
               $.HSCore.components.HSCubeportfolio.init('.cbp');
-
+            
               // initialization of sticky blocks
               $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
-
+            
               // initialization of go to
               $.HSCore.components.HSGoTo.init('.js-go-to');
-
-       
-                      
-              </script>
-
+        </script>
         {% block extrajs %} {% endblock extrajs %}
     </body>
 </html>

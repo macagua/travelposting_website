@@ -1,6 +1,6 @@
 from django import template
 from apps.destinations.models import Destination, Categorie
-from apps.landing_page.models import Testimony
+from apps.landing_page.models import Testimony, Magazine
 register = template.Library()
 
 @register.inclusion_tag('services/destination/destinations.html', takes_context=True)
@@ -39,3 +39,11 @@ def testimonials_list(context):
 @register.simple_tag()
 def found_categorie(alias):
     return Destination.count_categorie(alias)
+
+@register.inclusion_tag('services/magazine/magazine.html', takes_context=True)
+def show_magazine(context):
+    list_magazine = Magazine.objects.all()
+    return {
+        'list': list_magazine,
+        'request': context.request,
+    }

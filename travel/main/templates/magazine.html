@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags%}
+{% block title %}{% trans 'Tours from travelposting' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<!-- Clients Section -->
+<div class="container position-relative z-index-2">
+<!-- Stories Section -->
+<div class="container space-2 space-lg-3">
+    <!-- Title -->
+    <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <span class="btn btn-xs btn-soft-success btn-pill mb-2">{% trans 'Magazine' %}</span>
+        <h2 class="font-weight-medium">{% trans 'Enjoy and share the best travel magazine.' %}</h2>
+    </div>
+    <!-- End Title -->
+    <div class="row">
+        {% show_magazine %}
+    </div>
+
+</div>
+<!-- End Stories Section -->
+{% endblock content %}
