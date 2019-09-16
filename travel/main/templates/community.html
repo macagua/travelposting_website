@@ -2,12 +2,13 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 
 
-    <div class="container space-1">
+{% block content %}
+<div class="container space-1">
       <div class="row align-items-lg-center">
         <div class="col-lg-5 mb-9 mb-lg-0">
           <!-- Info -->
           <div class="mb-4">
-            <h1 class="h1"><strong class="text-primary">{% trans "Comunity"%}Front marketing</strong></h1>
+            <h1 class="h1"><strong class="text-primary">{% trans "Comunity"%}</strong></h1>
             <p>{% trans "Our community is not yet open to the general public, for now it is a project that we will be making known on social networks as of 02.10.19"%}</p>
           </div>
           <!-- End Info -->
@@ -367,3 +368,4 @@
       </div>
     </div>
 
+{% endblock %}
