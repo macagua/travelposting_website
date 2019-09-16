@@ -274,7 +274,7 @@ CMS_TEMPLATES = (
     ## Customize this
     ('index.html', 'Landing'),
     ('about.html', 'About us'),
-    ('datenschutz.html', 'Datenshutz'),
+    ('template_base_for_text.html', 'Template base'),
     ('tours.html', 'Tour'),
     ('magazine.html', 'Magazine'),
     ('community.html', 'Community'),
