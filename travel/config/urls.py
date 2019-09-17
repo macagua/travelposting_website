@@ -12,7 +12,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
-
+from apps.landing_page.views import CommmunityView
 admin.autodiscover()
 
 urlpatterns = [
@@ -55,9 +55,15 @@ urlpatterns += i18n_patterns(
     ),
 
     url(
+        r'^community',
+        CommmunityView.as_view(),
+    ),
+    
+    url(
         r'^',
         include('cms.urls'),
     ),
+
 )
 
 # This is only needed when using runserver.

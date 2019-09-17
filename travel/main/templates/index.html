@@ -5,91 +5,10 @@
 {% block extracss %} 
 <link rel="stylesheet" href="{% static 'css/destinations.css' %}">
 {% endblock extracss %}
+
 {% block content %}
-<!-- Hero Section -->
-<div class="gradient-overlay-half-primary-video-v1">
-    <!-- Video Background -->
-    <div class="js-bg-video d-none d-md-block position-absolute w-100 h-100"
-        data-hs-bgv-type=""
-        data-hs-bgv-id=""
-        data-hs-bgv-loop="true">
-        <img src="{% static 'img/hamburg.jpg'%}">
-    </div>
-    <!-- End Video Background -->
-    <div class="position-relative z-index-2">
-        <!-- Content -->
-        <div class="d-md-flex">
-            <div class="container d-md-flex align-items-md-center min-height-md-100vh text-center space-3 space-top-md-4 space-top-lg-3">
-                <div class="row justify-content-md-center w-100">
-                    <div class="col-md-10">
-                        <!-- Fancybox -->
-                        <!-- End Fancybox -->
-                        <!-- Info -->
-                        <div class="mt-4 mb-7">
-                            <h1 class="display-4 text-white font-weight-normal">{% trans 'Live and share your experience' %}</h1>
-                        </div>
-                        <!-- End Info -->
-                        <!-- Form -->
-                        <form class="js-validate">
-                            <div class="form-row mb-2">
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <div class="js-form-message">
-                                        <label class="sr-only" for="signupSrName">{% trans 'Name' %}</label>
-                                        <div class="input-group input-group-borderless">
-                                            <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Name" aria-label="Name" >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <div class="js-form-message">
-                                        <label class="sr-only" for="signupSrPhone">{% trans 'Country' %}</label>
-                                        <div class="input-group input-group-borderless">
-                                            <input type="tel" class="form-control" name="country" id="signupSrPhone" placeholder="{%trans 'Country' %}" aria-label="Country" >
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <button type="submit" class="btn btn-block btn-white transition-3d-hover">{% trans 'Search offer' %}</button>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- End Form -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Content -->
-        <div class="position-absolute right-0 bottom-0 left-0 mb-4">
-            <div class="container text-center">
-                <!-- Button -->
-                <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left mr-1">
-                <span class="media align-items-center">
-                <span class="fab fa-apple fa-2x mr-3"></span>
-                <span class="media-body">
-                <span class="d-block">Download on the</span>
-                <strong class="font-size-1">App Store</strong>
-                </span>
-                </span>
-                </button>
-                <!-- End Button -->
-                <!-- Button -->
-                <button type="button" class="btn btn-xs btn-soft-white btn-wide text-left ml-1">
-                <span class="media align-items-center">
-                <span class="fab fa-google-play fa-2x mr-3"></span>
-                <span class="media-body">
-                <span class="d-block">Get it on</span>
-                <strong class="font-size-1">Google Play</strong>
-                </span>
-                </span>
-                </button>
-                <!-- End Button -->
-            </div>
-        </div>
-    </div>
-    <div class="d-lg-none position-absolute top-0 right-0 bottom-0 left-0 bg-img-hero" style="background-image: url({% static 'assets/img/1920x1080/img20.jpg' %});"></div>
-</div>
-<!-- End Hero Section -->
+
+
 <!--START SECTION LIST DESTIANTIONS-->
 {% destinations_list%}
 <!--END SECTION LIST DESTIANTIONS-->
