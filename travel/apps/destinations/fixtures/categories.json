@@ -1,0 +1,101 @@
+[
+{
+    "model": "destinations.categorie",
+    "pk": 2,
+    "fields": {
+        "name": "Adventure",
+        "alias": "adventure",
+        "short_description": "get your adventure now",
+        "image": "gallery/categorie/adventure.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 3,
+    "fields": {
+        "name": "Congress",
+        "alias": "congress",
+        "short_description": "live congress",
+        "image": "gallery/categorie/congress.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 4,
+    "fields": {
+        "name": "Walks",
+        "alias": "walks",
+        "short_description": "Live the adventure to be free.",
+        "image": "gallery/categorie/walks.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 5,
+    "fields": {
+        "name": "Tour",
+        "alias": "tour",
+        "short_description": "eager to know new places?",
+        "image": "gallery/categorie/tour.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 6,
+    "fields": {
+        "name": "Lodging",
+        "alias": "lodging",
+        "short_description": "discover the best experience, feel like a king.",
+        "image": "gallery/categorie/lodging.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 7,
+    "fields": {
+        "name": "Fam-trip",
+        "alias": "famtrip",
+        "short_description": "Get the best experience in on-route trip",
+        "image": "gallery/categorie/fam-trip.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 8,
+    "fields": {
+        "name": "Countries",
+        "alias": "countries",
+        "short_description": "do you like to travel around the world?",
+        "image": "gallery/categorie/countries.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 9,
+    "fields": {
+        "name": "Beaches",
+        "alias": "beaches",
+        "short_description": "the best beach-experience and luxury trips.",
+        "image": "gallery/categorie/beaches.jpg",
+        "status": true
+    }
+},
+{
+    "model": "destinations.categorie",
+    "pk": 10,
+    "fields": {
+        "name": "Backpackers",
+        "alias": "backpackers",
+        "short_description": "unique experience to get connect with yourself.",
+        "image": "gallery/categorie/backpackers.jpg",
+        "status": true
+    }
+}
+]
