@@ -278,6 +278,7 @@ CMS_TEMPLATES = (
     ('tours.html', 'Tour'),
     ('magazine.html', 'Magazine'),
     ('community.html', 'Community'),
+    ('datenschutz.html', 'Datenshutz'),
 )
 
 CMS_PERMISSION = True
