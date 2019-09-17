@@ -1,8 +1,5 @@
 from django.db import models
-
-# Create your models here.
 from django.core import validators
-from django.db import models
 from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 from mptt.fields import TreeForeignKey
@@ -13,13 +10,16 @@ from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
 
 
-
-'''This models is for the price type'''
 class PriceType(models.Model):
-    type = models.CharField(_('Type'), 
-                            blank=False, 
-                            null=False, 
-                            max_length=20)
+    """
+        This models is for the price type.
+    """
+    type = models.CharField(
+        _('Type'),
+        blank=False,
+        null=False,
+        max_length=20,
+    )
 
     def __str__(self):
         return self.type
@@ -30,20 +30,24 @@ class PriceType(models.Model):
 
 
 class Price(models.Model):
-    type = models.ForeignKey(PriceType, 
-                            on_delete=None)
-    value  = models.CharField(_('Valor'), 
-                            null=False, 
-                            blank=True, 
-                            max_length=10)
+    type = models.ForeignKey(
+        PriceType,
+        on_delete=None,
+    )
+
+    value  = models.CharField(
+        _('Valor'),
+        null=False,
+        blank=True,
+        max_length=10,
+    )
 
     def __str__(self):
-        return str(self.type) +" - "+ str(self.value)
+        return f"{self.type} - {self.value}"
 
     class Meta:
         verbose_name = _("Price")
         verbose_name_plural = _("Prices")
-
 
 
 class Plan(models.Model):
@@ -59,7 +63,11 @@ class Plan(models.Model):
         max_length=50,
     )
 
-    price = models.ManyToManyField('Price', blank=True, verbose_name='Prices')
+    price = models.ManyToManyField(
+        'Price',
+        blank=True,
+        verbose_name='Prices',
+    )
 
     features = models.ManyToManyField(
         'Feature',
@@ -251,7 +259,10 @@ class BaseAbstractExtra(models.Model):
 
 
 class Service(BaseAbstractExtra):
-    description = models.TextField(_('description'), max_length=150)
+    description = models.TextField(
+        _('description'),
+        max_length=150,
+    )
 
     class Meta(BaseAbstractExtra.Meta):
         verbose_name_plural = _('services')
@@ -259,8 +270,15 @@ class Service(BaseAbstractExtra):
 
 
 class Statistic(BaseAbstractExtra):
-    value = models.CharField(_('value'), max_length=50)
-    counter = models.BooleanField(_('counter'), default=True)
+    value = models.CharField(
+        _('value'),
+        max_length=50,
+    )
+
+    counter = models.BooleanField(
+        _('counter'),
+        default=True,
+    )
 
     class Meta(BaseAbstractExtra.Meta):
         verbose_name_plural = _('statistics')
@@ -368,23 +386,56 @@ class Slider(models.Model):
         verbose_name = _("slider")
 
 
-
 class Magazine(models.Model):
-    name = models.CharField(_('Name'), max_length=50)
-    editor = models.CharField(_('Editor'), max_length=50)
-    files = FilerImageField(null=True, blank=True, 
-                                on_delete=False, 
-                                related_name='file_magazine')
-    magazine = FilerFileField(null=True, blank=True,
-                                related_name="magazine_file",
-                                on_delete=False)
-    status = models.BooleanField(_('is active?'), default=True)
+    """
+    Model useful for create new magazines objects to our database.
+
+    Args:
+        name: The name to be displayed in the webpage.
+        editor: slug to be displayed on website.
+        files: Img preview to show.
+        status: status (publish/unpublish) of each magazine.
+        order: position in list view.
+        kliche: click to make it outstanding.
+    """
+    name = models.CharField(
+        _('Name'),
+        max_length=50,
+    )
+
+    editor = models.CharField(
+        _('Editor'),
+        max_length=50,
+    )
+
+    files = FilerImageField(
+        null=True,
+        blank=True,
+        on_delete=False,
+        related_name='file_magazine',
+    )
+
+    magazine = FilerFileField(
+        null=True,
+        blank=True,
+        related_name="magazine_file",
+        on_delete=False,
+    )
+
+    status = models.BooleanField(
+        _('is active?'),
+        default=True,
+    )
+
     order = models.PositiveSmallIntegerField(
         _('order'),
         default=1,
     )
-    kliche = models.BooleanField(_('outstanding'), default=False)
 
+    kliche = models.BooleanField(
+        _('outstanding'),
+        default=False,
+    )
 
     class Meta:
         ordering = ('name','order',)
