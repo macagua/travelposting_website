@@ -272,12 +272,12 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
-    ('community.html', 'Community'),
     ('index.html', 'Landing'),
     ('about.html', 'About us'),
     ('template_base_for_text.html', 'Template base'),
     ('tours.html', 'Tour'),
     ('magazine.html', 'Magazine'),
+    ('community.html', 'Community'),
 )
 
 CMS_PERMISSION = True
