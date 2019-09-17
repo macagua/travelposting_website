@@ -277,6 +277,7 @@ CMS_TEMPLATES = (
     ('template_base_for_text.html', 'Template base'),
     ('tours.html', 'Tour'),
     ('magazine.html', 'Magazine'),
+    ('community.html', 'Community'),
 )
 
 CMS_PERMISSION = True

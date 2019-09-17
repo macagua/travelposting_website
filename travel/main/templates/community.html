@@ -2,12 +2,13 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 
 
-    <div class="container space-1">
+{% block content %}
+<div class="container space-1">
       <div class="row align-items-lg-center">
         <div class="col-lg-5 mb-9 mb-lg-0">
           <!-- Info -->
           <div class="mb-4">
-            <h1 class="h1"><strong class="text-primary">{% trans "Comunity"%}Front marketing</strong></h1>
+            <h1 class="h1"><strong class="text-primary">{% trans "Comunity"%}</strong></h1>
             <p>{% trans "Our community is not yet open to the general public, for now it is a project that we will be making known on social networks as of 02.10.19"%}</p>
           </div>
           <!-- End Info -->
@@ -164,7 +165,7 @@
           <!-- Icon Blocks -->
           <div class="media pr-lg-5">
             <figure id="icon9" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+              <img class="js-svg-injector" src="{% static "img/community/globe-solid.svg"%}" alt="SVG"
                    data-parent="#icon9">
             </figure>
             <div class="media-body">
@@ -179,7 +180,7 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
+              <img class="js-svg-injector" src="{% static "img/community/money-bill-wave-solid.svg"%}" alt="SVG"
                    data-parent="#icon3">
             </figure>
             <div class="media-body">
@@ -193,9 +194,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconcamera" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/camera-retro-solid.svg" %}" alt="SVG"
+                   data-parent="#iconcamera">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Beautiful places"%}</h3>
@@ -205,14 +206,13 @@
           <!-- End Icon Blocks -->
         </div>
 
-        <div class="w-100"></div>
 
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconcalendar" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/calendar-alt-regular.svg" %}" alt="SVG"
+                   data-parent="#iconcalendar">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Quick bookings"%}</h3>
@@ -225,9 +225,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconumbrella" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/umbrella-beach-solid.svg" %}" alt="SVG"
+                   data-parent="#iconumbrella">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Support team"%}</h3>
@@ -240,9 +240,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="icondiscover" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/cc-discover-brands.svg" %}" alt="SVG"
+                   data-parent="#icondiscover">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Keep in touch"%}</h3>
@@ -268,9 +268,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pr-lg-5">
-            <figure id="icon9" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon9">
+            <figure id="iconmoney-bill" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/money-bill-solid.svg" %}" alt="SVG"
+                   data-parent="#iconmoney-bill">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Savings on your trips" %}</h3>
@@ -283,9 +283,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconbirthday-cake" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/birthday-cake-solid.svg" %}" alt="SVG"
+                   data-parent="#iconbirthday-cake">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Birthday raffles."%}</h3>
@@ -298,9 +298,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconcc-discover" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/cc-discover-brands.svg" %}" alt="SVG"
+                   data-parent="#iconcc-discover">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Tailor-made discounts"%}</h3>
@@ -315,9 +315,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconbullhorn" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/bullhorn-solid.svg" %}" alt="SVG"
+                   data-parent="#iconbullhorn">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Win travel packages"%}</h3>
@@ -330,9 +330,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconbullseye" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/bullseye-arrow.svg" %}" alt="SVG"
+                   data-parent="#iconbullseye">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Participate in raffles"%}</h3>
@@ -345,9 +345,9 @@
         <div class="col-md-4 col-lg-4 mb-7">
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
-            <figure id="icon3" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="#AquiIconEnSVG" alt="SVG"
-                   data-parent="#icon3">
+            <figure id="iconpresentation" class="svg-preloader ie-height-56 w-100 max-width-8 mr-4">
+              <img class="js-svg-injector" src="{% static "img/community/presentation.svg" %}" alt="SVG"
+                   data-parent="#iconpresentation">
             </figure>
             <div class="media-body">
               <h3 class="h5">{% trans "Preparing something else"%}</h3>
@@ -365,5 +365,7 @@
       <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
         <h2 class="h3 font-weight-medium">{% trans "Sign up for Travelposting and enjoy its benefits"%}</h2>
       </div>
+      <iframe width="100%" height="1600" src="https://sibforms.com/serve/MUIEAJqCWdUD11JT2CEJ5v5wCxslYmkHjVKaXY7gFAQjmVBWTkaF5W27iIxB9SaueEfxE0BJJWUNXfnPnjxLYZO__7tUku93t1rDsZypAb8Hg9Q3nYmD9CEqALIUNsblxzv9DqOA4uyTUec8guVgQyFNtC2d1S305DmmF7qAXh-46YXXBA2ayAd_vGfrQrjBsQ-HK6oP8ehO2FRl" frameborder="0" scrolling="auto" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
     </div>
 
+{% endblock %}
