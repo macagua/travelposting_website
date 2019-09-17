@@ -16,8 +16,8 @@
                 <!-- End White Logo -->
                 <!-- Button -->
                 <div class="ml-auto">
-                        <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'accounts:login' %}">
-                            {% trans 'Login' %}
+                    <a class="btn btn-sm btn-primary transition-3d-hover" href="/">
+                    {% trans 'Go back' %}
                     </a>
                 </div>
                 <!-- End Button -->
@@ -66,7 +66,7 @@
                             <label class="form-label" for="signinSrPassword">
                             <span class="d-flex justify-content-between align-items-center">
                             {% trans 'Password' %}
-                            <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">{% trans 'Forgot Password?' %}</a>
+                            <a class="link-muted text-capitalize font-weight-normal" href="{% url 'accounts:password-reset' %}">{% trans 'Forgot Password?' %}</a>
                             </span>
                             </label>
                             <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
@@ -82,7 +82,7 @@
                                 <a class="small" href="{% url 'accounts:register' %}">{% trans 'Signup' %}</a>
                             </div>
                             <div class="col-6 text-right">
-                                <button type="submit" class="btn btn-primary transition-3d-hover">{% trans 'Get Started' %}</button>
+                                <button type="submit" class="btn btn-primary transition-3d-hover">{% trans 'Login' %}</button>
                             </div>
                         </div>
                         <!-- End Button -->
