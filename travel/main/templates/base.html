@@ -40,6 +40,7 @@
         {% include 'menu/navbar.html' %}
         {% endblock navbar %}
         <main id="content" role="main">
+            {% include "pages/show_header.html" %}
             {% block content %}{% endblock content %}
             <a class="js-go-to u-go-to animated js-animation-was-fired slideInUp" href="#" data-position="{&quot;bottom&quot;: 15, &quot;right&quot;: 15 }" data-type="fixed" data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown" style="display: inline-block; position: fixed; bottom: 15px; right: 15px;">
             <span class="fas fa-arrow-up u-go-to__inner"></span>

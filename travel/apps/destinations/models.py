@@ -79,7 +79,7 @@ class Categorie(models.Model):
         blank=True,
         max_length=20,
     )
-    
+
     short_description= models.CharField(
         _('Short Description'),
         max_length=50,
@@ -94,6 +94,9 @@ class Categorie(models.Model):
      _('Status'),
     default=True
     )
+
+    def __str__(self):
+        return f'{self.name}'
 
 class Destination(models.Model):
     categorie = models.ForeignKey(
@@ -162,7 +165,7 @@ class Destination(models.Model):
         except:
             pass
         return pic
-    
+
     @staticmethod
     def count_categorie(alias):
         return Destination.objects.filter(categorie__alias=alias).count()
