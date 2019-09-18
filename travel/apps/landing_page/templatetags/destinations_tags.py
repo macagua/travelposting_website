@@ -55,13 +55,26 @@ def show_magazine(context):
 @register.inclusion_tag('services/destination/tours.html', takes_context=True)
 def show_tours(context):
     list_tours = Destination.objects.filter(categorie__name='Tour')
-    list_pic_tours = Photo.objects.filter(destination__id__in=list_tours)
-
     return {
-        'list_pic_tours': list_pic_tours,
         'list_tours': list_tours,
         'request': context.request,
     }
+
+
+@register.simple_tag()
+def filter_photo_tours(id_tour):
+    """
+        SimpleTag to filter the ```Photo``` objects.
+
+        Args:
+            id_tour: id ```photo_id```to filter the queryset.
+
+        Returns:
+            A list of ```Photo```` objects filtered by requested id
+    """
+    list_pic_tours = Photo.objects.filter(destination=id_tour)
+    return list_pic_tours
+
 
 @register.simple_tag()
 def background_image():

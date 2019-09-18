@@ -1,8 +1,11 @@
 {%load i18n destinations_tags staticfiles %}
 {% for current_tour in list_tours %}
-        {{ current_tour.name }} <br>
-        {{ current_tour.short_description }}
-    {%for tour_image in list_pic_tours %}
-        <h2>aqui</h2><img src="/main/media/{{ tour_image.image }}">
+    {{ current_tour.name }} <br>
+    {{ current_tour.short_description }}
+
+    #aqui cargas el filtro:
+    {% filter_photo_tours current_tour as tour_photos %}
+    {% for current_photo in tour_photos %}
+        <h2>aqui</h2><img src="/main/media/{{ current_photo.image }}">
     {% endfor %}
 {% endfor %}
