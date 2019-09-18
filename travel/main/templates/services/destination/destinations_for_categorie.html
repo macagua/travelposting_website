@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
+{% block title %}{% trans 'Categories' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+
 {% block extracss %} 
 <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
 <link rel="stylesheet" href="{% static 'assets/vendor/ion-rangeslider/css/ion.rangeSlider.css' %}">
@@ -63,8 +68,7 @@
                         <span class="font-weight-medium">{{destino.generaldetail.regular_price}}</span>
                 </div>
               </div>
-
-              <div class="card-footer border-0 pt-0 pb-5 px-0 mx-5">
+              <div class="card-footer border-0 pt-0 pb-0 px-0 mx-5">
                 <div class="media align-items-center">
                   <button type="button" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</button>
                 </div>
