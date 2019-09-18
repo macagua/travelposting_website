@@ -13,16 +13,13 @@
             <!-- Card Info -->
             <div class="card border-0 shadow-soft h-100">
                 {% filter_photo_tours current_tour as tour_photos %}
-                
+
                 <img class="card-img-top" src="/main/media/{{ tour_photos.image }}" alt="Image Description">
                 <div class="card-body p-5">
                     <div class="w-100 mb-4">
                         <h5 style="color: #ff47a0">
-                            {% filter_photo_tours_prices current_tour as tour_prices %}
-                            {% for prices in tour_prices %}
-
-                            €{{ prices.regular_price }}
-                            {% endfor %}
+                            {% filter_destination_price  current_tour as current_price %}
+                            €{{ current_price }}
                         </h5>
                         <h6> {{ current_tour.name }} <br></h6>
                     </div>

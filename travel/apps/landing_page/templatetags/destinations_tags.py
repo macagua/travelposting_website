@@ -76,9 +76,19 @@ def filter_photo_tours(id_tour):
     return list_pic_tours
 
 @register.simple_tag()
-def filter_photo_tours_prices(id_tour):
-    list_tours_prices = GeneralDetail.objects.filter(destination_detail=id_tour)
-    return list_tours_prices
+def filter_destination_price(id_tour):
+    """
+        SimpleTag to filter the ```GenetalDetail``` to get the price to getting tour.
+
+        Args:
+            id_tour: ```id``` to filter the queryset.
+
+        Returns:
+            A string  formated  with the current price of given tour.
+    """
+    tour_general_detail = GeneralDetail.objects.filter(destination_detail=id_tour.pk).first()
+    current_destination_price = tour_general_detail.regular_price
+    return current_destination_price
 
 @register.simple_tag()
 def background_image():
