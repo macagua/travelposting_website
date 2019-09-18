@@ -1,11 +1,42 @@
+{% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
 {% block title %}{% trans 'Tours from travelposting' %}{% endblock title %}
 {% block navbar %}
+{% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
+<div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url({% static 'img/trains.jpg' %});">
+    <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
+        <div class="w-md-65 w-lg-50">
+            <h1 class="h1 " style="color: rgba(255, 255, 255, 0.925);">{% trans 'You\'ll have an excellent trip.' %}</h1>
+            <h2 class="h1 text-primary font-weight-medium">{% trans 'Meet our best destinations' %}</h2>
+        </div>
+    </div>
 
+    <!-- SVG Background -->
+    <figure class="position-absolute right-0 bottom-0 left-0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="100%" height="85px" viewBox="0 0 1920 107.7" style="margin-bottom: -8px; enable-background:new 0 0 1920 107.7;" xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#SVGHero">
+        <style type="text/css">
+            .wave-9-bottom-0{fill:#FFFFFF;}
+            .wave-9-bottom-1{fill:#FFFFFF;}
+        </style>
+        <path class="wave-9-bottom-0 fill-white" d="M0,107.7V69.8c0,0,451-54.7,960-5.4S1920,0,1920,0v107.7H0z"></path>
+        <path class="wave-9-bottom-1 fill-white" opacity=".3" d="M0,107.7v-81c0,0,316.2-8.9,646.1,54.5s794.7-114.1,1273.9-38v64.5H0z"></path>
+        </svg>
+    </figure>
+    <!-- End SVG Background -->
+</div>
 
 {% show_tours %}
 
-
+<!--Promotions-->
+<div class="bg-primary text-center bg-img-hero" style="background-image: url({% static 'assets/svg/components/abstract-shapes-15.svg'%});">
+    <div class="container space-2">
+        <div class="mb-5">
+            <h3 class="h2 text-white font-weight-normal">{% trans 'Start with us today, and enjoy the wonders of the world' %}</h3>
+        </div>
+        <a class="btn btn-white transition-3d-hover" href="{% url 'accounts:register' %}">{% trans 'New accounts' %}</a>
+    </div>
+</div>
+<!-- end promotions-->
 {% endblock content %}

@@ -1,11 +1,38 @@
 {%load i18n destinations_tags staticfiles %}
-{% for current_tour in list_tours %}
-    {{ current_tour.name }} <br>
-    {{ current_tour.short_description }}
 
-    #aqui cargas el filtro:
-    {% filter_photo_tours current_tour as tour_photos %}
-    {% for current_photo in tour_photos %}
-        <h2>aqui</h2><img src="/main/media/{{ current_photo.image }}">
-    {% endfor %}
-{% endfor %}
+<!-- TOUR -->
+<div class="container space-lg-1">
+    <!-- Title -->
+    <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <span class="btn btn-xs btn-soft-success btn-pill mb-2">{% trans 'Tours' %}</span>
+    </div>
+    <!-- End Title -->
+    <div class="row">
+        {% for current_tour in list_tours %}
+        <div class="col-sm-6 col-md-4 mb-5">
+            <!-- Card Info -->
+            <div class="card border-0 shadow-soft h-100">
+                {% filter_photo_tours current_tour as tour_photos %}
+                
+                <img class="card-img-top" src="/main/media/{{ tour_photos.image }}" alt="Image Description">
+                <div class="card-body p-5">
+                    <div class="w-100 mb-4">
+                        <h5 style="color: #ff47a0">€3,670.00</h5><h6> {{ current_tour.name }} <br></h6>
+                    </div>
+                    <h6>
+                        {% autoescape off %}
+                            {{ current_tour.short_description|truncatewords:30 }}
+                        {% endautoescape %}
+                    </h6>
+                </div>
+                <div class="card-footer bg-light border-0 py-4 px-5">
+                    <a href="customer-story.html">{% trans 'See tour'%} <small class="fas fa-arrow-right ml-1"></small></a>
+                </div>
+            </div>
+            <!-- End Card Info -->
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+<!-- END TOUR   -->

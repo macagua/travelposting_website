@@ -72,7 +72,7 @@ def filter_photo_tours(id_tour):
         Returns:
             A list of ```Photo```` objects filtered by requested id
     """
-    list_pic_tours = Photo.objects.filter(destination=id_tour)
+    list_pic_tours = Photo.objects.filter(destination=id_tour).order_by('?').first()
     return list_pic_tours
 
 
