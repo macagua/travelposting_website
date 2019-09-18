@@ -2,102 +2,103 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% block title %}{% trans 'About us' %}{% endblock title %}
 {% block navbar %}
-    {% include 'menu/navbar_all.html' %}
+{% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
-<main id="content" role="main">
-        <!-- Hero Section -->
-        <div class="container space-top-md-3 space-top-lg-2">
-          <div class="w-lg-80 text-center mx-lg-auto">
-            <div class="mb-11">
-              <h1 class="display-4 font-weight-semi-bold">{% trans 'About Us' %}</h1>
-              <p class="lead font-weight-normal">{% static_placeholder 'about_01'%}</p>
-            </div>
-          </div>
-    
-          <!-- Gallery Section -->
-          <div class="row mx-n2">
-            <div class="col-md px-2 mb-3">
-              <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3408115.jpg'%});"></div>
-            </div>
-            <div class="col-md-3 px-2 mb-3">
-              <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3468104_640.jpg' %});"></div>
-            </div>
-            <div class="col-md px-2 mb-3">
-              <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3797955_1280.jpg' %});"></div>
-            </div>
-    
-            <div class="w-100"></div>
-    
-            <div class="col-md px-2 mb-3 mb-md-0">
-              <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/african-3402716_1280.jpg' %});"></div>
-            </div>
-            <div class="col-md-4 px-2 mb-3 mb-md-0">
-              <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/agreement-3546008_1280.jpg' %});"></div>
-            </div>
-            <div class="col-md px-2">
-              <div class="height-250 bg-img-hero" style="background-image: url({% static 'assets/img/480x320/img36.jpg' %});"></div>
-            </div>
-          </div>
-          <!-- End Gallery Section -->
+<!-- Hero Section -->
+<div class="container space-top-md-3 space-top-lg-2">
+    <div class="w-lg-80 text-center mx-lg-auto">
+        <div class="mb-11">
+            <h1 class="display-4 font-weight-semi-bold">{% trans 'About Us' %}</h1>
+            <p class="lead font-weight-normal">{% static_placeholder 'about_01'%}</p>
         </div>
-        <!-- End Hero Section -->
-    
-        <!-- Divider -->
-        <div class="container">
-          <div class="w-lg-65 mx-lg-auto">
-            <hr class="my-0">
-          </div>
+    </div>
+    <!-- Gallery Section -->
+    <div class="row mx-n2">
+        <div class="col-md px-2 mb-3">
+            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3408115.jpg'%});"></div>
         </div>
-        <!-- End Divider -->
-    
-        <!-- About Section -->
-        <div class="container space-lg-2">
-            <div class="col-lg-12 ">
-                <h2 class="font-weight-semi-bold">{% trans 'Please know more about us' %}</h2>
-            </div>
-          <div class="row justify-content-lg-between">
-  
-            <div class="col-lg-12">
-                {% static_placeholder 'about 02' %}
-            </div>
-          </div>
+        <div class="col-md-3 px-2 mb-3">
+            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3468104_640.jpg' %});"></div>
         </div>
-        <!-- End About Section -->
-    
-        <!-- Divider -->
-        <div class="container">
-          <div class="w-lg-65 mx-lg-auto">
-            <hr class="my-0">
-          </div>
+        <div class="col-md px-2 mb-3">
+            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3797955_1280.jpg' %});"></div>
         </div>
-        <!-- End Divider -->
+        <div class="w-100"></div>
+        <div class="col-md px-2 mb-3 mb-md-0">
+            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/african-3402716_1280.jpg' %});"></div>
+        </div>
+        <div class="col-md-4 px-2 mb-3 mb-md-0">
+            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/agreement-3546008_1280.jpg' %});"></div>
+        </div>
+        <div class="col-md px-2">
+            <div class="height-250 bg-img-hero" style="background-image: url({% static 'assets/img/480x320/img36.jpg' %});"></div>
+        </div>
+    </div>
+    <!-- End Gallery Section -->
+</div>
+<!-- End Hero Section -->
+<!-- Divider -->
+<div class="container">
+    <div class="w-lg-65 mx-lg-auto">
+        <hr class="my-0">
+    </div>
+</div>
+<!-- End Divider -->
+<!-- About Section -->
+<div class="container space-lg-2">
+    <div class="col-lg-12 ">
+        <h2 class="font-weight-semi-bold">{% trans 'Please know more about us' %}</h2>
+    </div>
+    <div class="row justify-content-lg-between">
+        <div class="col-lg-12">
+            {% static_placeholder 'about 02' %}
+        </div>
+    </div>
+</div>
+<!-- End About Section -->
+<!-- Divider -->
+<div class="container">
+    <div class="w-lg-65 mx-lg-auto">
+        <hr class="my-0">
+    </div>
+</div>
+<!-- End Divider -->
 <br>
-          <!-- Hire Us -->
-          <div class="text-center">
-            <div class="d-sm-inline-flex align-items-center bg-white shadow-soft rounded-pill p-2 pr-3">
-              <span class="btn btn-xs btn-primary btn-pill mb-2 mb-sm-0 mr-2">{% trans 'email' %}</span>
-              <span class="d-block d-sm-inline-block">
-                write us 
-                <a href="mailto:hamburgo@travelposting.com">hamburgo@travelposting.com</a>
-              </span>
-            </div>
-          </div>
-          <!-- End Hire Us -->
-        </div>
-        <!-- End Team Section -->
-    
-        <!-- Subscribe Section -->
-        <div class="space-1">
-          <div class="bg-img-hero" style="background-image: url({% static 'assets/img/bg-shapes/bg5.png' %});">
-            <div class="container space-2 space-bottom-lg-3">
-              <!-- Title -->
-              <div class="w-md-60 text-center mx-auto mb-7">
-                <h2 class="font-weight-semi-bold">Stay in the know</h2>
-                <p>Get special offers on the latest developments from Front.</p>
-              </div>
-              <!-- End Title -->
-    
+<!-- Hire Us -->
+<div class="text-center">
+    <div class="d-sm-inline-flex align-items-center bg-white shadow-soft rounded-pill p-2 pr-3">
+        <span class="btn btn-xs btn-primary btn-pill mb-2 mb-sm-0 mr-2">{% trans 'email' %}</span>
+        <span class="d-block d-sm-inline-block">
+        write us 
+        <a href="mailto:hamburgo@travelposting.com">hamburgo@travelposting.com</a>
+        </span>
+    </div>
+</div>
+<!-- End Hire Us -->
+</div>
+<!-- End Team Section -->
+<!--Maps-->
+<div class="container space-lg-2">
+  <div class="col-lg-12 ">
+      <h2 class="font-weight-semi-bold">{% trans 'Discover our offices very soon in:' %}</h2>
+  </div>
+  <div class="row justify-content-lg-between">
+      <div class="col-lg-12">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1jTPlG26D8AHUjKRxBPtuoJCa2qM" width="100%" height="480" style="pointer-events: none;"></iframe>
+      </div>
+  </div>
+</div>
+<!-- End maps -->
+<!-- Subscribe Section -->
+<div class="space-1">
+<div class="bg-img-hero" style="background-image: url({% static 'assets/img/bg-shapes/bg5.png' %});">
+<div class="container space-2 space-bottom-lg-3">
+<!-- Title -->
+<div class="w-md-60 text-center mx-auto mb-7">
+    <h2 class="font-weight-semi-bold">{% trans 'Stay in the know' %}</h2>
+    <p>{% trans 'Get special offers on the latest travels add on our platform.' %}</p>
+</div>
+<!-- End Title -->
 
-      </main>
 {% endblock %}
