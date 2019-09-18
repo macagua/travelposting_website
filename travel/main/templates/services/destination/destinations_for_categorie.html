@@ -58,7 +58,7 @@
                 <h2 class="h5 font-weight-medium">
                   <a href="single-article.html">{{destino.categorie.name}}</a>
                 </h2>
-                {{destino.short_description}}
+                {{ destino.short_description|truncatechars:120 |safe }}
                 <div class="d-block">
                         <span class="font-weight-medium">{{destino.generaldetail.regular_price}}</span>
                 </div>
