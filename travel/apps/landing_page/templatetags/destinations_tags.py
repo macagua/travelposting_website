@@ -55,9 +55,7 @@ def show_magazine(context):
 @register.inclusion_tag('services/destination/tours.html', takes_context=True)
 def show_tours(context):
     list_tours = Destination.objects.filter(categorie__name='Tour')
-    for list in list_tours:
-        list.id
-        list_pic_tours = Photo.objects.filter(destination=list.id)
+    list_pic_tours = Photo.objects.filter(destination__id__in=list_tours)
 
     return {
         'list_pic_tours': list_pic_tours,

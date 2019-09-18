@@ -1,8 +1,8 @@
 {%load i18n destinations_tags staticfiles %}
-{% for list_tours in list_tours %}
-        {{ list_tours.name }} <br>
-        {{ list_tours.short_description }}
-    {%for list_pic_tours in list_pic_tours %}
-        <img src="/main/media/{{list_pic_tours.image}}">
+{% for current_tour in list_tours %}
+        {{ current_tour.name }} <br>
+        {{ current_tour.short_description }}
+    {%for tour_image in list_pic_tours %}
+        <h2>aqui</h2><img src="/main/media/{{ tour_image.image }}">
     {% endfor %}
 {% endfor %}
