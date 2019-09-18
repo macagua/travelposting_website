@@ -2,7 +2,7 @@ import os
 import random
 from django import template
 from django.conf import settings
-from apps.destinations.models import Destination, Categorie, Photo
+from apps.destinations.models import Destination, Categorie, Photo, GeneralDetail
 from apps.landing_page.models import Testimony, Magazine
 
 register = template.Library()
@@ -75,6 +75,10 @@ def filter_photo_tours(id_tour):
     list_pic_tours = Photo.objects.filter(destination=id_tour).order_by('?').first()
     return list_pic_tours
 
+@register.simple_tag()
+def filter_photo_tours_prices(id_tour):
+    list_tours_prices = GeneralDetail.objects.filter(destination_detail=id_tour)
+    return list_tours_prices
 
 @register.simple_tag()
 def background_image():

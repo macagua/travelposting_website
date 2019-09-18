@@ -17,7 +17,14 @@
                 <img class="card-img-top" src="/main/media/{{ tour_photos.image }}" alt="Image Description">
                 <div class="card-body p-5">
                     <div class="w-100 mb-4">
-                        <h5 style="color: #ff47a0">€3,670.00</h5><h6> {{ current_tour.name }} <br></h6>
+                        <h5 style="color: #ff47a0">
+                            {% filter_photo_tours_prices current_tour as tour_prices %}
+                            {% for prices in tour_prices %}
+
+                            €{{ prices.regular_price }}
+                            {% endfor %}
+                        </h5>
+                        <h6> {{ current_tour.name }} <br></h6>
                     </div>
                     <h6>
                         {% autoescape off %}
