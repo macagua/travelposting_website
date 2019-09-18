@@ -12,7 +12,10 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
-from apps.landing_page.views import CommmunityView
+from apps.landing_page.views import (
+    CommmunityView,
+    CotegoriesView,
+)
 admin.autodiscover()
 
 urlpatterns = [
@@ -58,7 +61,13 @@ urlpatterns += i18n_patterns(
         r'^community',
         CommmunityView.as_view(),
     ),
-    
+
+    url(
+        r'^cotegory/(?P<alias>\w+)',
+        CotegoriesView.as_view(),
+        name='view_category'
+    ),
+
     url(
         r'^',
         include('cms.urls'),

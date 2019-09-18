@@ -49,6 +49,10 @@ def testimonials_list(context):
 def found_categorie(alias):
     return Destination.count_categorie(alias)
 
+@register.simple_tag()
+def simple_list_categorie():
+    return Categorie.objects.filter(status=True)
+
 
 @register.inclusion_tag('services/magazine/magazine.html', takes_context=True)
 def show_magazine(context):

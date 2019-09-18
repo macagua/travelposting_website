@@ -440,6 +440,7 @@ class DestinationDetail(models.Model):
     def __str__(self):
         return f"{self.destination}-details"
 
+    
     class Meta:
         verbose_name_plural = _('Detalles del destino')
         verbose_name = _('Detalle del destino')

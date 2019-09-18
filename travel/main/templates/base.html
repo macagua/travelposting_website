@@ -37,7 +37,9 @@
     <body>
         {% cms_toolbar %}     
         {% block navbar %}
-        {% include 'menu/navbar.html' %}
+        <header id="header" class="u-header">
+          {% include 'menu/navbar.html' %}
+        </header>
         {% endblock navbar %}
         <main id="content" role="main">
             {% block content %}{% endblock content %}

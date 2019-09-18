@@ -33,7 +33,7 @@
            {% for categorie in list%}
             <!-- Item -->
               <div class="cbp-item rounded {{categorie.alias}}">
-              <a class="cbp-caption" href="{{categorie.alias}}">
+              <a class="cbp-caption" href="{% url 'view_category' categorie.alias %}">
                 <div class="cbp-caption-defaultWrap">
                   <img src="/main/media/{{ categorie.image }}" alt="{{categorie.name}}">
                 </div>
