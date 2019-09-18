@@ -21,7 +21,7 @@ travel/main/static/rest_framework/*
 travel/project.db
 *main/static/css/*
 travel/static/media/destinos/*
-travel/static/private/destinos/*
+travel/main/private/destinos/*
 
 # Created by https://www.gitignore.io/api/python,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=python,visualstudiocode
