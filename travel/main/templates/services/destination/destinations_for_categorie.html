@@ -68,9 +68,9 @@
                         <span class="font-weight-medium">{{destino.generaldetail.regular_price}}</span>
                 </div>
               </div>
-              <div class="card-footer border-0 pt-0 pb-0 px-0 mx-5">
+              <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
                 <div class="media align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</button>
+                  <a href="{% url 'view_detail_destination' destino.categorie.alias destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</a>
                 </div>
               </div>
             </article>

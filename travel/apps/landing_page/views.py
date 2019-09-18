@@ -33,3 +33,11 @@ class CotegoriesView(View):
     		'range_min':range_min,
     		'range_max':range_max
     		})
+
+class DetailDestinationView(View):
+
+	def get(self, request, *args, **kwargs):
+		destination= Destination.objects.filter(id=kwargs.get('slug'))
+		return render(request, 'services/destination/detail_destination.html',{
+    		'destino':destination,
+    		})
