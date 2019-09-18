@@ -1,6 +1,10 @@
+import os
+import random
 from django import template
+from django.conf import settings
 from apps.destinations.models import Destination, Categorie
 from apps.landing_page.models import Testimony, Magazine
+
 register = template.Library()
 
 @register.inclusion_tag('services/destination/destinations.html', takes_context=True)
@@ -56,3 +60,9 @@ def show_tours(context):
         'list': list_tours,
         'request': context.request,
     }
+
+@register.simple_tag()
+def background_image():
+    path_to_images = str(settings.ROOT_DIR) + '/main/private/destinos/'
+    ramdom_image = random.choice(os.listdir(path_to_images))
+    return ('destinos/' + ramdom_image)

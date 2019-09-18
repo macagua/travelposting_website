@@ -91,8 +91,8 @@ class Categorie(models.Model):
     )
 
     status = models.BooleanField(
-     _('Status'),
-    default=True
+        _('Status'),
+        default=True
     )
 
     def __str__(self):

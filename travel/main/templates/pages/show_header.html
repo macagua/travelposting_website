@@ -1,4 +1,4 @@
-{% load staticfiles i18n %}
+{% load staticfiles i18n destinations_tags %}
 <!-- Hero Section -->
 <div class="gradient-overlay-half-primary-video-v1">
     <!-- Video Background -->
@@ -6,7 +6,7 @@
         data-hs-bgv-type=""
         data-hs-bgv-id=""
         data-hs-bgv-loop="true">
-        <img src="{% static 'img/hamburg.jpg'%}">
+        <img src="{%  static image %}{% background_image %}">
     </div>
     <!-- End Video Background -->
     <div class="position-relative z-index-2">
