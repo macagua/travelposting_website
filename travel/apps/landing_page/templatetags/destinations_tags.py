@@ -2,7 +2,7 @@ import os
 import random
 from django import template
 from django.conf import settings
-from apps.destinations.models import Destination, Categorie
+from apps.destinations.models import Destination, Categorie, Photo
 from apps.landing_page.models import Testimony, Magazine
 
 register = template.Library()
@@ -54,10 +54,14 @@ def show_magazine(context):
 
 @register.inclusion_tag('services/destination/tours.html', takes_context=True)
 def show_tours(context):
-
     list_tours = Destination.objects.filter(categorie__name='Tour')
+    for list in list_tours:
+        list.id
+        list_pic_tours = Photo.objects.filter(destination=list.id)
+
     return {
-        'list': list_tours,
+        'list_pic_tours': list_pic_tours,
+        'list_tours': list_tours,
         'request': context.request,
     }
 
