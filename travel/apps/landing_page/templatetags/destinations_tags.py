@@ -15,6 +15,7 @@ def destinations_list(context):
         'request': context.request,
     }
 
+
 @register.inclusion_tag('services/destination/categories.html', takes_context=True)
 def categories_list(context):
     list_categories = Categorie.objects.filter(status=True)
@@ -22,6 +23,8 @@ def categories_list(context):
         'list': list_categories,
         'request': context.request,
     }
+
+
 @register.simple_tag()
 def img_class(did):
     div ={
@@ -32,6 +35,7 @@ def img_class(did):
     }
     return div[did]
 
+
 @register.inclusion_tag('services/destination/testimonials.html', takes_context=True)
 def testimonials_list(context):
     list_testimonials = Testimony.objects.all()
@@ -40,9 +44,11 @@ def testimonials_list(context):
         'request': context.request,
     }
 
+
 @register.simple_tag()
 def found_categorie(alias):
     return Destination.count_categorie(alias)
+
 
 @register.inclusion_tag('services/magazine/magazine.html', takes_context=True)
 def show_magazine(context):
@@ -51,6 +57,7 @@ def show_magazine(context):
         'list': list_magazine,
         'request': context.request,
     }
+
 
 @register.inclusion_tag('services/destination/tours.html', takes_context=True)
 def show_tours(context):
@@ -75,6 +82,7 @@ def filter_photo_tours(id_tour):
     list_pic_tours = Photo.objects.filter(destination=id_tour).order_by('?').first()
     return list_pic_tours
 
+
 @register.simple_tag()
 def filter_destination_price(id_tour):
     """
@@ -89,6 +97,7 @@ def filter_destination_price(id_tour):
     tour_general_detail = GeneralDetail.objects.filter(destination_detail=id_tour.pk).first()
     current_destination_price = tour_general_detail.regular_price
     return current_destination_price
+
 
 @register.simple_tag()
 def background_image():
