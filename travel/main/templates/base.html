@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
     </head>
     <body>
-        {% cms_toolbar %}     
+        {% cms_toolbar %}
         {% block navbar %}
         <header id="header" class="u-header">
           {% include 'menu/navbar.html' %}
@@ -91,7 +91,6 @@
               $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
             });
 
-          
               // initialization of header
               $.HSCore.components.HSHeader.init($('#header'));
 
@@ -109,7 +108,7 @@
 
               // initialization of slick carousel
               $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-              
+
               // initialization of cubeportfolio
               $.HSCore.components.HSCubeportfolio.init('.cbp');
 
@@ -119,9 +118,14 @@
               // initialization of go to
               $.HSCore.components.HSGoTo.init('.js-go-to');
 
-       
-                      
               </script>
+
+            <script>
+                (function(w,d,u){
+                  var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                  var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+                })(window,document,'https://cdn.bitrix24.de/b9199691/crm/site_button/loader_3_ws0259.js');
+            </script>
 
         {% block extrajs %} {% endblock extrajs %}
     </body>
