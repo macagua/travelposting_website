@@ -47,3 +47,12 @@ def show_magazine(context):
         'list': list_magazine,
         'request': context.request,
     }
+
+@register.inclusion_tag('services/destination/tours.html', takes_context=True)
+def show_tours(context):
+
+    list_tours = Destination.objects.filter(categorie__name='Tour')
+    return {
+        'list': list_tours,
+        'request': context.request,
+    }

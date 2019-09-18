@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
 {% block title %}{% trans 'Tours from travelposting' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
@@ -27,69 +27,7 @@
     <!-- End SVG Background -->
 </div>
 
-<!-- TOUR -->
-<div class="container space-lg-1">
-    <!-- Title -->
-    <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-        <span class="btn btn-xs btn-soft-success btn-pill mb-2">{% trans 'Tours' %}</span>
-    </div>
-    <!-- End Title -->
-    <div class="row">
-        <div class="col-sm-6 col-md-4 mb-5">
-            <!-- Card Info -->
-            <div class="card border-0 shadow-soft h-100">
-                <img class="card-img-top" src="{% static 'img/tours/Cerro-Aconcagua-5-720x606.jpg' %}" alt="Image Description">
-                <div class="card-body p-5">
-                    <div class="w-100 mb-4">
-                        <h5 style="color: #ff47a0">€3,670.00</h3><h6> {% trans 'ACONCAGUA CUMBRE DE AMERICA' %}</h6>
-                    </div>
-                    <p class="mb-0">{% trans 'El cerro Aconcagua está ubicado enteramente en la República Argentina, provincia de Mendoza departamento Las Heras. '%}</p>
-                </div>
-                <div class="card-footer bg-light border-0 py-4 px-5">
-                    <a href="customer-story.html">{% trans 'See tour'%} <small class="fas fa-arrow-right ml-1"></small></a>
-                </div>
-            </div>
-            <!-- End Card Info -->
-        </div>
-        <div class="col-sm-6 col-md-4 mb-5">
-            <!-- Card Info -->
-            <div class="card border-0 shadow-soft h-100">
-                <img class="card-img-top" src="{% static 'img/tours/Dubai-720x606.jpg' %}" alt="Image Description">
-                <div class="card-body p-5">
-                    <div class="w-100 mb-4">
-                        <h5 style="color: #ff47a0">€2,195.00</h3><h6> {% trans 'DUBAI SEMANA SANTA 2020' %}</h6>
-                    </div>
-                    <p class="mb-0">{% trans 'DUBAI SEMANA SANTA DE LUJO 6 DIAS Y 5 NOCHES +1 NOCHE EN VUELO DEL 6 AL 12 DE ABRIL 2020'%}</p>
-                </div>
-                <div class="card-footer bg-light border-0 py-4 px-5">
-                    <a href="customer-story.html">{% trans 'See tour'%} <small class="fas fa-arrow-right ml-1"></small></a>
-                </div>
-            </div>
-            <!-- End Card Info -->
-        </div>
-        <div class="col-sm-6 col-md-4 mb-5">
-            <!-- Card Info -->
-            <div class="card border-0 shadow-soft h-100">
-                <img class="card-img-top" src="{% static 'img/tours/Egipto-720x606.jpg' %}" alt="Image Description">
-                <div class="card-body p-5">
-                    <div class="w-100 mb-4">
-                        <h5 style="color: #ff47a0">€2,890.00</h3><h6> {% trans 'EGIPTO SEMANA SANTA 2020' %}</h6>
-
-                    </div>
-                    <p class="mb-0">{% trans 'LAS MARAVILLAS DE EGIPTODESDE SANTO DOMINGO (SIN VISA)03 AL 12 DE ABRIL, 2020'%}</p>
-                </div>
-                <div class="card-footer bg-light border-0 py-4 px-5">
-                    <a href="customer-story.html">Read Story <small class="fas fa-arrow-right ml-1"></small></a>
-                </div>
-            </div>
-            <!-- End Card Info -->
-        </div>
-    </div>
-    <div class="text-center mt-5">
-        <a class="btn btn-primary" href="#">View all Stories</a>
-    </div>
-</div>
-<!-- END TOUR   -->
+{% show_tours %}
 
 <!--Promotions-->
 <div class="bg-primary text-center bg-img-hero" style="background-image: url({% static 'assets/svg/components/abstract-shapes-15.svg'%});">
