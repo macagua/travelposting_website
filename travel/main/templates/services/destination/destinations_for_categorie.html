@@ -8,6 +8,7 @@
 {% block extracss %} 
 <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
 <link rel="stylesheet" href="{% static 'assets/vendor/ion-rangeslider/css/ion.rangeSlider.css' %}">
+<link rel="stylesheet" href="{% static 'assets/vendor/MixitUpV3/dist/mixtup.css' %}">
 {% endblock extracss %}
 {% block content %}
   
@@ -33,28 +34,32 @@
               <ul class="list-inline mb-0">
                 <li class="list-inline-item">
                   <!-- Select -->
-                  <select style="width:100%" class="js-select selectpicker dropdown-select"
-                          data-size="40"
-                          data-width="fit"
-                          data-style="btn-soft-secondary btn-md show-menu-arrow">
-                    <option data-filter="*" selected="selected" >{% trans "Default Order" %}</option>
-                    <option data-filter="2017">{% trans "Sort by popularity" %}</option>
-                    <option data-filter="2016">{% trans "Sort by average ranking"%}</option>
-                    <option data-filter="2015">{% trans "Sort by last"%}</option>
-                    <option data-filter="2016">{% trans "Sort by price: Low to High"%}</option>
-                    <option data-filter="2015">{% trans "Sort by price: High to Low"%}</option>
+                  <select id="FilterDestinies" style="width:100%" class="custom-select dropdown-select">
+                    <option value="*">{% trans "Default Order" %}</option>
+                    <option value="popularity:asc">{% trans "Sort by popularity" %}</option>
+                    <option value="average:asc">{% trans "Sort by average ranking"%}</option>
+                    <option value="datepublished:desc">{% trans "Sort by last"%}</option>
+                    <option value="price:asc">{% trans "Sort by price: Low to High"%}</option>
+                    <option value="price:desc">{% trans "Sort by price: High to Low"%}</option>
                   </select>
                   <!-- End Select -->
+
                 </li>
               </ul>
             </div>
           </div>
           <!-- End Sorting -->
 
+
           <!-- Products -->
-          <div class="row mx-n2 mb-2">
+          <div id="list-destinies" class="row mx-n2 mb-2">
             {%for destino in lista_destinos %}
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div class="col-md-6 col-lg-4 mb-3 mix"
+            data-popularity="" 
+            data-average=""
+            data-datepublished=""
+            data-price=""
+            >
             <!-- Destino Card -->
             <article class="card shadow h-100">
               <img class="card-img-top" src="{{destino.first_pic}}" alt="{{destino.name}}">
@@ -74,41 +79,18 @@
                 </div>
               </div>
             </article>
-            <!-- End Blog Card -->
+            <!-- End Desrino Card -->
           </div>
           {% endfor%}
         </div>
         <!-- End Destinies -->
         <div class="py-3"></div>
-        <!-- Pagination -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-between align-items-center">
-              <li class="page-item ml-0">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo; Prev</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <div class="d-flex align-items-center">
-                  <span class="d-none d-sm-inline-block text-secondary">Page:</span>
-                  <select class="custom-select custom-select-sm w-auto mx-2">
-                    <option value="quantity1">1</option>
-                    <option value="quantity2">2</option>
-                  </select>
-                  <span class="d-none d-sm-inline-block text-secondary">of 8</span>
-                </div>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">{% trans "Next" %} &raquo;</span>
-                  <span class="sr-only">{% trans "Next" %}</span>
-                </a>
-              </li>
-            </ul>
+        <nav>
+          <ul class="controls-pagination pagination justify-content-between align-items-center">
+              <div class="mixitup-page-list"></div>
+          </ul>
         </nav>
-          <!-- End Pagination -->
-
+        <input type="hidden" class="column-counter"/>
           <!-- Divider -->
           <div class="d-lg-none">
             <hr class="my-11">
@@ -192,9 +174,28 @@
 <script src="{% static 'assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js' %}"></script>
 <script src="{% static 'assets/js/components/hs.selectpicker.js' %}"></script>
 <script src="{% static 'assets/js/components/hs.range-slider.js' %}"></script>
+<script src="{% static 'assets/vendor/MixitUpV3/dist/mixitup.min.js' %}"></script>
+<script src="{% static 'assets/vendor/MixItUp/dist/mixitup-pagination.min.js' %}"></script>
 <script>
   $.HSCore.components.HSRangeSlider.init('.js-range-slider');
   $.HSCore.components.HSSelectPicker.init('.js-select');
+            var $filterSelect = $('#FilterDestinies');
+            var containerEl = document.querySelector('#list-destinies');
+            var mixer = mixitup(containerEl, {
+                pagination: {
+                    limit: 6
+                },
+                animation: {
+                    nudge: false
+                }
+            });
+            $filterSelect.on('change', function(){
+                if(this.value=='all')
+                  mixer.filter(this.value);
+                else
+                  mixer.sort(this.value);
+            });
+
 </script>
 {% endblock extrajs %}
  
