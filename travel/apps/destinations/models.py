@@ -170,6 +170,37 @@ class Destination(models.Model):
     def count_categorie(alias):
         return Destination.objects.filter(categorie__alias=alias).count()
 
+    @property
+    def photos(self):
+        try:
+            list_photos = Photo.objects.filter(destination=self)
+        except BaseException:
+            return None
+        return list_photos
+
+    @property
+    def published_date(self):
+        try:
+            destination_details = GeneralDetail.objects.get(destination_detail__destination=self.pk)
+            list_dates = {
+                'date_from': destination_details.date_on_sale_from,
+                'date_to': destination_details.date_on_sale_to,
+            }
+        except BaseException:
+            return None
+        return list_dates
+
+    @property
+    def list_prices(self):
+        try:
+            destination_details = GeneralDetail.objects.get(destination_detail__destination=self.pk)
+            list_prices = {
+                'regular_price': destination_details.regular_price,
+                'sale_price': destination_details.sale_price,
+            }
+        except BaseException:
+            return None
+        return list_prices
 
 
 class Photo(models.Model):
@@ -440,7 +471,6 @@ class DestinationDetail(models.Model):
     def __str__(self):
         return f"{self.destination}-details"
 
-    
     class Meta:
         verbose_name_plural = _('Detalles del destino')
         verbose_name = _('Detalle del destino')
