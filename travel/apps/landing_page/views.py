@@ -37,7 +37,7 @@ class CotegoriesView(View):
 class DetailDestinationView(View):
 
     def get(self, request, *args, **kwargs):
-        destination= Destination.objects.filter(id=kwargs.get('slug'))
+        destination= Destination.objects.get(id=kwargs.get('slug'))
         return render(request, 'services/destination/detail_destination.html',{
             'destino':destination,
             })

@@ -181,6 +181,7 @@ DJANGO_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'django.contrib.humanize'
 ]
 
 THIRD_PARTY = [

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags humanize %}
 {% block title %}{% trans 'Categories' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
@@ -50,12 +50,12 @@
                 <li class="list-inline-item">
                   <!-- Select -->
                   <select id="FilterDestinies" style="width:100%" class="custom-select dropdown-select">
-                    <option value="*">{% trans "Default Order" %}</option>
+                    <option value="all">{% trans "Default Order" %}</option>
                     <option value="popularity:asc">{% trans "Sort by popularity" %}</option>
                     <option value="average:asc">{% trans "Sort by average ranking"%}</option>
                     <option value="datepublished:desc">{% trans "Sort by last"%}</option>
-                    <option value="price:asc">{% trans "Sort by price: Low to High"%}</option>
-                    <option value="price:desc">{% trans "Sort by price: High to Low"%}</option>
+                    <option value="price:desc">{% trans "Sort by price: Low to High"%}</option>
+                    <option value="price:asc">{% trans "Sort by price: High to Low"%}</option>
                   </select>
                   <!-- End Select -->
 
@@ -72,8 +72,8 @@
             <div class="col-md-6 col-lg-4 mb-3 mix"
             data-popularity="" 
             data-average=""
-            data-datepublished=""
-            data-price=""
+            data-datepublished="{{destino.published_date.date_from}}"
+            data-price="{{destino.list_prices.sale_price}}"
             >
             <!-- Destino Card -->
             <article class="card shadow h-100">
@@ -85,7 +85,7 @@
                 </h2>
                 {{ destino.short_description|truncatechars:120 |safe }}
                 <div class="d-block">
-                        <span class="font-weight-medium">{{destino.generaldetail.regular_price}}</span>
+                        <span class="font-weight-medium">{{destino.list_prices.sale_price}}</span>
                 </div>
               </div>
               <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
@@ -127,9 +127,9 @@
                      data-hide-from-to="false"
                      data-prefix="$"
                      data-min="0"
-                     data-max="{{range_max}}"
-                     data-from="{{range_min}}"
-                     data-to="{{range_max}}"
+                     data-max="{{range_max.regular_price__max|floatformat:0}}"
+                     data-from="{{range_min.regular_price__min|floatformat:0}}"
+                     data-to="{{range_max.regular_price__max|floatformat:0}}"
                      data-result-min="#rangeSliderExample3MinResult"
                      data-result-max="#rangeSliderExample3MaxResult">
               <div class="d-flex justify-content-between mt-4">
@@ -165,7 +165,7 @@
                 {%endif%}
               {% endfor%}
              </div>
-              <!-- Link -->
+              <!-- Link 
               <a class="link link-collapse small font-size-1" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
                 <span class="link-collapse__default">{% trans "View more" %}</span>
                 <span class="link-collapse__active">{% trans "View less" %}</span>
@@ -173,7 +173,7 @@
                   <span class="link__icon-inner">+</span>
                 </span>
               </a>
-              <!-- End Link -->
+              End Link -->
             </div>
           </form>
         </div>
