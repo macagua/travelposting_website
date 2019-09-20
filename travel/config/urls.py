@@ -69,7 +69,7 @@ urlpatterns += i18n_patterns(
     ),
 
     url(
-        r'^cotegory/(?P<alias>\w+)',
+        r'^category/(?P<alias>\w+)',
         CotegoriesView.as_view(),
         name='view_category'
     ),
@@ -78,7 +78,6 @@ urlpatterns += i18n_patterns(
         'paypal/',
             include('apps.payments.paypal.urls'),
     ),
-
 
     url(
         r'^',
