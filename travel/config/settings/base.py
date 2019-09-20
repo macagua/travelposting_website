@@ -232,6 +232,10 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
 
 # Authentication options
 AUTH_USER_MODEL = 'accounts.CustomerUser'
+LOGIN_URL = 'landing:index'
+LOGIN_REDIRECT_URL = 'destinations:list'
+LOGOUT_URL = 'accounts:logout'
+LOGOUT_REDIRECT_URL = 'landing:index'
 
 THUMBNAIL_HIGH_RESOLUTION = True
 

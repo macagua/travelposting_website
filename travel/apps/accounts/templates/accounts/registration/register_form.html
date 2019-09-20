@@ -40,14 +40,14 @@
                     </center>
                 </div>
                 <!-- End Testimonials Carousel Main -->
-                
             </div>
         </div>
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
                     <!-- Form -->
-                    <form class="js-validate mt-6">
+                    <form class="js-validate mt-6" role="form" method="post">
+                        {% csrf_token %}
                         <!-- Title -->
                         <div class="mb-7">
                             <h1 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome to' %} <span class="font-weight-semi-bold">Travelposting</span></h1>
@@ -85,20 +85,3 @@
 </main>
 <!-- ========== END MAIN ========== -->
 {% endblock content %}
-{% block extrajs %}
-  <!-- JS Plugins Init. -->
-  <script>
-        $(document).on('ready', function () {
-          // initialization of slick carousel
-          $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-          // initialization of form validation
-          $.HSCore.components.HSValidation.init('.js-validate', {
-            rules: {
-              confirmPassword: {
-                equalTo: '#signupPassword'
-              }
-            }
-          });
-        });
-      </script>
-{% endblock extrajs %}

@@ -74,6 +74,11 @@ urlpatterns += i18n_patterns(
         name='view_category'
     ),
 
+    path(
+        'paypal/',
+            include('apps.payments.paypal.urls'),
+    ),
+
 
     url(
         r'^',

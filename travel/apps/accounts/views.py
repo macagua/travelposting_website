@@ -1,7 +1,9 @@
 import logging
-
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
+from apps.accounts.models import CustomerUser
+from apps.payments.paypal.views import SubscriptionView
+from config.settings import local as settings
 from django.core.exceptions import PermissionDenied
 from django.core.mail import mail_managers
 from django.forms.forms import BaseForm
@@ -11,10 +13,8 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, UpdateView
 from django.views.i18n import set_language
 from django_registration.backends.activation.views import RegistrationView, ActivationView
-
 from apps.landing_page.models import Plan
 from django.shortcuts import render
-
 from apps.accounts.forms import (
     RegistrationForm,
     CustomPasswordResetForm,
@@ -24,10 +24,6 @@ from apps.accounts.forms import (
     CustomAuthenticationForm,
 )
 
-from apps.accounts.models import CustomerUser
-from apps.payments.paypal.views import SubscriptionView
-from config.settings import local as settings
-
 logger = logging.getLogger(__name__)
 
 
@@ -35,13 +31,11 @@ class LoginView(auth_views.LoginView):
     template_name = 'accounts/registration/login.html'
 
 
-
 class RegisterView(SubscriptionView, RegistrationView):
     email_body_template = 'accounts/registration/activation_email_body.html'
     html_email_template_name = 'accounts/registration/activation_email_body.html'
     email_subject_template = 'accounts/registration/activation_email_subject.txt'
     success_url = reverse_lazy('accounts:register-complete')
-    disallowed_url = reverse_lazy('accounts:django_registration_disallowed')
     template_name = 'accounts/registration/register_form.html'
     form_class = RegistrationForm
 
@@ -72,19 +66,25 @@ class RegisterView(SubscriptionView, RegistrationView):
         html_body = loader.render_to_string('accounts/registration/notify_register_admin_body.html', context)
         mail_managers(subject, 'Nuevo usuario registrado', html_message=html_body)
 
-def isuccess(request):    
+
+def isuccess(request):
     return render(request, 'accounts/registration/succes_register.html')
 
-def password(request):    
+class ActivateAccountView(ActivationView):
+    success_url = reverse_lazy('accounts:activate-complete')
+    template_name = 'accounts/registration/activation_failed.html'
+
+def password(request):
     return render(request, 'accounts/registration/forgot_password.html')
+
 
 def passwordsuccess(request):
     return render(request, 'accounts/registration/forgot_password_success.html')
 
+
 def passwordconfirm(request):
     return render(request, 'accounts/registration/password_reset_confirm.html')
 
+
 def passworddone(request):
     return render(request, 'accounts/registration/password_reset_done.html')
-
-
