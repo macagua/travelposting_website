@@ -5,6 +5,25 @@
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
+<div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url(/main/media/{{ destino.photos.first.image }});">
+    <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
+        <div class="w-md-65 w-lg-50">
+        </div>
+    </div>
+
+    <!-- SVG Background -->
+    <figure class="position-absolute right-0 bottom-0 left-0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="100%" height="85px" viewBox="0 0 1920 107.7" style="margin-bottom: -8px; enable-background:new 0 0 1920 107.7;" xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#SVGHero">
+        <style type="text/css">
+            .wave-9-bottom-0{fill:#FFFFFF;}
+            .wave-9-bottom-1{fill:#FFFFFF;}
+        </style>
+        <path class="wave-9-bottom-0 fill-white" d="M0,107.7V69.8c0,0,451-54.7,960-5.4S1920,0,1920,0v107.7H0z"></path>
+        <path class="wave-9-bottom-1 fill-white" opacity=".3" d="M0,107.7v-81c0,0,316.2-8.9,646.1,54.5s794.7-114.1,1273.9-38v64.5H0z"></path>
+        </svg>
+    </figure>
+    <!-- End SVG Background -->
+</div>
 <div class="container space-top-1 space-md-3 space-top-sm-2">
       <div class="row">
         <div class="col-lg-7 mb-7 mb-lg-0">
@@ -27,7 +46,6 @@
                 <li class="nav-item">
                   <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false">
                     <div class="d-md-flex justify-content-md-center align-items-md-center">
-                      
                      TAB 2
                     </div>
                   </a>
@@ -51,12 +69,12 @@
       <div class="col-md-8 col-lg-6">
         <!-- Gallery -->
         <a class="js-fancybox u-media-viewer" href="javascript:;"
-           data-src="/media/{{gallery.image}}"
+           data-src="/main/media/{{gallery.image}}"
            data-fancybox="fancyboxGallery6"
            data-caption="{{gallery.name}} - {{gallery.description}}"
            data-speed="700"
            data-is-infinite="true">
-          <img class="img-fluid" src="/media/{{gallery.image}}" alt="{{gallery.description}}">
+          <img class="img-fluid" src="/main/media/{{gallery.image}}" alt="{{gallery.description}}">
 
           <div class="position-absolute bottom-0 right-0 pb-3 pr-3">
             <span class="d-md-none btn btn-sm btn-white">
@@ -93,7 +111,7 @@
           <!-- Title -->
           <div class="mb-5">
             <h1 class="h3 font-weight-medium">{{destino.name}}</h1>
-            <p>{{destino.short_description}}</p>
+            <p>{{destino.short_description |safe}}</p>
           </div>
           <!-- End Title -->
 
