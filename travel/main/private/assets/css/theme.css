@@ -23380,3 +23380,16 @@ label.btn {
 .blue-travel-posting{
   color:#377DFF;
 }
+
+
+
+/*
+Nuestro  CSS
+*/
+.container2 {
+  width: 100%;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin-right: auto;
+  margin-left: auto;
+}

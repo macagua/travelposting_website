@@ -53,6 +53,11 @@ urlpatterns += i18n_patterns(
     ),
 
     path(
+        'tour/',
+        include("apps.destinations.urls", namespace='tours'),
+    ),
+
+    path(
         'api/',
         include('apps.api.urls', namespace='api'),
     ),
