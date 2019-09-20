@@ -78,6 +78,7 @@ class SubscriptionView(object):
             return form.cleaned_data.get('plan').paypal_id
 
     def form_valid(self, form):
+        import ipdb;ipdb.set_trace()
         sub = self.subscription_class(self.get_subscription_data(form))
         if sub.create():
             logger.debug(f'Created subscription successfully wit id: {sub.id}.')
@@ -88,8 +89,11 @@ class SubscriptionView(object):
                 if link.rel == 'approve':
                     return redirect(link.href)
         else:
-            form.add_error(None, _(f'The payment could not be processed {sub.error}.'))
-            return self.form_invalid(form)
+            new_user = self.register(form)
+            new_user.save()
+            return redirect('accounts:register-complete')
+            #form.add_error(None, _(f'The payment could not be processed {sub.error}.'))
+            #return self.form_invalid(form)
 
 
 class CancelRedirectView(RedirectView):

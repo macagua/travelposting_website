@@ -84,3 +84,4 @@ class OptionTabDataAdmin(admin.ModelAdmin):
 
 
 admin.site.register(GeneralDetail)
+admin.site.register(TourData)

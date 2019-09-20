@@ -15,6 +15,7 @@ from django.conf.urls.static import static
 from apps.landing_page.views import (
     CommmunityView,
     CotegoriesView,
+    DetailDestinationView
 )
 admin.autodiscover()
 
@@ -66,11 +67,21 @@ urlpatterns += i18n_patterns(
         r'^community',
         CommmunityView.as_view(),
     ),
+    url(
+        r'^cotegory/(?P<alias>\w+)/destination/(?P<slug>\w+)',
+        DetailDestinationView.as_view(),
+        name='view_detail_destination'
+    ),
 
     url(
-        r'^cotegory/(?P<alias>\w+)',
+        r'^category/(?P<alias>\w+)',
         CotegoriesView.as_view(),
         name='view_category'
+    ),
+
+    path(
+        'paypal/',
+            include('apps.payments.paypal.urls'),
     ),
 
     url(

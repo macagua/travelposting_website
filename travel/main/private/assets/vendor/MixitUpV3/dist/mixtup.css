@@ -1,0 +1,160 @@
+.mixitup-control-active {
+    background: #393939;
+}
+
+.mixitup-control-active[data-filter]:after {
+    background: transparent;
+}
+
+.control:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.control:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
+
+.control[data-filter] + .control[data-sort] {
+    margin-left: .75rem;
+}
+
+
+/* Pagination Controls
+---------------------------------------------------------------------- */
+
+
+.mixitup-page-list,
+.mixitup-page-stats {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mixitup-page-list {
+    text-align: left;
+}
+
+.mixitup-page-stats {
+    font-size: .9rem;
+    color: #333;
+    font-weight: bold;
+    font-family: 'helvetica', arial, sans-serif;
+}
+
+.mixitup-control {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    background: #fff;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    margin-right: 1px;
+    cursor: pointer;
+    font-size: .9rem;
+    color: #333;
+    font-weight: bold;
+    font-family: 'helvetica', arial, sans-serif;
+    transition: color 150ms, border-color 150ms;
+    vertical-align: middle;
+}
+
+.mixitup-control:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.mixitup-control:last-child {
+    border-radius: 0 3px 3px 0;
+}
+
+.mixitup-control:not(.mixitup-control-active):hover {
+    color: #91e6c7;
+}
+
+.mixitup-control-active {
+    color: #fff;
+    background-color: #377dff;
+    border-color: #377dff;
+    cursor: default;
+}
+
+.mixitup-control:disabled {
+    background: #eaeaea;
+    color: #aaa;
+    cursor: default;
+}
+
+.mixitup-control-truncation-marker {
+    background: transparent;
+    pointer-events: none;
+    line-height: 2.2em;
+}
+
+.mix,
+.gap {
+    display: inline-block;
+    vertical-align: top;
+}
+/* Grid Breakpoints & Column Counts
+---------------------------------------------------------------------- */
+
+/* 2 Columns */
+
+.mix,
+.gap {
+    width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+}
+
+/**
+ * NB: The `font-size` property on the hidden `.column-counter` element is set to
+ * a value representing the number of columns. We will parse this value on init and
+ * on resize, which avoids the need to track viewport width and define
+ * breakpoints in our JavaScript which can also be unreliable when scrollbars
+ * are added/removed. Any CSS property which supports a numeric value could
+ * be used instead of font-size.
+ */
+
+.column-counter {
+    font-size: 2px;
+}
+
+/* 3 Columns */
+
+@media screen and (min-width: 541px) {
+    .mix,
+    .gap {
+        width: calc(100%/3 - (((3 - 1) * 1rem) / 3));
+    }
+
+    .column-counter {
+        font-size: 3px;
+    }
+}
+
+/* 4 Columns */
+
+@media screen and (min-width: 961px) {
+    .mix,
+    .gap {
+        width: calc(100%/4 - (((4 - 1) * 1rem) / 4));
+    }
+
+    .column-counter {
+        font-size: 4px;
+    }
+}
+
+/* 5 Columns */
+
+@media screen and (min-width: 1281px) {
+    .mix,
+    .gap {
+        width: calc(100%/5 - (((5 - 1) * 1rem) / 5));
+    }
+
+    .column-counter {
+        font-size: 5px;
+    }
+}
+
+

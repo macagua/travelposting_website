@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags humanize %}
 {% block title %}{% trans 'Categories' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
@@ -8,17 +8,33 @@
 {% block extracss %} 
 <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
 <link rel="stylesheet" href="{% static 'assets/vendor/ion-rangeslider/css/ion.rangeSlider.css' %}">
+<link rel="stylesheet" href="{% static 'assets/vendor/MixitUpV3/dist/mixtup.css' %}">
 {% endblock extracss %}
 {% block content %}
-  
+<div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url(/main/media/{{ categorie.first.image }});">
+    <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
+        <div class="w-md-65 w-lg-50">
+            <h1 class="h1 text-primary font-weight-medium">{{ categorie.first.name }}</h1>
+            <h2 class="h1 text-primary">{{ categorie.first.short_description }}</h2>
+        </div>
+    </div>
+
+    <!-- SVG Background -->
+    <figure class="position-absolute right-0 bottom-0 left-0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="100%" height="85px" viewBox="0 0 1920 107.7" style="margin-bottom: -8px; enable-background:new 0 0 1920 107.7;" xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#SVGHero">
+        <style type="text/css">
+            .wave-9-bottom-0{fill:#FFFFFF;}
+            .wave-9-bottom-1{fill:#FFFFFF;}
+        </style>
+        <path class="wave-9-bottom-0 fill-white" d="M0,107.7V69.8c0,0,451-54.7,960-5.4S1920,0,1920,0v107.7H0z"></path>
+        <path class="wave-9-bottom-1 fill-white" opacity=".3" d="M0,107.7v-81c0,0,316.2-8.9,646.1,54.5s794.7-114.1,1273.9-38v64.5H0z"></path>
+        </svg>
+    </figure>
+    <!-- End SVG Background -->
+</div>
 
     <!-- Categories & Filters Section -->
     <div class="container space-3 space-md-3 space-lg-3 space-bottom-lg-3">
-      <!-- Title -->
-      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-        <h2 class="text-primary"><span class="font-weight-semi-bold">{{categorie}}</span></h2>
-      </div>
-      <!-- End Title -->
       <div class="row">
         <div class="col-lg-9">
           <!-- Sorting -->
@@ -33,28 +49,32 @@
               <ul class="list-inline mb-0">
                 <li class="list-inline-item">
                   <!-- Select -->
-                  <select style="width:100%" class="js-select selectpicker dropdown-select"
-                          data-size="40"
-                          data-width="fit"
-                          data-style="btn-soft-secondary btn-md show-menu-arrow">
-                    <option data-filter="*" selected="selected" >{% trans "Default Order" %}</option>
-                    <option data-filter="2017">{% trans "Sort by popularity" %}</option>
-                    <option data-filter="2016">{% trans "Sort by average ranking"%}</option>
-                    <option data-filter="2015">{% trans "Sort by last"%}</option>
-                    <option data-filter="2016">{% trans "Sort by price: Low to High"%}</option>
-                    <option data-filter="2015">{% trans "Sort by price: High to Low"%}</option>
+                  <select id="FilterDestinies" style="width:100%" class="custom-select dropdown-select">
+                    <option value="all">{% trans "Default Order" %}</option>
+                    <option value="popularity:asc">{% trans "Sort by popularity" %}</option>
+                    <option value="average:asc">{% trans "Sort by average ranking"%}</option>
+                    <option value="datepublished:desc">{% trans "Sort by last"%}</option>
+                    <option value="price:desc">{% trans "Sort by price: Low to High"%}</option>
+                    <option value="price:asc">{% trans "Sort by price: High to Low"%}</option>
                   </select>
                   <!-- End Select -->
+
                 </li>
               </ul>
             </div>
           </div>
           <!-- End Sorting -->
 
+
           <!-- Products -->
-          <div class="row mx-n2 mb-2">
+          <div id="list-destinies" class="row mx-n2 mb-2">
             {%for destino in lista_destinos %}
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div class="col-md-6 col-lg-4 mb-3 mix"
+            data-popularity="" 
+            data-average=""
+            data-datepublished="{{destino.published_date.date_from}}"
+            data-price="{{destino.list_prices.sale_price}}"
+            >
             <!-- Destino Card -->
             <article class="card shadow h-100">
               <img class="card-img-top" src="{{destino.first_pic}}" alt="{{destino.name}}">
@@ -65,50 +85,27 @@
                 </h2>
                 {{ destino.short_description|truncatechars:120 |safe }}
                 <div class="d-block">
-                        <span class="font-weight-medium">{{destino.generaldetail.regular_price}}</span>
+                        <span class="font-weight-medium">{{destino.list_prices.sale_price}}</span>
                 </div>
               </div>
-              <div class="card-footer border-0 pt-0 pb-0 px-0 mx-5">
+              <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
                 <div class="media align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</button>
+                  <a href="{% url 'view_detail_destination' destino.categorie.alias destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</a>
                 </div>
               </div>
             </article>
-            <!-- End Blog Card -->
+            <!-- End Desrino Card -->
           </div>
           {% endfor%}
         </div>
         <!-- End Destinies -->
         <div class="py-3"></div>
-        <!-- Pagination -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-between align-items-center">
-              <li class="page-item ml-0">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo; Prev</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <div class="d-flex align-items-center">
-                  <span class="d-none d-sm-inline-block text-secondary">Page:</span>
-                  <select class="custom-select custom-select-sm w-auto mx-2">
-                    <option value="quantity1">1</option>
-                    <option value="quantity2">2</option>
-                  </select>
-                  <span class="d-none d-sm-inline-block text-secondary">of 8</span>
-                </div>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">{% trans "Next" %} &raquo;</span>
-                  <span class="sr-only">{% trans "Next" %}</span>
-                </a>
-              </li>
-            </ul>
+        <nav>
+          <ul class="controls-pagination pagination justify-content-between align-items-center">
+              <div class="mixitup-page-list"></div>
+          </ul>
         </nav>
-          <!-- End Pagination -->
-
+        <input type="hidden" class="column-counter"/>
           <!-- Divider -->
           <div class="d-lg-none">
             <hr class="my-11">
@@ -130,9 +127,9 @@
                      data-hide-from-to="false"
                      data-prefix="$"
                      data-min="0"
-                     data-max="{{range_max}}"
-                     data-from="{{range_min}}"
-                     data-to="{{range_max}}"
+                     data-max="{{range_max.regular_price__max|floatformat:0}}"
+                     data-from="{{range_min.regular_price__min|floatformat:0}}"
+                     data-to="{{range_max.regular_price__max|floatformat:0}}"
                      data-result-min="#rangeSliderExample3MinResult"
                      data-result-max="#rangeSliderExample3MaxResult">
               <div class="d-flex justify-content-between mt-4">
@@ -168,7 +165,7 @@
                 {%endif%}
               {% endfor%}
              </div>
-              <!-- Link -->
+              <!-- Link 
               <a class="link link-collapse small font-size-1" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
                 <span class="link-collapse__default">{% trans "View more" %}</span>
                 <span class="link-collapse__active">{% trans "View less" %}</span>
@@ -176,7 +173,7 @@
                   <span class="link__icon-inner">+</span>
                 </span>
               </a>
-              <!-- End Link -->
+              End Link -->
             </div>
           </form>
         </div>
@@ -192,9 +189,28 @@
 <script src="{% static 'assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js' %}"></script>
 <script src="{% static 'assets/js/components/hs.selectpicker.js' %}"></script>
 <script src="{% static 'assets/js/components/hs.range-slider.js' %}"></script>
+<script src="{% static 'assets/vendor/MixitUpV3/dist/mixitup.min.js' %}"></script>
+<script src="{% static 'assets/vendor/MixItUp/dist/mixitup-pagination.min.js' %}"></script>
 <script>
   $.HSCore.components.HSRangeSlider.init('.js-range-slider');
   $.HSCore.components.HSSelectPicker.init('.js-select');
+            var $filterSelect = $('#FilterDestinies');
+            var containerEl = document.querySelector('#list-destinies');
+            var mixer = mixitup(containerEl, {
+                pagination: {
+                    limit: 6
+                },
+                animation: {
+                    nudge: false
+                }
+            });
+            $filterSelect.on('change', function(){
+                if(this.value=='all')
+                  mixer.filter(this.value);
+                else
+                  mixer.sort(this.value);
+            });
+
 </script>
 {% endblock extrajs %}
  

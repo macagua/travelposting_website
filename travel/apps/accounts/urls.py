@@ -1,19 +1,22 @@
-from django.contrib.auth.views import logout_then_login
-from django.urls import path, include
-from django.views.generic import TemplateView
-
+from django.urls import path
 from apps.accounts import views
-
 from django.contrib.auth.views import logout_then_login
-from django.urls import path, include
-from django.views.generic import TemplateView
 
-from apps.accounts import views
 
 app_name = 'accounts'
+
 urlpatterns = [
-    
-    path('register/<int:pk>', views.RegisterView.as_view()),    
+    path(
+        'activate/complete/',
+        views.isuccess,
+         name='activate-complete',
+    ),
+
+    path(
+        'activate/<str:activation_key>/',
+        views.ActivateAccountView.as_view(),
+        name='activate',
+    ),
 
     path(
         'register/',
@@ -32,27 +35,34 @@ urlpatterns = [
         logout_then_login,
         name='logout',
     ),
-    path('register/success/', views.isuccess),
+
+    path(
+        'register/success/',
+        views.isuccess,
+        name='register-complete',
+    ),
+
     path(
         'password_reset/',
         views.password,
         name='password-reset',
     ),
+
     path(
         'password_reset/success/',
         views.passwordsuccess,
-        name='password-reset-success',
+        name='password-reset-complete',
     ),
+
     path(
         'password_reset/confirm/',
         views.passwordconfirm,
         name='password-reset-success',
     ),
+
     path(
         'password_reset/done/',
         views.passworddone,
         name='password-reset-done',
     ),
-
-
 ]

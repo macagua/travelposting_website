@@ -55,7 +55,7 @@ class RegistrationForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationForm)
                     'first_name',
                     'last_name',
                 ] + BASE_REGISTRATION_FIELDS
- 
+
         fields_kwargs = {
             'plan': {
                 'queryset': Plan.objects.filter(active=True),
