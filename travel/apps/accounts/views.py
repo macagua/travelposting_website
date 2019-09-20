@@ -54,7 +54,7 @@ class RegisterView(SubscriptionView, RegistrationView):
 
         user.email_user(subject, body, settings.DEFAULT_FROM_EMAIL, html_message=html_email)
 
-        if not settings.DEBUG:
+        if settings.DEBUG:
             self.send_notify_managers_email(user)
 
     def send_notify_managers_email(self, user):

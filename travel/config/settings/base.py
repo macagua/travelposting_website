@@ -230,6 +230,17 @@ LOCAL_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
 
+# Email config
+# https://docs.djangoproject.com/en/2.1/topics/email/#module-django.core.mail
+# python -m smtpd -n -c DebuggingServer localhost:1025
+ADMINS = [
+    ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
+]
+
+MANAGERS = [
+    ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
+]
+
 # Authentication options
 AUTH_USER_MODEL = 'accounts.CustomerUser'
 LOGIN_URL = 'landing:index'
