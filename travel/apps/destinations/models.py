@@ -192,6 +192,20 @@ class Destination(models.Model):
         except BaseException:
             return None
         return list_dates
+    
+    @property
+    def mapa(self):
+        mapa = TabData.objects\
+        .filter(option_tab__name="Mapa")\
+        .get(tour_data__destination=self.pk)
+        return mapa
+    @property
+    def itinerario(self):
+        itine = TabData.objects\
+        .filter(option_tab__name="Itinerario")\
+        .get(tour_data__destination=self.pk)
+        return itine
+    
 
     @property
     def list_prices(self):

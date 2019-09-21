@@ -116,11 +116,11 @@
           </center> 
   </div>
   <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
-     AQUI OTRO DETALLE
+     {{destino.description|safe}}
   </div>
 
   <div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab">
-      AQUI OTRO MAS
+      {{destino.mapa.content|safe}}
   </div>
 </div>
 <!-- End Tab Content -->
@@ -151,7 +151,9 @@
           </div>
           <!-- Accordion -->
           <div id="shopCartAccordion" class="accordion mb-5">
-            <!-- Card -->
+          {% if destino.itinerario.count > 0 %}
+            {% for itinerario in destino.itinerario %}
+              <!-- Card -->
             <div class="card">
               <div class="card-header card-collapse" id="shopCardHeadingOne">
                 <h3 class="mb-0">
@@ -163,7 +165,7 @@
    
                           </span>
                           <span class="media-body">
-                            <span class="d-block font-size-1 font-weight-medium">UNA DESCRIPCION</span>
+                            <span class="d-block font-size-1 font-weight-medium">{% trans "Day" %} {{forloop.counter}}</span>
                           </span>
                         </span>
                       </span>
@@ -178,15 +180,16 @@
               </div>
               <div id="shopCardOne" class="collapse show" aria-labelledby="shopCardHeadingOne" data-parent="#shopCartAccordion" style="">
                 <div class="card-body">
-                  <p class="small mb-0">DETALLE DE UNA DESCRIPCION</p>
+                  {{itinerario.content|safe}}
                 </div>
               </div>
             </div>
-            <!-- End Card -->
-
+            <!-- End Card -->    
+            {% endfor%}
+        {%else%}
             <!-- Card -->
             <div class="card">
-              <div class="card-header card-collapse" id="shopCardHeadingTwo">
+              <div class="card-header card-collapse">
                 <h4 class="mb-0">
                   <button type="button" class="btn btn-link btn-block card-btn collapsed" data-toggle="collapse" data-target="#shopCardTwo" aria-expanded="false" aria-controls="shopCardTwo">
                     <span class="row align-items-center">
@@ -196,26 +199,21 @@
  
                           </span>
                           <span class="media-body">
-                            <span class="d-block font-size-1 font-weight-medium">OTRA DESCRIPCION</span>
+                            <span class="d-block font-size-1 font-weight-medium">
+                              {% trans "We still don't have the intenerario for this destination" %}
+                            </span>
                           </span>
-                        </span>
-                      </span>
-                      <span class="col-3 text-right">
-                        <span class="card-btn-arrow">
-                          <span class="fas fa-arrow-down small"></span>
                         </span>
                       </span>
                     </span>
                   </button>
                 </h4>
               </div>
-              <div id="shopCardTwo" class="collapse" aria-labelledby="shopCardHeadingTwo" data-parent="#shopCartAccordion" style="">
-                <div class="card-body">
-                  <p class="small mb-0">DETALLE DE OTRA DESCRIPCION</p>
-                </div>
-              </div>
             </div>
             <!-- End Card -->
+        {%endif%}            
+
+          
           </div>
           <!-- End Accordion -->
 
