@@ -71,33 +71,9 @@
 <div class="tab-content">
   <div class="tab-pane fade pt-6 show active" id="pills-one-example2" role="tabpanel" aria-labelledby="pills-one-example2-tab">
     <!--START GALLERY-->
-   <div class="overflow-hidden">
-      <div class="js-slick-carousel u-slick u-slick--gutters-2"
-       data-infinite="true"
-       data-slides-show="1"
-       data-slides-scroll="1"
-       data-center-mode="true"
-       data-center-padding="200px"
-       data-responsive='[{
-         "breakpoint": 992,
-         "settings": {
-         "slidesToShow": 2,
-           "centerPadding": "120px"
-         }
-       }, {
-         "breakpoint": 768,
-         "settings": {
-         "slidesToShow": 1,
-           "centerPadding": "80px"
-         }
-       }, {
-         "breakpoint": 554,
-         "settings": {
-         "slidesToShow": 1,
-           "centerPadding": "50px"
-         }
-       }]' >
+    <div class="row mx-gutters-1">
       {% for gallery in destino.photos%}
+          <div class="col-md-6 col-lg-6">
             <!-- Gallery -->
             <a class="js-fancybox u-media-viewer" href="javascript:;"
                data-src="/main/media/{{gallery.image}}"
@@ -105,12 +81,39 @@
                data-caption="{{gallery.name}} - {{gallery.description}}"
                data-speed="700"
                data-is-infinite="true">
-               <div class="js-slide rounded bg-img-hero min-height-300" style="background-image: url(/main/media/{{gallery.image}});"></div>
+              <img class="img-fluid" src="/main/media/{{gallery.image}}" alt="{{gallery.description}}">
+
+              <div class="position-absolute bottom-0 right-0 pb-3 pr-3">
+                <span class="d-md-none btn btn-sm btn-white">
+                  <span class="fas fa-expand mr-2"></span>
+                  {% trans "View Photos" %}
+                </span>
+              </div>
             </a>
             <!-- End Gallery -->
+
+          </div>
         {% endfor%}
+       
       </div>
-  </div>
+      <br>
+      <center>
+          <nav aria-label="...">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </center> 
   </div>
   <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
      {{destino.description|safe}}
