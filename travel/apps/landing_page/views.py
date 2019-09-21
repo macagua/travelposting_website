@@ -24,13 +24,16 @@ class CategoriesView(View):
     def get(self, request, *args, **kwargs):
         if kwargs.get('alias') == 'all':
             destination_for_category = Destination.objects.all()
-            categorie='all'
+            all_categories = True
+            categorie = Categorie.objects.all()
         else:
             destination_for_category = Destination.objects.filter(categorie__alias=kwargs.get('alias'))
             categorie=Categorie.objects.filter(alias=kwargs.get('alias'))
+            all_categories = False
         range_min = GeneralDetail.objects.all().aggregate(Min('regular_price'))
         range_max = GeneralDetail.objects.all().aggregate(Max('regular_price'))
         return render(request, 'services/destination/destinations_for_categorie.html',{
+            'all_categories': all_categories,
             'lista_destinos':destination_for_category,
             'categorie':categorie,
             'range_min':range_min,

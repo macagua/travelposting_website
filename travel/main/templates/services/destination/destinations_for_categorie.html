@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="{% static 'assets/vendor/MixitUpV3/dist/mixtup.css' %}">
 {% endblock extracss %}
 {% block content %}
-{% ifequal categorie 'all'%}
+{% if all_categories %}
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url({% static 'img/trains.jpg' %});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
         <div class="w-md-65 w-lg-50">
@@ -52,53 +52,11 @@
     </figure>
     <!-- End SVG Background -->
 </div>
-{% endifequal %}
+{% endif %}
 <br>
 <!-- Categories & Filters Section -->
 <div class="container space-3 space-md-3 space-lg-3 space-bottom-lg-3">
     <div class="row">
-        <div class="col-lg-9">
-
-            <!-- Products -->
-            <div id="list-destinies" class="row mx-n2 mb-2">
-                {%for destino in lista_destinos %}
-                <div class="col-md-6 col-lg-4 mb-3 mix"
-                    data-popularity="" 
-                    data-average=""
-                    data-datepublished="{{destino.published_date.date_from}}"
-                    data-price="{{destino.list_prices.sale_price}}"
-                    >
-                    <!-- Destino Card -->
-                    <article class="card shadow h-100">
-                        <img class="card-img-top" src="{{destino.first_pic}}" alt="{{destino.name}}">
-                        <div class="card-body p-5">
-                            <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#">{{destino.name}}</a>
-                            <h2 class="h5 font-weight-medium">
-                                <a href="single-article.html">{{destino.categorie.name}}</a>
-                            </h2>
-                            {{ destino.short_description|truncatechars:120 |safe }}
-                            <div class="d-block">
-                                <span class="font-weight-medium">{{destino.list_prices.sale_price}}</span>
-                            </div>
-
-                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</a>
-
-                          </div>
-                        <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
-
-                        </div>
-                    </article>
-                    <!-- End Desrino Card -->
-                </div>
-                {% endfor%}
-            </div>
-            <!-- End Destinies -->
-
-            <!-- Divider -->
-            <div class="d-lg-none">
-                <hr class="my-11">
-            </div>
-            <!-- End Divider -->
             <!-- Sorting -->
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-3 mb-lg-0">
@@ -125,13 +83,55 @@
             </div>
             <!-- End Sorting -->
             <div class="py-3"></div>&nbsp;&nbsp;&nbsp;&nbsp;
+
             <nav>
                 <ul class="controls-pagination pagination justify-content-between align-items-center">
                     <div class="mixitup-page-list"></div>
                 </ul>
             </nav>
             <input type="hidden" class="column-counter"/>
+        <div class="col-lg-9">
 
+            <!-- Products -->
+            <div id="list-destinies" class="row mx-n2 mb-2">
+                {%for destino in lista_destinos %}
+                <div class="col-md-6 col-lg-4 mb-3 mix"
+                    data-popularity="" 
+                    data-average=""
+                    data-datepublished="{{destino.published_date.date_from}}"
+                    data-price="{{destino.list_prices.sale_price}}"
+                    >
+                    <!-- Destino Card -->
+                    <article class="card shadow h-100">
+                        <img class="card-img-top" src="{{destino.first_pic}}" alt="{{destino.name}}">
+                        <div class="card-body p-5">
+                            <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#">{{destino.name}}</a>
+                            <h2 class="h5 font-weight-medium">
+                                <a href="single-article.html">{{destino.categorie.name}}</a>
+                            </h2>
+                                {{ destino.short_description|striptags | truncatechars:120 }}
+                            <div class="d-block">
+                                <span class="font-weight-medium">{{destino.list_prices.sale_price}}</span>
+                            </div>
+
+                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</a>
+
+                          </div>
+                        <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
+
+                        </div>
+                    </article>
+                    <!-- End Desrino Card -->
+                </div>
+                {% endfor%}
+            </div>
+            <!-- End Destinies -->
+
+            <!-- Divider -->
+            <div class="d-lg-none">
+                <hr class="my-11">
+            </div>
+            <!-- End Divider -->
         </div>
         <!-- Filters -->
 
@@ -215,7 +215,7 @@
               var containerEl = document.querySelector('#list-destinies');
               var mixer = mixitup(containerEl, {
                   pagination: {
-                      limit: 2
+                      limit: 6
                   },
                   animation: {
                       nudge: false
