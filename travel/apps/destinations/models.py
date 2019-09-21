@@ -168,7 +168,10 @@ class Destination(models.Model):
 
     @staticmethod
     def count_categorie(alias):
-        return Destination.objects.filter(categorie__alias=alias).count()
+        if alias == 'all':
+            return Destination.objects.all().count()
+        else:
+            return Destination.objects.filter(categorie__alias=alias).count()
 
     @property
     def photos(self):

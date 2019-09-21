@@ -78,7 +78,6 @@ class SubscriptionView(object):
             return form.cleaned_data.get('plan').paypal_id
 
     def form_valid(self, form):
-        import ipdb;ipdb.set_trace()
         sub = self.subscription_class(self.get_subscription_data(form))
         if sub.create():
             logger.debug(f'Created subscription successfully wit id: {sub.id}.')

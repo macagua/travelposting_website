@@ -36,7 +36,7 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='travelsolution@travelposting.c
 # https://docs.djangoproject.com/en/2.2/ref/settings/#email-host-password
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='T$Ss_2019!**T')
 # https://docs.djangoproject.com/en/2.2/ref/settings/#std:setting-DEFAULT_FROM_EMAIL
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='Travel Solution <travelsolution@travelposting.com>')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='Travelposting <travelsolution@travelposting.com>')
 # https://docs.djangoproject.com/en/2.2/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = env.bool('EMAIL_SUBJECT_PREFIX', default='TravelPosting:')
 # https://docs.djangoproject.com/en/2.2/ref/settings/#std:setting-SERVER_EMAIL

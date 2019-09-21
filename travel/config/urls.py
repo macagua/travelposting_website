@@ -14,7 +14,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
 from apps.landing_page.views import (
     CommmunityView,
-    CotegoriesView,
+    CategoriesView,
     DetailDestinationView
 )
 admin.autodiscover()
@@ -63,14 +63,14 @@ urlpatterns += i18n_patterns(
         CommmunityView.as_view(),
     ),
     url(
-        r'^cotegory/(?P<alias>\w+)/destination/(?P<slug>\w+)',
+        r'^cotegory/destination/(?P<slug>\w+)',
         DetailDestinationView.as_view(),
         name='view_detail_destination'
     ),
 
     url(
         r'^category/(?P<alias>\w+)',
-        CotegoriesView.as_view(),
+        CategoriesView.as_view(),
         name='view_category'
     ),
 
