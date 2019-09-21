@@ -63,7 +63,7 @@ urlpatterns += i18n_patterns(
         CommmunityView.as_view(),
     ),
     url(
-        r'^cotegory/destination/(?P<slug>\w+)',
+        r'^category/destination/(?P<slug>\w+)',
         DetailDestinationView.as_view(),
         name='view_detail_destination'
     ),
