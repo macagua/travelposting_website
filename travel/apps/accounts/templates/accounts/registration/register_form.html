@@ -33,23 +33,21 @@
     <div class="d-flex align-items-center position-relative height-lg-100vh">
         <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 height-lg-100vh px-0">
             <div class="w-100 p-5">
-                <!-- Testimonials Carousel Main -->
                 <div  class="mb-4">
                     <center>
                         <img src="{% static 'img/logo-round.png'%}" width="300">
                     </center>
                 </div>
-                <!-- End Testimonials Carousel Main -->
             </div>
         </div>
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
                     <!-- Form -->
-                    <form class="js-validate mt-6" role="form" method="post">
+                    <form class="js-validate mt-5" role="form" method="post">
                         {% csrf_token %}
                         <!-- Title -->
-                        <div class="mb-7">
+                        <div class="mb-3">
                             <h1 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome to' %} <span class="font-weight-semi-bold">Travelposting</span></h1>
                             <p>{% trans 'Fill out the form to get started.' %}</p>
                         </div>
