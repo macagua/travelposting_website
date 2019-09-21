@@ -61,31 +61,7 @@
 <div class="container space-3 space-md-3 space-lg-3 space-bottom-lg-3">
     <div class="row">
         <div class="col-lg-9">
-            <!-- Sorting -->
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6 mb-3 mb-lg-0">
-                    <span class="text-secondary font-size-1 font-weight-normal ml-1">
-                    {{lista_destinos.count}} {% trans "Destinations"%}
-                    </span>
-                </div>
-                <div class="col-lg-6 align-self-lg-end text-lg-right">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <!-- Select -->
-                            <select id="FilterDestinies" style="width:100%" class="custom-select dropdown-select">
-                                <option value="all">{% trans "Default Order" %}</option>
-                                <option value="popularity:asc">{% trans "Sort by popularity" %}</option>
-                                <option value="average:asc">{% trans "Sort by average ranking"%}</option>
-                                <option value="datepublished:desc">{% trans "Sort by last"%}</option>
-                                <option value="price:desc">{% trans "Sort by price: Low to High"%}</option>
-                                <option value="price:asc">{% trans "Sort by price: High to Low"%}</option>
-                            </select>
-                            <!-- End Select -->
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End Sorting -->
+
             <!-- Products -->
             <div id="list-destinies" class="row mx-n2 mb-2">
                 {%for destino in lista_destinos %}
@@ -120,20 +96,48 @@
                 {% endfor%}
             </div>
             <!-- End Destinies -->
-            <div class="py-3"></div>
+
+            <!-- Divider -->
+            <div class="d-lg-none">
+                <hr class="my-11">
+            </div>
+            <!-- End Divider -->
+            <!-- Sorting -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <span class="text-secondary font-size-1 font-weight-normal ml-1">
+                    {{lista_destinos.count}} {% trans "Destinations"%}
+                    </span>
+                </div>
+                <div class="col-lg-6 align-self-lg-end text-lg-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <!-- Select -->
+                            <select id="FilterDestinies" style="width:100%" class="custom-select dropdown-select">
+                                <option value="all">{% trans "Default Order" %}</option>
+                                <option value="popularity:asc">{% trans "Sort by popularity" %}</option>
+                                <option value="average:asc">{% trans "Sort by average ranking"%}</option>
+                                <option value="datepublished:desc">{% trans "Sort by last"%}</option>
+                                <option value="price:desc">{% trans "Sort by price: Low to High"%}</option>
+                                <option value="price:asc">{% trans "Sort by price: High to Low"%}</option>
+                            </select>
+                            <!-- End Select -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Sorting -->
+            <div class="py-3"></div>&nbsp;&nbsp;&nbsp;&nbsp;
             <nav>
                 <ul class="controls-pagination pagination justify-content-between align-items-center">
                     <div class="mixitup-page-list"></div>
                 </ul>
             </nav>
             <input type="hidden" class="column-counter"/>
-            <!-- Divider -->
-            <div class="d-lg-none">
-                <hr class="my-11">
-            </div>
-            <!-- End Divider -->
+
         </div>
         <!-- Filters -->
+
         <div class="col-lg-3">
             <form>
                 <div class="border-bottom pb-4 mb-4">
@@ -167,9 +171,24 @@
                             <label class="custom-control-label text-lh-md" for="category{{categorie.alias}}">{{categorie.name}}</label>
                         </div>
                         <small>{% found_categorie categorie.alias %}</small>
-                    </div>
-                   
+                    </div>   
                     {% endfor%}
+                    {% if forloop == 5 %}
+                    <div class="collapse" id="collapseCategory">
+                        {% endif%}
+                        {% if forloop > 5 %}
+                        <div class="form-group d-flex align-items-center justify-content-between font-size-1 text-lh-md text-secondary mb-1">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="category{{categorie.alias}}" checked>
+                                <label class="custom-control-label text-lh-md" for="category{{categorie.alias}}">{{categorie.name}}</label>
+                            </div>
+                            <small>{% found_categorie categorie.alias %}</small>
+                        </div>
+                        {%endif%}
+                        {% endfor%}
+                    </div>
+
+>>>>>>> f33e303b51adc03410321dfb60a1ccbb789cc956
                     <!-- Link 
                         <a class="link link-collapse small font-size-1" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
                           <span class="link-collapse__default">{% trans "View more" %}</span>
