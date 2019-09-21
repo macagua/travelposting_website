@@ -48,6 +48,7 @@ django-rest-framework = "*"
 django-filter = "*"
 drf-writable-nested = "*"
 html-json-forms = "*"
+django-tellme = "*"
 
 [requires]
 python_version = "3.7"
