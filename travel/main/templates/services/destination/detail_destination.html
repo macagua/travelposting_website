@@ -74,7 +74,7 @@
    <div class="overflow-hidden">
       <div class="js-slick-carousel u-slick u-slick--gutters-2"
        data-infinite="true"
-       data-slides-show="2"
+       data-slides-show="1"
        data-slides-scroll="1"
        data-center-mode="true"
        data-center-padding="200px"
@@ -96,7 +96,7 @@
          "slidesToShow": 1,
            "centerPadding": "50px"
          }
-       }]'>
+       }]' >
       {% for gallery in destino.photos%}
             <!-- Gallery -->
             <a class="js-fancybox u-media-viewer" href="javascript:;"
@@ -109,8 +109,8 @@
             </a>
             <!-- End Gallery -->
         {% endfor%}
-       
       </div>
+  </div>
   </div>
   <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
      {{destino.description|safe}}
