@@ -14,9 +14,7 @@
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url({% static 'img/trains.jpg' %});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
         <div class="w-md-65 w-lg-50">
-            <h1 class="h1 " style="color: rgba(255, 255, 255, 0.925);">
-            {% trans "You\'ll have an excellent trip." %}
-            </h1>
+            <h1 class="h1 " style="color: rgba(255, 255, 255, 0.925);">{% trans 'You\'ll have an excellent trip.' %}</h1>
             <h2 class="h1 text-primary font-weight-medium">{% trans 'Meet our best destinations' %}</h2>
         </div>
     </div>
@@ -33,7 +31,6 @@
     </figure>
     <!-- End SVG Background -->
 </div>
-
 {% else %}
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url(/main/media/{{ categorie.first.image }});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
@@ -65,7 +62,7 @@
             <!-- Products -->
             <div id="list-destinies" class="row mx-n2 mb-2">
                 {%for destino in lista_destinos %}
-                <div class="col-md-4 col-lg-4 mb-3 mix"
+                <div class="col-md-6 col-lg-4 mb-3 mix"
                     data-popularity="" 
                     data-average=""
                     data-datepublished="{{destino.published_date.date_from}}"
@@ -77,7 +74,7 @@
                         <div class="card-body p-5">
                             <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#">{{destino.name}}</a>
                             <h2 class="h5 font-weight-medium">
-                                <a href="#">{{destino.categorie.name}}</a>
+                                <a href="single-article.html">{{destino.categorie.name}}</a>
                             </h2>
                             {{ destino.short_description|truncatechars:120 |safe }}
                             <div class="d-block">
@@ -87,9 +84,9 @@
                             <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</a>
 
                           </div>
-                            <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
+                        <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
 
-                            </div>
+                        </div>
                     </article>
                     <!-- End Desrino Card -->
                 </div>
@@ -171,8 +168,7 @@
                             <label class="custom-control-label text-lh-md" for="category{{categorie.alias}}">{{categorie.name}}</label>
                         </div>
                         <small>{% found_categorie categorie.alias %}</small>
-                    </div>   
-                    {% endfor%}
+                    </div>
                     {% if forloop == 5 %}
                     <div class="collapse" id="collapseCategory">
                         {% endif%}
@@ -188,7 +184,6 @@
                         {% endfor%}
                     </div>
 
->>>>>>> f33e303b51adc03410321dfb60a1ccbb789cc956
                     <!-- Link 
                         <a class="link link-collapse small font-size-1" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
                           <span class="link-collapse__default">{% trans "View more" %}</span>
@@ -220,7 +215,7 @@
               var containerEl = document.querySelector('#list-destinies');
               var mixer = mixitup(containerEl, {
                   pagination: {
-                      limit: 6
+                      limit: 2
                   },
                   animation: {
                       nudge: false
