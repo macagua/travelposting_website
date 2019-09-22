@@ -75,7 +75,9 @@ $ python manage.py createsuperser
 
 $ python manage.py runserver 0.0.0.0:8000
 
+# add the page with paginates from django cms
 
+for page the page coming soon should be hidden on the menu and the url is coming-soon
 
  ```
 ## Contributing
