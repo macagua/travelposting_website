@@ -47,8 +47,11 @@
             <span class="fas fa-arrow-up u-go-to__inner"></span>
             </a>
         </main>
+        {% block footer %}
         {% include 'footer.html' %}
+        {% endblock footer %}
         {% render_block "js" %}
+        {% block extrajsinit %}
         <!-- JS Global Compulsory -->
         <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
         <script src="{% static 'assets/vendor/popper.js/popper.min.js' %}"></script>
@@ -127,6 +130,8 @@
                 })(window,document,'https://cdn.bitrix24.de/b9199691/crm/site_button/loader_3_ws0259.js');
                 */
             </script>
+          {% endblock extrajsinit %}
+
 
         {% block extrajs %} {% endblock extrajs %}
     </body>

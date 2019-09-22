@@ -295,6 +295,7 @@ CMS_TEMPLATES = (
     ('magazine.html', 'Magazine'),
     ('community.html', 'Community'),
     ('datenschutz.html', 'Datenshutz'),
+    ('coming-soon.html', 'Coming Soon'),
 )
 
 CMS_PERMISSION = True

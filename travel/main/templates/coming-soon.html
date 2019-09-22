@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{%load destinations_tags%}
+{% block title %}{% trans 'Travelposting' %}{% endblock title %}
+{% block extracss %} 
+<link rel="stylesheet" href="{% static 'css/destinations.css' %}">
+{% endblock extracss %}
+{% block navbar %}
+<header id="header" class="u-header u-header--bg-transparent u-header--abs-top u-header--white-nav-links-md u-header--show-hide"
+    data-header-fix-moment="500"
+    data-header-fix-effect="slide">
+    <div class="u-header__section">
+        <div id="logoAndNav" class="container">
+            <!-- Nav -->
+            <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                <!-- White Logo -->
+                <img src="{% static 'img/logo@0.5x.png' %}" width="30">
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
+                <span class="u-header__navbar-brand-text" style="color:#2f2f2f; font-size: 20px;">{% trans 'BETA Travelposting' %}</span>
+                </a>
+                <!-- End White Logo -->
+                <!-- Default Logo -->
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-collapsed" href="index.html" aria-label="Front">
+                <span class="u-header__navbar-brand-text">{% trans 'BETA Travelposting' %}</span>
+                </a>
+                <!-- End Default Logo -->
+                <!-- On Scroll Logo -->
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-on-scroll" href="index.html" aria-label="Front">
+                <span class="u-header__navbar-brand-text">{% trans 'BETA Travelposting' %}</span>
+                </a>
+                <!-- End On Scroll Logo -->
+                <!-- Responsive Toggle Button -->
+                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="navBar"
+                    data-toggle="collapse"
+                    data-target="#navBar">
+                <span id="hamburgerTrigger" class="u-hamburger__box">
+                <span class="u-hamburger__inner"></span>
+                </span>
+                </button>
+                <!-- End Responsive Toggle Button -->
+            </nav>
+            <!-- End Nav -->
+        </div>
+    </div>
+</header>
+<!-- ========== END HEADER ========== -->
+{% endblock navbar %}
+{% block content %}
+<!-- ========== MAIN ========== -->
+<main id="content" role="main">
+    <!-- Hero Section -->
+    <div class="d-lg-flex">
+        <div class="container d-lg-flex align-items-lg-center height-lg-100vh space-bottom-1 space-top-3 space-bottom-lg-3 space-lg-0">
+            <div class="row align-items-lg-center w-100 mt-lg-9">
+                <!-- SVG Icon -->
+                <div class="col-lg-6 mb-7 mb-lg-0">
+                    <figure id="SVGvirtualReality" class="svg-preloader ie-virtual-reality">
+                        <img class="js-svg-injector" src="{% static 'assets/svg/illustrations/virtual-reality.svg' %}" alt="Image Description"
+                            data-parent="#SVGvirtualReality">
+                    </figure>
+                </div>
+                <!-- End SVG Icon -->
+                <div class="col-lg-6">
+                    <div class="pl-lg-4">
+                        <!-- Title -->
+                        <div class="mb-4">
+                            <h1 class="text-primary font-weight-normal">{% trans 'We\'re coming' %} <span class="font-weight-semi-bold">{% trans 'soon' %}</span>.</h1>
+                            <p>{% trans 'Our apps is under construction. We\'ll be here soon with our new awesome apps for your device' %}</p>
+                        </div>
+                        <!-- End Title -->
+                        <!-- Countdown -->
+                        <div class="js-countdown row mb-5"
+                            data-end-date="2019/12/24"
+                            data-month-format="%m"
+                            data-days-format="%D"
+                            data-hours-format="%H"
+                            data-minutes-format="%M"
+                            data-seconds-format="%S">
+                            <div class="col-12">
+                                <strong class="js-cd-days h3 text-primary font-weight-semi-bold mb-0"></strong>
+                                <span class="h5 font-weight-normal mb-0">{% trans 'For this dicember, we\'ll give good news for you' %}</span><br>
+                                <span class="text-primary font-weight-normal"><a href="/">{%trans 'Coming back to our website' %}</a></span><br>
+                                <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2 mr-1">
+                                <span class="media align-items-center">
+                                <span class="fab fa-apple fa-2x mr-3"></span>
+                                <span class="media-body">
+                                <span class="d-block">{% trans 'Coming Soon'%}</span>
+                                <strong class="font-size-1">App Store</strong>
+                                </span>
+                                </span>
+                                </button>
+                                <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2">
+                                <span class="media align-items-center">
+                                <span class="fab fa-google-play fa-2x mr-3"></span>
+                                <span class="media-body">
+                                <span class="d-block">{% trans 'Coming Soon'%}</span>
+                                <strong class="font-size-1">Google Play</strong>
+                                </span>
+                                </span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Countdown -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+</main>
+<!-- ========== END MAIN ========== -->
+{% endblock content %}
+{% block footer %}
+<!-- ========== FOOTER ========== -->
+<footer class="position-lg-absolute right-lg-0 bottom-lg-0 left-lg-0">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center space-1">
+            <!-- Copyright -->
+            <p class="small text-muted mb-0">© Travelposting 2019 All Rights Reserved Site Map Disclaimer.</p>
+            <!-- End Copyright -->
+            <!-- Social Networks -->
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.facebook.com/travelposting">
+                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://instagram.com/travelposting24">
+                    <span class="fab fa-instagram btn-icon__inner"></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://twitter.com/travelposting">
+                    <span class="fab fa-twitter btn-icon__inner"></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://wa.me/494018203370">
+                    <span class="fab fa-whatsapp btn-icon__inner"></span>
+                    </a>
+                </li>
+            </ul>
+            <!-- End Social Networks -->
+        </div>
+    </div>
+</footer>
+<!-- ========== END FOOTER ========== -->
+{% endblock footer %}
+{% block extrajs %}
+{% endblock extrajs %}
