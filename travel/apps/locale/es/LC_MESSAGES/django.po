@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-23 12:01-0400\n"
-"PO-Revision-Date: 2019-09-23 12:17-0428\n"
+"POT-Creation-Date: 2019-09-23 13:48-0400\n"
+"PO-Revision-Date: 2019-09-23 13:50-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -658,6 +658,10 @@ msgstr "Por favor conozca mas sobre nosotros"
 msgid "email"
 msgstr "correo electrónico"
 
+#: main/templates/about.html:73
+msgid "write us"
+msgstr "Escribanos"
+
 #: main/templates/about.html:84
 msgid "Discover our offices very soon in:"
 msgstr "Descubra nuestras oficinas muy cerca, en:"
@@ -951,25 +955,36 @@ msgstr ""
 "abrió sus puertas el 1 de marzo de 2009 con sede en la ciudad de Hamburgo, Alemania."
 
 #: main/templates/footer.html:18
+#| msgid ""
+#| "\n"
+#| "                    \n"
+#| "                    In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.\n"
+#| "                    "
 msgid ""
 "\n"
-"                    \n"
 "                    In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.\n"
 "                    "
 msgstr ""
 "\n"
 " En desarrollo de lo dispuesto en el artículo 17 de la Ley 679 de 2001, el Organismo advierte al turista que la explotación y el abuso sexual de menores en el país son sancionados penal y administrativamente, de conformidad con las leyes vigentes."
 
+#: main/templates/footer.html:37
+msgid "Currency Converter"
+msgstr "Convertidor de divisas"
+
 #: main/templates/index.html:31
 msgid "Contact us"
 msgstr "Contáctenos"
 
 #: main/templates/index.html:56
+#| msgid ""
+#| "Subscribe now and get special offers on the latest developments from Front."
 msgid ""
-"Subscribe now and get special offers on the latest developments from Front."
+"Subscribe now and get special offers on the latest developments from "
+"Travelposting."
 msgstr ""
 "Suscríbete ahora y recibe ofertas especiales sobre las últimas novedades de "
-"Front."
+"Travelposting."
 
 #: main/templates/index.html:124
 msgid "Ready to get started?"
@@ -996,7 +1011,6 @@ msgid "Register"
 msgstr "Registro"
 
 #: main/templates/pages/show_header.html:22
-#| msgid "Live and share your experience"
 msgid "Travel and share your adventure"
 msgstr "Viaja y comparte tu experiencia"
 
@@ -1162,7 +1176,6 @@ msgid "Reserve"
 msgstr "Reserve"
 
 #: main/templates/services/destination/testimonials.html:9
-#| msgid "Testimonies"
 msgid "Testimonials"
 msgstr "Testimonios"
 
