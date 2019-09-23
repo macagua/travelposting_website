@@ -25,6 +25,11 @@ urlpatterns = [
         sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}},
     ),
+
+    url(
+        r'^rosetta/',
+        include('rosetta.urls'),
+    )
 ]
 
 urlpatterns += i18n_patterns(
