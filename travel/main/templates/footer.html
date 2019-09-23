@@ -2,7 +2,7 @@
 <footer class="gradient-half-primary-v1">
     <div class="container space-top-2 space-bottom-1">
         <div class="row justify-content-lg-start mb-7">
-            <div class="col-sm-9 col-lg-4 mb-7">
+            <div class="col-sm-9 col-lg-5 mb-5">
                 <!-- Logo -->
                 <a class="d-inline-flex align-items-center mb-3" href="../home/index.html" aria-label="Front">
 
@@ -16,13 +16,29 @@
                     {% endblocktrans%}<br><br>
                     <b>Tourist warning.</b>
                     {% blocktrans %}
-                    
                     In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.
                     {% endblocktrans %}
                 </p>
             </div>
-            <div class="col-6 col-sm-4 col-lg-2 ml-lg-auto mb-4">
-                <h3 class="h6 text-white">Traveland</h3>
+            <div class="col-sm-9 col-lg-5 mb-5">
+                <script>
+                    var fm = "EUR";
+                    var to = "USD";
+                    var tz = "timezone";
+                    var sz = "1x1";
+                    var lg = "es";
+                    var st = "info";
+                    var lr = "0";
+                    var rd = "1";
+                </script>
+
+                <a href="https://currencyrate.today/converter-widget" title="{% trans 'Currency Converter' %}">
+                    <script src="//currencyrate.today/converter"></script>
+                </a>
+            </div>
+
+            <div class="col-6 col-sm-4 col-lg-2 ml-lg-auto mb-2">
+                <h3 class="h6 text-white">Travelaposting</h3>
                 <!-- List Group -->
                 <ul class="list-group list-group-transparent list-group-white list-group-flush list-group-borderless mb-0">
                     {% show_menu 0 100 100 100 "menu/menu_footer.html" %}
