@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-23 00:58-0400\n"
+"POT-Creation-Date: 2019-09-23 12:01-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -406,7 +406,7 @@ msgid "Valor"
 msgstr ""
 
 #: apps/landing_page/models.py:49
-#: main/templates/services/destination/destinations_for_categorie.html:141
+#: main/templates/services/destination/destinations_for_categorie.html:140
 #: main/templates/services/destination/detail.back.html:144
 #: main/templates/services/destination/detail_destination.html:141
 msgid "Price"
@@ -958,34 +958,34 @@ msgid "Register"
 msgstr ""
 
 #: main/templates/pages/show_header.html:22
-msgid "Live and share your experience"
+msgid "Travel and share your adventure"
 msgstr ""
 
 #: main/templates/pages/show_header.html:27
 msgid "Where would you like to travel this time?"
 msgstr ""
 
-#: main/templates/pages/show_header.html:32
-#: main/templates/pages/show_header.html:34
+#: main/templates/pages/show_header.html:31
+#: main/templates/pages/show_header.html:33
 msgid "Name / Last Name"
 msgstr ""
 
-#: main/templates/pages/show_header.html:40
-#: main/templates/pages/show_header.html:42
+#: main/templates/pages/show_header.html:39
+#: main/templates/pages/show_header.html:41
 msgid "Country / City"
 msgstr ""
 
-#: main/templates/pages/show_header.html:48
-#: main/templates/pages/show_header.html:50
+#: main/templates/pages/show_header.html:47
+#: main/templates/pages/show_header.html:49
 msgid "E-mail"
 msgstr ""
 
-#: main/templates/pages/show_header.html:56
-#: main/templates/pages/show_header.html:58
+#: main/templates/pages/show_header.html:55
+#: main/templates/pages/show_header.html:57
 msgid "Whatsapp"
 msgstr ""
 
-#: main/templates/pages/show_header.html:64
+#: main/templates/pages/show_header.html:63
 msgid "Search offer"
 msgstr ""
 
@@ -1060,7 +1060,7 @@ msgid "Find out More"
 msgstr ""
 
 #: main/templates/services/destination/destinations_for_categorie.html:17
-msgid "You\\"
+msgid "You\\'ll have an excellent trip."
 msgstr ""
 
 #: main/templates/services/destination/destinations_for_categorie.html:18
@@ -1075,16 +1075,12 @@ msgstr ""
 msgid "See"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:162
+#: main/templates/services/destination/destinations_for_categorie.html:160
+msgid "Filter price"
+msgstr ""
+
+#: main/templates/services/destination/destinations_for_categorie.html:163
 msgid "Category"
-msgstr ""
-
-#: main/templates/services/destination/destinations_for_categorie.html:189
-msgid "View more"
-msgstr ""
-
-#: main/templates/services/destination/destinations_for_categorie.html:190
-msgid "View less"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:42
@@ -1124,6 +1120,14 @@ msgstr ""
 #: main/templates/services/destination/detail.back.html:221
 #: main/templates/services/destination/detail_destination.html:218
 msgid "Reserve"
+msgstr ""
+
+#: main/templates/services/destination/testimonials.html:9
+msgid "Testimonials"
+msgstr ""
+
+#: main/templates/services/destination/testimonials.html:10
+msgid "Know our audiencie"
 msgstr ""
 
 #: main/templates/services/magazine/magazine.html:14
