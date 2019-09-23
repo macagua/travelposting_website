@@ -859,7 +859,7 @@ msgstr "Equipo de soporte"
 #: main/templates/community.html:238
 #, python-format
 msgid "Enjoy your trip 100%% without worrying about anything."
-msgstr "Disfrute de su viaje al 100% sin preocuparse por nada."
+msgstr "Disfrute de su viaje al 100%% sin preocuparse por nada."
 
 #: main/templates/community.html:252
 msgid "Keep in touch"
