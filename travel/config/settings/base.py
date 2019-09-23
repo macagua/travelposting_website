@@ -72,8 +72,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
-
 LANGUAGE_CODE = 'en'
+
 LANGUAGES = [
     ('es', _('Spanish')),
     ('en', _('English')),
@@ -83,17 +83,22 @@ LANGUAGES = [
 URL_NAME_LANGS = LANGUAGES
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
-LOCALE_PATHS = [
-    os.path.join(APPS_DIR, 'locale/'),
-]
+
 
 TIME_ZONE = 'America/Caracas'
 
+# https://docs.djangoproject.com/en/dev/ref/settings/#site-id
+SITE_ID = 1
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
 USE_I18N = True
-
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
 USE_L10N = True
-
-USE_TZ = False
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
+USE_TZ = True
+# https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
+LOCALE_PATHS = [
+    os.path.join(APPS_DIR, 'locale/'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -217,6 +222,7 @@ THIRD_PARTY = [
     'impersonate',
     'rest_framework',
     'nested_admin',
+    'rosetta',
 
 ]
 
@@ -336,6 +342,16 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
     }
 }
+
+# ROSETTA
+# https://django-rosetta.readthedocs.io/
+# ------------------------------------------------------------------------------
+ROSETTA_ENABLE_TRANSLATION_SUGGESTIONS = True
+# ROSETTA_SHOW_AT_ADMIN_PANEL = True
+ROSETTA_REQUIRES_AUTH = False
+ROSETTA_WSGI_AUTO_RELOAD = True
+ROSETTA_UWSGI_AUTO_RELOAD = True
+
 
 #PRICES SETTINGS:
 SHORT_DATE_FORMAT = "d/m/y"

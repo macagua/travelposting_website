@@ -35,6 +35,7 @@ class CategoriesView(View):
         return render(request, 'services/destination/destinations_for_categorie.html',{
             'all_categories': all_categories,
             'lista_destinos':destination_for_category,
+            'active_alias':kwargs.get('alias'),
             'categorie':categorie,
             'range_min':range_min,
             'range_max':range_max
