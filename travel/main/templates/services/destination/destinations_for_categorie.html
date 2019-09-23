@@ -14,8 +14,8 @@
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url({% static 'img/trains.jpg' %});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
         <div class="w-md-65 w-lg-50">
-            <h1 class="h1 " style="color: rgba(255, 255, 255, 0.925);">{% trans 'You\'ll have an excellent trip.' %}</h1>
-            <h2 class="h1 text-primary font-weight-medium">{% trans 'Meet our best destinations' %}</h2>
+            <h1 class="h1 " style="color: rgba(255, 255, 255, 0.925);">{% trans "You\'ll have an excellent trip." %}</h1>
+            <h2 class="h1 text-primary font-weight-medium">{% trans "Meet our best destinations" %}</h2>
         </div>
     </div>
     <!-- SVG Background -->
@@ -99,7 +99,7 @@
                     data-popularity="" 
                     data-average=""
                     data-datepublished="{{destino.published_date.date_from}}"
-                    data-price="{{destino.list_prices.sale_price}}"
+                    data-price="{{ destino.list_prices.sale_price |floatformat:2 }}"
                     >
                     <!-- Destino Card -->
                     <article class="card shadow h-100">
@@ -136,7 +136,6 @@
         <!-- Filters -->
 
         <div class="col-lg-3">
-            <form>
                 <div class="border-bottom pb-4 mb-4">
                     <h4 class="h6 mb-3">{% trans "Price" %}</h4>
                     <!-- Range Slider -->
@@ -150,51 +149,31 @@
                         data-max="{{range_max.regular_price__max|floatformat:0}}"
                         data-from="{{range_min.regular_price__min|floatformat:0}}"
                         data-to="{{range_max.regular_price__max|floatformat:0}}"
-                        data-result-min="#rangeSliderExample3MinResult"
-                        data-result-max="#rangeSliderExample3MaxResult">
+                        data-result-min="#rangeSliderMinPrice"
+                        data-result-max="#rangeSliderMaxPrice">
                     <div class="d-flex justify-content-between mt-4">
-                        <input type="text" class="form-control form-control-sm max-width-10" id="rangeSliderExample3MinResult">
-                        <input type="text" class="form-control form-control-sm max-width-10 mt-0" id="rangeSliderExample3MaxResult">
+                        <input type="text" class="form-control form-control-sm max-width-10" id="rangeSliderMinPrice">
+                        <input type="text" class="form-control form-control-sm max-width-10 mt-0" id="rangeSliderMaxPrice">
                     </div>
                     <!-- End Range Slider -->
                 </div>
-                <div class="border-bottom pb-4 mb-4">
+                <button id="filter_with_price" type="button" class="btn btn-sm btn-block btn-soft-secondary transition-3d-hover">{% trans "Filter price"%}</button>
+
+                <div class="border-bottom pb-4 mb-4 mt-4">
                     <h4 class="h6 mb-3">{% trans "Category"%}</h4>
                     {% simple_list_categorie as list_categories%}
                     {% for categorie in list_categories%}
+                    
                     <div class="form-group d-flex align-items-center justify-content-between font-size-1 text-lh-md text-secondary mb-1">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="category{{categorie.alias}}" checked>
-                            <label class="custom-control-label text-lh-md" for="category{{categorie.alias}}">{{categorie.name}}</label>
-                        </div>
-                        <small>{% found_categorie categorie.alias %}</small>
+                    <label class="custom-control text-lh-md" for="category{{categorie.alias}}"><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{{categorie.name}}</a></label>
+                    <small><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{% found_categorie categorie.alias %}</a></small>
                     </div>
-                    {% if forloop == 5 %}
-                    <div class="collapse" id="collapseCategory">
-                        {% endif%}
-                        {% if forloop > 5 %}
-                        <div class="form-group d-flex align-items-center justify-content-between font-size-1 text-lh-md text-secondary mb-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="category{{categorie.alias}}" checked>
-                                <label class="custom-control-label text-lh-md" for="category{{categorie.alias}}">{{categorie.name}}</label>
-                            </div>
-                            <small>{% found_categorie categorie.alias %}</small>
-                        </div>
-                        {%endif%}
-                        {% endfor%}
-                    </div>
-
-                    <!-- Link 
-                        <a class="link link-collapse small font-size-1" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
-                          <span class="link-collapse__default">{% trans "View more" %}</span>
-                          <span class="link-collapse__active">{% trans "View less" %}</span>
-                          <span class="link__icon ml-1">
-                            <span class="link__icon-inner">+</span>
-                          </span>
-                        </a>
-                        End Link -->
+                    
+                    {%endfor%}
+                   
+                   
                 </div>
-            </form>
+
         </div>
         <!-- End Filters -->
     </div>
@@ -227,6 +206,23 @@
                   else
                     mixer.sort(this.value);
               });
+
+              $("#filter_with_price").on('click', function(event) {
+                event.preventDefault();
+                var collection = Array.from(containerEl.querySelectorAll('.mix'));
+                console.log(collection.length); // 34
+                // Filter the collection manually
+                var filtered = collection.filter(function(target) {
+                        return parseFloat(target.getAttribute('data-price')) >= $("#rangeSliderMinPrice").val() && parseFloat(target.getAttribute('data-price')) <= $("#rangeSliderMaxPrice").val();
+                });
+                // console.log(filtered.length);
+                // Pass the filtered collection to MixItUp
+                mixer.filter(filtered)
+                     .then(function(state) {
+                            //console.log(state.activeFilter.collection.length); // 22
+                     });
+              });
+
     
 </script>
 {% endblock extrajs %}
