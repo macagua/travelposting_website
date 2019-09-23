@@ -78,7 +78,29 @@ $ python manage.py runserver 0.0.0.0:8000
 # add the page with paginates from django cms
 
 for page the page coming soon should be hidden on the menu and the url is coming-soon
-for page Magazine you should create a page but don't show that on the menu the page url is 'magazine'
+for page Magazine you should create a page but dont show that on the menu the page url is magazine
+for create aditional links on the footer please select the base template
+```html 
+    <li class="list-inline-item pl-3">
+        <a class="list-group-item-action font-size-1 text-white-70 " href="/cookies/">{% trans 'Cookies' %}</a>
+    </li>
+    <li class="list-inline-item pl-3">
+        <a class="list-group-item-action font-size-1 text-white-70 " href="/fqa/">{% trans 'FQA' %}</a>
+    </li>
+    <li class="list-inline-item pl-3">
+        <a class="list-group-item-action font-size-1 text-white-70 " href="/policy/">{% trans 'Privacy & policy' %}</a>
+    </li>
+    <li class="list-inline-item pl-3">
+        <a class="list-group-item-action font-size-1 text-white-70 " href="/soft-reg/">{% trans 'Register' %}</a>
+    </li>
+
+    The urls be: 
+    1. policy
+    2. fqa
+    3. soft-reg
+    4. cookies 
+
+    and this url please hidden on the menu.
 
  ```
 ## Contributing

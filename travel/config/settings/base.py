@@ -302,7 +302,6 @@ CMS_TEMPLATES = (
     ('community.html', 'Community'),
     ('datenschutz.html', 'Datenshutz'),
     ('coming-soon.html', 'Coming Soon'),
-    ('policy.html', 'Policy Template'),
 )
 
 CMS_PERMISSION = True
