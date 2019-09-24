@@ -303,6 +303,7 @@ CMS_TEMPLATES = (
     ('datenschutz.html', 'Datenshutz'),
     ('coming-soon.html', 'Coming Soon'),
     ('hotels.html', 'Hotels template'),
+    ('pricing.html', 'Pricing'),
 )
 
 CMS_PERMISSION = True
