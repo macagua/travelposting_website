@@ -1,3 +1,5 @@
+
+
 {% extends "accounts/base.html" %}
 {% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
@@ -11,7 +13,7 @@
                 <!-- White Logo -->
                 <img src="{% static 'img/logo-round-0.5x.png' %}" width="30">
                 <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" href="index.html" aria-label="Front">
-                    <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
+                <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
                 </a>
                 <!-- End White Logo -->
                 <!-- Button -->
@@ -33,40 +35,61 @@
     <div class="d-flex align-items-center position-relative height-lg-100vh">
         <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 height-lg-100vh px-0">
             <div class="w-100 p-5">
-                <div  class="mb-4">
-                    <center>
-                        <img src="{% static 'img/logo-round.png'%}" width="300">
-                    </center>
-                </div>
+                <!-- SVG Quote -->
+                <center>
+                    <img src="{% static 'img/logo-round.png'%}" width="300">
+                </center>
+                <!-- End SVG Quote -->
             </div>
         </div>
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
                     <!-- Form -->
-                    <form class="js-validate mt-5" role="form" method="post">
-                        {% csrf_token %}
+                    <form class="js-validate mt-5" role="form" method="post"> {% csrf_token %}
                         <!-- Title -->
-                        <div class="mb-3">
-                            <h1 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome to' %} <span class="font-weight-semi-bold">Travelposting</span></h1>
+                        <div class="mb-7">
+                            <h1 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome to' %}<span class="font-weight-semi-bold"> Travelposting</span></h1>
                             <p>{% trans 'Fill out the form to get started.' %}</p>
                         </div>
                         <!-- End Title -->
                         <!-- Form Group -->
+                        <span >{% trans 'Do you have a Coupon?' %}</span>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <span class=""></span><span class="badge badge-success">{% trans 'No' %}</span></span>
+                            </li>
+
+                            <li class="list-inline-item"> 
+                            <!-- Checkbox Switch -->
+                       
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch3" >
+                                    <label class="custom-control-label" for="customSwitch3">
+                                    </label>
+                                </div>
+                            <!-- End Checkbox Switch -->
+                            </li>
+                            <li class="list-inline-item">
+                                <span ><span class="badge badge-success">{% trans 'Yes' %}</span></span>
+                            </li>
+                        </ul>
                         {% for field in form %}
+                        <!-- Form Group-->
                         <div class="js-form-message form-group">
-                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
                             {{ field }}
-                            <span class="u-has-error">{{ field.errors }}</span>
-                            <span class="u-has-success">{{ field.help_text }}</span>
+                            <span class="small u-has-error">{{ field.errors }}</span>
+                            <span class="small u-has-success">{{ field.help_text }}</span>
                         </div>
-                        {% endfor %}
                         <!-- End Form Group -->
+                        {% endfor%}
+
+                    
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
                             <div class="col-5 col-sm-6">
-                                <span class="small text-muted">Already have an account?</span>
-                                <a class="small" href="{% url 'accounts:login' %}">Login</a>
+                                <span class="small text-muted">{% trans 'Already have an account?' %}</span>
+                                <a class="small" href="{% url 'accounts:login' %}">{% trans 'Login' %}</a>
                             </div>
                             <div class="col-7 col-sm-6 text-right">
                                 <button type="submit" class="btn btn-primary transition-3d-hover">{% trans "Signup" %}</button>
@@ -83,3 +106,46 @@
 </main>
 <!-- ========== END MAIN ========== -->
 {% endblock content %}
+
+{% block extrajs %}
+<script src="{% static 'assets/js/components/hs.toggle-state.js' %}"></script>
+<!-- JS Plugins Init. -->
+<script>
+const showElement = ($el) => $el.style.display = ''
+const hideElement = ($el) => $el.style.display = 'none'
+
+const addClass = ($el, className) => $el.classList.add(className)
+const removeClass = ($el, className) => $el.classList.remove(className)
+
+/* Script for register */
+const plan = document.getElementById('id_plan');
+const cupon = document.getElementById('id_coupon');
+
+if (plan !== null && cupon !== null) {
+  showElement(plan);
+  hideElement(cupon);
+
+  const toggle = document.getElementById('customSwitch3');
+
+  window.addEventListener('DOMContentLoaded', () => {
+    toggle.addEventListener('click', (ev) => {
+      if (toggle.checked) {
+        showElement(cupon)
+        hideElement(plan)
+      } else {
+        showElement(plan)
+        hideElement(cupon)
+      }
+    })
+  });
+}
+/* end script for register */
+
+</script>
+<script>
+    $(document).on('ready', function () {
+        // initialization of toggle state
+        $.HSCore.components.HSToggleState.init('.js-toggle-state');
+    });
+</script>
+{% endblock extrajs%}
