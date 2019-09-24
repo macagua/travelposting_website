@@ -79,8 +79,9 @@ $ python manage.py runserver 0.0.0.0:8000
 
 for page the page coming soon should be hidden on the menu and the url is coming-soon
 for page Magazine you should create a page but dont show that on the menu the page url is magazine
+
+```
 for create aditional links on the footer please select the base template
-```html 
     <li class="list-inline-item pl-3">
         <a class="list-group-item-action font-size-1 text-white-70 " href="/cookies/">{% trans 'Cookies' %}</a>
     </li>
@@ -93,6 +94,7 @@ for create aditional links on the footer please select the base template
     <li class="list-inline-item pl-3">
         <a class="list-group-item-action font-size-1 text-white-70 " href="/soft-reg/">{% trans 'Register' %}</a>
     </li>
+```
 
     The urls be: 
     1. policy
@@ -103,6 +105,22 @@ for create aditional links on the footer please select the base template
     and this url please hidden on the menu.
 
  ```
+
+ On every hotels you should create a snippet with the next code
+
+<iframe src="https://www.booking.com/country/de.de.html?aid=386452;sid=886b5e2b7d8d93e8663a438e1d9ebf26;breadcrumb=city" name="Hoteles en Alemania" width="100%" height="2500"></iframe>
+
+when you indicate the zone on the name iframe for example: "Hoteles en Alemania" or "Hoteles en USA", etc...
+
+
+Please create a next url with snippet content with next url
+1. hotel-germany
+2. hotel-usa
+3. hotel-china
+4. word-mundo
+5. make-pay
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
