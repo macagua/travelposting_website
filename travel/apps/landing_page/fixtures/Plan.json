@@ -1,0 +1,75 @@
+[
+{
+    "model": "landing_page.plan",
+    "pk": 1,
+    "fields": {
+        "paypal_id": "P-7PG20514B93299724LVFSXNA",
+        "name": "Professional (Ap. 01.10.19)",
+        "name_es": "Professional (Ap. 01.10.19)",
+        "name_en": "Professional (Ap. 01.10.19)",
+        "name_de": "Professional (Ab. 01.10.19)",
+        "active": true,
+        "order": 1,
+        "created_at": "2019-05-24T18:56:00.568Z",
+        "updated_at": "2019-09-24T22:16:50.229Z",
+        "price": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "landing_page.plan",
+    "pk": 2,
+    "fields": {
+        "paypal_id": "P-3NW51080GF250143BLVFSWOY",
+        "name": "Advanced (Ap. 15.09.19)",
+        "name_es": "Advanced (Ap. 15.09.19)",
+        "name_en": "Advanced (Ap. 15.09.19)",
+        "name_de": "Advanced (Ab. 15.09.19)",
+        "active": true,
+        "order": 2,
+        "created_at": "2019-05-24T20:17:17.585Z",
+        "updated_at": "2019-09-25T00:27:02.925Z",
+        "price": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "landing_page.plan",
+    "pk": 3,
+    "fields": {
+        "paypal_id": "P-3J530921WK462794HLVPCLFY",
+        "name": "Starter",
+        "name_es": "Starter",
+        "name_en": "Starter",
+        "name_de": "Starter",
+        "active": true,
+        "order": 3,
+        "created_at": "2019-05-24T20:17:29.774Z",
+        "updated_at": "2019-09-25T00:28:42.775Z",
+        "price": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "landing_page.plan",
+    "pk": 4,
+    "fields": {
+        "paypal_id": "P-22F28756444336034LVFSW7A",
+        "name": "Starter Discount",
+        "name_es": "Starter Discount",
+        "name_en": "Starter Discount",
+        "name_de": "Starter Discount",
+        "active": false,
+        "order": 0,
+        "created_at": "2019-08-03T00:50:36.001Z",
+        "updated_at": "2019-08-24T23:16:49.249Z",
+        "price": []
+    }
+}
+]
