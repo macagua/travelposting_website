@@ -3,7 +3,7 @@ import random
 from django import template
 from django.conf import settings
 from apps.destinations.models import Destination, Categorie, Photo, GeneralDetail
-from apps.landing_page.models import Testimony, Magazine
+from apps.landing_page.models import Testimony, Magazine, Plan
 
 register = template.Library()
 
@@ -108,3 +108,11 @@ def background_image():
     path_to_images = str(settings.ROOT_DIR) + '/main/private/destinos/'
     ramdom_image = random.choice(os.listdir(path_to_images))
     return ('destinos/' + ramdom_image)
+
+@register.inclusion_tag('services/pricing/plans.html', takes_context=True)
+def show_pricing(context):
+    list_pricing = Plan.objects.filter(active=True)[:6]
+    return {
+        'plans': list_pricing,
+        'request': context.request,
+    }

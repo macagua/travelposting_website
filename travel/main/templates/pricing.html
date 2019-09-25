@@ -1,5 +1,3 @@
-
-
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
@@ -8,7 +6,7 @@
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
-<div id="SVGwave1BottomSMShape" class="position-relative bg-primary" style="">
+<div id="SVGwave1BottomSMShape" class="svg-preloader position-relative text-center gradient-overlay-half-info-v1 bg-img-hero overflow-hidden" style="background-image: url({% static 'assets/img/1920x800/img10.jpg'%});">
     <div class="container space-top-2 space-top-md-4 space-bottom-4">
         <div class="w-md-80 w-lg-60 text-center mx-auto">
             <div class="mb-6">
@@ -18,14 +16,18 @@
                 </h6>
             </div>
             <!-- Button Group -->
+            <span class="text-white font-weight-semi-bold">{% trans 'SELECT YOUR PLAN TYPE' %}</span><br>
+
             <div class="btn-group btn-group-toggle mb-4">
-                <a class="js-animation-link btn btn-outline-light btn-custom-toggle-white btn-sm-wide active" href="javascript:;" data-target="#pricingMonthly" data-link-group="idPricing">
-                Monthly
-                </a>
-                <a class="js-animation-link btn btn-outline-light btn-custom-toggle-white btn-sm-wide" href="javascript:;" data-target="#pricingYearly" data-link-group="idPricing">
-                Yearly
-                <span class="badge badge-success badge-pill badge-bigger badge-pos">10% OFF</span>
-                </a>
+                <b class="text-white">{% trans 'Yearly' %}</b>
+                <div class="custom-control custom-switch">
+                    &nbsp;&nbsp;
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">
+                        </span>
+                    </label>
+                </div>
+                <b class="text-white">{% trans 'Monthly' %}</b>
             </div>
             <!-- End Button Group -->
         </div>
@@ -52,312 +54,11 @@
     </figure>
     <!-- End SVG Background -->
 </div>
-<!-- Pricing Section -->
-<div class="position-relative mt-n23 z-index-2">
-    <div class="container">
-        <div class="space-bottom-2 space-bottom-md-3">
-            <!-- Pricing Carousel -->
-            <div id="pricingMonthly" data-target-group="idPricing">
-                <div class="js-slick-carousel u-slick u-slick--gutters-2 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="4" data-adaptive-height="true" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
-                    &quot;breakpoint&quot;: 1200,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 3
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 992,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 2
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 768,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 1
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 554,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 1
-                    }
-                    }]">
-                    <div class="slick-list draggable">
-                        <div class="slick-track" style="opacity: 1; width: 1128px; transform: translate3d(0px, 0px, 0px);">
-                            <div class="js-slide slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h2 class="h6 text-primary mb-3">Starter</h2>
-                                        <span class="d-block">
-                                        <span class="display-4 text-dark font-weight-normal">
-                                        <span class="align-top font-size-2">$</span>22
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">per month</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover" tabindex="0">Start Starter</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                            <div class="js-slide slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h3 class="h6 text-warning mb-3">Basic</h3>
-                                        <span class="d-block">
-                                        <span class="display-4 text-dark font-weight-normal">
-                                        <span class="align-top font-size-2">$</span>44
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">per month</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                            <li class="list-group-item">100+ header variations</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover" tabindex="0">Start Basic</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                            <div class="js-slide slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h4 class="h6 text-success mb-3">Company</h4>
-                                        <span class="d-block">
-                                        <span class="display-4 text-dark font-weight-normal">
-                                        <span class="align-top font-size-2">$</span>69
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">per month</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                            <li class="list-group-item">100+ header variations</li>
-                                            <li class="list-group-item">20+ home page options</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover" tabindex="0">Start Free Trial</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                            <div class="js-slide slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h4 class="h6 text-danger mb-3">Enterprise</h4>
-                                        <span class="d-block">
-                                        <span class="h2 text-dark font-weight-normal">
-                                        Contact Us
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">no user limit</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                            <li class="list-group-item">100+ header variations</li>
-                                            <li class="list-group-item">20+ home page options</li>
-                                            <li class="list-group-item">Priority Support</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0">Contact Us</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
-                        <li class="slick-active slick-current" role="presentation"><span></span></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End Pricing Carousel -->
-            <!-- Pricing Carousel -->
-            <div id="pricingYearly" style="display: none; opacity: 0;" data-target-group="idPricing">
-                <div class="js-slick-carousel u-slick u-slick--gutters-2 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="4" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
-                    &quot;breakpoint&quot;: 1200,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 3
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 992,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 2
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 768,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 1
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 554,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 1
-                    }
-                    }]">
-                    <div class="slick-list draggable">
-                        <div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);">
-                            <div class="js-slide slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 0px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide10" aria-describedby="slick-slide-control10">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h4 class="h6 text-primary mb-3">Starter</h4>
-                                        <span class="d-block">
-                                        <span class="display-4 text-dark font-weight-normal">
-                                        <span class="align-top font-size-2">$</span>242
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">per year</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover" tabindex="0">Start Starter</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                            <div class="js-slide slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 0px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide11" aria-describedby="slick-slide-control11">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h4 class="h6 text-warning mb-3">Basic</h4>
-                                        <span class="d-block">
-                                        <span class="display-4 text-dark font-weight-normal">
-                                        <span class="align-top font-size-2">$</span>442
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">per year</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                            <li class="list-group-item">100+ header variations</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover" tabindex="0">Start Basic</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                            <div class="js-slide slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 0px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide12" aria-describedby="slick-slide-control12">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h4 class="h6 text-success mb-3">Company</h4>
-                                        <span class="d-block">
-                                        <span class="display-4 text-dark font-weight-normal">
-                                        <span class="align-top font-size-2">$</span>1089
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">per year</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                            <li class="list-group-item">100+ header variations</li>
-                                            <li class="list-group-item">20+ home page options</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-soft-primary transition-3d-hover" tabindex="0">Start Free Trial</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                            <div class="js-slide slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 0px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide13" aria-describedby="slick-slide-control13">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h4 class="h6 text-danger mb-3">Enterprise</h4>
-                                        <span class="d-block">
-                                        <span class="h2 text-dark font-weight-normal">
-                                        Contact Us
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">no user limit</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                            <li class="list-group-item">100+ header variations</li>
-                                            <li class="list-group-item">20+ home page options</li>
-                                            <li class="list-group-item">Priority Support</li>
-                                        </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0">Contact Us</button>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
-                        <li class="slick-active slick-current" role="presentation"><span></span></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End Pricing Carousel -->
-        </div>
-        <!-- Divider -->
-        <div class="w-80 mx-auto">
-            <hr class="my-0">
-        </div>
-        <!-- End Divider -->
-    </div>
-</div>
-<!-- End Pricing Section -->
-{% endblock content %}
-{% block extrajs %}
-<script>
-  $(document).on('ready', function () {
-    // initialization of slick carousel
-    $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-  });
-</script>
-{% endblock extrajs%}
 
+{% show_pricing %}
+
+{% endblock content %}
+
+{% block extrajs %}
+    <script src="{% static 'js/apps.js' %}"></script>
+{% endblock %}

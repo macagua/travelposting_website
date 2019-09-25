@@ -1,0 +1,142 @@
+{%load i18n destinations_tags staticfiles mptt_tags landing_extra %}
+<!-- Pricing Section -->
+<div class="position-relative mt-n23 z-index-2">
+    <div class="container">
+        <div class="space-bottom-2 space-bottom-md-3">
+            <!-- Pricing Carousel -->
+            <div id="pricingMonthly" data-target-group="idPricing">
+                <div class="js-slick-carousel u-slick u-slick--gutters-2 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="4" data-adaptive-height="true" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
+                    &quot;breakpoint&quot;: 1200,
+                    &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 3
+                    }
+                    }, {
+                    &quot;breakpoint&quot;: 992,
+                    &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 2
+                    }
+                    }, {
+                    &quot;breakpoint&quot;: 768,
+                    &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 1
+                    }
+                    }, {
+                    &quot;breakpoint&quot;: 554,
+                    &quot;settings&quot;: {
+                    &quot;slidesToShow&quot;: 1
+                    }
+                    }]">
+                    <div class="slick-list draggable">
+                        <div class="slick-track" style="opacity: 1; width: 1128px; transform: translate3d(0px, 0px, 0px);">
+                            {% for plan in plans %}
+                            <div class="js-slide slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
+                                <!-- Pricing -->
+                                <div class="card transition-3d-hover mt-1">
+                                    <!-- Header -->
+                                    <header class="card-header text-center p-5">
+                                        <h3 class="h6 text-primary mb-3">{{ plan }}</h4>
+                                            {% for price in plan.price.all %}
+                                            <span class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
+                                                <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
+                                                <span class="d-block text-secondary font-size-1"></span>{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}</span>
+                                            </span>
+                                            {% endfor %}
+                                    </header>
+                                    <!-- End Header -->
+                                    <!-- Content -->
+                                    <div class="card-body p-5">
+                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
+                                            {% with features=plan|show_features %}
+                                            {# {% recursetree features %} #}
+                                            {% for node in features %}
+                                            {% if node.is_leaf_node %}
+                                                <li class="list-group-item">{{ node }}</li>
+                                            {% else %}
+                                                <li class="list-group-item">
+                                                    {{ node }}
+                                                    <ul class="list-group list-group-flush list-group-borderless mb-4">
+                                                        {% for child in node|get_children_plan:plan %}
+                                                            <li class="list-group-item">
+                                                                {{ child }}
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                                {% comment %}
+                                                {% for feature, structure in drilldown|tree_info %}
+                                                {% if structure.new_level %}
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        {% else %}
+                                                    </li>
+                                                </ul>
+                                                {% endif%}
+                                                {% ifequal feature node %}
+                                                {{ feature }}
+                                                {% else %}
+                                                <small>{{ feature }}</small>
+                                                {% endifequal %}
+                                                {% for level in structure.closed_levels %}</li>
+                                                </ul>
+                                                {% endfor %}
+                                                {% endfor %}
+                                                {% endcomment %}
+                                                {% endif %}
+                                                {% endfor %}
+                                                {#              {% endrecursetree %}#}
+                                                {% endwith %}
+                                        </ul>
+                                        <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0">Contact Us</button>
+                                    </div>
+                                    <!-- End Content -->
+                                </div>
+                                <!-- End Pricing -->
+                            </div>
+                            {% endfor %}
+                            <div class="js-slide slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
+                                <!-- Pricing -->
+                                <div class="card transition-3d-hover mt-1">
+                                    <!-- Header -->
+                                    <header class="card-header text-center p-5">
+                                        <h4 class="h6 text-danger mb-3">Enterprise</h4>
+                                        <span class="d-block">
+                                        <span class="h2 text-dark font-weight-normal">
+                                        Contact Us
+                                        </span>
+                                        <span class="d-block text-secondary font-size-1">no user limit</span>
+                                        </span>
+                                    </header>
+                                    <!-- End Header -->
+                                    <!-- Content -->
+                                    <div class="card-body p-5">
+                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
+                                            <li class="list-group-item">Community support</li>
+                                            <li class="list-group-item">400+ pages</li>
+                                            <li class="list-group-item">100+ header variations</li>
+                                            <li class="list-group-item">20+ home page options</li>
+                                            <li class="list-group-item">Priority Support</li>
+                                        </ul>
+                                        <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0">Contact Us</button>
+                                    </div>
+                                    <!-- End Content -->
+                                </div>
+                                <!-- End Pricing -->
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
+                        <li class="slick-active slick-current" role="presentation"><span></span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Pricing Carousel -->
+        </div>
+        <!-- Divider -->
+        <div class="w-80 mx-auto">
+            <hr class="my-0">
+        </div>
+        <!-- End Divider -->
+    </div>
+</div>
+<!-- End Pricing Section -->
+
