@@ -304,6 +304,7 @@ CMS_TEMPLATES = (
     ('coming-soon.html', 'Coming Soon'),
     ('hotels.html', 'Hotels template'),
     ('pricing.html', 'Pricing'),
+    ('make_page.html', 'Make page'),
 )
 
 CMS_PERMISSION = True

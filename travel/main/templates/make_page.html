@@ -1,0 +1,259 @@
+
+
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% block title %}{% trans 'About us' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url({% static 'img/ecommerce-1140x530.jpg' %});">
+    <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
+        <div class="w-md-65 w-lg-50">
+            <h1 class="h1 right-0 bottom-0 " style="color: rgba(255, 255, 255, 0.781);"><b>{% trans 'Make your payments' %}</b></h1>
+        </div>
+    </div>
+    <!-- SVG Background -->
+    <figure class="position-absolute right-0 bottom-0 left-0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="100%" height="85px" viewBox="0 0 1920 107.7" style="margin-bottom: -8px; enable-background:new 0 0 1920 107.7;" xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#SVGHero">
+            <style type="text/css">
+                .wave-9-bottom-0{fill:#FFFFFF;}
+                .wave-9-bottom-1{fill:#FFFFFF;}
+            </style>
+            <path class="wave-9-bottom-0 fill-white" d="M0,107.7V69.8c0,0,451-54.7,960-5.4S1920,0,1920,0v107.7H0z"></path>
+            <path class="wave-9-bottom-1 fill-white" opacity=".3" d="M0,107.7v-81c0,0,316.2-8.9,646.1,54.5s794.7-114.1,1273.9-38v64.5H0z"></path>
+        </svg>
+    </figure>
+    <!-- End SVG Background -->
+</div>
+<!-- Features Section -->
+<div id="SVGmockupBg" class="svg-preloader container space-2">
+    <!-- Nav Classic -->
+    <div class="position-relative w-lg-85 bg-white text-center z-index-2 mx-lg-auto">
+        <ul class="nav nav-classic nav-rounded nav-shadow nav-justified" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link font-weight-medium active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="true">
+                    <div class="d-md-flex justify-content-md-center align-items-md-center">
+                     PAYONEER / PAYPAL / GBP
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-medium" id="pills-two-example1-tab" data-toggle="pill" href="#pills-two-example1" role="tab" aria-controls="pills-two-example1" aria-selected="false">
+                    <div class="d-md-flex justify-content-md-center align-items-md-center">
+                        <i class="fas fa-euro-sign"></i> EUR
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-medium" id="pills-three-example1-tab" data-toggle="pill" href="#pills-three-example1" role="tab" aria-controls="pills-three-example1" aria-selected="false">
+                    <div class="d-md-flex justify-content-md-center align-items-md-center">
+                        <i class="fas fa-dollar-sign"></i> USD
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- End Nav Classic -->
+    <!-- Tab Content -->
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade pt-9 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+                <div class="col-lg-12 mb-9 mb-lg-0">
+                    <!-- Info -->
+                    <div class="mb-5">
+                        <h3 class="h4 font-weight-semi-bold">{% trans 'Pay on Payonner or Paypal'%}</h3>
+                        <p>{% trans 'Make your payments directly in the currency that best suits you with our collection service with: '%} </p>
+                    </div>
+                    <ul class="list-unstyled text-secondary font-size-1">
+                        <li class="media my-3">
+                            <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                            <span class="media-body">
+                            <a href="https://share.payoneer.com/nav/Z1ravelaDuoFZJzSQ60xN9dVIe8E9A0HjxJepLRznJYrYSIlJkEcBKerQEjbZBoxZSWzmBjUrEt295Kj_NH8BQ2"><i class="fas fa-receipt"></i> Payoneer.</a>
+                            </span>
+                        </li>
+                        <li class="media my-3">
+                            <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                            <span class="media-body">
+                            <a href="https://www.paypal.com"><i class="fab fa-cc-paypal"></i> Paypal</a> {% trans 'Make your payment via Paypal to: info@xposting-service.com' %}
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <h3>{% trans 'GBP Receiving Account (BACS) England' %}</h3>
+                <table style="border-collapse: collapse; width: 100%;" border="1">
+                <tbody>
+                <tr>
+                <td style="width: 50%;"><strong>{% trans 'Name of the bank' %}</strong></td>
+                <td style="width: 50%;">Barclays</td>
+                </tr>
+                <tr>
+                <td style="width: 50%;"><strong>{% trans 'Branch Code' %}</strong></td>
+                <td style="width: 50%;">231486</td>
+                </tr>
+                <tr>
+                <td style="width: 50%;"><strong>{% trans 'Account number' %}</strong></td>
+                <td style="width: 50%;">02911260</td>
+                </tr>
+                <tr>
+                <td style="width: 50%;"><strong>{% trans 'Beneficiary Name' %}</strong></td>
+                <td style="width: 50%;">Xposting Service</td>
+                </tr>
+                </tbody>
+                </table>
+                <p><strong>{% trans 'Keep in mind!' %}</strong></p>
+                <p>• {% trans 'Only BACS and Faster Payments Service (UK local bank) transfers can be accepted in GBP' %}<br>
+                • {% trans 'Transfers must be made from a corporate bank account' %}<br>
+                • {% trans 'Transfers in USD will be rejected automatically' %}<br>
+                • {% trans 'Wire transfers are not supported'%}</p>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Mockup Block -->
+        </div>
+        <div class="tab-pane fade pt-9" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+                <div class="col-lg-12 mb-9 mb-lg-0">
+                    <!-- Info -->
+                    <center>
+                        <h3 class="panel-title left-text text-uppercase" data-reactid=".0.0.0.2.1.0.0.0.0.0">{% trans 'EUR Receiving Account (SEPA)'%}</h3>
+                        <table style="border-collapse: collapse; width: 100%;" border="1">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 47.9186%;"><strong>{% trans 'Name of the bank' %}</strong></td>
+                                    <td style="width: 152.082%;">SPARKASSE HOLSTEIN</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 47.9186%;"><strong>IBAN:</strong></td>
+                                    <td style="width: 152.082%;">DE10 2135 2240 0179 2093 17</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 47.9186%;"><strong>BIC: </strong></td>
+                                    <td style="width: 152.082%;">NOLADE21HOL</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 47.9186%;"><strong>{% trans 'Beneficiary Name' %}</strong></td>
+                                    <td style="width: 152.082%;">TRAVELPOSTING UG</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>I have accounts!</strong></p>
+                        <p>• {% trans 'Only SEPA transfers (European local bank) can be accepted in EUR' %}<br>
+                            • {% trans 'Transfers in USD will be made automatically and may result in the suspension of this service' %}<br>
+                            • {% trans 'Wire transfers are not supported' %}
+                        </p>
+                    </center>
+                    <!-- End Info -->
+                </div>
+            </div>
+            <!-- End Mockup Block -->
+        </div>
+        <div class="tab-pane fade pt-9" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+                <div class="col-lg-12 mb-9 mb-lg-0">
+                    <!-- Info -->
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <h3>{% trans 'Receiving Account USD (ACH) / US Local Bank UU'%}</h3>
+                            <table style="border-collapse: collapse; width: 100%;" border="1">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;"><strong>{% trans 'Name of the bank' %}:</strong></td>
+                                        <td style="width: 50%;">First Century Bank</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;"><strong>{% trans 'Way (ABA)' %}<span class="tool-tip" aria-hidden="true" aria-describedby="Tooltip_RoutingABA" data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$RoutingABA.0.0.1">:</span></strong></td>
+                                        <td style="width: 50%;">061120084</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;"><strong>{% trans 'Account number' %}<span class="tool-tip" aria-hidden="true" aria-describedby="Tooltip_AccountNumber" data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$AccountNumber.0.0.1">:</span></strong></td>
+                                        <td style="width: 50%;">4012826176376</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;"><strong><span class="tool-tip" aria-hidden="true" aria-describedby="Tooltip_AccountNumber" data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$AccountNumber.0.0.1">Tipo de cuenta:</span></strong></td>
+                                        <td style="width: 50%;">{% trans 'CHECKING' %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;"><strong>{% trans 'Beneficiary Name:' %}</strong></td>
+                                        <td style="width: 50%;">Xposting Service</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><strong>{% trans 'Keep in mind!' %}</strong></p>
+                            <p>• {% trans 'Only ACH (US local bank) transfers can be accepted in USD' %}<br>
+                                • {% trans 'Transfers must be made from a business account' %}<br>
+                                • {% trans 'Transfers from individuals will be made automatically' %}<br>
+                                • {% trans 'Electronic transfer is not supported' %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_sep_color_grey"><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span>
+                    </div>
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <div class="panel-heading col-sm-12 service-title" data-reactid=".0.0.0.2.1.0.0.0">
+                                <div class="col-xs-10 panel-head" data-reactid=".0.0.0.2.1.0.0.0.0">
+                                    <h3 class="panel-title left-text text-uppercase" data-reactid=".0.0.0.2.1.0.0.0.0.0">{% trans 'Receiving AUD account (direct deposit) / Bank of Australia...' %}</h3>
+                                    <table style="border-collapse: collapse; width: 100%;" border="1">
+                                        <tbody>
+                                            <tr style="height: 24px;">
+                                                <td style="width: 50%; height: 24px;"><strong>{% trans 'Name of the bank'%}</strong></td>
+                                                <td style="width: 32.4838%; height: 24px;">National Australia Bank</td>
+                                            </tr>
+                                            <tr style="height: 24px;">
+                                                <td style="width: 50%; height: 24px;"><strong><span class="tool-tip" aria-hidden="true" aria-describedby="Tooltip_RoutingABA" data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$RoutingABA.0.0.1">{% trans 'Headquarters code' %} (BSB)</span></strong></td>
+                                                <td style="width: 32.4838%; height: 24px;">082182</td>
+                                            </tr>
+                                            <tr data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$AccountNumber">
+                                                <td style="width: 50%;" data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$AccountNumber.0"><span data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$AccountNumber.0.0">Número de cuenta<span class="tool-tip" aria-hidden="true" aria-describedby="Tooltip_AccountNumber" data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$AccountNumber.0.0.1">?</span></span></td>
+                                                <td style="width: 32.4838%; height: 24px;">478340445</td>
+                                            </tr>
+                                            <tr style="height: 24px;">
+                                                <td style="width: 50%; height: 24px;"><strong><span class="tool-tip" aria-hidden="true" aria-describedby="Tooltip_AccountNumber" data-reactid=".0.0.0.2.1.0.0.2.0.1.0.0:$AccountNumber.0.0.1">{% trans 'Account type' %}</span></strong></td>
+                                                <td style="width: 32.4838%; height: 24px;"></td>
+                                            </tr>
+                                            <tr style="height: 24px;">
+                                                <td style="width: 50%; height: 24px;"><strong>{% trans 'Beneficiary Name'%}</strong></td>
+                                                <td style="width: 100%; height: 24px;">Xposting Service</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <p><strong>{% trans 'Please keep that in mind!' %}</strong></p>
+                            <p>• {% trans 'Only direct entry payments (BECS) are accepted in AUD' %}<br>
+                                • {% trans 'Transfers can only be made from companies' %}<br>
+                                • {% trans 'Be sure to select Australia in the bank location drop-down when adding a deposit method at Amazon Seller Central!' %}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- End Info -->
+                </div>
+                <div class="col-lg-7 position-relative">
+                    <div class="pl-md-9">
+                    </div>
+                    <!-- SVG Component -->
+                    <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                        <figure class="ie-abstract-shapes-3">
+                            <img class="js-svg-injector" src="{% static 'assets/svg/components/abstract-shapes-3.svg'%}" style="display:none;" alt="Image Description"
+                                data-parent="#SVGmockupBg">
+                        </figure>
+                    </div>
+                    <!-- End SVG Component -->
+                </div>
+            </div>
+            <!-- End Mockup Block -->
+        </div>
+    </div>
+    <!-- End Tab Content -->
+</div>
+<!-- End Features Section -->
+{% endblock%}
+
