@@ -47,9 +47,9 @@
                                     </header>
                                     <!-- End Header -->
                                     <!-- Content -->
-                                    <div class="card-body p-5">  
-
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
+                                    <div class="card-body p-5">
+                                        <button type="button" class="btn" data-toggle="collapse" data-target="#demo">{% trans 'Read more' %}</button>
+                                        <ul id="demo" class="list-group list-group-flush list-group-borderless mb-4 collapse">
                                             {% with features=plan|show_features %}
                                             {# {% recursetree features %} #}
                                             {% for node in features %}
@@ -89,7 +89,7 @@
                                         {% endfor %}
                                         {#              {% endrecursetree %}#}
                                         {% endwith %}
-                                    </span>
+                                        </span>
                                         </ul>
                                         <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0">Contact Us</button>
                                     </div>
