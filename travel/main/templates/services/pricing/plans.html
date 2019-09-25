@@ -48,15 +48,15 @@
                                     <!-- End Header -->
                                     <!-- Content -->
                                     <div class="card-body p-5">
-                                        <button type="button" class="btn" data-toggle="collapse" data-target="#demo">{% trans 'Read more' %}</button>
-                                        <ul id="demo" class="list-group list-group-flush list-group-borderless mb-4 collapse">
+                                        <button type="button" class="btn" data-toggle="collapse" data-target="#detail-{{ plan.id }}">{% trans 'Read more' %}</button>
+                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
                                             {% with features=plan|show_features %}
                                             {# {% recursetree features %} #}
                                             {% for node in features %}
                                             {% if node.is_leaf_node %}
                                             <li class="list-group-item">{{ node }}</li>
                                             {% else %}
-                                            <li class="list-group-item">
+                                            <li id="detail-{{ plan.id }}" class="collapse list-group-item">
                                                 {{ node }}
                                                 <ul class="list-group list-group-flush list-group-borderless mb-4">
                                                     {% for child in node|get_children_plan:plan %}
@@ -66,25 +66,6 @@
                                                     {% endfor %}
                                                 </ul>
                                             </li>
-                                            {% comment %}
-                                            {% for feature, structure in drilldown|tree_info %}
-                                            {% if structure.new_level %}
-                                            <ul class="list-group">
-                                                <li class="list-group-item">
-                                                    {% else %}
-                                                </li>
-                                            </ul>
-                                            {% endif%}
-                                            {% ifequal feature node %}
-                                            {{ feature }}
-                                            {% else %}
-                                            <small>{{ feature }}</small>
-                                            {% endifequal %}
-                                            {% for level in structure.closed_levels %}</li>
-                                        </ul>
-                                        {% endfor %}
-                                        {% endfor %}
-                                        {% endcomment %}
                                         {% endif %}
                                         {% endfor %}
                                         {#              {% endrecursetree %}#}
