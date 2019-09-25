@@ -1,3 +1,5 @@
+
+
 {%load i18n destinations_tags staticfiles mptt_tags landing_extra %}
 <!-- Pricing Section -->
 <div class="position-relative mt-n23 z-index-2">
@@ -34,57 +36,60 @@
                                 <div class="card transition-3d-hover mt-1">
                                     <!-- Header -->
                                     <header class="card-header text-center p-5">
-                                        <h3 class="h6 text-primary mb-3">{{ plan }}</h4>
-                                            {% for price in plan.price.all %}
-                                            <span class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
-                                                <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
-                                                <span class="d-block text-secondary font-size-1"></span>{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}</span>
-                                            </span>
-                                            {% endfor %}
+                                        <h3 class="h6 text-primary mb-3">
+                                        {{ plan }}</h4>
+                                        {% for price in plan.price.all %}
+                                        <span class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
+                                        <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
+                                        <span class="d-block text-secondary font-size-1"></span>{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}</span>
+                                        </span>
+                                        {% endfor %}
                                     </header>
                                     <!-- End Header -->
                                     <!-- Content -->
-                                    <div class="card-body p-5">
+                                    <div class="card-body p-5">  
+
                                         <ul class="list-group list-group-flush list-group-borderless mb-4">
                                             {% with features=plan|show_features %}
                                             {# {% recursetree features %} #}
                                             {% for node in features %}
                                             {% if node.is_leaf_node %}
-                                                <li class="list-group-item">{{ node }}</li>
+                                            <li class="list-group-item">{{ node }}</li>
                                             {% else %}
-                                                <li class="list-group-item">
-                                                    {{ node }}
-                                                    <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                                        {% for child in node|get_children_plan:plan %}
-                                                            <li class="list-group-item">
-                                                                {{ child }}
-                                                            </li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                </li>
-                                                {% comment %}
-                                                {% for feature, structure in drilldown|tree_info %}
-                                                {% if structure.new_level %}
-                                                <ul class="list-group">
+                                            <li class="list-group-item">
+                                                {{ node }}
+                                                <ul class="list-group list-group-flush list-group-borderless mb-4">
+                                                    {% for child in node|get_children_plan:plan %}
                                                     <li class="list-group-item">
-                                                        {% else %}
+                                                        {{ child }}
                                                     </li>
+                                                    {% endfor %}
                                                 </ul>
-                                                {% endif%}
-                                                {% ifequal feature node %}
-                                                {{ feature }}
-                                                {% else %}
-                                                <small>{{ feature }}</small>
-                                                {% endifequal %}
-                                                {% for level in structure.closed_levels %}</li>
-                                                </ul>
-                                                {% endfor %}
-                                                {% endfor %}
-                                                {% endcomment %}
-                                                {% endif %}
-                                                {% endfor %}
-                                                {#              {% endrecursetree %}#}
-                                                {% endwith %}
+                                            </li>
+                                            {% comment %}
+                                            {% for feature, structure in drilldown|tree_info %}
+                                            {% if structure.new_level %}
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+                                                    {% else %}
+                                                </li>
+                                            </ul>
+                                            {% endif%}
+                                            {% ifequal feature node %}
+                                            {{ feature }}
+                                            {% else %}
+                                            <small>{{ feature }}</small>
+                                            {% endifequal %}
+                                            {% for level in structure.closed_levels %}</li>
+                                        </ul>
+                                        {% endfor %}
+                                        {% endfor %}
+                                        {% endcomment %}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {#              {% endrecursetree %}#}
+                                        {% endwith %}
+                                    </span>
                                         </ul>
                                         <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0">Contact Us</button>
                                     </div>
@@ -98,10 +103,9 @@
                                 <div class="card transition-3d-hover mt-1">
                                     <!-- Header -->
                                     <header class="card-header text-center p-5">
-                                        <h4 class="h6 text-danger mb-3">Enterprise</h4>
                                         <span class="d-block">
                                         <span class="h2 text-dark font-weight-normal">
-                                        Contact Us
+                                        {% trans 'Contact Us' %}
                                         </span>
                                         <span class="d-block text-secondary font-size-1">no user limit</span>
                                         </span>
@@ -110,13 +114,11 @@
                                     <!-- Content -->
                                     <div class="card-body p-5">
                                         <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">Community support</li>
-                                            <li class="list-group-item">400+ pages</li>
-                                            <li class="list-group-item">100+ header variations</li>
-                                            <li class="list-group-item">20+ home page options</li>
-                                            <li class="list-group-item">Priority Support</li>
+                                            <li class="list-group-item">{% trans 'Hamburgo - Alemania' %}</li>
+                                            <li class="list-group-item">{% trans 'hamburgo@travelposting.com' %}</li>
+                                            <li class="list-group-item">{% trans '+ 49 40 18 20 33 70' %}</li>
                                         </ul>
-                                        <button type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0">Contact Us</button>
+                                        <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="mailto:hamburgo@travelposting.com"tabindex="0">Contact Us</a>
                                     </div>
                                     <!-- End Content -->
                                 </div>
