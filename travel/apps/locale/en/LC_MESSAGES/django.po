@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-23 13:48-0400\n"
+"POT-Creation-Date: 2019-09-25 02:43-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,7 +232,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/login.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:25
-#: apps/accounts/templates/accounts/registration/register_form.html:14
+#: apps/accounts/templates/accounts/registration/register_form.html:16
 #: apps/accounts/templates/accounts/registration/succes_register.html:25
 #: main/templates/coming-soon.html:4 main/templates/index.html:4
 msgid "Travelposting"
@@ -240,7 +240,7 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:20
 #: apps/accounts/templates/accounts/registration/login.html:20
-#: apps/accounts/templates/accounts/registration/register_form.html:20
+#: apps/accounts/templates/accounts/registration/register_form.html:22
 msgid "Go back"
 msgstr ""
 
@@ -261,6 +261,7 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
 #: apps/accounts/templates/accounts/registration/login.html:59
+#: main/templates/pages/show_header.html:49
 msgid "Please enter a valid email address."
 msgstr ""
 
@@ -279,6 +280,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:32
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:54
+#: apps/accounts/templates/accounts/registration/register_form.html:92
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
 #: main/templates/index.html:128
 msgid "Login"
@@ -325,7 +327,6 @@ msgid "Don\\"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/login.html:82
-#: apps/accounts/templates/accounts/registration/register_form.html:72
 msgid "Signup"
 msgstr ""
 
@@ -365,12 +366,32 @@ msgstr ""
 msgid "accounts:login"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/register_form.html:51
+#: apps/accounts/templates/accounts/registration/register_form.html:52
 msgid "Welcome to"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/register_form.html:52
+#: apps/accounts/templates/accounts/registration/register_form.html:53
 msgid "Fill out the form to get started."
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/register_form.html:57
+msgid "Do you have a Coupon?"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/register_form.html:60
+msgid "No"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/register_form.html:74
+msgid "Yes"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/register_form.html:91
+msgid "Already have an account?"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/register_form.html:95
+msgid "Create account"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/succes_register.html:50
@@ -630,7 +651,7 @@ msgid "de"
 msgstr ""
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
-#: main/templates/template_base_for_text.html:3
+#: main/templates/hotels.html:3 main/templates/template_base_for_text.html:3
 msgid "About us"
 msgstr ""
 
@@ -693,6 +714,7 @@ msgid "Coming Soon"
 msgstr ""
 
 #: main/templates/community.html:4 main/templates/community.html:15
+#: main/templates/pricing.html:4
 msgid "Comunity"
 msgstr ""
 
@@ -931,6 +953,81 @@ msgstr ""
 msgid "Currency Converter"
 msgstr ""
 
+#: main/templates/footer.html:60
+msgid "HOTEL IN:"
+msgstr ""
+
+#: main/templates/footer.html:65
+msgid "GERMANY"
+msgstr ""
+
+#: main/templates/footer.html:70
+msgid "USA"
+msgstr ""
+
+#: main/templates/footer.html:75
+msgid "CHINA"
+msgstr ""
+
+#: main/templates/footer.html:80
+msgid "OTHER CITY"
+msgstr ""
+
+#: main/templates/footer.html:85
+msgid "FLIGHTS"
+msgstr ""
+
+#: main/templates/footer.html:90
+msgid "MAKE YOUR PAY"
+msgstr ""
+
+#: main/templates/footer.html:122 main/templates/footer.html:125
+msgid "Cookies"
+msgstr ""
+
+#: main/templates/footer.html:128
+msgid "FQA"
+msgstr ""
+
+#: main/templates/footer.html:131
+msgid "Privacy & policy"
+msgstr ""
+
+#: main/templates/footer.html:134 main/templates/menu/menu.html:38
+#: main/templates/services/pricing/plans.html:75
+msgid "Register"
+msgstr ""
+
+#: main/templates/footer.html:138
+msgid "T&S"
+msgstr ""
+
+#: main/templates/hotels.html:16
+msgid "We are a"
+msgstr ""
+
+#: main/templates/hotels.html:21
+msgid "travel agency."
+msgstr ""
+
+#: main/templates/hotels.html:23
+msgid ""
+"We are the number one travel agency, Search and book your Hotel by clicking "
+"on the link of our Partner-Booking"
+msgstr ""
+
+#: main/templates/hotels.html:37
+msgid "modern"
+msgstr ""
+
+#: main/templates/hotels.html:37
+msgid "creative"
+msgstr ""
+
+#: main/templates/hotels.html:37
+msgid "professional"
+msgstr ""
+
 #: main/templates/index.html:31
 msgid "Contact us"
 msgstr ""
@@ -961,10 +1058,6 @@ msgstr ""
 msgid "Magazine"
 msgstr ""
 
-#: main/templates/menu/menu.html:37
-msgid "Register"
-msgstr ""
-
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
 msgstr ""
@@ -978,9 +1071,17 @@ msgstr ""
 msgid "Name / Last Name"
 msgstr ""
 
+#: main/templates/pages/show_header.html:33
+msgid "Name must contain only letters."
+msgstr ""
+
 #: main/templates/pages/show_header.html:39
 #: main/templates/pages/show_header.html:41
 msgid "Country / City"
+msgstr ""
+
+#: main/templates/pages/show_header.html:41
+msgid "Please, what country or city that do you want to go?"
 msgstr ""
 
 #: main/templates/pages/show_header.html:47
@@ -993,8 +1094,42 @@ msgstr ""
 msgid "Whatsapp"
 msgstr ""
 
+#: main/templates/pages/show_header.html:57
+msgid "Please enter a valid whatsapp number"
+msgstr ""
+
 #: main/templates/pages/show_header.html:63
 msgid "Search offer"
+msgstr ""
+
+#: main/templates/pricing.html:13
+msgid "Special"
+msgstr ""
+
+#: main/templates/pricing.html:13
+msgid "Ofert on"
+msgstr ""
+
+#: main/templates/pricing.html:15
+msgid ""
+"We know that there are many companies on the internet that offer the best of "
+"blue sky and we may not be the best known in the Latin market, but our "
+"experience of almost 10 years in the market allows us to manage a portfolio "
+"of experts with whom we can provide the most and best offers in the market. "
+"If you get someone cheaper than us and with the same return we will return "
+"your investment."
+msgstr ""
+
+#: main/templates/pricing.html:19
+msgid "SELECT YOUR PLAN TYPE"
+msgstr ""
+
+#: main/templates/pricing.html:22
+msgid "Yearly"
+msgstr ""
+
+#: main/templates/pricing.html:30
+msgid "Monthly"
 msgstr ""
 
 #: main/templates/services/destination/all.html:22
@@ -1140,4 +1275,24 @@ msgstr ""
 
 #: main/templates/services/magazine/magazine.html:14
 msgid "Download"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:52
+msgid "See plan details"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:89
+msgid "Contact Us"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:98
+msgid "Hamburgo - Alemania"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:99
+msgid "hamburgo@travelposting.com"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:100
+msgid "+ 49 40 18 20 33 70"
 msgstr ""

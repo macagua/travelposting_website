@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-23 13:48-0400\n"
-"PO-Revision-Date: 2019-09-23 13:50-0428\n"
+"POT-Creation-Date: 2019-09-25 02:43-0400\n"
+"PO-Revision-Date: 2019-09-25 02:50-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -241,7 +241,7 @@ msgstr "TravelPosting: Confirmación de correo"
 #: apps/accounts/templates/accounts/registration/login.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:25
-#: apps/accounts/templates/accounts/registration/register_form.html:14
+#: apps/accounts/templates/accounts/registration/register_form.html:16
 #: apps/accounts/templates/accounts/registration/succes_register.html:25
 #: main/templates/coming-soon.html:4 main/templates/index.html:4
 msgid "Travelposting"
@@ -249,7 +249,7 @@ msgstr "Travelposting"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:20
 #: apps/accounts/templates/accounts/registration/login.html:20
-#: apps/accounts/templates/accounts/registration/register_form.html:20
+#: apps/accounts/templates/accounts/registration/register_form.html:22
 msgid "Go back"
 msgstr "Ir atrás"
 
@@ -270,6 +270,7 @@ msgstr "Correo electrónico"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
 #: apps/accounts/templates/accounts/registration/login.html:59
+#: main/templates/pages/show_header.html:49
 msgid "Please enter a valid email address."
 msgstr "Por favor ingrese un correo valido"
 
@@ -288,6 +289,7 @@ msgstr "Peticion de reseteo"
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:32
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:54
+#: apps/accounts/templates/accounts/registration/register_form.html:92
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
 #: main/templates/index.html:128
 msgid "Login"
@@ -335,7 +337,6 @@ msgid "Don\\"
 msgstr "Don\\"
 
 #: apps/accounts/templates/accounts/registration/login.html:82
-#: apps/accounts/templates/accounts/registration/register_form.html:72
 msgid "Signup"
 msgstr "Ingreso"
 
@@ -376,13 +377,37 @@ msgstr ""
 msgid "accounts:login"
 msgstr "accounts:login"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:51
+#: apps/accounts/templates/accounts/registration/register_form.html:52
 msgid "Welcome to"
 msgstr "Bienvenido a"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:52
+#: apps/accounts/templates/accounts/registration/register_form.html:53
 msgid "Fill out the form to get started."
 msgstr "Llene el formulario para iniciar"
+
+#: apps/accounts/templates/accounts/registration/register_form.html:57
+#| msgid "do have accounts?"
+msgid "Do you have a Coupon?"
+msgstr "¿Posees un Cupón?"
+
+#: apps/accounts/templates/accounts/registration/register_form.html:60
+msgid "No"
+msgstr "NO"
+
+#: apps/accounts/templates/accounts/registration/register_form.html:74
+#| msgid "es"
+msgid "Yes"
+msgstr "Sí"
+
+#: apps/accounts/templates/accounts/registration/register_form.html:91
+#| msgid "do have accounts?"
+msgid "Already have an account?"
+msgstr "¿Ya posees una cuenta?"
+
+#: apps/accounts/templates/accounts/registration/register_form.html:95
+#| msgid "do have accounts?"
+msgid "Create account"
+msgstr "Crear cuenta"
 
 #: apps/accounts/templates/accounts/registration/succes_register.html:50
 msgid "Thank you for your register"
@@ -642,7 +667,7 @@ msgid "de"
 msgstr "de"
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
-#: main/templates/template_base_for_text.html:3
+#: main/templates/hotels.html:3 main/templates/template_base_for_text.html:3
 msgid "About us"
 msgstr "Sobre nosotros"
 
@@ -705,6 +730,7 @@ msgid "Coming Soon"
 msgstr "Próximamente"
 
 #: main/templates/community.html:4 main/templates/community.html:15
+#: main/templates/pricing.html:4
 msgid "Comunity"
 msgstr "Comunidad"
 
@@ -955,11 +981,6 @@ msgstr ""
 "abrió sus puertas el 1 de marzo de 2009 con sede en la ciudad de Hamburgo, Alemania."
 
 #: main/templates/footer.html:18
-#| msgid ""
-#| "\n"
-#| "                    \n"
-#| "                    In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.\n"
-#| "                    "
 msgid ""
 "\n"
 "                    In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.\n"
@@ -972,13 +993,90 @@ msgstr ""
 msgid "Currency Converter"
 msgstr "Convertidor de divisas"
 
+#: main/templates/footer.html:60
+msgid "HOTEL IN:"
+msgstr "HOTEL EN:"
+
+#: main/templates/footer.html:65
+msgid "GERMANY"
+msgstr "ALEMANIA"
+
+#: main/templates/footer.html:70
+msgid "USA"
+msgstr "USA"
+
+#: main/templates/footer.html:75
+msgid "CHINA"
+msgstr "CHINA"
+
+#: main/templates/footer.html:80
+msgid "OTHER CITY"
+msgstr "OTRA CIUDAD"
+
+#: main/templates/footer.html:85
+msgid "FLIGHTS"
+msgstr "VUELOS"
+
+#: main/templates/footer.html:90
+msgid "MAKE YOUR PAY"
+msgstr "HAZ TU PAGO"
+
+#: main/templates/footer.html:122 main/templates/footer.html:125
+msgid "Cookies"
+msgstr "Cookies"
+
+#: main/templates/footer.html:128
+msgid "FQA"
+msgstr "FQA"
+
+#: main/templates/footer.html:131
+msgid "Privacy & policy"
+msgstr "Política de privacidad"
+
+#: main/templates/footer.html:134 main/templates/menu/menu.html:38
+#: main/templates/services/pricing/plans.html:75
+msgid "Register"
+msgstr "Registro"
+
+#: main/templates/footer.html:138
+msgid "T&S"
+msgstr "T & S"
+
+#: main/templates/hotels.html:16
+msgid "We are a"
+msgstr "Somos un"
+
+#: main/templates/hotels.html:21
+#| msgid "Win travel packages"
+msgid "travel agency."
+msgstr "Agencia de viajes"
+
+#: main/templates/hotels.html:23
+msgid ""
+"We are the number one travel agency, Search and book your Hotel by clicking "
+"on the link of our Partner-Booking"
+msgstr ""
+"Somos la agencia de viajes número uno, busque y reserve su hotel haciendo "
+"clic en el enlace de nuestra página de Reservas para socios."
+
+#: main/templates/hotels.html:37
+msgid "modern"
+msgstr "contemporáneo"
+
+#: main/templates/hotels.html:37
+#| msgid "active"
+msgid "creative"
+msgstr "creativos"
+
+#: main/templates/hotels.html:37
+msgid "professional"
+msgstr "profesional"
+
 #: main/templates/index.html:31
 msgid "Contact us"
 msgstr "Contáctenos"
 
 #: main/templates/index.html:56
-#| msgid ""
-#| "Subscribe now and get special offers on the latest developments from Front."
 msgid ""
 "Subscribe now and get special offers on the latest developments from "
 "Travelposting."
@@ -1006,13 +1104,9 @@ msgstr "Disfruta y comparte la mejor revista de viajes."
 msgid "Magazine"
 msgstr "Revista"
 
-#: main/templates/menu/menu.html:37
-msgid "Register"
-msgstr "Registro"
-
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
-msgstr "Viaja y comparte tu experiencia"
+msgstr "Viaja y comparte tu aventura"
 
 #: main/templates/pages/show_header.html:27
 msgid "Where would you like to travel this time?"
@@ -1023,10 +1117,18 @@ msgstr "¿Donde te gustaría viajar esta vez?"
 msgid "Name / Last Name"
 msgstr "Nombre /Apellido"
 
+#: main/templates/pages/show_header.html:33
+msgid "Name must contain only letters."
+msgstr "El nombre debe contener sólo letras."
+
 #: main/templates/pages/show_header.html:39
 #: main/templates/pages/show_header.html:41
 msgid "Country / City"
 msgstr "Pais / Ciudad"
+
+#: main/templates/pages/show_header.html:41
+msgid "Please, what country or city that do you want to go?"
+msgstr "Por favor, ¿a qué país o ciudad quieres ir?"
 
 #: main/templates/pages/show_header.html:47
 #: main/templates/pages/show_header.html:49
@@ -1038,9 +1140,50 @@ msgstr "E-mail"
 msgid "Whatsapp"
 msgstr "Whatsapp"
 
+#: main/templates/pages/show_header.html:57
+#| msgid "Please enter a valid email address."
+msgid "Please enter a valid whatsapp number"
+msgstr "Por favor, introduzca un número de whatsapp válido"
+
 #: main/templates/pages/show_header.html:63
 msgid "Search offer"
 msgstr "Search offer"
+
+#: main/templates/pricing.html:13
+msgid "Special"
+msgstr "Especial"
+
+#: main/templates/pricing.html:13
+msgid "Ofert on"
+msgstr "Oferta en"
+
+#: main/templates/pricing.html:15
+msgid ""
+"We know that there are many companies on the internet that offer the best of"
+" blue sky and we may not be the best known in the Latin market, but our "
+"experience of almost 10 years in the market allows us to manage a portfolio "
+"of experts with whom we can provide the most and best offers in the market. "
+"If you get someone cheaper than us and with the same return we will return "
+"your investment."
+msgstr ""
+"Sabemos que hay muchas empresas en Internet que ofrecen lo mejor del cielo "
+"azul y puede que no seamos las más conocidas en el mercado latino, pero "
+"nuestra experiencia de casi 10 años en el mercado nos permite gestionar un "
+"portafolio de expertos con los que podemos ofrecer la mayor y mejor oferta "
+"del mercado. Si usted consigue a alguien más barato que nosotros y con el "
+"mismo rendimiento le devolveremos su inversión."
+
+#: main/templates/pricing.html:19
+msgid "SELECT YOUR PLAN TYPE"
+msgstr "SELECCIONE SU TIPO DE PLAN"
+
+#: main/templates/pricing.html:22
+msgid "Yearly"
+msgstr "Anual"
+
+#: main/templates/pricing.html:30
+msgid "Monthly"
+msgstr "Mensual"
 
 #: main/templates/services/destination/all.html:22
 #: main/templates/services/destination/destinations_for_categorie.html:72
@@ -1186,6 +1329,28 @@ msgstr "Conozca nuestro público"
 #: main/templates/services/magazine/magazine.html:14
 msgid "Download"
 msgstr "Descargar"
+
+#: main/templates/services/pricing/plans.html:52
+msgid "See plan details"
+msgstr "Ver detalles del plan"
+
+#: main/templates/services/pricing/plans.html:89
+#| msgid "Contact us"
+msgid "Contact Us"
+msgstr "Contáctenos"
+
+#: main/templates/services/pricing/plans.html:98
+msgid "Hamburgo - Alemania"
+msgstr "Hamburgo - Alemania"
+
+#: main/templates/services/pricing/plans.html:99
+#| msgid "Tours from travelposting"
+msgid "hamburgo@travelposting.com"
+msgstr "hamburgo@travelposting.com"
+
+#: main/templates/services/pricing/plans.html:100
+msgid "+ 49 40 18 20 33 70"
+msgstr "+ 49 40 18 20 33 70"
 
 #~ msgid "You\\"
 #~ msgstr "Tú\\"
