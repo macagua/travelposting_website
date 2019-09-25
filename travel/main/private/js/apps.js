@@ -12,7 +12,7 @@ if (plan !== null && cupon !== null) {
   showElement(plan);
   hideElement(cupon);
 
-  const toggle = document.getElementById('toggle');
+  const toggle = document.getElementById('customSwitch3');
 
   window.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', (ev) => {

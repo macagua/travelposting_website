@@ -23,6 +23,8 @@ urlpatterns = [
         views.RegisterView.as_view(),
         name='register',
     ),
+    
+    path('register/<int:pk>', views.RegisterView.as_view()),  
 
     path(
         'login/',
