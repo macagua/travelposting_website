@@ -1,0 +1,50 @@
+[
+{
+    "model": "landing_page.price",
+    "pk": 1,
+    "fields": {
+        "type": 1,
+        "value": "\u20ac349,99"
+    }
+},
+{
+    "model": "landing_page.price",
+    "pk": 2,
+    "fields": {
+        "type": 2,
+        "value": "\u20ac249,99"
+    }
+},
+{
+    "model": "landing_page.price",
+    "pk": 3,
+    "fields": {
+        "type": 1,
+        "value": "\u20ac69,99"
+    }
+},
+{
+    "model": "landing_page.price",
+    "pk": 4,
+    "fields": {
+        "type": 2,
+        "value": "\u20ac49,99"
+    }
+},
+{
+    "model": "landing_page.price",
+    "pk": 5,
+    "fields": {
+        "type": 1,
+        "value": "\u20ac39,99"
+    }
+},
+{
+    "model": "landing_page.price",
+    "pk": 6,
+    "fields": {
+        "type": 2,
+        "value": "\u20ac19,99"
+    }
+}
+]

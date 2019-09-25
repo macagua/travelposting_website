@@ -108,40 +108,10 @@
 {% endblock content %}
 
 {% block extrajs %}
+
 <script src="{% static 'assets/js/components/hs.toggle-state.js' %}"></script>
+<script src="{% static 'js/apps.js' %}"></script>
 <!-- JS Plugins Init. -->
-<script>
-const showElement = ($el) => $el.style.display = ''
-const hideElement = ($el) => $el.style.display = 'none'
-
-const addClass = ($el, className) => $el.classList.add(className)
-const removeClass = ($el, className) => $el.classList.remove(className)
-
-/* Script for register */
-const plan = document.getElementById('id_plan');
-const cupon = document.getElementById('id_coupon');
-
-if (plan !== null && cupon !== null) {
-  showElement(plan);
-  hideElement(cupon);
-
-  const toggle = document.getElementById('customSwitch3');
-
-  window.addEventListener('DOMContentLoaded', () => {
-    toggle.addEventListener('click', (ev) => {
-      if (toggle.checked) {
-        showElement(cupon)
-        hideElement(plan)
-      } else {
-        showElement(plan)
-        hideElement(cupon)
-      }
-    })
-  });
-}
-/* end script for register */
-
-</script>
 <script>
     $(document).on('ready', function () {
         // initialization of toggle state

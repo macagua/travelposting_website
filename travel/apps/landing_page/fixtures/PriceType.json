@@ -1,0 +1,16 @@
+[
+{
+    "model": "landing_page.pricetype",
+    "pk": 1,
+    "fields": {
+        "type": "Anual"
+    }
+},
+{
+    "model": "landing_page.pricetype",
+    "pk": 2,
+    "fields": {
+        "type": "Mensual"
+    }
+}
+]
