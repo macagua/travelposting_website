@@ -74,11 +74,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LANGUAGE_CODE = 'en'
 
-LANGUAGES = [
-    ('es', _('Spanish')),
-    ('en', _('English')),
-    ('de', _('German')),
-]
+LANGUAGES = (
+    ## Customize this
+    ('en', gettext('en')),
+    ('de', gettext('de')),
+    ('es', gettext('es'))
+)
 
 URL_NAME_LANGS = LANGUAGES
 
@@ -256,41 +257,41 @@ LOGOUT_REDIRECT_URL = 'landing:index'
 
 THUMBNAIL_HIGH_RESOLUTION = True
 
-CMS_LANGUAGES = {
+#CMS_LANGUAGES = {
     ## Customize this
-    1: [
-        {
-            'code': 'es',
-            'name': gettext('es'),
-            'redirect_on_fallback': True,
-            'public': True,
-            'hide_untranslated': False,
-        },
-    ],
-    2: [
-        {
-            'code': 'en',
-            'name': gettext('en'),
-            'redirect_on_fallback': True,
-            'public': True,
-            'hide_untranslated': False,
-        },
-    ],
-    3: [
-        {
-            'code': 'de',
-            'name': gettext('de'),
-            'redirect_on_fallback': True,
-            'public': True,
-            'hide_untranslated': False,
-        },
-    ],
-    'default': {
-        'redirect_on_fallback': True,
-        'public': True,
-        'hide_untranslated': False,
-    },
-}
+ #   1: [
+ #       {
+ #           'code': 'es',
+ #           'name': gettext('es'),
+#          'redirect_on_fallback': True,
+#            'public': True,
+#            'hide_untranslated': False,
+#        },
+#    ],
+#    2: [
+#        {
+#            'code': 'en',
+#            'name': gettext('en'),
+#            'redirect_on_fallback': True,
+#            'public': True,
+#            'hide_untranslated': False,
+#        },
+#    ],
+#    3: [
+#        {
+#            'code': 'de',
+#            'name': gettext('de'),
+#            'redirect_on_fallback': True,
+#            'public': True,
+#            'hide_untranslated': False,
+#        },
+#    ],
+#    'default': {
+#        'redirect_on_fallback': True,
+#        'public': True,
+#        'hide_untranslated': False,
+#    },
+#}
 
 CMS_TEMPLATES = (
     ## Customize this
