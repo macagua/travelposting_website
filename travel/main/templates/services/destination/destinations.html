@@ -8,10 +8,12 @@
                     <div class="mb-7">
                         <span class="btn btn-xs btn-soft-success btn-pill mb-2">{% trans 'About' %}</span>
                         <h2 class="text-primary">Travel<span class="font-weight-semi-bold">Posting</span></h2>
-                        <p style="text-align: justify; text-justify: inter-word;">Our potential in its favor is based on the ease we have of capturing new stakeholders for your products thanks to the constant trips we make and the tourism and technology fairs in which we are present, as is the case of the Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin Germany, or the Fitur in Madrid Spain among others.</p>
+                        <p style="text-align: justify; text-justify: inter-word;">
+                            {% trans "Our potential in its favor is based on the ease we have of capturing new stakeholders for your products thanks to the constant trips we make and the tourism and technology fairs in which we are present, as is the case of the Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin Germany, or the Fitur in Madrid Spain among others." %}
+                        </p>
                     </div>
                     <!-- End Title -->
-                    <a class="btn btn-sm btn-primary btn-wide transition-3d-hover" href="#">{% trans 'Find out More' %} <span class="fas fa-angle-right ml-2"></span></a>
+                    <a class="btn btn-sm btn-primary btn-wide transition-3d-hover" href="/about">{% trans 'Find out More' %} <span class="fas fa-angle-right ml-2"></span></a>
                 </div>
             </div>
             {% for destination in list%}
@@ -21,11 +23,10 @@
                     <div class="mb-7">
                         <h4 class="text-primary"><span class="font-weight-semi-bold">{{destination.name}}</span></h4>
                         <p style="text-align: justify; text-justify: inter-word;">
-                            {{destination.short_description|safe}}
+                            {{destination.short_description|striptags}}
                         </p>
                     </div>
                     <!-- End Title -->
-                    <a class="btn btn-sm btn-primary btn-wide transition-3d-hover" href="#">{% trans 'See more' %} <span class="fas fa-angle-right ml-2"></span></a>
                 </div>
             </div>
             {%endfor%}

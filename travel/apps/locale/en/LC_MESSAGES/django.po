@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 23:34-0400\n"
+"POT-Creation-Date: 2019-09-25 23:48-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -577,7 +577,7 @@ msgstr ""
 msgid "slider"
 msgstr ""
 
-#: apps/landing_page/models.py:402
+#: apps/landing_page/models.py:402 main/templates/index.html:67
 msgid "Name"
 msgstr ""
 
@@ -1028,6 +1028,14 @@ msgid ""
 "Travelposting."
 msgstr ""
 
+#: main/templates/index.html:76
+msgid "Email"
+msgstr ""
+
+#: main/templates/index.html:81
+msgid "Suscribe"
+msgstr ""
+
 #: main/templates/index.html:124
 msgid "Ready to get started?"
 msgstr ""
@@ -1298,7 +1306,6 @@ msgstr ""
 
 #: main/templates/services/destination/all.html:55
 #: main/templates/services/destination/categories.html:45
-#: main/templates/services/destination/destinations.html:28
 #: main/templates/services/destination/test.html:42
 msgid "See more"
 msgstr ""
@@ -1326,7 +1333,16 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: main/templates/services/destination/destinations.html:14
+#: main/templates/services/destination/destinations.html:12
+msgid ""
+"Our potential in its favor is based on the ease we have of capturing new "
+"stakeholders for your products thanks to the constant trips we make and the "
+"tourism and technology fairs in which we are present, as is the case of the "
+"Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin "
+"Germany, or the Fitur in Madrid Spain among others."
+msgstr ""
+
+#: main/templates/services/destination/destinations.html:16
 msgid "Find out More"
 msgstr ""
 
