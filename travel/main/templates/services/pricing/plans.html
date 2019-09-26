@@ -37,7 +37,7 @@
                                         <h3 class="h6 text-primary mb-3">
                                         {{ plan }}</h4>
                                         {% for price in plan.price.all %}
-                                        <span class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
+                                        <span class="{% if price.id|divisibleby:2 %}anual{% else %}mensual{% endif %}">
                                         <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
                                         <span class="d-block text-secondary font-size-1"></span>{% trans "Monthly" %}</span>
                                         </span>
