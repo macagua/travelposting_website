@@ -36,11 +36,11 @@
         <li class="nav-item u-header__nav-item dropdown">
                 {% get_current_language as LANGUAGES %}
             <a class="dropdown-toggle nav-link u-header__sub-menu-nav-link" style="color: white;" href="/{{ LANGUAGES }}/" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="flag-icon flag-icon-{% if LANGUAGES == 'en' %}us{% else %}{{ LANGUAGES }}{% endif%}"> </span>
+                    <span class="flag-icon flag-icon-{% if LANGUAGES == 'en' %}gb{% else %}{{ LANGUAGES }}{% endif%}"> </span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <a class="dropdown-item" href="/de/"><span class="flag-icon flag-icon-de"> </span> {% trans "Deutsch" %}</a>
-                    <a class="dropdown-item" href="/en/"><span class="flag-icon flag-icon-us"> </span> {% trans "English" %}</a>
+                    <a class="dropdown-item" href="/en/"><span class="flag-icon flag-icon-gb"> </span> {% trans "English" %}</a>
                     <a class="dropdown-item" href="/es/"><span class="flag-icon flag-icon-es"> </span> {% trans "Spanish "%}</a>
                 </div>
         </li>
