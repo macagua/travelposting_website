@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 20:33-0400\n"
-"PO-Revision-Date: 2019-09-25 20:40-0428\n"
+"POT-Creation-Date: 2019-09-25 23:26-0400\n"
+"PO-Revision-Date: 2019-09-25 23:26-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -438,9 +438,8 @@ msgid "Valor"
 msgstr "Valor"
 
 #: apps/landing_page/models.py:49
-#: main/templates/services/destination/destinations_for_categorie.html:140
 #: main/templates/services/destination/detail.back.html:144
-#: main/templates/services/destination/detail_destination.html:141
+#: main/templates/services/destination/detail_destination.html:144
 msgid "Price"
 msgstr "Precio"
 
@@ -691,20 +690,24 @@ msgid "BETA Travelposting"
 msgstr "BETA Travelposting"
 
 #: main/templates/coming-soon.html:70
-msgid "We\\"
-msgstr "Nosotros\\"
+msgid "We\\'re coming"
+msgstr "Estamos llegando."
 
 #: main/templates/coming-soon.html:70
 msgid "soon"
 msgstr "pronto"
 
 #: main/templates/coming-soon.html:71
-msgid "Our apps is under construction. We\\"
-msgstr "Nuestras aplicaciones están en construcción. We\\"
+msgid ""
+"Our apps is under construction. We'll be here soon with our new awesome apps"
+" for your device"
+msgstr ""
+"Nuestras aplicaciones están en construcción. Estaremos aquí pronto con "
+"nuestras nuevas e increíbles aplicaciones para tu dispositivo"
 
 #: main/templates/coming-soon.html:84
-msgid "For this dicember, we\\"
-msgstr "Este Diciembre, We\\"
+msgid "For this dicember, we'll give good news for you"
+msgstr "Para este diciembre, les daremos buenas noticias"
 
 #: main/templates/coming-soon.html:85
 msgid "Coming back to our website"
@@ -1121,7 +1124,6 @@ msgid "Branch Code"
 msgstr "Código de sucursal"
 
 #: main/templates/make_page.html:98 main/templates/make_page.html:176
-#| msgid "counter"
 msgid "Account number"
 msgstr "Número de cuenta"
 
@@ -1131,7 +1133,6 @@ msgid "Beneficiary Name"
 msgstr "Nombre del beneficiario"
 
 #: main/templates/make_page.html:107 main/templates/make_page.html:189
-#| msgid "Keep in touch"
 msgid "Keep in mind!"
 msgstr "Téngalo en cuenta!"
 
@@ -1217,7 +1218,6 @@ msgid "Headquarters code"
 msgstr "Código de la sede"
 
 #: main/templates/make_page.html:219
-#| msgid "Accounts"
 msgid "Account type"
 msgstr "Tipo de cuenta"
 
@@ -1294,13 +1294,6 @@ msgid "Ofert on"
 msgstr "Oferta en"
 
 #: main/templates/pricing.html:15
-#| msgid ""
-#| "We know that there are many companies on the internet that offer the best of"
-#| " blue sky and we may not be the best known in the Latin market, but our "
-#| "experience of almost 10 years in the market allows us to manage a portfolio "
-#| "of experts with whom we can provide the most and best offers in the market. "
-#| "If you get someone cheaper than us and with the same return we will return "
-#| "your investment."
 msgid ""
 "We know that there are many companies on the internet that offer the best of"
 " blue sky and we may not be the best known in the market, but our experience"
@@ -1325,7 +1318,6 @@ msgid "Yearly contract"
 msgstr "Contrato anual"
 
 #: main/templates/pricing.html:30
-#| msgid "Monthly"
 msgid "Monthly contract"
 msgstr "Contrato mensual"
 
@@ -1400,7 +1392,7 @@ msgid "Find out More"
 msgstr "Descubra más"
 
 #: main/templates/services/destination/destinations_for_categorie.html:17
-msgid "You\\'ll have an excellent trip."
+msgid "You'll have an excellent trip."
 msgstr "Tendrás un excelente viaje."
 
 #: main/templates/services/destination/destinations_for_categorie.html:18
@@ -1411,15 +1403,19 @@ msgstr "Conozca nuestros mejores destinos"
 msgid "Destinations"
 msgstr "Destinos"
 
-#: main/templates/services/destination/destinations_for_categorie.html:117
-msgid "See"
-msgstr "Ver"
+#: main/templates/services/destination/destinations_for_categorie.html:116
+msgid "See details"
+msgstr "Ver detalles"
 
-#: main/templates/services/destination/destinations_for_categorie.html:160
-msgid "Filter price"
-msgstr "Filtrar precio"
+#: main/templates/services/destination/destinations_for_categorie.html:138
+msgid "what is your budget?"
+msgstr "¿cuál es su presupuesto?"
 
-#: main/templates/services/destination/destinations_for_categorie.html:163
+#: main/templates/services/destination/destinations_for_categorie.html:158
+msgid "filter to my budget"
+msgstr "filtrar a mi presupuesto"
+
+#: main/templates/services/destination/destinations_for_categorie.html:161
 msgid "Category"
 msgstr "Categoria"
 
@@ -1443,17 +1439,17 @@ msgid "View Photos"
 msgstr "Ver fotos"
 
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:147
+#: main/templates/services/destination/detail_destination.html:150
 msgid "Itinerary"
 msgstr "Itinerario"
 
 #: main/templates/services/destination/detail.back.html:168
-#: main/templates/services/destination/detail_destination.html:165
+#: main/templates/services/destination/detail_destination.html:167
 msgid "Day"
 msgstr "Día"
 
 #: main/templates/services/destination/detail.back.html:203
-#: main/templates/services/destination/detail_destination.html:200
+#: main/templates/services/destination/detail_destination.html:201
 msgid "We still don't have the intenerario for this destination"
 msgstr "Todavía no tenemos el intenerario para este destino"
 
@@ -1461,6 +1457,10 @@ msgstr "Todavía no tenemos el intenerario para este destino"
 #: main/templates/services/destination/detail_destination.html:218
 msgid "Reserve"
 msgstr "Reserve"
+
+#: main/templates/services/destination/detail_destination.html:128
+msgid "back to list"
+msgstr "Volver a la lista"
 
 #: main/templates/services/destination/testimonials.html:9
 msgid "Testimonials"
@@ -1493,6 +1493,18 @@ msgstr "hamburgo@travelposting.com"
 #: main/templates/services/pricing/plans.html:98
 msgid "+ 49 40 18 20 33 70"
 msgstr "+ 49 40 18 20 33 70"
+
+#~ msgid "We\\"
+#~ msgstr "Nosotros\\"
+
+#~ msgid "Our apps is under construction. We\\"
+#~ msgstr "Nuestras aplicaciones están en construcción. We\\"
+
+#~ msgid "See"
+#~ msgstr "Ver"
+
+#~ msgid "Filter price"
+#~ msgstr "Filtrar precio"
 
 #~ msgid "Spanish"
 #~ msgstr "Español"

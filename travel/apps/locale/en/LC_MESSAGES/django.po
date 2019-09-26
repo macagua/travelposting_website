@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 20:33-0400\n"
+"POT-Creation-Date: 2019-09-25 23:26-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -427,9 +427,8 @@ msgid "Valor"
 msgstr ""
 
 #: apps/landing_page/models.py:49
-#: main/templates/services/destination/destinations_for_categorie.html:140
 #: main/templates/services/destination/detail.back.html:144
-#: main/templates/services/destination/detail_destination.html:141
+#: main/templates/services/destination/detail_destination.html:144
 msgid "Price"
 msgstr ""
 
@@ -679,7 +678,7 @@ msgid "BETA Travelposting"
 msgstr ""
 
 #: main/templates/coming-soon.html:70
-msgid "We\\"
+msgid "We\\'re coming"
 msgstr ""
 
 #: main/templates/coming-soon.html:70
@@ -687,11 +686,13 @@ msgid "soon"
 msgstr ""
 
 #: main/templates/coming-soon.html:71
-msgid "Our apps is under construction. We\\"
+msgid ""
+"Our apps is under construction. We'll be here soon with our new awesome apps "
+"for your device"
 msgstr ""
 
 #: main/templates/coming-soon.html:84
-msgid "For this dicember, we\\"
+msgid "For this dicember, we'll give good news for you"
 msgstr ""
 
 #: main/templates/coming-soon.html:85
@@ -1330,7 +1331,7 @@ msgid "Find out More"
 msgstr ""
 
 #: main/templates/services/destination/destinations_for_categorie.html:17
-msgid "You\\'ll have an excellent trip."
+msgid "You'll have an excellent trip."
 msgstr ""
 
 #: main/templates/services/destination/destinations_for_categorie.html:18
@@ -1341,15 +1342,19 @@ msgstr ""
 msgid "Destinations"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:117
-msgid "See"
+#: main/templates/services/destination/destinations_for_categorie.html:116
+msgid "See details"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:160
-msgid "Filter price"
+#: main/templates/services/destination/destinations_for_categorie.html:138
+msgid "what is your budget?"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:163
+#: main/templates/services/destination/destinations_for_categorie.html:158
+msgid "filter to my budget"
+msgstr ""
+
+#: main/templates/services/destination/destinations_for_categorie.html:161
 msgid "Category"
 msgstr ""
 
@@ -1373,23 +1378,27 @@ msgid "View Photos"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:147
+#: main/templates/services/destination/detail_destination.html:150
 msgid "Itinerary"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:168
-#: main/templates/services/destination/detail_destination.html:165
+#: main/templates/services/destination/detail_destination.html:167
 msgid "Day"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:203
-#: main/templates/services/destination/detail_destination.html:200
+#: main/templates/services/destination/detail_destination.html:201
 msgid "We still don't have the intenerario for this destination"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:221
 #: main/templates/services/destination/detail_destination.html:218
 msgid "Reserve"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:128
+msgid "back to list"
 msgstr ""
 
 #: main/templates/services/destination/testimonials.html:9

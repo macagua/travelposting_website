@@ -14,7 +14,7 @@
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url({% static 'img/trains.jpg' %});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
         <div class="w-md-65 w-lg-50">
-            <h1 class="h1 " style="color: rgba(255, 255, 255, 0.925);">{% trans "You\'ll have an excellent trip." %}</h1>
+            <h1 class="h1 " style="color: rgba(255, 255, 255, 0.925);">{% trans "You'll have an excellent trip." %}</h1>
             <h2 class="h1 text-primary font-weight-medium">{% trans "Meet our best destinations" %}</h2>
         </div>
     </div>
@@ -105,17 +105,15 @@
                     <article class="card shadow h-100">
                         <img class="card-img-top" src="{{destino.first_pic}}" alt="{{destino.name}}">
                         <div class="card-body p-5">
-                            <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#">{{destino.name}}</a>
-                            <h2 class="h5 font-weight-medium">
-                                <a href="single-article.html">{{destino.categorie.name}}</a>
-                            </h2>
-                                {{ destino.short_description|striptags | truncatechars:120 }}
+                            <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#">{{destino.categorie.name}}</a>
                             <div class="d-block">
-                                <span class="font-weight-medium">{{destino.list_prices.sale_price}}</span>
+                            <h3 class="h4">{{ destino.name }}</h3>
+                            <div class="ml-3">
+                              <span class="font-weight-normal"><strong>{{destino.list_prices.sale_price}}</strong></span>
                             </div>
-
-                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See"%}</a>
-
+                                {{ destino.short_description|striptags | truncatechars:120 }}
+                            </div>
+                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See details"%}</a>
                           </div>
                         <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
 
@@ -137,7 +135,7 @@
 
         <div class="col-lg-3">
                 <div class="border-bottom pb-4 mb-4">
-                    <h4 class="h6 mb-3">{% trans "Price" %}</h4>
+                    <h4 class="h6 mb-3">{% trans "what is your budget?" %}</h4>
                     <!-- Range Slider -->
                     <input class="js-range-slider" type="text"
                         data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
@@ -157,21 +155,17 @@
                     </div>
                     <!-- End Range Slider -->
                 </div>
-                <button id="filter_with_price" type="button" class="btn btn-sm btn-block btn-soft-secondary transition-3d-hover">{% trans "Filter price"%}</button>
+                <button id="filter_with_price" type="button" class="btn btn-sm btn-block btn-primary transition-3d-hover">{% trans "filter to my budget"%}</button>
 
                 <div class="border-bottom pb-4 mb-4 mt-4">
                     <h4 class="h6 mb-3">{% trans "Category"%}</h4>
                     {% simple_list_categorie as list_categories%}
                     {% for categorie in list_categories%}
-                    
-                    <div class="form-group d-flex align-items-center justify-content-between font-size-1 text-lh-md text-secondary mb-1">
-                    <label class="custom-control text-lh-md" for="category{{categorie.alias}}"><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{{categorie.name}}</a></label>
-                    <small><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{% found_categorie categorie.alias %}</a></small>
-                    </div>
-                    
+                        <div class="form-group d-flex align-items-center justify-content-between font-size-1 text-lh-md text-secondary mb-1">
+                        <label class="custom-control text-lh-md" for="category{{categorie.alias}}"><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{{categorie.name}}</a></label>
+                        <small><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{% found_categorie categorie.alias %}</a></small>
+                        </div>
                     {%endfor%}
-                   
-                   
                 </div>
 
         </div>
