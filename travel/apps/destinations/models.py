@@ -163,7 +163,7 @@ class Destination(models.Model):
             pic = Photo.objects.filter(destination=self).first()
             pic = pic.image.url
         except:
-            pass
+            pic = '/main/static/img/travel.png'
         return pic
 
     @staticmethod
@@ -192,7 +192,7 @@ class Destination(models.Model):
         except BaseException:
             return None
         return list_dates
-    
+
     @property
     def mapa(self):
         mapa = TabData.objects\
@@ -205,7 +205,7 @@ class Destination(models.Model):
         .filter(option_tab__name="Itinerario")\
         .get(tour_data__destination=self.pk)
         return itine
-    
+
 
     @property
     def list_prices(self):
