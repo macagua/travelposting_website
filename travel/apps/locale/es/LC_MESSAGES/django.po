@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 23:26-0400\n"
-"PO-Revision-Date: 2019-09-25 23:26-0428\n"
+"POT-Creation-Date: 2019-09-25 23:34-0400\n"
+"PO-Revision-Date: 2019-09-25 23:35-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -690,8 +690,9 @@ msgid "BETA Travelposting"
 msgstr "BETA Travelposting"
 
 #: main/templates/coming-soon.html:70
-msgid "We\\'re coming"
-msgstr "Estamos llegando."
+#| msgid "We\\'re coming"
+msgid "We're coming"
+msgstr "Estaremos llegando."
 
 #: main/templates/coming-soon.html:70
 msgid "soon"
