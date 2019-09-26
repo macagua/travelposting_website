@@ -125,7 +125,7 @@
               <!--END TABS DETAIL-->
             </div>
             <div class="d-flex justify-content-between align-items-center">
-                <a href="#" id="back" onclick="goBack()"><small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
+                <a href="{{request.META.HTTP_REFERER}}"><small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
             </div>
           </div>
         </div>
