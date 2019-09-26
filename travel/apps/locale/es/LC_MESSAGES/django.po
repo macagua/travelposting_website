@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 23:48-0400\n"
-"PO-Revision-Date: 2019-09-25 23:50-0428\n"
+"POT-Creation-Date: 2019-09-26 00:18-0400\n"
+"PO-Revision-Date: 2019-09-26 00:19-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1071,7 +1071,6 @@ msgstr ""
 "Travelposting."
 
 #: main/templates/index.html:76
-#| msgid "E-mail"
 msgid "Email"
 msgstr "E-mail"
 
@@ -1497,6 +1496,11 @@ msgstr "Conozca nuestro público"
 msgid "Download"
 msgstr "Descargar"
 
+#: main/templates/services/pricing/plans.html:42
+#| msgid "Monthly contract"
+msgid "Monthly"
+msgstr "Mensual"
+
 #: main/templates/services/pricing/plans.html:50
 msgid "See plan details"
 msgstr "Ver detalles del plan"
@@ -1505,17 +1509,28 @@ msgstr "Ver detalles del plan"
 msgid "Contact Us"
 msgstr "Contáctenos"
 
-#: main/templates/services/pricing/plans.html:96
-msgid "Hamburgo - Alemania"
-msgstr "Hamburgo - Alemania"
+#: main/templates/services/pricing/plans.html:89
+msgid "Limitless"
+msgstr "Sin limites"
 
-#: main/templates/services/pricing/plans.html:97
-msgid "hamburgo@travelposting.com"
-msgstr "hamburgo@travelposting.com"
+#: main/templates/services/pricing/plans.html:104
+msgid ""
+"\n"
+"                                                if what you see doesn't appeal to you because you want to create a plan tailored to your needs,\n"
+"                                                contact us and we'll work that out together.\n"
+"                                            "
+msgstr ""
+"\n"
+"Si lo que ve no le atrae porque desea crear un plan adaptado a sus necesidades, contáctenos y lo resolveremos juntos."
 
-#: main/templates/services/pricing/plans.html:98
-msgid "+ 49 40 18 20 33 70"
-msgstr "+ 49 40 18 20 33 70"
+#~ msgid "Hamburgo - Alemania"
+#~ msgstr "Hamburgo - Alemania"
+
+#~ msgid "hamburgo@travelposting.com"
+#~ msgstr "hamburgo@travelposting.com"
+
+#~ msgid "+ 49 40 18 20 33 70"
+#~ msgstr "+ 49 40 18 20 33 70"
 
 #~ msgid "We\\"
 #~ msgstr "Nosotros\\"

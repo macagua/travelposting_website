@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 23:48-0400\n"
+"POT-Creation-Date: 2019-09-26 00:18-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1429,6 +1429,10 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
+#: main/templates/services/pricing/plans.html:42
+msgid "Monthly"
+msgstr ""
+
 #: main/templates/services/pricing/plans.html:50
 msgid "See plan details"
 msgstr ""
@@ -1437,14 +1441,16 @@ msgstr ""
 msgid "Contact Us"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:96
-msgid "Hamburgo - Alemania"
+#: main/templates/services/pricing/plans.html:89
+msgid "Limitless"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:97
-msgid "hamburgo@travelposting.com"
-msgstr ""
-
-#: main/templates/services/pricing/plans.html:98
-msgid "+ 49 40 18 20 33 70"
+#: main/templates/services/pricing/plans.html:104
+msgid ""
+"\n"
+"                                                if what you see doesn't "
+"appeal to you because you want to create a plan tailored to your needs,\n"
+"                                                contact us and we'll work "
+"that out together.\n"
+"                                            "
 msgstr ""
