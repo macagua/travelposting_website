@@ -64,7 +64,7 @@
                 <div class="js-form-message">
                     <label class="sr-only" for="signupSrName">Name</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="name" id="signupSrName" placeholder="Name" aria-label="Name" required
+                        <input type="text" class="form-control" name="name" id="signupSrName" placeholder="{% trans 'Name' %}" aria-label="Name" required
                             data-msg="Name must contain only letters.">
                     </div>
                 </div>
@@ -73,12 +73,12 @@
                 <div class="js-form-message">
                     <label class="sr-only" for="signupSrEmail">Email</label>
                     <div class="input-group">
-                        <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="Email" aria-label="Email" required data-msg="Please enter a valid email address.">
+                        <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="{% trans 'Email'%}" aria-label="Email" required data-msg="Please enter a valid email address.">
                     </div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <button type="submit" class="btn btn-block btn-primary transition-3d-hover">Get Started</button>
+                <button type="submit" class="btn btn-block btn-primary transition-3d-hover">{% trans "Suscribe" %}</button>
             </div>
         </div>
     </form>

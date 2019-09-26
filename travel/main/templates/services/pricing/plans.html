@@ -1,5 +1,3 @@
-
-
 {%load i18n destinations_tags staticfiles mptt_tags landing_extra %}
 <!-- Pricing Section -->
 <div class="position-relative mt-n23 z-index-2">
@@ -41,7 +39,7 @@
                                         {% for price in plan.price.all %}
                                         <span class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
                                         <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
-                                        <span class="d-block text-secondary font-size-1"></span>{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}</span>
+                                        <span class="d-block text-secondary font-size-1"></span>{% trans "Monthly" %}</span>
                                         </span>
                                         {% endfor %}
                                     </header>
@@ -85,20 +83,29 @@
                                     <!-- Header -->
                                     <header class="card-header text-center p-5">
                                         <span class="d-block">
-                                        <span class="h2 text-dark font-weight-normal">
+                                        <span class="h3 text-dark font-weight-normal">
                                         {% trans 'Contact Us' %}
                                         </span>
-                                        <span class="d-block text-secondary font-size-1">no user limit</span>
+                                        <span class="d-block text-secondary font-size-1">{% trans "Limitless" %}</span>
                                         </span>
                                     </header>
                                     <!-- End Header -->
                                     <!-- Content -->
                                     <div class="card-body p-5">
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            <li class="list-group-item">{% trans 'Hamburgo - Alemania' %}</li>
-                                            <li class="list-group-item">{% trans 'hamburgo@travelposting.com' %}</li>
-                                            <li class="list-group-item">{% trans '+ 49 40 18 20 33 70' %}</li>
-                                        </ul>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
+                                              <path class="fill-primary" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
+                                                  C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
+                                                  c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
+                                                  C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z">
+                                                </path>
+                                        </svg>
+                                        </br>
+                                        <p>
+                                            {% blocktrans %}
+                                                if what you see doesn't appeal to you because you want to create a plan tailored to your needs,
+                                                contact us and we'll work that out together.
+                                            {% endblocktrans %}
+                                        </p>
                                         <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="mailto:hamburgo@travelposting.com"tabindex="0">Contact Us</a>
                                     </div>
                                     <!-- End Content -->
