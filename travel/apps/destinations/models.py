@@ -163,7 +163,7 @@ class Destination(models.Model):
             pic = Photo.objects.filter(destination=self).first()
             pic = pic.image.url
         except:
-            pic = '/main/static/img/travel.png'
+            pic = '/static/img/travel.png'
         return pic
 
     @staticmethod
