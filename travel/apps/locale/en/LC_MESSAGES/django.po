@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-26 00:18-0400\n"
+"POT-Creation-Date: 2019-09-26 01:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -983,7 +983,7 @@ msgstr ""
 msgid "Privacy & policy"
 msgstr ""
 
-#: main/templates/footer.html:134 main/templates/menu/menu.html:38
+#: main/templates/footer.html:134 main/templates/menu/menu.html:49
 #: main/templates/services/pricing/plans.html:73
 msgid "Register"
 msgstr ""
@@ -1192,6 +1192,18 @@ msgstr ""
 msgid ""
 "Be sure to select Australia in the bank location drop-down when adding a "
 "deposit method at Amazon Seller Central!"
+msgstr ""
+
+#: main/templates/menu/menu.html:42
+msgid "Deutsch"
+msgstr ""
+
+#: main/templates/menu/menu.html:43
+msgid "English"
+msgstr ""
+
+#: main/templates/menu/menu.html:44
+msgid "Spanish "
 msgstr ""
 
 #: main/templates/pages/show_header.html:22
