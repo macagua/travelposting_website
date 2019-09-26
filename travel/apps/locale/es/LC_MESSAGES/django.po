@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 02:43-0400\n"
-"PO-Revision-Date: 2019-09-25 02:50-0428\n"
+"POT-Creation-Date: 2019-09-25 20:33-0400\n"
+"PO-Revision-Date: 2019-09-25 20:40-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -386,7 +386,6 @@ msgid "Fill out the form to get started."
 msgstr "Llene el formulario para iniciar"
 
 #: apps/accounts/templates/accounts/registration/register_form.html:57
-#| msgid "do have accounts?"
 msgid "Do you have a Coupon?"
 msgstr "¿Posees un Cupón?"
 
@@ -395,17 +394,14 @@ msgid "No"
 msgstr "NO"
 
 #: apps/accounts/templates/accounts/registration/register_form.html:74
-#| msgid "es"
 msgid "Yes"
 msgstr "Sí"
 
 #: apps/accounts/templates/accounts/registration/register_form.html:91
-#| msgid "do have accounts?"
 msgid "Already have an account?"
 msgstr "¿Ya posees una cuenta?"
 
 #: apps/accounts/templates/accounts/registration/register_form.html:95
-#| msgid "do have accounts?"
 msgid "Create account"
 msgstr "Crear cuenta"
 
@@ -642,32 +638,21 @@ msgstr "cantidad"
 msgid "Coupons"
 msgstr "Cupones"
 
-#: config/settings/base.py:78
-msgid "Spanish"
-msgstr "Español"
-
 #: config/settings/base.py:79
-msgid "English"
-msgstr "Ingles"
-
-#: config/settings/base.py:80
-msgid "German"
-msgstr "Alemán"
-
-#: config/settings/base.py:264
-msgid "es"
-msgstr "es"
-
-#: config/settings/base.py:273
 msgid "en"
 msgstr "en"
 
-#: config/settings/base.py:282
+#: config/settings/base.py:80
 msgid "de"
 msgstr "de"
 
+#: config/settings/base.py:81
+msgid "es"
+msgstr "es"
+
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
-#: main/templates/hotels.html:3 main/templates/template_base_for_text.html:3
+#: main/templates/hotels.html:3 main/templates/make_page.html:5
+#: main/templates/template_base_for_text.html:3
 msgid "About us"
 msgstr "Sobre nosotros"
 
@@ -1034,7 +1019,7 @@ msgid "Privacy & policy"
 msgstr "Política de privacidad"
 
 #: main/templates/footer.html:134 main/templates/menu/menu.html:38
-#: main/templates/services/pricing/plans.html:75
+#: main/templates/services/pricing/plans.html:73
 msgid "Register"
 msgstr "Registro"
 
@@ -1047,7 +1032,6 @@ msgid "We are a"
 msgstr "Somos un"
 
 #: main/templates/hotels.html:21
-#| msgid "Win travel packages"
 msgid "travel agency."
 msgstr "Agencia de viajes"
 
@@ -1064,7 +1048,6 @@ msgid "modern"
 msgstr "contemporáneo"
 
 #: main/templates/hotels.html:37
-#| msgid "active"
 msgid "creative"
 msgstr "creativos"
 
@@ -1104,6 +1087,160 @@ msgstr "Disfruta y comparte la mejor revista de viajes."
 msgid "Magazine"
 msgstr "Revista"
 
+#: main/templates/make_page.html:13
+msgid "Make your payments"
+msgstr "Has tus pagos"
+
+#: main/templates/make_page.html:67
+msgid "Pay on Payoneer or Paypal"
+msgstr "Paga con Payoneer o Paypal"
+
+#: main/templates/make_page.html:68
+msgid ""
+"Make your payments directly in the currency that best suits you with our "
+"collection service with: "
+msgstr ""
+"Realice sus pagos directamente en la divisa que más le convenga con nuestro "
+"servicio de cobros con: "
+
+#: main/templates/make_page.html:80
+msgid "Make your payment via Paypal to: info@xposting-service.com"
+msgstr "Realice su pago a través de Paypal a: info@xposting-service.com"
+
+#: main/templates/make_page.html:86
+msgid "GBP Receiving Account (BACS) England"
+msgstr "GBP Cuenta receptora (BACS) Inglaterra"
+
+#: main/templates/make_page.html:90 main/templates/make_page.html:129
+#: main/templates/make_page.html:168 main/templates/make_page.html:207
+msgid "Name of the bank"
+msgstr "Nombre del banco"
+
+#: main/templates/make_page.html:94
+msgid "Branch Code"
+msgstr "Código de sucursal"
+
+#: main/templates/make_page.html:98 main/templates/make_page.html:176
+#| msgid "counter"
+msgid "Account number"
+msgstr "Número de cuenta"
+
+#: main/templates/make_page.html:102 main/templates/make_page.html:141
+#: main/templates/make_page.html:223
+msgid "Beneficiary Name"
+msgstr "Nombre del beneficiario"
+
+#: main/templates/make_page.html:107 main/templates/make_page.html:189
+#| msgid "Keep in touch"
+msgid "Keep in mind!"
+msgstr "Téngalo en cuenta!"
+
+#: main/templates/make_page.html:108
+msgid ""
+"Only BACS and Faster Payments Service (UK local bank) transfers can be "
+"accepted in GBP"
+msgstr ""
+"Sólo las transferencias BACS y Faster Payments Service (banco local del "
+"Reino Unido) pueden ser aceptadas en GBP."
+
+#: main/templates/make_page.html:109
+msgid "Transfers must be made from a corporate bank account"
+msgstr ""
+"Las transferencias deben realizarse desde una cuenta bancaria corporativa"
+
+#: main/templates/make_page.html:110
+msgid "Transfers in USD will be rejected automatically"
+msgstr "Las transferencias en USD serán rechazadas automáticamente"
+
+#: main/templates/make_page.html:111 main/templates/make_page.html:149
+msgid "Wire transfers are not supported"
+msgstr "No se admiten transferencias bancarias"
+
+#: main/templates/make_page.html:125
+msgid "EUR Receiving Account (SEPA)"
+msgstr "Cuenta de destino en euros (SEPA)"
+
+#: main/templates/make_page.html:147
+msgid "Only SEPA transfers (European local bank) can be accepted in EUR"
+msgstr ""
+"Sólo pueden aceptarse transferencias SEPA (banco local europeo) en euros."
+
+#: main/templates/make_page.html:148
+msgid ""
+"Transfers in USD will be made automatically and may result in the suspension"
+" of this service"
+msgstr ""
+"Las transferencias en USD se realizarán automáticamente y pueden resultar en"
+" la suspensión de este servicio."
+
+#: main/templates/make_page.html:164
+msgid "Receiving Account USD (ACH) / US Local Bank UU"
+msgstr "Cuenta receptora USD (ACH) / US Local Bank UU"
+
+#: main/templates/make_page.html:172
+msgid "Way (ABA)"
+msgstr "Camino (ABA)"
+
+#: main/templates/make_page.html:181
+msgid "CHECKING"
+msgstr "CHECKING"
+
+#: main/templates/make_page.html:184
+msgid "Beneficiary Name:"
+msgstr "Nombre del beneficiario:"
+
+#: main/templates/make_page.html:190
+msgid "Only ACH (US local bank) transfers can be accepted in USD"
+msgstr ""
+"Sólo las transferencias ACH (banco local de EE.UU.) pueden ser aceptadas en "
+"USD."
+
+#: main/templates/make_page.html:191
+msgid "Transfers must be made from a business account"
+msgstr "Las transferencias deben hacerse desde una cuenta de negocios"
+
+#: main/templates/make_page.html:192
+msgid "Transfers from individuals will be made automatically"
+msgstr "Las transferencias de individuos se harán automáticamente"
+
+#: main/templates/make_page.html:193
+msgid "Electronic transfer is not supported"
+msgstr "No se admite la transferencia electrónica"
+
+#: main/templates/make_page.html:203
+msgid "Receiving AUD account (direct deposit) / Bank of Australia..."
+msgstr ""
+"Recepción de la cuenta AUD (depósito directo) / Banco de Australia...."
+
+#: main/templates/make_page.html:211
+msgid "Headquarters code"
+msgstr "Código de la sede"
+
+#: main/templates/make_page.html:219
+#| msgid "Accounts"
+msgid "Account type"
+msgstr "Tipo de cuenta"
+
+#: main/templates/make_page.html:230
+msgid "Please keep that in mind!"
+msgstr "Por favor, tenlo en cuenta!"
+
+#: main/templates/make_page.html:231
+msgid "Only direct entry payments (BECS) are accepted in AUD"
+msgstr "Sólo se aceptan los pagos directos (BECS) en AUD"
+
+#: main/templates/make_page.html:232
+msgid "Transfers can only be made from companies"
+msgstr "Transfers can only be made from companies"
+
+#: main/templates/make_page.html:233
+msgid ""
+"Be sure to select Australia in the bank location drop-down when adding a "
+"deposit method at Amazon Seller Central!"
+msgstr ""
+"Asegúrese de seleccionar Australia en el menú desplegable de ubicación del "
+"banco cuando agregue un método de depósito en Amazon Seller Central!"
+
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
 msgstr "Viaja y comparte tu aventura"
@@ -1141,7 +1278,6 @@ msgid "Whatsapp"
 msgstr "Whatsapp"
 
 #: main/templates/pages/show_header.html:57
-#| msgid "Please enter a valid email address."
 msgid "Please enter a valid whatsapp number"
 msgstr "Por favor, introduzca un número de whatsapp válido"
 
@@ -1158,32 +1294,40 @@ msgid "Ofert on"
 msgstr "Oferta en"
 
 #: main/templates/pricing.html:15
+#| msgid ""
+#| "We know that there are many companies on the internet that offer the best of"
+#| " blue sky and we may not be the best known in the Latin market, but our "
+#| "experience of almost 10 years in the market allows us to manage a portfolio "
+#| "of experts with whom we can provide the most and best offers in the market. "
+#| "If you get someone cheaper than us and with the same return we will return "
+#| "your investment."
 msgid ""
 "We know that there are many companies on the internet that offer the best of"
-" blue sky and we may not be the best known in the Latin market, but our "
-"experience of almost 10 years in the market allows us to manage a portfolio "
-"of experts with whom we can provide the most and best offers in the market. "
-"If you get someone cheaper than us and with the same return we will return "
-"your investment."
+" blue sky and we may not be the best known in the market, but our experience"
+" of almost 10 years in the market allows us to manage a portfolio of experts"
+" with whom we can provide the most and best offers in the market. If you get"
+" someone cheaper than us and with the same return we will return your "
+"investment."
 msgstr ""
 "Sabemos que hay muchas empresas en Internet que ofrecen lo mejor del cielo "
-"azul y puede que no seamos las más conocidas en el mercado latino, pero "
-"nuestra experiencia de casi 10 años en el mercado nos permite gestionar un "
+"azul y puede que no seamos las más conocidas en el mercado, pero nuestra "
+"experiencia de casi 10 años en el mercado nos permite gestionar un "
 "portafolio de expertos con los que podemos ofrecer la mayor y mejor oferta "
 "del mercado. Si usted consigue a alguien más barato que nosotros y con el "
 "mismo rendimiento le devolveremos su inversión."
 
 #: main/templates/pricing.html:19
-msgid "SELECT YOUR PLAN TYPE"
-msgstr "SELECCIONE SU TIPO DE PLAN"
+msgid "SELECT YOUR TYPE OF PLAN AND SAVE UP TO € 1200 ANNUAL"
+msgstr "SELECCIONE SU TIPO DE PLAN Y AHORRE HASTA 1200 € ANUALES"
 
 #: main/templates/pricing.html:22
-msgid "Yearly"
-msgstr "Anual"
+msgid "Yearly contract"
+msgstr "Contrato anual"
 
 #: main/templates/pricing.html:30
-msgid "Monthly"
-msgstr "Mensual"
+#| msgid "Monthly"
+msgid "Monthly contract"
+msgstr "Contrato mensual"
 
 #: main/templates/services/destination/all.html:22
 #: main/templates/services/destination/destinations_for_categorie.html:72
@@ -1330,27 +1474,40 @@ msgstr "Conozca nuestro público"
 msgid "Download"
 msgstr "Descargar"
 
-#: main/templates/services/pricing/plans.html:52
+#: main/templates/services/pricing/plans.html:50
 msgid "See plan details"
 msgstr "Ver detalles del plan"
 
-#: main/templates/services/pricing/plans.html:89
-#| msgid "Contact us"
+#: main/templates/services/pricing/plans.html:87
 msgid "Contact Us"
 msgstr "Contáctenos"
 
-#: main/templates/services/pricing/plans.html:98
+#: main/templates/services/pricing/plans.html:96
 msgid "Hamburgo - Alemania"
 msgstr "Hamburgo - Alemania"
 
-#: main/templates/services/pricing/plans.html:99
-#| msgid "Tours from travelposting"
+#: main/templates/services/pricing/plans.html:97
 msgid "hamburgo@travelposting.com"
 msgstr "hamburgo@travelposting.com"
 
-#: main/templates/services/pricing/plans.html:100
+#: main/templates/services/pricing/plans.html:98
 msgid "+ 49 40 18 20 33 70"
 msgstr "+ 49 40 18 20 33 70"
+
+#~ msgid "Spanish"
+#~ msgstr "Español"
+
+#~ msgid "English"
+#~ msgstr "Ingles"
+
+#~ msgid "German"
+#~ msgstr "Alemán"
+
+#~ msgid "SELECT YOUR PLAN TYPE"
+#~ msgstr "SELECCIONE SU TIPO DE PLAN"
+
+#~ msgid "Yearly"
+#~ msgstr "Anual"
 
 #~ msgid "You\\"
 #~ msgstr "Tú\\"
