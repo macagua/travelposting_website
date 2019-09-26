@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-26 00:18-0400\n"
-"PO-Revision-Date: 2019-09-26 00:19-0428\n"
+"POT-Creation-Date: 2019-09-26 01:30-0400\n"
+"PO-Revision-Date: 2019-09-26 01:30-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1021,7 +1021,7 @@ msgstr "FQA"
 msgid "Privacy & policy"
 msgstr "Política de privacidad"
 
-#: main/templates/footer.html:134 main/templates/menu/menu.html:38
+#: main/templates/footer.html:134 main/templates/menu/menu.html:49
 #: main/templates/services/pricing/plans.html:73
 msgid "Register"
 msgstr "Registro"
@@ -1248,6 +1248,19 @@ msgid ""
 msgstr ""
 "Asegúrese de seleccionar Australia en el menú desplegable de ubicación del "
 "banco cuando agregue un método de depósito en Amazon Seller Central!"
+
+#: main/templates/menu/menu.html:42
+msgid "Deutsch"
+msgstr "Alemán"
+
+#: main/templates/menu/menu.html:43
+msgid "English"
+msgstr "Ingles"
+
+#: main/templates/menu/menu.html:44
+#| msgid "Spanish"
+msgid "Spanish "
+msgstr "Español"
 
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
@@ -1497,7 +1510,6 @@ msgid "Download"
 msgstr "Descargar"
 
 #: main/templates/services/pricing/plans.html:42
-#| msgid "Monthly contract"
 msgid "Monthly"
 msgstr "Mensual"
 
@@ -1543,12 +1555,6 @@ msgstr ""
 
 #~ msgid "Filter price"
 #~ msgstr "Filtrar precio"
-
-#~ msgid "Spanish"
-#~ msgstr "Español"
-
-#~ msgid "English"
-#~ msgstr "Ingles"
 
 #~ msgid "German"
 #~ msgstr "Alemán"
