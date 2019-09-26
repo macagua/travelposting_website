@@ -9,19 +9,19 @@ const plan = document.getElementById('id_plan');
 const cupon = document.getElementById('id_coupon');
 
 if (plan !== null && cupon !== null) {
-  showElement(plan);
-  hideElement(cupon);
+  showElement(cupon);
+  hideElement(plan);
 
   const toggle = document.getElementById('customSwitch3');
 
   window.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', (ev) => {
       if (toggle.checked) {
-        showElement(cupon)
-        hideElement(plan)
-      } else {
         showElement(plan)
         hideElement(cupon)
+      } else {
+        showElement(cupon)
+        hideElement(plan)
       }
     })
   });
@@ -64,7 +64,7 @@ the or select the plan for the client.
 It's necessary for every plan select for the client.
 */
 if (lastItem(urlParams) in [1, 2, 3, 4, 5]) {
-  if(lastItem(urlParams) == 1){ 
+  if(lastItem(urlParams) == 1){
     planes[0].removeAttribute('selected');
     planes['2'].selected = true;
   }else if(lastItem(urlParams) == 2){

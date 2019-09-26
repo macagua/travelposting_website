@@ -1,5 +1,3 @@
-
-
 {% extends "accounts/base.html" %}
 {% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
@@ -57,12 +55,11 @@
                         <span >{% trans 'Do you have a Coupon?' %}</span>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <span class=""></span><span class="badge badge-success">{% trans 'No' %}</span></span>
+                                <span ><span class="badge badge-success">{% trans 'Yes' %}</span></span>
                             </li>
 
                             <li class="list-inline-item"> 
                             <!-- Checkbox Switch -->
-                       
                                 <div class="custom-control custom-switch">
                                     <input type="checkbox" class="custom-control-input" id="customSwitch3" >
                                     <label class="custom-control-label" for="customSwitch3">
@@ -71,7 +68,7 @@
                             <!-- End Checkbox Switch -->
                             </li>
                             <li class="list-inline-item">
-                                <span ><span class="badge badge-success">{% trans 'Yes' %}</span></span>
+                                <span class=""></span><span class="badge badge-danger">{% trans 'No' %}</span></span>
                             </li>
                         </ul>
                         {% for field in form %}
@@ -84,7 +81,6 @@
                         <!-- End Form Group -->
                         {% endfor%}
 
-                    
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
                             <div class="col-5 col-md-5 col-sm-6">
