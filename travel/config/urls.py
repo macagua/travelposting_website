@@ -71,13 +71,13 @@ urlpatterns += i18n_patterns(
     url(
         r'^category/destination/(?P<slug>\w+)',
         DetailDestinationView.as_view(),
-        name='view_detail_destination'
+        name='view_detail_destination',
     ),
 
     url(
         r'^category/(?P<alias>\w+)',
         CategoriesView.as_view(),
-        name='view_category'
+        name='view_category',
     ),
 
     path(
@@ -85,9 +85,15 @@ urlpatterns += i18n_patterns(
             include('apps.payments.paypal.urls'),
     ),
 
+    path(
+        'destinations/',
+        include("apps.destinations.urls", namespace='destinations'),
+    ),
+
     url(
         r'^',
         include('cms.urls'),
+        name='index',
     ),
 
 )
