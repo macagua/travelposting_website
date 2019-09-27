@@ -13,7 +13,7 @@ from apps.destinations.models import (
 
 @register(Categorie)
 class CategorieTranslationOptions(TranslationOptions):
-    fields = ('short_description','status',)
+    fields = ('name', 'short_description','status',)
 
 @register(Destination)
 class DestinationTranslationOptions(TranslationOptions):
@@ -25,8 +25,8 @@ class PhotoTranslationOptions(TranslationOptions):
 
 @register(Badge)
 class BadgeTranslationOptions(TranslationOptions):
-    fields = ('name','description',)    
+    fields = ('name','description',)
 
 @register(OptionTabData)
 class OptionTabDataTranslationOptions(TranslationOptions):
-    fields = ('name','description','template',)       
+    fields = ('name','description','template',)
