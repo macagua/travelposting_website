@@ -250,10 +250,10 @@ MANAGERS = [
 
 # Authentication options
 AUTH_USER_MODEL = 'accounts.CustomerUser'
-LOGIN_URL = 'landing:index'
+LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'destinations:list'
 LOGOUT_URL = 'accounts:logout'
-LOGOUT_REDIRECT_URL = 'landing:index'
+LOGOUT_REDIRECT_URL = 'destination:list'
 
 THUMBNAIL_HIGH_RESOLUTION = True
 
