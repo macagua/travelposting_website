@@ -224,6 +224,7 @@ THIRD_PARTY = [
     'rest_framework',
     'nested_admin',
     'rosetta',
+    'bootstrap_datepicker_plus',
 
 ]
 
