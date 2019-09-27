@@ -83,8 +83,8 @@ LANGUAGES = (
 
 URL_NAME_LANGS = LANGUAGES
 
-#MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
-MODELTRANSLATION_LANGUAGES = ('en', 'de', 'es')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
 
 TIME_ZONE = 'America/Caracas'
 
@@ -225,6 +225,7 @@ THIRD_PARTY = [
     'nested_admin',
     'rosetta',
     'bootstrap_datepicker_plus',
+    'oauth2_provider',
 
 ]
 
@@ -257,17 +258,6 @@ LOGOUT_URL = 'accounts:logout'
 LOGOUT_REDIRECT_URL = 'destination:list'
 
 THUMBNAIL_HIGH_RESOLUTION = True
-
-
-# Django Summernote config
-SUMMERNOTE_CONFIG = {
-    'iframe': True,
-    'lazy': True,
-    'js': (
-        'destinations/js/summernote-map-plugin.js',
-    )
-}
-
 
 #CMS_LANGUAGES = {
     ## Customize this
@@ -373,8 +363,44 @@ ROSETTA_UWSGI_AUTO_RELOAD = True
 SHORT_DATE_FORMAT = "d/m/y"
 DEFAULT_CURRENCY = 'USD'
 CURRENCIES = ('USD', 'EUR')
-CURRENCY_DECIMAL_PLACES = 4
+CURRENCY_DECIMAL_PLACES = 2
 CURRENCY_CHOICES = [
     ('USD', 'USD $'),
     ('EUR', 'EUR €'),
 ]
+
+# File upload
+# Archivos de maximo 5 megas.
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880
+DATA_UPLOAD_MAX_MEMORY_SIZE = 6291456
+
+# Django Summernote config
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+    'lazy': True,
+    'js': (
+        'destinations/js/summernote-map-plugin.js',
+    )
+}
+
+
+# Config Django Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_PAGINATION_CLASS': ('rest_framework.pagination.PageNumberPagination',),
+    'PAGE_SIZE': 20,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+
+# Oauth2 Provider
+OAUTH2_PROVIDER = {
+    'SCOPES': {
+        'read': 'Permiso de lectura',
+        'write': 'Permiso de escritura'
+    }
+}
