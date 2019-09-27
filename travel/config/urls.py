@@ -29,7 +29,12 @@ urlpatterns = [
     url(
         r'^rosetta/',
         include('rosetta.urls'),
-    )
+    ),
+
+    path(
+        'api/',
+        include('apps.api.urls', namespace='api'),
+    ),
 ]
 
 urlpatterns += i18n_patterns(
@@ -56,12 +61,6 @@ urlpatterns += i18n_patterns(
     url(
         r'^accounts/',
         include("apps.accounts.urls", namespace='accounts'),
-    ),
-
-
-    path(
-        'api/',
-        include('apps.api.urls', namespace='api'),
     ),
 
     url(
