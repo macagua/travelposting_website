@@ -1,0 +1,84 @@
+{% extends 'destinations/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Información de usuario' %}{% endblock %}
+
+{% block content %}
+  <div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+
+    <div class="row">
+      <div class="col-lg-11">
+        <div class="wrapper wrapper-content animated fadeInDown">
+          <div class="ibox">
+            <div class="ibox-content">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="m-b-md">
+                    <a class="btn btn-white btn-xs pull-right" href="{% url 'accounts:user-update' object.pk %}">
+                      {% trans 'Editar información' %}
+                    </a>
+                    <h3>{% trans 'Información de usuario' %}</h3>
+                  </div>
+                  <p>
+                    {% blocktrans %}
+                      Aquí puede ver toda su información.
+                    {% endblocktrans %}
+                  </p>
+                  <div class="col-lg-6">
+                    <dl class="dl-horizontal">
+                      <dt>{% trans 'Nombre de usuario' %}:</dt>
+                      <dd>{{ object.username }}</dd>
+                      <dt>{% trans 'Nombre completo' %}:</dt>
+                      <dd>{{ object.get_full_name.capitalize }}</dd>
+                      <dt>{% trans 'Correo electrónico' %}:</dt>
+                      <dd>{{ object.email }}</dd>
+                    </dl>
+                  </div>
+                  <div class="col-lg-6">
+                    <dl class="dl-horizontal">
+                      <dt>{% trans 'Último inicio de sessión' %}:</dt>
+                      <dd>{{ object.last_login }}</dd>
+                      <dt>{% trans 'Fecha de registro' %}:</dt>
+                      <dd>{{ object.date_joined }}</dd>
+                      <dt>{% trans 'Teléfono' %}:</dt>
+                      <dd>{{ object.phone }}</dd>
+                    </dl>
+                  </div>
+                  <div class="col-lg-6">
+                    <h3>{% trans 'Direccion' %}:</h3>
+                    <dl class="dl-horizontal">
+                      <dt>{% trans 'Pais' %}:</dt>
+                      <dd>{{ object.country }}</dd>
+                      <dt>{% trans 'Estado' %}:</dt>
+                      <dd>{{ object.state }}</dd>
+                      <dt>{% trans 'Codigo postal' %}:</dt>
+                      <dd>{{ object.postal_code }}</dd>
+                      <dt>{% trans 'Lenguaje' %}:</dt>
+                      <dd>{{ object.get_language_display }}</dd>
+                    </dl>
+                  </div>
+                  <div class="col-lg-6">
+                    <h3>{% trans 'Empresa' %}:</h3>
+                    <dl class="dl-horizontal">
+                      <dt>{% trans 'Plan' %}:</dt>
+                      <dd>{{ object.plan }}</dd>
+                      <dt>{% trans 'Nombre de la empresa' %}:</dt>
+                      <dd>{{ object.business_name }}</dd>
+                      <dt>{% trans 'Direccion de empresa' %}:</dt>
+                      <dd>{{ object.business_address }}</dd>
+                      <dt>{% trans 'Cargo en la empresa' %}:</dt>
+                      <dd>{{ object.business_position }}</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include 'destinations/footer.html' %}
+  </div>
+{% endblock %}
