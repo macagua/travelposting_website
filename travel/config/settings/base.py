@@ -258,6 +258,17 @@ LOGOUT_REDIRECT_URL = 'destination:list'
 
 THUMBNAIL_HIGH_RESOLUTION = True
 
+
+# Django Summernote config
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+    'lazy': True,
+    'js': (
+        'destinations/js/summernote-map-plugin.js',
+    )
+}
+
+
 #CMS_LANGUAGES = {
     ## Customize this
  #   1: [
