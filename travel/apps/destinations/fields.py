@@ -51,7 +51,8 @@ class DaysCommaField(models.CharField):
     def from_db_value(self, value, expression, connection):
         if value is None:
             return value
-        return parse_days_list(value, self.separator)
+        return value
+        #return parse_days_list(value, self.separator)
 
     def to_python(self, value: (list, tuple, int, str)) -> list:
         if isinstance(value, (list, tuple, int)):
