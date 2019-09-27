@@ -13,29 +13,20 @@ from django.views.generic import (
     DeleteView,
     ListView,
 )
-from oauth2_provider.views import (
-    ApplicationRegistration,
-    ApplicationUpdate,
-    ApplicationDetail,
-    ApplicationDelete,
-    AuthorizedTokensListView,
-    AuthorizedTokenDeleteView,
-)
 from apps.destinations.forms import (
     DestinationForm,
     TourDataForm,
     HeaderSectionInlineForm,
     DestinationDetailForm,
-    ApplicationForm,
 )
-from tour.destinations.models import (
+from apps.destinations.models import (
     Destination,
     TourData,
     HeaderSection,
     DestinationDetail,
     OptionTabData,
 )
-from tour.destinations.utils import (
+from apps.destinations.utils import (
     BaseInlineModelFormMixin,
     JSONResponseMixin,
     ModelEncoder,
@@ -260,51 +251,3 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
 
     def get_queryset(self):
         return self.object.gallery.all()
-
-
-class ApplicationCreateView(ApplicationRegistration):
-    template_name = 'oauth2/application_form.html'
-    form_class = ApplicationForm
-    extra_context = {
-        'title': _('Registrar aplicación')
-    }
-
-    def get_form_class(self):
-        return self.form_class
-
-    def get_success_url(self):
-        return reverse_lazy('oauth2-application-detail',
-                            kwargs={'pk': self.object.pk})
-
-
-class ApplicationUpdateView(ApplicationUpdate):
-    template_name = 'oauth2/application_form.html'
-    form_class = ApplicationForm
-    extra_context = {
-        'title': _('Actualizar')
-    }
-
-    def get_form_class(self):
-        return self.form_class
-
-    def get_success_url(self):
-        return reverse_lazy('oauth2-application-detail',
-                            kwargs={'pk': self.object.pk})
-
-
-class ApplicationDetailView(ApplicationDetail):
-    template_name = 'oauth2/application_detail.html'
-
-
-class ApplicationDeleteView(ApplicationDelete):
-    template_name = 'oauth2/application_delete.html'
-    success_url = reverse_lazy('oauth2-application-list')
-
-
-class AuthorizedTokenListView(AuthorizedTokensListView):
-    template_name = 'oauth2/authorized_token_list.html'
-
-
-class AuthorizedTokenRevokeView(AuthorizedTokenDeleteView):
-    template_name = 'oauth2/authorized_token_revoke.html'
-    success_url = reverse_lazy("oauth2-authorized-token-list")

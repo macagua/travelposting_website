@@ -23,8 +23,8 @@ urlpatterns = [
         views.RegisterView.as_view(),
         name='register',
     ),
-    
-    path('register/<int:pk>', views.RegisterView.as_view()),  
+
+    path('register/<int:pk>', views.RegisterView.as_view()),
 
     path(
         'login/',
@@ -66,5 +66,29 @@ urlpatterns = [
         'password_reset/done/',
         views.passworddone,
         name='password-reset-done',
+    ),
+
+    path(
+        'password_change/',
+        views.PasswordChangeView.as_view(),
+        name='password-change',
+    ),
+
+    path(
+        'password_change/done/',
+        views.PasswordChangeDoneView.as_view(),
+        name='password-change-done',
+    ),
+
+    path(
+        'user/<int:pk>/details/',
+        views.CustomUserDetailView.as_view(),
+        name='user-details',
+    ),
+
+    path(
+        'user/<int:pk>/update/',
+        views.CustomUserUpdateView.as_view(),
+        name='user-update',
     ),
 ]

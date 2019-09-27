@@ -3,9 +3,8 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput
-from oauth2_provider.models import Application
 
-from tour.destinations.models import (
+from apps.destinations.models import (
     TourData,
     HeaderSection,
     Destination,
@@ -15,8 +14,8 @@ from tour.destinations.models import (
     BookingDetail,
     Photo,
 )
-from tour.accounts.forms import BaseBootstrapForm
-from tour.destinations.widgets import BootstrapMoneyWidget
+from apps.accounts.forms import BaseBootstrapForm
+from apps.destinations.widgets import BootstrapMoneyWidget
 
 
 class DestinationForm(forms.ModelForm):
@@ -224,14 +223,3 @@ class PhotoForm(forms.ModelForm):
     class Meta:
         model = Photo
         fields = ('name', 'sort', 'description', 'thumbnail', 'image')
-
-
-class ApplicationForm(BaseBootstrapForm, forms.ModelForm):
-    class Meta:
-        model = Application
-        fields = ('name', 'client_id', 'client_secret', 'client_type', 'authorization_grant_type', 'redirect_uris')
-        labels = {
-            'name': _("Nombre"),
-            'authorization_grant_type': _("Tipo de aut."),
-            'redirect_uris': _("Redirect uris")
-        }

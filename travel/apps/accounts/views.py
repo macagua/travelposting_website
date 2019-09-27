@@ -88,3 +88,50 @@ def passwordconfirm(request):
 
 def passworddone(request):
     return render(request, 'accounts/registration/password_reset_done.html')
+
+
+class PasswordResetView(auth_views.PasswordResetView):
+    email_template_name = 'accounts/registration/password_reset_email.html'
+    html_email_template_name = 'accounts/registration/password_reset_email.html'
+    template_name = 'accounts/registration/password_reset_form.html'
+    success_url = reverse_lazy('accounts:password-reset-done')
+    form_class = CustomPasswordResetForm
+
+
+class PasswordResetDoneView(auth_views.PasswordResetDoneView):
+    template_name = 'accounts/registration/password_reset_done.html'
+
+
+class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    template_name = 'accounts/registration/password_reset_confirm.html'
+    success_url = reverse_lazy('accounts:password-reset-complete')
+    form_class = PasswordResetConfirmForm
+
+
+class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    template_name = 'accounts/registration/password_reset_complete.html'
+
+
+class CustomUserDetailView(LoginRequiredMixin, DetailView):
+    template_name = 'accounts/user/_detail.html'
+    model = CustomerUser
+
+
+class CustomUserUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = 'accounts/user/_form.html'
+    model = CustomerUser
+    form_class = CustomerUserChangeForm
+
+    def form_valid(self, form: BaseForm) -> HttpResponse:
+        super(CustomUserUpdateView, self).form_valid(form)
+        return set_language(self.request)
+
+
+class PasswordChangeView(LoginRequiredMixin, auth_views.PasswordChangeView):
+    template_name = 'accounts/user/password_change.html'
+    success_url = reverse_lazy('accounts:password-change-done')
+    form_class = CustomPasswordChangeForm
+
+
+class PasswordChangeDoneView(LoginRequiredMixin, auth_views.PasswordChangeDoneView):
+    template_name = 'accounts/user/password_change_done.html'
