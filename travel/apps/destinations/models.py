@@ -512,7 +512,7 @@ class GeneralDetail(models.Model):
     sale_price = MoneyField(
         _('Precio rebajado'),
         max_digits=19,
-        decimal_places=4,
+        decimal_places=2,
         default_currency='USD',
         default=Money(0, 'USD'),
     )
@@ -654,7 +654,7 @@ class BookingDetail(models.Model):
     special_price = MoneyField(
         _('Special price'),
         max_digits=19,
-        decimal_places=4,
+        decimal_places=2,
         default_currency='USD',
         default=Money(0, 'USD'),
     )

@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from apps.api import serializers
-from apps.destinations.models import Photo
+from apps.destinations.models import Photo, Destination
 
 
 logger = logging.getLogger(__name__)
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 class DestinationViewSet(ModelViewSet):
     serializer_class = serializers.DestinationSerializer
-    queryset = serializers.Destination.objects.all()
+    queryset = Destination.objects.all()
     serializer_photo_class = serializers.PhotoWithDestinationSerializer
     pagination_class = pagination.PageNumberPagination
     filter_backends = (filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend)
@@ -34,6 +34,7 @@ class DestinationViewSet(ModelViewSet):
         return Response(serializer.data)
 
     @action(detail=True, methods=['post'], url_path="gallery/create", permission_classes=[AllowAny])
+
     def gallery_create(self, request, pk=None):
         data = request.data.copy()
         data['destination'] = pk

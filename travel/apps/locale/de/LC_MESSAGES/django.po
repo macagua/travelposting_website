@@ -1208,16 +1208,16 @@ msgstr ""
 
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
-msgstr ""
+msgstr "Reise und teile dein Abenteuer"
 
 #: main/templates/pages/show_header.html:27
 msgid "Where would you like to travel this time?"
-msgstr ""
+msgstr "Wohin möchtest du diesmal reisen?"
 
 #: main/templates/pages/show_header.html:31
 #: main/templates/pages/show_header.html:33
 msgid "Name / Last Name"
-msgstr ""
+msgstr "Name / Last Name"
 
 #: main/templates/pages/show_header.html:33
 msgid "Name must contain only letters."
@@ -1248,7 +1248,7 @@ msgstr ""
 
 #: main/templates/pages/show_header.html:63
 msgid "Search offer"
-msgstr ""
+msgstr "Angebot suchen"
 
 #: main/templates/pricing.html:13
 msgid "Special"

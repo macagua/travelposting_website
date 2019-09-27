@@ -1304,7 +1304,7 @@ msgstr "Por favor, introduzca un número de whatsapp válido"
 
 #: main/templates/pages/show_header.html:63
 msgid "Search offer"
-msgstr "Search offer"
+msgstr "Buscar Ofertas"
 
 #: main/templates/pricing.html:13
 msgid "Special"

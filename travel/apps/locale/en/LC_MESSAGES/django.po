@@ -1248,7 +1248,7 @@ msgstr ""
 
 #: main/templates/pages/show_header.html:63
 msgid "Search offer"
-msgstr ""
+msgstr "Search offer"
 
 #: main/templates/pricing.html:13
 msgid "Special"
@@ -1256,7 +1256,7 @@ msgstr ""
 
 #: main/templates/pricing.html:13
 msgid "Ofert on"
-msgstr ""
+msgstr "Ofert en"
 
 #: main/templates/pricing.html:15
 msgid ""
