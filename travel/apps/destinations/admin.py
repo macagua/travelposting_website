@@ -80,7 +80,7 @@ class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
 
 @admin.register(Categorie)
 class OptionTabDataAdmin(admin.ModelAdmin):
-    list_display = ('name', 'short_description', 'image')
+    list_display = ('id', 'name', 'short_description', 'image')
 
 
 admin.site.register(GeneralDetail)

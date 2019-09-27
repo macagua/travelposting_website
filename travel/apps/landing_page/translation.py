@@ -10,6 +10,7 @@ from apps.landing_page.models import (
     Statistic,
     Testimony,
     Slider,
+    Magazine,
 )
 
 
@@ -36,3 +37,7 @@ class TestimonyTranslationOptions(TranslationOptions):
 @register(Slider)
 class SliderTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
+
+@register(Magazine)
+class MagazineTranslationOptions(TranslationOptions):
+    fields = ('name', )

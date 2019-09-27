@@ -1,4 +1,6 @@
 {% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
+{% get_current_language as LANGUAGES %}
+
 <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md"
 data-header-fix-moment="500"
 data-header-fix-effect="slide">
@@ -7,7 +9,9 @@ data-header-fix-effect="slide">
             <!-- Nav -->
             <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
                 <!-- White Logo -->                
-                <img src="{% static 'img/travelposting4.png' %}" width="100">
+                <a href="/{{LANGUAGES}}/">
+                    <img src="{% static 'img/travelposting4.png' %}" width="100">
+                </a>
 
                 <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
                 </a>
