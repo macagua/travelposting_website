@@ -53,19 +53,20 @@
                             <p>{% trans 'Login to manage your account.' %}</p>
                         </div>
                         <!-- End Title -->
-                        <!-- Form Group -->
-                        <div class="js-form-message form-group">
-                            {% for field in form %}
-                            <div class="form-group">
-                                <label class="sr-only" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                {{ field }}
-                                {{ field.help_text }}
-                                {{ field.errors }}
-                            </div>
-                            {% endfor %}
-
+                        {% if errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ errors }}
                         </div>
-                        <!-- End Form Group -->
+                        {% endif %}
+                        {% for field in form %}
+                        <div class="js-form-message form-group">
+                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+                            {{ field.help_text }}
+                            {{ field.errors }}
+                        </div>
+                        {% endfor %}
+                        <a class="link-muted text-capitalize font-weight-normal small" href="recover-account.html">Forgot Password?</a>
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
                             <div class="col-6">

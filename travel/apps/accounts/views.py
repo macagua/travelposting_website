@@ -52,15 +52,19 @@ class LoginView(View):
     def post(self, request, *args, **kwargs):
         user = request.POST.get('email')
         password = request.POST.get('password')
+        import ipdb; ipdb.set_trace()
         user = authenticate(username=user, password=password)
+
         if user is not None:
             login(request, user)
             return redirect(reverse('destinations:list'))
         else:
+            errors = 'Ha ocurrido un error, Usuario o Contraseña Incorrecta.'
+
             return render(
                 request,
                 self.template_name,
-                {'form': self.form},
+                {'form': self.form, 'errors':errors},
             )
 
 
