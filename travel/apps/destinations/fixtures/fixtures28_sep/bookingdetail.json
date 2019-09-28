@@ -1,0 +1,437 @@
+[
+{
+    "model": "destinations.bookingdetail",
+    "pk": 1,
+    "fields": {
+        "destination_detail": 1,
+        "start_date": "2017-11-25",
+        "end_date": "2017-12-12",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 12,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 4,
+    "fields": {
+        "destination_detail": 4,
+        "start_date": "2019-03-15",
+        "end_date": "2019-12-15",
+        "days": "2,3,4,5,6",
+        "number_ticket": null,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 5,
+    "fields": {
+        "destination_detail": 5,
+        "start_date": "2019-04-20",
+        "end_date": "2019-11-20",
+        "days": "3,4,5,6",
+        "number_ticket": 2,
+        "special_price_currency": "EUR",
+        "special_price": "179.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 6,
+    "fields": {
+        "destination_detail": 6,
+        "start_date": "2019-08-07",
+        "end_date": "2019-08-17",
+        "days": "0,1,2,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "699.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 7,
+    "fields": {
+        "destination_detail": 6,
+        "start_date": "2019-04-23",
+        "end_date": "2019-07-06",
+        "days": "4",
+        "number_ticket": null,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "default",
+        "is_active": "0"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 8,
+    "fields": {
+        "destination_detail": 4,
+        "start_date": null,
+        "end_date": null,
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": null,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "default",
+        "is_active": "0"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 9,
+    "fields": {
+        "destination_detail": 7,
+        "start_date": "2019-08-03",
+        "end_date": "2019-08-17",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "2699.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 10,
+    "fields": {
+        "destination_detail": 8,
+        "start_date": "2019-09-21",
+        "end_date": "2019-10-04",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "2500.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 11,
+    "fields": {
+        "destination_detail": 9,
+        "start_date": "2019-10-24",
+        "end_date": "2019-10-28",
+        "days": "0,1,2,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "619.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 12,
+    "fields": {
+        "destination_detail": 10,
+        "start_date": "2019-09-03",
+        "end_date": "2019-05-08",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 490,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 13,
+    "fields": {
+        "destination_detail": 11,
+        "start_date": "2019-08-16",
+        "end_date": "2019-08-28",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 100,
+        "special_price_currency": "USD",
+        "special_price": "4300.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 14,
+    "fields": {
+        "destination_detail": 12,
+        "start_date": "2019-09-01",
+        "end_date": "2019-09-06",
+        "days": "0,1,2,3,4,5",
+        "number_ticket": 100,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 15,
+    "fields": {
+        "destination_detail": 13,
+        "start_date": "2019-09-19",
+        "end_date": "2019-09-24",
+        "days": "0,1,2,4,5,6",
+        "number_ticket": 100,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 16,
+    "fields": {
+        "destination_detail": 14,
+        "start_date": "2019-07-18",
+        "end_date": "2019-07-27",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 17,
+    "fields": {
+        "destination_detail": 15,
+        "start_date": "2019-09-24",
+        "end_date": "2019-09-27",
+        "days": "2,3,4,5",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "100.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 18,
+    "fields": {
+        "destination_detail": 16,
+        "start_date": "2019-11-05",
+        "end_date": "2019-11-17",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 100,
+        "special_price_currency": "USD",
+        "special_price": "3390.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 19,
+    "fields": {
+        "destination_detail": 17,
+        "start_date": "2019-06-19",
+        "end_date": "2019-10-31",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "299.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 20,
+    "fields": {
+        "destination_detail": 18,
+        "start_date": "2019-06-27",
+        "end_date": "2019-06-29",
+        "days": "4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "119.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 21,
+    "fields": {
+        "destination_detail": 19,
+        "start_date": "2019-06-25",
+        "end_date": "2019-10-31",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": null,
+        "special_price_currency": "USD",
+        "special_price": "320.0000",
+        "mode": "default",
+        "is_active": "0"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 22,
+    "fields": {
+        "destination_detail": 20,
+        "start_date": "2019-07-01",
+        "end_date": "2020-07-01",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "EUR",
+        "special_price": "55.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 24,
+    "fields": {
+        "destination_detail": 22,
+        "start_date": null,
+        "end_date": null,
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 1,
+        "special_price_currency": "EUR",
+        "special_price": "44.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 25,
+    "fields": {
+        "destination_detail": 23,
+        "start_date": "2019-07-01",
+        "end_date": "2019-09-30",
+        "days": "0,5,6",
+        "number_ticket": null,
+        "special_price_currency": "USD",
+        "special_price": "445.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 26,
+    "fields": {
+        "destination_detail": 24,
+        "start_date": "2019-07-01",
+        "end_date": "2021-12-31",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": null,
+        "special_price_currency": "EUR",
+        "special_price": "14.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 27,
+    "fields": {
+        "destination_detail": 25,
+        "start_date": "2020-04-03",
+        "end_date": "2020-04-12",
+        "days": "0,1,3,4,5,6",
+        "number_ticket": 100,
+        "special_price_currency": "USD",
+        "special_price": "2890.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 28,
+    "fields": {
+        "destination_detail": 26,
+        "start_date": "2019-09-13",
+        "end_date": "2019-09-15",
+        "days": "0,5,6",
+        "number_ticket": 2,
+        "special_price_currency": "USD",
+        "special_price": "171.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 29,
+    "fields": {
+        "destination_detail": 27,
+        "start_date": "2020-04-06",
+        "end_date": "2020-04-12",
+        "days": "0,2,3,4,5,6",
+        "number_ticket": 100,
+        "special_price_currency": "USD",
+        "special_price": "20195.0000",
+        "mode": "exact-dates",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 30,
+    "fields": {
+        "destination_detail": 28,
+        "start_date": "2019-12-01",
+        "end_date": "2020-03-31",
+        "days": "0",
+        "number_ticket": 1,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 31,
+    "fields": {
+        "destination_detail": 29,
+        "start_date": "2019-12-27",
+        "end_date": "2020-01-02",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": null,
+        "special_price_currency": "USD",
+        "special_price": "0.0000",
+        "mode": "default",
+        "is_active": "0"
+    }
+},
+{
+    "model": "destinations.bookingdetail",
+    "pk": 32,
+    "fields": {
+        "destination_detail": 30,
+        "start_date": "2019-09-21",
+        "end_date": "2019-10-21",
+        "days": "0,1,2,3,4,5,6",
+        "number_ticket": 2,
+        "special_price_currency": "USD",
+        "special_price": "70.0000",
+        "mode": "default",
+        "is_active": "1"
+    }
+}
+]
