@@ -1,0 +1,407 @@
+[
+{
+    "model": "destinations.generaldetail",
+    "pk": 1,
+    "fields": {
+        "destination_detail": 1,
+        "regular_price_currency": "USD",
+        "regular_price": "1350.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "1250.0000",
+        "date_on_sale_from": "2019-04-20",
+        "date_on_sale_to": "2019-11-20",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 4,
+    "fields": {
+        "destination_detail": 4,
+        "regular_price_currency": "USD",
+        "regular_price": "125.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "99.0000",
+        "date_on_sale_from": "2019-03-15",
+        "date_on_sale_to": "2019-12-15",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 5,
+    "fields": {
+        "destination_detail": 5,
+        "regular_price_currency": "EUR",
+        "regular_price": "199.0000",
+        "sale_price_currency": "EUR",
+        "sale_price": "179.0000",
+        "date_on_sale_from": "2019-04-20",
+        "date_on_sale_to": "2019-11-20",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 6,
+    "fields": {
+        "destination_detail": 6,
+        "regular_price_currency": "USD",
+        "regular_price": "699.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "699.0000",
+        "date_on_sale_from": "2019-04-23",
+        "date_on_sale_to": "2019-07-06",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 7,
+    "fields": {
+        "destination_detail": 7,
+        "regular_price_currency": "USD",
+        "regular_price": "2625.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-08-03",
+        "date_on_sale_to": "2019-08-17",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 8,
+    "fields": {
+        "destination_detail": 9,
+        "regular_price_currency": "USD",
+        "regular_price": "619.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-10-24",
+        "date_on_sale_to": "2019-10-28",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 9,
+    "fields": {
+        "destination_detail": 10,
+        "regular_price_currency": "USD",
+        "regular_price": "490.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-09-16",
+        "date_on_sale_to": "2019-09-22",
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 10,
+    "fields": {
+        "destination_detail": 11,
+        "regular_price_currency": "USD",
+        "regular_price": "4300.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-08-16",
+        "date_on_sale_to": "2019-08-28",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 11,
+    "fields": {
+        "destination_detail": 8,
+        "regular_price_currency": "USD",
+        "regular_price": "2500.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-10-04",
+        "date_on_sale_to": "2019-10-18",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 12,
+    "fields": {
+        "destination_detail": 13,
+        "regular_price_currency": "USD",
+        "regular_price": "1610.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-09-19",
+        "date_on_sale_to": "2019-09-24",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 13,
+    "fields": {
+        "destination_detail": 12,
+        "regular_price_currency": "USD",
+        "regular_price": "1568.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": null,
+        "date_on_sale_to": null,
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 14,
+    "fields": {
+        "destination_detail": 14,
+        "regular_price_currency": "USD",
+        "regular_price": "3510.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-07-18",
+        "date_on_sale_to": "2019-07-27",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 15,
+    "fields": {
+        "destination_detail": 15,
+        "regular_price_currency": "USD",
+        "regular_price": "100.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "100.0000",
+        "date_on_sale_from": "2019-09-24",
+        "date_on_sale_to": null,
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 16,
+    "fields": {
+        "destination_detail": 16,
+        "regular_price_currency": "USD",
+        "regular_price": "3390.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-11-05",
+        "date_on_sale_to": "2019-11-17",
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 17,
+    "fields": {
+        "destination_detail": 17,
+        "regular_price_currency": "USD",
+        "regular_price": "350.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "299.9900",
+        "date_on_sale_from": "2019-06-19",
+        "date_on_sale_to": "2019-10-31",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 18,
+    "fields": {
+        "destination_detail": 18,
+        "regular_price_currency": "USD",
+        "regular_price": "125.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "119.0000",
+        "date_on_sale_from": "2019-06-19",
+        "date_on_sale_to": "2019-06-23",
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 19,
+    "fields": {
+        "destination_detail": 19,
+        "regular_price_currency": "USD",
+        "regular_price": "350.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "320.0000",
+        "date_on_sale_from": "2019-06-25",
+        "date_on_sale_to": "2019-10-31",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 20,
+    "fields": {
+        "destination_detail": 20,
+        "regular_price_currency": "EUR",
+        "regular_price": "60.0000",
+        "sale_price_currency": "EUR",
+        "sale_price": "55.0000",
+        "date_on_sale_from": "2019-07-01",
+        "date_on_sale_to": "2020-07-01",
+        "status_imp": "ninguno",
+        "class_imp": "zero"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 22,
+    "fields": {
+        "destination_detail": 22,
+        "regular_price_currency": "EUR",
+        "regular_price": "44.0000",
+        "sale_price_currency": "EUR",
+        "sale_price": "44.0000",
+        "date_on_sale_from": null,
+        "date_on_sale_to": null,
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 23,
+    "fields": {
+        "destination_detail": 23,
+        "regular_price_currency": "USD",
+        "regular_price": "470.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "445.0000",
+        "date_on_sale_from": "2019-07-01",
+        "date_on_sale_to": "2019-09-30",
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 24,
+    "fields": {
+        "destination_detail": 24,
+        "regular_price_currency": "EUR",
+        "regular_price": "14.0000",
+        "sale_price_currency": "EUR",
+        "sale_price": "14.0000",
+        "date_on_sale_from": null,
+        "date_on_sale_to": null,
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 25,
+    "fields": {
+        "destination_detail": 25,
+        "regular_price_currency": "USD",
+        "regular_price": "2890.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2020-04-03",
+        "date_on_sale_to": "2020-04-12",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 26,
+    "fields": {
+        "destination_detail": 26,
+        "regular_price_currency": "USD",
+        "regular_price": "235.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "171.0000",
+        "date_on_sale_from": "2019-08-15",
+        "date_on_sale_to": "2019-08-30",
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 27,
+    "fields": {
+        "destination_detail": 27,
+        "regular_price_currency": "USD",
+        "regular_price": "2195.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2020-04-06",
+        "date_on_sale_to": "2020-04-12",
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 28,
+    "fields": {
+        "destination_detail": 28,
+        "regular_price_currency": "USD",
+        "regular_price": "3670.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": null,
+        "date_on_sale_to": null,
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 29,
+    "fields": {
+        "destination_detail": 29,
+        "regular_price_currency": "USD",
+        "regular_price": "1347.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "0.0000",
+        "date_on_sale_from": "2019-12-27",
+        "date_on_sale_to": "2020-01-02",
+        "status_imp": "ninguno",
+        "class_imp": "estandar"
+    }
+},
+{
+    "model": "destinations.generaldetail",
+    "pk": 30,
+    "fields": {
+        "destination_detail": 30,
+        "regular_price_currency": "USD",
+        "regular_price": "100.0000",
+        "sale_price_currency": "USD",
+        "sale_price": "75.0000",
+        "date_on_sale_from": "2019-09-21",
+        "date_on_sale_to": "2019-10-21",
+        "status_imp": "imponible",
+        "class_imp": "estandar"
+    }
+}
+]

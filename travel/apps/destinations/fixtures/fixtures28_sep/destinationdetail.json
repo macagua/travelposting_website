@@ -1,0 +1,272 @@
+[
+{
+    "model": "destinations.destinationdetail",
+    "pk": 1,
+    "fields": {
+        "destination": 1,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 4,
+    "fields": {
+        "destination": 4,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 5,
+    "fields": {
+        "destination": 5,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 6,
+    "fields": {
+        "destination": 6,
+        "var": false,
+        "virtual": false,
+        "descargable": true
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 7,
+    "fields": {
+        "destination": 7,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 8,
+    "fields": {
+        "destination": 8,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 9,
+    "fields": {
+        "destination": 9,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 10,
+    "fields": {
+        "destination": 10,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 11,
+    "fields": {
+        "destination": 11,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 12,
+    "fields": {
+        "destination": 12,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 13,
+    "fields": {
+        "destination": 13,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 14,
+    "fields": {
+        "destination": 14,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 15,
+    "fields": {
+        "destination": 15,
+        "var": true,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 16,
+    "fields": {
+        "destination": 16,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 17,
+    "fields": {
+        "destination": 17,
+        "var": true,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 18,
+    "fields": {
+        "destination": 18,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 19,
+    "fields": {
+        "destination": 19,
+        "var": true,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 20,
+    "fields": {
+        "destination": 20,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 22,
+    "fields": {
+        "destination": 22,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 23,
+    "fields": {
+        "destination": 23,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 24,
+    "fields": {
+        "destination": 24,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 25,
+    "fields": {
+        "destination": 25,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 26,
+    "fields": {
+        "destination": 26,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 27,
+    "fields": {
+        "destination": 27,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 28,
+    "fields": {
+        "destination": 28,
+        "var": true,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 29,
+    "fields": {
+        "destination": 29,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+},
+{
+    "model": "destinations.destinationdetail",
+    "pk": 30,
+    "fields": {
+        "destination": 30,
+        "var": false,
+        "virtual": false,
+        "descargable": false
+    }
+}
+]

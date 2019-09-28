@@ -1,0 +1,340 @@
+[
+{
+    "model": "destinations.inventariodetail",
+    "pk": 1,
+    "fields": {
+        "destination_detail": 1,
+        "sku": "PCT-001",
+        "manager": true,
+        "quantity": 12,
+        "reserva": "notify",
+        "umb_exist": 2,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 4,
+    "fields": {
+        "destination_detail": 4,
+        "sku": "HH-001MD",
+        "manager": true,
+        "quantity": 150,
+        "reserva": "yes",
+        "umb_exist": null,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 5,
+    "fields": {
+        "destination_detail": 5,
+        "sku": "HSP-001",
+        "manager": true,
+        "quantity": 500,
+        "reserva": "notify",
+        "umb_exist": 50,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 6,
+    "fields": {
+        "destination_detail": 6,
+        "sku": "FI-0119",
+        "manager": true,
+        "quantity": 50,
+        "reserva": "yes",
+        "umb_exist": 10,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 7,
+    "fields": {
+        "destination_detail": 7,
+        "sku": "VE.001-19",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": null,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 8,
+    "fields": {
+        "destination_detail": 8,
+        "sku": "FE.002-19",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "yes",
+        "umb_exist": null,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 9,
+    "fields": {
+        "destination_detail": 9,
+        "sku": "CPC_0119",
+        "manager": false,
+        "quantity": 50,
+        "reserva": "notify",
+        "umb_exist": null,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 10,
+    "fields": {
+        "destination_detail": 10,
+        "sku": "CTA-0119",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 11,
+    "fields": {
+        "destination_detail": 11,
+        "sku": "EN.003-19",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": null,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 12,
+    "fields": {
+        "destination_detail": 12,
+        "sku": "D.004-19",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 13,
+    "fields": {
+        "destination_detail": 13,
+        "sku": "OE.005-19",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": null,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 14,
+    "fields": {
+        "destination_detail": 14,
+        "sku": "CR.006-19",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 15,
+    "fields": {
+        "destination_detail": 15,
+        "sku": "CITP_001-19",
+        "manager": true,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 16,
+    "fields": {
+        "destination_detail": 16,
+        "sku": "I&D.007-19",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 10,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 17,
+    "fields": {
+        "destination_detail": 18,
+        "sku": "BTC-2019-01",
+        "manager": false,
+        "quantity": 1000,
+        "reserva": "no",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 18,
+    "fields": {
+        "destination_detail": 17,
+        "sku": "NHC-001",
+        "manager": true,
+        "quantity": 1000,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 19,
+    "fields": {
+        "destination_detail": 19,
+        "sku": "NHC-002",
+        "manager": true,
+        "quantity": 1000,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 20,
+    "fields": {
+        "destination_detail": 20,
+        "sku": "MTC-0119",
+        "manager": true,
+        "quantity": 1000,
+        "reserva": "notify",
+        "umb_exist": 10,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 22,
+    "fields": {
+        "destination_detail": 22,
+        "sku": "Casa-Morales",
+        "manager": true,
+        "quantity": 34,
+        "reserva": "notify",
+        "umb_exist": 5,
+        "sold_individually": true
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 23,
+    "fields": {
+        "destination_detail": 23,
+        "sku": "ABP-0119",
+        "manager": true,
+        "quantity": 500,
+        "reserva": "notify",
+        "umb_exist": 10,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 24,
+    "fields": {
+        "destination_detail": 24,
+        "sku": "HEZC-019",
+        "manager": false,
+        "quantity": 20,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 25,
+    "fields": {
+        "destination_detail": 25,
+        "sku": "ES.008-20",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 26,
+    "fields": {
+        "destination_detail": 26,
+        "sku": "43NW19",
+        "manager": true,
+        "quantity": 45,
+        "reserva": "notify",
+        "umb_exist": 5,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 27,
+    "fields": {
+        "destination_detail": 27,
+        "sku": "DS.009-20",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 28,
+    "fields": {
+        "destination_detail": 28,
+        "sku": "ACA-0120",
+        "manager": false,
+        "quantity": null,
+        "reserva": "notify",
+        "umb_exist": null,
+        "sold_individually": false
+    }
+},
+{
+    "model": "destinations.inventariodetail",
+    "pk": 29,
+    "fields": {
+        "destination_detail": 29,
+        "sku": "PF-010-20",
+        "manager": false,
+        "quantity": 100,
+        "reserva": "notify",
+        "umb_exist": 0,
+        "sold_individually": false
+    }
+}
+]

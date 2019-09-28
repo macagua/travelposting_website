@@ -1,0 +1,340 @@
+[
+{
+    "model": "destinations.headersection",
+    "pk": 1,
+    "fields": {
+        "destination": 1,
+        "display_mode": "hide",
+        "subtitle": null,
+        "image": "header/images/machupicchu-w.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 4,
+    "fields": {
+        "destination": 4,
+        "display_mode": "banner",
+        "subtitle": "Canal en Hamburgo",
+        "image": "header/images/many-3846525_1920_kRzAvcg.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 5,
+    "fields": {
+        "destination": 5,
+        "display_mode": "banner",
+        "subtitle": "Hamburg",
+        "image": "header/images/XPosting24-Web2.jpg",
+        "parallax": true,
+        "image_repeat": "no-repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 6,
+    "fields": {
+        "destination": 6,
+        "display_mode": "banner",
+        "subtitle": "Tri\u00e1ngulo Dorado",
+        "image": "header/images/holi-2416686_1280_WnI37LI.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 7,
+    "fields": {
+        "destination": 7,
+        "display_mode": "banner",
+        "subtitle": "VERANO EUROPEO",
+        "image": "header/images/WhatsApp_Image_2019-02-20_at_8.07.13_PM.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 8,
+    "fields": {
+        "destination": 9,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/Nilo.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 9,
+    "fields": {
+        "destination": 10,
+        "display_mode": "banner",
+        "subtitle": "LA HABANA",
+        "image": "header/images/Actual-2do.-Congreso.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 10,
+    "fields": {
+        "destination": 11,
+        "display_mode": "banner",
+        "subtitle": "EUROPA DEL NORTE",
+        "image": "header/images/WhatsApp_Image_2019-05-28_at_3.09.52_PM.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 11,
+    "fields": {
+        "destination": 12,
+        "display_mode": "banner",
+        "subtitle": "Disney",
+        "image": "header/images/DISNEY.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 12,
+    "fields": {
+        "destination": 13,
+        "display_mode": "banner",
+        "subtitle": "Orlando Express",
+        "image": "header/images/Orlando_Express.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 13,
+    "fields": {
+        "destination": 14,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/WhatsApp_Image_2019-05-31_at_17.47.24.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 14,
+    "fields": {
+        "destination": 15,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/Arte_Rupestre_Amaz\u00f3nico..png",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 15,
+    "fields": {
+        "destination": 16,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/WhatsApp_Image_2019-06-13_at_11.04.36_AM.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 16,
+    "fields": {
+        "destination": 18,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/Banner-BTC-WEB_03.jpg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 17,
+    "fields": {
+        "destination": 17,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/IMG_20181029_175002.jpg",
+        "parallax": true,
+        "image_repeat": "no-repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 18,
+    "fields": {
+        "destination": 19,
+        "display_mode": "banner",
+        "subtitle": "Contacto Directo con la Naturaleza",
+        "image": "header/images/WhatsApp_Image_2019-02-16_at_10.55.11_PM.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 19,
+    "fields": {
+        "destination": 20,
+        "display_mode": "banner",
+        "subtitle": "TOUR MONSERRATE",
+        "image": "header/images/colombia-3527071_1280.jpg",
+        "parallax": true,
+        "image_repeat": "no-repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 21,
+    "fields": {
+        "destination": 22,
+        "display_mode": "banner",
+        "subtitle": "Casa Morales",
+        "image": "",
+        "parallax": true,
+        "image_repeat": "no-repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 22,
+    "fields": {
+        "destination": 23,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/whale.jpg",
+        "parallax": true,
+        "image_repeat": "no-repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 23,
+    "fields": {
+        "destination": 24,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "",
+        "parallax": true,
+        "image_repeat": "no-repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 24,
+    "fields": {
+        "destination": 25,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/WhatsApp_Image_2019-08-10_at_8.44.36_AM.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 25,
+    "fields": {
+        "destination": 26,
+        "display_mode": "banner",
+        "subtitle": "BLACK WEEKEND",
+        "image": "header/images/OFERTAS.png",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 26,
+    "fields": {
+        "destination": 27,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/WhatsApp_Image_2019-08-14_at_4.52.37_PM.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 27,
+    "fields": {
+        "destination": 28,
+        "display_mode": "banner",
+        "subtitle": "ACONCAGUA CUMBRE DE AMERICA",
+        "image": "",
+        "parallax": false,
+        "image_repeat": "repeat-x",
+        "mask": null
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 28,
+    "fields": {
+        "destination": 29,
+        "display_mode": "banner",
+        "subtitle": null,
+        "image": "header/images/WhatsApp_Image_2019-09-21_at_9.13.12_AM_ZEprwL2.jpeg",
+        "parallax": true,
+        "image_repeat": "repeat",
+        "mask": "default"
+    }
+},
+{
+    "model": "destinations.headersection",
+    "pk": 29,
+    "fields": {
+        "destination": 30,
+        "display_mode": "banner",
+        "subtitle": "Posada R\u00edo Celeste La Amistad",
+        "image": "",
+        "parallax": true,
+        "image_repeat": null,
+        "mask": null
+    }
+}
+]

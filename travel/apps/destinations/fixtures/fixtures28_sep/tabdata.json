@@ -1,0 +1,650 @@
+[
+{
+    "model": "destinations.tabdata",
+    "pk": 1,
+    "fields": {
+        "tour_data": 1,
+        "option_tab": 1,
+        "content": "<p>[timeline][timeline_item item_number=\"1\" title=\"D\u00eda 1: CUSCO - CITY TOUR + CENTROS ARQUEOL\u00d3GICOS CERCANOS\"]<br><br>Transfer del hotel de Lima aeropuerto Jorge Chavez<br>Nuestro personal lo estar\u00e1 esperando en el aeropuerto Alejandro Velasco Astete de la ciudad de Cuzco.<br>Traslado y check in en hotel 3*** Cusco<br>Bebida de bienvenida mate coca<br><br>Iniciamos el tour por la ciudad colonial, construida sobre las bases de palacios Incas. En el recorrido visitaremos la Plaza de Armas, el Templo del Sol, tambi\u00e9n conocido como Qoricancha, donde podremos observar hermosas pinturas y esculturas. Continuaremos hacia el centro Arqueol\u00f3gico de Sacsayhuaman, un lugar donde se rend\u00eda culto al Sol, a la Luna y a la Tierra, y el cual era tambi\u00e9n utilizado como fortaleza militar y centro astrol\u00f3gico. Posteriormente llegamos a Q\u2019enco, un centro de culto relacionado con el elemento fuego. Seguimos con Puca Pucara, lugar utilizado como centro de abastecimiento y puesto de control Inca, en el cual tambi\u00e9n se realizaban ceremonias al viento. Finalizando el recorrido llegaremos a Tambomachay, centro de culto al agua y la fertilidad. Retorno al hotel y alojamiento.<br><br>Noche libre (se recomienda show de danzas t\u00edpicas en Qosqo)<br>[/timeline_item][timeline_item item_number=\"2\" title=\"D\u00eda 2: EXCURSI\u00d3N AL VALLE SAGRADO\"]Check out<br><br>Desayuno en el hotel.<br><br>Por la ma\u00f1ana iniciaremos un recorrido visitando el hermoso pueblo de Pisac, su mercado artesanal, la feria popular y sus callejuelas angostas. Luego seguimos el tour por el Valle Sagrado de Urubamba, lugar donde podr\u00e1 disfrutar de un agradable<br><br><strong>Almuerzo Buffet.</strong><br><br>A continuaci\u00f3n visitaremos Ollantaytambo, ciudad Inca a\u00fan habitada que conserva un complejo sistema de canales de irrigaci\u00f3n y cimientos de aquella \u00e9poca, sobre los cuales se edific\u00f3 gran parte del pueblo. El centro arqueol\u00f3gico de Ollantaytambo posee grandes grupos de andenes, fuertes, Plazas, canales y la Real Casa del Sol, un templo megal\u00edtico de gran valor m\u00edstico<br><br>Alojamiento en Ollantaytambo<br>Cena libre<br>[/timeline_item][timeline_item item_number=\"3\" title=\"D\u00eda 3: EXCURSI\u00d3N A MACHU PICCHU\"]<br><br>Desayuno en el Hotel.<br><br>A la hora indicada traslado a la <strong>Estaci\u00f3n de tren</strong> para iniciar la excursi\u00f3n a la Ciudad Sagrada de Machu Picchu, reconocida como una de las maravillas del mundo y declarada Patrimonio Cultural de la Humanidad por la UNESCO.<br><br>El tren nos conduce hasta el pueblo de Aguas Calientes (Machu Picchu) desde donde ascenderemos en bus hasta el Centro Arqueol\u00f3gico e iniciaremos el recorrido guiado que tiene una duraci\u00f3n aproximada de 2 horas.<br><br>Durante la visita se puede apreciar templos, plazas, terrazas, casas, graneros, as\u00ed como la gran biodiversidad que existe en los alrededores. Vale la pena resaltar que la belleza de Machu Picchu se ve exaltada por el extraordinario escenario donde est\u00e1 ubicado.<br><br>Alrededor de la ciudadela se ha formado una Reserva Nacional que tiene una superficie de 32,500 hect\u00e1reas, y que incluye una constelaci\u00f3n de monumentos arqueol\u00f3gicos, que a nuestro juicio, fueron construidos como parte del complejo de Machu Picchu y no de manera aislada.<br><br>Almuerzo libre<br>A la hora indicada volveremos al pueblo de Aguas calientes para abordar el tren con destino a Cusco.<br>Check in<br>Cena libre.<br>Alojamiento en el hotel[/timeline_item]<br><br>[timeline_item item_number=\"4\" title=\"D\u00eda 4: TREKKING MONTA\u00d1A SAGRADA DE 7 COLORES (VINICUNCA BELLEZA PAISAJISTICA)\"]<br><br>El bus lo recoge de su hotel y nos trasladamos al sur de la ciudad de Cuzco (3550 msnm), tiempo de viaje 2 horas y 45 minutos hasta la comunidad de <strong>PITUMARCA</strong> (4400 msnm), tendremos nuestro desayuno. En el trayecto observaremos t\u00edpicos paisajes andinos, cam\u00e9lidos sudamericanos (alpacas, llamas, vicu\u00f1as, puma, aves andinos, c\u00f3ndor etc.), pasaremos por la comunidad e <strong>JAPURA </strong>hasta llegar a la comunidad de <strong>HACHIPACHA</strong> donde iniciaremos nuestra caminata por un sendero de acceso por un tiempo estimado de 3 horas y llegaremos a la <strong>MONTA\u00d1A DE 7 COLORES</strong> (5200 msnm), es uno de los atractivos m\u00e1s naturales hermosos de paisajes m\u00e1gicos. Disfrutaremos de esta maravilla que nos presenta nuestra madre naturaleza, regresaremos por la misma ruta, donde nos espera nuestro transporte y despu\u00e9s almorzaremos.<br><br>Luego retornamos a Cusco.<br>Cena libre<br>Alojamiento en el hotel<br><br>[/timeline_item]<br><br>[timeline_item item_number=\"5\" title=\"D\u00eda 5: CUSCO\"]<br><br>Desayuno en el hotel<br>Traslado al aeropuerto<br>Salida del vuelo de LATAM con destino a Trujillo y llegando a la ciudad de Trujillo.<br><br>[/timeline_item] [/timeline]<br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 2,
+    "fields": {
+        "tour_data": 1,
+        "option_tab": 1,
+        "content": "<iframe style=\"border: 0;\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.247060717088!2d-72.54551007288389!3d-13.163141190730382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916d9a5f89555555%3A0x3a10370ea4a01a27!2sMachu+Picchu!5e0!3m2!1sde!2sde!4v1511969717021\" allowfullscreen=\"allowfullscreen\" width=\"100%\" height=\"450\" frameborder=\"0\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 3,
+    "fields": {
+        "tour_data": 1,
+        "option_tab": 1,
+        "content": "[NEXForms id=\"12\"]"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 7,
+    "fields": {
+        "tour_data": 4,
+        "option_tab": 1,
+        "content": "<p>Hamburgo posee diferentes Museos y zonas que son de inter\u00e9s para el visitante com\u00fan.\u00a0</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 8,
+    "fields": {
+        "tour_data": 4,
+        "option_tab": 1,
+        "content": ""
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 9,
+    "fields": {
+        "tour_data": 4,
+        "option_tab": 1,
+        "content": "<p><img src=\"/uploads/django-summernote/2019-03-23/22dea619-5629-4759-8d2a-263c1857d63f.jpg\" style=\"width: 522.5px;\"><br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 10,
+    "fields": {
+        "tour_data": 5,
+        "option_tab": 1,
+        "content": "<p>Nuestra caminata por Hamburgo.<br><br>08:00 - 09:30 Busqueda en el aeropuerto (De ser necesario a el Hotel)<br>10:30 Encuentro frente a el Rathaus (Ayuntamiento)\u2028<br>11:15 Camino por la calle New Wall (La calle m\u00e1s costosa del centro de Hamburgo)\u2028 - & calle Jungfernstieg (Zona comercial del centro de Hamburgo)\u2028<br>11:45 Visita a la Iglesia Sankt Michaelis (una de las iglesias m\u00e1s antiguas de Hamburgo)<br>\u202812:30 Caminata por el centro hasta llegar el Barrio Portugu\u00e9s \u2028<br>12:45 Almuerzo en el centro<br>13:45: Caminata por el T\u00fanel que uno los dos extremos del rio Elbe.\u2028<br>15:30: Paseo en Barco por el Elbe\u2028<br>17:30: Paseo en Bus por St. Pauli y la Reeperbahn\u2028<br>19:00: Regreso a la estaci\u00f3n central (Haupbahnhof / Hotel)<br>20:00 Cena en el centro de la ciudad.<br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 11,
+    "fields": {
+        "tour_data": 5,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d303356.5784146777!2d9.647640925408506!3d53.558244644405164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b161837e1813b9%3A0x4263df27bd63aa0!2sHamburg!5e0!3m2!1sde!2sde!4v1562011302746!5m2!1sde!2sde\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 12,
+    "fields": {
+        "tour_data": 6,
+        "option_tab": 1,
+        "content": "<p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><span lang=\"ES-VE\" style=\"font-family: Verdana;\" cambria,bold\",=\"\" sans-serif;=\"\" color:=\"\" rgb(228,=\"\" 109,=\"\" 10);\"=\"\">\u2022 DIA 01 (DELHI)</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">A su llegada al aeropuerto de Delhi, el\u00a0\u00a0gran y esperado recorrido por Delhi-Jaipur-Agra comenzar\u00e1. El representante de Indo Routes\u00a0\u00a0lo acompa\u00f1ar\u00e1 al hotel reservado previamente.</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Pernocte en el hotel.</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><span lang=\"ES-VE\" style=\"font-family: Verdana;\" cambria,bold\",=\"\" sans-serif;=\"\" color:=\"\" rgb(228,=\"\" 109,=\"\" 10);\"=\"\">\u2022 DIA 02 (VISITAS EN DELHI)</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Despu\u00e9s del desayuno, salga para dar un largo recorrido por la ciudad capital. Comience con el hermoso templo Laxmi Narayan y vaya a\u00a0visitar lugares en Delhi, como la Puerta de la India, nJama Masjid, la mezquita m\u00e1s grande de la India, la imponente Qutab Minar, la hist\u00f3rica Purana Qila (Fortaleza Vieja), la Tumba de Humayun y Jantar Mantar. Rinda homenaje en Raj Ghat, el memorial de Mahatma Gandhi. M\u00e1s tarde, presencie el vivaz Show de Sonido y Luz en el Fuerte Rojo, una belleza sorprendente en piedra arenisca roja. Vuelva al hotel para pasar la noche.</span><o:p></o:p></span></p><p class=\"MsoNormal\" align=\"right\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri; text-align: right;\"><span lang=\"ES\" style=\"font-family: Cambria;\"></span><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><o:p></o:p></span></p><p class=\"MsoNormal\" align=\"right\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri; text-align: right;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" align=\"right\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri; text-align: right;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><span lang=\"ES-VE\" style=\"font-family: Verdana;\" cambria,bold\",=\"\" sans-serif;=\"\" color:=\"\" rgb(228,=\"\" 109,=\"\" 10);\"=\"\">\u2022 DIA 03 (DELHI - JAIPUR, 260kms 5hrs de manejo)</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">En el d\u00eda 3 de su recorrido por el Tri\u00e1ngulo Dorado, por la ma\u00f1ana, despu\u00e9s de un placentero desayuno, salga del hotel y conduzca hasta Jaipur. Llegue a Jaipur y reg\u00edstrese en el hotel reservado previamente para usted. Despu\u00e9s de un breve descanso, dir\u00edjase a visitar el hermoso templo de Birla, que se ve incre\u00edble con las luces nocturnas. Regrese al hotel y pernocte.</span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES\" style=\"font-family: Cambria;\"></span><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><span lang=\"ES-VE\" style=\"font-family: Verdana;\" cambria,bold\",=\"\" sans-serif;=\"\" color:=\"\" rgb(228,=\"\" 109,=\"\" 10);\"=\"\">\u2022 DIA 04 (VISITA POR JAIPUR)</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Este d\u00eda\u00a0\u00a0por la ma\u00f1ana, despu\u00e9s del desayuno, comience la excursi\u00f3n por Jaipur alrededor de las 8:00 am con nuestro gu\u00eda. Explore la impresionante fortaleza de Amber con el fascinante paseo en elefante, Hawa Mahal, pase por Jal Mahal despu\u00e9s de visitar Jantar Mantar y el palacio de la ciudad. Disfrute de las compras en el mercado local. Pasaremos la noche en el hotel de Jaipur.</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><br></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><i><span lang=\"EN-US\" style=\"font-size: 9pt; font-family: Verdana;\" book=\"\" antiqua,bolditalic\",=\"\" sans-serif;=\"\" color:=\"\" rgb(0,=\"\" 129,=\"\" 0);\"=\"\"><o:p>\u00a0</o:p></span></i></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><span lang=\"ES-VE\" style=\"font-family: Verdana;\" cambria,bold\",=\"\" sans-serif;=\"\" color:=\"\" rgb(228,=\"\" 109,=\"\" 10);\"=\"\">\u2022 DIA 05 (JAIPUR-AGRA, 238kms 5hrs en auto)</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Despu\u00e9s del desayuno, tendr\u00e1 un viaje panor\u00e1mico hacia Agra. En el camino, visitaremos Fatehpur Sikri. Fatehpur Sikri fue construido entre 1571 y 1585 y es uno de los mejores ejemplos de la majestuosidad arquitect\u00f3nica mogol. Aunque la ciudad est\u00e1 en ruinas, es un lugar de visita obligada para todos aquellos que visitan Agra. El lugar es de lo mejor para pasar tiempo de calidad. La puesta de sol sobre las ruinas de este fuerte es un espect\u00e1culo que debe apreciarse. A su llegada, haga su check-in en el hotel. El resto del d\u00eda queda libre para el ocio o puede explorar el mercado local. Disfrute de una noche en el hotel.</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><span lang=\"ES-VE\" style=\"font-family: Verdana;\" cambria,bold\",=\"\" sans-serif;=\"\" color:=\"\" rgb(228,=\"\" 109,=\"\" 10);\"=\"\">\u2022 DIA 06 (VISITAS EN AGRA)</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Despu\u00e9s del desayuno, salga a recorrer Agra en el d\u00eda 6. D\u00e9jese sorprender por la incre\u00edble belleza del Taj Mahal, un mausoleo blanco, una de las Siete</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Maravillas del mundo. Construido en pr\u00edstino m\u00e1rmol blanco por el emperador mogol Shah Jahan en memoria de su amada esposa Mumtaz Mahal, est\u00e1 repleto de turistas de todas partes.</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Posteriormente, dir\u00edjase a la imponente fortaleza de Agra y la tumba de Itmad-ud-Daula, el dise\u00f1o de sus elefantes incluso eclipsan el Taj. Disfrute de una noche en el hotel.</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Verdana;\">\u00a0</span></p><p class=\"MsoNormal\" align=\"right\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri; text-align: right;\"><br></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><b><span lang=\"ES-VE\" style=\"font-family: Verdana;\" cambria,bold\",=\"\" sans-serif;=\"\" color:=\"\" rgb(228,=\"\" 109,=\"\" 10);\"=\"\">\u2022 DIA 07 (AGRA-DELHI, 215kms 3.30hrs en auto)</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri;\"><span lang=\"ES-VE\" style=\"font-family: Cambria;\"><span style=\"font-family: Verdana;\">Este d\u00eda por la ma\u00f1ana, despu\u00e9s del desayuno, salga del hotel y dir\u00edjase directamente al aeropuerto internacional de Delhi para tomar el vuelo de regreso a casa con dulces recuerdos del tour de 7 d\u00edas por Delhi-Jaipur-Agr</span><o:p></o:p></span></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 13,
+    "fields": {
+        "tour_data": 6,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2114703.177427498!2d75.6340603421755!3d27.86462761912204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndien!5e0!3m2!1sde!2sde!4v1556040972595!5m2!1sde!2sde\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 14,
+    "fields": {
+        "tour_data": 5,
+        "option_tab": 3,
+        "content": "[NEXForms id=\"62\"]"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 15,
+    "fields": {
+        "tour_data": 6,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 16,
+    "fields": {
+        "tour_data": 7,
+        "option_tab": 1,
+        "content": "<p></p><p><span>\ufeff</span>[timeline]</p><p>[timeline_item item_number=\"VE.001\" title=\"VERANO EUROPEO\"]\r\n\r\n</p><p><br></p><ul><li><b>D\u00eda 01 S\u00e1bado 03 Agosto-Santo Domingo -Par\u00eds.\u00a0</b>salida de Santo Domingo con destino a Par\u00eds. Cena y noche a bordo.</li><li><b>D\u00eda 02 Domingo 04 Agosto-Par\u00eds. </b>Bienvenidos a Francia. Traslado al hotel y tiempo libre.</li>\r\n     <li><b>D\u00eda 03 Lunes 05 Agosto-Par\u00eds.</b>\u00a0 Tras el desayuno, incluimos un traslado al palacio de Versalles. Podr\u00e1 pasear por sus hermosos jardines o visitar su interior si lo desea (para los grupos con visita el lunes este traslado se realizara el martes por cierre del palacio). Tras ello iremos al barrio bohemio de Montmartre con sus peque\u00f1os restaurantes y sus artista al aire libre donde podr\u00e1 almorzar. Tras el almuerzo, realizamos una visita panor\u00e1mica del Par\u00eds con gu\u00eda local. Regreso al hotel. Opcionalmente podra asistir al espect\u00e1culo del Molino Rojo.</li><li><b>D\u00eda\u00a004 Martes 06 Agosto -Par\u00eds. </b>D\u00eda libre en Par\u00eds. Si lo desea podr\u00e1 realizar una actividad opcional: visita del Barrio latino con catedral y paseo en el r\u00edo Sena</li><li><b>D\u00eda 05 Mi\u00e9rcoles 07 Agosto -Par\u00eds -Ginebra-Aosta.\u00a0</b>\u00a0Hoy madrugada, tenemos una hermosa etapa. viajamos hacia <b>Suiza. </b>a la hora del almuerzo llegamos a Ginebra. Tiempo para almorzar y pasear en esta bonita ciudad Suiza, a orillas de su lago. Por la tarde continuamos ruta hacia las mas alta cumbres de Europa:<b> los Alpes</b>. Atravesaremos los Alpes por el t\u00fanel bajo del Mont Blanc, uno de los m\u00e1s largos de Europa. Bonitos paisajes alpinos en Italia, siguiendo el valle de Aosta. Llegando al final del d\u00eda a la regi\u00f3n de <b>Aosta.</b></li><li><b>D\u00eda\u00a006 Jueves 08 Agosto - Aosta-Venecia.\u00a0\u00a0</b></li><li>Despu\u00e9s del desayuno, salimos de Aosta hacia la rica llanura del rio Po. Venecia, llegada a la hora del almuerzo\u00a0(sobre 13:00h ). Por la tarde, incluimos un traslado en barco y visita <b>Panor\u00e1mica a pie de la plaza de SanMarcos</b> con demostraci\u00f3n de la producci\u00f3n de cristal de la isla de Venecia. Opcionalmente le sugerimos completar su tiempo con un paseo en g\u00f3ndola. Alojamiento en la Zona de Mestre o alrededores.</li><li><b>D\u00eda\u00a007 Viernes 09 Agosto -Venecia-Ravena-Asis-Roma. </b>Desayuno. Saldremos de Venecia y llegamos a Ravena, donde podemos conocer el Mausoleo de Gala Placidia y la Bas\u00edlica de San Vital.Tras ello. Cruzamos los Apeninos hacia Asis.Tiempo libre para almorzar y conocer las bas\u00edlicas. Continuaci\u00f3n a Roma. Llegada al final del d\u00eda.\u00a0 \u00a0\u00a0</li>\r\n</ul><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 17,
+    "fields": {
+        "tour_data": 7,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 18,
+    "fields": {
+        "tour_data": 7,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21817053.091336824!2d4.128700404944617!3d48.12538688623387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ed8886cfadda85%3A0x72ef99e6b3fcf079!2sEuropa!5e0!3m2!1ses-419!2sdo!4v1558125262041!5m2!1ses-419!2sdo\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 19,
+    "fields": {
+        "tour_data": 8,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11130664.513202595!2d13.03287009548959!3d47.070689589746465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ed8886cfadda85%3A0x72ef99e6b3fcf079!2sEuropa!5e0!3m2!1ses-419!2sdo!4v1558127727045!5m2!1ses-419!2sdo\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 20,
+    "fields": {
+        "tour_data": 8,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"FE.002\" title=\"FANTAS\u00cdA\u00a0EUROPEA\"]\r\n\r\n</p><p><b><strong><br></strong></b></p><p>\u00a0\u00a0</p><ul><li><b>D\u00eda\u00a004 Octubre 2019 - SDQ - Par\u00eds\u00a0Madrid.</b><br></li><li><b>D\u00eda\u00a005 Octubre 2019 Madrid.</b><br>Llegada a Europa . Bienvenidos a Espa\u00f1a. Madrid.\u00a0 Traslado al hotel. Por la tarde tendremos una visita panor\u00e1mica durante la cual conoceremos los puntos monumentales mas activos. por la noche incluimos un traslado paseo a la Plaza Mayor, donde podemos aprovechar para tomar unos vinos en alg\u00fan mes\u00f3n.\u00a0 \u00a0</li>\r\n     <li><b>D\u00eda\u00a006 Octubre 2019 Madrid - Toledo - Madrid.</b><br>Incluimos una excursi\u00f3n\u00a0a la hist\u00f3rica\u00a0ciudad de TOLEDO , protegida por ri\u00f3\u00a0Tajo. Sus calles medievales nos hablan de historias de cristianos, jud\u00edos\u00a0y musulmanes. Tarde libre en Madrid. Esta noche , si lo desea , le proponemos opcional-mente un espect\u00e1culo flamenco.\u00a0</li><li><b>D\u00eda\u00a007 Octubre 2019 Madrid - Zaragoza - Barcelona.</b><br>Salimos\u00a0 hacia Arg\u00f3n atravesando tierras de Castilla. En Zaragoza nos detenemos breve-mente para conocer la bas\u00edlica del Pilar. Barcelona, llegada y breve panor\u00e1mica en autocar por sus principales arterias para familiarizarnos con la capital catalana. Nota: ( En ocasiones la visita puede realizarse en la ma\u00f1ana del d\u00eda siguiente.)\u00a0</li><li><b>D\u00eda\u00a008 Octubre 2019 Barcelona - Costa Azul.</b><br>\u00a0Tiempo libre en Barcelona , podr\u00e1 usted caminar por el barrio G\u00f3tico, Las Ramblas y visitar la catedral. A las 12:00 h salimos hacia Francia y la Costa Azul atravesando la provenza francesa. Parda en ruta para almorzar. Costa Azul , llegada al final del d\u00eda.</li><li><b>D\u00eda\u00a009 Octubre 2019 Costa Azul - Florencia.</b><br>Esta ma\u00f1ana conocemos la Costa Azul; estamos un breve tiempo en NIZA para disfrutar del paseo de los ingleses. Viajamos entre impresionantes paisajes al Principado Independiente de M\u00d3NACO; en la ruta hemos conocido las t\u00e9cnicas\u00a0de fabricaci\u00f3n\u00a0tradicional de perfumes. Llegada a RAPALLO encantadora peque\u00f1a ciudad tur\u00edstica\u00a0junto al mar. Salida para PISA, tiempo para admirar su conjunto art\u00edstico\u00a0donde se encuentra la famosa Torre Inclinada. Llegada Florencia al final del d\u00eda. Alojamiento</li><li><b>D\u00eda 10 Octubre 2019 Florencia - Roma.<br></b>D\u00eda en Florencia , por la ma\u00f1ana incluimos una vista panor\u00e1mica de la ciudad durante la cual conoceremos sus principales atractivos. El centro hist\u00f3rico de la ciudad , las bulliciosas plazas, los puentes sobre el ri\u00f3 Arno las compras en sus mercadillos. Sobre las 16:30 h salimos hacia ROMA, llegada al final de la tarde .</li><li><b>D\u00eda\u00a011 Octubre 2019 Roma.</b><br>Le incluimos una\u00a0visita panor\u00e1mica\u00a0durante la cual tendr\u00e1\u00a0una introducci\u00f3n a la ciudad eterna. Finalizamos en SAN PEDRO DEL VATICANO . Puede usted conocer la bas\u00edlica y los museos. Por la noche incluimos un traslado al Trastevere, animado barrio de la ciudad conocido por sus t\u00edpicos peque\u00f1os restaurantes.</li><li><b>D\u00eda\u00a012 Octubre 2019 Roma.</b><br>D\u00eda libre. Hoy le proponemos realizar excursi\u00f3n opcional a N\u00e1poles y Pompeya.\u00a0</li><li><b>D\u00eda\u00a013 Octubre 2019 Roma - As\u00eds\u00a0- Ravena - Padua .</b><br>Saldremos hacia AS\u00cdS, tiempo libre para conocer la Bas\u00edlica de San Francisco. Continuaci\u00f3n a R\u00e1vena donde podemos conocer el Mausoleo de Gala Placidia y la Bas\u00edlica de San Vital. Llegada a Padua. Alojamiento.</li><li><b>D\u00eda\u00a014 Octubre 2019 Padua - Aosta.<br></b>Por la ma\u00f1ana salida a VENECIA , incluimos un traslado en barco y visita panor\u00e1mica a pie por la Plaza San Marcos con demostraci\u00f3n de la producci\u00f3n de cristal soplado de la isla de Venecia . Contaminaci\u00f3n a AOSTA. Alojamiento.</li><li><b>D\u00eda\u00a015 Octubre 2019\u00a0 Aosta -\u00a0 Par\u00eds.</b><br>Nuestra etapa es larga , presenta magn\u00edficos\u00a0paisajes<b>. </b>Cruzamos por el t\u00fanel bajo el Mont Blanc, la mas alta cumbre de los Alpes ,pasamos\u00a0 por la zona de chamonix , en el coraz\u00f3n de los Alpes , rodeados por cumbres con nieves eternas. Seguimos ruta hacia GINEBRA. Tiempo para un paseo y almorzar en esta capital Suiza junto al hermoso lago. Contaminaci\u00f3n por el centro de Francia hacia PAR\u00cdS - Llegada sobre las 21:11 h.</li><li><b>D\u00eda\u00a016 Octubre 2019 Par\u00eds.\u00a0<br></b>Incluimos un traslado al Palacio de Versalles. podr\u00e1 pasear por sus hermosos jardines o visitar su interior si lo desea. Tras ello realizamos visita panor\u00e1mica de Par\u00eds; la visita finaliza en el museo del Louvre. Sugerimos una visita al museo. Tarde libre. Por la noche traslado al barrio bohemio de Montmartre con sus peque\u00f1os restaurantes y sus artistas al aire libre. Regreso al hotel.</li><li><b>D\u00eda\u00a017 Octubre 2019\u00a0Par\u00eds.<br></b>D\u00eda libre. Hoy puede realizar opcional-mente visita al Museo del Louvre y un paseo en barco por el r\u00edo Sena, Barrio Latino y Catedral.</li><li><b>D\u00eda\u00a018 Octubre 2019 Par\u00eds.<br></b>Despu\u00e9s del desayuno , Traslado de salida y fin de nuestros servicios.\u00a0 \u00a0 \u00a0 \u00a0 \u00a0<b>\u00a0\u00a0</b>\u00a0 \u00a0 \u00a0\u00a0<b>\u00a0</b></li>\r\n</ul>\r\n[/timeline_item<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 21,
+    "fields": {
+        "tour_data": 9,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 22,
+    "fields": {
+        "tour_data": 9,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"<b><span style=\"font-size: 14px;\">CTPP</span></b>\" title=\"<span style=\"caret-color: rgb(13, 29, 49); color: rgb(13, 29, 49); font-family: Raleway; font-size: 14px; font-weight: 900; text-transform: uppercase; background-color: rgb(251, 251, 251);\">CONGRESO INTERNACIONAL DE TURISMO</span>\"]\r\n\r\n</p><p><b><span style=\"font-size: 14px;\">Viernes 25.10.2019</span></b></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\">01:00 p.m. - 02:00 p.m.</span><o:p></o:p></span></p><div style=\"font-family: -webkit-standard; border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: rgb(210, 210, 220); padding: 0cm 0cm 9pt;\"><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: 12pt; font-family: Cambria; border: none; padding: 0cm;\"><b><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Check-In</span><o:p></o:p></span></b></p></div><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: Raleway, serif;\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Proceso de registro en el hotel, entrega de mapa, tarjeta de habitaci\u00f3n\u00a0\u00a0</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span lang=\"ES-TRAD\" style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\"><o:p>\u00a0</o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">02:00 pm - 03:30 pm</span><o:p></o:p></span></p><div style=\"font-family: -webkit-standard; border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: rgb(210, 210, 220); padding: 0cm 0cm 9pt;\"><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: 12pt; font-family: Cambria; border: none; padding: 0cm;\"><b><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Recibimiento\u2013Ubicaci\u00f3n y Registro de Participantes \u2013 Presentaci\u00f3n del Ballet Folklorico</span><o:p></o:p></span></b></p></div><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria; line-height: 18pt;\"><span style=\"font-size: 14pt; font-family: Raleway, serif;\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Palabras de Bienvenida Carmen Rosa Pichardo M.A., Gerente General \u2013 CTA Palabras de Salutaci\u00f3n Lic. Minerva Calder\u00f3n L\u00f3pez, M. A., Vicerrectora Universidad-Sociedad - Presentaci\u00f3n Oferta Acad\u00e9mica de la Universidad Tecnol\u00f3gica de Santiago\u00a0</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><b><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\">Carmen Rosa Pichardo M.A.</span></b><span style=\"font-size: 14pt; font-family: Raleway, serif;\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0/ Gerente General \u2013 CTA\u00a0\u00a0</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span lang=\"ES-TRAD\" style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\"><o:p>\u00a0</o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">03:30 pm - 04:15 pm</span><o:p></o:p></span></p><div style=\"font-family: -webkit-standard; border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: rgb(210, 210, 220); padding: 0cm 0cm 9pt;\"><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: 12pt; font-family: Cambria; border: none; padding: 0cm;\"><b><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Turismo Alternativo, Diversificaciones Tur\u00edstica, la oferta, Retos y Oportunidades</span><o:p></o:p></span></b></p></div><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria; line-height: 18pt;\"><span style=\"font-size: 14pt; font-family: Raleway, serif;\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">PONENCIA INAUGURAL</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><b><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\">Milka Hern\u00e1ndez</span></b><span style=\"font-size: 14pt; font-family: Raleway, serif;\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0/ Directora Dpto. Promoci\u00f3n Nacional en Ministerio de Turismo de la Rep\u00fablica Dominicana\u00a0\u00a0</span><a href=\"https://www.facebook.com/milka.hernandez\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" color:=\"\" windowtext;=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0</span></a><a href=\"https://www.linkedin.com/in/milkahernandez\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" color:=\"\" windowtext;=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0</span></a><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">04:20 pm - 04:45 pm</span><o:p></o:p></span></p><div style=\"font-family: -webkit-standard; border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: rgb(210, 210, 220); padding: 0cm 0cm 9pt;\"><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: 12pt; font-family: Cambria; border: none; padding: 0cm;\"><b><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">PRESENTACI\u00d3N DE PATROCINADORES</span><o:p></o:p></span></b></p></div><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: Raleway, serif;\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Trajeado Alta Costura (Gabriel de Le\u00f3n) Patrocinador Patrocinador Patrocinador\u00a0 -</span><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0</span><b><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Varios</span></b><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0/ \u00a0\u00a0</span></span><span style=\"font-size: 14pt; font-family: \" times=\"\" new=\"\" roman\";\"=\"\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span lang=\"ES-TRAD\" style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\"><o:p>\u00a0</o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">04:50 p.m. - 05:20 p.m.</span><o:p></o:p></span></p><div style=\"font-family: -webkit-standard; border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: rgb(210, 210, 220); padding: 0cm 0cm 9pt;\"><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: 12pt; font-family: Cambria; border: none; padding: 0cm;\"><b><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">\u201cImportancia de la Seguridad en el Medio Tur\u00edstico\u201d</span><o:p></o:p></span></b></p></div><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><b><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\">Luis Humberto Pobeda Zapata</span></b><span style=\"font-size: 14pt; font-family: Raleway, serif;\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">\u00a0/ \u00a0</span><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span lang=\"ES-TRAD\" style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\"><o:p>\u00a0</o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">05:25 p.m. a 05:50 p.m</span><o:p></o:p></span></p><div style=\"font-family: -webkit-standard; border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: rgb(210, 210, 220); padding: 0cm 0cm 9pt;\"><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: 12pt; font-family: Cambria; border: none; padding: 0cm;\"><b><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">PRESENTACI\u00d3N DE PATROCINADORES</span><o:p></o:p></span></b></p></div><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"></p><br><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">06:30 p.m. a 08:00 p.m.</span><o:p></o:p></span></p><div style=\"font-family: -webkit-standard; border-style: none none solid; border-bottom-width: 1pt; border-bottom-color: rgb(210, 210, 220); padding: 0cm 0cm 9pt;\"><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 9pt; font-size: 12pt; font-family: Cambria; border: none; padding: 0cm;\"><b><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Disfrute de Estancia</span></span></b></p></div><p class=\"MsoNormal\" style=\"margin: 0cm 0cm 0.0001pt; font-size: medium; font-family: Cambria;\"><span style=\"font-size: 14pt; font-family: \" roboto=\"\" bold\";\"=\"\"><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">08:00 p.m. a 09:00 p.m.</span><o:p></o:p></span></p><b style=\"font-family: Cambria; font-size: 12pt;\"><span style=\"font-size: 14pt; font-family: Helvetica;\"><span style=\"color: windowtext; font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\" sans\";=\"\" font-size:=\"\" 14px;\"=\"\">Cena Dominicana</span></span></b><div><br></div><div><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\">\u00a0[/timeline_item]</span><p></p><p><span style=\"font-size: 14px; font-family: \" open=\"\" sans\";\"=\"\">\u00a0[/timeline]</span></p><p></p><p></p></div>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 23,
+    "fields": {
+        "tour_data": 9,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483896.2050675191!2d-68.8514245252747!3d18.6442956789599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea891645dcbfe77%3A0x61881cfaed12f6f3!2sPunta+Cana!5e0!3m2!1ses-419!2sdo!4v1558539757564!5m2!1ses-419!2sdo\" width=\"99%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 24,
+    "fields": {
+        "tour_data": 10,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"\" title=\"2do. Congreso Internacional de turismo en La Habana CUBA\"]\r\n\r\n</p><div class=\"article-post\" style=\"margin: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; text-align: justify; widows: 2;\"><h4 style=\"margin: 0px; padding: 25px 0px 0px; font-family: Verdana, sans-serif; color: rgb(19, 33, 45); font-size: 18px; text-transform: uppercase;\"><span style=\"font-size: 14px;\">LUNES 16 DE SEPTIEMBRE RECIBIMIENTO Y REGISTRO</span></h4><ul style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><li style=\"margin: 0px; padding: 0px;\">Arribo de los participantes al Aeropuerto Internacional Jos\u00e9 Mart\u00ed.</li><li style=\"margin: 0px; padding: 0px;\">Traslado a los hoteles sede.</li><li style=\"margin: 0px; padding: 0px;\">Recibimiento y Chek in a su llegada al hotel.</li><li style=\"margin: 0px; padding: 0px;\">Registro de los participantes / entrega de gafete y kit de bienvenida</li><li style=\"margin: 0px; padding: 0px;\">Tarde Libre y noche Libre: La Bodeguita del Medio y El Florifita(opcionales)</li></ul></div><div class=\"article-post\" style=\"margin: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; text-align: justify; widows: 2;\"><h4 style=\"margin: 0px; padding: 25px 0px 0px; font-family: Verdana, sans-serif; color: rgb(19, 33, 45); font-size: 18px; text-transform: uppercase;\"><span style=\"font-size: 14px;\">MARTES 17 DE SEPTIEMBRE JORNADAS DE CITAS PRE-ESTABLECIDAS</span></h4><ul style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><li style=\"margin: 0px; padding: 0px;\">7:00 hr: Desayuno en el hotel.</li><li style=\"margin: 0px; padding: 0px;\">8:00 hr: Traslado al Hotel Tryp Habana Libre</li><li style=\"margin: 0px; padding: 0px;\">8:30 hr: Inauguraci\u00f3n de Meeting Place Cuba en el \u00e1rea de exposici\u00f3n. Sal\u00f3n: Embajadores. Palabras a cargo del Ministerio de Turismo de Cuba; Presidente de ACTUAL y el Presidente de Meeting Place Cuba. Corte del List\u00f3n inaugural.</li><li style=\"margin: 0px; padding: 0px;\">10:00 hr: Inicio de Citas Preestablecidas</li><li style=\"margin: 0px; padding: 0px;\">(Las citas tienen una duraci\u00f3n de 15 minutos cada una. Estaci\u00f3n de coffee break en el area de expo)</li><li style=\"margin: 0px; padding: 0px;\">13:00 \u2013 14:30 hr : Almuerzo en el Hotel Tryp Habana Libre.</li><li style=\"margin: 0px; padding: 0px;\">14:30 \u2013 17:00 hr: Contin\u00faan las citas pre-establecidas</li><li style=\"margin: 0px; padding: 0px;\">(Las citas tienen una duraci\u00f3n de 15 minutos cada una. Estaci\u00f3n de coffee break en el area de expo)</li><li style=\"margin: 0px; padding: 0px;\">17:00 hr: Traslado a los hoteles sede.</li><li style=\"margin: 0px; padding: 0px;\">18:30 hr: Salida de los autobuses al Hotel Iberostar Grand Packard.</li><li style=\"margin: 0px; padding: 0px;\">19:00 hr. Coctel de Bienvenida en Hotel Iberostar Grand Packard. Saludo de Bienvenida a todos los participantes a cargo de: MINTUR, ACTUAL y MEETING PLACE</li><li style=\"margin: 0px; padding: 0px;\">22:00 hr: Fin del Coctel. Traslado a los hoteles sede</li></ul></div><div class=\"article-post\" style=\"margin: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; text-align: justify; widows: 2;\"><h4 style=\"margin: 0px; padding: 25px 0px 0px; font-family: Verdana, sans-serif; color: rgb(19, 33, 45); font-size: 18px; text-transform: uppercase;\"><span style=\"font-size: 14px;\">MIERCOLES 18 CONTINUAN JORNADAS DE CITAS PRE-ESTABLECIDAS</span></h4><ul style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><li style=\"margin: 0px; padding: 0px;\">7:00 hr: Desayuno en el hotel.</li><li style=\"margin: 0px; padding: 0px;\">8:30 hr: Traslado al Hotel Tryp Habana Libre</li><li style=\"margin: 0px; padding: 0px;\">10:00 hr: Citas Preestablecidas Sal\u00f3n: Embajadores(15 minutos de duraci\u00f3n cada cita)</li><li style=\"margin: 0px; padding: 0px;\">13:00 - 14:30 hr: Almuerzo en el Restaurante Habana Caf\u00e9 ubicado en el Hotel Meli\u00e1 Coh\u00edba</li><li style=\"margin: 0px; padding: 0px;\">Tarde Libre: Actividades opcionales*</li><li style=\"margin: 0px; padding: 0px;\">19:00 hr. Traslado de los participantes al Cabaret Tropicana.</li><li style=\"margin: 0px; padding: 0px;\">20:00 hr: Noche especial en el Cabaret Tropicana</li><li style=\"margin: 0px; padding: 0px;\">23:00 hr: Fin del d\u00eda. Traslado a los hoteles sede.</li></ul></div><div class=\"article-post\" style=\"margin: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; text-align: justify; widows: 2;\"><h4 style=\"margin: 0px; padding: 25px 0px 0px; font-family: Verdana, sans-serif; color: rgb(19, 33, 45); font-size: 18px; text-transform: uppercase;\"><span style=\"font-size: 14px;\">JUEVES 19 DE SEPTIEMBRE CULTURA Y TURISMO</span></h4><ul style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><li style=\"margin: 0px; padding: 0px;\">7:00 hr: Desayuno en el hotel.</li><li style=\"margin: 0px; padding: 0px;\">08:10 hr: Traslado al Hotel Meli\u00e1 Cohiba.</li><li style=\"margin: 0px; padding: 0px;\">08:40 - 09:00 hr: Inauguraci\u00f3n del II Congreso Internacional ACTUAL.</li><li style=\"margin: 0px; padding: 0px;\">Saludo del MINTUR. Palabras del Presidente ACTUAL y Presidente de Meeting Place Cuba</li><li style=\"margin: 0px; padding: 0px;\">09:00 - 09:30 hr UNESCO</li><li style=\"margin: 0px; padding: 0px;\">09:30 - 09:40 hr Coffee Break</li><li style=\"margin: 0px; padding: 0px;\">09:40 - 10:10 hr UNWTO</li><li style=\"margin: 0px; padding: 0px;\">10:10 - 10:20 hr Coffee Break</li><li style=\"margin: 0px; padding: 0px;\">10:20 - 10:50 hr MINTUR</li><li style=\"margin: 0px; padding: 0px;\">10:50 - 11:00 hr Coffee Break</li><li style=\"margin: 0px; padding: 0px;\">11:00 - 11:30 hr Presentaci\u00f3n Cultural</li><li style=\"margin: 0px; padding: 0px;\">11:30 - 11:40 hr Coffee Break</li><li style=\"margin: 0px; padding: 0px;\">11:40 - 13:00 hr Programa de Capacitaci\u00f3n MICE</li><li style=\"margin: 0px; padding: 0px;\">13:00 - 14:30 hr Almuerzo en el Hotel Meli\u00e1 Cohiba.</li><li style=\"margin: 0px; padding: 0px;\">14:30 - 17:30 hr Programa de Capacitaci\u00f3n MICE</li><li style=\"margin: 0px; padding: 0px;\">17:30 hr Entrega de Certificados para los participantes del programa MICE</li><li style=\"margin: 0px; padding: 0px;\">19:00 hr Salida de los autobuses hacia la Plaza de la Catedral, ubicada en el Centro Hist\u00f3rico de la Ciudad.</li><li style=\"margin: 0px; padding: 0px;\">20:00 hr Cena de Clausura con la presencia de reconocidos artistas de la musica cubana</li><li style=\"margin: 0px; padding: 0px;\">23:00 hr Fin del Programa. Traslado a los hoteles sede.</li></ul></div><div class=\"article-post\" style=\"margin: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; text-align: justify; widows: 2;\"><h4 style=\"margin: 0px; padding: 25px 0px 0px; font-family: Verdana, sans-serif; color: rgb(19, 33, 45); font-size: 18px; text-transform: uppercase;\"><span style=\"font-size: 14px;\">VIERNES 20 POST TOURS (VARADERO, CAYO SANTAMAR\u00cdA)</span></h4></div><div class=\"article-post\" style=\"margin: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; text-align: justify; widows: 2;\"><h4 style=\"margin: 0px; padding: 25px 0px 0px; font-family: Verdana, sans-serif; color: rgb(19, 33, 45); font-size: 18px; text-transform: uppercase;\"><span style=\"font-size: 14px;\">S\u00c1BADO 21 POST TOURS (VARADERO, CAYO SANTAMAR\u00cdA)</span></h4></div><div class=\"article-post\" style=\"margin: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; text-align: justify; widows: 2;\"><h4 style=\"margin: 0px; padding: 25px 0px 0px; font-family: Verdana, sans-serif; color: rgb(19, 33, 45); font-size: 18px; text-transform: uppercase;\"><span style=\"font-size: 14px;\">DOMINGO 22 TRASLADO AL AEROPUERTO PARA EL REGRESO A SUS PA\u00cdSES</span></h4></div><ul>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 25,
+    "fields": {
+        "tour_data": 10,
+        "option_tab": 3,
+        "content": "<div><b><span style=\"font-family: Verdana;\">EL REGISTRO INCLUYE</span><br><br></b></div><div><b><span style=\"font-family: Verdana; font-size: 14px;\">ACTIVIDADES 16 DE SEPTIEMBRE DEL CONGRESO ACTUAL</span></b></div><div><br><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 Arribo de los participantes al Aeropuerto Internacional Jos\u00e9 Mart\u00ed.</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 Traslado a los hoteles sede.</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 Recibimiento y Chek in a su llegada al hotel.</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 Registro de los participantes / entrega de gafete y kit de bienvenida</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 Tarde Libre y noche Libre: La Bodeguita del Medio y El Florifita (opcionales)</span></div><div><br><b><span style=\"font-family: Verdana; font-size: 14px;\">ACTIVIDADES 17 DE SEPTIEMBRE DEL CONGRESO ACTUAL</span></b></div><div><br><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 Martes 17 de Septiembre Jornadas de Citas pre-establecidas</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 7:30 hr: Desayuno en el hotel.</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 8:30 hr: Traslado al Hotel Melia Coh\u00edba</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 9:00 hr: Ceremonia inaugural del II Congreso de ACTUAL y la 17 Edici\u00f3n de Meeting Place Cuba. Sal\u00f3n Lanceros.</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 10:00 hr: Inicio de Citas Preestablecidas</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">(Las citas tienen una duraci\u00f3n de 15 minutos cada una. Estaci\u00f3n de coffee break en el area de expo) (Inicio de las visitas de prospecci\u00f3n a nuevos hoteles y productos de la Ciudad de la Habana, para las agencias que no participan en las citas pre establecidas.)</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 13:00 \u2013 14:30 hr : Almuerzo en el Melia Coh\u00edba</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 14:30 \u2013 17:00 hr: Contin\u00faan las citas pre-establecidas</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 17:00 hr: Traslado a los hoteles sede.</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 18:30 hr: Salida de los autobuses al Hotel Iberostar Grand Packard.</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 19:00 hr. Coctel de Bienvenida en Hotel Iberostar Grand Packard. Saludo de Bienvenida a todos los participantes a cargo de: MINTUR, ACTUAL y MEETING PLACE</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 22:00 hr: Fin del Coctel. Traslado a los hoteles sede</span></div><div><span style=\"font-family: Verdana; font-size: 14px;\"><br></span></div><hr><div><span style=\"font-family: Verdana; font-size: 14px;\"><br></span></div><br><span style=\"font-family: Verdana; font-size: 14px;\">+ ACTIVIDADES 18 DE SEPTIEMBRE DEL CONGRESO ACTUAL\r\n</span><br><span style=\"font-family: Verdana; font-size: 14px;\">+ ACTIVIDADES 19 DE SEPTIEMBRE DEL CONGRESO ACTUAL\r\n</span><br><span style=\"font-family: Verdana; font-size: 14px;\">+ ACTIVIDADES 20 DE SEPTIEMBRE POST CONGRESO ACTUAL\r\n</span><br><span style=\"font-family: Verdana; font-size: 14px;\">+ ACTIVIDADES 21 DE SEPTIEMBRE POST CONGRESO ACTUAL\r\n</span><br><br><span style=\"font-family: Verdana; font-size: 14px;\">\u2022 PAQUETE DEL CONGRESO ACTUAL\r\n</span><br><div class=\"accordion-style1 clearfix\" style=\"margin: 0px; padding: 0px; caret-color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 15px; text-size-adjust: auto;\"><div class=\"panel-group\" id=\"accordion\" style=\"margin-top: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;\"><div class=\"panel panel-default\" style=\"margin-top: 0px; margin-right: 0px; margin-left: 0px; padding: 0px; border-width: initial; border-style: none; border-color: initial; text-shadow: none; overflow: hidden;\"><div id=\"collapse1\" class=\"panel-collapse collapse in\" style=\"margin: 0px; padding: 0px;\"><div class=\"panel-body\" style=\"margin: 0px; padding: 0px; box-shadow: none; border-right: none; border-bottom: none; border-left: none; font-size: 18px; line-height: 28px; font-family: Verdana; transition: all 0.3s ease-in-out 0s;\"><div class=\"col-xs-12 col-md-12\" style=\"margin: 0px; padding-top: 0px; padding-bottom: 0px; width: 750px;\"><div class=\"accordion-style1 clearfix\" style=\"margin: 0px; padding: 0px;\"><div class=\"panel-group collapse in\" id=\"accordion1\" aria-expanded=\"true\" style=\"margin-top: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;\"><div class=\"panel panel-default\" style=\"margin-top: 5px; margin-right: 0px; margin-left: 0px; padding: 0px; border-width: initial; border-style: none; border-color: initial; text-shadow: none; overflow: hidden;\"><div id=\"collapse6\" class=\"panel-collapse collapse in\" aria-expanded=\"true\" style=\"margin: 0px; padding: 0px;\"><div class=\"panel-body\" style=\"margin: 0px; padding: 0px; box-shadow: none; border-right: none; border-bottom: none; border-left: none; line-height: 28px; transition: all 0.3s ease-in-out 0s;\"><ul class=\"lista\" style=\"margin-top: 10px; margin-right: 10px; margin-left: 10px; padding: 10px;\"><li style=\"margin: 0px; padding: 0px;\"><span style=\"font-size: 14px;\">Alojamiento (Desayuno + Cena)</span></li><li style=\"margin: 0px; padding: 0px;\"><span style=\"font-size: 14px;\">Post Tours** 50 USD costo adicional por el transfer in/out al destino elegido</span></li><li style=\"margin: 0px; padding: 0px;\"><span style=\"font-size: 14px;\">Traslados</span></li><li style=\"margin: 0px; padding: 0px;\"><span style=\"font-size: 14px;\">Asistencia 24 hr destino</span></li></ul></div></div></div></div></div></div></div></div></div></div></div><hr><p style=\"margin-bottom: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; text-size-adjust: auto; color: red;\"><span style=\"font-size: 14px;\">El REGISTRO NO INCLUYE</span></p><ul style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 0px 25px; caret-color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 15px; text-size-adjust: auto;\"><li style=\"margin: 0px; padding: 0px;\"><span style=\"font-size: 14px;\">Boleto de Avi\u00f3n</span></li><li style=\"margin: 0px; padding: 0px;\"><span style=\"font-size: 14px;\">Seguro de Viaje</span></li><li style=\"margin: 0px; padding: 0px;\"><span style=\"font-size: 14px;\">Seguro M\u00e9dico</span></li></ul><p style=\"margin-bottom: 0px; padding: 0px; font-family: Verdana, sans-serif; font-size: 15px; text-size-adjust: auto; color: red;\"><span style=\"font-size: 14px;\">Cualquier otro gasto no mencionado expl\u00edcitamente ser\u00e1n responsabilidad del participante.</span></p><p><br></p><hr><p><br><span style=\"color: rgb(68, 68, 68); font-family: -apple-system, system-ui, \" segoe=\"\" ui\",=\"\" roboto,=\"\" oxygen-sans,=\"\" ubuntu,=\"\" cantarell,=\"\" \"helvetica=\"\" neue\",=\"\" sans-serif;\"=\"\">[NEXForms id=\"85\"]</span><br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 26,
+    "fields": {
+        "tour_data": 10,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d469921.0195668175!2d-82.6135166064595!3d23.051002280871867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88cd774cbdf600e1%3A0x4e294d7e1a770d60!2sLa+Habana%2C+Cuba!5e0!3m2!1ses-419!2sdo!4v1558553519680!5m2!1ses-419!2sdo\" width=\"99%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 27,
+    "fields": {
+        "tour_data": 11,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21537479.057517543!2d-12.995284105040636!3d48.780233138288104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4604f9cd7bd405cd%3A0x14a5068df93535e8!2sEuropa+septentrional!5e0!3m2!1ses-419!2sdo!4v1559050295495!5m2!1ses-419!2sdo\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 28,
+    "fields": {
+        "tour_data": 11,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"<b>EN.003-19</b>\" title=\"<b>EUROPA DEL NORTE</b>\"]\r\n\r\n</p><p><br></p><ul><li><b>Viernes 16/AGO. York - Berl\u00edn.</b>\u00a0<br>Salida en el vuelo Delta 92 ( JFK, 08:40pm - TXL, 10:50am).</li>\r\n     <li><b>S\u00e1bado\u00a017/AGO. Berl\u00edn.\u00a0</b><br>Llegada a Berl\u00edn y traslado al hotel. Tiempo libre para tomar un primer contacto. Cena incluida y alojamiento. Hotel Park Inn Alexander Platz.</li><li><b>Domingo\u00a018/AGO. Berl\u00edn. Desayuno.</b><br>Visita panor\u00e1mica con gu\u00eda de habla hispana de lo mas caracter\u00edstico de la capital de Alemania: veremos la puerta de Brandenburgo, uno de los s\u00edmbolos m\u00e1s importantes de la cuidad, la isla de los Museos, Alexander Platz, el barrio de San Nicol\u00e1s, la plaza de la Gendarmeria, los resto del Muro, la avenida de Unter den Linden, entre otros. Almuerzo incluido. Regreso al hotel. Cena incluida y alojamiento.\u00a0</li><li><b>Lunes 19/AGO. Berl\u00edn - Helsinki. Desayuno.\u00a0</b><br>Ma\u00f1ana libre. por la tarde traslado al aeropuerto para tomar vuelo con destino a Helsinki. easyJet 5733 (TXL, 05:20pm - HEL, 08:20pm). Traslado de llegada y alojamiento. Hotel Radisson Blu Seaside.</li><li><b>Martes 20/AGO. Helsinki. Desayuno.</b><br>Realizaremos una visita panor\u00e1mica con gu\u00eda de habla hispana de la capital de Finlandia: la Iglesia Ortodoxa de la Trinidad, la Plaza del Senado, el puerto y su Plaza del Mercado, la Catedral luterana de San Nicol\u00e1s, la catedral Uspenski, en estilo ruso-bizantino, dise\u00f1ada por Aleksei Gornostajev (1868), la Esplanadi, Tempeliaukio, el Monumento a Sibelius, la Mannerheinmintie, la mayor arteria de la cuidad, entre otros. Tiempo libre para seguir conociendo esta hermosa cuidad. Alojamiento.</li><li><b>Mi\u00e9rcoles\u00a021/AGO. Helsinki - Tallin - Helsinki . Desayuno.</b><br>Incluimos excursi\u00f3n de todo el dia a Tallin (Estonia). Iremos en ferry hasta esta hermosa ciudad llamada \"La peque\u00f1a Praga\", en la que realizaremos una vista de la misma, el Ayuntamiento; la iglesia de San Olaf; el Castillo de Toopea, el Placio de Kadriorg; la Catedral Ortodoxa de Domsky; el Monasterio de San Miguel; la Farmacia Municipal, entre otros. A la hora que se indique traslado al puerto para zarpar de regreso a Helsinki. Alojamiento.</li><li><b>Jueves 22/AGO. Helsinki - Oslo. Desayuno.</b><br>Traslado de salida en Helsinki, para tomar vuelo a Oslo. Finnair 913 (HEL,12:10pm - OSL, 12:35pm). Llegada a Oslo y traslado al hotel.Tiempo libre para tomar un primer contacto con la capital de Noruega, una ciudad en la que hoy en d\u00eda se combinan la naturaleza, representada por su fiordo y los espacios verdes que la rodean con la cultura presenta en sus numerosos museos, que le introducir\u00e1n en las costumbres y tradiciones de Noruega. Cena incluida y alojamiento.</li><li><b>Viernes 23/AGO. Oslo. Desayuno.</b><br>Visita panor\u00e1mica: el parque Frogner, la animada calle karl - Johans, el ayuntamiento, el Castillo de Akershus, el Palacio Real , el Parlamento , subiremos la colina del Holmekollen, donde tendremos una maravillosa vista sobre la ciudad y tambi\u00e9n conoceremos el interior del Ayuntamiento, donde se encuentra la sala donde se realizan las celebraciones del Premio Nobel de la paz. Almuerzo incluido. Tarde libre si lo desea podr\u00e1 realizar una excursi\u00f3n opcional a la Pen\u00ednsula de Bygdoy para visitar el museo Vikingo de Oslo, donde se encuentran naves y objetos de esa civilizaci\u00f3n, el museo del Barco Polar Fram, en el que hicieron sus expediciones Admudsen, Nansen y Sverdrup y el museo N\u00f3rdico de Arte Popular al aire libre. Cena incluida y alojamiento.</li><li><b>S\u00e1bado\u00a024/AGO. Oslo - Karlstad - Estocolmo. Desayuno.<br></b>Salida hacia la industria Karistad y tiempo libre para conocer esta ciudad situada a orillas del lago Vanern. Continuaci\u00f3n a Estocolmo. Llegada al hotel y resto del d\u00eda libre que puede aprovechar y pasear en barco por los canales, descubrir la Torre de la TV kknas, con formidables vista de la cuidad y alrededores, entre otros . Cena incluida y alojamiento.</li><li><b>Domingo 25/AGO. Estocolmo. Desayuno.<br></b>Visita panor\u00e1mica en la que realizaremos un recorrido en autob\u00fas por los puntos mas importantes de la ciudad y realizaremos un paseo a pie por la Gamia Stan o ciudad Vieja, cuatro isla unidad entre si sobre las que Bigerl Jarl fundo la ciudad hace 700 a\u00f1os. En nuestro recorrido conoceremos la Gran Plaza, la Catedral el Palacio Real, la isla de los Nobles, entre otros. Almuerzo incluido. Visita opcional del Museo Vasa, y al interior del Ayuntamiento, donde cada a\u00f1o, el 10 de diciembre, se celebra el banquete y el baile de gala posterior a la entrega de los Premios Nobel. Alojamiento.</li><li><b>Lunes 26/AGO. Estocolmo - Copenhague. Desayuno.\u00a0<br></b>Salida hacia dinamarca, recorriendo el interior de Suecia, dejando a nuestro paso Norrkoping y bordeando el Lago Vattern hasta llegar a Malmo, donde cruzamos el Puente de Oresund, que une Suecia y Dinamarca. Fue inaugurando el 1 de julio del a\u00f1o 2000 y es considerado como la gran obra maestra de la ingeniera sueca del siglo XXI. Cuenta con dos lineas de tren y seis pista de carrera, siendo el puente combinado tren - carrera mas larga de Europa con sus casi 8 kil\u00f3metros de longitud. Este puente ha significado una revoluci\u00f3n en los medios de comunicaci\u00f3n europeos. Llegada a Copenhague capital de Dinamarca y la mayor ciudad de Escandinavia. Sus or\u00edgenes se remontan a principios del siglo XI, en que surgio un peque\u00f1o asentamiento de pescadores conocido simplemente como havn (puerto). Mas tarde este puerto adquiri\u00f3 mayor importancia desde el punto de visto comercial y paso al llamarse\u00a0 kobmandshavn: bah\u00eda de los mercaderes, lo que derivo finalmente en su nombre actual. Alojamiento.</li><li>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0</li>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 29,
+    "fields": {
+        "tour_data": 12,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112222.07468421395!2d-81.4387936540193!3d28.481358535983908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C+Florida%2C+EE.+UU.!5e0!3m2!1ses-419!2sdo!4v1559135013038!5m2!1ses-419!2sdo\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 30,
+    "fields": {
+        "tour_data": 13,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p><br></p><p>[timeline_item item_number=\"OE.005\" title=\"ORLANDO EXPRESS\"]\r\n\r\n</p><p><br></p><ul>\r\n     <li><b>D\u00eda\u00a01. 19 SEP. Santo Domingo - Orlando\u00a0</b><br>Bienvenidos a Orlando Traslado al hotel, check in y alojamiento.\u00a0</li><li><b>D\u00eda\u00a02. 20 SEP. Orlando .</b><br>Desayuno en el hotel. Por la ma\u00f1ana salida para Sean World y Acu\u00e1tica para disfrutar de los parques y sus atracciones.</li><li><b>D\u00eda\u00a03. 21 SEP. Orlando.\u00a0<br></b>Desayuno en el hotel. Ma\u00f1ana libre. Por la tarde tendremos traslado y visita de compra a Orlando Premium Outlet.</li><li><b>D\u00eda\u00a04. 22 SEP. Orlando.\u00a0<br></b>Despu\u00e9s del desayuno, salida de sus hoteles a Busch Gardens Tampa a visitar todas las nuevas atracciones del parque. Al finalizar la tarde, traslado al hotel y alojamiento.</li><li><b>D\u00eda\u00a05. 23 SEP. Orlando .</b><br>Despu\u00e9s del desayuno, salida del hotel a Magic Kingdom y visita hasta ver el nuevo show de Magic Kingdom \"Happily Ever After\"\u00a0<br>22:00 Salida de Magic Kingdom a sus hoteles.</li><li><b>D\u00eda\u00a06. 24 SEP. Orlando - Santo Domingo\u00a0</b><br>Desayuno. A la hora acordada, traslado al aeropuerto para tomar vuelo con destino a Santo Domingo. Fin de nuestros servicios.<br>\u00a0 \u00a0 \u00a0\u00a0</li><li><b>ITINERARIO DE VUELO POR AMERICAN AIRLINES:</b></li></ul><table class=\"table table-bordered\"><tbody><tr><td><b>Vuelo</b></td><td><b>Clase</b></td><td><b>Fecha</b></td><td><b>Ruta</b></td><td><b>Salida</b></td><td><b>Llegada</b></td></tr><tr><td>AA987</td><td>N</td><td>19-SEP</td><td>SDQ-MIA</td><td>01:42PM</td><td>04:14PM</td></tr><tr><td>AA463</td><td>N</td><td>19-SEP</td><td>MIA-MCO</td><td>07:40PM</td><td>08:55PM</td></tr><tr><td>AA1362</td><td>V</td><td>24-SEP</td><td>MCO-MIA</td><td>03:37PM</td><td>04:50PM</td></tr><tr><td>AA1337</td><td>V</td><td>24-SEP</td><td>MIA-SDQ</td><td>06:14PM</td><td>08:29PM</td></tr></tbody></table><br>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 31,
+    "fields": {
+        "tour_data": 13,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112222.07468421395!2d-81.4387936540193!3d28.481358535983908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C+Florida%2C+EE.+UU.!5e0!3m2!1ses-419!2sdo!4v1559135013038!5m2!1ses-419!2sdo\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 32,
+    "fields": {
+        "tour_data": 14,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"CR.006\" title=\"CAPITALES RUSAS\"]\r\n\r\n</p><p><br></p><ul><li><b>D\u00eda\u00a01. 18 JUL. Santo Domnigo - Madrid\u00a0</b><br>Salida de Santo Domingo - Madrid. Cena y noche a abordo\u00a0</li>\r\n     <li><b>D\u00eda\u00a02. 19 JUL. Madrid - Mosc\u00fa</b><br>Bienvenidos a Mosc\u00fa Traslado al centro de la ciudad. Tiempo libre para almorzar. A la hora acordada, traslado d regreso al aeropuerto par tomar vuelo con destino a Mosc\u00fa. Bienvenido a Mosc\u00fa Llegada y traslado del aeropuerto al hotel. Alojamiento\u00a0</li><li><b>D\u00eda\u00a03. 20 JUL. Mosc\u00fa</b><br>Desayuno en el hotel. Iniciamos una apasionada visita de la inmensa capital Rusa , de aproximadamente tres horas y media de duraci\u00f3n .\u00a0 Una ciudad que como pocas , une pasado , presente y futuro. Pasaremos por sus inmensas avenidas, sus elegantes zonas comerciales, la plaza raja donde se encuentra el Mausoleo de Lenin, la catedral de San Basilio, la catedral del Cristo Salvador (abierta al culto , no dejan entrar con pantal\u00f3n corto). Incluimos\u00a0 la entrada al Kremlin con visita de sus dos principales catedrales. Trataremos (no garantizado) de coincidir con la procesi\u00f3n ceremonial militar que se celebra en la Sabornaya pl. Al final de la visita pondr\u00e1n permanecer en el centro o regresar al hotel. Tarde libre . Nuestro gu\u00eda les ofrecer\u00e1 realizar las siguientes excursiones opcionales: Visita del Metro de Mosc\u00fa , El show folcl\u00f3rico\"Kostroma\" o el circo de Mosc\u00fa .</li><li><b>Dia 4. 21 JUL. Moc\u00fa .</b><br>Luego de desayunar en el hotel incluimos una excursi\u00f3n a Kolomenskoye:<b>\u00a0</b>Antigua residencia veraniega<b>\u00a0</b>\u00a0de los zares ubicacIon al sur de Mosc\u00fa junto al r\u00edo Moskova . Paseara por sus grandes jardines , sus bosques, conocer\u00e1 la arquitectura t\u00edpico rusa... pero sin duda sus mayores recuerdos ser\u00e1n los que le brinden la ceremonia tradicional de bodas Rusas que recrearemos. De camino pasaremos por el mirador de la universidad , con su fant\u00e1stica vista sobre la ciudad donde las parejas de reci\u00e9n casados depositar flores (el paso por el mirador podr\u00e1 tambi\u00e9n realizar durante la vista del s\u00e1bado). Regreso a nuestro hotel en el centro de Mosc\u00fa al final de la ma\u00f1ana . Tarde libre.<br>Nota: La ceremonia tradicional de bodas solamente puede ser realizada si nuestro grupo se compone de un m\u00ednimo de 15 pasajeros (en caso de no llegar a este n\u00fameros de pasajeros se brindar\u00eda la vista de kolomenskoye pero no se realizar\u00eda la ceremonia tradicional de bodas Rusas).</li><li><b>D\u00eda\u00a05. 22 JUL. Mosc\u00fa - Tver - Valday - Oblast De Novgorod - Novgorod<br></b>Nota: En el Monasterio de Valday se exige vestir con decoro, las mujeres no deben llevar pantalones ni shorts ademas de ir con los hombros cubiertos. Prevealo antes de salir a la visita.<br>Viajamos hacia el norte de Rusia . En nuestra ruta nuestro gu\u00eda nos hablara de la cultura Rusa. pasamos y efectuamos una breve parada en KLIN, para conocer la casa de Tchaickowsky ( entrada incluida salvo coincidencia con d\u00eda de cierre mensual). Recordaremos alguna sinfon\u00eda del genial m\u00fasico. Continuamos nuestra ruta hacia el norte y llegamos a Tver. Esta\u00a0 ciudad a orillas del VOLGA fue centro de un peque\u00f1o Estado que era el principal rival de Mosc\u00fa. Breve visita con nuestro gu\u00eda y almuerzo incluido. En la tarde estaremos llegando a Valday, esta pintoresca peque\u00f1a zona de r\u00edos y bosques; visitaremos en nuestro autocar un antiguo monasterio en la isla del lago\u00a0</li><li><b>Dia 6. 23 JUL. Novgorod - San Petersburgo<br></b>Luego del desayuno . iniciamos el d\u00eda con vista guiada y entrada en Novgorod, apasionante ciudad que fue uno de los centros culturales y pol\u00edticos mas importantes de Rusia. Durante la Edad Media fue una de las ciudades mas importantes de Europa Oriental. Sus monumentos han sido declarados Patrimonio de la ciudad , el museo de la arquitectura de madera, un museo al aire libre de casas de campesinos y hermosas iglesias de madera muy decoradas. Almuerzo incluido. Luego partiremos a San Petersburgo, en la ciudad iniciamos una breve vista panor\u00e1mica atravesada por el ri\u00f3 Neva y construida sobre 40 islas.</li><li><b>Dia 7. 24 JUL. San Petersburgo\u00a0<br></b>Desayuno en el hotel. Con gu\u00eda local iniciamos la vista para panor\u00e1mica de la bellisima ciudad atravesada por el r\u00edo Neva y construida sobre 40 isla. San Peterburgo es la segunda ciudad ms importante de Rusa y capital del Imperio Ruso entre los s. XVIII y XIX . Esta ciudad imperial nos revela la historia de los zares Rusos\u00a0 atrevas de sus museos, palacios , y riqueza arquitect\u00f3nica. La visita incluyen la Fortaleza de Pedro y Pablo\u00a0 , origen de la ciudad (entrada incluida). Tras la visita, incluimos en el coraz\u00f3n de San Perersburgo EL Museo del Hermitage, un fant\u00e1stico museo con mas de 2 millones y medio de obras de arte Europea y de Oriente , ubicado en la que fue la residencia principal de los zares , el Palacio de invierno. Tras la vista, tarde libre o regreso al hotel.\u00a0</li><li><b>D\u00eda\u00a08. 25 JUL.</b>\u00a0<b>San Petersburgo\u00a0<br></b>Saldremos del hacia las afueras de la ciudad . La que fue capital de la Rusia de los zares se encuentra rodeada de numerosos palacios. Hoy incluimos la excursi\u00f3n(visita con gu\u00eda y entradas) al Palacio de Peterhof conocido como el \"Versalles Ruso\"que se encuentra a unos 30 km de San Petersburgo . Este conjunto de Palacios de estilo barroco, que fue residencia de lo zares , con magnificas fuentes y jardines de enormes dimensiones han sido declarados patrimonio de la Humanidad por la UNESCO. Regreso a San Petersburgo al final de l,a ma\u00f1ana.\u00a0 <br>Tarde libre. si su circuito pasa por San Petersburgo el lunes nuestro gu\u00eda les ofrecer\u00e1 realizar las siguientes excursiones opcionales: \"Paseo por los r\u00edos y canales\" y \"Ballet ruso\".</li><li><b>D\u00eda\u00a09. 26 JUL. San Petersburgo</b>\u00a0<br>Despu\u00e9s del desayuno tiempo libre.\u00a0 A la hora indicada , traslado al aeropuerto para tomar vuelo nocturno de retorno hacia Santo Domingo , v\u00eda Mosc\u00fa y Madrid.</li><li><b>D\u00eda\u00a010. 27 JUL. Santo Domingo.</b><br>A la llegada a Santo Domingo . Fin de nuestros servicios<b>\u00a0</b></li><li><b><i><u>ITINERARIO\u00a0DE VUELOS POR IBERIA Y S7 AIRLINES:</u></i></b></li></ul><table class=\"table table-bordered\"><tbody><tr><td>IB6500</td><td>18 JUL</td><td>SDQ-MAD</td><td>16:25 06:25+1</td></tr><tr><td>IB3144</td><td>19 JUL</td><td>MAD-DME</td><td>17:40 23:30</td></tr><tr><td>S744</td><td>26 JUL</td><td>LED-DME</td><td>20:05 21:35 (S7 AIRLINES)</td></tr><tr><td>IB3143</td><td>27 JUL</td><td>DME-MAD</td><td>00:20 04:30</td></tr><tr><td>IB6501</td><td>27 JUL</td><td>MAD-SDQ</td><td>11:50 14:55</td></tr></tbody></table>\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0\u00a0<br>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 33,
+    "fields": {
+        "tour_data": 14,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288662.67330052017!2d37.10528722987965!3d55.581524466971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2zTW9zY8O6LCBSdXNpYQ!5e0!3m2!1ses-419!2sdo!4v1559339066129!5m2!1ses-419!2sdo\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 34,
+    "fields": {
+        "tour_data": 13,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 35,
+    "fields": {
+        "tour_data": 14,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 36,
+    "fields": {
+        "tour_data": 8,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 37,
+    "fields": {
+        "tour_data": 11,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 38,
+    "fields": {
+        "tour_data": 12,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 39,
+    "fields": {
+        "tour_data": 15,
+        "option_tab": 1,
+        "content": ""
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 40,
+    "fields": {
+        "tour_data": 15,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 41,
+    "fields": {
+        "tour_data": 15,
+        "option_tab": 2,
+        "content": ""
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 42,
+    "fields": {
+        "tour_data": 16,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"I&D.007-19\" title=\"<span style=\"font-weight: 700;\">INDIA & DUBAI...</span>\"]</p><p><span style=\"font-weight: bold;\">INDIA & DUBAI</span><br></p><ul><li><p class=\"MsoNormal\"><b><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\">05\r\nnov MARTES 2019- .JFK-DELHI</span></b><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><br>\r\nA la hora se\u00f1alada abordaremos el avi\u00f3n con rumbo a DELHI <o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\">Salida\r\ndel JFK en EMIRATES AIR LINES A LAS 10:40 PM y llega a Dubai a las 8:10 am\r\nconecta con el vuelo a la India, a las 10:00 y llega a la India a las 2:45 pm\r\ndel dia 06 noviembre.<o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><b><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><o:p>\u00a0</o:p></span></b></p>\r\n\r\n<p class=\"MsoNormal\"><b><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\">06\r\nnov MIERCOLES 2019- Delhi</span></b><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\">Llegada\r\nDelhi, asistencia y traslado al hotel. Alojamiento. Delhi, la capital y tercera\r\nciudad m\u00e1s grande de la India, ofrece al visitante una imagen rica en cultura,\r\narquitectura y una gran diversidad humana. Su historia, monumentos, museos,\r\ngaler\u00edas de arte, jardines y ex\u00f3ticos espect\u00e1culos hacen de Delhi un destino\r\nprivilegiado.<o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><br><b>07 nov. JUEVES. Delhi</b><br>\r\nDesayuno en el Hotel. Por la ma\u00f1ana, <b>visita del Delhi antigua</b> incluyendo\r\nel <b>Fuerte Rojo</b> (por fuera)- uno de los m\u00e1s opulentos fuertes de la \u00e9poca\r\ndel Imperio Moghul, la <b>Jama Masjid</b>- La mezquita m\u00e1s larga de la India, <b>Raj\r\nGhat</b>\u2013 memorial de Mahatma Gandhi. Disfruten de un <b>paseo fascinante en\r\nRickshaw</b> \u00a8Carrito tirado por hombre\u00a8 en ChandniChowk para ver sus mercados\r\ny bazares t\u00edpicos. <b>Almuerzo incluido</b> en el restaurante local. Por la\r\ntarde, <b>visita de Nueva Delhi,</b> El <b>Qutub Minar</b>, recorrido por la\r\nzona de los Edificios Gubernamentales, Puerta de la India Palacio Presidencial\r\ny el Parlamento. Tambi\u00e9n se visitara el <b>templo de los Sikhs</b>\r\n(GuruduwaraBanglaSahib). <b>Cena incluida</b>\u00a0 y Alojamiento en el Hotel.<br>\r\n<br><b>08 nov VIERNES. Delhi - Samode - Jaipur</b><br>\r\nDesayuno. Por la ma\u00f1ana viajamos hacia <b>JAIPUR</b>. En ruta paramos en <b>Palacio\r\nSamode</b>donde tendremos un <b>Almuerzo incluido</b>. Se trata de un palacio\r\nde casi quinientos a\u00f1os de antig\u00fcedad y es una celebraci\u00f3n de los sentidos,\r\nlujo moderno, hospitalidad m\u00e1gica. Es un espl\u00e9ndido ejemplo de arquitectura Indo-sarraceno,\r\nel Palacio combina lo mejor de los estilos de Hindues y Mughal. Tras el\r\nalmuerzo seguimos hacia Jaipur<b>,</b> la capital de provincia Rajasthany\r\nfundada en el a\u00f1o 1728 por el maharaj\u00e1 Sawai Jai Singh, gobernante de Amber y\r\ngran aficionado a la astronom\u00eda. Jaipur es un modelo de ciudad pre-moderna en\r\ncuanto a la regulaci\u00f3n de sus calles laterales cortadas en \u00e1ngulo recto lo que\r\nhace que esta ciudad sea una maravilla. Exist\u00edan muy pocas ciudades iguales en\r\nEuropa en el siglo XVIII.\u00a0 Tambi\u00e9n es adecuadamente llamada \u201cla ciudad\r\nrosa\u201d de India. Check-in en el hotel. <b>Cena incluida. </b>Alojamiento.<br>\r\n<br><b>09 nov SABADOS. Jaipur</b><br>\r\nPor la ma\u00f1ana <b>excursi\u00f3n al Fuerte Amber</b>, uno de los principales\r\natractivos tur\u00edsticos de la Jaipur con una parada en ruta para tomar fotograf\u00edas\r\nen Hawa Mahal <b>\u00a8Palacio de los Vientos\u00a8</b>, una fachada llena de ventanas. <b>Se\r\nascender\u00e1 a la fortaleza del Fuerte Amber a lomos de un elefante.Almuerzo\r\nincluido. </b>M\u00e1s tarde, visita de la ciudad de Jaipur donde tendremos la\r\noportunidad de conocer <b>\u00a8Jantar Mantar\u00a8</b>, un observatorio astron\u00f3mico de\r\nvarios siglos atr\u00e1s el cual est\u00e1 equipado con instrumentos de tama\u00f1o\r\nsorprendente y de gran precisi\u00f3n. Tras ello seguimos a conocer el museo del <b>Palacio\r\nde la ciudad</b>.\u00a0<b>Cena incluida</b>.\u00a0<o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><b><i><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\">Nota:\r\n</span></i></b><i><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\">Hay\r\nun limitado n\u00famero de elefantes con licencia en el Fuerte Amber y por la nueva\r\nnormativa en vigor, a pesar de los esfuerzos, a veces no hay suficientes\r\nelefantes para el creciente n\u00famero de viajeros. En dicha situaci\u00f3n, nos veremos\r\nobligados a utilizar los jeeps como alternativa, para subir al Fuerte. </span></i><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\" style=\"margin-bottom:12.0pt\"><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><br><b>10 nov DOMINGO. Jaipur - Abhaneri - FahtehpurSikri - Agra</b><br>\r\nPor la ma\u00f1ana salimos hacia <b>AGRA</b>. En ruta visitamos un Templo Baori,\r\npozo abierto, en <b>ABHANERI</b>, una de las mejores creaciones de la\r\nantig\u00fcedad para la recolecci\u00f3n del agua de la lluvia. <b>Almuerzo incluido</b>.\r\nTras el almuerzo vamos a conocer <b>FAHTEHPUR SIKRI</b>, la ciudad abandonada\r\nque una vez fue la capital fabulosa de Imperio Mughal. Continuaci\u00f3n hacia Agra.\r\n<b>Cena incluida. </b><br><b>11 nov LUNES. Agra - Delhi</b><br>\r\nPor la ma\u00f1ana <b>visita de Taj Mahal</b>, el monumento arquitect\u00f3nico m\u00e1s\r\nfamoso del mundo. Fue construido por el emperador Shahjahan en la memoria de su\r\nesposa un monumento por amor, una manifestaci\u00f3n de la emoci\u00f3n m\u00e1s poderosa de\r\nla vida. Encarg\u00f3 a los mejores artesanos del mundo y trabajaron en este\r\nmonumento cerca de veinte mil personas. Se tard\u00f3 uno veinte a\u00f1os para construir\r\nesta estructura hermosa. A continuaci\u00f3n, visitaremos el <b>Fuerte Rojo </b>construido\r\npor el emperador Akbar. <b>Almuerzo incluido </b>temprano en un restaurante\r\nlocal. Salida por carretera hacia <b>DELHI.</b> Llegada cerca de las 21.00\r\nhoras. <b>Cena incluida </b>y Alojamiento.<br>\r\n<br>\r\n<!--[if !supportLineBreakNewLine]--><br>\r\n<!--[endif]--><b><o:p></o:p></b></span></p>\r\n\r\n<p class=\"MsoNormal\" style=\"margin-bottom:12.0pt\"><b><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\">12 nov MARTES. Delhi \u2013Dub\u00e1i hora de\r\nsalida 10:35 AM y llega a las 1:00 PM.</span></b><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><br>\r\nA hora se\u00f1alada, traslado al aeropuerto para tomar el vuelo hacia Dub\u00e1i.<b><o:p></o:p></b></span></p>\r\n\r\n<p class=\"MsoNormal\" style=\"margin-bottom:12.0pt\"><span style=\"font-family:\" verdana\",\"sans-serif\";=\"\" mso-fareast-font-family:\"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";=\"\" mso-ansi-language:es;mso-fareast-language:es\"=\"\">Llegada al aeropuerto de Dub\u00e1i,\r\ndonde nuestro personal le estar\u00e1 esperando para trasladarle a su hotel.\r\nAlojamiento.</span><span lang=\"ES-DO\" style=\"font-family:\" verdana\",\"sans-serif\"\"=\"\"><o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><b><span style=\"font-family:\" verdana\",\"sans-serif\";=\"\" mso-fareast-font-family:\"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";=\"\" mso-ansi-language:es;mso-fareast-language:es\"=\"\">13 nov MIERCOLES Dub\u00e1i</span></b><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:\"times=\"\" new=\"\" roman\";=\"\" mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:es;mso-fareast-language:=\"\" es\"=\"\"><br>\r\n<b>PICK UP EN LA RECEPCI\u00d3N DEL HOTEL ENTRE LAS 07:45 HORAS(AM) Y LAS 08:15\r\nHORAS(AM). Excursi\u00f3n de medio d\u00eda a Dubai cl\u00e1sico</b> que nos proporcionara una\r\nvisi\u00f3n de la antigua ciudad de Dubai. Visitaremos El famoso y reconocido <b>HERITAGE\r\nVILLAGE </b>que es un museo al aire libre donde podremos echar un vistazo a la\r\nforma de vida de los antiguos Dubaities, mediante sus artesan\u00edas y shows\r\nofrecidos por artesanos en vivo reflejando la vida tradicional de los Emiratos\r\n\u00c1rabes Unidos. Continuamos la visita por la zona de Bastakia con sus antiguas\r\ncasas de comerciantes, galer\u00edas, restaurantes y caf\u00e9s. Continuando con la\r\nvisita del<b> Museo de Dubai</b> donde tendremos una visi\u00f3n de la vida en Dubai\r\nde los tiempos anteriores al petr\u00f3leo. Luego, <b>embarcamos en una \u00a8Abra\u00a8 (taxi\r\nde agua)</b> para tener una sensaci\u00f3n atmosf\u00e9rica de la otra orilla de la\r\nensenada. Continuaremos hacia el ex\u00f3tico y arom\u00e1tico Zoco de las Especias y los\r\nbazares de oro de los m\u00e1s conocidos en el mundo. <b>Almuerzo incluido </b>en\r\nrestaurante t\u00edpico. Regreso al hotel y tarde libre. Por la noche disfrutaremos\r\nde una <b>Cena incluida a bordo en un crucero t\u00edpico \u201cDhow\u201d</b>\u2013 barco\r\ntradicional que se utilizaba hasta los a\u00f1os 70 del siglo pasado, para\r\ntransportar las mercanc\u00edas desde los pa\u00edses vecinos a los Emiratos -.\r\nNavegaremos por la ensenada de Dubai conocida como el \u201cCreek\u201d en el que se\r\npuede disfrutar de las espectaculares vistas de los grandes edificios\r\niluminados.<br>\r\n<br>\r\n<b>14\u00a0 nov JUEVES Dubai</b><br>\r\nSalida para hacer visita de<b>Dubai Moderno </b>que nos concede la oportunidad\r\nde conocer la ciudad m\u00e1s desarrollada del planeta, la ciudad del ma\u00f1ana donde\r\nhay incomparables proyectos en construcci\u00f3n: Comienza la visita por la <b>Mezquita\r\nde Jumeirah</b>, uno de los bonitos lugares para tomar fotos. Continuamos con\r\nuna panor\u00e1mica instant\u00e1nea de fotos al Hotel Burj Al Arab, el hotel m\u00e1s alto\r\ndel Mundo. Traslado para la isla de la palmera <b>\u201cPalm Jumeirah\u201d</b> para ver\r\nel hotel Atlantis The Palm, regreso en el monorra\u00edl (que nos dar\u00e1 oportunidad\r\nde ver toda la palmera con sus ramos), bajar del <b>monorra\u00edl</b> para coger el\r\nveh\u00edculo que nos llevara a la Marina de Dubai, el proyecto maestro costero m\u00e1s\r\ngrande en su estilo y vemos modelos de estos asombrosos proyectos con las\r\ncorrespondientes explicaciones y una presentaci\u00f3n muy completa, tendremos la\r\noportunidad de ver prototipos de viviendas y de conocer m\u00e1s sobre el apasionante\r\nfuturo del comercio y los negocios en el Emirato. Continuamos hacia <b>Mall\r\nOfEmirates</b> para ver el <b>SKI DUBI.\u00a0</b>\u00a0Llegada a la parada de\r\nBurj Khalifa, la torre m\u00e1s alta del mundo con sus 828 metros. Al finalizar la\r\nvisita, tiempo libre. Tendr\u00e1 la posibilidad de quedarse visitando el Dubai Mall\r\nque es el centro comercial m\u00e1s grande del mundo para hacer compras, o bien,\r\nregresar al hotel.<br>\r\n<br>\r\n<!--[if !supportLineBreakNewLine]--><br>\r\n<!--[endif]--><b><o:p></o:p></b></span></p>\r\n\r\n<p class=\"MsoNormal\"><b><span style=\"font-family:\" verdana\",\"sans-serif\";=\"\" mso-fareast-font-family:\"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";=\"\" mso-ansi-language:es;mso-fareast-language:es\"=\"\">15 nov VIERNESDubai - Abu Dhabi -\r\nDubai</span></b><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:=\"\" \"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:=\"\" es;mso-fareast-language:es\"=\"\"><br>\r\nExcursi\u00f3n de d\u00eda completo a\u00a0<b>ABU DHABI</b>, capital de los Emiratos\r\n\u00c1rabes considerado el Manhattan de Medio Oriente y el centro administrativo del\r\npa\u00eds. Para ir a Abu Dhabi se pasa por Jebel Ali y su Zona Franca \u2013 el puerto\r\nartificial m\u00e1s grande del mundo. Al llegar a Abu Dhabi, se visita la Mezquita\r\nGrande del SheikhZayed que es la tercera m\u00e1s grande del mundo, con capacidad\r\nhasta 40 mil personas. Luego se va a la zona moderna\u00a0<b>AL BATEEN</b>\u00a0donde\r\nest\u00e1n Los Palacios reales. \u00a0Continuamos hacia el paseo mar\u00edtimo conocido\r\npor \u201cel Corniche\u201d d\u00f3nde se puede tomar fotos de la isla artificial de \u00a8Lul\u00fa\u00a8.\r\n\u00a0Desde el \u00a8Rompeolas\u00a8 se pueden tomar fotos panor\u00e1micas de Abu Dhabi.\r\n\u00a0Veremos por fuera el \u201cEmirates Palace\u201d, que es el hotel m\u00e1s lujoso del\r\nmundo de 7 estrellas. Finalmente se pasa tambi\u00e9n por el Palacio de residencia\r\ndel actual Sheikh que fue igualmente residencia del\r\nSheikhZayed.\u00a0Incluiremos la entrada del <b>MUSEO DEL LOUVRE</b> (entrada\r\ngeneral sin asistencia ni gu\u00eda en el interior) en lugar de la visita al\r\nHeritageVillage. Edificio m\u00e1gico con m\u00e1s de 600 obras de arte en su interior\r\nque supone un puente entre civilizaciones entre Oriente y Occidente. <b>Almuerzo\r\nincluido</b>\u00a0en un restaurante t\u00edpico.\u00a0En el camino de vuelta hacia\r\nDubai, hacemos parada para sacar fotos por fuera del parque tem\u00e1tico de Ferrari\r\nAbu Dhabi . Llegada y alojamiento en el hotel.\u00a0 \u00a0<o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:=\"\" \"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:=\"\" es;mso-fareast-language:es\"=\"\"><o:p>\u00a0</o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><b><i><span style=\"font-family:\" verdana\",\"sans-serif\";=\"\" mso-fareast-font-family:\"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";=\"\" mso-ansi-language:es;mso-fareast-language:es\"=\"\">Nota Importante: </span></i></b><i><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:\"times=\"\" new=\"\" roman\";=\"\" mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:es;mso-fareast-language:=\"\" es\"=\"\">Se sustituye la reproducci\u00f3n del poblado tradicional conocido por\r\n\u201cHeritageVillage por la entrada al moderno Museo del Louvre, uno de los\r\nedificios m\u00e1s importantes de todo Oriente Medio.</span></i><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:\"times=\"\" new=\"\" roman\";=\"\" mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:es;mso-fareast-language:=\"\" es\"=\"\"><o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:=\"\" \"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:=\"\" es;mso-fareast-language:es\"=\"\"><br>\r\n<br>\r\n<b>16 nov SABADO Dubai</b><br>\r\nMa\u00f1ana libre, en el que sugerimos dediquen la ma\u00f1ana para completar sus\r\ncompras. Por la tarde, entre las 15.30 y 16.00 horas, es la <b>recogida del hotel\r\npara salir a un safari por el desierto en lujosos veh\u00edculos 4 X 4 </b>(caben\r\nhasta 6 personas en cada veh\u00edculo) que les llevan a un encuentro personal con\r\nun mundo diferente, donde disfrutaran de la excitaci\u00f3n de viajar sobre las\r\ndunas de arena. La ruta pasa por granjas de camellos y un paisaje espectacular\r\nque brinda una excelente oportunidad para tomar fotos. Pararemos por donde\r\npodremos apreciar la magia y la gloria de la puesta de sol en Arabia y la\r\neterna belleza del desierto y hacer surfing en la arena llegando finalmente al\r\ncampamento envuelto en un ambiente tradicional \u00e1rabe, donde se puede montar en\r\ncamello, fumar la arom\u00e1tica Shisha (pipa de agua), tatuarse con henna, o\r\nsimplemente admirar el fest\u00edn a la luz de la luna. <b>Cena incluida</b> en el\r\ndesierto tipo buffet \u00e1rabe a la parilla con ensaladas frescas y barbacoas de\r\ncarne y pollo teniendo como postre frutas. Mientras se cene, se disfruta de un\r\nespect\u00e1culo folkl\u00f3rico \u00e1rabe con bailarina de la Danza del Vientre. Regreso al\r\nhotel y alojamiento.\u00a0<o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><b><i><span style=\"font-family:\" verdana\",\"sans-serif\";=\"\" mso-fareast-font-family:\"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";=\"\" mso-ansi-language:es;mso-fareast-language:es\"=\"\">Nota: </span></i></b><i><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:\"times=\"\" new=\"\" roman\";=\"\" mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:es;mso-fareast-language:=\"\" es\"=\"\">Durante el mes de Ramad\u00e1n no se permiten los bailes. </span></i><span style=\"font-family:\" verdana\",\"sans-serif\";mso-fareast-font-family:\"times=\"\" new=\"\" roman\";=\"\" mso-bidi-font-family:\"times=\"\" roman\";mso-ansi-language:es;mso-fareast-language:=\"\" es\"=\"\"><o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\" style=\"margin-bottom:12.0pt\"><span style=\"font-family:\" verdana\",\"sans-serif\";=\"\" mso-fareast-font-family:\"times=\"\" new=\"\" roman\";mso-bidi-font-family:\"times=\"\" roman\";=\"\" mso-ansi-language:es;mso-fareast-language:es\"=\"\"><br>\r\n<br>\r\n<b>17 nov DOMINGODubai- JFK</b><br>\r\nA la hora prevista, traslado al aeropuerto de Dubai para volar a su siguiente\r\ndestino. Vuelo 8:30 am salida de Dubai y llega a JFK\u00a0 a las 13:55 pm.<o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\"><span style=\"font-size:9.0pt;mso-ansi-language:ES\"><o:p>\u00a0</o:p></span></p>\r\n\r\n<ul><li><span style=\"font-size:9.0pt;mso-ansi-language:ES\"><o:p>\u00a0</o:p></span></li></ul></li>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 43,
+    "fields": {
+        "tour_data": 16,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 44,
+    "fields": {
+        "tour_data": 16,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7641107.965595624!2d78.20930153187852!3d20.75039895417007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1ses-419!2sdo!4v1560437053054!5m2!1ses-419!2sdo\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 45,
+    "fields": {
+        "tour_data": 17,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"<b>BTC-2019</b>\" title=\"Bolsa Tur\u00edstica del Caribe 2019\"]\r\n\r\n</p><strong>BTC- 2019 Intercambio del turismo del Caribe<br>JUEVES 27 DE JUNIO<br></strong><br><ul>\r\n     <li><b>10:00 A.M\u00a0 - 4:00 P.M.</b><br>MONTAJE: STAND Y SALONES\r\n<br><br></li><li><b>10:30 A.M.</b><br>REGISTRO / ACREDITACI\u00d3N\r\n- ENTREGA DOCUMENTACI\u00d3N, <b>\u201c SAL\u00d3N CHURCHILL\u201d</b><br><br>\r\n</li><li><b>7:00 P.M.</b><br>AMBIENTACI\u00d3N MUSICAL <b>\u201cLA CLAVE CON H\u201d</b>\r\n<br><br></li><li><b>7:30 P.M.</b><br>ACTO DE APERTURA\r\n<br><br></li><li><b>8:30 P.M. </b><br>PRESENTACI\u00d3N ART\u00cdSTICA FEMENINA <b>\u201cLA CLAVE CON H\u201d</b> <br><br></li><li><b>8:45 P.M.</b><br>PRESENTACI\u00d3N ART\u00cdSTICA MEXICANA.\r\n<br><br></li><li><b>9:00 P.M</b><br>CORTE DE CINTA, APERTURA DE SALONES Y COCTEL BALLET FOLKL\u00d3RICO  MITUR <b>\u201c\u00c1REA FOYER\u201d</b></li></ul><p><b>VIERNES 28 DE JUNIO</b></p><ul><li><b>8:00 A.M.</b><br>APERTURA DE SALONES<b> \u201cTRADE SHOW\u201d</b><br><br></li><li><b>8:00 A.M. - 4:00 P.M.</b><br>PRIMER CONGRESO LATINOAMERICANO DE TURISMO RELIGIOSO<br><b>\u201cSAL\u00d3N REGENCY\u201d</b><br><br></li><li><b>9:00 A.M. - 10:00 A.M.</b><br>DESAYUNO PRESENTACI\u00d3N COPA AIRLINES <b>\u201cSAL\u00d3N PITIUSAS\u201d</b><br><br></li><li><b>8:00 A.M.</b><br>DESAYUNO EMPRESARIAL, CONFERENCIA MAGISTRAL <br>\u201cHUMANIZANDO MARCAS PROFESIONALES Y ORGANIZACIONES EN LA ERA DIGITAL\u201d. FEDERACI\u00d3N DE MUJERES EMPRESARIAS DOMINICO INT; FEM. <b>\u201cSAL\u00d3N CHURCHILL \u201c</b><br><br></li><li><b>10:00 A.M. - 4:00 P.M.</b><br>RUEDA DE NEGOCIOS / WORKSHOP \u2013 OPERADORES INTERNACIONALES Y NACIONALES, SECTOR TUR\u00cdSTICO Y HOTELERO.<b> \u201cSAL\u00d3N \u00c1MBAR\u201d </b><br><br></li><li><b>10:30 A.M. - 8:00 P.M. </b><br>PRIMERA FERIA GASTRON\u00d3MICA Y CULTURAL MEXICANA\u00a0 <br><b>\u201cSAL\u00d3N \u00c1MBAR\u201d</b><br><b><br></b></li><li><b>10:30 A.M. - 12:00 P.M. </b><br>CONFERENCIA \u201cACCESIBILIDAD, FACILITACI\u00d3N E INCLUSI\u00d3N<br>SOCIAL PARA UN DESARROLLO INTEGRAL Y SOSTENIBLE EN LOS DESTINOS TUR\u00cdSTICOS. ARQ. ADIS OZUNA <b>\u201cSAL\u00d3N PITIUSAS\u201d</b><br><br></li><li><b>12:30 A.M. - 2:00 P.M</b>. <br>ALMUERZO PARA AGENTES DE LA ZONA NORTE\u00a0 Y LA CAPITAL PATROCINADO POR VENEZOLANA DE AVIACI\u00d3N <b>\u201cSAL\u00d3N PITIUSAS\u201d<br><br></b></li><li><b>4:30 P.M. - 6:00 P.M.</b><br>FESTIVAL DEL TACO Y CATA DE TEQUILAS\u00a0 \u201cPABELL\u00d3N MEXICANO,\u00a0 <b>\u201cSAL\u00d3N \u00c1MBAR\u201d<br><br></b></li><li><b>5:00 P.M. </b><br>COOKING SHOW <b>\u201cSAL\u00d3N \u00c1MBAR\u201d</b><br><br></li><li><b>8:00 P.M.</b><br>CIERRE DE SALONES DE EXPOSICI\u00d3N <br><br></li><li><b>9:00 P.M. - 12:00 P-M.</b><br>CENA\u00a0 \u201cFIESTA\u00a0 T\u00cdPICA\u00a0 DOMINICANA\u201d PARA DELEGADOS INTERNACIONALES Y NACIONALES <b>(POR INVITACI\u00d3N),\u00a0 \u201cSAL\u00d3N REGENCY\u201d.</b><br></li></ul><p><b>SABADO 29 DE JUNIO<br></b></p><ul><li><b>8:30 A.M.</b><br>REGISTRO CONFERENCIAS PROFESIONALES, <b>\u201cSAL\u00d3N CHURCHILL\u201d</b><br><br></li><li><b>9:00 A.M.</b><br>APERTURA DE SALONES <b>TRADE SHOW.<br></b><br></li><li><b>9:30 A.M. - 3:30 P.M.</b><br>ALMUERZO PRESENTACION PROLIDER / BERIGUETE Y ASOCIADOS\u00a0 <b><br>\u201cSAL\u00d3N CHURCHILL\u201d<br></b><br></li><li><b>9:30 A.M. - 4:00 P.M.</b><br>CONFERENCIAS PROFESIONALES AL SECTOR TUR\u00cdSTICO Y\u00a0 ESTUDIANTES UNIVERSITARIOS, <b>\u201cSAL\u00d3N REGENCY\u201d.</b><br><br></li><li><b>10:30 A.M.</b><br>COFFEE BREAK ESTUDIANTES <b>\u201cSAL\u00d3N PITIUSAS\u201d<br></b><br></li><li><b>12:30 P.M.</b><br>ALMUERZO EXPOSITORES, <b>\u201cRESTAURANTE EL MERCADO\u201d</b>. <br><br></li><li><b>1:00 P.M.</b><br>ALMUERZO ESTUDIANTES, <b>\u201c\u00c1REA PISCINA\u201d</b>.<br><br></li><li><b>2:00 P.M.</b><br>REUNI\u00d3N CONSEJO DIRECTIVO COTAL <b>\u201cSALON PITIUSAS\u201d</b><br><br></li><li><b>4:30 P.M.</b><br>PRESENTACI\u00d3N FOLKL\u00d3RICA <b><br>\u201c\u00c1REA FOYER\u201d. MINISTERIO DE TURISMO.</b><br><br></li><li><b>4:30 P.M.</b><br>RECONOCIMIENTOS A PERSONALIDADES DEL \u00c1MBITO TUR\u00cdSTICO <br><b>\u201cSAL\u00d3N CHURCHILL\u201d</b>.<br><br></li><li><b>5:00 P.M.</b><br>COOKING SHOW \u201cSAL\u00d3N \u00c1MBAR\u201d.<br><br></li><li><b>5:15 P.M.</b><br>RALLY TUR\u00cdSTICO ESTUDIANTES.<br><br></li><li><b>5:15 P.M.</b><br>DESFILE DE CHACABANA <b>\u201cSAL\u00d3N AMBAR\u201d </b><br><br></li><li><b>5:30 P.M. - 6:30 P.M. </b><br>AFTER PARTY PARA ESTUDIANTES, PATROCINADO POR, <br><b>RON BARCEL\u00d3<br><br></b></li><li><b>6:45 P.M.</b><br>PRESENTACI\u00d3N DE GRUPO MARIACHI <b>\u201cSAL\u00d3N \u00c1MBAR\u201d</b><br><br></li><li><b>8:00 P.M.</b><br><b>CIERRE DE SALONES, CLAUSURA EVENTO.<br></b><br><b></b><br></li>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 46,
+    "fields": {
+        "tour_data": 17,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 47,
+    "fields": {
+        "tour_data": 17,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121090.4626078468!2d-70.01722371797676!3d18.48017303242456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89f1107ea5ab%3A0xd6c587b82715c164!2sSanto+Domingo%2C+Dominikanische+Republik!5e0!3m2!1sde!2sde!4v1560972265144!5m2!1sde!2sde\" style=\"border:0\" allowfullscreen=\"\" width=\"100%\" height=\"450\" frameborder=\"0\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 48,
+    "fields": {
+        "tour_data": 18,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"<b>NHC-001</b>\" title=\"ingrese el nombre\"]\r\n\r\n</p><p><b><strong>DESCUBRE EL HUILA CON SU RUTA 45</strong></b></p><p>\u00a0\u00a0 <b><strong>Ingrese la descripci\u00f3n</strong></b></p><ul><li>...<br></li>\r\n     <li>...</li>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 49,
+    "fields": {
+        "tour_data": 18,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2040561.7528449497!2d-76.63892016540629!3d2.6745621734433533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b23006aa7300b%3A0xbad1e723ba5efebd!2sHuila!5e0!3m2!1ses-419!2sco!4v1561425783902!5m2!1ses-419!2sco\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 50,
+    "fields": {
+        "tour_data": 18,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 51,
+    "fields": {
+        "tour_data": 19,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]</p><p>[timeline_item item_number=\"<b>ingrese el n\u00famero</b>\" title=\"ingrese el nombre\"]\r\n\r\n</p><p><b><strong>Ingrese el nombre...<br></strong></b></p><p>\u00a0\u00a0 <b><strong>Ingrese la descripci\u00f3n</strong></b></p><ul><li>...<br></li>\r\n     <li>...</li>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 52,
+    "fields": {
+        "tour_data": 19,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2042716.9398978448!2d-76.65364167720507!3d0.47446126739096434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e27101c0962d3e1%3A0x387bc490530e12a6!2sPutumayo!5e0!3m2!1ses-419!2sco!4v1561426200411!5m2!1ses-419!2sco\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 53,
+    "fields": {
+        "tour_data": 19,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]</p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 56,
+    "fields": {
+        "tour_data": 20,
+        "option_tab": 2,
+        "content": "<p><br></p>\r\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15907.543350357253!2d-74.04403257983314!3d4.614444246364174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e36643a3e9%3A0x8068b39be66a650c!2sCerro+Monserrate!5e0!3m2!1sde!2sde!4v1562009558365!5m2!1sde!2sde\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 57,
+    "fields": {
+        "tour_data": 20,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]<br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 58,
+    "fields": {
+        "tour_data": 22,
+        "option_tab": 2,
+        "content": "<p><span style=\"font-weight: 700;\">Direcci\u00f3n:</span>\u00a0Cra 3 #3-47 Ibagu\u00e9, Tolima, Colombia\u00a0<br><span style=\"font-weight: 700;\">Tel\u00e9fono:</span>\u00a0(8) 2619404\u00a0<br><span style=\"font-weight: 700;\">EMail:</span>\u00a0comercial@hotelcasamorales.com\u00a0<br><span style=\"font-weight: 700;\">Web:</span>\u00a0<a href=\"http://www.hotelcasamorales.com\" target=\"_blank\">www.hotelcasamorales.com</a></p><hr><p><br><iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.796299965935!2d-75.24979555000996!3d4.448964196751157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c481de04e685%3A0x8833ca9cb2259d32!2sCra+3+%233-47%2C+Ibagu%C3%A9%2C+Tolima%2C+Colombia!5e0!3m2!1ses!2sde!4v1562177184437!5m2!1ses!2sde\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe><br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 59,
+    "fields": {
+        "tour_data": 22,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]<br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 60,
+    "fields": {
+        "tour_data": 23,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]<br></p><p>[timeline_item item_number=\"<span style=\"background-color: rgb(255, 255, 255);\">(</span><span style=\"font-weight: 700;\">ABP-0119</span><span style=\"background-color: rgb(255, 255, 255);\">)</span>\" title=\"<span style=\"background-color: rgb(255, 255, 255);\"><b>(</b></span><span style=\"font-size: 14px; font-weight: 600;\">Plan Avistamiento de Ballenas</span>)\"]</p><p>\u00a0\u00a0Descripci\u00f3n detallada\u00a0</p><ul><li><div class=\"qodef-route-top-holder\"><h4 class=\"qodef-tour-item-plan-part-title\"><span style=\"font-size: 14px;\">Primer d\u00eda<br></span>Llegada a Panam\u00e1.\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0</h4></div></li><span style=\"font-size: 14px;\">\r\n     </span><li><b><span style=\"font-size: 14px;\">Segundo d\u00eda</span><br><span style=\"font-size: 14px;\">Avistamiento de Ballenas en la Bah\u00eda de Panam\u00e1.</span></b><br><br><span style=\"font-size: 14px;\">Salida a las 8:00am\u00a0 desde Balboa Yatch Club Traslado Mar\u00edtimo Desayuno y Almuerzo incluido Fotos en cubierta de navegaci\u00f3n Solo 1 Julio al 30 de Septiembre .<br><br></span></li><li><b>Tercer d\u00eda</b><br><b>City Tour en Panam\u00e1</b><br><br>Incluye:\r\n\r\nTraslados al Canal, Esclusas de Miraflores.\r\n\r\nTour a la Calzada de Amador\r\n\r\nTour por el Casco Viejo\r\n\r\nAlmuerzo\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0\u00a0</li>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p><br></p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 61,
+    "fields": {
+        "tour_data": 23,
+        "option_tab": 2,
+        "content": "<p><br></p>\r\n\r\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252147.37520382582!2d-79.59322333869706!3d9.081727552487097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca8f1dbe80363%3A0xaba25df1f042c10e!2zUGFuYW3DoQ!5e0!3m2!1ses!2sde!4v1562782097711!5m2!1ses!2sde\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 62,
+    "fields": {
+        "tour_data": 23,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]<br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 63,
+    "fields": {
+        "tour_data": 24,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7948.922751635491!2d-74.000154!3d5.028667!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfe83196c107a07bd!2sHotel+Esmeralda+Plaza!5e0!3m2!1sde!2sco!4v1562855451933!5m2!1sde!2sco\" style=\"border:0\" allowfullscreen=\"\" width=\"100%\" height=\"450\" frameborder=\"0\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 64,
+    "fields": {
+        "tour_data": 24,
+        "option_tab": 3,
+        "content": "[NEXForms id=\"62\"]<span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\"><br></span></span>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 66,
+    "fields": {
+        "tour_data": 25,
+        "option_tab": 2,
+        "content": "<p><br></p><iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14581132.789775677!2d21.901391524927536!3d26.844822302067577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14368976c35c36e9%3A0x2c45a00925c4c444!2sEgipto!5e0!3m2!1ses-419!2sdo!4v1565439673374!5m2!1ses-419!2sdo\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 67,
+    "fields": {
+        "tour_data": 25,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]<br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 68,
+    "fields": {
+        "tour_data": 26,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]<br></p><p>[timeline_item item_number=\"<span style=\"background-color: rgb(255, 255, 255);\">(</span><span style=\"font-weight: 700;\">43NW19</span><span style=\"background-color: rgb(255, 255, 255);\">)</span>\" title=\"<span style=\"background-color: rgb(255, 255, 255);\"><b>(BLACK WEEKEND</b>)</span>\"]</p><p>&nbsp;&nbsp;Descripci\u00f3n detallada&nbsp;</p><ul><li>LLEGADA. Traslado Aeropuerto - Hotel</li><li>13/SEPT 08:00 Full Dat Zona libre de Colon,</li>\r\n     <li>14 SEPT 08:00 City Tour (VISITA AL CANAL - CAUSEWAY AMADOR- CASCO ANTIGUO Y COMPRAS EN ALBROOK MALL HAST LAS 7pm)..</li><li>09:00 TRASLADO JOTEL - MULTIPLAZA - HOTEL</li><li>TRASLADO HTEL - AEROPUERTO</li>\r\n</ul>\r\n[/timeline_item]<p></p><p>&nbsp;[/timeline]</p><p><br></p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 69,
+    "fields": {
+        "tour_data": 26,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4041986.592435051!2d-82.35062976415047!3d8.376802562867013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa61583c8be2be3%3A0x79eee04d1fa59bcf!2zUGFuYW3DoQ!5e0!3m2!1ses!2spa!4v1565734028134!5m2!1ses!2spa\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 70,
+    "fields": {
+        "tour_data": 26,
+        "option_tab": 3,
+        "content": "<p><br></p><p>[NEXForms id=\"62\"]<span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\"><br></span></span></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 71,
+    "fields": {
+        "tour_data": 27,
+        "option_tab": 1,
+        "content": "<p></p><p>[timeline]<br></p><p>[timeline_item item_number=\"<span style=\"background-color: rgb(255, 255, 255);\">(<b>DS.009-20</b>)</span>\" title=\"<span style=\"background-color: rgb(255, 255, 255);\"><b>(DUBAI SEMANA SANTA DE LUJO 2020</b>)</span>\"]</p><p>\u00a0</p><ul><li><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">1\u00ba Dia: 07/04 - MARTES - DUBAI</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">Llegada al aeropuerto Internacional de Dub\u00e1i, recepci\u00f3n por un asistente de habla hispana y traslado al hotel.</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">2\u00ba Dia: 08/04 - MIERCOLES - DUBAI\u00a0</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">Desayuno en el hotel. Visita guiada en espa\u00f1ol de d\u00eda entero de Dub\u00e1i. Explore el antiguo barrio de \"Bastakya\" con sus casas tradicionales y las torres de viento que sirvieron en el pasado como sistema natural de aire acondicionado. Despu\u00e9s visite el Museo de Dub\u00e1i situado en el fuerte \"Al Fahidi\". Cruzaremos el arroyo de Dub\u00e1i con el tradicional taxi acu\u00e1tico (Abra) para visitar los zocos de Oro y especias. Disfrute de una vista panor\u00e1mica de los rascacielos a lo largo de la famosa carretera \"Sheik Zayed\", donde nos dirigiremos al Burj Khalifa para hacer una toma de fotos panor\u00e1micas. Continuaci\u00f3n hacia la zona de Jumeirah donde se encuentran los palacios de los jeques. Parada fotogr\u00e1fica de la Mezquita de Jumeirah y del emblem\u00e1tico hotel de lujo Burj Al Arab en forma de vela. Regreso al hotel.</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">Por la noche, traslado (ch\u00f3fer en ingl\u00e9s) al Dhow (barco tradicional \u00e1rabe), para realizar un crucero por la marina o creek de Dubai incluyendo cena de comida tradicional \u00e1rabe e internacional, mientras el Dhow se desliza por el agua y rascacielos numerosos hoteles de lujo de la ciudad. Su crucero nocturno tambi\u00e9n incluye transporte de ida y vuelta al hotel.</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">3\u00ba Dia: 09/04 - JUEVES - DUBAI - ABU DHABI\u00a0</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">Desayuno. Visita a Abu Dhabi con gu\u00eda espa\u00f1ol. Recorrido de 2 horas desde Dubai, pasaremos por el puerto Jebel Ali el puerto m\u00e1s grande del mundo realizado por el hombre, hasta la capital de UAE. Visita de la Mezquita del Jeque Zayed, la tercera m\u00e1s grande del mundo, as\u00ed como la tumba del mismo. Seguiremos hasta el puente de Al Maqta pasando por una de las \u00e1reas m\u00e1s ricas de Abu Dhabi, el \u00e1rea de los ministros. Llegada a la calle Corniche que es comparada con Manhattan por su Skyline. Almuerzo buffet internacional en restaurante de hotel 5*. Parada para fotos en el hotel Emirates Palace. Continuamos a Al Batee \u00e1rea, donde se encuentran los palacios de la familia Real. Luego haremos una parada en el Heritage Village, una reconstrucci\u00f3n de un pueblo de oasis tradicional que ofrece una visi\u00f3n interesante del pasado del emirato. Los aspectos tradicionales de la forma de vida del desierto, que incluyen una fogata con cafeteras, una tienda de campa\u00f1a de pelo de cabra y un sistema de riego falaj, se exhiben atractivamente en el museo abierto. Por \u00faltimo, al regresar a Dubai pasamos por el parque de Ferrari (entrada no incluida) para sacar fotos o hacer compras (20 minutos). Alojamiento en Dubai.</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">4\u00ba Dia: 10/04 - VIERNES - DUBAI - SAFARI</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">Desayuno en el hotel, Ma\u00f1ana libre. Por la tarde nuestra excursi\u00f3n m\u00e1s popular SAFARI En el desierto. Los Land Cruisers (6 personas por veh\u00edculo) los recoger\u00e1n entre las 15.00 - 15.30 horas aproximadamente, para un excitante trayecto por las fant\u00e1sticas altas dunas. Podr\u00e1n hacer Unas fotos \u00fanicas de la puesta del Sol \u00c1rabe. Una vez que desaparezca el sol, detr\u00e1s de las dunas de arena dorada, nos dirigiremos a nuestro campamento en el desierto. El olor a la fresca Brocheta a la parrilla y el cordero. Las hogueras, el olor a las tradicionales pipas de agua y los relajantes sonidos de la m\u00fasica \u00c1rabe, le invitara a una tarde inolvidable. Despu\u00e9s de haber repuesto fuerzas tras la suntuosa cena, una bailarina, le mostrara el antiguo arte de la Danza del Vientre. El Ski por la arena y el pintarse con Henna se encuentran refrescos, te y caf\u00e9. Regreso al hotel sobre las 21:30.</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">5\u00ba Dia: 11/04 - SABADO - DUBAI</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">Desayuno en el hotel. Dia libre.\u00a0</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">6\u00ba Dia: 12/04 - DOMINGO - DUBAI</span><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><br style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\"><span style=\"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small;\">A las 12:00 de la madrugada aproximadamente Traslado al aeropuerto con asistencia de habla hispana.</span><br></li>\r\n</ul>\r\n[/timeline_item]<p></p><p>\u00a0[/timeline]</p><p><br></p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 72,
+    "fields": {
+        "tour_data": 27,
+        "option_tab": 2,
+        "content": "<p><br></p><iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231257.04429349725!2d55.20572109459949!3d25.088611661310058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDub%C3%A1i+-+Emiratos+%C3%81rabes+Unidos!5e0!3m2!1ses-419!2sdo!4v1565815680922!5m2!1ses-419!2sdo\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 73,
+    "fields": {
+        "tour_data": 27,
+        "option_tab": 3,
+        "content": "<p>[NEXForms id=\"62\"]<br></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 74,
+    "fields": {
+        "tour_data": 28,
+        "option_tab": 1,
+        "content": "<p></p>[timeline]<p>[timeline_item item_number=\"<span style=\"background-color: rgb(255, 255, 255);\">(<span style=\"font-weight: bold;\">Numero/Nummer</span>)</span>\" title=\"<span style=\"background-color: rgb(255, 255, 255);\"><b>(Aconcagua Cumbre de America</b><span style=\"font-weight: 700;\"></span>)</span>\"]</p><p><strong><span style=\"font-family: Arial;\">VIA CLASICA \u2013 RUTA NORMAL</span></strong></p><p><strong><span style=\"font-family: Arial;\">DURACION</span></strong><span style=\"font-family: Arial;\">: 17 d\u00edas</span></p><p><strong><span style=\"font-family: Arial;\">PRACTICABLES:</span></strong><span style=\"font-family: Arial;\"> noviembre a marzo</span></p><p><strong><span style=\"font-family: Arial;\">NIVEL FISICO</span></strong><span style=\"font-family: Arial;\">: muy buen estado</span></p><p><strong><span style=\"font-family: Arial;\">NIVEL TECNICO:</span></strong><span style=\"font-family: Arial;\"> segundo nivel</span></p><p><strong><span style=\"font-family: Arial;\">ALTITUD:</span></strong><span style=\"font-family: Arial;\"> 2700/6962 msnm</span></p><p><strong><span style=\"font-family: Arial;\">EQUIPO PERSONAL:</span></strong><span style=\"font-family: Arial;\"> ascenso</span></p><p><strong><span style=\"font-family: Arial;\">ARANCEL DE INGRESO:</span></strong><span style=\"font-family: Arial;\"> &nbsp;Ascensi\u00f3n Parque Aconcagua</span></p><p><br>\r\n\r\n</p>[/timeline_item]<p></p><p>&nbsp;[/timeline]</p><p><br></p><p></p><p></p>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 75,
+    "fields": {
+        "tour_data": 28,
+        "option_tab": 2,
+        "content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1278634.3973781164!2d-70.97319541487975!3d-32.89908368310373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9687925500c38047%3A0x5234c15eaaa14869!2sAconcagua!5e0!3m2!1sde!2sde!4v1568136072663!5m2!1sde!2sde\" style=\"border:0;\" allowfullscreen=\"\" width=\"100%\" height=\"450\" frameborder=\"0\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 76,
+    "fields": {
+        "tour_data": 28,
+        "option_tab": 3,
+        "content": "[NEXForms id=\"62\"]<span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\"><br></span></span>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 77,
+    "fields": {
+        "tour_data": 29,
+        "option_tab": 2,
+        "content": "<p><br></p><iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8068114.582994044!2d-79.5942605809776!3d-9.108406097746652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c850c05914f5%3A0xf29e011279210648!2zUGVyw7o!5e0!3m2!1ses-419!2sdo!4v1569071148264!5m2!1ses-419!2sdo\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>"
+    }
+},
+{
+    "model": "destinations.tabdata",
+    "pk": 78,
+    "fields": {
+        "tour_data": 29,
+        "option_tab": 3,
+        "content": "<p><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\">\u00a0Por favor tome en cuenta</span></span></p><p><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\">Este es un formulario automatico NO BORRE LO QUE APARECE ENTRE [</span></span><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\">NEXForms id=\"62\" ] solo borre lo que esta marcado en rojo.</span></span></p><p><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\"><br></span></span></p><p><span style=\"color: rgb(255, 255, 255); background-color: rgb(255, 0, 0);\">Bitte ber\u00fccksichtigen Sie</span><br></p><p><span style=\"background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);\">Dies ist ein automatisches Formular. L\u00d6SCHEN SIE BITTE NICHT, WAS HIER STEHE [</span><span style=\"background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);\">NEXForms id=\"62\"], sondern l\u00f6schen Sie nur das, was rot markiert ist.</span></p><p>[NEXForms id=\"62\"]<span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: rgb(255, 0, 0);\"><br></span></span></p>"
+    }
+}
+]
