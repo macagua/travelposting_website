@@ -34,6 +34,7 @@ from apps.accounts.forms import (
     CustomAuthenticationForm,
 )
 from django.contrib.auth import authenticate, login
+from django.utils.translation import gettext as _
 
 logger = logging.getLogger(__name__)
 
@@ -52,14 +53,13 @@ class LoginView(View):
     def post(self, request, *args, **kwargs):
         user = request.POST.get('email')
         password = request.POST.get('password')
-        import ipdb; ipdb.set_trace()
         user = authenticate(username=user, password=password)
 
         if user is not None:
             login(request, user)
             return redirect(reverse('destinations:list'))
         else:
-            errors = 'Ha ocurrido un error, Usuario o Contraseña Incorrecta.'
+            errors =  _('An error, Incorrect User or Password has occurred.')
 
             return render(
                 request,
