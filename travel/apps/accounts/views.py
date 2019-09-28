@@ -10,12 +10,22 @@ from django.forms.forms import BaseForm
 from django.http import HttpResponse
 from django.template import loader
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, UpdateView
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+)
+from django.views.generic import (
+    DetailView,
+    UpdateView,
+    View,
+)
 from django.views.i18n import set_language
 from django_registration.backends.activation.views import RegistrationView, ActivationView
 from apps.landing_page.models import Plan
 from django.shortcuts import render
 from apps.accounts.forms import (
+    SignInForm,
     RegistrationForm,
     CustomPasswordResetForm,
     PasswordResetConfirmForm,
@@ -23,12 +33,35 @@ from apps.accounts.forms import (
     CustomerUserChangeForm,
     CustomAuthenticationForm,
 )
+from django.contrib.auth import authenticate, login
 
 logger = logging.getLogger(__name__)
 
 
-class LoginView(auth_views.LoginView):
+class LoginView(View):
     template_name = 'accounts/registration/login.html'
+    form = SignInForm
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            self.template_name,
+            {'form': self.form},
+        )
+
+    def post(self, request, *args, **kwargs):
+        user = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(username=user, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect(reverse('destinations:list'))
+        else:
+            return render(
+                request,
+                self.template_name,
+                {'form': self.form},
+            )
 
 
 class RegisterView(SubscriptionView, RegistrationView):

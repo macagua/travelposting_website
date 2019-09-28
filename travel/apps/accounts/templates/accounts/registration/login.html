@@ -45,7 +45,8 @@
             <div class="row no-gutters">
                 <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
                     <!-- Form -->
-                    <form class="js-validate mt-5">
+                    <form class="js-validate mt-5" method="POST" role="form">
+                        {% csrf_token %}
                         <!-- Title -->
                         <div class="mb-7">
                             <h2 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome' %} <span class="font-weight-semi-bold">{% trans 'to Travelposting' %}</span></h2>
@@ -54,25 +55,15 @@
                         <!-- End Title -->
                         <!-- Form Group -->
                         <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrEmail">{% trans 'Email address' %}</label>
-                            <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="{% trans 'Email address' %}" aria-label="{% trans 'Email address' %}" required
-                                data-msg="{% trans 'Please enter a valid email address.' %}'"
-                                data-error-class="u-has-error"
-                                data-success-class="u-has-success">
-                        </div>
-                        <!-- End Form Group -->
-                        <!-- Form Group -->
-                        <div class="js-form-message form-group">
-                            <label class="form-label" for="signinSrPassword">
-                            <span class="d-flex justify-content-between align-items-center">
-                            {% trans 'Password' %}
-                            <a class="link-muted text-capitalize font-weight-normal" href="{% url 'accounts:password-reset' %}">{% trans 'Forgot Password?' %}</a>
-                            </span>
-                            </label>
-                            <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
-                                data-msg="{% trans 'Your password is invalid. Please try again.'%}'"
-                                data-error-class="u-has-error"
-                                data-success-class="u-has-success">
+                            {% for field in form %}
+                            <div class="form-group">
+                                <label class="sr-only" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field }}
+                                {{ field.help_text }}
+                                {{ field.errors }}
+                            </div>
+                            {% endfor %}
+
                         </div>
                         <!-- End Form Group -->
                         <!-- Button -->

@@ -1,10 +1,10 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _, check_for_language
 from django_registration.forms import RegistrationForm as BaseRegistrationForm
-
 from apps.accounts.models import CustomerUser
 from apps.landing_page.models import Plan
 #from tour.payments.paypal.resources import Subscription
+from django.contrib.auth import authenticate
 from apps.payments.models.paypal import Coupon
 from apps.utils.forms import BaseBootstrapForm, FieldKwargsMeta
 from django.contrib.auth.forms import (
@@ -13,6 +13,36 @@ from django.contrib.auth.forms import (
     SetPasswordForm,
     PasswordChangeForm,
 )
+
+
+class SignInForm(forms.Form):
+    """
+    The Login form where we make able our user to login on the dashboard.
+
+    Args:
+        email: The user's email(username).
+        password: the password field.
+
+    Returns: The cleaned form to proceed to the according View.
+    """
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email'),
+                'class': 'form-control',
+            },
+        ),
+    )
+
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder': _('Password'),
+                'class': 'form-control',
+            },
+        ),
+    )
+
 
 
 class CustomAuthenticationForm(BaseBootstrapForm, AuthenticationForm):
