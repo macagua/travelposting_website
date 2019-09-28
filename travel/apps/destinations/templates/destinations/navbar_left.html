@@ -5,11 +5,13 @@
     <ul class="nav metismenu" id="side-menu">
       <li class="nav-header">
         <div class="dropdown profile-element">
-          <span><i class="fa fa-user small"></i></span>
+          <span>
+            <i class="fa fa-user fa-3x" style="color: white;"></i>
+          </span>
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
               <span class="clear">
                 <span class="block m-t-xs">
-                  <strong class="font-bold">{{ request.user.get_full_name }}</strong>
+                  <strong class="font-bold">{{ user.get_full_name }}</strong>
                 </span>
                 <span class="text-muted text-xs block">
                   {% if request.user.is_staff %}

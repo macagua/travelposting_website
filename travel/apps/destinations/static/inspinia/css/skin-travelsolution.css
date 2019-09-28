@@ -19,8 +19,7 @@
   background: #0e9aef !important;
 }
 .tarvelsolutions-skin .nav-header {
-  background-color: #377dff !important;
-  background-image: url('patterns/header-profile-tarvelsolutions-skin.png');
+  background-image: url('../img/header-profile.png');
 }
 .tarvelsolutions-skin.mini-navbar .nav-second-level {
   background: #3e495f;
