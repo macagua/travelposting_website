@@ -21,8 +21,18 @@ from apps.destinations.widgets import BootstrapMoneyWidget
 class DestinationForm(forms.ModelForm):
     class Meta:
         model = Destination
-        fields = '__all__'
+        fields = [
+            'categorie',
+            'name',
+            'short_description',
+            'description',
+        ]
+
         widgets = {
+            'categorie': forms.Select(attrs={
+                'class': 'form-control',
+                'placeholder': _('Category'),
+            }),
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': _('Nombre del tour')
