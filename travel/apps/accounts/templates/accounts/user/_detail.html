@@ -12,6 +12,12 @@
                     <div class="ibox ">
                         <div class="ibox-title">
                             <h5>{% trans "Profile Detail" %}</h5>
+                            <div class="ibox-tools">
+                                <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white">
+                                    <i class="fa fa-edit"></i>
+                                    {% trans "Edit"%}
+                                </a>
+                            </div>
                         </div>
                         <div class="ibox-content no-padding border-left-right">
                             <img alt="image" class="img-fluid" src="{% static "" %}">
