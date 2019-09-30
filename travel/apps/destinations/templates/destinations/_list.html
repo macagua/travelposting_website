@@ -2,7 +2,13 @@
 {% load static i18n %}
 
 {% block title %}{% trans 'Lista de Destinos' %}{% endblock %}
-
+{% block css%}
+    {{ block.super }}
+    <style>
+        .dataTables_filter, .dataTables_info { display: none; }
+        .dataTables_length{ display: none; }
+    </style>
+{% endblock%}
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
@@ -13,44 +19,25 @@
           <div class="col-lg-12">
             <div class="ibox">
               <div class="ibox-content">
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label class="control-label" for="product_name">{% trans 'Nombre del destino' %}</label>
-                      <input type="text" id="product_name" name="product_name" value="" placeholder="{% trans 'Nombre del destino' %}"
-                             class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="form-group">
-                      <label class="control-label" for="price">{% trans 'Precio' %}</label>
-                      <input type="number" id="price" name="price" value="" placeholder="{% trans 'Precio' %}" class="form-control">
-                    </div>
-                  </div>
-{#                  <div class="col-sm-2">#}
-{#                    <div class="form-group">#}
-{#                      <label class="control-label" for="quantity">Fecha</label>#}
-{#                      <input type="text" id="quantity" name="quantity" value="" placeholder="Fecha"#}
-{#                             class="form-control">#}
-{#                    </div>#}
-{#                  </div>#}
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label class="control-label" for="status">{% trans 'Status' %}</label>
-                      <select name="status" id="status" class="form-control">
-                        <option value="1" selected="">{% trans 'Pendiente' %}</option>
-                        <option value="0">{% trans 'Publicado' %}</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
                 <div class="table-responsive">
-                  <table class="table table-striped">
+                  <table id ="tabla-destinos" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th data-filter="false">#</th>
+                            <th>{% trans "Destination's name"%}</th>
+                            <th>SKU</th>
+                            <th>{% trans "Quantity Available"%}</th>
+                            <th data-type="number">{% trans "Sale Price"%}</th>
+                            <th data-filter="false"></th>
+                        </tr>
+                    </thead>
                     <tbody>
                     {% for object in object_list %}
                       <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td><a href="{% url 'destinations:update' object.pk %}">{{ object.name }}</a></td>
+                        <td>
+                            <a href="{% url 'destinations:update' object.pk %}">{{ object.name }}</a>
+                        </td>
                         <td>{{ object.details.inventario.sku }}</td>
                         <td>
                           {% if object.details.inventario.quantity %}
@@ -127,5 +114,38 @@
 
 {% block js %}
   {{ block.super }}
+   <script src="{% static "inspinia/js/plugins/dataTables/datatables.min.js" %}"></script>
+   <script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
+  <script>
+    $(document).ready(function(){
+        $('#tabla-destinos thead tr').clone(true).appendTo( '#tabla-destinos thead' );
+        $('#tabla-destinos thead tr:eq(1) th').each( function (i) {
+            var title = $(this).text();
+            if ($(this).data('filter') != false ){
+                if ($(this).data('type')=='number'){
+                    $(this).html( '<input class="form-control" type="number" placeholder="Busca '+title+'" />' );
+                }else{
+                    $(this).html( '<input class="form-control" type="text" placeholder="Busca '+title+'" />' );
+                }
+            }
+
+            $( 'input', this ).on( 'keyup change', function () {
+                if ( tabla_destinos.column(i).search() !== this.value ) {
+                    tabla_destinos
+                        .column(i)
+                        .search( this.value )
+                        .draw();
+                }
+            });
+        });
+
+        var tabla_destinos=$('#tabla-destinos').DataTable({
+            pageLength: 25,
+            responsive: true,
+            fixedHeader: true,
+        });
+
+    });
+    </script>
   <script type="text/javascript" src="{% static 'destinations/js/modal.js' %}"></script>
 {% endblock %}
