@@ -42,9 +42,8 @@ class Categorie(models.Model):
 
 
 class Destination(models.Model):
-    categorie = models.ForeignKey(
+    categorie = models.ManyToManyField(
         Categorie,
-        on_delete=models.CASCADE,
         verbose_name=_("Categorie"),
         blank=True,
         null=True,
