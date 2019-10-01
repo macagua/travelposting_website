@@ -404,3 +404,5 @@ OAUTH2_PROVIDER = {
         'write': 'Permiso de escritura'
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

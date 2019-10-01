@@ -1,10 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import  Max, Min
 from django.views import View
+from django.utils.translation import gettext_lazy as _
+from django.core.mail import mail_admins
+from django.template.loader import render_to_string
 from apps.destinations.models import (
     Destination,
     Categorie,
-    GeneralDetail
+    GeneralDetail,
+    SearchLanding
 )
 # Create your views here.
 
@@ -47,3 +51,48 @@ class DetailDestinationView(View):
         return render(request, 'services/destination/detail_destination.html',{
             'destino':destination,
             })
+
+
+class SaveSearchView(View):
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        country = request.POST.get('city')
+        email = request.POST.get('email')
+        whatsapp = request.POST.get('whatsapp')
+
+        SearchLanding.objects.create(
+            names = name,
+            country = country,
+            email = email,
+            whatsapp = whatsapp
+        )
+
+        
+        subject = _('New registered search')
+
+        ctx = {
+                    'name': name,
+                    'email': email,
+                    'country': country,
+                    'whatsapp':whatsapp
+                }
+
+        html_message = render_to_string(
+            'pages/email_feedback.html', 
+            context=ctx
+        )
+
+        message = _(u'A person has done a new search, please review Mr.\'s {0} incoming application. \n Search the country or city: {1} \n Email:  {2} \n or if you want see the admin site https://travelposting.com/admin/ ').format(
+            name,
+            country,
+            email
+        )
+        mail_admins(subject,
+                    message,
+                    fail_silently=True,
+                    html_message=html_message
+                )
+
+        return render(request, 'pages/safeSearch.html')
+
+

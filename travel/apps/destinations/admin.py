@@ -12,6 +12,7 @@ from .models import (
     InventarioDetail,
     BookingDetail,
     Categorie,
+    SearchLanding
 )
 
 @admin.register(OptionTabData)
@@ -85,3 +86,4 @@ class OptionTabDataAdmin(admin.ModelAdmin):
 
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)
+admin.site.register(SearchLanding)

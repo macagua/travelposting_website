@@ -15,7 +15,8 @@ from django.conf.urls.static import static
 from apps.landing_page.views import (
     CommmunityView,
     CategoriesView,
-    DetailDestinationView
+    DetailDestinationView,
+    SaveSearchView,
 )
 admin.autodiscover()
 
@@ -89,11 +90,18 @@ urlpatterns += i18n_patterns(
         include("apps.destinations.urls", namespace='destinations'),
     ),
 
+    path(
+        'safe/',
+        SaveSearchView.as_view(),
+        name='safesearch',
+    ),
+
     url(
         r'^',
         include('cms.urls'),
         name='index',
     ),
+
 
 )
 

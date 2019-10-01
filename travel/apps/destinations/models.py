@@ -628,3 +628,35 @@ class BookingDetail(models.Model):
         ordering = ('start_date', 'end_date')
         verbose_name_plural = _('Booking details')
         verbose_name = _('Booking detail')
+
+
+
+class SearchLanding(models.Model):
+    names = models.CharField('Names', 
+                null=True, 
+                blank=True, 
+                max_length=40
+            )
+    country = models.CharField('Countries', 
+                null=True, 
+                blank=True, 
+                max_length=30
+            )
+    email = models.EmailField('Email', 
+                null=True, 
+                blank=True,
+                max_length=50
+            )
+    whatsapp = models.CharField('Whatsapp', 
+                null=True,
+                blank=True, 
+                max_length=30
+            )
+
+    def __str__(self):
+        return f"{self.email}-{self.country}"
+
+    class Meta:
+        ordering = ('email', 'country')
+        verbose_name_plural = _('Search Landing')
+        verbose_name = _('Search Landing')
