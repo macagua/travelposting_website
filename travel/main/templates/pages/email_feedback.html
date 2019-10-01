@@ -413,7 +413,7 @@ ul.social li{
           		<tr>
 					  <td width="40%" class="logo" style="text-align: left;">
 						
-			            <h1><a href="https://travelposting.com"><img src="{% static 'img/logo-round-0.5x.png' %}" width="30"/> Travelposting</a></h1>
+			            <h1><a href="https://travelposting.com"><img src="https://travelposting.com/static/img/logo-round-0.5x.png" width="30"/> Travelposting</a></h1>
 			          </td>
 			          <td width="60%" class="logo" style="text-align: right;">
 			            <ul class="navigation">
@@ -426,7 +426,7 @@ ul.social li{
           </td>
 	      </tr><!-- end tr -->
 				<tr>
-          <td valign="middle" class="hero bg_white" style="background-image: url({{ scheme }}://{{ site }}{%static 'img/bg_1.jpg' %}); background-size: cover; height: 400px;">
+          <td valign="middle" class="hero bg_white" style="background-image: url(https://travelposting.com/static/img/bg_1.jpg); background-size: cover; height: 400px;">
           	<div class="overlay"></div>
             <table>
             	<tr>
@@ -446,11 +446,11 @@ ul.social li{
 	          	<p>
                     <b> {% trans 'Firts and Last Name: ' %} </b>{{ name }}
                     <b> {% trans 'Country:' %}</b> {{ country }}
-                    <b> {% trans 'Email:'</b>{{ Email }}
-                    <b>{% trans 'Whatsapp'%}</b>{{ whatsapp}}
+                    <b> {% trans 'Email:' %}</b>{{ Email }}
+                    <b>{% trans 'Whatsapp' %}</b>{{ whatsapp}}
 				</p>
 				<p>
-                    if you want see the admin site <a href="https://travelposting.com/admin/destinations/searchlanding/">Admin</a>
+                    {% trans 'if you want see the admin site' %} <a href="https://travelposting.com/admin/destinations/searchlanding/">{% trans 'Admin' %}</a>
 				</p>
 
 	        	</div>
