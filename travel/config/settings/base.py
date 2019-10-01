@@ -294,6 +294,10 @@ THUMBNAIL_HIGH_RESOLUTION = True
 #        'hide_untranslated': False,
 #    },
 #}
+DJANGOCMS_STYLE_TEMPLATES = [
+    ('feature', _('Feature')),
+]
+
 
 CMS_TEMPLATES = (
     ## Customize this
@@ -354,7 +358,7 @@ CACHES = {
 # ------------------------------------------------------------------------------
 ROSETTA_ENABLE_TRANSLATION_SUGGESTIONS = True
 # ROSETTA_SHOW_AT_ADMIN_PANEL = True
-ROSETTA_REQUIRES_AUTH = False
+ROSETTA_REQUIRES_AUTH = True
 ROSETTA_WSGI_AUTO_RELOAD = True
 ROSETTA_UWSGI_AUTO_RELOAD = True
 
