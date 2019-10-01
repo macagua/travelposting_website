@@ -161,6 +161,15 @@ class Destination(models.Model):
             return None
         return list_prices
 
+    @property
+    def status(self):
+        try:
+            booking_status = BookingDetail.objects.get(destination_detail__destination=self)
+        except BaseException:
+            return None
+        return booking_status.is_active
+
+
 
 class Photo(models.Model):
     destination = models.ForeignKey(

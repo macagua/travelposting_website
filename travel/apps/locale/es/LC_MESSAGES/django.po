@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-26 01:30-0400\n"
-"PO-Revision-Date: 2019-09-26 01:30-0428\n"
+"POT-Creation-Date: 2019-09-30 23:57-0400\n"
+"PO-Revision-Date: 2019-10-01 00:02-0428\n"
 "Last-Translator: b'Anonymous User <anonymous@user.tld>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: apps/accounts/admin.py:14 apps/accounts/forms.py:38
-#: apps/accounts/templates/accounts/registration/login.html:68
+#: apps/accounts/admin.py:14 apps/accounts/forms.py:40
+#: apps/accounts/forms.py:68
 msgid "Password"
 msgstr "Contraseña"
 
-#: apps/accounts/admin.py:15 apps/accounts/forms.py:43
+#: apps/accounts/admin.py:15 apps/accounts/forms.py:73
 msgid "Password confirmation"
 msgstr "Confirmación"
 
@@ -48,11 +48,15 @@ msgstr "Permisos"
 msgid "Accounts"
 msgstr "Cuentas"
 
-#: apps/accounts/forms.py:22
+#: apps/accounts/forms.py:31 main/templates/index.html:76
+msgid "Email"
+msgstr "E-mail"
+
+#: apps/accounts/forms.py:52
 msgid "Your account is blocked due to non-payment"
 msgstr "Su cuenta ha sido bloqueada por falta de pago"
 
-#: apps/accounts/forms.py:42
+#: apps/accounts/forms.py:72
 msgid ""
 "Use at least 8 characters. Do not use a password from another site or a term"
 " that is too obvious, such as your pet's name."
@@ -60,19 +64,19 @@ msgstr ""
 "Use al menos 8 caracteres, No use contraseñas de otros sitios o obvias, como"
 " el nombre de su mascota. "
 
-#: apps/accounts/forms.py:47
+#: apps/accounts/forms.py:77
 msgid "Enter the same password as above, for verification."
 msgstr "Ingrese el mismo pasword para verificar."
 
-#: apps/accounts/forms.py:62
+#: apps/accounts/forms.py:92
 msgid "Select a plan"
 msgstr "Seleccione un plan"
 
-#: apps/accounts/forms.py:71
+#: apps/accounts/forms.py:101
 msgid "Invalid coupon"
 msgstr "Cupón invalido"
 
-#: apps/accounts/forms.py:100
+#: apps/accounts/forms.py:130
 msgid "Non-Permitted Language"
 msgstr "Lenguaje no permitido"
 
@@ -113,6 +117,8 @@ msgid "email address"
 msgstr "Correo electronico"
 
 #: apps/accounts/models.py:68
+#: apps/accounts/templates/accounts/user/_detail.html:83
+#: apps/accounts/templates/accounts/user/_detail.html:92
 msgid "Plan"
 msgstr "Plan"
 
@@ -121,6 +127,7 @@ msgid "Coupon"
 msgstr "Cupón"
 
 #: apps/accounts/models.py:89
+#: apps/accounts/templates/accounts/user/_detail.html:94
 msgid "Nombre de la empresa"
 msgstr "Nombre de la empresa"
 
@@ -153,6 +160,7 @@ msgid "Título (Persona de contacto)"
 msgstr "Título (Persona de contacto)"
 
 #: apps/accounts/models.py:145
+#: apps/accounts/templates/accounts/user/_detail.html:98
 msgid "Cargo en la empresa"
 msgstr "Cargo en la empresa"
 
@@ -175,6 +183,15 @@ msgstr "Usuario"
 #: apps/accounts/models.py:181
 msgid "Usuarios"
 msgstr "Usuarios"
+
+#: apps/accounts/templates/accounts/footer.html:6
+msgid ""
+"\n"
+"      &copy; 2018 All Rights Reserved Site Map Disclaimer.\n"
+"    "
+msgstr ""
+"\n"
+"&copy; 2018 Todos los derechos reservados Mapa del sitio Descargo de responsabilidad."
 
 #: apps/accounts/templates/accounts/registration/activation_complete.html:420
 #: apps/accounts/templates/accounts/registration/activation_email_body.html:420
@@ -241,7 +258,7 @@ msgstr "TravelPosting: Confirmación de correo"
 #: apps/accounts/templates/accounts/registration/login.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:25
-#: apps/accounts/templates/accounts/registration/register_form.html:16
+#: apps/accounts/templates/accounts/registration/register_form.html:14
 #: apps/accounts/templates/accounts/registration/succes_register.html:25
 #: main/templates/coming-soon.html:4 main/templates/index.html:4
 msgid "Travelposting"
@@ -249,7 +266,7 @@ msgstr "Travelposting"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:20
 #: apps/accounts/templates/accounts/registration/login.html:20
-#: apps/accounts/templates/accounts/registration/register_form.html:22
+#: apps/accounts/templates/accounts/registration/register_form.html:20
 msgid "Go back"
 msgstr "Ir atrás"
 
@@ -263,13 +280,10 @@ msgstr "Ingrese el correo debajo"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:58
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
-#: apps/accounts/templates/accounts/registration/login.html:57
-#: apps/accounts/templates/accounts/registration/login.html:58
 msgid "Email address"
 msgstr "Correo electrónico"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
-#: apps/accounts/templates/accounts/registration/login.html:59
 #: main/templates/pages/show_header.html:49
 msgid "Please enter a valid email address."
 msgstr "Por favor ingrese un correo valido"
@@ -285,13 +299,13 @@ msgid "Request Reset Link"
 msgstr "Peticion de reseteo"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:32
-#: apps/accounts/templates/accounts/registration/login.html:85
+#: apps/accounts/templates/accounts/registration/login.html:77
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:32
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-#: apps/accounts/templates/accounts/registration/register_form.html:92
+#: apps/accounts/templates/accounts/registration/register_form.html:88
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
-#: main/templates/index.html:128
+#: main/templates/index.html:129
 msgid "Login"
 msgstr "Ingreso"
 
@@ -312,31 +326,23 @@ msgstr "Registro de cuentas"
 msgid "do have accounts?"
 msgstr "Ya posees una cuenta"
 
-#: apps/accounts/templates/accounts/registration/login.html:51
+#: apps/accounts/templates/accounts/registration/login.html:52
 msgid "Welcome"
 msgstr "Bienvenido"
 
-#: apps/accounts/templates/accounts/registration/login.html:51
+#: apps/accounts/templates/accounts/registration/login.html:52
 msgid "to Travelposting"
 msgstr "a Travelposting"
 
-#: apps/accounts/templates/accounts/registration/login.html:52
+#: apps/accounts/templates/accounts/registration/login.html:53
 msgid "Login to manage your account."
 msgstr "Ingrese para administrar su cuenta"
 
-#: apps/accounts/templates/accounts/registration/login.html:69
-msgid "Forgot Password?"
-msgstr "¿Olvido su contraseña?"
-
 #: apps/accounts/templates/accounts/registration/login.html:73
-msgid "Your password is invalid. Please try again."
-msgstr "Su contraseña es invalida. por favor intente de nuevo."
-
-#: apps/accounts/templates/accounts/registration/login.html:81
 msgid "Don\\"
 msgstr "Don\\"
 
-#: apps/accounts/templates/accounts/registration/login.html:82
+#: apps/accounts/templates/accounts/registration/login.html:74
 msgid "Signup"
 msgstr "Ingreso"
 
@@ -377,31 +383,31 @@ msgstr ""
 msgid "accounts:login"
 msgstr "accounts:login"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:52
+#: apps/accounts/templates/accounts/registration/register_form.html:50
 msgid "Welcome to"
 msgstr "Bienvenido a"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:53
+#: apps/accounts/templates/accounts/registration/register_form.html:51
 msgid "Fill out the form to get started."
 msgstr "Llene el formulario para iniciar"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:57
+#: apps/accounts/templates/accounts/registration/register_form.html:55
 msgid "Do you have a Coupon?"
 msgstr "¿Posees un Cupón?"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:60
-msgid "No"
-msgstr "NO"
-
-#: apps/accounts/templates/accounts/registration/register_form.html:74
+#: apps/accounts/templates/accounts/registration/register_form.html:58
 msgid "Yes"
 msgstr "Sí"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:91
+#: apps/accounts/templates/accounts/registration/register_form.html:71
+msgid "No"
+msgstr "NO"
+
+#: apps/accounts/templates/accounts/registration/register_form.html:87
 msgid "Already have an account?"
 msgstr "¿Ya posees una cuenta?"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:95
+#: apps/accounts/templates/accounts/registration/register_form.html:91
 msgid "Create account"
 msgstr "Crear cuenta"
 
@@ -416,6 +422,108 @@ msgstr "Por favor vea su bandeja de entrada y valide su cuenta"
 #: apps/accounts/templates/accounts/registration/succes_register.html:54
 msgid "Visit our page or see our plans"
 msgstr "Visite nuestra pagina para ver nuestros planes"
+
+#: apps/accounts/templates/accounts/user/_detail.html:4
+#| msgid "Confirmación del correo"
+msgid "Información de usuario"
+msgstr "Información de usuario"
+
+#: apps/accounts/templates/accounts/user/_detail.html:14
+#| msgid "Detail"
+msgid "Profile Detail"
+msgstr "Detalles de perfil"
+
+#: apps/accounts/templates/accounts/user/_detail.html:18
+#| msgid "Editor"
+msgid "Edit"
+msgstr "Editar"
+
+#: apps/accounts/templates/accounts/user/_detail.html:37
+#| msgid "Permissions"
+msgid "Sessions"
+msgstr "Sesiones"
+
+#: apps/accounts/templates/accounts/user/_detail.html:46
+msgid "Último inicio de sessión"
+msgstr "Último inicio de sesión"
+
+#: apps/accounts/templates/accounts/user/_detail.html:48
+msgid "Fecha de registro"
+msgstr "Fecha de registro"
+
+#: apps/accounts/templates/accounts/user/_detail.html:50
+msgid "Teléfono"
+msgstr "Teléfono"
+
+#: apps/accounts/templates/accounts/user/_detail.html:59
+#| msgid "description"
+msgid "Direction"
+msgstr "Dirección"
+
+#: apps/accounts/templates/accounts/user/_detail.html:68
+msgid "Pais"
+msgstr "País"
+
+#: apps/accounts/templates/accounts/user/_detail.html:70
+msgid "Estado"
+msgstr "Estado"
+
+#: apps/accounts/templates/accounts/user/_detail.html:72
+#| msgid "Código postal"
+msgid "Codigo postal"
+msgstr "Código postal"
+
+#: apps/accounts/templates/accounts/user/_detail.html:74
+msgid "Lenguaje"
+msgstr "Lenguaje"
+
+#: apps/accounts/templates/accounts/user/_detail.html:96
+#| msgid "Nombre de la empresa"
+msgid "Direccion de empresa"
+msgstr "Dirección de la empresa"
+
+#: apps/accounts/templates/accounts/user/_form.html:4
+msgid "Editar Información"
+msgstr "Editar Información"
+
+#: apps/accounts/templates/accounts/user/_form.html:15
+msgid "Editar información"
+msgstr "Editar información"
+
+#: apps/accounts/templates/accounts/user/_form.html:36
+msgid "Guardar información"
+msgstr "Guardar información"
+
+#: apps/accounts/templates/accounts/user/password_change.html:4
+#: apps/accounts/templates/accounts/user/password_change_done.html:4
+msgid "Cambiar Contraseña"
+msgstr "Cambiar Contraseña"
+
+#: apps/accounts/templates/accounts/user/password_change.html:14
+#| msgid "New Password"
+msgid "Change Password"
+msgstr "Cambiar contraseña"
+
+#: apps/accounts/templates/accounts/user/password_change.html:37
+msgid "Cambiar contraseña"
+msgstr "Cambiar contraseña"
+
+#: apps/accounts/templates/accounts/user/password_change_done.html:14
+msgid "Cambio de contraseña exitoso"
+msgstr "Cambio de contraseña exitoso"
+
+#: apps/accounts/templates/accounts/user/password_change_done.html:16
+msgid ""
+"\n"
+"                Su contraseña fue cambiada exitosamente.\n"
+"              "
+msgstr ""
+"\n"
+" Su contraseña fue cambiada exitosamente."
+
+#: apps/accounts/views.py:62
+msgid "An error, Incorrect User or Password has occurred."
+msgstr "Se produjo un error, usuario o contraseña incorrectos."
 
 #: apps/landing_page/admin.py:78 apps/landing_page/models.py:365
 msgid "Company"
@@ -649,6 +757,11 @@ msgstr "de"
 msgid "es"
 msgstr "es"
 
+#: config/settings/base.py:298
+#| msgid "feature"
+msgid "Feature"
+msgstr "funcionalidad"
+
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
 #: main/templates/hotels.html:3 main/templates/make_page.html:5
 #: main/templates/template_base_for_text.html:3
@@ -684,8 +797,8 @@ msgid "Get special offers on the latest travels add on our platform."
 msgstr "Obtén ofertas especiales de los últimos viajes y nuestros planes"
 
 #: main/templates/coming-soon.html:19 main/templates/coming-soon.html:24
-#: main/templates/coming-soon.html:29 main/templates/menu/navbar.html:12
-#: main/templates/menu/navbar.html:17 main/templates/menu/navbar.html:22
+#: main/templates/coming-soon.html:29 main/templates/menu/navbar.html:14
+#: main/templates/menu/navbar.html:19 main/templates/menu/navbar.html:24
 msgid "BETA Travelposting"
 msgstr "BETA Travelposting"
 
@@ -968,7 +1081,7 @@ msgstr ""
 "Somos Travelposting.com, un portal web propiedad de Xposting-Service, International Marketing and Digital Promotion Company,\n"
 "abrió sus puertas el 1 de marzo de 2009 con sede en la ciudad de Hamburgo, Alemania."
 
-#: main/templates/footer.html:18
+#: main/templates/footer.html:21
 msgid ""
 "\n"
 "                    In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.\n"
@@ -977,58 +1090,49 @@ msgstr ""
 "\n"
 " En desarrollo de lo dispuesto en el artículo 17 de la Ley 679 de 2001, el Organismo advierte al turista que la explotación y el abuso sexual de menores en el país son sancionados penal y administrativamente, de conformidad con las leyes vigentes."
 
-#: main/templates/footer.html:37
+#: main/templates/footer.html:40
 msgid "Currency Converter"
 msgstr "Convertidor de divisas"
 
-#: main/templates/footer.html:60
+#: main/templates/footer.html:63
 msgid "HOTEL IN:"
 msgstr "HOTEL EN:"
 
-#: main/templates/footer.html:65
+#: main/templates/footer.html:68
 msgid "GERMANY"
 msgstr "ALEMANIA"
 
-#: main/templates/footer.html:70
+#: main/templates/footer.html:73
 msgid "USA"
 msgstr "USA"
 
-#: main/templates/footer.html:75
+#: main/templates/footer.html:78
 msgid "CHINA"
 msgstr "CHINA"
 
-#: main/templates/footer.html:80
+#: main/templates/footer.html:83
 msgid "OTHER CITY"
 msgstr "OTRA CIUDAD"
 
-#: main/templates/footer.html:85
+#: main/templates/footer.html:88
 msgid "FLIGHTS"
 msgstr "VUELOS"
 
-#: main/templates/footer.html:90
+#: main/templates/footer.html:93
 msgid "MAKE YOUR PAY"
 msgstr "HAZ TU PAGO"
 
-#: main/templates/footer.html:122 main/templates/footer.html:125
+#: main/templates/footer.html:125
 msgid "Cookies"
 msgstr "Cookies"
 
 #: main/templates/footer.html:128
-msgid "FQA"
-msgstr "FQA"
+msgid "FAQs"
+msgstr "FAQs"
 
 #: main/templates/footer.html:131
 msgid "Privacy & policy"
 msgstr "Política de privacidad"
-
-#: main/templates/footer.html:134 main/templates/menu/menu.html:49
-#: main/templates/services/pricing/plans.html:73
-msgid "Register"
-msgstr "Registro"
-
-#: main/templates/footer.html:138
-msgid "T&S"
-msgstr "T & S"
 
 #: main/templates/hotels.html:16
 msgid "We are a"
@@ -1070,19 +1174,15 @@ msgstr ""
 "Suscríbete ahora y recibe ofertas especiales sobre las últimas novedades de "
 "Travelposting."
 
-#: main/templates/index.html:76
-msgid "Email"
-msgstr "E-mail"
-
 #: main/templates/index.html:81
 msgid "Suscribe"
 msgstr "Suscríbete"
 
-#: main/templates/index.html:124
+#: main/templates/index.html:125
 msgid "Ready to get started?"
 msgstr "¿Listo para empezar?"
 
-#: main/templates/index.html:126
+#: main/templates/index.html:127
 msgid "Visit all our tour and travel available."
 msgstr "Visite todos nuestros tours y viajes disponibles."
 
@@ -1258,9 +1358,13 @@ msgid "English"
 msgstr "Ingles"
 
 #: main/templates/menu/menu.html:44
-#| msgid "Spanish"
 msgid "Spanish "
 msgstr "Español"
+
+#: main/templates/menu/menu.html:49
+#: main/templates/services/pricing/plans.html:73
+msgid "Register"
+msgstr "Registro"
 
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
@@ -1303,8 +1407,18 @@ msgid "Please enter a valid whatsapp number"
 msgstr "Por favor, introduzca un número de whatsapp válido"
 
 #: main/templates/pages/show_header.html:63
-msgid "Search offer"
-msgstr "Buscar Ofertas"
+msgid "Send"
+msgstr "Enviar"
+
+#: main/templates/pages/show_header.html:68
+msgid ""
+"Leave us your personal data if you want us to send you information regarding"
+" the destinations of your interest. Do you agree that we send you "
+"information to your email of the destinations you are looking for?"
+msgstr ""
+"Déjanos tus datos personales si quieres que te enviemos información "
+"referente a los destinos de tu interés. ¿Estas de acuerdo en que te enviemos"
+" información a tu correo electrónico de los destinos que estas buscando?"
 
 #: main/templates/pricing.html:13
 msgid "Special"
@@ -1534,6 +1648,21 @@ msgid ""
 msgstr ""
 "\n"
 "Si lo que ve no le atrae porque desea crear un plan adaptado a sus necesidades, contáctenos y lo resolveremos juntos."
+
+#~ msgid "Forgot Password?"
+#~ msgstr "¿Olvido su contraseña?"
+
+#~ msgid "Your password is invalid. Please try again."
+#~ msgstr "Su contraseña es invalida. por favor intente de nuevo."
+
+#~ msgid "FQA"
+#~ msgstr "FQA"
+
+#~ msgid "T&S"
+#~ msgstr "T & S"
+
+#~ msgid "Search offer"
+#~ msgstr "Buscar Ofertas"
 
 #~ msgid "Hamburgo - Alemania"
 #~ msgstr "Hamburgo - Alemania"
