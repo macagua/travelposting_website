@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 16:47-0400\n"
-"PO-Revision-Date: 2019-10-02 17:03-0428\n"
+"POT-Creation-Date: 2019-10-02 18:53-0400\n"
+"PO-Revision-Date: 2019-10-02 18:54-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1401,12 +1401,10 @@ msgid "Spanish "
 msgstr "Español"
 
 #: main/templates/menu/menu.html:49
-#| msgid "Signup"
 msgid "SignUp"
 msgstr "Registrate"
 
 #: main/templates/menu/menu.html:54
-#| msgid "Signup"
 msgid "SignIn"
 msgstr "Ingresa"
 
@@ -1454,7 +1452,6 @@ msgstr "Viaja y comparte tu aventura"
 
 #: main/templates/pages/show_header.html:36
 #: main/templates/pages/show_header.html:48
-#| msgid "Search offer"
 msgid "Search by"
 msgstr "Buscar por"
 
@@ -1472,9 +1469,8 @@ msgid "Destinations"
 msgstr "Destinos"
 
 #: main/templates/pages/show_header.html:59
-#| msgid "New registered search"
-msgid "No time for search?"
-msgstr "¿Sin tiempo para buscar?"
+msgid "We seek for you?"
+msgstr "¿Buscamos por ti?"
 
 #: main/templates/pages/show_header.html:60
 msgid "Request"
@@ -1771,6 +1767,9 @@ msgid ""
 msgstr ""
 "\n"
 "Si lo que ve no le atrae porque desea crear un plan adaptado a sus necesidades, contáctenos y lo resolveremos juntos."
+
+#~ msgid "No time for search?"
+#~ msgstr "¿Sin tiempo para buscar?"
 
 #~ msgid "Confirm New Password"
 #~ msgstr "Confirmación de nueva contraseña"

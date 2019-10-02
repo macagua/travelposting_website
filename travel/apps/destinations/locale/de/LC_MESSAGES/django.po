@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 17:52-0400\n"
+"POT-Creation-Date: 2019-10-02 18:53-0400\n"
 "PO-Revision-Date: 2019-06-27 07:54-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -517,6 +517,7 @@ msgstr ""
 #: apps/destinations/templates/destinations/_delete.html:19
 #: apps/destinations/templates/destinations/_list.html:61
 #: apps/destinations/templates/destinations/gallery/_list.html:129
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:41
 #: apps/destinations/templates/destinations/tab_data/_form.html:17
 #: apps/destinations/templates/oauth2/application_delete.html:19
 #: apps/destinations/templates/oauth2/application_detail.html:49
@@ -590,6 +591,7 @@ msgid "Lista de Destinos"
 msgstr "Liste der Reiseziele"
 
 #: apps/destinations/templates/destinations/_list.html:27
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:21
 #, fuzzy
 #| msgid "Destinos"
 msgid "Destination's name"
@@ -656,6 +658,27 @@ msgstr "Aktion bestätigen"
 msgid "¿Está seguro que desea eliminar este registro?"
 msgstr "Möchten Sie diesen Datensatz wirklich löschen?"
 
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:3
+msgid "Create Itinerary"
+msgstr ""
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:22
+#, fuzzy
+#| msgid "Subtitle"
+msgid "Short Title"
+msgstr "Untertitel"
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:23
+#, fuzzy
+#| msgid "Description"
+msgid "Itinerary Description"
+msgstr "Beschreibung"
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:44
+#: apps/destinations/templates/oauth2/application_detail.html:47
+msgid "Editar"
+msgstr "Bearbeiten"
+
 #: apps/destinations/templates/destinations/navbar_left.html:18
 msgid "Admin"
 msgstr "Admin"
@@ -684,6 +707,10 @@ msgstr "Ihre Ziele"
 #: apps/destinations/templates/destinations/navbar_left.html:44
 msgid "Registrar destino"
 msgstr "Ziel registrieren"
+
+#: apps/destinations/templates/destinations/navbar_left.html:45
+msgid "Itinerary"
+msgstr ""
 
 #: apps/destinations/templates/destinations/navbar_top.html:9
 msgid "Search for something"
@@ -738,10 +765,6 @@ msgstr "Uris umleiten"
 #: apps/destinations/templates/oauth2/application_detail.html:45
 msgid "Atrás"
 msgstr "Zurück"
-
-#: apps/destinations/templates/oauth2/application_detail.html:47
-msgid "Editar"
-msgstr "Bearbeiten"
 
 #: apps/destinations/templates/oauth2/application_form.html:34
 msgid "Guardar"
@@ -804,11 +827,11 @@ msgstr ""
 "Möchten Sie den Zugriff auf das Token wirklich widerrufen?\n"
 "%(object.application)s?</p>"
 
-#: apps/destinations/views.py:172
+#: apps/destinations/views.py:173
 msgid "Agregar destino"
 msgstr "Ziel hinzufügen"
 
-#: apps/destinations/views.py:184
+#: apps/destinations/views.py:185
 msgid "Actualizar destino"
 msgstr "Ziel aktualisieren"
 
