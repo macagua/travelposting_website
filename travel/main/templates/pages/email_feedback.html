@@ -1,464 +1,115 @@
-{% load static i18n cms_tags menu_tags sekizai_tags staticfiles %}
 
+
+{% load static i18n cms_tags menu_tags sekizai_tags staticfiles %}
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-<head>
-    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
-    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
-
-    <!-- CSS Reset : BEGIN -->
-    <style>
-        /* What it does: Remove spaces around the email design added by some email clients. */
-        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-        html,
-body {
-    margin: 0 auto !important;
-    padding: 0 !important;
-    height: 100% !important;
-    width: 100% !important;
-    background: #f1f1f1;
-}
-/* What it does: Stops email clients resizing small text. */
-* {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-/* What it does: Centers email on Android 4.4 */
-div[style*="margin: 16px 0"] {
-    margin: 0 !important;
-}
-/* What it does: Stops Outlook from adding extra spacing to tables. */
-table,
-td {
-    mso-table-lspace: 0pt !important;
-    mso-table-rspace: 0pt !important;
-}
-/* What it does: Fixes webkit padding issue. */
-table {
-    border-spacing: 0 !important;
-    border-collapse: collapse !important;
-    table-layout: fixed !important;
-    margin: 0 auto !important;
-}
-/* What it does: Uses a better rendering method when resizing images in IE. */
-img {
-    -ms-interpolation-mode:bicubic;
-}
-/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
-a {
-    text-decoration: none;
-}
-/* What it does: A work-around for email clients meddling in triggered links. */
-*[x-apple-data-detectors],  /* iOS */
-.unstyle-auto-detected-links *,
-.aBn {
-    border-bottom: 0 !important;
-    cursor: default !important;
-    color: inherit !important;
-    text-decoration: none !important;
-    font-size: inherit !important;
-    font-family: inherit !important;
-    font-weight: inherit !important;
-    line-height: inherit !important;
-}
-/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-.a6S {
-    display: none !important;
-    opacity: 0.01 !important;
-}
-/* What it does: Prevents Gmail from changing the text color in conversation threads. */
-.im {
-    color: inherit !important;
-}
-/* If the above doesn't work, add a .g-img class to any image in question. */
-img.g-img + div {
-    display: none !important;
-}
-/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-/* Create one of these media queries for each additional viewport size you'd like to fix */
-/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-    u ~ div .email-container {
-        min-width: 320px !important;
-    }
-}
-/* iPhone 6, 6S, 7, 8, and X */
-@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-    u ~ div .email-container {
-        min-width: 375px !important;
-    }
-}
-/* iPhone 6+, 7+, and 8+ */
-@media only screen and (min-device-width: 414px) {
-    u ~ div .email-container {
-        min-width: 414px !important;
-    }
-}
-    </style>
-
-    <!-- CSS Reset : END -->
-
-    <!-- Progressive Enhancements : BEGIN -->
-    <style>
-	    .primary{
-	background: #f5564e;
-}
-.bg_white{
-	background: #377dff;
-}
-.bg_light{
-	background: #fafafa;
-}
-.bg_black{
-	background: #000000;
-}
-.bg_dark{
-	background: rgba(0,0,0,.8);
-}
-.email-section{
-	padding:2.5em;
-}
-/*BUTTON*/
-.btn{
-	padding: 5px 15px;
-	display: inline-block;
-}
-.btn.btn-primary{
-	border-radius: 5px;
-	background: #f5564e;
-	color: #ffffff;
-}
-.btn.btn-white{
-	border-radius: 5px;
-	background: #ffffff;
-	color: #000000;
-}
-.btn.btn-white-outline{
-	border-radius: 5px;
-	background: transparent;
-	border: 1px solid #fff;
-	color: #fff;
-}
-h1,h2,h3,h4,h5,h6{
-	font-family: 'Nunito Sans', sans-serif;
-	color: #000000;
-	margin-top: 0;
-}
-body{
-	font-family: 'Nunito Sans', sans-serif;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 1.8;
-	color: rgba(0,0,0,.4);
-}
-a{
-	color: #f5564e;
-}
-table{
-}
-/*LOGO*/
-.logo h1{
-	margin: 0;
-}
-.logo h1 a{
-	color: #fff;
-	font-size: 20px;
-	font-weight: 700;
-	text-transform: uppercase;
-	font-family: 'Nunito Sans', sans-serif;
-}
-.navigation{
-	padding: 0;
-}
-.navigation li{
-	list-style: none;
-	display: inline-block;;
-	margin-left: 5px;
-	font-size: 12px;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-.navigation li a{
-	color: #fff;
-}
-/*HERO*/
-.hero{
-	position: relative;
-	z-index: 0;
-}
-.hero .overlay{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	content: '';
-	width: 100%;
-	background: #000000;
-	z-index: -1;
-	opacity: .3;
-}
-.hero .icon{
-}
-.hero .icon a{
-	display: block;
-	width: 60px;
-	margin: 0 auto;
-}
-.hero .text{
-	color: rgba(255,255,255,.8);
-	padding: 0 4em;
-}
-.hero .text h2{
-	color: #ffffff;
-	font-size: 40px;
-	margin-bottom: 0;
-	line-height: 1.2;
-	font-weight: 900;
-}
-/*HEADING SECTION*/
-.heading-section{
-}
-.heading-section h2{
-	color: #000000;
-	font-size: 24px;
-	margin-top: 0;
-	line-height: 1.4;
-	font-weight: 700;
-}
-.heading-section .subheading{
-	margin-bottom: 20px !important;
-	display: inline-block;
-	font-size: 13px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	color: rgba(0,0,0,.4);
-	position: relative;
-}
-.heading-section .subheading::after{
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: -10px;
-	content: '';
-	width: 100%;
-	height: 2px;
-	background: #f5564e;
-	margin: 0 auto;
-}
-.heading-section-white{
-	color: rgba(255,255,255,.8);
-}
-.heading-section-white h2{
-	font-family: 
-	line-height: 1;
-	padding-bottom: 0;
-}
-.heading-section-white h2{
-	color: #ffffff;
-}
-.heading-section-white .subheading{
-	margin-bottom: 0;
-	display: inline-block;
-	font-size: 13px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	color: rgba(255,255,255,.4);
-}
-.icon{
-	text-align: center;
-}
-.icon img{
-}
-/*SERVICES*/
-.services{
-	background: rgba(0,0,0,.03);
-}
-.text-services{
-	padding: 10px 10px 0; 
-	text-align: center;
-}
-.text-services h3{
-	font-size: 16px;
-	font-weight: 600;
-}
-.services-list{
-	padding: 0;
-	margin: 0 0 10px 0;
-	width: 100%;
-	float: left;
-}
-.services-list .text{
-	width: 100%;
-	float: right;
-}
-.services-list h3{
-	margin-top: 0;
-	margin-bottom: 0;
-	font-size: 18px;
-}
-.services-list p{
-	margin: 0;
-}
-/*DESTINATION*/
-.text-tour{
-	padding-top: 10px;
-}
-.text-tour h3{
-	margin-bottom: 0;
-}
-.text-tour h3 a{
-	color: #000;
-}
-/*BLOG*/
-.text-services .meta{
-	text-transform: uppercase;
-	font-size: 14px;
-}
-/*TESTIMONY*/
-.text-testimony .name{
-	margin: 0;
-}
-.text-testimony .position{
-	color: rgba(0,0,0,.3);
-}
-/*COUNTER*/
-.counter{
-	width: 100%;
-	position: relative;
-	z-index: 0;
-}
-.counter .overlay{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	content: '';
-	width: 100%;
-	background: #000000;
-	z-index: -1;
-	opacity: .3;
-}
-.counter-text{
-	text-align: center;
-}
-.counter-text .num{
-	display: block;
-	color: #ffffff;
-	font-size: 34px;
-	font-weight: 700;
-}
-.counter-text .name{
-	display: block;
-	color: rgba(255,255,255,.9);
-	font-size: 13px;
-}
-ul.social{
-	padding: 0;
-}
-ul.social li{
-	display: inline-block;
-}
-/*FOOTER*/
-.footer{
-	color: rgba(255,255,255,.5);
-}
-.footer .heading{
-	color: #ffffff;
-	font-size: 20px;
-}
-.footer ul{
-	margin: 0;
-	padding: 0;
-}
-.footer ul li{
-	list-style: none;
-	margin-bottom: 10px;
-}
-.footer ul li a{
-	color: rgba(255,255,255,1);
-}
-@media screen and (max-width: 500px) {
-	.icon{
-		text-align: left;
-	}
-	.text-services{
-		padding-left: 0;
-		padding-right: 20px;
-		text-align: left;
-	}
-}
-    </style>
-
-
-</head>
-
-<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f1f1;">
-	<center style="width: 100%; background-color: #f1f1f1;">
-    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-    </div>
-    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
-    	<!-- BEGIN BODY -->
-      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-      	<tr>
-          <td valign="top" class="bg_white" style="padding: 1em 2.5em;">
-          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-          		<tr>
-					  <td width="40%" class="logo" style="text-align: left;">
-						
-			            <h1><a href="https://travelposting.com"><img src="https://travelposting.com/static/img/logo-round-0.5x.png" width="30"/> Travelposting</a></h1>
-			          </td>
-			          <td width="60%" class="logo" style="text-align: right;">
-			            <ul class="navigation">
-			            	<li><a href="https://travelposting.com">{%trans 'Home' %}</a></li>
-
-			            </ul>
-			          </td>
-          		</tr>
-          	</table>
-          </td>
-	      </tr><!-- end tr -->
-				<tr>
-          <td valign="middle" class="hero bg_white" style="background-image: url(https://travelposting.com/static/img/bg_1.jpg); background-size: cover; height: 400px;">
-          	<div class="overlay"></div>
-            <table>
-            	<tr>
-            		<td>
-            			<div class="text" style="text-align: center;">
-            				<h2>{% trans 'New registered search' %}</h2>
-            			</div>
-            		</td>
-            	</tr>
-            </table>
-          </td>
-	      </tr><!-- end tr -->
-	      <tr>
-	        <td class="bg_dark email-section" style="text-align:center;">
-	        	<div class="heading-section heading-section-white">
-	          	<h2>{% trans 'A person has done a new search:' %}</h2>
-	          	<p>
-                    <b> {% trans 'Firts and Last Name: ' %} </b>{{ name }}
-                    <b> {% trans 'Country:' %}</b> {{ country }}
-                    <b> {% trans 'Email:' %}</b>{{ Email }}
-                    <b>{% trans 'Whatsapp' %}</b>{{ whatsapp}}
-				</p>
-				<p>
-                    {% trans 'if you want see the admin site' %} <a href="https://travelposting.com/admin/destinations/searchlanding/">{% trans 'Admin' %}</a>
-				</p>
-
-	        	</div>
-	        </td>
-	      </tr><!-- end: tr -->
-		</table>
-		</div>
-	</center>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <!-- utf-8 works for most cases -->
+        <meta name="viewport" content="width=device-width">
+        <!-- Forcing initial-scale shouldn't be necessary -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Use the latest (edge) version of IE rendering engine -->
+        <meta name="x-apple-disable-message-reformatting">
+        <!-- Disable auto-scale in iOS 10 Mail entirely -->
+        <title></title>
+        <!-- The title tag shows in email notifications, like Android 4.4. -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+    </head>
+    <body>
+        <div style="background-color:#ffffff;font-family:Lato,Arial,sans-serif;margin:0;max-width:600px;min-width:100%;padding:0">
+            <center style="font-family:Lato,Arial,sans-serif;table-layout:fixed;width:100%">
+                <div style="font-family:Lato,Arial,sans-serif;max-width:600px">
+                    <table style="Margin:0 auto;border-spacing:0;font-family:Arial,Helvetica,sans-serif;max-width:600px;width:100%" align="center">
+                        <tbody>
+                            <tr>
+                                <td style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:1px;margin:0;padding:0;text-align:center"><span style="font-family:Lato,Arial,sans-serif;text-align:left">Recuerda hablar solo del producto.</span></td>
+                            </tr>
+                            <tr style="font-family:Lato,Arial,sans-serif">
+                                <td style="font-family:Lato,Arial,sans-serif;padding:0">
+                                    <table style="Margin:0 auto;border-spacing:0;font-family:Arial,Helvetica,sans-serif;max-width:600px;width:100%" align="center">
+                                        <tbody>
+                                            <tr style="font-family:Lato,Arial,sans-serif">
+                                                <td style="font-family:Lato,Arial,sans-serif;padding:0">
+                                                    <table style="background:#377dff;border-spacing:0;font-family:Lato,Arial,sans-serif;height:55px" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                        <tbody>
+                                                            <tr style="font-family:Lato,Arial,sans-serif">
+																<td  style="float:left;font-family:Lato,Arial,sans-serif;height:36px;line-height:100%;padding:9px 20px 8px 20px;vertical-align:middle" valign="top">
+																	<a href="https://travelposting.com" style="color:#3483fa;font-family:Lato,Arial,sans-serif;font-weight:normal;margin:0;padding:0;text-decoration:none;word-break:normal" target="_blank">
+																		<img alt="Ir a Trravelposting" src="https://travelposting.com/static/img/logo-round-0.5x.png" style="border:0;font-family:Lato,Arial,sans-serif;margin:0;padding:1px 0 0 0;text-align:left;vertical-align:middle;" width="30" height="30">
+																		<b style="color:#ffffff; font-size: 20px;">TravelPosting</b>
+																	</a>
+																</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table class="m_9203303517950782099template-itemPrincipal" style="background-color:#ffffff;border-spacing:0;font-family:Lato,Arial,sans-serif;padding-bottom:20px;width:100%" cellspacing="0" cellpadding="0" border="0">
+                                                        <tbody>
+                                                            <tr style="font-family:Lato,Arial,sans-serif;background-image: url(http://localhost:8000/main/static/img/bg_1.jpg); background-size: cover; height: 400px;">
+																<td style="font-family:Lato,Arial,sans-serif;margin:0 auto;padding:0;text-align:center; color:#fff; font-size: 18px;">
+																	<h2 >{% trans 'A person has done a new search:' %}</h2>
+																</td>
+																</tr>
+                                                            <tr style="font-family:Lato,Arial,sans-serif;background:#2f2f2f;" >
+                                                                <td style="font-family:Lato,Arial,sans-serif;margin:0 auto;padding:0;text-align:center">
+																	<h2 style="color:#fff;font-family:Lato,Arial,sans-serif;font-size:24px;font-weight:normal;line-height:20px;margin:0 auto;max-width:280px;padding:20px 0 0 0;text-align:left;text-indent:0;word-break:normal">
+																		<a  style="color:#ffff;font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-height:1.4;margin-bottom:5px;margin-top:0;padding:0;text-align:left;text-decoration:none;text-indent:0;word-break:normal" target="_blank" >
+																				<p>
+																				  <b> {% trans 'Name / Last Name: ' %} </b>{{ name }}<br>
+																				  <b> {% trans 'Country:' %}</b> {{ country }}<br>
+																				  <b> {% trans 'Email:' %}</b>{{ Email }}<br>
+																				  <b>{% trans 'Whatsapp' %}</b>{{ whatsapp}}<br>
+																			  </p>
+																			  <p>
+																				  {% trans 'if you want see the admin site' %} 
+																			  </p>																		
+																			</a>
+																			<a href="https://travelposting.com/admin/destinations/searchlanding/" style="color:#3483fa;display:block;font-family:Lato,Arial,sans-serif;font-weight:normal;margin:0;padding:0;padding-left:0;text-decoration:none;width:100%;word-break:normal" target="_blank" >
+																				<table style="border-spacing:0;display:table!important;font-family:Lato,Arial,sans-serif;height:48px;margin:0 auto;max-height:48px;width:280px" cellspacing="0" cellpadding="0" border="0">
+																					<tbody>
+																						<tr style="font-family:Lato,Arial,sans-serif">
+																							<td style="background-color:#3483fa;border:0;border-radius:4px;color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:18px;font-weight:400;height:48px;margin:5px 0;max-height:48px;max-width:280px;outline:0;padding:0 30px;text-align:center;text-decoration:none;width:100%" align="center">{% trans 'Admin' %}</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</a>
+																			<br>
+																	</h2>
+                                                                </td>
+															</tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table style="background:#eee;border-spacing:0;font-family:Lato,Arial,sans-serif;padding:0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                        <tbody>
+                                                            <tr style="font-family:Lato,Arial,sans-serif">
+                                                                <td style="font-family:Lato,Arial,sans-serif;padding:0;text-align:center">
+                                                                    <div style="display:inline-block;font-family:Lato,Arial,sans-serif;font-size:17px;max-width:230px;min-width:90px;padding:20px 40px;vertical-align:middle">
+                                                                        <span style="color:#666666;display:block;font-family:Lato,Arial,sans-serif;font-size:14px;font-weight:300;text-align:center;width:auto;word-break:normal">¡Muy Pronto nuestra aplicación totalmente gratis !</span>
+                                                                        <table style="border-spacing:0;font-family:Lato,Arial,sans-serif;padding-top:10px" cellspacing="0" cellpadding="0" border="0">
+                                                                            <tbody style="font-family:Lato,Arial,sans-serif">
+                                                                                <tr style="font-family:Lato,Arial,sans-serif">
+                                                                                    <td style="font-family:Lato,Arial,sans-serif;padding:0"><a href="https://travelposting.com/es/coming-soon/" title="Descargar para iOS" style="color:#3483fa;font-family:Lato,Arial,sans-serif;font-weight:normal;padding:0!important;text-decoration:none;word-break:normal" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://itunes.apple.com/es/app/mercadolibre/id463624852&amp;source=gmail&amp;ust=1570061298950000&amp;usg=AFQjCNG7cVXwtOscO5ZT77TBspcFrhrhjw"><img src="https://ci3.googleusercontent.com/proxy/41275EbLjm9plNwFcD5JaXH2h76YPdO7z3f1BrTcIB8bpHGKosIMZ1utTQa3-YUQkDwmjhfX1oNUcu3wzjR_YO971e46Hi3M2fN8tvL9Slcccjnygzfgl9r4dEg=s0-d-e1-ft#http://static.mlstatic.com/org-img/mkt/email-mkt-assets/2x/appleStore.png" alt="Descargar para iOS" style="border:0;font-family:Lato,Arial,sans-serif" class="CToWUd" width="104" height="32" border="0"></a></td>
+                                                                                    <td style="font-family:Lato,Arial,sans-serif;padding:0" width="20">&nbsp;</td>
+                                                                                    <td style="font-family:Lato,Arial,sans-serif;padding:0;padding-left:0px"><a href="https://travelposting.com/es/coming-soon/" title="Descargar para Android" style="color:#3483fa;font-family:Lato,Arial,sans-serif;font-weight:normal;padding:0!important;text-decoration:none;word-break:normal" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://play.google.com/store/apps/details?id%3Dcom.mercadolibre%26hl%3Des_419&amp;source=gmail&amp;ust=1570061298950000&amp;usg=AFQjCNG3SLCwIQvP5iv0NqsmL6HMFq1N5w"><img src="https://ci3.googleusercontent.com/proxy/E6B6umYmAQlGRy-8CiHfB8tC3fkFq2KaaWSwxaM_VgG06vJ1vipUrUDrFbRM0_6ghGbEZk4X6dw_ZC2QAhCgU8sSp8_YgcksJgVmfI_vy-mtXGLM2ZpdL20jfl0=s0-d-e1-ft#http://static.mlstatic.com/org-img/mkt/email-mkt-assets/2x/googlePlay.png" alt="Descargar para Android" style="border:0;font-family:Lato,Arial,sans-serif" class="CToWUd" width="104" height="32" border="0"></a></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </center>
+        </div>
+    </body>
 </html>
 
