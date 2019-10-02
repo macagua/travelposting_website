@@ -1,3 +1,5 @@
+
+
 {% load staticfiles i18n destinations_tags %}
 <!-- Hero Section -->
 <div class="gradient-overlay-half-primary-video-v1">
@@ -22,53 +24,94 @@
                             <h2 class="display-4 text-white font-weight-normal">{% trans 'Travel and share your adventure' %}</h2>
                         </div>
                         <!-- End Info -->
-
                         <!-- CARDS -->
-                        <div id="OptionCards" class="container space-top-0">
-                            <div class="w-lg-65 mx-lg-auto">
-                                <div class="card-deck d-block d-md-flex card-md-gutters-3">
-                                <!-- Blog Card -->
-                                <article class="card border-0 bg-primary text-white shadow-primary-lg transition-3d-hover mb-5 mb-md-0">
-                                    <div class="card-body p-6">
-                                    <span class="btn btn-lg btn-icon btn-soft-light rounded-circle mb-9">
-                                        <span class="fa fa-book font-size-5 btn-icon__inner btn-icon__inner-bottom-minus"></span>
-                                    </span>
-                                    <small class="d-block text-white-70 text-uppercase mb-1">{% trans "Search by" %}</small>
-                                    <a class="btn btn-sm btn-soft-white btn-pill transition-3d-hover" href="#categories_list">{% trans "Categories" %}</a>
+                        <div class="d-flex justify-content-center">
+                        <div class="js-slick-carousel text-center u-slick u-slick--gutters-3 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="5" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
+                            &quot;breakpoint&quot;: 1200,
+                            &quot;settings&quot;: {
+                            &quot;slidesToShow&quot;: 4
+                            }
+                            }, {
+                            &quot;breakpoint&quot;: 992,
+                            &quot;settings&quot;: {
+                            &quot;slidesToShow&quot;: 3
+                            }
+                            }, {
+                            &quot;breakpoint&quot;: 768,
+                            &quot;settings&quot;: {
+                            &quot;slidesToShow&quot;: 2
+                            }
+                            }, {
+                            &quot;breakpoint&quot;: 480,
+                            &quot;settings&quot;: {
+                            &quot;slidesToShow&quot;: 1
+                            }
+                            }]">
+                            <div class="slick-list draggable">
+                                <div> 
+                                    <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01">
+                                        <!-- Icon Block -->
+                                        <article class="card border-0 shadow-sm transition-3d-hover mb-3">
+                                            <div class="card-body bg-danger rounded-top p-5">
+                                                <div class="u-avatar bg-white rounded p-2 mx-auto">
+                                                    <i class="fas fa-book"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-4">
+                                                <div class="mb-3">
+                                                    <h2 class="h6 mb-0">{% trans 'Search by' %}</h2>
+                                                </div>
+                                                <a class="btn btn-sm btn-block btn-primary" href="#categories_list" tabindex="0">{% trans 'Categories' %}</a>
+                                            </div>
+                                        </article>
+                                        <!-- End Icon Block -->
                                     </div>
-                                </article>
-                                <!-- End Blog Card -->
-
-                                <!-- Blog Card -->
-                                <article class="card border-0 shadow-sm transition-3d-hover">
-                                    <div class="card-body p-6">
-                                    <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mb-9">
-                                        <span class="fa fa-search font-size-5 btn-icon__inner btn-icon__inner-bottom-minus"></span>
-                                    </span>
-                                    <small class="d-block text-primary text-uppercase mb-1">{% trans "Search by" %}</small>
-                                    <a class="btn btn-sm btn-soft-primary btn-pill transition-3d-hover" href="/category/all/">{% trans "Destinations" %}</a>
+                                    <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
+                                        <!-- Icon Block -->
+                                        <article class="card border-0 shadow-sm transition-3d-hover mb-3">
+                                            <div class="card-body bg-warning rounded-top p-5">
+                                                <div class="u-avatar bg-white rounded p-2 mx-auto">
+                                                    <i class="fas fa-search"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-4">
+                                                <div class="mb-3">
+                                                    <h2 class="h6 mb-0">{% trans 'Search by' %}</h2>
+                                                </div>
+                                                <a class="btn btn-sm btn-block btn-primary" href="/category/all/" tabindex="0">{% trans 'Destinations' %}</a>
+                                            </div>
+                                        </article>
+                                        <!-- End Icon Block -->
                                     </div>
-                                </article>
-                                <!-- End Blog Card -->
-                                <!-- Blog Card -->
-                                <article class="card border-0 bg-primary text-white shadow-primary-lg transition-3d-hover mb-5 mb-md-0">
-                                    <div class="card-body p-6">
-                                    <span class="btn btn-lg btn-icon btn-soft-light rounded-circle mb-9">
-                                        <span class="fa fa-envelope font-size-5 btn-icon__inner btn-icon__inner-bottom-minus"></span>
-                                    </span>
-                                    <small class="d-block text-white-70 text-uppercase mb-1">{% trans "No time for search?" %}</small>
-                                    <a id="show_form" class="btn btn-sm btn-soft-white btn-pill transition-3d-hover" href="#">{% trans "Request" %}</a>
+                                    <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
+                                        <!-- Icon Block -->
+                                        <article class="card border-0 shadow-sm transition-3d-hover mb-3">
+                                            <div class="card-body bg-success rounded-top p-5">
+                                                <div class="u-avatar bg-white rounded p-2 mx-auto">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-4">
+                                                <div class="mb-3">
+                                                    <h2 class="h6 mb-0" style="font-size: 14px;">{% trans 'No time for search?' %}</h2>
+                                                </div>
+                                                <a class="btn btn-sm btn-block btn-primary" href="#" tabindex="0">{% trans 'Request' %}</a>
+                                            </div>
+                                        </article>
+                                        <!-- End Icon Block -->
                                     </div>
-                                </article>
-                                <!-- End Blog Card -->
                                 </div>
                             </div>
+                            <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
+                                <li class="slick-active slick-current" role="presentation"><span></span></li>
+                            </ul>
                         </div>
+                    </div>
                         <!-- END CARDS -->
-
                         <!-- Form -->
                         <div id="SearchForm" style="display: none;">
-                            <form id="PersonSearch" class="js-validate" action="safe/" method="POST">{% csrf_token %}
+                            <form id="PersonSearch" class="js-validate" action="safe/" method="POST">
+                                {% csrf_token %}
                                 <p class="lead text-white" style="font-size: 17px;">{% trans 'Where would you like to travel this time?'%}</p>
                                 <div class="form-row mb-2">
                                     <div class="col-sm-6 col-lg mb-2">
@@ -150,3 +193,4 @@
     <div class="d-lg-none position-absolute top-0 right-0 bottom-0 left-0 bg-img-hero" style="background-image: url({%  static image %}{% background_image %});"></div>
 </div>
 <!-- End Hero Section -->
+
