@@ -25,6 +25,7 @@ from apps.destinations.models import (
     HeaderSection,
     DestinationDetail,
     OptionTabData,
+    TabData,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -251,3 +252,9 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
 
     def get_queryset(self):
         return self.object.gallery.all()
+
+
+class ItineraryListView(LoginRequiredMixin, ListView):
+    template_name = 'destinations/itinerary/itinerary.html'
+    queryset = TabData.objects \
+    .filter(option_tab__name="Itinerario")
