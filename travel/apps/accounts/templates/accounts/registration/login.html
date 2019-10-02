@@ -66,7 +66,7 @@
                             {{ field.errors }}
                         </div>
                         {% endfor %}
-                        <a class="link-muted text-capitalize font-weight-normal small" href="recover-account.html">Forgot Password?</a>
+                        <a class="link-muted text-capitalize font-weight-normal small" href="{% url 'accounts:password-reset' %}">Forgot Password?</a>
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
                             <div class="col-6">

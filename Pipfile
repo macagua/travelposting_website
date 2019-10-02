@@ -49,6 +49,7 @@ django-filter = "*"
 drf-writable-nested = "*"
 html-json-forms = "*"
 django-tellme = "*"
+django-admin-shortcuts = "*"
 
 [requires]
 python_version = "3.7"

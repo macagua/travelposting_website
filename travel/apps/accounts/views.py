@@ -4,7 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from apps.accounts.models import CustomerUser
 from apps.payments.paypal.views import SubscriptionView
 from config.settings import local as settings
-from django.core.exceptions import PermissionDenied
 from django.core.mail import mail_managers
 from django.forms.forms import BaseForm
 from django.http import HttpResponse
@@ -22,8 +21,6 @@ from django.views.generic import (
 )
 from django.views.i18n import set_language
 from django_registration.backends.activation.views import RegistrationView, ActivationView
-from apps.landing_page.models import Plan
-from django.shortcuts import render
 from apps.accounts.forms import (
     SignInForm,
     RegistrationForm,
@@ -31,7 +28,6 @@ from apps.accounts.forms import (
     PasswordResetConfirmForm,
     CustomPasswordChangeForm,
     CustomerUserChangeForm,
-    CustomAuthenticationForm,
 )
 from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext as _
@@ -107,30 +103,16 @@ class RegisterView(SubscriptionView, RegistrationView):
 def isuccess(request):
     return render(request, 'accounts/registration/succes_register.html')
 
+
 class ActivateAccountView(ActivationView):
     success_url = reverse_lazy('accounts:activate-complete')
     template_name = 'accounts/registration/activation_failed.html'
-
-def password(request):
-    return render(request, 'accounts/registration/forgot_password.html')
-
-
-def passwordsuccess(request):
-    return render(request, 'accounts/registration/forgot_password_success.html')
-
-
-def passwordconfirm(request):
-    return render(request, 'accounts/registration/password_reset_confirm.html')
-
-
-def passworddone(request):
-    return render(request, 'accounts/registration/password_reset_done.html')
 
 
 class PasswordResetView(auth_views.PasswordResetView):
     email_template_name = 'accounts/registration/password_reset_email.html'
     html_email_template_name = 'accounts/registration/password_reset_email.html'
-    template_name = 'accounts/registration/password_reset_form.html'
+    template_name = 'accounts/registration/forgot_password.html'
     success_url = reverse_lazy('accounts:password-reset-done')
     form_class = CustomPasswordResetForm
 

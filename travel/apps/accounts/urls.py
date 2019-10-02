@@ -46,26 +46,26 @@ urlpatterns = [
 
     path(
         'password_reset/',
-        views.password,
+        views.PasswordResetView.as_view(),
         name='password-reset',
     ),
 
     path(
-        'password_reset/success/',
-        views.passwordsuccess,
-        name='password-reset-complete',
-    ),
-
-    path(
-        'password_reset/confirm/',
-        views.passwordconfirm,
-        name='password-reset-success',
+        'reset/<uidb64>/<token>/',
+        views.PasswordResetConfirmView.as_view(),
+        name='password-reset-confirm',
     ),
 
     path(
         'password_reset/done/',
-        views.passworddone,
+        views.PasswordResetDoneView.as_view(),
         name='password-reset-done',
+    ),
+
+    path(
+        'reset/complete/',
+        views.PasswordResetCompleteView.as_view(),
+        name='password-reset-complete',
     ),
 
     path(
