@@ -68,7 +68,7 @@ class SaveSearchView(View):
             whatsapp = whatsapp
         )
 
-        
+
         subject = _('New registered search')
 
         ctx = {
@@ -79,15 +79,14 @@ class SaveSearchView(View):
                 }
 
         html_message = render_to_string(
-            'pages/email_feedback.html', 
+            'pages/email_feedback.html',
             context=ctx
         )
 
-        message = _(u'A person has done a new search, please review Mr.\'s {0} incoming application. \n Search the country or city: {1} \n Email:  {2} \n or if you want see the admin site https://travelposting.com/admin/ ').format(
-            name,
-            country,
-            email
-        )
+        message = _(f'A person has done a new search, please review Mr.\'s {name} incoming application. \n Search \
+                    the country or city: {country} \n Email:  {email} \n  Whatsapp: {whatsapp} \n or if you want see the \
+                    admin site https://travelposting.com/admin/ ')
+
         mail_admins(subject,
                     message,
                     fail_silently=True,

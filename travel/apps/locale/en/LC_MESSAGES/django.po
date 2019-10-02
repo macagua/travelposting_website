@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-30 23:57-0400\n"
+"POT-Creation-Date: 2019-10-01 23:31-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,53 +188,47 @@ msgid ""
 "    "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/activation_complete.html:420
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:420
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:420
-msgid "Home"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration/activation_complete.html:435
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:435
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:435
-msgid "Welcome to Travelposting"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration/activation_complete.html:445
+#: apps/accounts/templates/accounts/registration/activation_complete.html:50
 msgid "Accounts Activate"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/activation_complete.html:447
-msgid "Your account was successfully activated"
+#: apps/accounts/templates/accounts/registration/activation_complete.html:59
+#: main/templates/pages/email_feedback.html:64
+msgid "if you want see the admin site"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/activation_complete.html:448
+#: apps/accounts/templates/accounts/registration/activation_complete.html:66
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:69
 msgid "Click here to login"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:445
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:50
 msgid "Confirmación del correo"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:447
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:57
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t%(user.first_name)s Gracias por registarse en Travel&Solutions.\n"
-"\t\t\t\t\tConfirme su cuenta para finalizar la creación de su cuenta.\n"
-"\t\t\t\t  "
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por "
+"registarse en Travel&Solutions.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar "
+"la creación de su cuenta.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:453
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:63
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\tSu clave de activación es: %(activation_key)s,\n"
-"\t\t\t\t\tesa clave será válida por %(expiration_days)s días.\n"
-"\t\t\t\t  "
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: "
+"%(activation_key)s,\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por "
+"%(expiration_days)s días.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:460
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:72
 msgid "Confirmar correo electrónico"
 msgstr ""
 
@@ -334,8 +328,25 @@ msgstr ""
 msgid "Signup"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:445
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:50
+msgid "Welcome to Travelposting"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:59
 msgid "User registered"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
+#: apps/landing_page/models.py:402 main/templates/index.html:67
+msgid "Name"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:61
+msgid "Company name"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:62
+msgid "Country"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_subject.html:3
@@ -673,10 +684,6 @@ msgstr ""
 msgid "slider"
 msgstr ""
 
-#: apps/landing_page/models.py:402 main/templates/index.html:67
-msgid "Name"
-msgstr ""
-
 #: apps/landing_page/models.py:407
 msgid "Editor"
 msgstr ""
@@ -695,6 +702,22 @@ msgstr ""
 
 #: apps/landing_page/models.py:443
 msgid "Megazines"
+msgstr ""
+
+#: apps/landing_page/views.py:72
+msgid "New registered search"
+msgstr ""
+
+#: apps/landing_page/views.py:86
+#, python-brace-format
+msgid ""
+"A person has done a new search, please review Mr.'s {name} incoming "
+"application. \n"
+" Search                     the country or city: {country} \n"
+" Email:  {email} \n"
+"  Whatsapp: {whatsapp} \n"
+" or if you want see the                     admin site https://travelposting."
+"com/admin/ "
 msgstr ""
 
 #: apps/payments/apps.py:7
@@ -1298,6 +1321,42 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+#: main/templates/pages/email_feedback.html:50
+msgid "A person has done a new search:"
+msgstr ""
+
+#: main/templates/pages/email_feedback.html:58
+msgid "Name / Last Name: "
+msgstr ""
+
+#: main/templates/pages/email_feedback.html:59
+msgid "Country:"
+msgstr ""
+
+#: main/templates/pages/email_feedback.html:60
+msgid "Email:"
+msgstr ""
+
+#: main/templates/pages/email_feedback.html:61
+#: main/templates/pages/show_header.html:55
+#: main/templates/pages/show_header.html:57
+msgid "Whatsapp"
+msgstr ""
+
+#: main/templates/pages/email_feedback.html:71
+msgid "Admin"
+msgstr ""
+
+#: main/templates/pages/safeSearch.html:17
+msgid "Thank you"
+msgstr ""
+
+#: main/templates/pages/safeSearch.html:18
+msgid ""
+"Very soon we will contact you, with all the requirements. Thank you for "
+"contacting us, Travelposting team"
+msgstr ""
+
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
 msgstr ""
@@ -1311,31 +1370,14 @@ msgstr ""
 msgid "Name / Last Name"
 msgstr ""
 
-#: main/templates/pages/show_header.html:33
-msgid "Name must contain only letters."
-msgstr ""
-
 #: main/templates/pages/show_header.html:39
 #: main/templates/pages/show_header.html:41
 msgid "Country / City"
 msgstr ""
 
-#: main/templates/pages/show_header.html:41
-msgid "Please, what country or city that do you want to go?"
-msgstr ""
-
 #: main/templates/pages/show_header.html:47
 #: main/templates/pages/show_header.html:49
 msgid "E-mail"
-msgstr ""
-
-#: main/templates/pages/show_header.html:55
-#: main/templates/pages/show_header.html:57
-msgid "Whatsapp"
-msgstr ""
-
-#: main/templates/pages/show_header.html:57
-msgid "Please enter a valid whatsapp number"
 msgstr ""
 
 #: main/templates/pages/show_header.html:63
