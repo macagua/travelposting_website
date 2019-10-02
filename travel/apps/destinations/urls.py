@@ -8,6 +8,7 @@ from apps.destinations.views import (
     DestinationDeleteView,
     GalleryListView,
     OptionTabDataTemplateAjaxView,
+    ItineraryListView,
 )
 
 app_name = 'destinations'
@@ -52,5 +53,11 @@ urlpatterns = [
         'option/<int:pk>/template/',
         OptionTabDataTemplateAjaxView.as_view(),
         name='option-template',
+    ),
+
+    path(
+        'itinerary/',
+        ItineraryListView.as_view(),
+        name='itinerary-list',
     ),
 ]
