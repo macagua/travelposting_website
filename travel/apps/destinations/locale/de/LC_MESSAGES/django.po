@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 02:12-0400\n"
+"POT-Creation-Date: 2019-10-02 16:47-0400\n"
 "PO-Revision-Date: 2019-06-27 07:54-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,19 +60,19 @@ msgstr "Samstag"
 msgid "String for storage days of lists"
 msgstr "Zeichenfolge für die Aufbewahrungstage von Listen"
 
-#: apps/destinations/forms.py:34
+#: apps/destinations/forms.py:41
 msgid "Category"
 msgstr ""
 
-#: apps/destinations/forms.py:38
+#: apps/destinations/forms.py:46
 msgid "Nombre del tour"
 msgstr "Name des Tours"
 
-#: apps/destinations/forms.py:112
+#: apps/destinations/forms.py:128
 msgid "Option"
 msgstr "Option"
 
-#: apps/destinations/forms.py:134
+#: apps/destinations/forms.py:153
 #, python-format
 msgid "El tab '%(tab)s' se encuentra duplicado, debe estar una sola vez."
 msgstr "Der Tabulator '%(tab)s' ist bereit gestellt, er darf nur einmal sein."

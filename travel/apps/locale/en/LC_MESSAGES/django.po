@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 02:12-0400\n"
+"POT-Creation-Date: 2019-10-02 16:47-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -269,7 +269,7 @@ msgid "Email address"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
-#: main/templates/pages/show_header.html:49
+#: main/templates/pages/show_header.html:94
 msgid "Please enter a valid email address."
 msgstr ""
 
@@ -777,7 +777,7 @@ msgstr ""
 msgid "es"
 msgstr ""
 
-#: config/settings/base.py:298
+#: config/settings/base.py:303
 msgid "Feature"
 msgstr ""
 
@@ -1338,8 +1338,11 @@ msgid "Spanish "
 msgstr ""
 
 #: main/templates/menu/menu.html:49
-#: main/templates/services/pricing/plans.html:73
-msgid "Register"
+msgid "SignUp"
+msgstr ""
+
+#: main/templates/menu/menu.html:54
+msgid "SignIn"
 msgstr ""
 
 #: main/templates/pages/email_feedback.html:50
@@ -1359,8 +1362,8 @@ msgid "Email:"
 msgstr ""
 
 #: main/templates/pages/email_feedback.html:61
-#: main/templates/pages/show_header.html:55
-#: main/templates/pages/show_header.html:57
+#: main/templates/pages/show_header.html:100
+#: main/templates/pages/show_header.html:102
 msgid "Whatsapp"
 msgstr ""
 
@@ -1382,30 +1385,58 @@ msgstr ""
 msgid "Travel and share your adventure"
 msgstr ""
 
-#: main/templates/pages/show_header.html:27
+#: main/templates/pages/show_header.html:36
+#: main/templates/pages/show_header.html:48
+#, fuzzy
+#| msgid "Search offer"
+msgid "Search by"
+msgstr "Search offer"
+
+#: main/templates/pages/show_header.html:37
+#: main/templates/services/destination/categories.html:6
+#: main/templates/services/destination/destinations_for_categorie.html:3
+#: main/templates/services/destination/detail.back.html:3
+#: main/templates/services/destination/detail_destination.html:3
+msgid "Categories"
+msgstr ""
+
+#: main/templates/pages/show_header.html:49
+#: main/templates/services/destination/destinations_for_categorie.html:64
+msgid "Destinations"
+msgstr ""
+
+#: main/templates/pages/show_header.html:59
+msgid "No time for search?"
+msgstr ""
+
+#: main/templates/pages/show_header.html:60
+msgid "Request"
+msgstr ""
+
+#: main/templates/pages/show_header.html:72
 msgid "Where would you like to travel this time?"
 msgstr ""
 
-#: main/templates/pages/show_header.html:31
-#: main/templates/pages/show_header.html:33
+#: main/templates/pages/show_header.html:76
+#: main/templates/pages/show_header.html:78
 msgid "Name / Last Name"
 msgstr ""
 
-#: main/templates/pages/show_header.html:39
-#: main/templates/pages/show_header.html:41
+#: main/templates/pages/show_header.html:84
+#: main/templates/pages/show_header.html:86
 msgid "Country / City"
 msgstr ""
 
-#: main/templates/pages/show_header.html:47
-#: main/templates/pages/show_header.html:49
+#: main/templates/pages/show_header.html:92
+#: main/templates/pages/show_header.html:94
 msgid "E-mail"
 msgstr ""
 
-#: main/templates/pages/show_header.html:63
+#: main/templates/pages/show_header.html:108
 msgid "Send"
 msgstr ""
 
-#: main/templates/pages/show_header.html:68
+#: main/templates/pages/show_header.html:111
 msgid ""
 "Leave us your personal data if you want us to send you information regarding "
 "the destinations of your interest. Do you agree that we send you information "
@@ -1488,13 +1519,6 @@ msgstr ""
 msgid "Our"
 msgstr ""
 
-#: main/templates/services/destination/categories.html:6
-#: main/templates/services/destination/destinations_for_categorie.html:3
-#: main/templates/services/destination/detail.back.html:3
-#: main/templates/services/destination/detail_destination.html:3
-msgid "Categories"
-msgstr ""
-
 #: main/templates/services/destination/categories.html:13
 msgid "All"
 msgstr ""
@@ -1526,10 +1550,6 @@ msgstr ""
 
 #: main/templates/services/destination/destinations_for_categorie.html:18
 msgid "Meet our best destinations"
-msgstr ""
-
-#: main/templates/services/destination/destinations_for_categorie.html:64
-msgid "Destinations"
 msgstr ""
 
 #: main/templates/services/destination/destinations_for_categorie.html:116
@@ -1649,6 +1669,10 @@ msgstr ""
 msgid "See plan details"
 msgstr ""
 
+#: main/templates/services/pricing/plans.html:73
+msgid "Register"
+msgstr ""
+
 #: main/templates/services/pricing/plans.html:87
 msgid "Contact Us"
 msgstr ""
@@ -1666,6 +1690,3 @@ msgid ""
 "that out together.\n"
 "                                            "
 msgstr ""
-
-#~ msgid "Search offer"
-#~ msgstr "Search offer"

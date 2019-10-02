@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 02:12-0400\n"
-"PO-Revision-Date: 2019-10-02 12:46-0428\n"
+"POT-Creation-Date: 2019-10-02 16:47-0400\n"
+"PO-Revision-Date: 2019-10-02 17:03-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -276,7 +276,7 @@ msgid "Email address"
 msgstr "Correo electrónico"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
-#: main/templates/pages/show_header.html:49
+#: main/templates/pages/show_header.html:94
 msgid "Please enter a valid email address."
 msgstr "Por favor ingrese un correo valido"
 
@@ -370,7 +370,6 @@ msgid "Your password has been changed successfully!"
 msgstr "¡Tu contraseña ha sido cambiada exitosamente!"
 
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:51
-#| msgid "Welcome back our website and enjoy all our new plans."
 msgid "Come back to our website and enjoy all our new plans."
 msgstr ""
 "Bienvenido de vuelta a nuestro sitio y disfrute nuestros nuevos planes."
@@ -406,7 +405,6 @@ msgstr "accounts:login"
 
 #: apps/accounts/templates/accounts/registration/password_reset_email.html:50
 #: apps/accounts/templates/accounts/registration/password_reset_email.html:67
-#| msgid "New Password"
 msgid "Reset Password"
 msgstr "Resetear contraseña"
 
@@ -799,7 +797,7 @@ msgstr "de"
 msgid "es"
 msgstr "es"
 
-#: config/settings/base.py:298
+#: config/settings/base.py:303
 msgid "Feature"
 msgstr "funcionalidad"
 
@@ -1403,9 +1401,14 @@ msgid "Spanish "
 msgstr "Español"
 
 #: main/templates/menu/menu.html:49
-#: main/templates/services/pricing/plans.html:73
-msgid "Register"
-msgstr "Registro"
+#| msgid "Signup"
+msgid "SignUp"
+msgstr "Registrate"
+
+#: main/templates/menu/menu.html:54
+#| msgid "Signup"
+msgid "SignIn"
+msgstr "Ingresa"
 
 #: main/templates/pages/email_feedback.html:50
 msgid "A person has done a new search:"
@@ -1424,8 +1427,8 @@ msgid "Email:"
 msgstr "E-mail"
 
 #: main/templates/pages/email_feedback.html:61
-#: main/templates/pages/show_header.html:55
-#: main/templates/pages/show_header.html:57
+#: main/templates/pages/show_header.html:100
+#: main/templates/pages/show_header.html:102
 msgid "Whatsapp"
 msgstr "Whatsapp"
 
@@ -1449,30 +1452,58 @@ msgstr ""
 msgid "Travel and share your adventure"
 msgstr "Viaja y comparte tu aventura"
 
-#: main/templates/pages/show_header.html:27
+#: main/templates/pages/show_header.html:36
+#: main/templates/pages/show_header.html:48
+#| msgid "Search offer"
+msgid "Search by"
+msgstr "Buscar por"
+
+#: main/templates/pages/show_header.html:37
+#: main/templates/services/destination/categories.html:6
+#: main/templates/services/destination/destinations_for_categorie.html:3
+#: main/templates/services/destination/detail.back.html:3
+#: main/templates/services/destination/detail_destination.html:3
+msgid "Categories"
+msgstr "Categorías"
+
+#: main/templates/pages/show_header.html:49
+#: main/templates/services/destination/destinations_for_categorie.html:64
+msgid "Destinations"
+msgstr "Destinos"
+
+#: main/templates/pages/show_header.html:59
+#| msgid "New registered search"
+msgid "No time for search?"
+msgstr "¿Sin tiempo para buscar?"
+
+#: main/templates/pages/show_header.html:60
+msgid "Request"
+msgstr "Petición"
+
+#: main/templates/pages/show_header.html:72
 msgid "Where would you like to travel this time?"
 msgstr "¿Donde te gustaría viajar esta vez?"
 
-#: main/templates/pages/show_header.html:31
-#: main/templates/pages/show_header.html:33
+#: main/templates/pages/show_header.html:76
+#: main/templates/pages/show_header.html:78
 msgid "Name / Last Name"
 msgstr "Nombre /Apellido"
 
-#: main/templates/pages/show_header.html:39
-#: main/templates/pages/show_header.html:41
+#: main/templates/pages/show_header.html:84
+#: main/templates/pages/show_header.html:86
 msgid "Country / City"
 msgstr "Pais / Ciudad"
 
-#: main/templates/pages/show_header.html:47
-#: main/templates/pages/show_header.html:49
+#: main/templates/pages/show_header.html:92
+#: main/templates/pages/show_header.html:94
 msgid "E-mail"
 msgstr "E-mail"
 
-#: main/templates/pages/show_header.html:63
+#: main/templates/pages/show_header.html:108
 msgid "Send"
 msgstr "Enviar"
 
-#: main/templates/pages/show_header.html:68
+#: main/templates/pages/show_header.html:111
 msgid ""
 "Leave us your personal data if you want us to send you information regarding"
 " the destinations of your interest. Do you agree that we send you "
@@ -1564,13 +1595,6 @@ msgstr "ver más"
 msgid "Our"
 msgstr "Nuestras"
 
-#: main/templates/services/destination/categories.html:6
-#: main/templates/services/destination/destinations_for_categorie.html:3
-#: main/templates/services/destination/detail.back.html:3
-#: main/templates/services/destination/detail_destination.html:3
-msgid "Categories"
-msgstr "Categorías"
-
 #: main/templates/services/destination/categories.html:13
 msgid "All"
 msgstr "Todo"
@@ -1609,10 +1633,6 @@ msgstr "Tendrás un excelente viaje."
 #: main/templates/services/destination/destinations_for_categorie.html:18
 msgid "Meet our best destinations"
 msgstr "Conozca nuestros mejores destinos"
-
-#: main/templates/services/destination/destinations_for_categorie.html:64
-msgid "Destinations"
-msgstr "Destinos"
 
 #: main/templates/services/destination/destinations_for_categorie.html:116
 msgid "See details"
@@ -1674,12 +1694,10 @@ msgid "back to list"
 msgstr "Volver a la lista"
 
 #: main/templates/services/destination/detail_destination.html:235
-#| msgid "Meet our best destinations"
 msgid "Book your destination!"
 msgstr "¡Reserve su destino!"
 
 #: main/templates/services/destination/detail_destination.html:256
-#| msgid "Name / Last Name"
 msgid "Last Name"
 msgstr "Apellido"
 
@@ -1692,7 +1710,6 @@ msgid "Number of people travelling"
 msgstr "Numero de personas viajando"
 
 #: main/templates/services/destination/detail_destination.html:293
-#| msgid "Do you have a Coupon?"
 msgid "Do you have a plan you want to book?"
 msgstr "¿Tienes un plan que quieres reservar?"
 
@@ -1732,6 +1749,10 @@ msgstr "Mensual"
 #: main/templates/services/pricing/plans.html:50
 msgid "See plan details"
 msgstr "Ver detalles del plan"
+
+#: main/templates/services/pricing/plans.html:73
+msgid "Register"
+msgstr "Registro"
 
 #: main/templates/services/pricing/plans.html:87
 msgid "Contact Us"
@@ -1780,9 +1801,6 @@ msgstr ""
 
 #~ msgid "T&S"
 #~ msgstr "T & S"
-
-#~ msgid "Search offer"
-#~ msgstr "Buscar Ofertas"
 
 #~ msgid "Hamburgo - Alemania"
 #~ msgstr "Hamburgo - Alemania"
