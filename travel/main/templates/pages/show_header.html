@@ -25,88 +25,90 @@
                         </div>
                         <!-- End Info -->
                         <!-- CARDS -->
-                        <div class="d-flex justify-content-center" id="OptionCards" >
-                        <div class="js-slick-carousel text-center u-slick u-slick--gutters-3 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="5" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
-                            &quot;breakpoint&quot;: 1200,
-                            &quot;settings&quot;: {
-                            &quot;slidesToShow&quot;: 4
-                            }
-                            }, {
-                            &quot;breakpoint&quot;: 992,
-                            &quot;settings&quot;: {
-                            &quot;slidesToShow&quot;: 3
-                            }
-                            }, {
-                            &quot;breakpoint&quot;: 768,
-                            &quot;settings&quot;: {
-                            &quot;slidesToShow&quot;: 2
-                            }
-                            }, {
-                            &quot;breakpoint&quot;: 480,
-                            &quot;settings&quot;: {
-                            &quot;slidesToShow&quot;: 1
-                            }
-                            }]">
-                            <div class="slick-list draggable">
-                                <div> 
-                                    <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01">
-                                        <!-- Icon Block -->
-                                        <article class="card border-0 shadow-sm transition-3d-hover mb-3">
-                                            <div class="card-body bg-danger rounded-top p-5">
-                                                <div class="u-avatar bg-white rounded p-2 mx-auto">
-                                                    <i class="fas fa-book"></i>
-                                                </div>
+                        <div id="OptionCards">
+                            <div class="d-flex justify-content-center">
+                            <div class="js-slick-carousel text-center u-slick u-slick--gutters-3 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="5" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
+                                    &quot;breakpoint&quot;: 1200,
+                                    &quot;settings&quot;: {
+                                    &quot;slidesToShow&quot;: 4
+                                    }
+                                    }, {
+                                    &quot;breakpoint&quot;: 992,
+                                    &quot;settings&quot;: {
+                                    &quot;slidesToShow&quot;: 3
+                                    }
+                                    }, {
+                                    &quot;breakpoint&quot;: 768,
+                                    &quot;settings&quot;: {
+                                    &quot;slidesToShow&quot;: 2
+                                    }
+                                    }, {
+                                    &quot;breakpoint&quot;: 480,
+                                    &quot;settings&quot;: {
+                                    &quot;slidesToShow&quot;: 1
+                                    }
+                                    }]">
+                                    <div class="slick-list draggable">
+                                        <div> 
+                                            <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01">
+                                                <!-- Icon Block -->
+                                                <article class="card border-0 shadow-sm transition-3d-hover mb-3">
+                                                    <div class="card-body bg-danger rounded-top p-5">
+                                                        <div class="u-avatar bg-white rounded p-2 mx-auto">
+                                                            <i class="fas fa-book"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body p-4">
+                                                        <div class="mb-3">
+                                                            <h2 class="h6 mb-0">{% trans 'Search by' %}</h2>
+                                                        </div>
+                                                        <a class="btn btn-sm btn-block btn-primary" href="#categories_list" tabindex="0">{% trans 'Categories' %}</a>
+                                                    </div>
+                                                </article>
+                                                <!-- End Icon Block -->
                                             </div>
-                                            <div class="card-body p-4">
-                                                <div class="mb-3">
-                                                    <h2 class="h6 mb-0">{% trans 'Search by' %}</h2>
-                                                </div>
-                                                <a class="btn btn-sm btn-block btn-primary" href="#categories_list" tabindex="0">{% trans 'Categories' %}</a>
+                                            <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
+                                                <!-- Icon Block -->
+                                                <article class="card border-0 shadow-sm transition-3d-hover mb-3">
+                                                    <div class="card-body bg-warning rounded-top p-5">
+                                                        <div class="u-avatar bg-white rounded p-2 mx-auto">
+                                                            <i class="fas fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body p-4">
+                                                        <div class="mb-3">
+                                                            <h2 class="h6 mb-0">{% trans 'Search by' %}</h2>
+                                                        </div>
+                                                        <a class="btn btn-sm btn-block btn-primary" href="/category/all/" tabindex="0">{% trans 'Destinations' %}</a>
+                                                    </div>
+                                                </article>
+                                                <!-- End Icon Block -->
                                             </div>
-                                        </article>
-                                        <!-- End Icon Block -->
+                                            <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
+                                                <!-- Icon Block -->
+                                                <article class="card border-0 shadow-sm transition-3d-hover mb-3">
+                                                    <div class="card-body bg-success rounded-top p-5">
+                                                        <div class="u-avatar bg-white rounded p-2 mx-auto">
+                                                            <i class="fas fa-envelope"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body p-4">
+                                                        <div class="mb-3">
+                                                            <h2 class="h6 mb-0" style="font-size: 14px;">{% trans 'No time for search?' %}</h2>
+                                                        </div>
+                                                        <a id="show_form" class="btn btn-sm btn-block btn-primary" href="#" tabindex="0">{% trans 'Request' %}</a>
+                                                    </div>
+                                                </article>
+                                                <!-- End Icon Block -->
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
-                                        <!-- Icon Block -->
-                                        <article class="card border-0 shadow-sm transition-3d-hover mb-3">
-                                            <div class="card-body bg-warning rounded-top p-5">
-                                                <div class="u-avatar bg-white rounded p-2 mx-auto">
-                                                    <i class="fas fa-search"></i>
-                                                </div>
-                                            </div>
-                                            <div class="card-body p-4">
-                                                <div class="mb-3">
-                                                    <h2 class="h6 mb-0">{% trans 'Search by' %}</h2>
-                                                </div>
-                                                <a class="btn btn-sm btn-block btn-primary" href="/category/all/" tabindex="0">{% trans 'Destinations' %}</a>
-                                            </div>
-                                        </article>
-                                        <!-- End Icon Block -->
-                                    </div>
-                                    <div class="js-slide mt-1 slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 198px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
-                                        <!-- Icon Block -->
-                                        <article class="card border-0 shadow-sm transition-3d-hover mb-3">
-                                            <div class="card-body bg-success rounded-top p-5">
-                                                <div class="u-avatar bg-white rounded p-2 mx-auto">
-                                                    <i class="fas fa-envelope"></i>
-                                                </div>
-                                            </div>
-                                            <div class="card-body p-4">
-                                                <div class="mb-3">
-                                                    <h2 class="h6 mb-0" style="font-size: 14px;">{% trans 'No time for search?' %}</h2>
-                                                </div>
-                                                <a id="show_form" class="btn btn-sm btn-block btn-primary" href="#" tabindex="0">{% trans 'Request' %}</a>
-                                            </div>
-                                        </article>
-                                        <!-- End Icon Block -->
-                                    </div>
+                                    <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
+                                        <li class="slick-active slick-current" role="presentation"><span></span></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
-                                <li class="slick-active slick-current" role="presentation"><span></span></li>
-                            </ul>
                         </div>
-                    </div>
                         <!-- END CARDS -->
                         <!-- Form -->
                         <div id="SearchForm" style="display: none;">
