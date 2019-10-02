@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
 {% block title %}{% trans 'Categories' %}{% endblock title %}
+{% block extracss %}
+{% endblock extracss %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -215,11 +217,123 @@
           <!-- End Accordion -->
 
           <div class="mb-4">
-            <button type="button" class="btn btn-block btn-primary btn-pill transition-3d-hover">{% trans "Reserve" %}</button>
+            <button type="button"  data-toggle="modal" data-target="#exampleModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
           </div>
 
         </div>
         <!-- End Product Description -->
       </div>
     </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{% trans 'Reserve your destinations' %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name'%}">
+                              </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789'%}">
+                              </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
+                                </div>
+                                <input type="email" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling'%}">
+                              </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
+                                </div>
+                                <input type="email" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="How can we help?"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <p style="font-size: 10px;">
+                          {% blocktrans %}
+                          Do you agree that the data entered in Travelposting will be used for advertising and marketing purposes between Travelposting, its alliance partners and Xposting-Service? At any time you can make use of your rights and ask for the cancellation of your data.
+                          {% endblocktrans%}
+                      </p>  
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          {% trans 'Accept?' %}
+                        </label>
+                      </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          {% trans 'Yes' %}
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                          {% trans 'No' %}
+                        </label>
+                      </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
+                <button type="submit" class="btn btn-primary">{% trans 'Save Change' %}</button>
+            </div>
+          </form>
+
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock content %}
+{% block extrajs %}
+
+{% endblock extrajs %}
