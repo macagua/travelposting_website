@@ -14,7 +14,7 @@
         <div class="d-md-flex">
             <div class="container d-md-flex align-items-md-center min-height-md-100vh text-center space-3 space-top-md-4 space-top-lg-3">
                 <div class="row justify-content-md-center w-100">
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <!-- Fancybox -->
                         <!-- End Fancybox -->
                         <!-- Info -->
@@ -22,50 +22,96 @@
                             <h2 class="display-4 text-white font-weight-normal">{% trans 'Travel and share your adventure' %}</h2>
                         </div>
                         <!-- End Info -->
-                        <!-- Form -->
-                        <form class="js-validate" action="safe/" method="POST">{% csrf_token %}
-                            <p class="lead text-white" style="font-size: 17px;">{% trans 'Where would you like to travel this time?'%}</p>
-                            <div class="form-row mb-2">
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <div class="">
-                                        <label class="sr-only">{% trans 'Name / Last Name' %}</label>
-                                        <div class="input-group input-group-borderless">
-                                            <input type="text" class="form-control" name="name" placeholder="{% trans 'Name / Last Name' %}" required="" >
-                                        </div>
+
+                        <!-- CARDS -->
+                        <div id="OptionCards" class="container space-top-0">
+                            <div class="w-lg-65 mx-lg-auto">
+                                <div class="card-deck d-block d-md-flex card-md-gutters-3">
+                                <!-- Blog Card -->
+                                <article class="card border-0 bg-primary text-white shadow-primary-lg transition-3d-hover mb-5 mb-md-0">
+                                    <div class="card-body p-6">
+                                    <span class="btn btn-lg btn-icon btn-soft-light rounded-circle mb-9">
+                                        <span class="fa fa-book font-size-5 btn-icon__inner btn-icon__inner-bottom-minus"></span>
+                                    </span>
+                                    <small class="d-block text-white-70 text-uppercase mb-1">{% trans "Search by" %}</small>
+                                    <a class="btn btn-sm btn-soft-white btn-pill transition-3d-hover" href="#categories_list">{% trans "Categories" %}</a>
                                     </div>
-                                </div>
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <div class="js-form-message">
-                                        <label class="sr-only" >{% trans 'Country / City' %}</label>
-                                        <div class="input-group input-group-borderless">
-                                            <input type="text" class="form-control" name="city"  placeholder="{% trans 'Country / City' %}"  required="" >
-                                        </div>
+                                </article>
+                                <!-- End Blog Card -->
+
+                                <!-- Blog Card -->
+                                <article class="card border-0 shadow-sm transition-3d-hover">
+                                    <div class="card-body p-6">
+                                    <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mb-9">
+                                        <span class="fa fa-search font-size-5 btn-icon__inner btn-icon__inner-bottom-minus"></span>
+                                    </span>
+                                    <small class="d-block text-primary text-uppercase mb-1">{% trans "Search by" %}</small>
+                                    <a class="btn btn-sm btn-soft-primary btn-pill transition-3d-hover" href="/category/all/">{% trans "Destinations" %}</a>
                                     </div>
-                                </div>
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <div class="js-form-message">
-                                        <label class="sr-only" for="signupSrEmail">{% trans 'E-mail' %}</label>
-                                        <div class="input-group input-group-borderless">
-                                            <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="{% trans 'E-mail' %}" aria-label="City" required="" data-msg="{% trans 'Please enter a valid email address.' %}'">
-                                        </div>
+                                </article>
+                                <!-- End Blog Card -->
+                                <!-- Blog Card -->
+                                <article class="card border-0 bg-primary text-white shadow-primary-lg transition-3d-hover mb-5 mb-md-0">
+                                    <div class="card-body p-6">
+                                    <span class="btn btn-lg btn-icon btn-soft-light rounded-circle mb-9">
+                                        <span class="fa fa-envelope font-size-5 btn-icon__inner btn-icon__inner-bottom-minus"></span>
+                                    </span>
+                                    <small class="d-block text-white-70 text-uppercase mb-1">{% trans "No time for search?" %}</small>
+                                    <a id="show_form" class="btn btn-sm btn-soft-white btn-pill transition-3d-hover" href="#">{% trans "Request" %}</a>
                                     </div>
-                                </div>
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <div class="">
-                                        <label class="sr-only" for="signupSrEmail">{% trans 'Whatsapp' %}</label>
-                                        <div class="input-group input-group-borderless">
-                                            <input type="text" class="form-control" name="whatsapp"  placeholder="{% trans 'Whatsapp' %}" aria-label="Whatsapp">
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="col-sm-6 col-lg mb-2">
-                                    <button type="submit" class="btn btn-block btn-white transition-3d-hover">{% trans 'Send' %}</button>
+                                </article>
+                                <!-- End Blog Card -->
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                        <!-- END CARDS -->
+
+                        <!-- Form -->
+                        <div id="SearchForm" style="display: none;">
+                            <form id="PersonSearch" class="js-validate" action="safe/" method="POST">{% csrf_token %}
+                                <p class="lead text-white" style="font-size: 17px;">{% trans 'Where would you like to travel this time?'%}</p>
+                                <div class="form-row mb-2">
+                                    <div class="col-sm-6 col-lg mb-2">
+                                        <div class="">
+                                            <label class="sr-only">{% trans 'Name / Last Name' %}</label>
+                                            <div class="input-group input-group-borderless">
+                                                <input type="text" class="form-control" name="name" placeholder="{% trans 'Name / Last Name' %}" required="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg mb-2">
+                                        <div class="js-form-message">
+                                            <label class="sr-only" >{% trans 'Country / City' %}</label>
+                                            <div class="input-group input-group-borderless">
+                                                <input type="text" class="form-control" name="city"  placeholder="{% trans 'Country / City' %}"  required="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg mb-2">
+                                        <div class="js-form-message">
+                                            <label class="sr-only" for="signupSrEmail">{% trans 'E-mail' %}</label>
+                                            <div class="input-group input-group-borderless">
+                                                <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="{% trans 'E-mail' %}" aria-label="City" required="" data-msg="{% trans 'Please enter a valid email address.' %}'">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg mb-2">
+                                        <div class="">
+                                            <label class="sr-only" for="signupSrEmail">{% trans 'Whatsapp' %}</label>
+                                            <div class="input-group input-group-borderless">
+                                                <input type="text" class="form-control" name="whatsapp"  placeholder="{% trans 'Whatsapp' %}" aria-label="Whatsapp">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="col-sm-6 col-lg mb-2">
+                                        <button type="submit" class="btn btn-block btn-white transition-3d-hover">{% trans 'Send' %}</button>
+                                    </div>
+                                </div>
+                                <p class="lead text-white" style="font-size: 17px;">  <input type="checkbox" name="answer_option" value="yes" checked> {% trans "Leave us your personal data if you want us to send you information regarding the destinations of your interest. Do you agree that we send you information to your email of the destinations you are looking for?" %}</p>
+                            </form>
+                        </div>
                         <!-- End Form -->
-                       <p class="lead text-white" style="font-size: 17px;">  <input type="checkbox" name="answer_option" value="yes" checked> {% trans "Leave us your personal data if you want us to send you information regarding the destinations of your interest. Do you agree that we send you information to your email of the destinations you are looking for?" %}</p>
                     </div>
                 </div>
             </div>
