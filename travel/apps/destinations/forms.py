@@ -3,7 +3,8 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput
-
+from apps.accounts.forms import BaseBootstrapForm
+from apps.destinations.widgets import BootstrapMoneyWidget
 from apps.destinations.models import (
     TourData,
     HeaderSection,
@@ -14,11 +15,12 @@ from apps.destinations.models import (
     BookingDetail,
     Photo,
 )
-from apps.accounts.forms import BaseBootstrapForm
-from apps.destinations.widgets import BootstrapMoneyWidget
 
 
 class DestinationForm(forms.ModelForm):
+    """
+        Form for save new destinations thru the frontend dashboard.
+    """
     class Meta:
         model = Destination
         fields = [
@@ -62,6 +64,9 @@ class DestinationForm(forms.ModelForm):
 
 
 class TourDataForm(BaseBootstrapForm, forms.ModelForm):
+    """
+        ModelForm to save the correspondient data as a inline on destination create/update view.
+    """
     def __init__(self, *args, **kwargs):
         super(TourDataForm, self).__init__(*args, **kwargs)
 
@@ -94,11 +99,17 @@ class TourDataForm(BaseBootstrapForm, forms.ModelForm):
 
 
 class TourDataInlineFormSet(forms.BaseInlineFormSet):
+    """
+        Tab options on change inlineformset.
+    """
     def has_changed(self):
         return super(TourDataInlineFormSet, self).has_changed()
 
 
 class TabDataForm(forms.ModelForm):
+    """
+        Initial and Metas for ```TabData````Model.
+    """
     def __init__(self, *args, **kwargs):
         super(TabDataForm, self).__init__(*args, **kwargs)
 
@@ -127,6 +138,9 @@ class TabDataForm(forms.ModelForm):
 
 
 class TabDataInlineFormSet(forms.BaseInlineFormSet):
+    """
+        Base for clean and validate the tabs for formtabs in dashboard destination app.
+    """
     def clean(self):
         super(TabDataInlineFormSet, self).clean()
         options_tab = []
@@ -140,18 +154,31 @@ class TabDataInlineFormSet(forms.BaseInlineFormSet):
                     params={'tab': option_tab})
             options_tab.append(option_tab)
 
-
-TabDataFormSet = forms.inlineformset_factory(TourData, TabData, formset=TabDataInlineFormSet, form=TabDataForm, extra=1,
-                                             min_num=0, max_num=10)
+#Setting the inline.
+TabDataFormSet = forms.inlineformset_factory(
+    TourData,
+    TabData,
+    formset=TabDataInlineFormSet,
+    form=TabDataForm,
+    extra=1,
+    min_num=0, max_num=10,
+)
 
 
 class HeaderSectionInlineForm(BaseBootstrapForm, forms.ModelForm):
+    """
+        ModelForm to the ```Header``` model in to dashboard.
+        @TODO: consider if can be deleted.
+    """
     class Meta:
         model = HeaderSection
         fields = '__all__'
 
 
 class DestinationDetailForm(BaseBootstrapForm, forms.ModelForm):
+    """
+        ModelForm used for save the data about all destiantion's details.
+    """
     def __init__(self, *args, **kwargs):
         super(DestinationDetailForm, self).__init__(*args, **kwargs)
 
@@ -191,6 +218,9 @@ class DestinationDetailForm(BaseBootstrapForm, forms.ModelForm):
 
 
 class GeneralDetailForm(BaseBootstrapForm, forms.ModelForm):
+    """
+        `GeneralDetail` class to show widget for this form.
+    """
     class Meta:
         model = GeneralDetail
         fields = '__all__'
@@ -201,9 +231,15 @@ class GeneralDetailForm(BaseBootstrapForm, forms.ModelForm):
             'date_on_sale_to': DatePickerInput(format='%Y-%m-%d')
         }
 
-
-GeneralDetailInlineFormSet = forms.inlineformset_factory(DestinationDetail, GeneralDetail, form=GeneralDetailForm,
-                                                         extra=1, min_num=0, max_num=1)
+#Setting the inline.
+GeneralDetailInlineFormSet = forms.inlineformset_factory(
+    DestinationDetail,
+    GeneralDetail,
+    form=GeneralDetailForm,
+    extra=1,
+    min_num=0,
+    max_num=1,
+)
 
 
 class InventarioDetailForm(BaseBootstrapForm, forms.ModelForm):
@@ -211,9 +247,15 @@ class InventarioDetailForm(BaseBootstrapForm, forms.ModelForm):
         model = InventarioDetail
         fields = '__all__'
 
-
-InventarioDetailInlineFormSet = forms.inlineformset_factory(DestinationDetail, InventarioDetail,
-                                                            form=InventarioDetailForm, extra=1, min_num=0, max_num=1)
+#Setting the inline.
+InventarioDetailInlineFormSet = forms.inlineformset_factory(
+    DestinationDetail,
+    InventarioDetail,
+    form=InventarioDetailForm,
+    extra=1,
+    min_num=0,
+    max_num=1,
+)
 
 
 class BookingDetailForm(BaseBootstrapForm, forms.ModelForm):
@@ -229,9 +271,15 @@ class BookingDetailForm(BaseBootstrapForm, forms.ModelForm):
             })
         }
 
-
-BookingDetailInlineFormSet = forms.inlineformset_factory(DestinationDetail, BookingDetail, form=BookingDetailForm,
-                                                         extra=0, min_num=1, max_num=10)
+#Setting the inline.
+BookingDetailInlineFormSet = forms.inlineformset_factory(
+    DestinationDetail,
+    BookingDetail,
+    form=BookingDetailForm,
+    extra=0,
+    min_num=1,
+    max_num=10,
+)
 
 
 class PhotoForm(forms.ModelForm):

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.db.models import  Max, Min
 from django.views import View
 from django.utils.translation import gettext_lazy as _
-from django.core.mail import mail_admins
+from django.core.mail import mail_managers
 from django.template.loader import render_to_string
 from apps.destinations.models import (
     Destination,
@@ -87,7 +87,7 @@ class SaveSearchView(View):
                     the country or city: {country} \n Email:  {email} \n  Whatsapp: {whatsapp} \n or if you want see the \
                     admin site https://travelposting.com/admin/ ')
 
-        mail_admins(subject,
+        mail_managers(subject,
                     message,
                     fail_silently=True,
                     html_message=html_message

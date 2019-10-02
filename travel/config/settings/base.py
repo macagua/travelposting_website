@@ -244,10 +244,15 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
 # python -m smtpd -n -c DebuggingServer localhost:1025
 ADMINS = [
     ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
+    ('Dervins Guapes', 'dervins2505@gmail.com'),
+    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
+
 ]
 
 MANAGERS = [
     ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
+    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
+    ('Support Travelposting', 'support@travelposting.com'),
 ]
 
 # Authentication options
