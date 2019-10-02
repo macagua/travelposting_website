@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-01 23:31-0400\n"
-"PO-Revision-Date: 2019-10-01 23:31-0428\n"
+"POT-Creation-Date: 2019-10-02 02:12-0400\n"
+"PO-Revision-Date: 2019-10-02 02:17-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -49,6 +49,7 @@ msgid "Accounts"
 msgstr "Cuentas"
 
 #: apps/accounts/forms.py:31 main/templates/index.html:76
+#: main/templates/services/destination/detail_destination.html:274
 msgid "Email"
 msgstr "E-mail"
 
@@ -58,11 +59,11 @@ msgstr "Su cuenta ha sido bloqueada por falta de pago"
 
 #: apps/accounts/forms.py:72
 msgid ""
-"Use at least 8 characters. Do not use a password from another site or a term "
-"that is too obvious, such as your pet's name."
+"Use at least 8 characters. Do not use a password from another site or a term"
+" that is too obvious, such as your pet's name."
 msgstr ""
-"Use al menos 8 caracteres, No use contraseñas de otros sitios o obvias, como "
-"el nombre de su mascota. "
+"Use al menos 8 caracteres, No use contraseñas de otros sitios o obvias, como"
+" el nombre de su mascota. "
 
 #: apps/accounts/forms.py:77
 msgid "Enter the same password as above, for verification."
@@ -191,8 +192,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"&copy; 2018 Todos los derechos reservados Mapa del sitio Descargo de "
-"responsabilidad."
+"&copy; 2018 Todos los derechos reservados Mapa del sitio Descargo de responsabilidad."
 
 #: apps/accounts/templates/accounts/registration/activation_complete.html:50
 msgid "Accounts Activate"
@@ -216,10 +216,8 @@ msgstr "Confirmación del correo"
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por "
-"registarse en Travel&Solutions.\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar "
-"la creación de su cuenta.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por registarse en Travel&Solutions.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar la creación de su cuenta.\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 "\n"
@@ -230,10 +228,8 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: "
-"%(activation_key)s,\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por "
-"%(expiration_days)s días.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: %(activation_key)s,\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por %(expiration_days)s días.\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 "\n"
@@ -251,6 +247,7 @@ msgstr "TravelPosting: Confirmación de correo"
 #: apps/accounts/templates/accounts/registration/forgot_password.html:14
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:25
 #: apps/accounts/templates/accounts/registration/login.html:14
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:25
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:25
 #: apps/accounts/templates/accounts/registration/register_form.html:14
@@ -265,11 +262,11 @@ msgstr "Travelposting"
 msgid "Go back"
 msgstr "Ir atrás"
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:51
+#: apps/accounts/templates/accounts/registration/forgot_password.html:52
 msgid " Forgot your <span class=\"font-weight-semi-bold\">password? "
 msgstr "Olvidaste tu <span class=\"font-weight-semi-bold\">contraseña? "
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:52
+#: apps/accounts/templates/accounts/registration/forgot_password.html:53
 msgid "Enter your email address below."
 msgstr "Ingrese el correo debajo"
 
@@ -283,20 +280,21 @@ msgstr "Correo electrónico"
 msgid "Please enter a valid email address."
 msgstr "Por favor ingrese un correo valido"
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:66
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:72
+#: apps/accounts/templates/accounts/registration/forgot_password.html:65
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:70
 msgid "Back to sign in"
 msgstr "Volver al ingreso"
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:70
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:76
+#: apps/accounts/templates/accounts/registration/forgot_password.html:68
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:73
 msgid "Request Reset Link"
 msgstr "Peticion de reseteo"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:32
 #: apps/accounts/templates/accounts/registration/login.html:77
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:32
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:54
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:32
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:54
 #: apps/accounts/templates/accounts/registration/register_form.html:88
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
@@ -310,7 +308,8 @@ msgstr "Necesitamos verificar tu identidad"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
 msgid "Please check your email, and follow the next intructions"
-msgstr "Por favor verifique su e-mail, y siga las instrucciones a continuación"
+msgstr ""
+"Por favor verifique su e-mail, y siga las instrucciones a continuación"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
 msgid "accounts:register"
@@ -350,6 +349,7 @@ msgstr "Usuario registrado"
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/landing_page/models.py:402 main/templates/index.html:67
+#: main/templates/services/destination/detail_destination.html:248
 msgid "Name"
 msgstr "Nombre"
 
@@ -365,25 +365,35 @@ msgstr "País"
 msgid "Registro de usuario: "
 msgstr "Registro de usuario:"
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:51
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:50
+msgid "Your password has been changed successfully!"
+msgstr "¡Tu contraseña ha sido cambiada exitosamente!"
+
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:51
+#| msgid "Welcome back our website and enjoy all our new plans."
+msgid "Come back to our website and enjoy all our new plans."
+msgstr ""
+"Bienvenido de vuelta a nuestro sitio y disfrute nuestros nuevos planes."
+
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:52
 msgid " Travelposting"
 msgstr "Travelposting"
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:52
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:53
 msgid "Enter the new password and confirm the new password."
 msgstr "Ingrese la contraseña y confírmela."
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:58
-msgid "New Password"
-msgstr "Nueva contraseña"
-
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:63
-msgid "Confirm New Password"
-msgstr "Confirmación de nueva contraseña"
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:32
+msgid "Home"
+msgstr "Inicio"
 
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:50
-msgid "Your petitions is completed!"
-msgstr "Su petición ha sido completada!"
+msgid ""
+"We've sent an email with the reset instructions! please check also spam "
+"folder (just in case)."
+msgstr ""
+"¡Hemos enviado un correo electrónico con las instrucciones de reinicio! "
+"compruebe también la carpeta de correo no deseado (por si acaso)."
 
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:51
 msgid "Welcome back our website and enjoy all our new plans."
@@ -393,6 +403,20 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:54
 msgid "accounts:login"
 msgstr "accounts:login"
+
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:50
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:67
+#| msgid "New Password"
+msgid "Reset Password"
+msgstr "Resetear contraseña"
+
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:57
+#, python-format
+msgid ""
+"Reset password for email: %(email)s. Press the button to reset your password"
+msgstr ""
+"Restablecer contraseña para correo electrónico: %(email)s. Presione el botón"
+" para restablecer su contraseña"
 
 #: apps/accounts/templates/accounts/registration/register_form.html:50
 msgid "Welcome to"
@@ -524,7 +548,7 @@ msgstr ""
 "\n"
 " Su contraseña fue cambiada exitosamente."
 
-#: apps/accounts/views.py:62
+#: apps/accounts/views.py:58
 msgid "An error, Incorrect User or Password has occurred."
 msgstr "Se produjo un error, usuario o contraseña incorrectos."
 
@@ -550,7 +574,7 @@ msgstr "Valor"
 
 #: apps/landing_page/models.py:49
 #: main/templates/services/destination/detail.back.html:144
-#: main/templates/services/destination/detail_destination.html:144
+#: main/templates/services/destination/detail_destination.html:146
 msgid "Price"
 msgstr "Precio"
 
@@ -727,16 +751,13 @@ msgstr "Nueva búsqueda registrada"
 #: apps/landing_page/views.py:86
 #, python-brace-format
 msgid ""
-"A person has done a new search, please review Mr.'s {name} incoming "
-"application. \n"
+"A person has done a new search, please review Mr.'s {name} incoming application. \n"
 " Search                     the country or city: {country} \n"
 " Email:  {email} \n"
 "  Whatsapp: {whatsapp} \n"
-" or if you want see the                     admin site https://travelposting."
-"com/admin/ "
+" or if you want see the                     admin site https://travelposting.com/admin/ "
 msgstr ""
-"Una persona ha realizado una nueva búsqueda, revise la solicitud entrante "
-"del Sr. {name}.\n"
+"Una persona ha realizado una nueva búsqueda, revise la solicitud entrante del Sr. {name}.\n"
 "Busque el país o la ciudad: {country}\n"
 "Correo electrónico: {correo electrónico}\n"
 "Whatsapp: {whatsapp}\n"
@@ -832,8 +853,8 @@ msgstr "pronto"
 
 #: main/templates/coming-soon.html:71
 msgid ""
-"Our apps is under construction. We'll be here soon with our new awesome apps "
-"for your device"
+"Our apps is under construction. We'll be here soon with our new awesome apps"
+" for your device"
 msgstr ""
 "Nuestras aplicaciones están en construcción. Estaremos aquí pronto con "
 "nuestras nuevas e increíbles aplicaciones para tu dispositivo"
@@ -857,11 +878,11 @@ msgstr "Comunidad"
 
 #: main/templates/community.html:16
 msgid ""
-"Our community is not yet open to the general public, for now it is a project "
-"that we will be making known on social networks as of 02.10.19"
+"Our community is not yet open to the general public, for now it is a project"
+" that we will be making known on social networks as of 02.10.19"
 msgstr ""
-"Nuestra comunidad aún no está abierta al público en general, por ahora es un "
-"proyecto que daremos a conocer en las redes sociales a partir del 02.10.19."
+"Nuestra comunidad aún no está abierta al público en general, por ahora es un"
+" proyecto que daremos a conocer en las redes sociales a partir del 02.10.19."
 
 #: main/templates/community.html:43
 msgid "Discover our benefits"
@@ -874,9 +895,9 @@ msgstr "Bienvenido a nuestra comunidad de Travelposting."
 #: main/templates/community.html:68
 msgid ""
 "The purpose of our Community is to be able to offer you tourist packages at "
-"a very good price, since by having a good number of members in our community "
-"we can negotiate much better prices so that each of you has the opportunity "
-"to enjoy without spending much money"
+"a very good price, since by having a good number of members in our community"
+" we can negotiate much better prices so that each of you has the opportunity"
+" to enjoy without spending much money"
 msgstr ""
 "La finalidad de nuestra Comunidad es poder ofrecerles paquetes turísticos a "
 "muy buen precio, ya que al tener un buen número de miembros en nuestra "
@@ -890,39 +911,23 @@ msgstr "Mis deberes"
 #: main/templates/community.html:95
 msgid ""
 "\n"
-"              1 • By being members of the Community we commit ourselves to "
-"give our Feedback to the Travel Agencies, Resorts or Companies that offer us "
-"to test their services for a very low price.\n"
+"              1 • By being members of the Community we commit ourselves to give our Feedback to the Travel Agencies, Resorts or Companies that offer us to test their services for a very low price.\n"
 "\n"
-"              2 • Our Feedback can no longer be already, all good or NOT no "
-"no, all bad, you must commit to give feedback (real recommendation) from "
-"your point of view to the Hotels or any company of the tourism sector that "
-"invites us.\n"
+"              2 • Our Feedback can no longer be already, all good or NOT no no, all bad, you must commit to give feedback (real recommendation) from your point of view to the Hotels or any company of the tourism sector that invites us.\n"
 "\n"
-"              3 • You must link and comment on the Hotel, Resort or company "
-"that invites us to your social networks at least two, (Example Instagram or "
-"facebook, or Instagram and Travelposting), to publicize the company that "
-"invites us\n"
+"              3 • You must link and comment on the Hotel, Resort or company that invites us to your social networks at least two, (Example Instagram or facebook, or Instagram and Travelposting), to publicize the company that invites us\n"
 "\n"
-"              4 • You must fill in your Feedback / Recommendation form at "
-"the end of the trip, or maximum seven days after the end of the trip.\n"
+"              4 • You must fill in your Feedback / Recommendation form at the end of the trip, or maximum seven days after the end of the trip.\n"
 "            "
 msgstr ""
 "\n"
-"1 - Al ser miembros de la Comunidad nos comprometemos a dar nuestro Feedback "
-"a las Agencias de Viajes, Resorts o Compañías que nos ofrecen probar sus "
-"servicios a un precio muy bajo.\n"
+"1 - Al ser miembros de la Comunidad nos comprometemos a dar nuestro Feedback a las Agencias de Viajes, Resorts o Compañías que nos ofrecen probar sus servicios a un precio muy bajo.\n"
 "\n"
-"2 - Nuestro Feedback ya no puede ser ya, todo bueno o NO, todo malo, debes "
-"comprometerte a dar feedback (recomendación real) desde tu punto de vista a "
-"los Hoteles o a cualquier empresa del sector turístico que nos invite.\n"
+"2 - Nuestro Feedback ya no puede ser ya, todo bueno o NO, todo malo, debes comprometerte a dar feedback (recomendación real) desde tu punto de vista a los Hoteles o a cualquier empresa del sector turístico que nos invite.\n"
 "\n"
-"3 - Debe enlazar y comentar sobre el Hotel, Resort o empresa que nos invita "
-"a sus redes sociales al menos dos, (Ejemplo Instagram o facebook, o "
-"Instagram y Travelposting), para publicitar la empresa que nos invita.\n"
+"3 - Debe enlazar y comentar sobre el Hotel, Resort o empresa que nos invita a sus redes sociales al menos dos, (Ejemplo Instagram o facebook, o Instagram y Travelposting), para publicitar la empresa que nos invita.\n"
 "\n"
-"4 - Debe rellenar su formulario de Retroalimentación / Recomendación al "
-"final del viaje, o como máximo siete días después del final del viaje.\n"
+"4 - Debe rellenar su formulario de Retroalimentación / Recomendación al final del viaje, o como máximo siete días después del final del viaje.\n"
 "\t"
 
 #: main/templates/community.html:119
@@ -933,67 +938,47 @@ msgstr "Mis beneficios"
 #, python-format
 msgid ""
 "\n"
-"            1 • Travel with discounts of 20%% up to 50%% discount on the "
-"tourist package of your choice\n"
+"            1 • Travel with discounts of 20%% up to 50%% discount on the tourist package of your choice\n"
 "\n"
-"            2 • Be able to invite your friends to register on the "
-"travelposting page and can travel with you and also save up to 50%%\n"
+"            2 • Be able to invite your friends to register on the travelposting page and can travel with you and also save up to 50%%\n"
 "\n"
-"            3 • Participate free in all draws that travelposting makes in "
-"reference to the tourism sector\n"
+"            3 • Participate free in all draws that travelposting makes in reference to the tourism sector\n"
 "\n"
-"            4 • Receive free trial products that companies in the tourism "
-"sector make available to the community\n"
+"            4 • Receive free trial products that companies in the tourism sector make available to the community\n"
 "\n"
-"            5 • Be able to go out in advertising magazines that "
-"travelposting airs\n"
+"            5 • Be able to go out in advertising magazines that travelposting airs\n"
 "\n"
-"            6 • Attend events that travelposting concerning organized "
-"tourism\n"
+"            6 • Attend events that travelposting concerning organized tourism\n"
 "\n"
-"            7 • Get discounts on purchases made with the Travelposting Card "
-"*\n"
+"            7 • Get discounts on purchases made with the Travelposting Card *\n"
 "\n"
-"            * The prepaid credit card will be being released after "
-"completing the minimum amount of 1500 members.\n"
+"            * The prepaid credit card will be being released after completing the minimum amount of 1500 members.\n"
 "\n"
-"            It is your chance to help us grow, the longer we are, the faster "
-"we can get our credit card.\n"
+"            It is your chance to help us grow, the longer we are, the faster we can get our credit card.\n"
 "\n"
-"            From now we wish you much enjoyment in your travels with us and "
-"to prepare bags that your next destination is waiting for you.\n"
+"            From now we wish you much enjoyment in your travels with us and to prepare bags that your next destination is waiting for you.\n"
 "          "
 msgstr ""
 "\n"
-"1 - Viaje con descuentos de 20%% hasta 50%% de descuento en el paquete "
-"turístico de su elección.\n"
+"1 - Viaje con descuentos de 20%% hasta 50%% de descuento en el paquete turístico de su elección.\n"
 "\n"
-"2 - Podrás invitar a tus amigos a registrarse en la página de publicación de "
-"viajes y viajar contigo, además de ahorrar hasta un 50%%.\n"
+"2 - Podrás invitar a tus amigos a registrarse en la página de publicación de viajes y viajar contigo, además de ahorrar hasta un 50%%.\n"
 "\n"
-"3 - Participar gratuitamente en todos los sorteos que haga el travelposting "
-"en referencia al sector turístico.\n"
+"3 - Participar gratuitamente en todos los sorteos que haga el travelposting en referencia al sector turístico.\n"
 "\n"
-"4 - Recibir productos de prueba gratuitos que las empresas del sector "
-"turístico ponen a disposición de la comunidad.\n"
+"4 - Recibir productos de prueba gratuitos que las empresas del sector turístico ponen a disposición de la comunidad.\n"
 "\n"
-"5 - Poder salir en las revistas de publicidad que viajan con aires de "
-"posteo\n"
+"5 - Poder salir en las revistas de publicidad que viajan con aires de posteo\n"
 "\n"
-"6 - Asistir a los eventos que se realizan en el marco del turismo "
-"organizado\n"
+"6 - Asistir a los eventos que se realizan en el marco del turismo organizado\n"
 "\n"
-"7 - Obtenga descuentos en las compras realizadas con la Travelposting Card "
-"*\n"
+"7 - Obtenga descuentos en las compras realizadas con la Travelposting Card *\n"
 "\n"
-"* La tarjeta de crédito prepagada será liberada después de completar la "
-"cantidad mínima de 1500 miembros.\n"
+"* La tarjeta de crédito prepagada será liberada después de completar la cantidad mínima de 1500 miembros.\n"
 "\n"
-"Es su oportunidad de ayudarnos a crecer, cuanto más tiempo estemos, más "
-"rápido podremos obtener nuestra tarjeta de crédito.\n"
+"Es su oportunidad de ayudarnos a crecer, cuanto más tiempo estemos, más rápido podremos obtener nuestra tarjeta de crédito.\n"
 "\n"
-"Desde ahora te deseamos mucha diversión en tus viajes con nosotros y que "
-"prepares las bolsas que tu próximo destino te está esperando."
+"Desde ahora te deseamos mucha diversión en tus viajes con nosotros y que prepares las bolsas que tu próximo destino te está esperando."
 
 #: main/templates/community.html:163
 msgid "WHY CHOOSE US?"
@@ -1036,7 +1021,8 @@ msgid ""
 "Make your reservation directly and without intermediaries that cost your "
 "trip."
 msgstr ""
-"Realice su reserva directamente y sin intermediarios que le cuesten el viaje."
+"Realice su reserva directamente y sin intermediarios que le cuesten el "
+"viaje."
 
 #: main/templates/community.html:237
 msgid "Support team"
@@ -1092,8 +1078,8 @@ msgstr "Gane paquetes de viaje"
 
 #: main/templates/community.html:328
 msgid ""
-"There is always a destination we would like to offer and nothing better than "
-"earning it."
+"There is always a destination we would like to offer and nothing better than"
+" earning it."
 msgstr ""
 "Siempre hay un destino que nos gustaría ofrecer y nada mejor que ganarlo."
 
@@ -1114,7 +1100,8 @@ msgid ""
 "With many benefits, such as the Travelposting card, which will give you "
 "discounts."
 msgstr ""
-"Con muchos beneficios, como la tarjeta Travelposting, que te dará descuentos."
+"Con muchos beneficios, como la tarjeta Travelposting, que te dará "
+"descuentos."
 
 #: main/templates/community.html:370
 msgid "Sign up for Travelposting and enjoy its benefits"
@@ -1127,32 +1114,22 @@ msgstr "Datenschutzerklärung"
 #: main/templates/footer.html:13
 msgid ""
 "\n"
-"                        We are Travelposting.com a web portal owned by "
-"Xposting-Service, International Marketing and Digital Promotion Company,\n"
-"                        opened on March 1, 2009 with its headquarters in the "
-"city of Hamburg, Germany.\n"
+"                        We are Travelposting.com a web portal owned by Xposting-Service, International Marketing and Digital Promotion Company,\n"
+"                        opened on March 1, 2009 with its headquarters in the city of Hamburg, Germany.\n"
 "                    "
 msgstr ""
 "\n"
-"Somos Travelposting.com, un portal web propiedad de Xposting-Service, "
-"International Marketing and Digital Promotion Company,\n"
-"abrió sus puertas el 1 de marzo de 2009 con sede en la ciudad de Hamburgo, "
-"Alemania."
+"Somos Travelposting.com, un portal web propiedad de Xposting-Service, International Marketing and Digital Promotion Company,\n"
+"abrió sus puertas el 1 de marzo de 2009 con sede en la ciudad de Hamburgo, Alemania."
 
 #: main/templates/footer.html:21
 msgid ""
 "\n"
-"                    In development of the provisions of article 17 of Law "
-"679 of 2001, the Agency warns the tourist that the exploitation and sexual "
-"abuse of minors in the country are criminally and administratively "
-"sanctioned, in accordance with current laws.\n"
+"                    In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.\n"
 "                    "
 msgstr ""
 "\n"
-" En desarrollo de lo dispuesto en el artículo 17 de la Ley 679 de 2001, el "
-"Organismo advierte al turista que la explotación y el abuso sexual de "
-"menores en el país son sancionados penal y administrativamente, de "
-"conformidad con las leyes vigentes."
+" En desarrollo de lo dispuesto en el artículo 17 de la Ley 679 de 2001, el Organismo advierte al turista que la explotación y el abuso sexual de menores en el país son sancionados penal y administrativamente, de conformidad con las leyes vigentes."
 
 #: main/templates/footer.html:40
 msgid "Currency Converter"
@@ -1340,11 +1317,11 @@ msgstr ""
 
 #: main/templates/make_page.html:148
 msgid ""
-"Transfers in USD will be made automatically and may result in the suspension "
-"of this service"
+"Transfers in USD will be made automatically and may result in the suspension"
+" of this service"
 msgstr ""
-"Las transferencias en USD se realizarán automáticamente y pueden resultar en "
-"la suspensión de este servicio."
+"Las transferencias en USD se realizarán automáticamente y pueden resultar en"
+" la suspensión de este servicio."
 
 #: main/templates/make_page.html:164
 msgid "Receiving Account USD (ACH) / US Local Bank UU"
@@ -1382,7 +1359,8 @@ msgstr "No se admite la transferencia electrónica"
 
 #: main/templates/make_page.html:203
 msgid "Receiving AUD account (direct deposit) / Bank of Australia..."
-msgstr "Recepción de la cuenta AUD (depósito directo) / Banco de Australia...."
+msgstr ""
+"Recepción de la cuenta AUD (depósito directo) / Banco de Australia...."
 
 #: main/templates/make_page.html:211
 msgid "Headquarters code"
@@ -1496,13 +1474,13 @@ msgstr "Enviar"
 
 #: main/templates/pages/show_header.html:68
 msgid ""
-"Leave us your personal data if you want us to send you information regarding "
-"the destinations of your interest. Do you agree that we send you information "
-"to your email of the destinations you are looking for?"
+"Leave us your personal data if you want us to send you information regarding"
+" the destinations of your interest. Do you agree that we send you "
+"information to your email of the destinations you are looking for?"
 msgstr ""
 "Déjanos tus datos personales si quieres que te enviemos información "
-"referente a los destinos de tu interés. ¿Estas de acuerdo en que te enviemos "
-"información a tu correo electrónico de los destinos que estas buscando?"
+"referente a los destinos de tu interés. ¿Estas de acuerdo en que te enviemos"
+" información a tu correo electrónico de los destinos que estas buscando?"
 
 #: main/templates/pricing.html:13
 msgid "Special"
@@ -1514,11 +1492,11 @@ msgstr "Oferta en"
 
 #: main/templates/pricing.html:15
 msgid ""
-"We know that there are many companies on the internet that offer the best of "
-"blue sky and we may not be the best known in the market, but our experience "
-"of almost 10 years in the market allows us to manage a portfolio of experts "
-"with whom we can provide the most and best offers in the market. If you get "
-"someone cheaper than us and with the same return we will return your "
+"We know that there are many companies on the internet that offer the best of"
+" blue sky and we may not be the best known in the market, but our experience"
+" of almost 10 years in the market allows us to manage a portfolio of experts"
+" with whom we can provide the most and best offers in the market. If you get"
+" someone cheaper than us and with the same return we will return your "
 "investment."
 msgstr ""
 "Sabemos que hay muchas empresas en Internet que ofrecen lo mejor del cielo "
@@ -1653,17 +1631,17 @@ msgid "Category"
 msgstr "Categoria"
 
 #: main/templates/services/destination/detail.back.html:42
-#: main/templates/services/destination/detail_destination.html:42
+#: main/templates/services/destination/detail_destination.html:44
 msgid "Photos"
 msgstr "Fotos"
 
 #: main/templates/services/destination/detail.back.html:53
-#: main/templates/services/destination/detail_destination.html:53
+#: main/templates/services/destination/detail_destination.html:55
 msgid "Detail"
 msgstr "Detalles"
 
 #: main/templates/services/destination/detail.back.html:63
-#: main/templates/services/destination/detail_destination.html:63
+#: main/templates/services/destination/detail_destination.html:65
 msgid "Map"
 msgstr "Mapa"
 
@@ -1672,28 +1650,68 @@ msgid "View Photos"
 msgstr "Ver fotos"
 
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:150
+#: main/templates/services/destination/detail_destination.html:152
 msgid "Itinerary"
 msgstr "Itinerario"
 
 #: main/templates/services/destination/detail.back.html:168
-#: main/templates/services/destination/detail_destination.html:167
+#: main/templates/services/destination/detail_destination.html:169
 msgid "Day"
 msgstr "Día"
 
 #: main/templates/services/destination/detail.back.html:203
-#: main/templates/services/destination/detail_destination.html:201
+#: main/templates/services/destination/detail_destination.html:203
 msgid "We still don't have the intenerario for this destination"
 msgstr "Todavía no tenemos el intenerario para este destino"
 
 #: main/templates/services/destination/detail.back.html:221
-#: main/templates/services/destination/detail_destination.html:218
+#: main/templates/services/destination/detail_destination.html:220
 msgid "Reserve"
 msgstr "Reserve"
 
-#: main/templates/services/destination/detail_destination.html:128
+#: main/templates/services/destination/detail_destination.html:130
 msgid "back to list"
 msgstr "Volver a la lista"
+
+#: main/templates/services/destination/detail_destination.html:235
+#| msgid "Meet our best destinations"
+msgid "Book your destination!"
+msgstr "¡Reserve su destino!"
+
+#: main/templates/services/destination/detail_destination.html:256
+#| msgid "Name / Last Name"
+msgid "Last Name"
+msgstr "Apellido"
+
+#: main/templates/services/destination/detail_destination.html:266
+msgid "+49 123 456 789"
+msgstr "+49 123 456 789"
+
+#: main/templates/services/destination/detail_destination.html:284
+msgid "Number of people travelling"
+msgstr "Numero de personas viajando"
+
+#: main/templates/services/destination/detail_destination.html:293
+#| msgid "Do you have a Coupon?"
+msgid "Do you have a plan you want to book?"
+msgstr "¿Tienes un plan que quieres reservar?"
+
+#: main/templates/services/destination/detail_destination.html:302
+msgid ""
+"\n"
+"                          By clicking \"Book\" you agree that Travelposting use your data for advertising and marketing purposes between Travelposting, its alliance partners and Xposting-Service. At any time you can make use of your rights and request the cancellation of your data.\n"
+"                          "
+msgstr ""
+"\n"
+"Al hacer clic en \"Reservar\", acepta que Travelposting utilice sus datos para fines publicitarios y de marketing entre Travelposting, sus socios de la alianza y Xposting-Service. En cualquier momento puede hacer uso de sus derechos y solicitar la cancelación de sus datos."
+
+#: main/templates/services/destination/detail_destination.html:309
+msgid "Close"
+msgstr "Cerrar"
+
+#: main/templates/services/destination/detail_destination.html:310
+msgid "Book"
+msgstr "Reservar"
 
 #: main/templates/services/destination/testimonials.html:9
 msgid "Testimonials"
@@ -1726,18 +1744,18 @@ msgstr "Sin limites"
 #: main/templates/services/pricing/plans.html:104
 msgid ""
 "\n"
-"                                                if what you see doesn't "
-"appeal to you because you want to create a plan tailored to your needs,\n"
-"                                                contact us and we'll work "
-"that out together.\n"
+"                                                if what you see doesn't appeal to you because you want to create a plan tailored to your needs,\n"
+"                                                contact us and we'll work that out together.\n"
 "                                            "
 msgstr ""
 "\n"
-"Si lo que ve no le atrae porque desea crear un plan adaptado a sus "
-"necesidades, contáctenos y lo resolveremos juntos."
+"Si lo que ve no le atrae porque desea crear un plan adaptado a sus necesidades, contáctenos y lo resolveremos juntos."
 
-#~ msgid "Home"
-#~ msgstr "Inicio"
+#~ msgid "Confirm New Password"
+#~ msgstr "Confirmación de nueva contraseña"
+
+#~ msgid "Your petitions is completed!"
+#~ msgstr "Su petición ha sido completada!"
 
 #~ msgid "Your account was successfully activated"
 #~ msgstr "Su cuenta ha sido activada satisfactoriamente"
