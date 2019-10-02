@@ -22,6 +22,7 @@ class DestinationForm(forms.ModelForm):
     class Meta:
         model = Destination
         fields = [
+            'user',
             'categorie',
             'name',
             'short_description',
@@ -29,23 +30,27 @@ class DestinationForm(forms.ModelForm):
         ]
 
         widgets = {
-            'categorie': forms.Select(attrs={
+            'user': forms.HiddenInput(attrs={
+                'read_only': True
+            }),
+
+            'categorie': forms.SelectMultiple(attrs={
                 'class': 'form-control',
                 'placeholder': _('Category'),
             }),
+
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': _('Nombre del tour')
             }),
+
             'short_description': SummernoteInplaceWidget(attrs={
                 'summernote': {'width': '100%', 'height': '200px'}
             }),
+
             'description': SummernoteInplaceWidget(attrs={
                 'summernote': {'width': '100%', 'height': '500px'}
             }),
-            'user': forms.HiddenInput(attrs={
-                'read_only': True
-            })
         }
 
     class Media:
