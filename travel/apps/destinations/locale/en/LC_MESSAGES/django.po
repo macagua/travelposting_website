@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-30 23:57-0400\n"
+"POT-Creation-Date: 2019-10-01 23:31-0400\n"
 "PO-Revision-Date: 2019-06-27 13:37-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,9 +121,9 @@ msgstr "description"
 msgid "is_deleted"
 msgstr "is_deleted"
 
-#: apps/destinations/models.py:92 apps/destinations/models.py:170
-#: apps/destinations/models.py:248 apps/destinations/models.py:342
-#: apps/destinations/models.py:412
+#: apps/destinations/models.py:92 apps/destinations/models.py:179
+#: apps/destinations/models.py:257 apps/destinations/models.py:351
+#: apps/destinations/models.py:421
 msgid "Destino"
 msgstr "Destination"
 
@@ -132,363 +132,367 @@ msgstr "Destination"
 msgid "Destinos"
 msgstr "Destinations"
 
-#: apps/destinations/models.py:99 apps/destinations/models.py:513
+#: apps/destinations/models.py:99 apps/destinations/models.py:522
 msgid "SKU"
 msgstr "SKU"
 
-#: apps/destinations/models.py:174 apps/destinations/models.py:308
+#: apps/destinations/models.py:183 apps/destinations/models.py:317
 msgid "Nombre"
 msgstr "First name"
 
-#: apps/destinations/models.py:181
+#: apps/destinations/models.py:190
 msgid "Sort"
 msgstr "Sort"
 
-#: apps/destinations/models.py:187 apps/destinations/models.py:313
+#: apps/destinations/models.py:196 apps/destinations/models.py:322
 msgid "Descripción"
 msgstr "Description"
 
-#: apps/destinations/models.py:190
+#: apps/destinations/models.py:199
 msgid "Sin comentario"
 msgstr "No comment"
 
-#: apps/destinations/models.py:194
+#: apps/destinations/models.py:203
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: apps/destinations/models.py:201 apps/destinations/models.py:351
-#: apps/destinations/models.py:365
+#: apps/destinations/models.py:210 apps/destinations/models.py:360
+#: apps/destinations/models.py:374
 msgid "Imagen"
 msgstr "Image"
 
-#: apps/destinations/models.py:216
+#: apps/destinations/models.py:225
 msgid "Foto"
 msgstr "Photo"
 
-#: apps/destinations/models.py:217
+#: apps/destinations/models.py:226
 msgid "Fotos"
 msgstr "Photos"
 
-#: apps/destinations/models.py:222
+#: apps/destinations/models.py:231
 msgid "Name"
 msgstr "Surname"
 
-#: apps/destinations/models.py:227
+#: apps/destinations/models.py:236
 msgid "Description"
 msgstr "Description"
 
-#: apps/destinations/models.py:239 apps/destinations/models.py:252
+#: apps/destinations/models.py:248 apps/destinations/models.py:261
 msgid "Badge"
 msgstr "Badge"
 
-#: apps/destinations/models.py:240
+#: apps/destinations/models.py:249
 msgid "Badges"
 msgstr "Badges"
 
-#: apps/destinations/models.py:257
+#: apps/destinations/models.py:266
 msgid "Ultimo minuto"
 msgstr "Last minute"
 
-#: apps/destinations/models.py:258
+#: apps/destinations/models.py:267
 msgid "Deal del Mes"
 msgstr "Deal of the Month"
 
-#: apps/destinations/models.py:259
+#: apps/destinations/models.py:268
 msgid "FamTrip"
 msgstr "Famtrip"
 
-#: apps/destinations/models.py:260
+#: apps/destinations/models.py:269
 msgid "Congresos"
 msgstr "Congress"
 
-#: apps/destinations/models.py:261
+#: apps/destinations/models.py:270
 msgid "Eventos"
 msgstr "Event"
 
-#: apps/destinations/models.py:262
+#: apps/destinations/models.py:271
 msgid "Hotel"
 msgstr "Hotel"
 
-#: apps/destinations/models.py:263
+#: apps/destinations/models.py:272
 msgid "Movilidad"
 msgstr "Mobility"
 
-#: apps/destinations/models.py:264
+#: apps/destinations/models.py:273
 msgid "Ocio +"
 msgstr "Leisure"
 
-#: apps/destinations/models.py:272 apps/destinations/models.py:281
+#: apps/destinations/models.py:281 apps/destinations/models.py:290
 msgid "Tour"
 msgstr "Tour"
 
-#: apps/destinations/models.py:273
+#: apps/destinations/models.py:282
 msgid "Tours"
 msgstr "Tours"
 
-#: apps/destinations/models.py:288
+#: apps/destinations/models.py:297
 msgid "Option tab"
 msgstr "Option tab"
 
-#: apps/destinations/models.py:292
+#: apps/destinations/models.py:301
 msgid "Content"
 msgstr "Content"
 
-#: apps/destinations/models.py:302
+#: apps/destinations/models.py:311
 msgid "Tabs"
 msgstr "Tabs"
 
-#: apps/destinations/models.py:303
+#: apps/destinations/models.py:312
 msgid "Tab"
 msgstr "Tab"
 
-#: apps/destinations/models.py:319
+#: apps/destinations/models.py:328
 msgid "Plantilla"
 msgstr "Template"
 
-#: apps/destinations/models.py:333
+#: apps/destinations/models.py:342
 msgid "Opciones de las tabs"
 msgstr "Tabs options"
 
-#: apps/destinations/models.py:334
+#: apps/destinations/models.py:343
 msgid "Opción de la tab"
 msgstr "Tab option"
 
-#: apps/destinations/models.py:346
+#: apps/destinations/models.py:355
 msgid "Display mode"
 msgstr "Display mode"
 
-#: apps/destinations/models.py:350 apps/destinations/models.py:395
+#: apps/destinations/models.py:359 apps/destinations/models.py:404
 msgid "Default"
 msgstr "Default"
 
-#: apps/destinations/models.py:352
+#: apps/destinations/models.py:361
 msgid "Slider"
 msgstr "Slider"
 
-#: apps/destinations/models.py:353
+#: apps/destinations/models.py:362
 msgid "From list"
 msgstr "From list"
 
-#: apps/destinations/models.py:358
+#: apps/destinations/models.py:367
 msgid "Subtitle"
 msgstr "Subtitle"
 
-#: apps/destinations/models.py:372
+#: apps/destinations/models.py:381
 msgid "Parallax"
 msgstr "Parallax"
 
-#: apps/destinations/models.py:377
+#: apps/destinations/models.py:386
 msgid "Imagen repeat"
 msgstr "Imagen repeat "
 
-#: apps/destinations/models.py:382
+#: apps/destinations/models.py:391
 msgid "Repeat"
 msgstr "Repeat"
 
-#: apps/destinations/models.py:383
+#: apps/destinations/models.py:392
 msgid "No repeat"
 msgstr "No repeat"
 
-#: apps/destinations/models.py:384
+#: apps/destinations/models.py:393
 msgid "Repeat horizontally"
 msgstr "Repeat horizontally"
 
-#: apps/destinations/models.py:385
+#: apps/destinations/models.py:394
 msgid "Repeat vertically"
 msgstr "Repeat vertically"
 
-#: apps/destinations/models.py:390
+#: apps/destinations/models.py:399
 msgid "Mask"
 msgstr "Mask"
 
-#: apps/destinations/models.py:403
+#: apps/destinations/models.py:412
 msgid "Secciones del encabezado"
 msgstr "Header sections"
 
-#: apps/destinations/models.py:404
+#: apps/destinations/models.py:413
 msgid "Sección del encabezado"
 msgstr "Header section"
 
-#: apps/destinations/models.py:416
+#: apps/destinations/models.py:425
 msgid "Variable tour"
 msgstr "Variable tour"
 
-#: apps/destinations/models.py:421
+#: apps/destinations/models.py:430
 msgid "Virtual"
 msgstr "Virtual"
 
-#: apps/destinations/models.py:426
+#: apps/destinations/models.py:435
 msgid "Descargable"
 msgstr "Downloadable"
 
-#: apps/destinations/models.py:434
+#: apps/destinations/models.py:443
 msgid "Detalles del destino"
 msgstr "Details of the destination"
 
-#: apps/destinations/models.py:435 apps/destinations/models.py:443
-#: apps/destinations/models.py:509 apps/destinations/models.py:569
+#: apps/destinations/models.py:444 apps/destinations/models.py:452
+#: apps/destinations/models.py:518 apps/destinations/models.py:578
 msgid "Detalle del destino"
 msgstr "Detail of the destination"
 
-#: apps/destinations/models.py:447
+#: apps/destinations/models.py:456
 msgid "Precio normal"
 msgstr "Normal price"
 
-#: apps/destinations/models.py:455
+#: apps/destinations/models.py:464
 msgid "Precio rebajado"
 msgstr "Reduced price"
 
-#: apps/destinations/models.py:463
+#: apps/destinations/models.py:472
 msgid "Fecha de rebaja inicial"
 msgstr "Initial discount date"
 
-#: apps/destinations/models.py:469
+#: apps/destinations/models.py:478
 msgid "Fecha de rebaja final"
 msgstr "Final discount date"
 
-#: apps/destinations/models.py:475
+#: apps/destinations/models.py:484
 msgid "Estado del impuesto"
 msgstr "Tax status"
 
-#: apps/destinations/models.py:479
+#: apps/destinations/models.py:488
 msgid "Imponible"
 msgstr "Taxable"
 
-#: apps/destinations/models.py:480
+#: apps/destinations/models.py:489
 msgid "Envio solamente"
 msgstr "Shipping only"
 
-#: apps/destinations/models.py:481
+#: apps/destinations/models.py:490
 msgid "Ninguno"
 msgstr "None"
 
-#: apps/destinations/models.py:486
+#: apps/destinations/models.py:495
 msgid "Clase de impuesto"
 msgstr "Tax class"
 
-#: apps/destinations/models.py:490
+#: apps/destinations/models.py:499
 msgid "Estandar"
 msgstr "Standard"
 
-#: apps/destinations/models.py:491
+#: apps/destinations/models.py:500
 msgid "Reduced Rate"
 msgstr "Reduced Rate"
 
-#: apps/destinations/models.py:492
+#: apps/destinations/models.py:501
 msgid "Zero Rate"
 msgstr "Zero Rate"
 
-#: apps/destinations/models.py:500
+#: apps/destinations/models.py:509
 msgid "Detalles generales"
 msgstr "General details"
 
-#: apps/destinations/models.py:501
+#: apps/destinations/models.py:510
 msgid "Detalle general"
 msgstr "General detail"
 
-#: apps/destinations/models.py:518
+#: apps/destinations/models.py:527
 msgid "¿Gestión de inventario?"
 msgstr "Inventory management?"
 
-#: apps/destinations/models.py:520
+#: apps/destinations/models.py:529
 msgid "Activa la gestión de inventario por cada producto"
 msgstr "Activate inventory management for each product"
 
-#: apps/destinations/models.py:524
+#: apps/destinations/models.py:533
 msgid "Cantidad de inventario"
 msgstr "Quantity of inventory"
 
-#: apps/destinations/models.py:531
+#: apps/destinations/models.py:540
 msgid "¿Permitir reservas?"
 msgstr "Allow reservations?"
 
-#: apps/destinations/models.py:535
+#: apps/destinations/models.py:544
 msgid "No permitir"
 msgstr "Do not allow"
 
-#: apps/destinations/models.py:536
+#: apps/destinations/models.py:545
 msgid "Permitir, pero se avisara al cliente"
 msgstr "Allow, but the customer is notified"
 
-#: apps/destinations/models.py:537
+#: apps/destinations/models.py:546
 msgid "Permitir"
 msgstr "Allow"
 
-#: apps/destinations/models.py:542
+#: apps/destinations/models.py:551
 msgid "Umbral de pocas existencias"
 msgstr "Low stock threshold"
 
-#: apps/destinations/models.py:549
+#: apps/destinations/models.py:558
 msgid "Vendido individualmente"
 msgstr "Sold individually"
 
-#: apps/destinations/models.py:552
+#: apps/destinations/models.py:561
 msgid ""
 "Activa esto para permitir que solo se pueda comprar uno de estos artículos "
 "en cada pedido"
 msgstr ""
 "Activate this to allow only one of these items to be purchased on each order"
 
-#: apps/destinations/models.py:560
+#: apps/destinations/models.py:569
 msgid "Detalles de inventario"
 msgstr "Inventory details"
 
-#: apps/destinations/models.py:561
+#: apps/destinations/models.py:570
 msgid "Detalle de inventario"
 msgstr "Inventory detail"
 
-#: apps/destinations/models.py:573
+#: apps/destinations/models.py:582
 msgid "Start date"
 msgstr "Start date"
 
-#: apps/destinations/models.py:579
+#: apps/destinations/models.py:588
 msgid "End date"
 msgstr "End date"
 
-#: apps/destinations/models.py:587
+#: apps/destinations/models.py:596
 msgid "Días"
 msgstr "Días"
 
-#: apps/destinations/models.py:591
+#: apps/destinations/models.py:600
 msgid "Number of tickets per tour"
 msgstr "Number of tickets per tour"
 
-#: apps/destinations/models.py:597
+#: apps/destinations/models.py:606
 msgid "Special price"
 msgstr "Special price"
 
-#: apps/destinations/models.py:605
+#: apps/destinations/models.py:614
 msgid "Mode"
 msgstr "Mode"
 
-#: apps/destinations/models.py:609
+#: apps/destinations/models.py:618
 msgid "Week days"
 msgstr "Week days"
 
-#: apps/destinations/models.py:610
+#: apps/destinations/models.py:619
 msgid "Exact dates"
 msgstr "Exact dates"
 
-#: apps/destinations/models.py:615
+#: apps/destinations/models.py:624
 msgid "Is active"
 msgstr "Is active"
 
-#: apps/destinations/models.py:619
+#: apps/destinations/models.py:628
 #: apps/destinations/templates/destinations/gallery/_list.html:133
 msgid "No"
 msgstr "No"
 
-#: apps/destinations/models.py:620
+#: apps/destinations/models.py:629
 msgid "Yes"
 msgstr "Yes"
 
-#: apps/destinations/models.py:629
+#: apps/destinations/models.py:638
 msgid "Booking details"
 msgstr "Booking details"
 
-#: apps/destinations/models.py:630
+#: apps/destinations/models.py:639
 msgid "Booking detail"
 msgstr "Booking detail"
+
+#: apps/destinations/models.py:670 apps/destinations/models.py:671
+msgid "Search Landing"
+msgstr ""
 
 #: apps/destinations/templates/destinations/_delete.html:7
 #: apps/destinations/templates/destinations/_delete.html:20
