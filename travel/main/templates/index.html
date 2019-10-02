@@ -211,4 +211,16 @@
 {% endblock content %}
 {% block extrajs %}
 <script src="{% static 'js/destinations.js' %}"></script>
+
+<script>
+    //Listener to receive the request to show the search form.
+    document.getElementById("show_form").addEventListener("click", showSearchForm);
+    //function for search the search destination form.
+    function showSearchForm() {
+        var form = document.getElementById("SearchForm");
+        var cards = document.getElementById("OptionCards");
+        cards.style.display = "none";
+        form.style.display = "block";
+    }
+</script>
 {% endblock extrajs %}
