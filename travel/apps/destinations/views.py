@@ -12,6 +12,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
     ListView,
+    View,
 )
 from apps.destinations.forms import (
     DestinationForm,
@@ -26,6 +27,7 @@ from apps.destinations.models import (
     DestinationDetail,
     OptionTabData,
     TabData,
+    Booking,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -258,3 +260,11 @@ class ItineraryListView(LoginRequiredMixin, ListView):
     template_name = 'destinations/itinerary/itinerary.html'
     queryset = TabData.objects \
     .filter(option_tab__name="Itinerario")
+
+
+class BookingSaveView(View):
+    def post(self, request, *args, **kwargs):
+        import ipdb; ipdb.set_trace()   
+
+        return render(request, 'pages/safeSearch.html')
+

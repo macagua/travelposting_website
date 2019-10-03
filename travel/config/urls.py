@@ -18,6 +18,9 @@ from apps.landing_page.views import (
     DetailDestinationView,
     SaveSearchView,
 )
+
+from apps.destinations.views import BookingSaveView
+
 admin.autodiscover()
 
 urlpatterns = [
@@ -94,6 +97,11 @@ urlpatterns += i18n_patterns(
         'safe/',
         SaveSearchView.as_view(),
         name='safesearch',
+    ),
+    path(
+        'booking/',
+        BookingSaveView.as_view(),
+        name='bookingsave',
     ),
 
     url(
