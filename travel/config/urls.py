@@ -101,7 +101,7 @@ urlpatterns += i18n_patterns(
     path(
         'booking/',
         BookingSaveView.as_view(),
-        name='bookingsave',
+        name='booking-save',
     ),
 
     url(

@@ -264,7 +264,7 @@ class ItineraryListView(LoginRequiredMixin, ListView):
 
 class BookingSaveView(View):
     def post(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()   
+        import ipdb; ipdb.set_trace()
 
         return render(request, 'pages/safeSearch.html')
 
