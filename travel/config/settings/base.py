@@ -251,8 +251,6 @@ ADMINS = [
 
 MANAGERS = [
     ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
-    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
-    ('Support Travelposting', 'support@travelposting.com'),
 ]
 
 # Authentication options

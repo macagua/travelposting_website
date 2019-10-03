@@ -74,6 +74,12 @@ class Destination(models.Model):
         default=TEMPLATE_DESCRIPTION,
     )
 
+    is_published = models.BooleanField(
+        _('is_published'),
+        default=False,
+        editable=False,
+    )
+
     is_deleted = models.BooleanField(
         _('is_deleted'),
         default=False,
