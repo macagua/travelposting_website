@@ -9,6 +9,7 @@ from apps.destinations.views import (
     GalleryListView,
     OptionTabDataTemplateAjaxView,
     ItineraryListView,
+    BookingListView,
 )
 
 app_name = 'destinations'
@@ -59,5 +60,11 @@ urlpatterns = [
         'itinerary/',
         ItineraryListView.as_view(),
         name='itinerary-list',
+    ),
+
+    path(
+        'booking-list/',
+        BookingListView.as_view(),
+        name='booking-list',
     ),
 ]

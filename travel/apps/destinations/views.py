@@ -320,3 +320,12 @@ class BookingSaveView(View):
                     html_message=html_message
                 )
         return render(request, 'pages/saveBooking.html')
+
+
+class BookingListView(LoginRequiredMixin, ListView):
+    template_name = 'destinations/_booking_list.html'
+    queryset = Booking.objects.all()
+
+    def get_queryset(self):
+        queryset = super(BookingListView, self).get_queryset()
+        return queryset #queryset.filter(destination__user=self.request.user)
