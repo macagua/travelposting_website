@@ -140,6 +140,7 @@ class Destination(models.Model):
         .filter(option_tab__name="Mapa")\
         .get(tour_data__destination=self.pk)
         return mapa
+
     @property
     def itinerario(self):
         itine = TabData.objects\
@@ -159,15 +160,6 @@ class Destination(models.Model):
         except BaseException:
             return None
         return list_prices
-
-    @property
-    def status(self):
-        try:
-            booking_status = BookingDetail.objects.get(destination_detail__destination=self)
-        except BaseException:
-            return None
-        return booking_status.is_active
-
 
 
 class Photo(models.Model):

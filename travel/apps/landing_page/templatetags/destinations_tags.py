@@ -9,7 +9,7 @@ register = template.Library()
 
 @register.inclusion_tag('services/destination/destinations.html', takes_context=True)
 def destinations_list(context):
-    list_destination = [dest for dest in Destination.objects.all() if dest.status == '1']
+    list_destination = Destination.objects.filter(is_deleted=False)
     list_destinations = list_destination[:4]
     return {
         'list': list_destinations,
