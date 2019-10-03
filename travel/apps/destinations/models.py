@@ -691,8 +691,8 @@ class Booking(models.Model):
 
     dni = models.CharField(
         _('Identity number'),
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         max_length = 50
     )
 
@@ -705,15 +705,15 @@ class Booking(models.Model):
 
     mail = models.EmailField(
         _('Email'),
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         max_length = 100,
     )
 
     number_travel = models.CharField(
         _('Number of people travelling'),
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         max_length= 2,
     )
 
