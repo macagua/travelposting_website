@@ -68,7 +68,7 @@
 
                         <!-- Form -->
                         <div id="SearchForm" style="display: none;">
-                            <form id="PersonSearch" class="js-validate" action="safe/" method="POST">{% csrf_token %}
+                            <form id="PersonSearch" class="js-validate" action="{% url 'personal-search' %}" method="POST">{% csrf_token %}
                                 <p class="lead text-white" style="font-size: 17px;">{% trans 'Where would you like to travel this time?'%}</p>
                                 <div class="form-row mb-2">
                                     <div class="col-sm-6 col-lg mb-2">

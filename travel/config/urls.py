@@ -94,14 +94,14 @@ urlpatterns += i18n_patterns(
     ),
 
     path(
-        'safe/',
+        'personal-search/',
         SaveSearchView.as_view(),
-        name='safesearch',
+        name='personal-search',
     ),
     path(
-        'booking/',
+        'make-booking/',
         BookingSaveView.as_view(),
-        name='booking-save',
+        name='make-booking',
     ),
 
     url(
