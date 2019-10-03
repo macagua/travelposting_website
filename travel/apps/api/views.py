@@ -100,3 +100,4 @@ class DestinationViewSet(ModelViewSet):
             'statusText': 'success'
         }
         return Response(data, status=status.HTTP_200_OK)
+

@@ -226,7 +226,7 @@ THIRD_PARTY = [
     'rosetta',
     'bootstrap_datepicker_plus',
     'oauth2_provider',
-
+    #'mapwidgets',
 ]
 
 LOCAL_APPS = [

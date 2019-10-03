@@ -14,6 +14,7 @@ from apps.destinations.models import (
     InventarioDetail,
     BookingDetail,
     Photo,
+    Itinerary,
 )
 
 
@@ -286,3 +287,29 @@ class PhotoForm(forms.ModelForm):
     class Meta:
         model = Photo
         fields = ('name', 'sort', 'description', 'thumbnail', 'image')
+
+
+class ItineraryForm(forms.ModelForm):
+    """
+        Form for itinerary
+    """
+    class Meta:
+        model = Itinerary
+        fields = [
+            'destination',
+            'short_description',
+            'detail_itinerary',
+            
+        ]
+
+        widgets = {
+            'short_description': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': _('Short description'),
+                }
+            ),
+
+            'detail_itinerary': SummernoteInplaceWidget(attrs={
+                'summernote': {'width': '100%', 'height': '200px'}
+            }),
+        }
