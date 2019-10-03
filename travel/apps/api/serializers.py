@@ -109,18 +109,3 @@ class DestinationSerializer(JSONFormSerializer, WritableNestedModelSerializer):
         model = Destination
         fields = '__all__'
         extra_kwargs = {'user': {'default': serializers.CurrentUserDefault()}}
-
-def ItinerarySerializer(itinerary):
-    mapped_object = []
-    for count,data in enumerate(itinerary, start=1):
-        dict_aux = {
-            'fields': {
-                'id': data.id,
-                'counter': count,
-                'destination': data,
-                'short_title': data,
-                'content': data,
-            }
-        }
-        mapped_object.append(dict_aux)
-    return json.dumps(mapped_object)

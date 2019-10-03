@@ -2,6 +2,7 @@ import logging
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
@@ -24,6 +25,7 @@ from apps.destinations.forms import (
     TourDataForm,
     HeaderSectionInlineForm,
     DestinationDetailForm,
+    ItineraryForm,
 )
 from apps.destinations.models import (
     Destination,
@@ -40,6 +42,11 @@ from apps.destinations.utils import (
     ModelEncoder,
 )
 
+from apps.destinations.serializers import (
+    ItinerarySerializer,
+    DestinySerializer,
+    mapped_errors_form,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -262,20 +269,48 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
 
 
 class ItineraryView(View):
-    def get(self, request):
+    def get(self, request,*args,**kwargs):
         if request.is_ajax():
-            itinerary = Itinerary.objects.all() \
-                .filter(medic__caretaker=request.user.caretaker.id) \
-                .filter(medic__caretaker=request.user.caretaker.id)
-            return JsonResponse(
-                ItinerarySerializer(itinerary),
-                safe=False,
+            if 'q' in request.GET:
+                destination = Destination.objects.all() \
+                    .filter(user=request.user.id) 
+                if request.GET['q']!='':
+                    destination.filter(name__contains=request.GET['q'])
+                return JsonResponse(
+                    DestinySerializer(destination),
+                    safe=False,
                 )
-        else:
-            return render(request,'destinations/itinerary/itinerary.html')
+            if 'destiny' in request.GET:
+                itinerary = Itinerary.objects.all()\
+                            .filter(destination__user=request.user.id)\
+                            .filter(destination= request.GET['destiny'])
+                print(itinerary.query)
+                return JsonResponse(
+                    ItinerarySerializer(itinerary),
+                    safe=False,
+                )          
+            else:
+                return JsonResponse({},
+                    safe=False,
+                )          
+        else:         
+            return render(request,'destinations/itinerary/itinerary.html',{'form':ItineraryForm()})
     
     def post(self,request):
-        return None;
+        form_itinerary = ItineraryForm(request.POST)
+        if form_itinerary.is_valid():
+            if form_itinerary.save() :
+                return JsonResponse({'msg':_('A new itinerary item has been registered'),'status':True},
+                    safe=False,
+                )   
+        else:
+            return JsonResponse(
+                {
+                'error':mapped_errors_form(form_itinerary),
+                'status':False
+                },
+                safe=False,
+            ) 
 
 class BookingSaveView(View):
     def post(self, request, *args, **kwargs):

@@ -288,12 +288,6 @@ class Itinerary(models.Model):
         verbose_name = _("Itinerary")
     )
 
-    option_tab = models.ForeignKey(
-        'OptionTabData',
-        on_delete=models.CASCADE,
-        verbose_name=_('Option tab'),
-    )
-
     short_description = models.CharField(
         _('Short Description'),
         max_length=50,

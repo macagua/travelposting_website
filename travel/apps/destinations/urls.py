@@ -63,6 +63,12 @@ urlpatterns = [
     ),
 
     path(
+        'itinerary/add-itinerary',
+        ItineraryView.as_view(),
+        name='add-itinerary',
+    ),
+
+    path(
         'itinerary/',
         ItineraryView.as_view(),
         name='itinerary-list',
