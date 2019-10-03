@@ -259,11 +259,15 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
         return self.object.gallery.all()
 
 
-class ItineraryListView(LoginRequiredMixin, ListView):
-    template_name = 'destinations/itinerary/itinerary.html'
-    queryset = TabData.objects \
-    .filter(option_tab__name="Itinerario")
-
+class ItineraryView(View):
+    def get(self, request):
+        if request.is_ajax():
+            return None
+        else:
+            return render(request,'destinations/itinerary/itinerary.html')
+    
+    def post(self,request):
+        return None;
 
 class BookingSaveView(View):
     def post(self, request, *args, **kwargs):
