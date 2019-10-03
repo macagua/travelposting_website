@@ -16,6 +16,8 @@ from django.views.generic import (
 from django.template.loader import render_to_string
 from django.shortcuts import render
 from django.core.mail import mail_managers
+from django.core.mail import send_mail
+
 
 from apps.destinations.forms import (
     DestinationForm,
@@ -276,7 +278,6 @@ class BookingSaveView(View):
         name_booking = request.POST.get('destination')
         comment = request.POST.get('comment')
         destination = request.POST.get('destination_id')
-
         if destination=='':
             dest = None
         else:
@@ -319,4 +320,14 @@ class BookingSaveView(View):
                     fail_silently=True,
                     html_message=html_message
                 )
+
+        send_mail(
+            subject,
+            message,
+            'travelsolution@travelposting.com',
+            [dest.user.email],
+            fail_silently=False,
+            html_message=html_message
+        )
+
         return render(request, 'pages/saveBooking.html')
