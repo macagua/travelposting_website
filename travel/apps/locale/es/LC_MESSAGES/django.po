@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 18:53-0400\n"
-"PO-Revision-Date: 2019-10-02 18:54-0428\n"
+"POT-Creation-Date: 2019-10-03 02:29-0400\n"
+"PO-Revision-Date: 2019-10-03 02:31-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -49,7 +49,7 @@ msgid "Accounts"
 msgstr "Cuentas"
 
 #: apps/accounts/forms.py:31 main/templates/index.html:76
-#: main/templates/services/destination/detail_destination.html:274
+#: main/templates/services/destination/detail_destination.html:280
 msgid "Email"
 msgstr "E-mail"
 
@@ -199,7 +199,9 @@ msgid "Accounts Activate"
 msgstr "Activacion de cuenta"
 
 #: apps/accounts/templates/accounts/registration/activation_complete.html:59
+#: main/templates/pages/booking_email.html:66
 #: main/templates/pages/email_feedback.html:64
+#: main/templates/pages/published_email.html:60
 msgid "if you want see the admin site"
 msgstr "si quieres ver el sitio de administración"
 
@@ -276,7 +278,7 @@ msgid "Email address"
 msgstr "Correo electrónico"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
-#: main/templates/pages/show_header.html:94
+#: main/templates/pages/show_header.html:95
 msgid "Please enter a valid email address."
 msgstr "Por favor ingrese un correo valido"
 
@@ -349,7 +351,7 @@ msgstr "Usuario registrado"
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/landing_page/models.py:402 main/templates/index.html:67
-#: main/templates/services/destination/detail_destination.html:248
+#: main/templates/services/destination/detail_destination.html:254
 msgid "Name"
 msgstr "Nombre"
 
@@ -742,11 +744,11 @@ msgstr "Revista"
 msgid "Megazines"
 msgstr "Revistas"
 
-#: apps/landing_page/views.py:72
+#: apps/landing_page/views.py:71
 msgid "New registered search"
 msgstr "Nueva búsqueda registrada"
 
-#: apps/landing_page/views.py:86
+#: apps/landing_page/views.py:85
 #, python-brace-format
 msgid ""
 "A person has done a new search, please review Mr.'s {name} incoming application. \n"
@@ -1408,37 +1410,89 @@ msgstr "Registrate"
 msgid "SignIn"
 msgstr "Ingresa"
 
-#: main/templates/pages/email_feedback.html:50
-msgid "A person has done a new search:"
-msgstr "Una persona ha realizado una nueva búsqueda:"
+#: main/templates/pages/booking_email.html:50
+#| msgid "A person has done a new search:"
+msgid "A person has done a new booking:"
+msgstr "Una persona ha realizado una nueva reserva:"
 
+#: main/templates/pages/booking_email.html:58
 #: main/templates/pages/email_feedback.html:58
 msgid "Name / Last Name: "
 msgstr "Nombre /Apellido"
+
+#: main/templates/pages/booking_email.html:59
+msgid "Cellphone:"
+msgstr "Telefono"
+
+#: main/templates/pages/booking_email.html:60
+#: main/templates/pages/email_feedback.html:60
+msgid "Email:"
+msgstr "E-mail"
+
+#: main/templates/pages/booking_email.html:61
+msgid "Travel number: "
+msgstr "Numero de Viajantes"
+
+#: main/templates/pages/booking_email.html:62
+#: main/templates/pages/published_email.html:56
+#: main/templates/pages/published_email_user.html:56
+#| msgid "Destinations"
+msgid "Destination:"
+msgstr "Destino:"
+
+#: main/templates/pages/booking_email.html:63
+#| msgid "comment"
+msgid "Comment: "
+msgstr "Comentario:"
+
+#: main/templates/pages/booking_email.html:73
+#: main/templates/pages/email_feedback.html:71
+#: main/templates/pages/published_email.html:67
+msgid "Admin"
+msgstr "Admin"
+
+#: main/templates/pages/email_feedback.html:50
+msgid "A person has done a new search:"
+msgstr "Una persona ha realizado una nueva búsqueda:"
 
 #: main/templates/pages/email_feedback.html:59
 msgid "Country:"
 msgstr "País"
 
-#: main/templates/pages/email_feedback.html:60
-msgid "Email:"
-msgstr "E-mail"
-
 #: main/templates/pages/email_feedback.html:61
-#: main/templates/pages/show_header.html:100
-#: main/templates/pages/show_header.html:102
+#: main/templates/pages/show_header.html:101
+#: main/templates/pages/show_header.html:103
 msgid "Whatsapp"
 msgstr "Whatsapp"
 
-#: main/templates/pages/email_feedback.html:71
-msgid "Admin"
-msgstr "Admin"
+#: main/templates/pages/published_email.html:48
+msgid "A new destination was activated"
+msgstr "Un nuevo destino fue activado"
+
+#: main/templates/pages/published_email.html:57
+#: main/templates/pages/published_email_user.html:57
+msgid "Owner:"
+msgstr "Dueño:"
+
+#: main/templates/pages/published_email_user.html:48
+msgid "Congratulations your destination was activated"
+msgstr "Felicidades su destino fue activado"
+
+#: main/templates/pages/published_email_user.html:60
+msgid "Now you can see your destination on our system"
+msgstr "Ahora puede ver su destino en nuestro sistema"
+
+#: main/templates/pages/published_email_user.html:67
+msgid "See it now"
+msgstr "Véalo ahora"
 
 #: main/templates/pages/safeSearch.html:17
+#: main/templates/pages/saveBooking.html:17
 msgid "Thank you"
 msgstr "Gracias"
 
 #: main/templates/pages/safeSearch.html:18
+#: main/templates/pages/saveBooking.html:18
 msgid ""
 "Very soon we will contact you, with all the requirements. Thank you for "
 "contacting us, Travelposting team"
@@ -1480,26 +1534,26 @@ msgstr "Petición"
 msgid "Where would you like to travel this time?"
 msgstr "¿Donde te gustaría viajar esta vez?"
 
-#: main/templates/pages/show_header.html:76
-#: main/templates/pages/show_header.html:78
+#: main/templates/pages/show_header.html:77
+#: main/templates/pages/show_header.html:79
 msgid "Name / Last Name"
 msgstr "Nombre /Apellido"
 
-#: main/templates/pages/show_header.html:84
-#: main/templates/pages/show_header.html:86
+#: main/templates/pages/show_header.html:85
+#: main/templates/pages/show_header.html:87
 msgid "Country / City"
 msgstr "Pais / Ciudad"
 
-#: main/templates/pages/show_header.html:92
-#: main/templates/pages/show_header.html:94
+#: main/templates/pages/show_header.html:93
+#: main/templates/pages/show_header.html:95
 msgid "E-mail"
 msgstr "E-mail"
 
-#: main/templates/pages/show_header.html:108
+#: main/templates/pages/show_header.html:109
 msgid "Send"
 msgstr "Enviar"
 
-#: main/templates/pages/show_header.html:111
+#: main/templates/pages/show_header.html:112
 msgid ""
 "Leave us your personal data if you want us to send you information regarding"
 " the destinations of your interest. Do you agree that we send you "
@@ -1693,23 +1747,23 @@ msgstr "Volver a la lista"
 msgid "Book your destination!"
 msgstr "¡Reserve su destino!"
 
-#: main/templates/services/destination/detail_destination.html:256
+#: main/templates/services/destination/detail_destination.html:262
 msgid "Last Name"
 msgstr "Apellido"
 
-#: main/templates/services/destination/detail_destination.html:266
+#: main/templates/services/destination/detail_destination.html:272
 msgid "+49 123 456 789"
 msgstr "+49 123 456 789"
 
-#: main/templates/services/destination/detail_destination.html:284
+#: main/templates/services/destination/detail_destination.html:290
 msgid "Number of people travelling"
 msgstr "Numero de personas viajando"
 
-#: main/templates/services/destination/detail_destination.html:293
+#: main/templates/services/destination/detail_destination.html:299
 msgid "Do you have a plan you want to book?"
 msgstr "¿Tienes un plan que quieres reservar?"
 
-#: main/templates/services/destination/detail_destination.html:302
+#: main/templates/services/destination/detail_destination.html:308
 msgid ""
 "\n"
 "                          By clicking \"Book\" you agree that Travelposting use your data for advertising and marketing purposes between Travelposting, its alliance partners and Xposting-Service. At any time you can make use of your rights and request the cancellation of your data.\n"
@@ -1718,11 +1772,11 @@ msgstr ""
 "\n"
 "Al hacer clic en \"Reservar\", acepta que Travelposting utilice sus datos para fines publicitarios y de marketing entre Travelposting, sus socios de la alianza y Xposting-Service. En cualquier momento puede hacer uso de sus derechos y solicitar la cancelación de sus datos."
 
-#: main/templates/services/destination/detail_destination.html:309
+#: main/templates/services/destination/detail_destination.html:315
 msgid "Close"
 msgstr "Cerrar"
 
-#: main/templates/services/destination/detail_destination.html:310
+#: main/templates/services/destination/detail_destination.html:316
 msgid "Book"
 msgstr "Reservar"
 
