@@ -14,6 +14,9 @@ from django.views.generic import (
     ListView,
     View,
 )
+from django.template.loader import render_to_string
+from django.core.mail import mail_managers
+
 from apps.destinations.forms import (
     DestinationForm,
     TourDataForm,
@@ -264,7 +267,56 @@ class ItineraryListView(LoginRequiredMixin, ListView):
 
 class BookingSaveView(View):
     def post(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()
+        firts_name = request.POST.get('name')
+        last_name = request.POST.get('last_name')
+        dni = request.POST.get('dni')
+        cellphone = request.POST.get('cellphone')
+        mail =  request.POST.get('mail')
+        number_travel = request.POST.get('people_travel')
+        name_booking = request.POST.get('destination')
+        comment = request.POST.get('comment')
+        destination = request.POST.get('destination_id')
 
-        return render(request, 'pages/safeSearch.html')
+        if destination=='':
+            dest = None 
+        else:
+            dest = Destination.objects.get(id=destination)
+
+        Booking.objects.create(
+            destination = dest,
+            firts_name = firts_name,
+            last_name = last_name,
+            cellphone = cellphone,
+            mail = mail,
+            number_travel = number_travel,
+            name_booking = name_booking, 
+            comment = comment
+        )
+
+        subject = _('New registered search')
+
+        ctx = {
+            'destination' : dest.name,
+            'firts_name' : firts_name,
+            'last_name' : last_name,
+            'cellphone' : cellphone,
+            'mail' : mail,
+            'number_travel' : number_travel,
+            'name_booking' : name_booking, 
+            'comment' : comment,
+        }
+
+        html_message = render_to_string(
+            'pages/booking_email.html',
+            context=ctx
+        )
+
+        message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+
+        mail_managers(subject,
+                    message,
+                    fail_silently=True,
+                    html_message=html_message
+                ) 
+        return render(request, 'pages/saveBooking.html')
 

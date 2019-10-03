@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% block extracss  %}
+    <link rel="stylesheet" href="{% static 'assets/vendor/dzsparallaxer/dzsparallaxer.css'%}">
+{% endblock extracss%}
+{% block navbar %}
+    {% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll animation-engine-js loaded dzsprx-readyall" data-options="{direction: &quot;normal&quot;}">
+    <!-- Apply your Parallax background image here -->
+    <div class="divimage dzsparallaxer--target" style="height: 120%; background-image: url({% static 'assets/img/1920x800/img13.jpg' %}); transform: translate3d(0px, -49.0767px, 0px);"></div>
+
+    <!-- Content -->
+    <div class="container position-relative space-2 space-top-md-5 space-bottom-md-3 z-index-2">
+      <div class="w-lg-80 text-center mx-auto">
+        <h1 class="display-3 font-size-md-down-5 text-white font-weight-semi-bold">{% trans 'Thank you'%}</h1>
+        <p class="lead text-white">{% trans 'Very soon we will contact you, with all the requirements. Thank you for contacting us, Travelposting team' %}</p>
+      </div>
+    </div>
+    <!-- End Content -->
+  </div>
+{% endblock %}
+{% block extrajs %}
+<script src="{% static 'assets/vendor/dzsparallaxer/dzsparallaxer.js' %}"></script>
+{% endblock %}

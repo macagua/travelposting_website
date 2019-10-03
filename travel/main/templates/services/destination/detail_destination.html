@@ -240,12 +240,29 @@
             <div class="modal-body">
                 <form name="destinationsform" action="{% url "make-booking" %}" method="POST">{% csrf_token %}
                     <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" readonly name="destination_id" aria-label="Readonly" aria-describedby="inputGroup-sizing-sm" value="{{ destino.pk }}">
+                              </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <b>{{ destino.name }}</b>
+                              </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name'%}">
+                                <input type="text" maxlength="50" class="form-control" required name="name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name'%}">
                               </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -253,7 +270,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="last_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
+                                <input type="text" maxlength="50" class="form-control" required name="last_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
                               </div>
                         </div>
                     </div>
@@ -263,7 +280,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="cellphone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789'%}">
+                                <input type="text" maxlength="50" class="form-control"  required name="cellphone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789'%}">
                               </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -271,7 +288,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
                                 </div>
-                                <input type="email" class="form-control" name="email" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
+                                <input type="email" maxlength="100" class="form-control" required name="email" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
                               </div>
                         </div>
                     </div>
@@ -281,7 +298,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
                                 </div>
-                                <input type="number" class="form-control" name="people_travel" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling'%}">
+                                <input type="text" maxlength="2" class="form-control" required name="people_travel" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling'%}">
                               </div>
                         </div>
 
@@ -290,7 +307,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
                                 </div>
-                                <input type="email" class="form-control" name="destination"  aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
+                                <input type="text" maxlength="50" class="form-control" name="destination"  aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
                               </div>
                         </div>
                     </div>
