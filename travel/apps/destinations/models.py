@@ -46,7 +46,6 @@ class Destination(models.Model):
         Categorie,
         verbose_name=_("Categorie"),
         blank=True,
-        null=True,
     )
 
     user = models.ForeignKey(
@@ -641,26 +640,33 @@ class BookingDetail(models.Model):
 
 
 class SearchLanding(models.Model):
-    names = models.CharField('Names', 
-                null=True, 
-                blank=True, 
-                max_length=40
-            )
-    country = models.CharField('Countries', 
-                null=True, 
-                blank=True, 
-                max_length=30
-            )
-    email = models.EmailField('Email', 
-                null=True, 
-                blank=True,
-                max_length=50
-            )
-    whatsapp = models.CharField('Whatsapp', 
-                null=True,
-                blank=True, 
-                max_length=30
-            )
+    names = models.CharField(
+        'Names',
+        null=True,
+        blank=True,
+        max_length=40
+    )
+
+    country = models.CharField(
+        'Countries',
+        null=True,
+        blank=True,
+        max_length=30
+    )
+
+    email = models.EmailField(
+        'Email',
+        null=True,
+        blank=True,
+        max_length=50
+    )
+
+    whatsapp = models.CharField(
+        'Whatsapp',
+        null=True,
+        blank=True,
+        max_length=30
+    )
 
     def __str__(self):
         return f"{self.email}-{self.country}"
@@ -672,54 +678,80 @@ class SearchLanding(models.Model):
 
 
 class Booking(models.Model):
-    destination = models.ForeignKey(Destination, on_delete=False)
+    destination = models.ForeignKey(
+        Destination,
+        on_delete=False,
+    )
 
-    firts_name = models.CharField(_('Firts Name'), 
-                        null=False, 
-                        blank=False, 
-                        max_length = 50
-                )
-    last_name = models.CharField(_('Last Name'), 
-                    null=False, 
-                    blank=False,
-                    max_length = 50
-                )
-    dni = models.CharField(_('Identity number'), 
-            null=False, 
-            blank=False,
-            max_length = 50
-        )
-    cellphone = models.CharField(_('Cellphone'), 
-                    null=False, 
-                    blank=False,
-                    max_length = 50
-                )
-    
-    mail = models.EmailField(_('Email'),
-                null=False,
-                blank=False,
-                max_length = 100
-            )
-    number_travel = models.CharField(_('Number of people travelling'),
-                        null=False,
-                        blank=False,
-                        max_length= 2,
-                    )
-    name_booking = models.CharField(_('Booking'),
-                        null=True,
-                        blank= True,
-                        max_length = 50,
-                    )
+    firts_name = models.CharField(
+        _('Firts Name'),
+        null=False,
+        blank=False,
+        max_length = 50,
+    )
 
-    comment = models.TextField(_('Comment'),
-                blank=True, 
-                null=True
-                )
+    last_name = models.CharField(
+        _('Last Name'),
+        null=False,
+        blank=False,
+        max_length = 50
+    )
+
+    dni = models.CharField(
+        _('Identity number'),
+        null=False,
+        blank=False,
+        max_length = 50
+    )
+
+    cellphone = models.CharField(
+        _('Cellphone'),
+        null=False,
+        blank=False,
+        max_length = 50
+    )
+
+    mail = models.EmailField(
+        _('Email'),
+        null=False,
+        blank=False,
+        max_length = 100,
+    )
+
+    number_travel = models.CharField(
+        _('Number of people travelling'),
+        null=False,
+        blank=False,
+        max_length= 2,
+    )
+
+    name_booking = models.CharField(
+        _('Booking'),
+        null=True,
+        blank= True,
+        max_length = 50,
+    )
+
+    comment = models.TextField(
+        _('Comment'),
+        blank=True,
+        null=True,
+    )
+
+    seen_status = models.BooleanField(
+        _('seen'),
+        default=False,
+    )
+
+    process_status = models.BooleanField(
+        _('status'),
+        default=False,
+        help_text=_('Means if receive following or not.'),
+    )
 
     def __str__(self):
         return f"{self.firts_name}-{self.last_name}"
 
     class Meta:
-        verbose_name_plural = _('Booking\'s')
+        verbose_name_plural = _("Booking's")
         verbose_name = _('Booking')
-

@@ -81,11 +81,23 @@ class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
 
 
 @admin.register(Categorie)
-class OptionTabDataAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'short_description', 'image')
+
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    search_fields = ('destination__name',)
+    list_filter = ['process_status',]
+    list_display = [
+        'destination',
+        'cellphone',
+        'mail',
+        'seen_status',
+        'process_status',
+    ]
 
 
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)
 admin.site.register(SearchLanding)
-admin.site.register(Booking)
