@@ -17,7 +17,7 @@ from django.template.loader import render_to_string
 from django.shortcuts import render
 from django.core.mail import mail_managers
 from django.core.mail import send_mail
-
+from django.conf import settings
 
 from apps.destinations.forms import (
     DestinationForm,
@@ -324,7 +324,7 @@ class BookingSaveView(View):
         send_mail(
             subject,
             message,
-            'travelsolution@travelposting.com',
+            settings.DEFAULT_FROM_EMAIL,
             [dest.user.email],
             fail_silently=False,
             html_message=html_message
