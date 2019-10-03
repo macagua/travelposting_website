@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 18:53-0400\n"
+"POT-Creation-Date: 2019-10-02 22:29-0400\n"
 "PO-Revision-Date: 2019-06-27 13:37-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -493,6 +493,50 @@ msgstr "Booking detail"
 #: apps/destinations/models.py:670 apps/destinations/models.py:671
 msgid "Search Landing"
 msgstr ""
+
+#: apps/destinations/models.py:677
+msgid "Firts Name"
+msgstr ""
+
+#: apps/destinations/models.py:682
+#, fuzzy
+#| msgid "Name"
+msgid "Last Name"
+msgstr "Surname"
+
+#: apps/destinations/models.py:687
+msgid "Identity number"
+msgstr ""
+
+#: apps/destinations/models.py:692
+msgid "Cellphone"
+msgstr ""
+
+#: apps/destinations/models.py:698
+msgid "Email"
+msgstr ""
+
+#: apps/destinations/models.py:703
+#, fuzzy
+#| msgid "Number of tickets per tour"
+msgid "Number of people travelling"
+msgstr "Number of tickets per tour"
+
+#: apps/destinations/models.py:708 apps/destinations/models.py:724
+#, fuzzy
+#| msgid "Tour Booking"
+msgid "Booking"
+msgstr "Tour Booking"
+
+#: apps/destinations/models.py:714
+msgid "Comment"
+msgstr ""
+
+#: apps/destinations/models.py:723
+#, fuzzy
+#| msgid "Booking details"
+msgid "Booking's"
+msgstr "Booking details"
 
 #: apps/destinations/templates/destinations/_delete.html:7
 #: apps/destinations/templates/destinations/_delete.html:20

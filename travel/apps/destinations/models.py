@@ -669,3 +669,57 @@ class SearchLanding(models.Model):
         ordering = ('email', 'country')
         verbose_name_plural = _('Search Landing')
         verbose_name = _('Search Landing')
+
+
+class Booking(models.Model):
+    destination = models.ForeignKey(Destination, on_delete=False)
+
+    firts_name = models.CharField(_('Firts Name'), 
+                        null=False, 
+                        blank=False, 
+                        max_length = 50
+                )
+    last_name = models.CharField(_('Last Name'), 
+                    null=False, 
+                    blank=False,
+                    max_length = 50
+                )
+    dni = models.CharField(_('Identity number'), 
+            null=False, 
+            blank=False,
+            max_length = 50
+        )
+    cellphone = models.CharField(_('Cellphone'), 
+                    null=False, 
+                    blank=False,
+                    max_length = 50
+                )
+    
+    mail = models.EmailField(_('Email'),
+                null=False,
+                blank=False,
+                max_length = 100
+            )
+    number_travel = models.CharField(_('Number of people travelling'),
+                        null=False,
+                        blank=False,
+                        max_length= 2,
+                    )
+    name_booking = models.CharField(_('Booking'),
+                        null=True,
+                        blank= True,
+                        max_length = 50,
+                    )
+
+    comment = models.TextField(_('Comment'),
+                blank=True, 
+                null=True
+                )
+
+    def __str__(self):
+        return f"{self.firts_name}-{self.last_name}"
+
+    class Meta:
+        verbose_name_plural = _('Booking\'s')
+        verbose_name = _('Booking')
+
