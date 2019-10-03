@@ -293,12 +293,12 @@ class Itinerary(models.Model):
         max_length=50,
 
     )
-    
+
     detail_itinerary = models.TextField(
         _('Detail Itinerary'),
     )
 
-        
+
 class TabData(models.Model):
     tour_data = models.ForeignKey(
         TourData,
@@ -701,42 +701,12 @@ class Booking(models.Model):
         on_delete=False,
     )
 
-    firts_name = models.CharField(_('Firts Name'), 
-                        null=False, 
-                        blank=False, 
-                        max_length = 50
-                )
-    last_name = models.CharField(_('Last Name'), 
-                    null=False, 
-                    blank=False,
-                    max_length = 50
-                )
-    dni = models.CharField(_('Identity number'), 
-            null=True, 
-            blank=True,
-            max_length = 50
-        )
-    cellphone = models.CharField(_('Cellphone'), 
-                    null=False, 
-                    blank=False,
-                    max_length = 50
-                )
-    
-    mail = models.EmailField(_('Email'),
-                null=False,
-                blank=False,
-                max_length = 100
-            )
-    number_travel = models.CharField(_('Number of people travelling'),
-                        null=False,
-                        blank=False,
-                        max_length= 2,
-                    )
-    name_booking = models.CharField(_('Booking'),
-                        null=True,
-                        blank= True,
-                        max_length = 50,
-                    )
+    firts_name = models.CharField(
+        _('Firts Name'),
+        null=False,
+        blank=False,
+        max_length = 50
+    )
 
     last_name = models.CharField(
         _('Last Name'),
