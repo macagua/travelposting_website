@@ -5,7 +5,6 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
-from django.shortcuts import render
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -15,7 +14,7 @@ from django.views.generic import (
     View,
 )
 from django.template.loader import render_to_string
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.core.mail import mail_managers
 
 from apps.destinations.forms import (
@@ -295,7 +294,7 @@ class BookingSaveView(View):
             comment = comment
         )
 
-        subject = _('New registered search')
+        subject = _('New Booking registered')
 
         ctx = {
             'destination' : dest.name,
@@ -321,4 +320,3 @@ class BookingSaveView(View):
                     html_message=html_message
                 )
         return render(request, 'pages/saveBooking.html')
-
