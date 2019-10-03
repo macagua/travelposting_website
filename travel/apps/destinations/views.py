@@ -29,7 +29,7 @@ from apps.destinations.models import (
     HeaderSection,
     DestinationDetail,
     OptionTabData,
-    TabData,
+    Itinerary,
     Booking,
 )
 from apps.destinations.utils import (
@@ -262,7 +262,13 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
 class ItineraryView(View):
     def get(self, request):
         if request.is_ajax():
-            return None
+            itinerary = Itinerary.objects.all() \
+                .filter(medic__caretaker=request.user.caretaker.id) \
+                .filter(medic__caretaker=request.user.caretaker.id)
+            return JsonResponse(
+                ItinerarySerializer(itinerary),
+                safe=False,
+                )
         else:
             return render(request,'destinations/itinerary/itinerary.html')
     
@@ -324,3 +330,12 @@ class BookingSaveView(View):
                     html_message=html_message
                 )
         return render(request, 'pages/saveBooking.html')
+
+
+class BookingListView(LoginRequiredMixin, ListView):
+    template_name = 'destinations/_booking_list.html'
+    queryset = Booking.objects.all()
+
+    def get_queryset(self):
+        queryset = super(BookingListView, self).get_queryset()
+        return queryset #queryset.filter(destination__user=self.request.user)
