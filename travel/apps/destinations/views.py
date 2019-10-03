@@ -1,11 +1,11 @@
 import logging
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
+from django.shortcuts import render
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -278,18 +278,19 @@ class BookingSaveView(View):
         destination = request.POST.get('destination_id')
 
         if destination=='':
-            dest = None 
+            dest = None
         else:
             dest = Destination.objects.get(id=destination)
 
         Booking.objects.create(
+            dni=dni,
             destination = dest,
             firts_name = firts_name,
             last_name = last_name,
             cellphone = cellphone,
             mail = mail,
             number_travel = number_travel,
-            name_booking = name_booking, 
+            name_booking = name_booking,
             comment = comment
         )
 
@@ -302,7 +303,7 @@ class BookingSaveView(View):
             'cellphone' : cellphone,
             'mail' : mail,
             'number_travel' : number_travel,
-            'name_booking' : name_booking, 
+            'name_booking' : name_booking,
             'comment' : comment,
         }
 
@@ -317,6 +318,6 @@ class BookingSaveView(View):
                     message,
                     fail_silently=True,
                     html_message=html_message
-                ) 
+                )
         return render(request, 'pages/saveBooking.html')
 

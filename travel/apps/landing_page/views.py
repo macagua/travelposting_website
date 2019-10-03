@@ -93,5 +93,3 @@ class SaveSearchView(View):
                 )
 
         return render(request, 'pages/safeSearch.html')
-
-

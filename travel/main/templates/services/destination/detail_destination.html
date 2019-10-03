@@ -240,19 +240,8 @@
             <div class="modal-body">
                 <form name="destinationsform" action="{% url "make-booking" %}" method="POST">{% csrf_token %}
                     <div class="form-row">
-                        <div class="form-group col-md-2">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
-                                </div>
-                                <input type="text" class="form-control" readonly name="destination_id" aria-label="Readonly" aria-describedby="inputGroup-sizing-sm" value="{{ destino.pk }}">
-                              </div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <b>{{ destino.name }}</b>
-                              </div>
-                        </div>
+                        <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
+                        <span><center>{{ destino.name }}</center></span>
                     </div>
 
 
