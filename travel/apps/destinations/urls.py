@@ -8,7 +8,7 @@ from apps.destinations.views import (
     DestinationDeleteView,
     GalleryListView,
     OptionTabDataTemplateAjaxView,
-    ItineraryListView,
+    ItineraryView,
     BookingListView,
 )
 
@@ -57,8 +57,25 @@ urlpatterns = [
     ),
 
     path(
+        'itinerary/get-itinerary',
+        ItineraryView.as_view(),
+        name='get-itinerary',
+    ),
+
+    path(
+        'itinerary/add-itinerary',
+        ItineraryView.as_view(),
+        name='add-itinerary',
+    ),
+    path(
+            'itinerary/delete-itinerary',
+            ItineraryView.as_view(),
+            name='delete-itinerary',
+    ),
+
+    path(
         'itinerary/',
-        ItineraryListView.as_view(),
+        ItineraryView.as_view(),
         name='itinerary-list',
     ),
 

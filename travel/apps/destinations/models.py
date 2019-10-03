@@ -278,7 +278,27 @@ class TourData(models.Model):
         verbose_name = _('Tour')
         verbose_name_plural = _('Tours')
 
+class Itinerary(models.Model):
+    """
+    Modelo para itinerario de destinos
+    """
+    destination = models.ForeignKey(
+        Destination,
+        on_delete = models.CASCADE,
+        verbose_name = _("Itinerary")
+    )
 
+    short_description = models.CharField(
+        _('Short Description'),
+        max_length=50,
+
+    )
+    
+    detail_itinerary = models.TextField(
+        _('Detail Itinerary'),
+    )
+
+        
 class TabData(models.Model):
     tour_data = models.ForeignKey(
         TourData,
