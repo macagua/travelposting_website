@@ -34,6 +34,12 @@
         <div class="logo-element">T&S</div>
       </li>
       <li class="">
+        <a href="{% url 'destinations:dashboard-index' %}">
+          <i class="fa fa-home fa-lg"></i>
+          <span class="nav-label">{% trans 'Home' %}</span>
+        </a>
+      </li>
+      <li class="">
         <a href="#">
           <i class="fa fa-globe fa-lg"></i>
           <span class="nav-label">{% trans 'Destinos' %}</span>
