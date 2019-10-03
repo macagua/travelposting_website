@@ -251,16 +251,14 @@ ADMINS = [
 
 MANAGERS = [
     ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
-    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
-    ('Support Travelposting', 'support@travelposting.com'),
 ]
 
 # Authentication options
 AUTH_USER_MODEL = 'accounts.CustomerUser'
 LOGIN_URL = 'accounts:login'
-LOGIN_REDIRECT_URL = 'destinations:list'
+LOGIN_REDIRECT_URL = 'destinations:dashboard-index'
 LOGOUT_URL = 'accounts:logout'
-LOGOUT_REDIRECT_URL = 'destination:list'
+LOGOUT_REDIRECT_URL = 'accounts:logout'
 
 THUMBNAIL_HIGH_RESOLUTION = True
 

@@ -339,4 +339,4 @@ class BookingListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         queryset = super(BookingListView, self).get_queryset()
-        return queryset #queryset.filter(destination__user=self.request.user)
+        return queryset.filter(destination__user=self.request.user)

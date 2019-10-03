@@ -1,5 +1,9 @@
 from django.urls import path
-
+from apps.destinations.charts import (
+    BookingCharts,
+    DashboardIndex,
+    DestinationCharts,
+)
 from apps.destinations.views import (
     DestinationListView,
     DestinationCreateView,
@@ -16,6 +20,12 @@ app_name = 'destinations'
 urlpatterns = [
     path(
         '',
+        DashboardIndex,
+        name='dashboard-index',
+    ),
+
+    path(
+        'list',
         DestinationListView.as_view(),
         name='list',
     ),
@@ -66,5 +76,17 @@ urlpatterns = [
         'booking-list/',
         BookingListView.as_view(),
         name='booking-list',
+    ),
+
+    path(
+        'booking-charts/',
+        BookingCharts,
+        name='booking-charts',
+    ),
+
+    path(
+        'destination-charts/',
+        DestinationCharts,
+        name='destination-charts',
     ),
 ]

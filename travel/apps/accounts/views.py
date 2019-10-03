@@ -53,7 +53,7 @@ class LoginView(View):
 
         if user is not None:
             login(request, user)
-            return redirect(reverse('destinations:list'))
+            return redirect(reverse('destinations:dashboard-index'))
         else:
             errors =  _('An error, Incorrect User or Password has occurred.')
 

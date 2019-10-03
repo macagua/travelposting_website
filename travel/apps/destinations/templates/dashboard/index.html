@@ -1,0 +1,97 @@
+{% extends 'destinations/base.html' %}
+{% load static i18n %}
+{% block title %}{% trans 'Welcome to your Dashboard' %}{% endblock %}
+
+{% block content %}
+  <div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="p-w-md m-t-sm">
+        <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-content text-center p-md">
+
+                    <h2><span class="text-navy">{{ user }}</span>
+                        <br>{% trans "Thank you for being part of our team, welcome back" %}
+                    </h2>
+
+                    <p>
+                        {% trans "Here you got some shortcuts option that you may do in our system." %}
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+        {% include 'dashboard/widgets.html' %}
+          <div class="col-lg-6">
+            <div class="ibox">
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+              <div class="ibox-content p-md">
+                <div class="table-responsive">
+                  <table id ="tabla-destinos" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% trans "Your Destinations" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                            <div id="destination-chart" style="height: 200px"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ibox">
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+              <div class="ibox-content p-md">
+                <div class="table-responsive">
+                  <table id ="tabla-destinos" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% trans "Your Bookings" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                            <div id="booking-chart" style="height: 200px"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'destinations/footer.html' %}
+  </div>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="{% static 'js/booking_charts.js' %}"></script>
+{% endblock %}
+
+
