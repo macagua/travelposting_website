@@ -105,7 +105,9 @@
                     <article class="card shadow h-100">
                         <img class="card-img-top" src="{{destino.first_pic}}" alt="{{destino.name}}">
                         <div class="card-body p-5">
-                            <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#">{{destino.categorie.name}}</a>
+                            {% for category in destino.categorie.all %}
+                                <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="/category/{{ category|lower }}/">{{category.name}}</a>
+                            {% endfor %}
                             <div class="d-block">
                             <h3 class="h4">{{ destino.name }}</h3>
                             <div class="ml-3">

@@ -27,11 +27,11 @@ class CategoriesView(View):
     """
     def get(self, request, *args, **kwargs):
         if kwargs.get('alias') == 'all':
-            destination_for_category = Destination.objects.filter(is_deleted=False)
+            destination_for_category = Destination.objects.filter(is_deleted=False, is_published=True)
             all_categories = True
             categorie = Categorie.objects.all()
         else:
-            destination_for_category = Destination.objects.filter(categorie__alias=kwargs.get('alias'), is_deleted=False)
+            destination_for_category = Destination.objects.filter(categorie__alias=kwargs.get('alias'), is_deleted=False, is_published=True)
             categorie = Categorie.objects.filter(alias=kwargs.get('alias'))
             all_categories = False
         range_min = GeneralDetail.objects.all().aggregate(Min('regular_price'))
