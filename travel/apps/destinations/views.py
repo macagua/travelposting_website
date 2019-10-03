@@ -15,6 +15,7 @@ from django.views.generic import (
     View,
 )
 from django.template.loader import render_to_string
+from django.shortcuts import render, redirect
 from django.core.mail import mail_managers
 
 from apps.destinations.forms import (
