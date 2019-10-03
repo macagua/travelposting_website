@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
+from django.http import QueryDict
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
@@ -15,7 +16,10 @@ from django.views.generic import (
     View,
 )
 from django.template.loader import render_to_string
-from django.shortcuts import render
+from django.shortcuts import (
+    render,
+    get_object_or_404,
+)
 from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.conf import settings
@@ -284,7 +288,6 @@ class ItineraryView(View):
                 itinerary = Itinerary.objects.all()\
                             .filter(destination__user=request.user.id)\
                             .filter(destination= request.GET['destiny'])
-                print(itinerary.query)
                 return JsonResponse(
                     ItinerarySerializer(itinerary),
                     safe=False,
@@ -311,6 +314,18 @@ class ItineraryView(View):
                 },
                 safe=False,
             ) 
+    
+    def delete(self,request,*args,**kwargs):
+        pk_itinerary= QueryDict(request.body)
+        itinerary = get_object_or_404(Itinerary, pk=pk_itinerary['pk'])
+        if itinerary.delete() :
+            return JsonResponse(
+                {
+                'status':True
+                },
+                safe=False,
+            )
+
 
 class BookingSaveView(View):
     def post(self, request, *args, **kwargs):

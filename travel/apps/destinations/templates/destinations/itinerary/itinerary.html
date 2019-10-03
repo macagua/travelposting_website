@@ -8,6 +8,7 @@
 <link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
 <link href="{% static "inspinia/js/plugins/dataTables/datatables.min.css" %}" rel="stylesheet">
 <link href="{% static "inspinia/js/plugins/toastr/toastr.min.css" %}" rel="stylesheet">
+<link href="{% static "inspinia/js/plugins/sweetalert/sweetalert.css" %}" rel="stylesheet">
 {%endblock css%}
 
 {% block content %}
@@ -87,7 +88,6 @@
               </div>
 
           </div>
-          {% include 'destinations/modal.html' %}
         </div>
       </div>
     </div>
@@ -103,10 +103,43 @@
   <script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
   <script src="{% static "inspinia/js/plugins/select2/select2.full.min.js" %}"></script>
   <script src="{% static "inspinia/js/plugins/toastr/toastr.min.js" %}"></script>
+  <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
   <script src="{% static "inspinia/js/notifications.js" %}"></script>
   <script>
+    function delete_itinerary(pk_i){
+          swal({
+              title: "{% trans "Are you sure?" %}",
+              text: "{% trans "If you delete this itinerary you will not be able to recover it" %}",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "{% trans "Yes, delete it!" %}",
+              closeOnConfirm: false
+          }, function () {
+            $.ajax({
+                  method:'DELETE',
+                  url:'{% url 'destinations:delete-itinerary' %}',
+                  data:{
+                    pk:pk_i,
+                  },
+                  beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+                  },
+                  success: function (request) {
+                  if(request.status==true){
+                    swal("Deleted!", "Itinerary has been deleted.", "success");
+                    table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
+                  }else{
+                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
+                  }
+                    
+                  }
+              });
+             
+          });
+    }
 
-    $(document).ready(function(){
+      
         $('#table-itinerary thead tr').clone(true).appendTo( '#table-itinerary thead' );
         $('#table-itinerary thead tr:eq(1) th').each( function (i) {
             var title = $(this).text();
@@ -214,8 +247,7 @@
           })
         });
 
-    });
-    </script>
-  <script type="text/javascript" src="{% static 'destinations/js/modal.js' %}"></script>
+        
+  </script>
   <script>initSummernote();</script>
 {% endblock %}
