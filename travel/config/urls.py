@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import (
-    absolute_import,
-    print_function,
-    unicode_literals,
-)
 from cms.sitemaps import CMSSitemap
 from django.conf import settings
 from django.conf.urls import include, url
@@ -98,6 +92,7 @@ urlpatterns += i18n_patterns(
         SaveSearchView.as_view(),
         name='personal-search',
     ),
+
     path(
         'make-booking/',
         BookingSaveView.as_view(),
