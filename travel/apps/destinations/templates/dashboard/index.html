@@ -1,5 +1,5 @@
 {% extends 'destinations/base.html' %}
-{% load static i18n %}
+{% load static i18n destinations_tags %}
 {% block title %}{% trans 'Welcome to your Dashboard' %}{% endblock %}
 
 {% block content %}
@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+        {% filter_dashboard_index user as dashboard_list %}
         {% include 'dashboard/widgets.html' %}
           <div class="col-lg-6">
             <div class="ibox">

@@ -3,7 +3,6 @@ from django.utils.translation import gettext_lazy as _
 from djmoney.models.fields import MoneyField
 from djmoney.money import Money
 from easy_thumbnails.fields import ThumbnailerImageField
-
 from apps.accounts.models import CustomerUser
 from apps.destinations.fields import DaysCommaField
 from apps.destinations.utils import TEMPLATE_DESCRIPTION
