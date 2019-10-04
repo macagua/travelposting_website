@@ -1,5 +1,5 @@
 {% load static i18n %}
-<div class="modal inmodal" id="booking_modal" tabindex="-1" role="dialog"
+<div class="modal inmodal" id="booking_modal{{object.id}}" tabindex="-1" role="dialog"
      aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="modal-content animated bounceInRight">
@@ -10,51 +10,58 @@
             </button>
         </div>
         <div class="modal-body">
+            <div class="p-3 mb-2 bg-info text-white">
+                <center>
+                    <span class="bold">{{ object.destination.name }}</span>
+                </center>
+            </div>
              <table class="table table-hover">
-                    <thead>
-                        <tr>
-                        <th>#</th>
-                        <th>Product name</th>
-                        <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>{{ obj.first_name }}</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>{{ obj.first_name }}</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>{{ obj.first_name }}</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">4</th>
-                        <td>{{ obj.first_name }}</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">5</th>
-                        <td>{{ obj.first_name }}</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">6</th>
-                        <td>{{ obj.first_name }}</td>
-                        </tr>
-                        <tr class="total">
-                        <th scope="row">5</th>
-                        <td>{% trans "Total" %}</td>
-                        <td>400$</td>
-                        <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <thead>
+                    <tr>
+                    <th>{% trans "Name" %}</th>
+                    <th>{% trans "E-mail" %}</th>
+                    <th>{% trans "Phone" %}</th>
+                    <th>{% trans "Status" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>{{ object.first_name }} {{ object.last_name }}</td>
+                    <td>{{ object.mail }}</td>
+                    <td>{{ object.cellphone }}</td>
+                    <td>
+                        {% if object.process_status %}
+                            <i class="fa fa-check"></i>
+                        {% else %}
+                            <i class="fa fa-times"></i>
+                        {% endif %}
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+             <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th>{% trans "Nunber of people" %}</th>
+                    <th>{% trans "Extra plan" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>{{ object.number_travel }}</td>
+                    <td>{{ object.name_booking }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <blockquote class="blockquote">
+                <p class="mb-0">{{ object.comment }}</p>
+                <footer class="blockquote-footer"><cite title="Source Title">{% trans "client comments"%}</cite></footer>
+            </blockquote>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
-            <button type="button" class="btn btn-primary">{% trans "Mark as solved" %}</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Close" %}</button>
+            {% if not object.process_status %}<button type="button" class="btn btn-primary">{% trans "Mark as solved" %}</button>{% endif %}
       </div>
     </div>
   </div>

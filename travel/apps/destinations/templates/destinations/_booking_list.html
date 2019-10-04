@@ -45,7 +45,7 @@
                             </p>
                         </td>
                         <td>
-                          <a class="btn btn-white btn-sm" data-toggle="modal" data-target="#booking_modal">
+                          <a class="btn btn-white btn-sm" data-toggle="modal" data-target="#booking_modal{{object.id}}">
                             <i class="fa fa-eye"></i>
                             {% trans 'See full Details' %}
                           </a>
@@ -58,7 +58,9 @@
               </div>
             </div>
           </div>
-          {% include 'destinations/booking_modal.html' %}
+            {% for object in object_list %}
+                {% include 'destinations/booking_modal.html' %}
+            {% endfor %}
         </div>
       </div>
     </div>
