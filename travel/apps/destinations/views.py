@@ -49,6 +49,7 @@ from apps.destinations.utils import (
 from apps.destinations.serializers import (
     ItinerarySerializer,
     DestinySerializer,
+    ItineraryAloneSerializer,
     mapped_errors_form,
 )
 
@@ -284,6 +285,15 @@ class ItineraryView(View):
                     DestinySerializer(destination),
                     safe=False,
                 )
+            if 'pk_i' in request.GET:
+                itinerary = Itinerary.objects.get(pk=request.GET['pk_i']) 
+                return JsonResponse({
+                    'data':ItineraryAloneSerializer(itinerary),
+                    'status':True,
+                    },
+                    safe=False,
+                )   
+
             if 'destiny' in request.GET:
                 itinerary = Itinerary.objects.all()\
                             .filter(destination__user=request.user.id)\
@@ -315,7 +325,7 @@ class ItineraryView(View):
                 safe=False,
             ) 
     
-    def delete(self,request,*args,**kwargs):
+    def delete(self,request):
         pk_itinerary= QueryDict(request.body)
         itinerary = get_object_or_404(Itinerary, pk=pk_itinerary['pk'])
         if itinerary.delete() :
@@ -325,7 +335,22 @@ class ItineraryView(View):
                 },
                 safe=False,
             )
-
+    def put(self, request):
+        updated_data= QueryDict(request.body)
+        itinerary = Itinerary.objects.get(pk=updated_data['pk_i'])
+        form = ItineraryForm(updated_data, instance=itinerary)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({
+                'msg': _('Itinerary information has been updated'),
+                'type': 'success',
+                'status': True,
+            })
+        else:
+            return JsonResponse({
+                'errors': mapped_errors_form(form),
+                'status': False,
+            })
 
 class BookingSaveView(View):
     def post(self, request, *args, **kwargs):

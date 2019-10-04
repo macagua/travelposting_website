@@ -23,6 +23,7 @@
               <div class="ibox-content">
                 <div class="row">
                   <form id="form-itinerary">
+                  <input type="hidden" name="pk_i" id="pk_i" readonly />
                   {% csrf_token %}
                   <div class="col-md-12">
                     <div class="form-group">
@@ -31,7 +32,7 @@
                         </select>
                     </div>
 
-                      <div class="ibox b-r-md collapsed panel-success ml-0 mr-0 pl-0 pr-0">
+                      <div id="content_itinerary" class="ibox b-r-md collapsed panel-success ml-0 mr-0 pl-0 pr-0">
                         <div class="ibox-title panel-heading collapse-link">
                             <h5 class="text-center">{% trans "Create new Itinerary"%} ({% trans "Clic Here"%})</h5>
                             <div class="ibox-tools">
@@ -40,7 +41,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="ibox-content">
+                        <div id="body_form" class="ibox-content">
                           <div class="row">
                             <div class="col-md-12">
                               <div class="form-group">
@@ -60,7 +61,10 @@
                             </div>
                           </div>
                           <div class="col-md-12 text-center">
-                            <button class="btn btn-success" type="submit">{% trans "Create a new itinerary"%}</button>
+                            <button id="reset_itinerary" class="btn btn-warning" type="button">{% trans "Reset"%}</button>
+                            <button id="create_itinerary" class="btn btn-success" type="submit">{% trans "Create a new itinerary"%}</button>
+                            <button style="display:none;" id="update_itinerary" class="btn btn-success" type="submit">{% trans "Update itinerary"%}</button>
+                            
                           </div>
                         </div>
                         </div>
@@ -106,6 +110,7 @@
   <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
   <script src="{% static "inspinia/js/notifications.js" %}"></script>
   <script>
+
     function delete_itinerary(pk_i){
           swal({
               title: "{% trans "Are you sure?" %}",
@@ -138,7 +143,41 @@
              
           });
     }
+    function resetForm(){
+      $("#form-itinerary")[0].reset();
+      $("#id_detail_itinerary").summernote("reset")
+      $("#update_itinerary").hide()
+      $("#create_itinerary").show()
+      $("#body_form").css('display', 'none');
+      $("#content_itinerary").removeClass('border-bottom');
+    }
+    function get_itinerary(pk){
+      $.ajax({
+                  url:'{% url 'destinations:get-itinerary' %}',
+                  data:{
+                    pk_i:pk,
+                  },
+                  beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+                  },
+                  success: function (request) {
+                  if(request.status==true){
+                    $("#id_detail_itinerary").summernote("code",request.data.content)
+                    $("#id_short_description").val(request.data.short_title)
+                    $("#pk_i").val(request.data.pk)
+                    $("#update_itinerary").show()
+                    $("#create_itinerary").hide()
+                    $("#body_form").css('display', 'block');
+                    $("#content_itinerary").addClass('border-bottom');
+                    table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
+                  }else{
+                    swal("Error!", "{% trans "Could not load itinerary data for editing"%}", "error");
+                  }
+                    
+                  }
+    });
 
+    }
       
         $('#table-itinerary thead tr').clone(true).appendTo( '#table-itinerary thead' );
         $('#table-itinerary thead tr:eq(1) th').each( function (i) {
@@ -191,7 +230,7 @@
                 {
                   var buttons;
                   buttons = '<span><i onClick="delete_itinerary('+data.fields.id+')" class="fa fa-lg fa-trash mr-10"></i></span>' 
-                  buttons += '<span><i onClick="update_itinerary('+data.fields.id+')" class="fa fa-lg fa-edit mr-10"></i></span>' 
+                  buttons += '<span><i onClick="get_itinerary('+data.fields.id+')" class="fa fa-lg fa-edit mr-10"></i></span>' 
                   return buttons; 
                 }
               }
@@ -221,24 +260,37 @@
               minimumInputLength: 0,
         }
         ).on('select2:select', function (e) {
+          resetForm()
           table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+e.params.data.id).load()
         }); 
-
+        $("#reset_itinerary").on('click', function(event) {
+          event.preventDefault();
+          resetForm()
+        });
         $("#form-itinerary").submit(function( event ) {
           event.preventDefault();
+          if($("#create_itinerary").is(":visible")){
+            url = '{% url 'destinations:add-itinerary' %}'
+            type = "POST"
+          }else{
+            url= '{% url 'destinations:update-itinerary' %}'
+            type="PUT"
+          }
           $.ajax({
-            url: '{% url 'destinations:add-itinerary' %}',
-            type: 'POST',
+            url: url,
+            type: type,
             dataType: 'json',
             data: $(this).serialize(),
+            beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+            },
           })
           .done(function(request) {
             if(request.status ==false){
               notificationErrorFormLabels(request.error)
             }else{
               notification('success',request.msg)
-              $("#form-itinerary")[0].reset();
-              $("#id_detail_itinerary").summernote("reset")
+              resetForm()
               table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
             }
           })
@@ -246,6 +298,7 @@
             console.log("error");
           })
         });
+
 
         
   </script>

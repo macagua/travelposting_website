@@ -78,6 +78,11 @@ urlpatterns = [
         name='add-itinerary',
     ),
     path(
+        'itinerary/update-itinerary',
+        ItineraryView.as_view(),
+        name='update-itinerary',
+    ),
+    path(
             'itinerary/delete-itinerary',
             ItineraryView.as_view(),
             name='delete-itinerary',
