@@ -11,6 +11,7 @@ from apps.landing_page.views import (
     CategoriesView,
     DetailDestinationView,
     SaveSearchView,
+    DeleteRegisterView,
 )
 
 from apps.destinations.views import BookingSaveView
@@ -97,6 +98,12 @@ urlpatterns += i18n_patterns(
         'make-booking/',
         BookingSaveView.as_view(),
         name='make-booking',
+    ),
+
+    path(
+        'delete-register/',
+        DeleteRegisterView.as_view(),
+        name='delete-register',
     ),
 
     url(

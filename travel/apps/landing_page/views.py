@@ -10,6 +10,8 @@ from apps.destinations.models import (
     GeneralDetail,
     SearchLanding
 )
+
+from apps.landing_page.models import DeleteReg
 # Create your views here.
 
 class CommmunityView(View):
@@ -93,3 +95,49 @@ class SaveSearchView(View):
                 )
 
         return render(request, 'pages/safeSearch.html')
+
+
+class DeleteRegisterView(View):
+    def post(self, request, *args, **kwargs):
+        first_name = request.POST.get('name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        agree = request.POST.get('check')
+        
+        if agree==None:
+            agree = False
+        else:
+            agree = True
+
+        DeleteReg.objects.create(
+            first_name = first_name,
+            last_name = last_name,
+            email = email,
+            agree = agree
+        )
+
+
+        subject = _('New request for delete')
+
+        ctx = {
+                    'first_name': first_name,
+                    'last_name': last_name,
+                    'email': email,
+                    'agree':agree
+                }
+
+        html_message = render_to_string(
+            'pages/request_delete_feedback.html',
+            context=ctx
+        )
+
+        message = _(f'if you want see the \
+                    admin site https://travelposting.com/admin/ ')
+
+        mail_managers(subject,
+                    message,
+                    fail_silently=True,
+                    html_message=html_message
+                )
+
+        return render(request, 'pages/request.html')

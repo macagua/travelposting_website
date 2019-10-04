@@ -312,6 +312,7 @@ CMS_TEMPLATES = (
     ('magazine.html', 'Magazine'),
     ('community.html', 'Community'),
     ('datenschutz.html', 'Datenshutz'),
+    ('datenshutz_form.html', 'Datenshutz Form'),
     ('coming-soon.html', 'Coming Soon'),
     ('hotels.html', 'Hotels template'),
     ('pricing.html', 'Pricing'),

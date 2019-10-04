@@ -1,0 +1,30 @@
+
+
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% block title %}{% trans 'About us' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<main id="content" role="main">
+    <!-- Terms Content Section -->
+    <div class="container space-1 space-top-md-4 space-bottom-md-3">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div id="intro" class="space-bottom-1">
+                    <!-- Title -->
+                    <div class="border-bottom pb-10 mb-10">
+                        <h1 class="text-primary"><span class="font-weight-semi-bold">{% trans 'Delete registration'%}</span></h1>
+                    </div>
+                    <!-- End Title -->
+                    <h1>We have sent your request. We will contact you soon</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Terms Content Section -->
+    <div id="stickyBlockEndPoint"></div>
+</main>
+{% endblock content %}
+
