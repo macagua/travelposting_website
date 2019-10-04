@@ -13,7 +13,8 @@ from apps.landing_page.models import (
     PlanFeature,
     PriceType,
     Price,
-    Magazine
+    Magazine,
+    DeleteReg
 )
 
 BASE_LIST = ('order', 'active')
@@ -101,3 +102,6 @@ class MagazineAdmin(admin.ModelAdmin):
     list_filter = ('name','editor',)
     search_fields = ['name', 'editor', 'status']
 admin.site.register(Magazine, MagazineAdmin)
+
+
+admin.site.register(DeleteReg)

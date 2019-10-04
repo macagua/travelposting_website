@@ -444,3 +444,39 @@ class Magazine(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+
+class DeleteReg(models.Model):
+    first_name = models.CharField(_('First Name'), 
+                    max_length=50, 
+                    null=False, 
+                    blank=False,
+    )
+    last_name = models.CharField(_('Last Name'),
+                    max_length= 50,
+                    null = False,
+                    blank = False,
+    )
+    email = models.EmailField(_('Email'),
+                max_length = 100,
+                blank=False,
+                null = False
+    )
+    agree = models.BooleanField(
+        _('Agree?'),
+        default=True,
+    )
+    status = models.BooleanField(
+        _('Status?'),
+        default=True,
+    )
+
+    def __str__(self):
+        return f"{self.firts_name}-{self.last_name}"
+
+    class Meta:
+        verbose_name_plural = _("Delete Registers")
+        verbose_name = _('Delete Register')
+
+
