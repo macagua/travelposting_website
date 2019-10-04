@@ -2,8 +2,14 @@ import os
 import random
 from django import template
 from django.conf import settings
-from apps.destinations.models import Destination, Categorie, Photo, GeneralDetail
 from apps.landing_page.models import Testimony, Magazine, Plan
+from apps.destinations.models import (
+    Destination,
+    Categorie,
+    Photo,
+    GeneralDetail,
+    Booking,
+)
 
 register = template.Library()
 
@@ -110,6 +116,7 @@ def background_image():
     ramdom_image = random.choice(os.listdir(path_to_images))
     return ('destinos/' + ramdom_image)
 
+
 @register.inclusion_tag('services/pricing/plans.html', takes_context=True)
 def show_pricing(context):
     list_pricing = Plan.objects.filter(active=True)[:6]
@@ -117,3 +124,25 @@ def show_pricing(context):
         'plans': list_pricing,
         'request': context.request,
     }
+
+
+@register.simple_tag()
+def filter_dashboard_index(user):
+    """
+        filter destinations and booing for dashboard.
+
+        Args:
+            user: ```id``` to filter the queryset.
+
+        Returns:
+            A string  formated  with the required request.
+    """
+    destination_user = Destination.objects.filter(user=user).count()
+    booking_user = Booking.objects.filter(destination__user=user).count()
+
+    dashboard_list = {
+        'destination_count': destination_user,
+        'booking_count': booking_user,
+    }
+
+    return dashboard_list

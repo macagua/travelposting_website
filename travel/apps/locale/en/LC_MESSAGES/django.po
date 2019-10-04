@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-03 02:29-0400\n"
+"POT-Creation-Date: 2019-10-04 01:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,7 +48,7 @@ msgid "Accounts"
 msgstr ""
 
 #: apps/accounts/forms.py:31 main/templates/index.html:76
-#: main/templates/services/destination/detail_destination.html:280
+#: main/templates/services/destination/detail_destination.html:289
 msgid "Email"
 msgstr ""
 
@@ -78,107 +78,107 @@ msgstr ""
 msgid "Non-Permitted Language"
 msgstr ""
 
-#: apps/accounts/models.py:11
+#: apps/accounts/models.py:10
 msgid "Sra."
 msgstr ""
 
-#: apps/accounts/models.py:12
+#: apps/accounts/models.py:11
 msgid "Sr."
 msgstr ""
 
-#: apps/accounts/models.py:13
+#: apps/accounts/models.py:12
 msgid "Divers"
 msgstr ""
 
-#: apps/accounts/models.py:14
+#: apps/accounts/models.py:13
 msgid "Dr."
 msgstr ""
 
-#: apps/accounts/models.py:15
+#: apps/accounts/models.py:14
 msgid "Prof."
 msgstr ""
 
-#: apps/accounts/models.py:16
+#: apps/accounts/models.py:15
 msgid "Lic."
 msgstr ""
 
-#: apps/accounts/models.py:17
+#: apps/accounts/models.py:16
 msgid "Agrupación"
 msgstr ""
 
-#: apps/accounts/models.py:18
+#: apps/accounts/models.py:17
 msgid "Prof. Dr."
 msgstr ""
 
-#: apps/accounts/models.py:61
+#: apps/accounts/models.py:60
 msgid "email address"
 msgstr ""
 
-#: apps/accounts/models.py:68
+#: apps/accounts/models.py:67
 #: apps/accounts/templates/accounts/user/_detail.html:83
 #: apps/accounts/templates/accounts/user/_detail.html:92
 msgid "Plan"
 msgstr ""
 
-#: apps/accounts/models.py:82 apps/payments/models/paypal.py:49
+#: apps/accounts/models.py:81 apps/payments/models/paypal.py:49
 msgid "Coupon"
 msgstr ""
 
-#: apps/accounts/models.py:89
+#: apps/accounts/models.py:88
 #: apps/accounts/templates/accounts/user/_detail.html:94
 msgid "Nombre de la empresa"
 msgstr ""
 
-#: apps/accounts/models.py:96
+#: apps/accounts/models.py:95
 msgid "Dirección comercial"
 msgstr ""
 
-#: apps/accounts/models.py:103
+#: apps/accounts/models.py:102
 msgid "Código postal"
 msgstr ""
 
-#: apps/accounts/models.py:110
+#: apps/accounts/models.py:109
 msgid "Ciudad / Estado / Parroquia"
 msgstr ""
 
-#: apps/accounts/models.py:117
+#: apps/accounts/models.py:116
 msgid "País"
 msgstr ""
 
-#: apps/accounts/models.py:124
+#: apps/accounts/models.py:123
 msgid "Idiomas en los que le interesa enviar o recibir información"
 msgstr ""
 
-#: apps/accounts/models.py:131
+#: apps/accounts/models.py:130
 msgid "¿Tienen algo que decirnos?"
 msgstr ""
 
-#: apps/accounts/models.py:137
+#: apps/accounts/models.py:136
 msgid "Título (Persona de contacto)"
 msgstr ""
 
-#: apps/accounts/models.py:145
+#: apps/accounts/models.py:144
 #: apps/accounts/templates/accounts/user/_detail.html:98
 msgid "Cargo en la empresa"
 msgstr ""
 
-#: apps/accounts/models.py:152
+#: apps/accounts/models.py:151
 msgid "Déjenos un número de teléfono donde le podamos contactar"
 msgstr ""
 
-#: apps/accounts/models.py:159
+#: apps/accounts/models.py:158
 msgid "Número móvil o WhatsApp"
 msgstr ""
 
-#: apps/accounts/models.py:166
+#: apps/accounts/models.py:165
 msgid "Déjenos su dirección Web"
 msgstr ""
 
-#: apps/accounts/models.py:180
+#: apps/accounts/models.py:179
 msgid "Usuario"
 msgstr ""
 
-#: apps/accounts/models.py:181
+#: apps/accounts/models.py:180
 msgid "Usuarios"
 msgstr ""
 
@@ -343,7 +343,7 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/landing_page/models.py:402 main/templates/index.html:67
-#: main/templates/services/destination/detail_destination.html:254
+#: main/templates/services/destination/detail_destination.html:263
 msgid "Name"
 msgstr ""
 
@@ -779,7 +779,7 @@ msgstr ""
 msgid "es"
 msgstr ""
 
-#: config/settings/base.py:303
+#: config/settings/base.py:301
 msgid "Feature"
 msgstr ""
 
@@ -1603,19 +1603,19 @@ msgstr ""
 msgid "Meet our best destinations"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:116
+#: main/templates/services/destination/destinations_for_categorie.html:118
 msgid "See details"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:138
+#: main/templates/services/destination/destinations_for_categorie.html:140
 msgid "what is your budget?"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:158
+#: main/templates/services/destination/destinations_for_categorie.html:160
 msgid "filter to my budget"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:161
+#: main/templates/services/destination/destinations_for_categorie.html:163
 msgid "Category"
 msgstr ""
 
@@ -1666,23 +1666,23 @@ msgstr ""
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:262
+#: main/templates/services/destination/detail_destination.html:271
 msgid "Last Name"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:272
+#: main/templates/services/destination/detail_destination.html:281
 msgid "+49 123 456 789"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:290
+#: main/templates/services/destination/detail_destination.html:299
 msgid "Number of people travelling"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:299
+#: main/templates/services/destination/detail_destination.html:308
 msgid "Do you have a plan you want to book?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:308
+#: main/templates/services/destination/detail_destination.html:317
 msgid ""
 "\n"
 "                          By clicking \"Book\" you agree that Travelposting "
@@ -1692,11 +1692,11 @@ msgid ""
 "                          "
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:315
+#: main/templates/services/destination/detail_destination.html:324
 msgid "Close"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:316
+#: main/templates/services/destination/detail_destination.html:325
 msgid "Book"
 msgstr ""
 

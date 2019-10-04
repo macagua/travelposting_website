@@ -39,6 +39,20 @@
           <span class="nav-label">{% trans 'Home' %}</span>
         </a>
       </li>
+      {% if request.user.is_staff %}
+        <li class="">
+            <a href="/rosetta/">
+            <i class="fa fa-language fa-lg"></i>
+            <span class="nav-label">{% trans "Translate site" %}</span>
+            </a>
+        </li>
+        <li class="">
+            <a href="/admin/">
+            <i class="fa fa-user-secret fa-lg"></i>
+            <span class="nav-label">{% trans "Admin site" %}</span>
+            </a>
+        </li>
+      {% endif %}
       <li class="">
         <a href="#">
           <i class="fa fa-globe fa-lg"></i>
