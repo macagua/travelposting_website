@@ -142,7 +142,7 @@ def filter_dashboard_index(user):
 
     dashboard_list = {
         'destination_count': destination_user,
-        'booking_count': destination_user,
+        'booking_count': booking_user,
     }
 
     return dashboard_list
