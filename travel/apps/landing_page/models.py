@@ -480,3 +480,17 @@ class DeleteReg(models.Model):
         verbose_name = _('Delete Register')
 
 
+class PrivacySetting(models.Model):
+    ip = models.GenericIPAddressField(_('Address IP'), blank=True, null=True)
+    cookie = models.BooleanField(_('cookies'), default=True)
+    ganality = models.BooleanField(_('Google Analitys'), default=True)
+    facebook = models.BooleanField(_('Facebook Pixel'), default=True)
+    twitter = models.BooleanField(_('Twitter'), default=True)
+    pinteres = models.BooleanField(_('Pinteres'), default=True)
+
+    def __str__(self):
+        return f"{self.ip}"
+
+    class Meta:
+        verbose_name_plural = _('Privacity Settings')
+        verbose_name = _('Privacity Setting')

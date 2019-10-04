@@ -313,6 +313,7 @@ CMS_TEMPLATES = (
     ('community.html', 'Community'),
     ('datenschutz.html', 'Datenshutz'),
     ('datenshutz_form.html', 'Datenshutz Form'),
+    ('datenshutz_form_privacity.html', 'Datenshutz Form Privacity'),
     ('coming-soon.html', 'Coming Soon'),
     ('hotels.html', 'Hotels template'),
     ('pricing.html', 'Pricing'),

@@ -12,6 +12,7 @@ from apps.landing_page.views import (
     DetailDestinationView,
     SaveSearchView,
     DeleteRegisterView,
+    PrivacySettingView,
 )
 
 from apps.destinations.views import BookingSaveView
@@ -105,6 +106,14 @@ urlpatterns += i18n_patterns(
         DeleteRegisterView.as_view(),
         name='delete-register',
     ),
+
+    path(
+        'setting-privacy/',
+        PrivacySettingView.as_view(),
+        name='setting-privacy',
+    ),
+
+    
 
     url(
         r'^',

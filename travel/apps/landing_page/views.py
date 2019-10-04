@@ -11,7 +11,7 @@ from apps.destinations.models import (
     SearchLanding
 )
 
-from apps.landing_page.models import DeleteReg
+from apps.landing_page.models import DeleteReg, PrivacySetting
 # Create your views here.
 
 class CommmunityView(View):
@@ -128,6 +128,75 @@ class DeleteRegisterView(View):
 
         html_message = render_to_string(
             'pages/request_delete_feedback.html',
+            context=ctx
+        )
+
+        message = _(f'if you want see the \
+                    admin site https://travelposting.com/admin/ ')
+
+        mail_managers(subject,
+                    message,
+                    fail_silently=True,
+                    html_message=html_message
+                )
+
+        return render(request, 'pages/request.html')
+
+
+class PrivacySettingView(View):
+    def post(self, request, *args, **kwargs):
+        cookie = request.POST.get('cookie')
+        ganality = request.POST.get('ganality')
+        facebook = request.POST.get('facebook')
+        twitter = request.POST.get('twitter')
+        pinteres = request.POST.get('pinterest')
+
+        if cookie=='Yes':
+            cookie = True
+        else:
+            cookie = False
+
+        if ganality=='Yes':
+            ganality = True
+        else:
+            ganality = False
+
+        if facebook=='Yes':
+            facebook = True
+        else:
+            facebook = False
+
+        if twitter=='Yes':
+            twitter = True
+        else:
+            twitter = False
+
+        if pinteres=='Yes':
+            pinteres = True
+        else:
+            pinteres = False
+
+        PrivacySetting.objects.create(
+            ip = request.META.get('REMOTE_ADDR'),
+            cookie = cookie,
+            facebook = facebook,
+            twitter = twitter,
+            pinteres = pinteres,
+        )
+
+
+        subject = _('New privacity request.')
+
+        ctx = {
+            'ip' : request.META.get('REMOTE_ADDR'),
+            'cookie' : cookie,
+            'facebook' : facebook,
+            'twitter' : twitter,
+            'pinterest' : pinteres,
+        }
+
+        html_message = render_to_string(
+            'pages/request_form_feedback.html',
             context=ctx
         )
 
