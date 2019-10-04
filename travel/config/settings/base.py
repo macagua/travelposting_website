@@ -226,7 +226,6 @@ THIRD_PARTY = [
     'rosetta',
     'bootstrap_datepicker_plus',
     'oauth2_provider',
-    #'mapwidgets',
 ]
 
 LOCAL_APPS = [
@@ -251,6 +250,8 @@ ADMINS = [
 
 MANAGERS = [
     ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
+    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
+    ('Support Travelposting', 'support@travelposting.com'),
 ]
 
 # Authentication options
