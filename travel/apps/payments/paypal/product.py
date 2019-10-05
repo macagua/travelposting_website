@@ -33,5 +33,5 @@ class ProductPayPal:
     def update(self, credentials, data: dict) -> dict:
         api = Api(credentials)
         logger.debug(f"Actualizando el producto {self.name}")
-        return api.patch(f'v1/catalogs/products/{self.id}',
+        return api.patch(f'v2/catalogs/products/{self.id}',
                          {'op': 'replace', 'path': f'/description', 'value': data['description']})

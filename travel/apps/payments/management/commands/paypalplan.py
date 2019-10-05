@@ -73,8 +73,8 @@ class Command(BaseCommand):
         if hasattr(plan, action):
             func = getattr(plan, action)
             if func():
-                self.stdout.write(self.style.SUCCESS(f'Plan {plan.name} {action} successfully with id: {plan.id}'))
+                self.stdout.write(self.style.SUCCESS(f"Plan {plan.name} {action} successfully with id: {plan.id}"))
             else:
-                self.stderr.write(self.style.ERROR(f'Plan not {action} with errors: {plan.error}'))
+                self.stderr.write(self.style.ERROR(f"Plan not {action} with errors: {plan.error}"))
         else:
             self.stderr.write(self.style.ERROR(f"Action not found"))

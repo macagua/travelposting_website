@@ -31,19 +31,6 @@ class SubscriptionView(object):
                     'surname': form.cleaned_data.get('last_name'),
                 },
                 'email_address': form.cleaned_data.get('email'),
-                'shipping_address': {
-                    'name': {
-                        'full_name': f"{form.cleaned_data.get('first_name')} {form.cleaned_data.get('last_name')}"
-                    },
-                    'address': {
-                        'address_line_1': form.cleaned_data.get('business_address'),
-                        'address_line_2': '',
-                        'admin_area_1': 'US',
-                        'postal_code': form.cleaned_data.get('postal_code'),
-                        'admin_area_2': form.cleaned_data.get('state'),
-                        'country_code': 'US'
-                    }
-                }
             },
             'auto_renewal': True,
             'application_context': {
@@ -88,11 +75,8 @@ class SubscriptionView(object):
                 if link.rel == 'approve':
                     return redirect(link.href)
         else:
-            new_user = self.register(form)
-            new_user.save()
-            return redirect('accounts:register-complete')
-            #form.add_error(None, _(f'The payment could not be processed {sub.error}.'))
-            #return self.form_invalid(form)
+            form.add_error(None, _(f'The payment could not be processed {sub.error}.'))
+            return self.form_invalid(form)
 
 
 class CancelRedirectView(RedirectView):

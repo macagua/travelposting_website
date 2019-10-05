@@ -20,11 +20,11 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS", default="*")
 PAYPAL_MODE = env("PAYPAL_MODE", default="sandbox")
 PAYPAL_CLIENT_ID = env(
     "PAYPAL_CLIENT_ID",
-    default="AVkQSkUEOYynxFx0jLYuLSE6gDk3vhtiE400AFUO4fymFw8p6cuf_40hB7gD7k3n5rwTMOzXy9mlcAS7"
+    default="Acm2M_26_rdE0qfHJNKXTzGjqVpzYqMF1hbyCDr8QNPXWZw372W51F_hucgkdd5LvWwL4lcW2ZN0YvwF"
 )
 PAYPAL_CLIENT_SECRET = env(
     "PAYPAL_CLIENT_SECRET",
-    default="EP9Lvor-cD0GNqLeincWEbiVyFO8wOX9xzuJXvvyIXtzLNaq4nsnrVP_8vN7QS4ImjWa0W1U6uuXrmEc"
+    default="EJ53K8l3t0sfO_47zjBgHT6SzUG9g0C9_h9alURFhj4Ca6OzJdqiQOLB2_EbRy-kirtw8fXJjJbCkV4J"
 )
 
 # EMAIL
