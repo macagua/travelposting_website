@@ -15,6 +15,17 @@ def ItinerarySerializer(itinerary):
         mapped_object.append(dict_aux)
     return mapped_object
 
+def ItineraryAloneSerializer(itinerary):
+    mapped_object = {
+        'pk': itinerary.id,
+        'destination': itinerary.destination.name,
+        'destination_pk':itinerary.destination.id,
+        'short_title': itinerary.short_description,
+        'content': itinerary.detail_itinerary,
+
+    }
+    return mapped_object
+
 def DestinySerializer(destination):
     mapped_object = []
     for data in destination:
