@@ -1,0 +1,7 @@
+.wizard > .content > .body ul {
+    list-style: none !important;
+}
+
+.wizard > .content > .body input {
+    border: none;
+}

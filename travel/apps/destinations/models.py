@@ -221,6 +221,14 @@ class Photo(models.Model):
         verbose_name = _('Foto')
         verbose_name_plural = _('Fotos')
 
+class DestinationRating(models.Model):
+    destination = models.ForeignKey(
+        Destination,
+        on_delete=models.CASCADE,
+        verbose_name=_('Destination Rating'),
+    )
+
+        
 
 class Badge(models.Model):
     name = models.CharField(

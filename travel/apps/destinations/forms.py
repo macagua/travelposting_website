@@ -40,6 +40,7 @@ class DestinationForm(forms.ModelForm):
             'categorie': forms.SelectMultiple(attrs={
                 'class': 'form-control',
                 'placeholder': _('Category'),
+                'style':'width:100%',
             }),
 
             'name': forms.TextInput(attrs={
