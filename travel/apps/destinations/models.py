@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.gis.db import models
 from django.utils.translation import gettext_lazy as _
 from djmoney.models.fields import MoneyField
 from djmoney.money import Money
@@ -71,6 +72,42 @@ class Destination(models.Model):
         blank=True,
         null=True,
         default=TEMPLATE_DESCRIPTION,
+    )
+
+    departure_date = models.DateField(
+        blank=True,
+        null=True
+    )
+    arrival_date = models.DateField(
+        blank=True,
+        null=True
+    )
+
+    departure_time = models.TimeField(
+        blank = True,
+        null = True
+    )
+
+    arrival_time = models.TimeField(
+        blank = True,
+        null = True
+    )
+
+    number_of_reservations = models.IntegerField(
+    )
+
+    transfer_from = models.TextField(
+        max_length = 120,
+        blank = True,
+        null = True,
+    )
+
+    tour_include = models.TextField(
+        blank = True,
+    )
+
+    tour_not_include = models.TextField(
+        blank = True,
     )
 
     is_published = models.BooleanField(
@@ -166,6 +203,18 @@ class Destination(models.Model):
             return None
         return list_prices
 
+class DestinationMap(models.Model):
+    destination = models.OneToOneField(
+        Destination,
+        related_name='map',
+        on_delete=models.CASCADE,
+        verbose_name=_('Map Destination'),
+    )
+    map_destinie = models.PointField(help_text="To generate the map for your location")
+
+    def __unicode__(self):
+        return self.map_destinie
+
 
 class Photo(models.Model):
     destination = models.ForeignKey(
@@ -228,7 +277,7 @@ class DestinationRating(models.Model):
         verbose_name=_('Destination Rating'),
     )
 
-        
+
 
 class Badge(models.Model):
     name = models.CharField(

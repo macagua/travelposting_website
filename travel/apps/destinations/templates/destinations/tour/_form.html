@@ -1,0 +1,116 @@
+{% load i18n %}
+{% for hidden_field in form.hidden_fields %}
+	{{ hidden_field }}
+{% endfor %}
+
+<div class="form-group">
+	<div class ="row">
+		<div class="col-md-6 col-lg-6">
+			<label class="control-label" for="{{ form.categorie.id }}">
+					{{ form.categorie.label }}:
+			</label>
+			{{ form.categorie }}
+			<span class="help-block m-b-none">
+				{{ field.categorie.help_text|safe }}
+			</span>
+			{{ form.categorie.error|safe }}
+		</div>
+		<div class="col-md-6 col-lg-6">
+			<label class="control-label" for="{{ form.name.id }}">
+			{{ form.name.label }}:
+			</label>
+			{{ form.name }}
+			<span class="help-block m-b-none">
+				{{ field.name.help_text|safe }}
+			</span>
+			{{ form.name.error|safe }}
+		</div>
+	</div>
+</div>
+
+
+
+<div class="form-group">
+	<div class ="row">
+		<div class="col-md-6 col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.departure_date.id }}">
+						{{ form.departure_date.label }}:
+				</label>
+				{{form.departure_date}}
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.arrival_date.id }}">
+						{{ form.arrival_date.label }}:
+				</label>
+				{{form.arrival_date}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class ="row">
+		<div class="col-md-6 col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.departure_time.id }}">
+						{{ form.departure_time.label }}:
+				</label>
+				{{form.departure_time}}
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.arrival_time.id }}">
+						{{ form.arrival_time.label }}:
+				</label>
+				{{form.arrival_time}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.tour_include.id }}">
+				{{ form.tour_include.label }}:
+				</label>
+				{{ form.tour_include }}
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.tour_not_include.id }}">
+				{{ form.tour_not_include.label }}:
+				</label>
+				{{ form.tour_not_include }}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="form-group">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.short_description.id }}">
+				{{ form.short_description.label }}:
+				</label>
+				{{ form.short_description }}
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="form-group">
+				<label for="{{ form.description.id }}">
+				{{ form.description.label }}:
+				</label>
+				{{ form.description }}
+			</div>
+		</div>
+	</div>
+</div>

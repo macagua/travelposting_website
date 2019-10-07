@@ -5,3 +5,11 @@
 .wizard > .content > .body input {
     border: none;
 }
+
+.wizard > .content > .body {
+    float: left;
+    position: unset;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+}

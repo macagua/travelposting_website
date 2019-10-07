@@ -33,23 +33,7 @@
 	                		<fieldset>
 	                			<h2>{% trans 'Record the tour data' %}</h2>
 	                			<div class="row">
-	                				{% for hidden_field in form.hidden_fields %}
-			                          {{ hidden_field }}
-			                        {% endfor %}
-			                        {% for field in form.visible_fields %}
-			                        <div class="form-group">
-			                            <label class="col-lg-2 control-label"
-			                                   for="{{ field.id_for_label }}">{{ field.label }}:
-			                            </label>
-			                            <div class="col-lg-10">
-			                            	{{ field }}
-			                              	<span class="help-block m-b-none">
-			                             		{{ field.help_text|safe }}
-			                          		</span>
-			                             	{{ field.errors|safe }}
-			                            </div>
-			                        </div>
-			                        {% endfor %}
+									{% include 'destinations/tour/_form.html' %}
 	                			</div>
 	                		</fieldset>
 	                		<h1>{% trans 'Price' %}</h1>
@@ -60,7 +44,7 @@
 	                                {% for form in destination_detail_inlineformset.0.general_inlineformset %}
 	                                  {% include 'destinations/destination_detail/general/_form.html' %}
 	                                {% endfor %}
-	                				
+
 	                			</div>
 	                		</fieldset>
 	                		<h1>{% trans 'Inventory' %}</h1>
@@ -113,8 +97,8 @@
   	<script type="template/booking">
     	{% include 'destinations/destination_detail/booking/_form.html' with form=destination_detail_inlineformset.0.booking_inlineformset.empty_form  num='__prefix__' %}
   </script>
-  
-	
+
+
 
 	<script>
 

@@ -1,8 +1,9 @@
 from django import forms
+
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django_summernote.widgets import SummernoteInplaceWidget
-from bootstrap_datepicker_plus import DatePickerInput
+from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
 from apps.accounts.forms import BaseBootstrapForm
 from apps.destinations.widgets import BootstrapMoneyWidget
 from apps.destinations.models import (
@@ -30,6 +31,14 @@ class DestinationForm(forms.ModelForm):
             'name',
             'short_description',
             'description',
+            'departure_date',
+            'arrival_date',
+            'departure_time',
+            'arrival_time',
+            'number_of_reservations',
+            'transfer_from',
+            'tour_include',
+            'tour_not_include',
         ]
 
         widgets = {
@@ -49,11 +58,41 @@ class DestinationForm(forms.ModelForm):
             }),
 
             'short_description': SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '200px'}
+                'summernote': {'width': '100%', 'height': '250px'}
             }),
 
             'description': SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '500px'}
+                'summernote': {'width': '100%', 'height': '250px'}
+            }),
+
+            'departure_date': DatePickerInput(
+                options={
+                    "showClose": True,
+                    "showClear": True,
+                    "showTodayButton": True,
+                }).start_of('event days'),
+
+            'arrival_date': DatePickerInput(
+                options={
+                    "showClose": True,
+                    "showClear": True,
+                    "showTodayButton": True,
+                }).end_of('event days'),
+
+            'departure_time':TimePickerInput().start_of('party time'),
+
+            'arrival_time': TimePickerInput().end_of('party time'),
+
+            'number_of_reservations': forms.NumberInput(),
+
+            'transfer_from':forms.TextInput(),
+
+            'tour_include':SummernoteInplaceWidget(attrs={
+                'summernote': {'width': '100%', 'height': '250px'}
+            }),
+
+            'tour_not_include':SummernoteInplaceWidget(attrs={
+                'summernote': {'width': '100%', 'height': '250px'}
             }),
         }
 
@@ -300,7 +339,7 @@ class ItineraryForm(forms.ModelForm):
             'destination',
             'short_description',
             'detail_itinerary',
-            
+
         ]
 
         widgets = {

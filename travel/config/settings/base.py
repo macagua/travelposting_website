@@ -43,6 +43,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {"default": env.db("DATABASE_URL")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
+DATABASES["default"]["ENGINE"] = "django.contrib.gis.db.backends.postgis"
 
 MIGRATION_MODULES = {
 
@@ -187,7 +188,8 @@ DJANGO_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'django.contrib.gis'
 ]
 
 THIRD_PARTY = [
@@ -226,6 +228,7 @@ THIRD_PARTY = [
     'rosetta',
     'bootstrap_datepicker_plus',
     'oauth2_provider',
+    'mapwidgets',
 ]
 
 LOCAL_APPS = [
