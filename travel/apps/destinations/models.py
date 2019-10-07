@@ -71,7 +71,6 @@ class Destination(models.Model):
         _('description'),
         blank=True,
         null=True,
-        default=TEMPLATE_DESCRIPTION,
     )
 
     departure_date = models.DateField(
