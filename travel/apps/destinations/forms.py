@@ -70,6 +70,10 @@ class DestinationForm(forms.ModelForm):
                     "showClose": True,
                     "showClear": True,
                     "showTodayButton": True,
+                    "widgetPositioning": {
+                        "horizontal":"auto",
+                        "vertical":"bottom",
+                    },
                 }).start_of('event days'),
 
             'arrival_date': DatePickerInput(

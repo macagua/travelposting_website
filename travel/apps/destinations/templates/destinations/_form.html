@@ -24,7 +24,7 @@
 						<h5 class="text-center">{% trans "Create a new Tour"%}</h5>
 					</div>
 	                <div class="ibox-content">
-	                	<form id="form-tour" action="#" class="wizard-big">
+	                	<form id="form-tour" method="POST" class="wizard-big">
 							{% csrf_token %}
 					        {{ tour_data_inlineformset.management_form }}
 					        {{ header_inlineformset.management_form }}
@@ -167,16 +167,14 @@
                     form.submit();
                 }
             }).validate({
-                        errorPlacement: function (error, element)
-                        {
-                            element.before(error);
-                        },
-                        rules: {
-                            confirm: {
-                                equalTo: "#password"
-                            }
-                        }
-                    });
+            	ignore: ":hidden:not(#id_tour_include),.note-editor.panel-body",
+				errorPlacement: function (error, element)
+				{
+					element.before(error);
+				},
+				rules: {
+				}
+			});
 			$('#id_categorie').select2();
 	</script>
 
