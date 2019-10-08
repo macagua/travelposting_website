@@ -15,6 +15,21 @@ def ItinerarySerializer(itinerary):
         mapped_object.append(dict_aux)
     return mapped_object
 
+def MapSerializer(maps):
+    mapped_object = []
+    for count,data in enumerate(maps, start=1):
+        dict_aux = {
+            'fields': {
+                'id': data.id,
+                'counter': count,
+                'destination': data.destination.name,
+                'description': data.description_map,
+                'map': data.map_destinie,
+            }
+        }
+        mapped_object.append(dict_aux)
+    return mapped_object
+
 def ItineraryAloneSerializer(itinerary):
     mapped_object = {
         'pk': itinerary.id,

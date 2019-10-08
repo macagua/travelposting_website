@@ -22,6 +22,7 @@ from apps.destinations.views.booking import (
 
 from apps.destinations.views.maps import (
     DestinationMap,
+    MapListView,
 )
 
 app_name = 'destinations'
@@ -119,6 +120,13 @@ urlpatterns = [
         DestinationCharts,
         name='destination-charts',
     ),
+
+    path(
+            'maps/get-list',
+            MapListView.as_view(),
+            name='list-maps',
+    ),
+
     path(
             'maps/',
             DestinationMap.as_view(),
