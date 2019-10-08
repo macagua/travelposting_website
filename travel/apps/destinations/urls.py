@@ -4,7 +4,7 @@ from apps.destinations.charts import (
     DashboardIndex,
     DestinationCharts,
 )
-from apps.destinations.views import (
+from apps.destinations.views.destination import (
     DestinationListView,
     DestinationCreateView,
     DestinationDetailView,
@@ -13,7 +13,15 @@ from apps.destinations.views import (
     GalleryListView,
     OptionTabDataTemplateAjaxView,
     ItineraryView,
+)
+
+from apps.destinations.views.booking import (
     BookingListView,
+    BookingSaveView,
+)
+
+from apps.destinations.views.maps import (
+    DestinationMap,
 )
 
 app_name = 'destinations'
@@ -110,5 +118,10 @@ urlpatterns = [
         'destination-charts/',
         DestinationCharts,
         name='destination-charts',
+    ),
+    path(
+            'maps/',
+            DestinationMap.as_view(),
+            name='destination-map',
     ),
 ]

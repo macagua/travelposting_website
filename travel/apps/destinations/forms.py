@@ -2,6 +2,7 @@ from django import forms
 
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+from mapwidgets.widgets import GooglePointFieldWidget
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
 from apps.accounts.forms import BaseBootstrapForm
@@ -16,6 +17,7 @@ from apps.destinations.models import (
     BookingDetail,
     Photo,
     Itinerary,
+    DestinationMap,
 )
 
 
@@ -356,4 +358,28 @@ class ItineraryForm(forms.ModelForm):
             'detail_itinerary': SummernoteInplaceWidget(attrs={
                 'summernote': {'width': '100%', 'height': '200px'}
             }),
+        }
+
+
+class DestinationMapForm(forms.ModelForm):
+    """
+    Modelo para manejar los mapas de google
+    usados en los tours(destinos)
+    """
+    class Meta:
+        model= DestinationMap
+        fields = {
+            'destination',
+            'description_map',
+            'map_destinie'
+
+        }
+
+        widgets = {
+            'map_destinie': GooglePointFieldWidget,
+            'description_map': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': _('Description for map'),
+                },
+            )
         }

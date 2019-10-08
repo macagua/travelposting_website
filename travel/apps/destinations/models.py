@@ -209,6 +209,9 @@ class DestinationMap(models.Model):
         on_delete=models.CASCADE,
         verbose_name=_('Map Destination'),
     )
+    description_map = models.CharField(
+        max_length = 50
+    )
     map_destinie = models.PointField(help_text="To generate the map for your location")
 
     def __unicode__(self):

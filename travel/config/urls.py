@@ -15,7 +15,7 @@ from apps.landing_page.views import (
     PrivacySettingView,
 )
 
-from apps.destinations.views import BookingSaveView
+from apps.destinations.views.booking import BookingSaveView
 
 admin.autodiscover()
 
@@ -113,7 +113,7 @@ urlpatterns += i18n_patterns(
         name='setting-privacy',
     ),
 
-    
+
 
     url(
         r'^',

@@ -1,0 +1,109 @@
+{% extends 'destinations/base.html' %}
+{% load i18n staticfiles %}
+{% block title %}{% trans 'Add Maps for Tour' %}{% endblock %}
+
+{% block css %}
+  {{ block.super }}
+  {{ form.media.css }}
+  {{ tour_data_inlineformset.media.css }}
+  {{ tour_data_inlineformset.0.tab_data_inlineformset.media.css }}
+  {{ destination_detail_inlineformset.0.general_inlineformset.media.css }}
+  <link href="{% static "inspinia/js/plugins/steps/jquery.steps.css" %}" rel="stylesheet">
+  <link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
+  <link href="{% static "inspinia/css/style-product.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+	{% include 'destinations/navbar_top.html' %}
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+		 	<div class="col-lg-12">
+		 		<div class="ibox">
+					<div class="ibox-title">
+						<h5 class="text-center">{% trans "Add Maps for yours tours"%}</h5>
+					</div>
+	                <div class="ibox-content">
+	                	<form id="form-itinerary">
+	                		<div class="row">
+		                		<input type="hidden" name="pk_i" id="pk_i" readonly />
+		                		{% csrf_token %}
+		                		<div class="col-md-12">
+				                    <div class="form-group">
+				                        <label class="font-normal">{% trans "Destiny"%}</label>
+				                        <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="select_destiny" tabindex="2" style ="width:100%" required="required">
+				                        </select>
+				                    </div>
+			                	</div>
+			                	<div class="col-md-12">
+				                    <div class="form-group">
+				                        <label class="font-normal">{% trans "Description Map"%}</label>
+				                        {{form_map.description_map}}
+				                    </div>
+			                	</div>
+			                	<div class="col-md-12">
+				                    <div class="form-group">
+				                        <label class="font-normal">{% trans "Generate  your map"%}</label>
+				                        {{form_map.media}}
+    									{{form_map.map_destinie}}
+				                    </div>
+			                	</div>
+		                	</div>
+		                </form>
+
+	                </div>
+	            </div>
+		 	</div>
+		 	<div class="col-lg-12">
+		 		<div class="ibox">
+					<div class="ibox-title">
+						<h5 class="text-center">{% trans "List maps for tours"%}</h5>
+					</div>
+	                <div class="ibox-content">
+
+	                </div>
+	            </div>
+		 	</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+  {{ block.super }}
+  {{ form.media.js }}
+  <script src="{% static "inspinia/js/plugins/dataTables/datatables.min.js" %}"></script>
+  <script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
+  <script src="{% static "inspinia/js/plugins/select2/select2.full.min.js" %}"></script>
+  <script src="{% static "inspinia/js/plugins/toastr/toastr.min.js" %}"></script>
+  <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
+  <script src="{% static "inspinia/js/notifications.js" %}"></script>
+  <script>
+  	$("#select_destiny").select2({
+          placeholder: "{% trans 'Select a destiny' %}",
+           ajax: {
+                  url: "{% url 'destinations:get-itinerary' %}",
+                  dataType: "json",
+                  delay: 250,
+                  data: function (params) {
+                      return {
+                          q: (params.term) ? params.term : "", // search term
+                          page: params.page || 1
+                      };
+                  },
+                  processResults: function (response) {
+                      return {
+                         results: response
+                      };
+                  },
+                  cache: true
+              },
+              minimumInputLength: 0,
+        }
+        ).on('select2:select', function (e) {
+         /* resetForm()
+          table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+e.params.data.id).load()*/
+        });
+  </script>
+{%endblock%}
