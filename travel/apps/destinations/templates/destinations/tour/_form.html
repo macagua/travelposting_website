@@ -71,29 +71,6 @@
 		</div>
 	</div>
 </div>
-
-<div class="form-group">
-	<div class="row">
-		<div class="col-lg-6">
-			<div class="form-group">
-				<label for="{{ form.tour_include.id }}">
-				{{ form.tour_include.label }}:
-				</label>
-				{{ form.tour_include }}
-			</div>
-		</div>
-		<div class="col-lg-6">
-			<div class="form-group">
-				<label for="{{ form.tour_not_include.id }}">
-				{{ form.tour_not_include.label }}:
-				</label>
-				{{ form.tour_not_include }}
-			</div>
-		</div>
-	</div>
-</div>
-
-
 <div class="form-group">
 	<div class="row">
 		<div class="col-lg-6">
@@ -114,3 +91,6 @@
 		</div>
 	</div>
 </div>
+<a class="btn btn-w-m btn-info" href="#" onclick="addOptionInclude(event)">
+	{% trans "Add Includes/ Doesn't Include" %}
+</a>

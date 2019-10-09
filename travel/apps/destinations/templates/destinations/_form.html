@@ -97,11 +97,7 @@
   	<script type="template/booking">
     	{% include 'destinations/destination_detail/booking/_form.html' with form=destination_detail_inlineformset.0.booking_inlineformset.empty_form  num='__prefix__' %}
   </script>
-
-
-
-	<script>
-
+  <script>
 		$("#form-tour").steps({
                 bodyTag: "fieldset",
                 onStepChanging: function (event, currentIndex, newIndex)
