@@ -417,6 +417,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 #FOR GOOGLE-MAP-WIDGETS
+#https://django-map-widgets.readthedocs.io/en/latest/widgets/point_field_map_widgets.html#usage
+
 GOOGLE_MAPS_API_KEY = "AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo"
 
 MAP_WIDGETS = {

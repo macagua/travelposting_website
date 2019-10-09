@@ -21,7 +21,7 @@ from apps.destinations.views.booking import (
 )
 
 from apps.destinations.views.maps import (
-    DestinationMap,
+    DestinationMapView,
     MapListView,
 )
 
@@ -129,7 +129,7 @@ urlpatterns = [
 
     path(
             'maps/',
-            DestinationMap.as_view(),
+            DestinationMapView.as_view(),
             name='destination-map',
     ),
 ]
