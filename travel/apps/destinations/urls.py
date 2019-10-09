@@ -128,6 +128,17 @@ urlpatterns = [
     ),
 
     path(
+            'maps/add-map',
+            DestinationMapView.as_view(),
+            name='add-map',
+    ),
+    path(
+                'maps/update-map',
+                DestinationMapView.as_view(),
+                name='update-map',
+        ),
+
+    path(
             'maps/',
             DestinationMapView.as_view(),
             name='destination-map',

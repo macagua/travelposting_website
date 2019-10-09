@@ -1,4 +1,5 @@
 import json
+from django.utils.html import mark_safe, escapejs
 
 def ItinerarySerializer(itinerary):
     mapped_object = []
@@ -24,7 +25,7 @@ def MapSerializer(maps):
                 'counter': count,
                 'destination': data.destination.name,
                 'description': data.description_map,
-                'map': data.map_destinie,
+                'map': escapejs(data.map_destinie),
             }
         }
         mapped_object.append(dict_aux)

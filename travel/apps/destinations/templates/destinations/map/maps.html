@@ -166,10 +166,10 @@
     $("#form-map").submit(function( event ) {
           event.preventDefault();
           if($("#create_map").is(":visible")){
-            url = '{% url 'destinations:add-itinerary' %}'
+            url = '{% url 'destinations:add-map' %}'
             type = "POST"
           }else{
-            url= '{% url 'destinations:update-itinerary' %}'
+            url= '{% url 'destinations:update-map' %}'
             type="PUT"
           }
           $.ajax({
@@ -187,7 +187,7 @@
             }else{
               notification('success',request.msg)
               resetForm()
-              table_map.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
+              table_map.ajax.url("{% url 'destinations:list-maps' %}?destiny="+$("#select_destiny").val()).load()
             }
           })
           .fail(function() {
