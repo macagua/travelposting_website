@@ -104,6 +104,38 @@
   <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
   <script src="{% static "inspinia/js/notifications.js" %}"></script>
   <script>
+    function delete_map(pk_i){
+          swal({
+              title: "{% trans "Are you sure?" %}",
+              text: "{% trans "If you delete this map you will not be able to recover it" %}",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "{% trans "Yes, delete it!" %}",
+              closeOnConfirm: false
+          }, function () {
+            $.ajax({
+                  method:'DELETE',
+                  url:'{% url 'destinations:delete-map' %}',
+                  data:{
+                    pk:pk_i,
+                  },
+                  beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+                  },
+                  success: function (request) {
+                  if(request.status==true){
+                    swal("Deleted!", "Map has been deleted.", "success");
+                    table_map.ajax.url("{% url 'destinations:list-maps' %}?destiny="+$("#select_destiny").val()).load()
+                  }else{
+                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
+                  }
+                    
+                  }
+              });
+             
+          });
+    }    
   	function resetForm(){
       $("#form-map")[0].reset();
       $("#update_map").hide()

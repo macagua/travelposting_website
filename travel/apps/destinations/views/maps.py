@@ -3,7 +3,9 @@ from django.http import JsonResponse
 from django.utils.translation import gettext_lazy as _
 from django.shortcuts import (
     render,
+    get_object_or_404,
 )
+from django.http import QueryDict
 from apps.destinations.forms import DestinationMapForm
 
 from apps.destinations.models import DestinationMap
@@ -14,6 +16,7 @@ from apps.destinations.serializers import (
     MapSerializer,
     mapped_errors_form,
 )
+from apps.destinations.models import DestinationMap
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +40,17 @@ class DestinationMapView(View):
                 },
                 safe=False,
             )
-
+            
+    def delete(self,request):
+        pk_map= QueryDict(request.body)
+        maps = get_object_or_404(DestinationMap, pk=pk_map['pk'])
+        if maps.delete() :
+            return JsonResponse(
+                {
+                'status':True
+                },
+                safe=False,
+            )
 
 
 
