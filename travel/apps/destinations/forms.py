@@ -59,8 +59,8 @@ class DestinationForm(forms.ModelForm):
                 'placeholder': _('Nombre del tour')
             }),
 
-            'short_description': SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '250px'}
+            'short_description': forms.Textarea(attrs ={
+                'class':'form-control'
             }),
 
             'description': SummernoteInplaceWidget(attrs={

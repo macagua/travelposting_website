@@ -1,4 +1,7 @@
+
+
 function notification(type,msg){
+
 	toastr[type](msg)
 }
 
