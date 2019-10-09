@@ -21,47 +21,8 @@
 		 	<div class="col-lg-12">
 		 		<div class="ibox">
 					<div class="ibox-title">
-						<h5 class="text-center">{% trans "Add Maps for yours tours"%}</h5>
-					</div>
-	                <div class="ibox-content">
-	                	<form id="form-map">
-	                		<div class="row">
-		                		<input type="hidden" name="pk_i" id="pk_i" readonly />
-		                		{% csrf_token %}
-		                		<div class="col-md-12">
-				                    <div class="form-group">
-				                        <label class="font-normal">{% trans "Destiny"%}</label>
-				                        <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="select_destiny" tabindex="2" style ="width:100%" required="required">
-				                        </select>
-				                    </div>
-			                	</div>
-			                	<div class="col-md-12">
-				                    <div class="form-group">
-				                        <label class="font-normal">{% trans "Description Map"%}</label>
-				                        {{form_map.description_map}}
-				                    </div>
-			                	</div>
-			                	<div class="col-md-12">
-				                    <div class="form-group">
-				                        <label class="font-normal">{% trans "Generate  your map"%}</label>
-				                        {{form_map.media}}
-    									{{form_map.map_destinie}}
-				                    </div>
-			                	</div>
-		                	</div>
-	                </div>
-	               	<div class="ibox-footer">
-						<button id="reset_maps" class="btn btn-warning" type="button">{% trans "Reset"%}</button>
-                        <button id="create_map" class="btn btn-success" type="submit">{% trans "Add new map"%}</button>
-                        <button style="display:none;" id="update_map" class="btn btn-success" type="submit">{% trans "Update Map"%}</button>
-	               	</div>
-		                </form>
-	            </div>
-		 	</div>
-		 	<div class="col-lg-12">
-		 		<div class="ibox">
-					<div class="ibox-title">
-						<h5 class="text-center">{% trans "List maps for tours"%}</h5>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">{% trans "Add Maps for yours tours"%}</button>
+
 					</div>
 	                <div class="ibox-content">
 	                	<table id ="table-map" class="table table-striped table-hover">
@@ -83,6 +44,56 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="BookModalLabel">{% trans "Add Maps for yours tours"%}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="ibox-content">
+                  <form id="form-map">
+                    <div class="row">
+                      <input type="hidden" name="pk_i" id="pk_i" readonly />
+                      {% csrf_token %}
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="font-normal">{% trans "Destiny"%}</label>
+                              <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="select_destiny" tabindex="2" style ="width:100%" required="required">
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="font-normal">{% trans "Description Map"%}</label>
+                              {{form_map.description_map}}
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="font-normal">{% trans "Generate  your map"%}</label>
+                              {{form_map.media}}
+                              {{form_map.map_destinie}}
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+          </div>
+
+          <div class="modal-footer">
+              <button id="reset_maps" class="btn btn-warning" type="button">{% trans "Reset"%}</button>
+              <button id="create_map" class="btn btn-success" type="submit">{% trans "Add new map"%}</button>
+              <button style="display:none;" id="update_map" class="btn btn-success" type="submit">{% trans "Update Map"%}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 {% endblock content %}
 
 
