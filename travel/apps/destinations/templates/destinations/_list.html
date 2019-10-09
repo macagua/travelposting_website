@@ -57,48 +57,19 @@
                           {% endif %}
                         </td>
                         <td>
-                          <a href="{% url 'destinations:delete' object.pk %}" class="btn btn-white btn-sm"
-                             data-toggle="modal" data-target="#modal"><i class="fa fa-trash"></i>
-                            {% trans 'Eliminar' %} </a>
-                          <a class="btn btn-white btn-sm" href="{% url 'destinations:gallery-list' object.pk %}">
-                            <i class="fa fa-photo"></i>
-                            {% trans 'Galería' %}
-                          </a>
+                            <a class="btn btn-success btn-sm" href="{% url 'destinations:gallery-list' object.pk %}">
+                                <i class="fa fa-photo"></i>
+                                {% trans 'Galería' %}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'destinations:delete' object.pk %}" class="btn btn-danger btn-sm"
+                                data-toggle="modal" data-target="#modal"><i class="fa fa-trash"></i>
+                                {% trans 'Eliminar' %}
+                            </a>
                         </td>
                       </tr>
                     {% endfor %}
-                    {% comment %}
-                    <tr>
-                      <td>2</td>
-                      <td>Alpha project</td>
-                      <td>Alice Jackson</td>
-                      <td>$963,486</td>
-                      <td>Nec Euismod In Company</td>
-                      <td><strong>40%</strong></td>
-                      <td>Jul 16, 2015</td>
-                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Betha project</td>
-                      <td>John Smith</td>
-                      <td>$996,824</td>
-                      <td>Erat Volutpat</td>
-                      <td><strong>75%</strong></td>
-                      <td>Jul 18, 2015</td>
-                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Gamma project</td>
-                      <td>Anna Jordan</td>
-                      <td>$105,192</td>
-                      <td>Tellus Ltd</td>
-                      <td><strong>18%</strong></td>
-                      <td>Jul 22, 2015</td>
-                      <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-                    </tr>
-                    {% endcomment %}
                     </tbody>
                   </table>
                 </div>
