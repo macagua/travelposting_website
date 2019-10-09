@@ -414,3 +414,17 @@ OAUTH2_PROVIDER = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+#FOR GOOGLE-MAP-WIDGETS
+GOOGLE_MAPS_API_KEY = "AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo"
+
+MAP_WIDGETS = {
+    "GooglePointFieldWidget": (
+        ("zoom", 15),
+        ("mapCenterLocationName", "london"),
+        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'de'}}),
+        ("markerFitZoom", 12),
+    ),
+    "GOOGLE_MAP_API_KEY": GOOGLE_MAPS_API_KEY,
+}
