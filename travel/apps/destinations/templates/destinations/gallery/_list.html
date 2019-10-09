@@ -16,6 +16,17 @@
       <div class="p-w-md m-t-sm">
         <div class="row">
           <div class="col-lg-12">
+                    <div class="ibox-content text-center p-md">
+                        <a id="create_map" class="btn btn-warning pull-right" href="{% url 'destinations:list' %}">{% trans 'Back to list' %}</a>
+                        <h2>
+                            <span class="text-navy">{% trans "Gallery for: " %}{{ destination }}</span>
+                        </h2>
+                        <p>
+                            {% trans "By clicking the 'add images' you can access to upload your own photos to your destination." %}<br>
+                            {% trans "You can also delete each one as you required or add comments to be displayed in our system." %}<br>
+                            {% trans "You can delete a photo by click on the photo and then click on 'remove' button " %}
+                        </p>
+                    </div>
             <div class="ibox">
               <div class="ibox-content">
                 <div class="row">

@@ -23,7 +23,7 @@
                   <table id ="tabla-destinos" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th data-filter="false">#</th>
+                            <th data-filter="false"></th>
                             <th>{% trans "Destination's name"%}</th>
                             <th data-type="number">{% trans "Name"%}</th>
                             <th>{% trans "Email" %}</th>
@@ -45,7 +45,7 @@
                             </p>
                         </td>
                         <td>
-                          <a class="btn btn-white btn-sm" data-toggle="modal" data-target="#booking_modal{{object.id}}">
+                          <a class="btn btn-success btn-sm" data-toggle="modal" data-target="#booking_modal{{object.id}}">
                             <i class="fa fa-eye"></i>
                             {% trans 'See full Details' %}
                           </a>
