@@ -12,6 +12,7 @@ from django.views.generic import (
 )
 from apps.destinations.serializers import (
     MapSerializer,
+    mapped_errors_form,
 )
 
 logger = logging.getLogger(__name__)

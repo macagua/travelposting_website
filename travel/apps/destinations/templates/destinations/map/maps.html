@@ -45,7 +45,7 @@
 	</div>
 </div>
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="modal-map" class="modal fade bd-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
@@ -55,7 +55,7 @@
               </button>
           </div>
           <div class="modal-body">
-              <div class="ibox-content">
+
                   <form id="form-map">
                     <div class="row">
                       <input type="hidden" name="pk_i" id="pk_i" readonly />
@@ -81,17 +81,14 @@
                           </div>
                       </div>
                     </div>
-                </div>
-
           </div>
-
           <div class="modal-footer">
               <button id="reset_maps" class="btn btn-warning" type="button">{% trans "Reset"%}</button>
               <button id="create_map" class="btn btn-success" type="submit">{% trans "Add new map"%}</button>
               <button style="display:none;" id="update_map" class="btn btn-success" type="submit">{% trans "Update Map"%}</button>
           </div>
         </form>
-      </div>
+
     </div>
   </div>
 {% endblock content %}
@@ -194,10 +191,13 @@
           })
           .done(function(request) {
             if(request.status ==false){
+              alert()
               notificationErrorFormLabels(request.error)
+
             }else{
               notification('success',request.msg)
               resetForm()
+              $("#modal-map").modal("hide")
               table_map.ajax.url("{% url 'destinations:list-maps' %}?destiny="+$("#select_destiny").val()).load()
             }
           })
