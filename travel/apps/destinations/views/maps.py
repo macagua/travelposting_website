@@ -16,7 +16,6 @@ from apps.destinations.serializers import (
     MapSerializer,
     mapped_errors_form,
 )
-from apps.destinations.models import DestinationMap
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +39,7 @@ class DestinationMapView(View):
                 },
                 safe=False,
             )
-            
+
     def delete(self,request):
         pk_map= QueryDict(request.body)
         maps = get_object_or_404(DestinationMap, pk=pk_map['pk'])
@@ -53,15 +52,13 @@ class DestinationMapView(View):
             )
 
 
-
 class MapListView(View):
-
     def get(self, request):
         if request.is_ajax():
             if 'destiny' in request.GET:
                 maps = DestinationMap.objects.all() \
                 .filter(destination__user=request.user.id) \
-                .filter(destination= request.GET['destiny'])
+                .filter(destination=request.GET['destiny'])
                 return JsonResponse(
                     MapSerializer(maps),
                     safe=False,
