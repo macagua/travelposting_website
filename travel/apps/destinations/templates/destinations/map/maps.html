@@ -31,23 +31,23 @@
                                 <th>{% trans "Map"%}</th>
                                 <th data-filter="true"></th>
                             </tr>
-                            <tr>
                               {% for destination in destination %}
-                              <th>
-                                {{ destination.destination}}
-                              </th>
-                              <th>
-                                {{ destination.description_map}}
-                              </th>
-                              <th>
-                                {{ destination.map_destinie.y}} {{ destination.map_destinie.x}}
-                              </th>
-                              <th>
-                                  <span class="btn btn-danger btn-sm"><i onClick="delete_map({{destination.id}})" class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
-                                  <span class="btn btn-success btn-sm"><i onClick="get_map({{destination.id}})" class="fa fa-lg fa-edit"></i>{% trans "Edit" %}</span>
-                              </th>
+                                <tr>
+                                <th>
+                                    {{ destination.destination}}
+                                </th>
+                                <th>
+                                    {{ destination.description_map}}
+                                </th>
+                                <th>
+                                    {{ destination.map_destinie.y}} {{ destination.map_destinie.x}}
+                                </th>
+                                <th>
+                                    <span class="btn btn-danger btn-sm"><i onClick="delete_map({{destination.id}})" class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
+                                    <span class="btn btn-success btn-sm"><i onClick="get_map({{destination.id}})" class="fa fa-lg fa-edit"></i>{% trans "Edit" %}</span>
+                                </th>
+                                </tr>
                               {% endfor%}
-                            </tr>
                         </thead>
                         <tbody>
                         </tbody>
