@@ -340,9 +340,13 @@
 {% block extrajs %}
 <script>
     function myMap() {
-        const LG = parseFloat({{ map.map_destinie.x }});
-        const LT = parseFloat({{ map.map_destinie.y }});
-        const position = {lat: LT, lng: LG};
+        let LG = parseFloat({{ map.map_destinie.x }});
+        let LT = parseFloat({{ map.map_destinie.y }});
+        let position = {lat: LT, lng: LG};
+
+        let infowindow = new google.maps.InfoWindow({
+            content: "{{ map.description_map }}"
+        });
 
         map = new google.maps.Map(document.getElementById("googleMap"), {
             center: position,
@@ -353,8 +357,10 @@
         marker = new google.maps.Marker({
             position: {lat: LT, lng: LG},
             map: map,
-            title: "{% trans 'Find us here' %}"
+            title: "{{ map.description_map }}"
         });
+
+        infowindow.open(map, marker);
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=myMap&language={{ LANGUAGE_CODE }}"></script>
