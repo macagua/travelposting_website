@@ -340,13 +340,23 @@
 {% block extrajs %}
 <script>
     function myMap() {
-    var mapProp= {
-      center:new google.maps.LatLng({{ map.map_destinie.x }}, {{ map.map_destinie.y }}),
-      zoom:5,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        //constants to weather api functions
+        const LG = parseFloat({{ map.map_destinie.x }});
+        const LT = parseFloat({{ map.map_destinie.y }});
+        const position = {lat: LT, lng: LG};
+
+        map = new google.maps.Map(document.getElementById("googleMap"), {
+            center: position,
+            zoom: 8,
+        });
+
+        map.setCenter(new google.maps.LatLng(LT, LG));
+        marker = new google.maps.Marker({
+            position: {lat: LT, lng: LG},
+            map: map,
+            title: "{% trans 'Find us here' %}"
+        });
     }
-    </script>
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=myMap"></script>
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=myMap&language={{ LANGUAGE_CODE }}"></script>
 {% endblock extrajs %}
