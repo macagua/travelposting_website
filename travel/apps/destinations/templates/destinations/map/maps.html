@@ -209,7 +209,7 @@
               notification('success',request.msg)
               resetForm()
               $("#modal-map").modal("hide")
-              table_map.ajax.url("{% url 'destinations:list-maps' %}?destiny="+$("#select_destiny").val()).load()
+              window.location.href = "{% url 'destinations:destination-map' %}";
             }
           })
           .fail(function() {
