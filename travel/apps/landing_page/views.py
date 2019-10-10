@@ -52,14 +52,22 @@ class CategoriesView(View):
 class DetailDestinationView(View):
     def get(self, request, *args, **kwargs):
         destination= Destination.objects.get(id=kwargs.get('slug'))
-        destino_map = DestinationMap.objects.get(destination_id=kwargs.get('slug'))
         key = settings.GOOGLE_MAPS_API_KEY
-        return render(request, 'services/destination/detail_destination.html',{
-            'destino':destination,
-            'map': destino_map,
-            'key': key,
-            })
 
+        try:
+            destino_map = DestinationMap.objects.get(destination_id=kwargs.get('slug'))
+            return render(request, 'services/destination/detail_destination.html',{
+                'destino':destination,
+                'map': destino_map,
+                'key': key,
+            })
+        except:
+            data = _("Don't have exist map yet!")
+            return render(request, 'services/destination/detail_destination.html',{
+                'destino':destination,
+                'data': data,
+                'key': key,
+            })
 
 class SaveSearchView(View):
     def post(self, request, *args, **kwargs):
