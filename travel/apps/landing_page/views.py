@@ -4,11 +4,13 @@ from django.views import View
 from django.utils.translation import gettext_lazy as _
 from django.core.mail import mail_managers
 from django.template.loader import render_to_string
+from django.conf import settings
 from apps.destinations.models import (
     Destination,
     Categorie,
     GeneralDetail,
-    SearchLanding
+    SearchLanding,
+    DestinationMap
 )
 
 from apps.landing_page.models import DeleteReg, PrivacySetting
@@ -50,8 +52,12 @@ class CategoriesView(View):
 class DetailDestinationView(View):
     def get(self, request, *args, **kwargs):
         destination= Destination.objects.get(id=kwargs.get('slug'))
+        destino_map = DestinationMap.objects.get(destination_id=kwargs.get('slug'))
+        key = settings.GOOGLE_MAPS_API_KEY
         return render(request, 'services/destination/detail_destination.html',{
             'destino':destination,
+            'map': destino_map,
+            'key': key,
             })
 
 

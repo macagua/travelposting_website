@@ -218,6 +218,11 @@ class DestinationMap(models.Model):
         return self.map_destinie
 
 
+    def __str__(self):
+        return f'{self.destination} {self.description_map}'
+
+
+
 class Photo(models.Model):
     destination = models.ForeignKey(
         Destination,
