@@ -122,21 +122,27 @@ urlpatterns = [
     ),
 
     path(
-            'maps/get-list',
-            MapListView.as_view(),
-            name='list-maps',
+        'maps/get-list',
+        MapListView.as_view(),
+        name='list-maps',
     ),
 
     path(
-            'maps/add-map',
-            DestinationMapView.as_view(),
-            name='add-map',
+        'maps/add-map',
+        DestinationMapView.as_view(),
+        name='add-map',
     ),
     path(
-                'maps/update-map',
-                DestinationMapView.as_view(),
-                name='update-map',
-        ),
+        'maps/update-map',
+        DestinationMapView.as_view(),
+        name='update-map',
+    ),
+    path(
+        'maps/delete-map',
+        DestinationMapView.as_view(),
+        name='delete-map',
+    ),
+
 
     path(
             'maps/',
