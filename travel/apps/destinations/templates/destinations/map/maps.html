@@ -14,16 +14,16 @@
 
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
-	{% include 'destinations/navbar_top.html' %}
-	<div class="wrapper wrapper-content animated fadeInRight">
-		<div class="row">
-		 	<div class="col-lg-12">
-		 		<div class="ibox">
-					<div class="ibox-title">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">{% trans "Add Maps for yours tours"%}</button>
-					</div>
-	                <div class="ibox-content">
-	                	<table id ="table-map" class="table table-striped table-hover">
+{% include 'destinations/navbar_top.html' %}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">{% trans "Add Maps for yours tours"%}</button>
+                </div>
+                <div class="ibox-content">
+                    <table id ="table-map" class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th>{% trans "Destination's name"%}</th>
@@ -35,11 +35,11 @@
                         <tbody>
                         </tbody>
                       </table>
-	                </div>
-	            </div>
-		 	</div>
-		</div>
-	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     {% include 'destinations/footer.html' %}
 </div>
 
@@ -130,13 +130,11 @@
                   }else{
                       swal("Error!", "{% trans "Has been not deleted"%}", "error");
                   }
-                    
                   }
               });
-             
           });
-    }    
-  	function resetForm(){
+    }
+    function resetForm(){
       $("#form-map")[0].reset();
       $("#update_map").hide()
       $("#create_map").show()
@@ -178,7 +176,7 @@
 
         });
 
-  	$("#select_destiny").select2({
+    $("#select_destiny").select2({
           placeholder: "{% trans 'Select a destiny' %}",
            ajax: {
                   url: "{% url 'destinations:get-itinerary' %}",
