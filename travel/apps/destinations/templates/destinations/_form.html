@@ -90,6 +90,7 @@
   	<script src="{% static "inspinia/js/plugins/chosen/chosen.jquery.js" %}"></script>
   	<script src="{% static "inspinia/js/plugins/select2/select2.full.min.js" %}"></script>
 	<script src="{% static "inspinia/js/plugins/steps/jquery.steps.min.js" %}"></script>
+	<script src="{% static "inspinia/js/plugins/dynamic-form.js" %}"></script>
 	<script src="{% static "inspinia/js/plugins/validate/jquery.validate.min.js"%}"></script>
 	<script type="template/tab_data">
     	{% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
@@ -172,6 +173,11 @@
 				}
 			});
 			$('#id_categorie').select2();
+			var dynamic_form =  $("#tour_yes_no_include").dynamicForm("#tour_yes_no_include","#add", "#remove", {
+		        limit:10,
+		        formPrefix : "yes_no_include",
+		        normalizeFullForm : false
+		    });
 	</script>
 
 	<script>initSummernote();</script>
