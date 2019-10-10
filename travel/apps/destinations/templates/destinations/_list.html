@@ -50,10 +50,10 @@
                         </td>
                         <td>
                           {% if object.details.general.sale_price %}
-                            <del><span>{{ object.details.general.regular_price }}</span></del>
-                            <ins><span>{{ object.details.general.sale_price }}</span></ins>
+                            <del><span class="label label-danger">{{ object.details.general.regular_price }}</span></del>
+                            <ins><span class="label label-primary">{{ object.details.general.sale_price }}</span></ins>
                           {% else %}
-                            <span>{{ object.details.general.regular_price }}</span>
+                            <span class="label ">{{ object.details.general.regular_price }}</span>
                           {% endif %}
                         </td>
                         <td>
