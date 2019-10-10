@@ -10,6 +10,7 @@
   {{ destination_detail_inlineformset.0.general_inlineformset.media.css }}
   <link href="{% static "inspinia/js/plugins/steps/jquery.steps.css" %}" rel="stylesheet">
   <link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
+  <link href="{% static "inspinia/js/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" %}" rel="stylesheet">
   <link href="{% static "inspinia/css/style-product.css" %}" rel="stylesheet">
 {% endblock %}
 
@@ -31,7 +32,13 @@
 					        {{ destination_detail_inlineformset.management_form }}
 	                		<h1>{% trans 'Product' %}</h1>
 	                		<fieldset>
-	                			<h2>{% trans 'Record the tour data' %}</h2>
+	                			<div class="col-md-12 col-lg-12">
+	                			<h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
+	                			<div class="checkbox checkbox-success pull-right">
+                                            <input type="checkbox" id="setTimeDate" value="">
+                                            <label for="setTimeDate">{%trans "This tour has departure and arrival time"%} </label>
+                                </div>
+	                			</div>
 	                			<div class="row">
 									{% include 'destinations/tour/_form.html' %}
 	                			</div>
@@ -65,11 +72,6 @@
 	                                {% for form in destination_detail_inlineformset.0.booking_inlineformset %}
 	                                  {% include 'destinations/destination_detail/booking/_form.html' with num=forloop.counter0 %}
 	                                {% endfor %}
-	                                <p>
-	                                  <a class="btn btn-w-m btn-info" href="#" onclick="addPeriod(event)">
-	                                  {% trans 'Add period' %}
-	                                  </a>
-	                                </p>
 								</div>
 	                		</fieldset>
 	                	</form>
@@ -109,11 +111,6 @@
                         return true;
                     }
 
-                    // Forbid suppressing "Warning" step if the user is to young
-                    if (newIndex === 3 && Number($("#age").val()) < 18)
-                    {
-                        return false;
-                    }
 
                     var form = $(this);
 
@@ -133,12 +130,6 @@
                 },
                 onStepChanged: function (event, currentIndex, priorIndex)
                 {
-                    // Suppress (skip) "Warning" step if the user is old enough.
-                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
-                    {
-                        $(this).steps("next");
-                    }
-
                     // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
                     if (currentIndex === 2 && priorIndex === 3)
                     {
@@ -151,7 +142,7 @@
 
                     // Disable validation on fields that are disabled.
                     // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
-                    form.validate().settings.ignore = ":disabled";
+                    //form.validate().settings.ignore = ":disabled";
 
                     // Start validation; Prevent form submission if false
                     return form.valid();
@@ -164,7 +155,7 @@
                     form.submit();
                 }
             }).validate({
-            	ignore: ":hidden:not(#id_tour_include),.note-editor.panel-body",
+
 				errorPlacement: function (error, element)
 				{
 					element.before(error);
@@ -178,6 +169,34 @@
 		        formPrefix : "yes_no_include",
 		        normalizeFullForm : false
 		    });
+		    var booking_form =  $("#booking").dynamicForm("#booking","#addPeriod", "#removePeriod", {
+		        limit:4,
+		        formPrefix : "booking_form",
+		        normalizeFullForm : false
+		    });
+		    $('#setTimeDate' ).on( 'click', function() {
+			    if( $(this).is(':checked') ){
+			    	$("#time_tour").show()
+			    	$("#date_tour").show()
+			    } else {
+			    	$("#time_tour").hide()
+			   		$("#date_tour").hide()
+			    }
+			});
+			$('#id_details-0-inventario-0-manager' ).on( 'click', function() {
+			    if( $(this).is(':checked') ){
+			    	$("#option_inventary").show()
+			    } else {
+			    	$("#option_inventary").hide()
+			    }
+			});
+			$('#activate_booking' ).on( 'click', function() {
+			    if( $(this).is(':checked') ){
+			    	$("#booking").show()
+			    } else {
+			    	$("#booking").hide()
+			    }
+			});
 	</script>
 
 	<script>initSummernote();</script>

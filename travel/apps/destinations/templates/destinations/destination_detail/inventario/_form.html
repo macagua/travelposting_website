@@ -1,19 +1,48 @@
-<div>
-  {% for field in form %}
-    {% if not field.is_hidden %}
-      {% ifnotequal field.name 'DELETE' %}
-        <div class="form-group">
-          <label class="col-xs-5 control-label" for="{{ field.id_for_label }}">{{ field.label }}:</label>
-          <div class="col-xs-7">
-            {{ field }}
-            <span class="help-block m-b-none">{{ field.help_text|safe }}</span>
-            {{ field.errors|safe }}
-          </div>
+<div class="form-group">
+    <div class="checkbox checkbox-success">
+        {{ form.manager }}
+        <label class="col-md-8 col-form-label" for="{{ form.manager.auto_id }}">
+        {{ form.manager.label }}:
+        </label>
+    </div>
+</div>
+<br/>
+<br/>
+<div id="option_inventary" style="display:none">
+<div class="form-group row">
+        <label class="col-md-4 col-form-label" for="{{ form.quantity.auto_id }}">
+        {{ form.quantity.label }}:
+        </label>
+        <div class="col-md-8">
+          {{ form.quantity }}
         </div>
-      {% endifnotequal %}
-    {% else %}
-      {{ field }}
-    {% endif %}
-  {% endfor %}
-  <div class="hr-line-dashed"></div>
+</div>
+
+<div class="form-group  row">
+        <label class="col-md-4" for="{{ form.reserva.auto_id }}">
+        {{ form.reserva.label }}:
+        </label>
+        <div class="col-md-8">
+        {{ form.reserva }}
+        </div>
+</div>
+
+<div class="form-group row">
+        <label class="col-md-4" for="{{ form.umb_exist.auto_id }}">
+        {{ form.umb_exist.label }}:
+        </label>
+        <div class="col-md-8">
+        {{ form.umb_exist }}
+        </div>
+</div>
+
+<div class="form-group row">
+        <label class="col-md-4" for="{{ form.sold_individually.auto_id }}">
+        {{ form.sold_individually.label }}:
+        </label>
+        <div class="col-md-8">
+        {{ form.sold_individually }}
+        <span class="form-text m-b-none">{{form.sold_individually.help_text }}</span>
+        </div>
+</div>
 </div>

@@ -52,22 +52,30 @@ class DestinationForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': _('Category'),
                 'style':'width:100%',
+                'required':True,
             }),
 
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Nombre del tour')
+                'placeholder': _('Nombre del tour'),
+                'required':True,
+
             }),
 
             'short_description': forms.Textarea(attrs ={
-                'class':'form-control'
+                'class':'form-control',
+                'required':True,
             }),
 
             'description': SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '250px'}
+                'summernote': {'width': '100%', 'height': '250px'},
+                'required':True,
             }),
 
             'departure_date': DatePickerInput(
+                attrs ={
+                    'required':True,
+                },
                 options={
                     "showClose": True,
                     "showClear": True,
@@ -79,26 +87,39 @@ class DestinationForm(forms.ModelForm):
                 }).start_of('event days'),
 
             'arrival_date': DatePickerInput(
+                attrs ={
+                    'required':True,
+                },
                 options={
                     "showClose": True,
                     "showClear": True,
                     "showTodayButton": True,
                 }).end_of('event days'),
 
-            'departure_time':TimePickerInput().start_of('party time'),
+            'departure_time':TimePickerInput(
+                attrs ={
+                    'required':True,
+                },
+                ).start_of('party time'),
 
-            'arrival_time': TimePickerInput().end_of('party time'),
+            'arrival_time': TimePickerInput(
+                attrs ={
+                    'required':True,
+                },
+                ).end_of('party time'),
 
             'number_of_reservations': forms.NumberInput(),
 
             'transfer_from':forms.TextInput(),
 
             'tour_include':SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '250px'}
+                'summernote': {'width': '100%', 'height': '250px'},
+                'required':True,
             }),
 
             'tour_not_include':SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '250px'}
+                'summernote': {'width': '100%', 'height': '250px'},
+                'required':True,
             }),
         }
 
@@ -226,6 +247,9 @@ class DestinationDetailForm(BaseBootstrapForm, forms.ModelForm):
     """
         ModelForm used for save the data about all destiantion's details.
     """
+
+
+
     def __init__(self, *args, **kwargs):
         super(DestinationDetailForm, self).__init__(*args, **kwargs)
 
@@ -272,8 +296,16 @@ class GeneralDetailForm(BaseBootstrapForm, forms.ModelForm):
         model = GeneralDetail
         fields = '__all__'
         widgets = {
-            'regular_price': BootstrapMoneyWidget,
-            'sale_price': BootstrapMoneyWidget,
+            'regular_price': BootstrapMoneyWidget(
+                attrs={
+                'required':True,
+                'class':'form-control money'
+                }
+            ),
+            'sale_price': BootstrapMoneyWidget(attrs={
+                'required':True,
+                'class':'form-control money'
+                }),
             'date_on_sale_from': DatePickerInput(format='%Y-%m-%d'),
             'date_on_sale_to': DatePickerInput(format='%Y-%m-%d')
         }
@@ -293,6 +325,36 @@ class InventarioDetailForm(BaseBootstrapForm, forms.ModelForm):
     class Meta:
         model = InventarioDetail
         fields = '__all__'
+
+    quantity = forms.IntegerField(
+        required= True,
+        initial=0,
+        min_value=1,
+        widget= forms.NumberInput(
+            attrs={
+                'class': 'form-control',
+                'required':True,
+            }
+        )
+    )
+
+    umb_exist = forms.IntegerField(
+        required= True,
+        initial=0,
+        min_value=1,
+        widget= forms.NumberInput(
+            attrs={
+                'class': 'form-control',
+                'required':True,
+            }
+        )
+    )
+
+    sold_individually = forms.BooleanField(
+        initial=False,
+        required=True
+    )
+
 
 #Setting the inline.
 InventarioDetailInlineFormSet = forms.inlineformset_factory(
