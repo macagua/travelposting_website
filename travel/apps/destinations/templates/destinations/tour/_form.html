@@ -71,29 +71,6 @@
 		</div>
 	</div>
 </div>
-
-<div class="form-group">
-	<div class="row">
-		<div class="col-lg-6">
-			<div class="form-group">
-				<label for="{{ form.tour_include.id }}">
-				{{ form.tour_include.label }}:
-				</label>
-				{{ form.tour_include }}
-			</div>
-		</div>
-		<div class="col-lg-6">
-			<div class="form-group">
-				<label for="{{ form.tour_not_include.id }}">
-				{{ form.tour_not_include.label }}:
-				</label>
-				{{ form.tour_not_include }}
-			</div>
-		</div>
-	</div>
-</div>
-
-
 <div class="form-group">
 	<div class="row">
 		<div class="col-lg-6">
@@ -112,5 +89,36 @@
 				{{ form.description }}
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="form-group" id="tour_yes_no_include">
+	<div class="row">
+		<div class="col-lg-5">
+			<div class="form-group">
+				<label for="select_include">
+				{% trans "Include / Doesn't Include"%}:
+				</label>
+				<select class="form-control" name="select_include" id="select_include">
+					<option value="include">{%trans "Include"%}</option>
+					<option value="no_include">{%trans "Doesn't Include"%}</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-lg-7">
+			<div class="form-group">
+				<label for="description_include">
+				{% trans "Description Tour Include/ Doesn't Include"%}:
+				</label>
+				<div class="input-group">
+					<input class="form-control" type="text" name="description_include" value="" placeholder="{%trans "Food"%}">
+					<span class="product-input-group-addon">
+					<i class="btn btn-primary fa fa-plus" id="add"></i>
+					<i class="btn btn-danger fa fa-trash"  id="remove"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>

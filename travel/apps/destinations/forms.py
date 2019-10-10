@@ -2,7 +2,7 @@ from django import forms
 
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-from mapwidgets.widgets import GooglePointFieldWidget, GoogleStaticOverlayMapWidget
+from mapwidgets.widgets import GooglePointFieldWidget
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
 from apps.accounts.forms import BaseBootstrapForm
@@ -383,29 +383,3 @@ class DestinationMapForm(forms.ModelForm):
                 },
             )
         }
-
-class DestinationMapForm(forms.ModelForm):
-    """
-    Modelo para manejar los mapas de google
-    usados en los tours(destinos)
-    """
-    class Meta:
-        model= DestinationMap
-        fields = {
-            'destination',
-            'description_map',
-            'map_destinie'
-
-        }
-
-        widgets = {
-            'map_destinie': GooglePointFieldWidget,
-            'description_map': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': _('Description for map'),
-                },
-            )
-        }
-
-
-

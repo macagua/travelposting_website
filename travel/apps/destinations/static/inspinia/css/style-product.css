@@ -22,3 +22,25 @@
     vertical-align: middle;
     z-index: 3051;
 }
+
+.product-input-group-addon {
+    background-color: #fff;
+    border: 1px solid #E5E6E7;
+    border-radius: 1px;
+    color: inherit;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.product-input-group-addon {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.product-input-group-addon{
+    display: table-cell;
+}
