@@ -23,7 +23,8 @@ logger = logging.getLogger(__name__)
 class DestinationMapView(View):
     def get(self, request):
         form_map =  DestinationMapForm()
-        return render(request,'destinations/map/maps.html',{'form_map':form_map})
+        destination = DestinationMap.objects.all()
+        return render(request,'destinations/map/maps.html',{'form_map':form_map, 'destination':destination})
 
     def post(self,request):
         form_map = DestinationMapForm(request.POST)
