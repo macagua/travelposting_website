@@ -1,0 +1,55 @@
+{% load static i18n %}
+<div class="modal inmodal" id="itineraryModal" tabindex="-1" role="dialog"
+     aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content animated bounceInRight">
+    <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{% trans "CREATE itinerary" %}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="form-itinerary">
+            <input type="hidden" name="pk_i" id="pk_i" readonly />
+            {% csrf_token %}
+            <div class="col-md-12">
+            <div class="form-group">
+            <label class="font-normal">{% trans "Destiny"%}</label>
+            <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="select_destiny" tabindex="2" style ="width:100%" required="required">
+            </select>
+            </div>
+
+            <div id="body_form" class="ibox-content">
+                <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                    <label class="font-normal">
+                        {{form.short_description.label}}
+                    </label>
+                    {{form.short_description}}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                    <label class="font-normal">
+                        {{form.detail_itinerary.label}}
+                    </label>
+                    {{form.detail_itinerary|safe}}
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Close" %}</button>
+            <button id="create_itinerary" class="btn btn-success" type="submit">{% trans "create a new itinerary"%}</button>
+            <button style="display:none;" id="update_itinerary" class="btn btn-success" type="submit">{% trans "update itinerary"%}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
