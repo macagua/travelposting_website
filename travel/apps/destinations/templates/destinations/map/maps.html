@@ -169,8 +169,8 @@
               { data: null, 'render': function(data, type, full, meta)
                 {
                   var buttons;
-                  buttons = '<span><i onClick="delete_map('+data.fields.id+')" class="fa fa-lg fa-trash mr-10"></i></span>'
-                  buttons += '<span><i onClick="get_map('+data.fields.id+')" class="fa fa-lg fa-edit mr-10"></i></span>'
+                  buttons = '<span class="btn btn-danger btn-sm"><i onClick="delete_map('+data.fields.id+')" class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span><br><br>'
+                  buttons += '<span class="btn btn-success btn-sm"><i onClick="get_map('+data.fields.id+')" class="fa fa-lg fa-edit"></i>{% trans "Edit" %}</span>'
                   return buttons;
                 }
               }
