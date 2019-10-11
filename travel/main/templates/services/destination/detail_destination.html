@@ -1,3 +1,5 @@
+
+
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
 {% block title %}{% trans 'Categories' %}{% endblock title %}
@@ -12,224 +14,228 @@
         <div class="w-md-65 w-lg-50">
         </div>
     </div>
-
     <!-- SVG Background -->
     <figure class="position-absolute right-0 bottom-0 left-0">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="100%" height="85px" viewBox="0 0 1920 107.7" style="margin-bottom: -8px; enable-background:new 0 0 1920 107.7;" xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#SVGHero">
-        <style type="text/css">
-            .wave-9-bottom-0{fill:#FFFFFF;}
-            .wave-9-bottom-1{fill:#FFFFFF;}
-        </style>
-        <path class="wave-9-bottom-0 fill-white" d="M0,107.7V69.8c0,0,451-54.7,960-5.4S1920,0,1920,0v107.7H0z"></path>
-        <path class="wave-9-bottom-1 fill-white" opacity=".3" d="M0,107.7v-81c0,0,316.2-8.9,646.1,54.5s794.7-114.1,1273.9-38v64.5H0z"></path>
+            <style type="text/css">
+                .wave-9-bottom-0{fill:#FFFFFF;}
+                .wave-9-bottom-1{fill:#FFFFFF;}
+            </style>
+            <path class="wave-9-bottom-0 fill-white" d="M0,107.7V69.8c0,0,451-54.7,960-5.4S1920,0,1920,0v107.7H0z"></path>
+            <path class="wave-9-bottom-1 fill-white" opacity=".3" d="M0,107.7v-81c0,0,316.2-8.9,646.1,54.5s794.7-114.1,1273.9-38v64.5H0z"></path>
         </svg>
     </figure>
     <!-- End SVG Background -->
 </div>
 <div class="container space-top-1 space-md-3 space-top-sm-2">
-      <div class="row">
+    <div class="row">
         <div class="col-lg-7 mb-7 mb-lg-0">
-          <div class="pr-lg-4">
-            <div class="position-relative">
-              <!--START TABS DETAIL-->
-                <!-- Nav Classic -->
-              <ul id="SVGnavIcons" class="svg-preloader nav nav-classic nav-rounded nav-shadow nav-justified border" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link font-weight-medium active" id="pills-one-example2-tab" data-toggle="pill" href="#pills-one-example2" role="tab" aria-controls="pills-one-example2" aria-selected="true">
-                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                      <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                        <img class="js-svg-injector" src="{% static "img/destinies/images-regular.svg"%}" alt="SVG"
-                             data-parent="#SVGnavIcons">
-                      </figure>
-                      {%trans "Photos"%}
+            <div class="pr-lg-4">
+                <div class="position-relative">
+                    <!--START TABS DETAIL-->
+                    <!-- Nav Classic -->
+                    <ul id="SVGnavIcons" class="svg-preloader nav nav-classic nav-rounded nav-shadow nav-justified border" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-medium active" id="pills-one-example2-tab" data-toggle="pill" href="#pills-one-example2" role="tab" aria-controls="pills-one-example2" aria-selected="true">
+                                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                    <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
+                                        <img class="js-svg-injector" src="{% static "img/destinies/images-regular.svg"%}" alt="SVG"
+                                        data-parent="#SVGnavIcons">
+                                    </figure>
+                                    {%trans "Photos"%}
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false">
+                                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                    <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
+                                        <img class="js-svg-injector" src="{% static "img/destinies/readme-brands.svg"%}" alt="SVG"
+                                        data-parent="#SVGnavIcons">
+                                    </figure>
+                                    {% trans "Detail"%}
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-medium" id="pills-three-example2-tab" data-toggle="pill" href="#pills-three-example2" role="tab" aria-controls="pills-three-example2" aria-selected="false">
+                                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                                    <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
+                                        <img class="js-svg-injector" src="{% static "img/destinies/map-marked-alt-solid.svg"%}" alt="SVG"
+                                        data-parent="#SVGnavIcons">
+                                    </figure>
+                                    {% trans "Map"%}
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- End Nav Classic -->
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade pt-6 show active" id="pills-one-example2" role="tabpanel" aria-labelledby="pills-one-example2-tab">
+                            <!--START GALLERY-->
+                            <div class="overflow-hidden">
+                                <div class="js-slick-carousel u-slick u-slick--gutters-2"
+                                    data-infinite="true"
+                                    data-slides-show="1"
+                                    data-slides-scroll="1"
+                                    data-center-mode="true"
+                                    data-center-padding="200px"
+                                    data-responsive='[{
+                                    "breakpoint": 992,
+                                    "settings": {
+                                    "slidesToShow": 2,
+                                    "centerPadding": "120px"
+                                    }
+                                    }, {
+                                    "breakpoint": 768,
+                                    "settings": {
+                                    "slidesToShow": 1,
+                                    "centerPadding": "80px"
+                                    }
+                                    }, {
+                                    "breakpoint": 554,
+                                    "settings": {
+                                    "slidesToShow": 1,
+                                    "centerPadding": "50px"
+                                    }
+                                    }]' >
+                                    {% for gallery in destino.photos%}
+                                    <!-- Gallery -->
+                                    <a class="js-fancybox u-media-viewer" href="javascript:;"
+                                        data-src="/main/media/{{gallery.image}}"
+                                        data-fancybox="fancyboxGallery6"
+                                        data-caption="{{gallery.name}} - {{gallery.description}}"
+                                        data-speed="700"
+                                        data-is-infinite="true">
+                                        <div class="js-slide rounded bg-img-hero min-height-300" style="background-image: url(/main/media/{{gallery.image}});"></div>
+                                    </a>
+                                    <!-- End Gallery -->
+                                    {% endfor%}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
+                            {{destino.description|safe}}
+                        </div>
+                        <div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab">
+                            {% if map %}  
+                            <div id="googleMap" style="width:100%;height:400px;"></div>
+                            {% else %}
+                            {{ data }}
+                            {% endif %}
+                        </div>
                     </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false">
-                    <div class="d-md-flex justify-content-md-center align-items-md-center">
-                      <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                        <img class="js-svg-injector" src="{% static "img/destinies/readme-brands.svg"%}" alt="SVG"
-                             data-parent="#SVGnavIcons">
-                      </figure>
-                     {% trans "Detail"%}
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link font-weight-medium" id="pills-three-example2-tab" data-toggle="pill" href="#pills-three-example2" role="tab" aria-controls="pills-three-example2" aria-selected="false">
-                    <div class="d-md-flex justify-content-md-center align-items-md-center">  <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                        <img class="js-svg-injector" src="{% static "img/destinies/map-marked-alt-solid.svg"%}" alt="SVG"
-                             data-parent="#SVGnavIcons">
-                      </figure>
-                      {% trans "Map"%}
-                    </div>
-                  </a>
-                </li>
-              </ul>
-              <!-- End Nav Classic -->
+                    <!-- End Tab Content -->
+                    <!--END TABS DETAIL-->
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="{{request.META.HTTP_REFERER}}"><small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
+                </div><br>
+                <div class="d-flex align-items-right">
+                    
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                          <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
+                          </li>
+                        {% if destino.user.facebook %}
+                        <li class="list-inline-item">
+                          <a class="" href="{{ destino.user.facebook }}">
+                            <img src="{% static 'img/facebook.png' %}" >
+                          </a>
+                        </li>
+                        {% endif %}
+                        {% if destino.user.instagram %}
+                        <li class="list-inline-item">
+                          <a class="" href="{{ destino.user.instagram }}">
+                            <img src="{% static 'img/instagram.png' %}" >
+                          </a>
+                        </li>
+                        {% endif %}
+                        {% if destino.user.twitter %}
+                        <li class="list-inline-item">
+                          <a class="" href="{{ destino.user.twitter }}">
+                            <img src="{% static 'img/twitter.png' %}" >
+                          </a>
+                        </li>
+                        {% endif %}
+                        {% if destino.user.linkedin %}
+                        <li class="list-inline-item">
+                            <a class="" href="{{ destino.user.linkedin }}">
+                              <img src="{% static 'img/linkedin.png' %}">
+                            </a>
+                          </li>
+                        {% endif %}
+                      </ul>
+                </div>
 
-<!-- Tab Content -->
-<div class="tab-content">
-  <div class="tab-pane fade pt-6 show active" id="pills-one-example2" role="tabpanel" aria-labelledby="pills-one-example2-tab">
-    <!--START GALLERY-->
-   <div class="overflow-hidden">
-      <div class="js-slick-carousel u-slick u-slick--gutters-2"
-       data-infinite="true"
-       data-slides-show="1"
-       data-slides-scroll="1"
-       data-center-mode="true"
-       data-center-padding="200px"
-       data-responsive='[{
-         "breakpoint": 992,
-         "settings": {
-         "slidesToShow": 2,
-           "centerPadding": "120px"
-         }
-       }, {
-         "breakpoint": 768,
-         "settings": {
-         "slidesToShow": 1,
-           "centerPadding": "80px"
-         }
-       }, {
-         "breakpoint": 554,
-         "settings": {
-         "slidesToShow": 1,
-           "centerPadding": "50px"
-         }
-       }]' >
-      {% for gallery in destino.photos%}
-            <!-- Gallery -->
-            <a class="js-fancybox u-media-viewer" href="javascript:;"
-               data-src="/main/media/{{gallery.image}}"
-               data-fancybox="fancyboxGallery6"
-               data-caption="{{gallery.name}} - {{gallery.description}}"
-               data-speed="700"
-               data-is-infinite="true">
-               <div class="js-slide rounded bg-img-hero min-height-300" style="background-image: url(/main/media/{{gallery.image}});"></div>
-            </a>
-            <!-- End Gallery -->
-        {% endfor%}
-      </div>
-  </div>
-  </div>
-  <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
-     {{destino.description|safe}}
-  </div>
-
-  <div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab">
-    {% if map %}  
-      <div id="googleMap" style="width:100%;height:400px;"></div>
-    {% else %}
-      {{ data }}
-    {% endif %}
-  </div>
-</div>
-<!-- End Tab Content -->
-
-              <!--END TABS DETAIL-->
             </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <a href="{{request.META.HTTP_REFERER}}"><small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
-            </div>
-          </div>
         </div>
-
         <!-- Destination Description -->
         <div class="col-lg-5">
-          <!-- Title -->
-          <div class="mb-5">
-            <h1 class="h3 font-weight-medium">{{destino.name}}</h1>
-            <p>{{destino.short_description |safe}}</p>
-          </div>
-          <!-- End Title -->
-
-          <!-- Price -->
-          <div class="mb-5">
-            <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Price" %}:</h2>
-            <span class="font-size-2 font-weight-medium">{{destino.list_prices.sale_price}}</span>
-            <span class="text-secondary ml-2"><del>{{destino.list_prices.regular_price}}</del></span>
-          </div>
-          <!-- End Price -->
-           <div class="mb-5">
-            <h2 class="h3 font-weight-medium">{%trans "Itinerary"%}</h2>
-          </div>
-          <!-- Accordion -->
-          <div id="shopCartAccordion" class="accordion mb-5">
-          {% if destino.itinerario.count > 0 %}
-            {% for itinerario in destino.itinerario %}
-              <!-- Card -->
-            <div class="card">
-              <div class="card-header card-collapse" id="shopCardHeadingOne">
-                <h3 class="mb-0">
-                  <button type="button" class="btn btn-link btn-block card-btn" data-toggle="collapse" data-target="#shopCardOne" aria-expanded="true" aria-controls="shopCardOne">
-                    <span class="row align-items-center">
-                      <span class="col-9">
-                        <span class="media align-items-center">
-                          <span id="icon65" class="ie-height-48 w-100 max-width-6 mr-3" style="">
-                          </span>
-                          <span class="media-body">
-                            <span class="d-block font-size-1 font-weight-medium">{% trans "Day" %} {{forloop.counter}}</span>
-                          </span>
-                        </span>
-                      </span>
-                      <span class="col-3 text-right">
-                        <span class="card-btn-arrow">
-                          <span class="fas fa-arrow-down small"></span>
-                        </span>
-                      </span>
-                    </span>
-                  </button>
-                </h3>
-              </div>
-              <div id="shopCardOne" class="collapse show" aria-labelledby="shopCardHeadingOne" data-parent="#shopCartAccordion" style="">
-                <div class="card-body">
-                  {{itinerario.content|safe}}
+            <!-- Title -->
+            <div class="mb-5">
+                <h1 class="h3 font-weight-medium">{{destino.name}}</h1>
+                <p>{{destino.short_description|safe}}</p>
+            </div>
+            <!-- End Title -->
+            <!-- Price -->
+            <div class="mb-5">
+                <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Price" %}:</h2>
+                <span class="font-size-2 font-weight-medium">{{destino.list_prices.sale_price}}</span>
+                <span class="text-secondary ml-2"><del>{{destino.list_prices.regular_price}}</del></span>
+            </div>
+            <!-- End Price -->
+            <div class="mb-3">
+                <a class="d-inline-flex small" href="#">
+                    <div class="text-warning mr-2">
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                        <small class="fas fa-star"></small>
+                    </div>
+                    <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes"%}</span>
+                </a>
+            </div>
+            <!-- Accordion -->
+            <div id="shopCartAccordion" class="accordion mb-5">
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-header card-collapse">
+                        <h4 class="mb-0">
+                            <button type="button" class="btn btn-link btn-block card-btn collapsed" data-toggle="collapse" data-target="#shopCardTwo" aria-expanded="false" aria-controls="shopCardTwo">
+                              <span class="row align-items-center">
+                                <span class="col-9">
+                                  <span class="media align-items-center">
+                                    <span id="icon64" class="ie-height-48 w-100 max-width-6 mr-3" style="">
+                                    </span>
+                                    <span class="media-body">
+                                      <span class="d-block font-size-1 font-weight-medium">
+                                        <strong>{% trans "Discover or download our itinerary here" %}</strong>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </span>
+                              </span>
+                            </button>
+                        </h4>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <!-- End Card -->
-            {% endfor%}
-        {%else%}
-            <!-- Card -->
-            <div class="card">
-              <div class="card-header card-collapse">
-                <h4 class="mb-0">
-                  <button type="button" class="btn btn-link btn-block card-btn collapsed" data-toggle="collapse" data-target="#shopCardTwo" aria-expanded="false" aria-controls="shopCardTwo">
-                    <span class="row align-items-center">
-                      <span class="col-9">
-                        <span class="media align-items-center">
-                          <span id="icon64" class="ie-height-48 w-100 max-width-6 mr-3" style="">
-                          </span>
-                          <span class="media-body">
-                            <span class="d-block font-size-1 font-weight-medium">
-                              {% trans "We still don't have the intenerario for this destination" %}
-                            </span>
-                          </span>
-                        </span>
-                      </span>
-                    </span>
-                  </button>
-                </h4>
-              </div>
-            </div>
-            <!-- End Card -->
-        {% endif %}
+                <!-- End Card -->
 
-          </div>
-          <!-- End Accordion -->
-
-          <div class="mb-4">
-            <button type="button"  data-toggle="modal" data-target="#BookModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
-          </div>
+            </div>
+            <!-- End Accordion -->
+            <div class="mb-4">
+                <button type="button"  data-toggle="modal" data-target="#BookModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
+            </div>
 
         </div>
         <!-- End Product Description -->
-      </div>
+
     </div>
 
-
+</div>
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="BookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -243,99 +249,92 @@
             </div>
             <div class="modal-body">
                 <form name="destinationsform" action="{% url "make-booking" %}" method="POST">{% csrf_token %}
-                    <div class="form-row">
-                        <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
-                        <span><center>{{ destino.name }}</center></span>
-                    </div>
-
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <b>{{ destino.name }}</b>
-                              </div>
+                <div class="form-row">
+                    <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
+                    <span>
+                        <center>{{ destino.name }}</center>
+                    </span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <b>{{ destino.name }}</b>
                         </div>
                     </div>
-
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
-                                </div>
-                                <input type="text" maxlength="50" class="form-control" required name="name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name'%}">
-                              </div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
-                                </div>
-                                <input type="text" maxlength="50" class="form-control" required name="last_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
-                              </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" maxlength="50" class="form-control" required name="name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name'%}">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
-                                </div>
-                                <input type="text" maxlength="50" class="form-control"  required name="cellphone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789'%}">
-                              </div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
-                                </div>
-                                <input id="mail" type="email" maxlength="100" class="form-control" required name="mail" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
-                              </div>
+                    <div class="form-group col-md-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" maxlength="50" class="form-control" required name="last_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
-                                </div>
-                                <input type="text" maxlength="2" class="form-control" required name="people_travel" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling'%}">
-                              </div>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
-                                </div>
-                                <input type="text" maxlength="50" class="form-control" name="destination"  aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
-                              </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="text" maxlength="50" class="form-control"  required name="cellphone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789'%}">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3" placeholder="Do you may have some comments or remarks about your booking?"></textarea>
+                    <div class="form-group col-md-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
+                            </div>
+                            <input id="mail" type="email" maxlength="100" class="form-control" required name="mail" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
+                        </div>
                     </div>
-                    <div class="form-group">
-                      <p style="font-size: 10px;">
-                          {% blocktrans %}
-                          By clicking "Book" you agree that Travelposting use your data for advertising and marketing purposes between Travelposting, its alliance partners and Xposting-Service. At any time you can make use of your rights and request the cancellation of your data.
-                          {% endblocktrans%}
-                      </p>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
+                            </div>
+                            <input type="text" maxlength="2" class="form-control" required name="people_travel" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling'%}">
+                        </div>
                     </div>
+                    <div class="form-group col-md-6">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
+                            </div>
+                            <input type="text" maxlength="50" class="form-control" name="destination"  aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3" placeholder="Do you may have some comments or remarks about your booking?"></textarea>
+                </div>
+                <div class="form-group">
+                    <p style="font-size: 10px;">
+                        {% blocktrans %}
+                        By clicking "Book" you agree that Travelposting use your data for advertising and marketing purposes between Travelposting, its alliance partners and Xposting-Service. At any time you can make use of your rights and request the cancellation of your data.
+                        {% endblocktrans%}
+                    </p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
                 <button type="submit" class="btn btn-primary">{% trans 'Book' %}</button>
             </div>
-          </form>
-
+            </form>
         </div>
     </div>
 </div>
-
-
-
 {% endblock content %}
 {% block extrajs %}
 <script>
@@ -343,23 +342,23 @@
         let LG = parseFloat({{ map.map_destinie.x }});
         let LT = parseFloat({{ map.map_destinie.y }});
         let position = {lat: LT, lng: LG};
-
+    
         let infowindow = new google.maps.InfoWindow({
             content: "{{ map.description_map }}"
         });
-
+    
         map = new google.maps.Map(document.getElementById("googleMap"), {
             center: position,
             zoom: 8,
         });
-
+    
         map.setCenter(new google.maps.LatLng(LT, LG));
         marker = new google.maps.Marker({
             position: {lat: LT, lng: LG},
             map: map,
             title: "{{ map.description_map }}"
         });
-
+    
         infowindow.open(map, marker);
     }
 </script>

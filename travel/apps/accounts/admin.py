@@ -76,7 +76,7 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     readonly_fields = ('subscription_id',)
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'phone', 'mobile', 'language')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin')}),
         (_('Business info'), {'fields': ('business_name', 'business_address', 'business_position')}),
         (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'subscription_id')}),
     )
