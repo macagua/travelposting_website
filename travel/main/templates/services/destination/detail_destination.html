@@ -76,6 +76,10 @@
                             <!--START GALLERY-->
                             <div class="overflow-hidden">
                                 <div class="js-slick-carousel u-slick u-slick--gutters-2"
+                                    data-adaptive-height="true"
+                                    data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+                                    data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-6 ml-xl-8"
+                                    data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-6 mr-xl-8"
                                     data-infinite="true"
                                     data-slides-show="1"
                                     data-slides-scroll="1"
@@ -116,7 +120,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
-                            {{destino.description|safe}}
+                            {{destino.description}}
                         </div>
                         <div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab">
                             {% if map %}  
@@ -132,8 +136,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="{{request.META.HTTP_REFERER}}"><small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
                 </div><br>
-                <div class="d-flex align-items-right">
-                    
+                <div class="d-flex float-right">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
                           <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
@@ -176,14 +179,23 @@
             <!-- Title -->
             <div class="mb-5">
                 <h1 class="h3 font-weight-medium">{{destino.name}}</h1>
-                <p>{{destino.short_description|safe}}</p>
+                <p style="color: #000000;">{{destino.short_description|striptags}}</p>
             </div>
             <!-- End Title -->
             <!-- Price -->
             <div class="mb-5">
-                <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Price" %}:</h2>
-                <span class="font-size-2 font-weight-medium">{{destino.list_prices.sale_price}}</span>
-                <span class="text-secondary ml-2"><del>{{destino.list_prices.regular_price}}</del></span>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                      <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Price" %}:</h2>
+                      <span class="font-size-2 font-weight-medium">{{destino.list_prices.sale_price}}</span>
+                      <span class="text-secondary ml-2"><del>{{destino.list_prices.regular_price}}</del></span>
+                    </li>
+                    <li class="list-inline-item">
+                      <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Fecha" %}:</h2>
+                      <span class="font-size-2 font-weight-medium">08/10/1990</span>
+                      
+                    </li>
+                </ul>
             </div>
             <!-- End Price -->
             <div class="mb-3">
@@ -204,21 +216,19 @@
                 <div class="card">
                     <div class="card-header card-collapse">
                         <h4 class="mb-0">
-                            <button type="button" class="btn btn-link btn-block card-btn collapsed" data-toggle="collapse" data-target="#shopCardTwo" aria-expanded="false" aria-controls="shopCardTwo">
-                              <span class="row align-items-center">
+                              <span class="row">
                                 <span class="col-9">
                                   <span class="media align-items-center">
                                     <span id="icon64" class="ie-height-48 w-100 max-width-6 mr-3" style="">
                                     </span>
                                     <span class="media-body">
-                                      <span class="d-block font-size-1 font-weight-medium">
+                                      <span class="d-block  font-weight-medium" style="font-size: 13px;">
                                         <strong>{% trans "Discover or download our itinerary here" %}</strong>
                                       </span>
                                     </span>
                                   </span>
                                 </span>
                               </span>
-                            </button>
                         </h4>
                     </div>
                 </div>
