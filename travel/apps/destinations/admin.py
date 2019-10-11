@@ -18,8 +18,9 @@ from .models import (
     BookingDetail,
     Categorie,
     SearchLanding,
-    Booking, 
-    DestinationMap
+    Booking,
+    DestinationMap,
+    Itinerary,
 )
 
 @admin.register(OptionTabData)
@@ -155,3 +156,4 @@ admin.site.register(GeneralDetail)
 admin.site.register(TourData)
 admin.site.register(SearchLanding)
 admin.site.register(DestinationMap)
+admin.site.register(Itinerary)

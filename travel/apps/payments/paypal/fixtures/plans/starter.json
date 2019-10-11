@@ -8,12 +8,12 @@
       "pricing_scheme": {
         "fixed_price": {
           "currency_code": "EUR",
-          "value": "189.00"
+          "value": "243.81"
         }
       },
       "tenure_type": "REGULAR",
       "sequence": 1,
-      "total_cycles": 3,
+      "total_cycles": 1,
       "frequency": {
         "interval_unit": "YEAR",
         "interval_count": 1

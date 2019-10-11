@@ -15,14 +15,10 @@ from django.views.generic import (
     ListView,
     View,
 )
-from django.template.loader import render_to_string
 from django.shortcuts import (
     render,
     get_object_or_404,
 )
-from django.core.mail import mail_managers
-from django.core.mail import send_mail
-from django.conf import settings
 
 from apps.destinations.forms import (
     DestinationForm,
@@ -38,7 +34,6 @@ from apps.destinations.models import (
     DestinationDetail,
     OptionTabData,
     Itinerary,
-    Booking,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -141,6 +136,7 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
     #     return kwargs
 
     def post(self, request, *args, **kwargs):
+        #import ipdb;ipdb.set_trace()
         form = self.get_form()
         self.get_inline_tour_data_class()
         tour_data_inlineformset = self.get_form_inline(
@@ -307,7 +303,18 @@ class ItineraryView(View):
                     safe=False,
                 )
         else:
-            return render(request,'destinations/itinerary/itinerary.html',{'form':ItineraryForm()})
+            c = {}
+            itinerary_list = Itinerary.objects.all()
+            destination_list = Destination.objects.filter(user=request.user)
+            c['itinerary_list'] = itinerary_list
+            c['destination_list'] = destination_list
+            c['form'] = ItineraryForm
+
+            return render(
+                request,
+                'destinations/itinerary/itinerary.html',
+                c,
+            )
 
     def post(self,request):
         form_itinerary = ItineraryForm(request.POST)

@@ -20,32 +20,47 @@
         <div class="row">
 
             <div class="ibox">
+                <div class="ibox-title">
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#itineraryModal">{% trans "Create new itinerary"%}</button>
+                </div>
               <div class="ibox-content">
-                          <a class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#itineraryModal">
-                            <i class="fa fa-eye"></i>
-                            {% trans 'Add new itinerary' %}
-                          </a>
                 <div class="row">
                   <div class="col-md-12 mt-4">
                     <div class="table-responsive">
                       <table id ="table-itinerary" class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th data-filter="false">#</th>
-                                <th>{% trans "Destination's name"%}</th>
-                                <th>{% trans "Short Title"%}</th>
-                                <th>{% trans "Itinerary Description"%}</th>
-                                <th data-filter="false"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
+                            <thead>
+                                <tr>
+                                    <th>{% trans "Destination's name"%}</th>
+                                    <th>{% trans "Description"%}</th>
+                                    <th>{% trans "Details"%}</th>
+                                    <th data-filter="true"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in itinerary_list %}
+                                    <tr>
+                                        <th>
+                                            {{ row.destination }}
+                                        </th>
+                                        <th>
+                                            {{ row.short_description }}
+                                        </th>
+                                        <th>
+                                            {{ row.detail_itinerary | striptags }}
+                                        </th>
+                                        <th>
+                                            <span class="btn btn-danger btn-sm" onClick="delete_itinerary({{ row.id }})"><i class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
+                                            <!-- <span class="btn btn-success btn-sm"><i onClick="get_map({{destination.id}})" class="fa fa-lg fa-edit"></i>{% trans "Edit" %}</span> -->
+                                        </th>
+                                    </tr>
+                                {% endfor%}
+                            </tbody>
                       </table>
                     </div>
                   </div>
                 </div>
               </div>
-                {% include 'destinations/itinerary/modal_itinerary.html' %}
+            {% include 'destinations/itinerary/modal_itinerary.html' %}
 
           </div>
         </div>
@@ -66,6 +81,7 @@
   <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
   <script src="{% static "inspinia/js/notifications.js" %}"></script>
   <script>
+    //Delete fuction
     function delete_itinerary(pk_i){
           swal({
               title: "{% trans "Are you sure?" %}",
@@ -88,7 +104,9 @@
                   success: function (request) {
                   if(request.status==true){
                     swal("Deleted!", "Itinerary has been deleted.", "success");
-                    table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
+                    setTimeout(function(){
+                        window.location.href = "{% url 'destinations:itinerary-list' %}";
+                    }, 2000);
                   }else{
                       swal("Error!", "{% trans "Has been not deleted"%}", "error");
                   }
@@ -97,19 +115,28 @@
           });
     }
 
+    //Reset the form.
+    function resetForm(){
+      $("#form-itinerary")[0].reset();
+      $("#id_detail_itinerary").summernote("reset")
+      $("#update_itinerary").hide()
+      $("#create_itinerary").show()
+      $("#body_form").css('display', 'none');
+      $("#content_itinerary").removeClass('border-bottom');
+    }
+
+
     function get_itinerary(pk){
-        $.ajax({
-            url:'{% url 'destinations:get-itinerary' %}',
-            data:{
-                pk_i:pk,
-            },
-
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
-            },
-
-            success: function (request) {
-                if(request.status==true){
+      $.ajax({
+                  url:'{% url 'destinations:get-itinerary' %}',
+                  data:{
+                    pk_i:pk,
+                  },
+                  beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+                  },
+                  success: function (request) {
+                  if(request.status==true){
                     $("#id_detail_itinerary").summernote("code",request.data.content)
                     $("#id_short_description").val(request.data.short_title)
                     $("#pk_i").val(request.data.pk)
@@ -118,129 +145,82 @@
                     $("#body_form").css('display', 'block');
                     $("#content_itinerary").addClass('border-bottom');
                     table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
-                }else{
-                    swal("Error!", "{% trans 'Could not load itinerary data for editing'%}", "error");
-                }
-            }
+                  }else{
+                    swal("Error!", "{% trans "Could not load itinerary data for editing"%}", "error");
+                  }
+                  }
     });
 
     }
 
-    $('#table-itinerary thead tr').clone(true).appendTo( '#table-itinerary thead' );
-    $('#table-itinerary thead tr:eq(1) th').each( function (i) {
-        var title = $(this).text();
-        if ($(this).data('filter') != false ){
-            if ($(this).data('type')=='number'){
-                $(this).html( '<input class="form-control" type="number" placeholder="Busca '+title+'" />' );
-            }else{
-                $(this).html( '<input class="form-control" type="text" placeholder="Busca '+title+'" />' );
-            }
-        }
 
-        $( 'input', this ).on( 'keyup change', function () {
-            if ( table_itinerary.column(i).search() !== this.value ) {
-                table_itinerary
-                    .column(i)
-                    .search( this.value )
-                    .draw();
-            }
+
+        $("#select_destiny").select2({
+          placeholder: "{% trans 'Select a destiny' %}",
+           ajax: {
+                  url: "{% url 'destinations:get-itinerary' %}",
+                  dataType: "json",
+                  delay: 250,
+                  data: function (params) {
+                      return {
+                          q: (params.term) ? params.term : "", // search term
+                          page: params.page || 1
+                      };
+                  },
+                  processResults: function (response) {
+                      return {
+                         results: response
+                      };
+                  },
+                  cache: true
+              },
+              minimumInputLength: 0,
+        }
+        ).on('select2:select', function (e) {
+          resetForm()
+          table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+e.params.data.id).load()
+        }); 
+
+
+        $("#reset_itinerary").on('click', function(event) {
+          event.preventDefault();
+          resetForm()
         });
-    });
 
-    var table_itinerary=$('#table-itinerary').DataTable({
-        pageLength: 10,
-        responsive: true,
-        fixedHeader: true,
-        ajax: {
-            processing: false,
-            url: '{% url 'destinations:get-itinerary' %}',
-            'dataSrc':'',
-        },
-        columns: [
-            { data: 'fields.counter', name: 'fields.counter' },
-            { data: null, 'render': function(data, type, full, meta)
-            {
-                return data.fields.destination
-            }
-            },
-            { data: null, 'render': function(data, type, full, meta)
-            {
-            return data.fields.short_title
-            }
-            },
-            { data: null, 'render': function(data, type, full, meta)
-            {
-            return data.fields.content
-            }
-            },
-            { data: null, 'render': function(data, type, full, meta)
-            {
-                var buttons;
-                buttons = '<span class="btn btn-danger btn-sm"><i onClick="delete_itinerary('+data.fields.id+')" class="fa fa-lg fa-trash mr-10"></i>{% trans "Delete" %}</span><br><br>' 
-                buttons += '<span class="btn btn-success btn-sm"><i onClick="get_itinerary('+data.fields.id+')" class="fa fa-lg fa-edit mr-10"></i>{% trans "Edit" %}</span>' 
-                return buttons; 
-            }
-            }
-        ]
-    });
 
-    //Select destinations.
-    $("#select_destiny").select2({
-        placeholder: "{% trans 'Select a destiny' %}",
-        ajax: {
-                url: "{% url 'destinations:get-itinerary' %}",
-                dataType: "json",
-                delay: 250,
-                data: function (params) {
-                    return {
-                        q: (params.term) ? params.term : "", // search term
-                        page: params.page || 1
-                    };
+        $("#form-itinerary").submit(function( event ) {
+            event.preventDefault();
+            if($("#create_itinerary").is(":visible")){
+                url = '{% url 'destinations:add-itinerary' %}'
+                type = "POST"
+            }else{
+                url= '{% url 'destinations:update-itinerary' %}'
+                type="PUT"
+            }
+            $.ajax({
+                url: url,
+                type: type,
+                dataType: 'json',
+                data: $(this).serialize(),
+                beforeSend: function(xhr) {
+                        xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
                 },
-                processResults: function (response) {
-                    return {
-                        results: response
-                    };
-                },
-                cache: true
-            },
-            minimumInputLength: 0,
-    }
-    ).on('select2:select', function (e) {
-        table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+e.params.data.id).load()
-    });
-
-
-    $("#form-itinerary").submit(function( event ) {
-        event.preventDefault();
-        if($("#create_itinerary").is(":visible")){
-        url = '{% url 'destinations:add-itinerary' %}'
-        type = "POST"
-        }else{
-        url= '{% url 'destinations:update-itinerary' %}'
-        type="PUT"
-        }
-        $.ajax({
-        url: url,
-        type: type,
-        dataType: 'json',
-        data: $(this).serialize(),
-        beforeSend: function(xhr) {
-                    xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
-        },
-        })
-        .done(function(request) {
-        if(request.status ==false){
-            notificationErrorFormLabels(request.error)
-        }else{
-            notification('success',request.msg)
-            table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
-        }
-        })
-        .fail(function() {
-        console.log("error");
-        })
-    });
+            })
+            .done(function(request) {
+                if(request.status ==false){
+                    notificationErrorFormLabels(request.error)
+                }else{
+                    $('#itineraryModal').modal('hide');
+                    notification('success',request.msg)
+                    setTimeout(function(){
+                        window.location.href = "{% url 'destinations:itinerary-list' %}";
+                    }, 2000);
+                }
+            })
+            .fail(function() {
+                console.log("error");
+            })
+        });
   </script>
   <script>initSummernote();</script>
 {% endblock %}

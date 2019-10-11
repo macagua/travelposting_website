@@ -70,7 +70,6 @@
               </button>
           </div>
           <div class="modal-body">
-
                   <form id="form-map">
                     <div class="row">
                       <input type="hidden" name="pk_i" id="pk_i" readonly />
@@ -151,6 +150,8 @@
               });
           });
     }
+
+
     function resetForm(){
       $("#form-map")[0].reset();
       $("#update_map").hide()
@@ -183,6 +184,8 @@
          resetForm()
          table_map.ajax.url("{% url 'destinations:list-maps' %}?destiny="+e.params.data.id).load()
         });
+
+
     $("#form-map").submit(function( event ) {
           event.preventDefault();
           if($("#create_map").is(":visible")){
@@ -216,6 +219,5 @@
             console.log("error");
           })
         });
-
   </script>
 {%endblock%}

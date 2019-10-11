@@ -16,7 +16,13 @@
             <div class="col-md-12">
             <div class="form-group">
             <label class="font-normal">{% trans "Destiny"%}</label>
-            <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="select_destiny" tabindex="2" style ="width:100%" required="required">
+            <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
+                {% for destiny in destination_list %}
+                    <option value="{{ destiny.id }}"
+                        {% if destiny == current_destiny %}selected="selected"{% endif %}>
+                        {{ destiny.name|capfirst }}
+                    </option>
+                {% endfor %}
             </select>
             </div>
 
@@ -42,13 +48,13 @@
             </div>
 
             </div>
-            </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Close" %}</button>
             <button id="create_itinerary" class="btn btn-success" type="submit">{% trans "create a new itinerary"%}</button>
             <button style="display:none;" id="update_itinerary" class="btn btn-success" type="submit">{% trans "update itinerary"%}</button>
       </div>
+    </form>
     </div>
   </div>
 </div>
