@@ -153,9 +153,9 @@ class Destination(models.Model):
     @staticmethod
     def count_categorie(alias):
         if alias == 'all':
-            return Destination.objects.all().count()
+            return Destination.objects.filter(is_published=True).count()
         else:
-            return Destination.objects.filter(categorie__alias=alias).count()
+            return Destination.objects.filter(is_published=True, categorie__alias=alias).count()
 
     @property
     def photos(self):
@@ -204,6 +204,7 @@ class Destination(models.Model):
             return None
         return list_prices
 
+
 class DestinationMap(models.Model):
     destination = models.OneToOneField(
         Destination,
@@ -222,7 +223,6 @@ class DestinationMap(models.Model):
 
     def __str__(self):
         return f'{self.destination} {self.description_map}'
-
 
 
 class Photo(models.Model):
@@ -279,13 +279,13 @@ class Photo(models.Model):
         verbose_name = _('Foto')
         verbose_name_plural = _('Fotos')
 
+
 class DestinationRating(models.Model):
     destination = models.ForeignKey(
         Destination,
         on_delete=models.CASCADE,
         verbose_name=_('Destination Rating'),
     )
-
 
 
 class Badge(models.Model):
@@ -342,6 +342,7 @@ class TourData(models.Model):
     class Meta:
         verbose_name = _('Tour')
         verbose_name_plural = _('Tours')
+
 
 class Itinerary(models.Model):
     """
@@ -719,7 +720,6 @@ class BookingDetail(models.Model):
         ordering = ('start_date', 'end_date')
         verbose_name_plural = _('Booking details')
         verbose_name = _('Booking detail')
-
 
 
 class SearchLanding(models.Model):
