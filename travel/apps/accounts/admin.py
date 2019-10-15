@@ -2,7 +2,6 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import gettext_lazy as _
 from impersonate.admin import UserAdminImpersonateMixin
 from apps.accounts.models import CustomerUser
@@ -35,25 +34,6 @@ class UserCreationForm(forms.ModelForm):
         return user
 
 
-class UserChangeForm(forms.ModelForm):
-    """A form for updating users. Includes all the fields on
-    the user, but replaces the password field with admin's
-    password hash display field.
-    """
-    password = ReadOnlyPasswordHashField()
-
-    class Meta:
-        model = CustomerUser
-        fields = ('email', 'password', 'is_active', 'is_staff', 'is_superuser', 'last_name', 'first_name',
-                  'degree', 'phone', 'mobile', 'language', 'business_name', 'business_address', 'business_position')
-
-    def clean_password(self):
-        # Regardless of what the user provides, return the initial value.
-        # This is done here, rather than on the field, because the
-        # field does not have access to the initial value
-        return self.initial["password"]
-
-
 @admin.register(CustomerUser)
 class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     """
@@ -64,14 +44,13 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     """
 
     # The forms to add and change user instances
-    form = UserChangeForm
     add_form = UserCreationForm
     open_new_window = True
 
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
-    list_display = ('email', 'date_joined', 'is_staff', 'is_active')
+    list_display = ('email', 'date_joined', 'is_staff', 'is_active', 'password_link')
     list_filter = ('is_staff', 'is_active', ('last_login'))
     readonly_fields = ('subscription_id',)
     fieldsets = (
@@ -91,6 +70,13 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     search_fields = ('email',)
     ordering = ('email',)
     filter_horizontal = ()
+
+
+    def password_link(self, obj):
+        from django.utils.html import mark_safe
+        return mark_safe(f'<a href="/admin/accounts/customeruser/{obj.id}/password/">Change Password</a>')
+    password_link.allow_tags = True
+    password_link.short_description = 'password'
 
 
 # ... and, since we're not using Django's built-in permissions,

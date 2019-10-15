@@ -75,24 +75,26 @@ class Destination(models.Model):
 
     departure_date = models.DateField(
         blank=True,
-        null=True
+        null=True,
     )
     arrival_date = models.DateField(
         blank=True,
-        null=True
+        null=True,
     )
 
     departure_time = models.TimeField(
         blank = True,
-        null = True
+        null = True,
     )
 
     arrival_time = models.TimeField(
         blank = True,
-        null = True
+        null = True,
     )
 
     number_of_reservations = models.IntegerField(
+        blank = True,
+        null = True,
     )
 
     transfer_from = models.TextField(

@@ -1,4 +1,5 @@
 import logging
+import datetime as dt
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
@@ -7,6 +8,7 @@ from django.http import QueryDict
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
+from apps.accounts.models import CustomerUser
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -26,14 +28,18 @@ from apps.destinations.forms import (
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
+
 )
 from apps.destinations.models import (
     Destination,
     TourData,
     HeaderSection,
     DestinationDetail,
+    GeneralDetail,
     OptionTabData,
     Itinerary,
+    InventarioDetail,
+    BookingDetail,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -128,59 +134,65 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
         context.update(kwargs)
         return super().get_context_data(**context)
 
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs.update({
-    #         'error_class': LiErrorList
-    #     })
-    #     return kwargs
-
     def post(self, request, *args, **kwargs):
-        #import ipdb;ipdb.set_trace()
-        form = self.get_form()
-        self.get_inline_tour_data_class()
-        tour_data_inlineformset = self.get_form_inline(
-            self.inline_tour_data_class)
-        self.get_inline_header_class()
-        header_inlineformset = self.get_form_inline(self.inline_header_class)
-        self.get_inline_destination_detail_class()
-        destination_detail_inlineformset = self.get_form_inline(
-            self.inline_destination_detail_class)
+        try:
+            #Step 1: Saving destination data.
+            destination, created = Destination.objects.get_or_create(
+                user=CustomerUser.objects.get(id=request.POST.get('user')),
+                name=request.POST.get('name'),
+                short_description=request.POST.get('short_description'),
+                description=request.POST.get('description'),
+                departure_date=dt.datetime.strptime(request.POST.get('departure_date'), '%M/%d/%Y') or None,
+                departure_time=request.POST.get('departure_time') or None,
+                arrival_date=dt.datetime.strptime(request.POST.get('arrival_date'), '%M/%d/%Y') or None,
+                arrival_time=request.POST.get('arrival_time') or None,
+            )
 
-        if form.is_valid() and tour_data_inlineformset.is_valid(
-        ) and header_inlineformset.is_valid() and destination_detail_inlineformset.is_valid():
-            return self.form_valid(
-                form, tour_data_inlineformset, header_inlineformset,
-                destination_detail_inlineformset)
+            #Set the categories.
+            destination.categorie.set(request.POST.get('categorie'))
+
+            #creating the destination detail object.
+            detail, created = DestinationDetail.objects.get_or_create(destination=destination)
+
+            #Step 2: Saving DestinationDetail data.
+            general_detail, create = GeneralDetail.objects.get_or_create(
+                destination_detail=DestinationDetail.objects.get(id=detail.id),
+                regular_price=request.POST.get('details-0-general-0-regular_price_0'),
+                sale_price=request.POST.get('details-0-general-0-sale_price_0'),
+                date_on_sale_from=request.POST.get('details-0-general-0-date_on_sale_from') or None,
+                date_on_sale_to=request.POST.get('details-0-general-0-date_on_sale_to') or None,
+                status_imp=request.POST.get('details-0-general-0-status_imp'),
+                class_imp=request.POST.get('details-0-general-0-class_imp'),
+            )
+
+            #Step 3: Saving the Inventario data.
+            inventario, created = InventarioDetail.objects.get_or_create(
+                destination_detail=DestinationDetail.objects.get(id=detail.id),
+                sku='MIPROPIA',
+                manager=True if request.POST.get('details-0-inventario-0-manager') == 'on' else False,
+                quantity=request.POST.get('ls-0-inventario-0-quantity'),
+                reserva=request.POST.get('details-0-inventario-0-reserva'),
+                umb_exist=request.POST.get('details-0-inventario-0-umb_exist'),
+                sold_individually=True if request.POST.get('details-0-inventario-0-sold_individually') == 'on' else False,
+            )
+
+            #Step 4: Saving the Booking preference data.
+            booking, created = BookingDetail.objects.get_or_create(
+                destination_detail=DestinationDetail.objects.get(id=detail.id),
+                start_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-start_date]'),
+                end_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-end_date]'),
+                days=request.POST.get('booking_form[booking_form][0][details-0-booking-0-days]'),
+                number_ticket=request.POST.get('booking_form[booking_form][0][details-0-booking-0-number_ticket]'),
+                special_price=request.POST.get('booking_form[booking_form][0][details-0-booking-0-special_price_0]'),
+                is_active='1',
+            )
+
+        except BaseException:
+            print("Destination can not be created/updated")
+            return HttpResponseRedirect('destinations:create')
+
         else:
-            return self.form_invalid(
-                form, tour_data_inlineformset, header_inlineformset,
-                destination_detail_inlineformset)
-
-    def form_valid(
-            self, form, tour_data_inlineformset, header_inlineformset,
-            destination_detail_inlineformset):
-        self.object = form.save()
-
-        tour_data_inlineformset.instance = self.object
-        self.inline_tour_data_object = tour_data_inlineformset.save()
-        header_inlineformset.instance = self.object
-        self.inline_header_object = header_inlineformset.save()
-        destination_detail_inlineformset.instance = self.object
-        self.inline_destination_detail_object = destination_detail_inlineformset.save()
-
-        return HttpResponseRedirect(self.get_success_url())
-
-    def form_invalid(
-            self, form, tour_data_inlineformset, header_inlineformset,
-            destination_detail_inlineformset):
-        # self.add_error_message(self.get_error_message())
-        kwargs = {
-            'form': form,
-            'tour_data_inlineformset': tour_data_inlineformset,
-            'header_inlineformset': header_inlineformset,
-            'destination_detail_inlineformset': destination_detail_inlineformset}
-        return self.render_to_response(self.get_context_data(**kwargs))
+            return HttpResponseRedirect(self.success_url)
 
 
 class DestinationCreateView(BaseDestinationView, CreateView):
