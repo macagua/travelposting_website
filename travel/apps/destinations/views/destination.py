@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.http import QueryDict
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
 from apps.accounts.models import CustomerUser
@@ -166,9 +167,13 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             )
 
             #Step 3: Saving the Inventario data.
+            import ipdb;ipdb.set_trace()
+            datedigit = (dt.datetime.now()).strftime('%y')
+            count_dest = str(Destination.objects.filter(user=request.POST.get('user')).count())
+            sku_destination = (datedigit + '0' + count_dest + destination.name[:4].upper())
             inventario, created = InventarioDetail.objects.get_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
-                sku='MIPROPIA',
+                sku=sku_destination,
                 manager=True if request.POST.get('details-0-inventario-0-manager') == 'on' else False,
                 quantity=request.POST.get('ls-0-inventario-0-quantity'),
                 reserva=request.POST.get('details-0-inventario-0-reserva'),
@@ -189,7 +194,7 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
 
         except BaseException:
             print("Destination can not be created/updated")
-            return HttpResponseRedirect('destinations:create')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
         else:
             return HttpResponseRedirect(self.success_url)
