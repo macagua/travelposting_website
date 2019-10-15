@@ -15,8 +15,15 @@ register = template.Library()
 
 @register.inclusion_tag('services/destination/destinations.html', takes_context=True)
 def destinations_list(context):
-    list_destination = Destination.objects.filter(is_deleted=False, is_published=True)
-    list_destinations = list_destination[:4]
+    rendered_list = []
+    list_destination = Destination.objects.filter(is_deleted=False, is_published=True).order_by('?')
+    for destination in list_destination:
+        if destination.first_pic != None:
+            rendered_list.append(destination)
+            if len(rendered_list) == 4:
+                break
+
+    list_destinations = rendered_list
     return {
         'list': list_destinations,
         'request': context.request,

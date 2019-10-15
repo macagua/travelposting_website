@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.http import QueryDict
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
 from apps.accounts.models import CustomerUser
@@ -137,7 +138,7 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
     def post(self, request, *args, **kwargs):
         try:
             #Step 1: Saving destination data.
-            destination, created = Destination.objects.get_or_create(
+            destination, created = Destination.objects.update_or_create(
                 user=CustomerUser.objects.get(id=request.POST.get('user')),
                 name=request.POST.get('name'),
                 short_description=request.POST.get('short_description'),
@@ -155,7 +156,7 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             detail, created = DestinationDetail.objects.get_or_create(destination=destination)
 
             #Step 2: Saving DestinationDetail data.
-            general_detail, create = GeneralDetail.objects.get_or_create(
+            general_detail, create = GeneralDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
                 regular_price=request.POST.get('details-0-general-0-regular_price_0'),
                 sale_price=request.POST.get('details-0-general-0-sale_price_0'),
@@ -166,9 +167,11 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             )
 
             #Step 3: Saving the Inventario data.
-            inventario, created = InventarioDetail.objects.get_or_create(
+            datedigit = (dt.datetime.now()).strftime('%y')
+            count_dest = str(Destination.objects.filter(user=request.POST.get('user')).count())
+            sku_destination = (datedigit + '0' + count_dest + destination.name[:4].upper())
+            inventario, created = InventarioDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
-                sku='MIPROPIA',
                 manager=True if request.POST.get('details-0-inventario-0-manager') == 'on' else False,
                 quantity=request.POST.get('ls-0-inventario-0-quantity'),
                 reserva=request.POST.get('details-0-inventario-0-reserva'),
@@ -176,8 +179,12 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
                 sold_individually=True if request.POST.get('details-0-inventario-0-sold_individually') == 'on' else False,
             )
 
+            #Set the new sku.
+            inventario.sku=sku_destination
+            inventario.save()
+
             #Step 4: Saving the Booking preference data.
-            booking, created = BookingDetail.objects.get_or_create(
+            booking, created = BookingDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
                 start_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-start_date]'),
                 end_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-end_date]'),
@@ -189,7 +196,7 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
 
         except BaseException:
             print("Destination can not be created/updated")
-            return HttpResponseRedirect('destinations:create')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
         else:
             return HttpResponseRedirect(self.success_url)
