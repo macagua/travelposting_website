@@ -2,6 +2,12 @@
 <!-- Navigation -->
 <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
     <ul class="navbar-nav u-header__navbar-nav">
+        <li class="nav-item u-header__nav-item d-block d-sm-none">
+            <a class="nav-link u-header__nav-link" href="{% url 'accounts:login' %}">{% trans "Ingresa" %}</a>
+        </li>
+        <li class="nav-item u-header__nav-item d-block d-sm-none">
+            <a class="nav-link u-header__nav-link" href="{% url 'accounts:register' %}">{% trans "Register" %}</a>
+        </li>
         {% for child in children %}
         <!-- no child pages  -->
         {% if child.is_leaf_node %}
