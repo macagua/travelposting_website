@@ -4,7 +4,7 @@
 
 {% block css %}
   {{ block.super }}
-  {{ form.media.css }}
+  {{ form_map.media.css }}
   <link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
   <link href="{% static "inspinia/js/plugins/dataTables/datatables.min.css" %}" rel="stylesheet">
   <link href="{% static "inspinia/js/plugins/toastr/toastr.min.css" %}" rel="stylesheet">
@@ -87,12 +87,10 @@
                               {{form_map.description_map}}
                           </div>
                       </div>
-                      <div class="col-md-12">
-                          <div class="form-group">
+                      <div class="col-md-12 col-lg-12 form-group">
                               <label class="font-normal">{% trans "Generate  your map"%}</label>
-                              {{form_map.media}}
+                              {{form_map.media.js}}
                               {{form_map.map_destinie}}
-                          </div>
                       </div>
                     </div>
           </div>
