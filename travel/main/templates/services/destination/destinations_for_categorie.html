@@ -1,3 +1,5 @@
+
+
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags humanize %}
 {% block title %}{% trans 'Categories' %}{% endblock title %}
@@ -57,41 +59,40 @@
 <!-- Categories & Filters Section -->
 <div class="container space-3 space-md-3 space-lg-3 space-bottom-lg-3">
     <div class="row">
-            <!-- Sorting -->
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6 mb-3 mb-lg-0">
-                    <span class="text-secondary font-size-1 font-weight-normal ml-1">
-                    {{lista_destinos.count}} {% trans "Destinations"%}
-                    </span>
-                </div>
-                <div class="col-lg-6 align-self-lg-end text-lg-right">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <!-- Select -->
-                            <select id="FilterDestinies" style="width:100%" class="custom-select dropdown-select">
-                                <option value="all">{% trans "Default Order" %}</option>
-                                <option value="popularity:asc">{% trans "Sort by popularity" %}</option>
-                                <option value="average:asc">{% trans "Sort by average ranking"%}</option>
-                                <option value="datepublished:desc">{% trans "Sort by last"%}</option>
-                                <option value="price:desc">{% trans "Sort by price: Low to High"%}</option>
-                                <option value="price:asc">{% trans "Sort by price: High to Low"%}</option>
-                            </select>
-                            <!-- End Select -->
-                        </li>
-                    </ul>
-                </div>
+        <!-- Sorting -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-3 mb-lg-0">
+                <span class="text-secondary font-size-1 font-weight-normal ml-1">
+                {{lista_destinos.count}} {% trans "Destinations"%}
+                </span>
             </div>
-            <!-- End Sorting -->
-            <div class="py-3"></div>&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <nav>
-                <ul class="controls-pagination pagination justify-content-between align-items-center">
-                    <div class="mixitup-page-list"></div>
+            <div class="col-lg-6 align-self-lg-end text-lg-right">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <!-- Select -->
+                        <select id="FilterDestinies" style="width:100%" class="custom-select dropdown-select">
+                            <option value="all">{% trans "Default Order" %}</option>
+                            <option value="popularity:asc">{% trans "Sort by popularity" %}</option>
+                            <option value="average:asc">{% trans "Sort by average ranking"%}</option>
+                            <option value="datepublished:desc">{% trans "Sort by last"%}</option>
+                            <option value="price:desc">{% trans "Sort by price: Low to High"%}</option>
+                            <option value="price:asc">{% trans "Sort by price: High to Low"%}</option>
+                        </select>
+                        <!-- End Select -->
+                    </li>
                 </ul>
-            </nav>
-            <input type="hidden" class="column-counter"/>
+            </div>
+        </div>
+        <!-- End Sorting -->
+        <div class="py-3"></div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <nav>
+            <ul class="controls-pagination pagination justify-content-between align-items-center">
+                <div class="mixitup-page-list"></div>
+            </ul>
+        </nav>
+        <input type="hidden" class="column-counter"/>
         <div class="col-lg-9">
-
             <!-- Products -->
             <div id="list-destinies" class="row mx-n2 mb-2">
                 {%for destino in lista_destinos %}
@@ -103,22 +104,31 @@
                     >
                     <!-- Destino Card -->
                     <article class="card shadow h-100">
-                        <img class="card-img-top" src="{{destino.first_pic}}" alt="{{destino.name}}">
+                        <div class="js-slick-carousel u-slick"
+                            data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+                            data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
+                            data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4">
+                            {% for foto in destino.photos %}
+                            <div class="js-slide bg-img-hero-center card-img-top" style="background-image: url(/main/media/{{foto.image}}); ">
+                                <div class="space-5">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
                         <div class="card-body p-5">
                             {% for category in destino.categorie.all %}
-                                <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="/category/{{ category|lower }}/">{{category.name}}</a>
+                            <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="/category/{{ category|lower }}/">{{category.name}}</a>
                             {% endfor %}
                             <div class="d-block">
-                            <h3 class="h4">{{ destino.name }}</h3>
-                            <div class="ml-3">
-                              <span class="font-weight-normal"><strong>{{destino.list_prices.sale_price}}</strong></span>
-                            </div>
+                                <h3 class="h4">{{ destino.name }}</h3>
+                                <div class="ml-3">
+                                    <span class="font-weight-normal"><strong>{{destino.list_prices.sale_price}}</strong></span>
+                                </div>
                                 {{ destino.short_description|striptags | truncatechars:120 }}
                             </div>
                             <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See details"%}</a>
-                          </div>
+                        </div>
                         <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
-
                         </div>
                     </article>
                     <!-- End Desrino Card -->
@@ -126,7 +136,6 @@
                 {% endfor%}
             </div>
             <!-- End Destinies -->
-
             <!-- Divider -->
             <div class="d-lg-none">
                 <hr class="my-11">
@@ -134,42 +143,39 @@
             <!-- End Divider -->
         </div>
         <!-- Filters -->
-
         <div class="col-lg-3">
-                <div class="border-bottom pb-4 mb-4">
-                    <h4 class="h6 mb-3">{% trans "what is your budget?" %}</h4>
-                    <!-- Range Slider -->
-                    <input class="js-range-slider" type="text"
-                        data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
-                        data-type="double"
-                        data-grid="true"
-                        data-hide-from-to="false"
-                        data-prefix="$"
-                        data-min="0"
-                        data-max="{{range_max.regular_price__max|floatformat:0}}"
-                        data-from="{{range_min.regular_price__min|floatformat:0}}"
-                        data-to="{{range_max.regular_price__max|floatformat:0}}"
-                        data-result-min="#rangeSliderMinPrice"
-                        data-result-max="#rangeSliderMaxPrice">
-                    <div class="d-flex justify-content-between mt-4">
-                        <input type="text" class="form-control form-control-sm max-width-10" id="rangeSliderMinPrice">
-                        <input type="text" class="form-control form-control-sm max-width-10 mt-0" id="rangeSliderMaxPrice">
-                    </div>
-                    <!-- End Range Slider -->
+            <div class="border-bottom pb-4 mb-4">
+                <h4 class="h6 mb-3">{% trans "what is your budget?" %}</h4>
+                <!-- Range Slider -->
+                <input class="js-range-slider" type="text"
+                    data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
+                    data-type="double"
+                    data-grid="true"
+                    data-hide-from-to="false"
+                    data-prefix="$"
+                    data-min="0"
+                    data-max="{{range_max.regular_price__max|floatformat:0}}"
+                    data-from="{{range_min.regular_price__min|floatformat:0}}"
+                    data-to="{{range_max.regular_price__max|floatformat:0}}"
+                    data-result-min="#rangeSliderMinPrice"
+                    data-result-max="#rangeSliderMaxPrice">
+                <div class="d-flex justify-content-between mt-4">
+                    <input type="text" class="form-control form-control-sm max-width-10" id="rangeSliderMinPrice">
+                    <input type="text" class="form-control form-control-sm max-width-10 mt-0" id="rangeSliderMaxPrice">
                 </div>
-                <button id="filter_with_price" type="button" class="btn btn-sm btn-block btn-primary transition-3d-hover">{% trans "filter to my budget"%}</button>
-
-                <div class="border-bottom pb-4 mb-4 mt-4">
-                    <h4 class="h6 mb-3">{% trans "Category"%}</h4>
-                    {% simple_list_categorie as list_categories%}
-                    {% for categorie in list_categories%}
-                        <div class="form-group d-flex align-items-center justify-content-between font-size-1 text-lh-md text-secondary mb-1">
-                        <label class="custom-control text-lh-md" for="category{{categorie.alias}}"><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{{categorie.name}}</a></label>
-                        <small><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{% found_categorie categorie.alias %}</a></small>
-                        </div>
-                    {%endfor%}
+                <!-- End Range Slider -->
+            </div>
+            <button id="filter_with_price" type="button" class="btn btn-sm btn-block btn-primary transition-3d-hover">{% trans "filter to my budget"%}</button>
+            <div class="border-bottom pb-4 mb-4 mt-4">
+                <h4 class="h6 mb-3">{% trans "Category"%}</h4>
+                {% simple_list_categorie as list_categories%}
+                {% for categorie in list_categories%}
+                <div class="form-group d-flex align-items-center justify-content-between font-size-1 text-lh-md text-secondary mb-1">
+                    <label class="custom-control text-lh-md" for="category{{categorie.alias}}"><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{{categorie.name}}</a></label>
+                    <small><a href="{%if categorie.alias == active_alias %}#{%else%}{% url 'view_category' categorie.alias %}{%endif%}">{% found_categorie categorie.alias %}</a></small>
                 </div>
-
+                {%endfor%}
+            </div>
         </div>
         <!-- End Filters -->
     </div>
@@ -202,7 +208,7 @@
                   else
                     mixer.sort(this.value);
               });
-
+    
               $("#filter_with_price").on('click', function(event) {
                 event.preventDefault();
                 var collection = Array.from(containerEl.querySelectorAll('.mix'));
@@ -218,7 +224,8 @@
                             //console.log(state.activeFilter.collection.length); // 22
                      });
               });
-
+    
     
 </script>
 {% endblock extrajs %}
+
