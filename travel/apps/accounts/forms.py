@@ -4,7 +4,6 @@ from django_registration.forms import RegistrationForm as BaseRegistrationForm
 from apps.accounts.models import CustomerUser
 from apps.landing_page.models import Plan
 #from tour.payments.paypal.resources import Subscription
-from django.contrib.auth import authenticate
 from apps.payments.models.paypal import Coupon
 from apps.utils.forms import BaseBootstrapForm, FieldKwargsMeta
 from django.contrib.auth.forms import (
