@@ -307,7 +307,22 @@ class GeneralDetailForm(BaseBootstrapForm, forms.ModelForm):
                 'class':'form-control money'
                 }),
             'date_on_sale_from': DatePickerInput(format='%Y-%m-%d'),
-            'date_on_sale_to': DatePickerInput(format='%Y-%m-%d')
+            'date_on_sale_to': DatePickerInput(
+                format='%Y-%m-%d',
+                attrs ={
+                    'required':True,
+
+                },
+                options={
+                    "showClose": True,
+                    "showClear": True,
+                    "showTodayButton": True,
+                    "widgetPositioning": {
+                        "horizontal":"auto",
+                        "vertical":"bottom",
+                    },
+                }
+            )
         }
 
 #Setting the inline.
