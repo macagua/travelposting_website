@@ -424,8 +424,7 @@ GOOGLE_MAPS_API_KEY = "AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo"
 MAP_WIDGETS = {
     "GooglePointFieldWidget": (
         ("zoom", 15),
-        ("mapCenterLocationName", "berlin"),
-        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'de'}}),
+        ("mapCenterLocationName", "london"),
         ("markerFitZoom", 12),
     ),
     "GOOGLE_MAP_API_KEY": GOOGLE_MAPS_API_KEY,
