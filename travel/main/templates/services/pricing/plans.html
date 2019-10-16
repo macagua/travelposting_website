@@ -1,132 +1,120 @@
+
 {%load i18n destinations_tags staticfiles mptt_tags landing_extra %}
-<!-- Pricing Section -->
-<div class="position-relative mt-n23 z-index-2">
-    <div class="container">
-        <div class="space-bottom-2 space-bottom-md-3">
-            <!-- Pricing Carousel -->
-            <div id="pricingMonthly" data-target-group="idPricing">
-                <div class="js-slick-carousel u-slick u-slick--gutters-2 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="4" data-adaptive-height="true" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
-                    &quot;breakpoint&quot;: 1200,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 3
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 992,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 2
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 768,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 1
-                    }
-                    }, {
-                    &quot;breakpoint&quot;: 554,
-                    &quot;settings&quot;: {
-                    &quot;slidesToShow&quot;: 1
-                    }
-                    }]">
-                    <div class="slick-list draggable">
-                        <div class="slick-track" style="opacity: 1; width: 1128px; transform: translate3d(0px, 0px, 0px);">
-                            {% for plan in plans %}
-                            <div class="js-slide slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <h3 class="h6 text-primary mb-3">
-                                        {{ plan }}</h4>
-                                        {% for price in plan.price.all %}
+<div class="space-bottom-2 space-bottom-md-3">
+    <!-- Pricing Carousel -->
+    <div id="pricingMonthly" data-target-group="idPricing">
+        <div class="js-slick-carousel u-slick u-slick--gutters-2 z-index-2 slick-initialized slick-slider slick-dotted" data-slides-show="4" data-adaptive-height="true" data-slides-scroll="1" data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive="[{
+            &quot;breakpoint&quot;: 1200,
+            &quot;settings&quot;: {
+            &quot;slidesToShow&quot;: 3
+            }
+            }, {
+            &quot;breakpoint&quot;: 992,
+            &quot;settings&quot;: {
+            &quot;slidesToShow&quot;: 2
+            }
+            }, {
+            &quot;breakpoint&quot;: 768,
+            &quot;settings&quot;: {
+            &quot;slidesToShow&quot;: 1
+            }
+            }, {
+            &quot;breakpoint&quot;: 554,
+            &quot;settings&quot;: {
+            &quot;slidesToShow&quot;: 1
+            }
+            }]">
+            <div class="slick-list draggable">
+                <div class="slick-track" style="opacity: 1; width: 1128px; transform: translate3d(0px, 0px, 0px);">
+                    {% for plan in plans %}
+                    <div class="js-slide slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
+                        <!-- Pricing -->
+                        <div class="card transition-3d-hover mt-1">
+                            <!-- Header -->
+                           <header class="card-header text-center p-5">
+                                <h3 class="h6 text-primary mb-3">
+                                    {{ plan }}</h4>
+                                    {% for price in plan.price.all %}
                                         <span class="{% if price.id|divisibleby:2 %}anual{% else %}mensual{% endif %}">
                                         <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
                                         <span class="d-block text-secondary font-size-1"></span>{% trans "Monthly" %}</span>
                                         </span>
                                         {% endfor %}
-                                    </header>
-                                    <!-- End Header -->
+                            </header>
+                            <!-- End Header -->
                                     <!-- Content -->
                                     <div class="card-body p-5">
-                                        <center>
-                                            <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="collapse" data-target="#detail-{{ plan.id }}">{% trans 'See plan details' %}</button>
-                                        </center>
-                                        <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                            {% with features=plan|show_features %}
-                                            {% for node in features %}
-                                            {% if node.is_leaf_node %}
-                                            <li class="list-group-item">{{ node }}</li>
-                                            {% else %}
-                                            <li id="detail-{{ plan.id }}" class="collapse list-group-item">
-                                                {{ node }}
-                                                <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                                    {% for child in node|get_children_plan:plan %}
-                                                    <li class="list-group-item">
-                                                        {{ child }}
-                                                    </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
-                                        {% endif %}
-                                        {% endfor %}
-                                        {% endwith %}
-                                        </span>
-                                        </ul>
-                                        <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0" href="/es/accounts/register/{{ plan.id }}">{% trans 'Register' %}</a>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
-                            {% endfor %}
-                            <div class="js-slide slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
-                                <!-- Pricing -->
-                                <div class="card transition-3d-hover mt-1">
-                                    <!-- Header -->
-                                    <header class="card-header text-center p-5">
-                                        <span class="d-block">
-                                        <span class="h3 text-dark font-weight-normal">
-                                        {% trans 'Contact Us' %}
-                                        </span>
-                                        <span class="d-block text-secondary font-size-1">{% trans "Limitless" %}</span>
-                                        </span>
-                                    </header>
-                                    <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
-                                              <path class="fill-primary" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
-                                                  C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
-                                                  c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
-                                                  C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z">
-                                                </path>
-                                        </svg>
-                                        </br>
-                                        <p>
-                                            {% blocktrans %}
-                                                if what you see doesn't appeal to you because you want to create a plan tailored to your needs,
-                                                contact us and we'll work that out together.
-                                            {% endblocktrans %}
-                                        </p>
-                                        <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="mailto:hamburgo@travelposting.com"tabindex="0">Contact Us</a>
-                                    </div>
-                                    <!-- End Content -->
-                                </div>
-                                <!-- End Pricing -->
-                            </div>
+                                            <center>
+                                                <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="collapse" data-target="#detail-{{ plan.id }}">{% trans 'See plan details' %}</button>
+                                            </center>
+                                            <ul class=" list-group list-group-flush list-group-borderless mb-4">
+                                                {% with features=plan|show_features %}
+                                                {% for node in features %}
+                                                {% if node.is_leaf_node %}
+                                                <li id="detail-{{ plan.id }}" class="list-group-item  collapse">{{ node }}</li>
+                                                {% else %}
+                                                <li id="detail-{{ plan.id }}" class=" list-group-item collapse">
+                                                    {{ node }}
+                                                    <ul class="list-group list-group-flush list-group-borderless mb-4">
+                                                        {% for child in node|get_children_plan:plan %}
+                                                        <li class="list-group-item">
+                                                            {{ child }}
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% endif %}
+                                            {% endfor %}
+                                            {% endwith %}
+                                            </span>
+                                            </ul>
+                                            <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0" href="/es/accounts/register/{{ plan.id }}">{% trans 'Register' %}</a>
+                                        </div>
+                                        <!-- End Content -->
                         </div>
+                        <!-- End Pricing -->
                     </div>
-                    <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
-                        <li class="slick-active slick-current" role="presentation"><span></span></li>
-                    </ul>
+                    {% endfor %}
+                    <div class="js-slide slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 266px; height: auto;" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03">
+                            <!-- Pricing -->
+                            <div class="card transition-3d-hover mt-1">
+                                <!-- Header -->
+                                <header class="card-header text-center p-5">
+                                    <span class="d-block">
+                                    <span class="h3 text-dark font-weight-normal">
+                                    {% trans 'Contact Us' %}
+                                    </span>
+                                    <span class="d-block text-secondary font-size-1">{% trans "Limitless" %}</span>
+                                    </span>
+                                </header>
+                                <!-- End Header -->
+                                <!-- Content -->
+                                <div class="card-body p-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
+                                          <path class="fill-primary" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
+                                              C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
+                                              c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
+                                              C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z">
+                                            </path>
+                                    </svg>
+                                    </br>
+                                    <p>
+                                        {% blocktrans %}<br>
+                                            Contact us and we'll work that out together.
+                                        {% endblocktrans %}
+                                    </p>
+                                    <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="mailto:hamburgo@travelposting.com"tabindex="0">Contact Us</a>
+                                </div>
+                                <!-- End Content -->
+                            </div>
+                            <!-- End Pricing -->
+                        </div>
                 </div>
             </div>
-            <!-- End Pricing Carousel -->
+            <ul class="js-pagination d-lg-none text-center u-slick__pagination mt-7 mb-0" role="tablist">
+                <li class="slick-active slick-current" role="presentation"><span></span></li>
+            </ul>
         </div>
-        <!-- Divider -->
-        <div class="w-80 mx-auto">
-            <hr class="my-0">
-        </div>
-        <!-- End Divider -->
     </div>
+    <!-- End Pricing Carousel -->
 </div>
-<!-- End Pricing Section -->
-
