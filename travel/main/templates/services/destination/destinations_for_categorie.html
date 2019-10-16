@@ -126,9 +126,9 @@
                                 </div>
                                 {{ destino.short_description|striptags | truncatechars:120 }}
                             </div>
-                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See details"%}</a>
                         </div>
                         <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
+                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See details"%}</a>
                         </div>
                     </article>
                     <!-- End Desrino Card -->
