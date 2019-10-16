@@ -211,6 +211,7 @@
                     <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes"%}</span>
                 </a>
             </div>
+            {% if destino.itinerario2 %}
             <!-- Accordion -->
             <div id="basicsAccordion">
   <!-- Card -->
@@ -238,9 +239,9 @@
         </div>
         </div>
       </div>
-                  
-                  </div>
-            <!-- End Accordion -->
+    </div>
+    <!-- End Accordion -->
+        {% endif %}
             <div class="mb-4">
                 <button type="button"  data-toggle="modal" data-target="#BookModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
             </div>
