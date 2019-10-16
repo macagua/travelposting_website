@@ -8,6 +8,40 @@ from apps.accounts.models import CustomerUser
 from apps.destinations.fields import DaysCommaField
 from apps.destinations.utils import TEMPLATE_DESCRIPTION
 
+TEMPLATE_DESCRIPTION = """
+<strong>Quienes somos</strong><br><br>
+
+<p><b>Por favor ingrese aquí su texto...</b></p><br><br>
+
+<strong>Misión</strong><br><br>
+
+<p><b>Por favor ingrese aquí su texto...</b></p><br><br>
+
+<table class="table table-bordered tours-tabs__table" style="width: 100%px;">
+<tbody>
+<tr>
+<td style="width: 213px;"><strong>SALIDA / RETORNO</strong></td>
+<td style="width: 574.233px;"><b>Ingrese aquí la salida...</b></td>
+</tr>
+<tr>
+<td style="width: 213px;"><strong>HORA DE SALIDA</strong></td>
+<td style="width: 574.233px;"><b>Ingrese aquí la hora de salida...</b></td>
+</tr>
+<tr>
+<td style="width: 213px;"><strong>HORA DE LLEGADA</strong></td>
+<td style="width: 574.233px;"><b>Ingrese aquí la hora de llegada...</b></td>
+</tr>
+<tr>
+<td style="width: 213px;"><strong>NR. DE TOUR PARA RESERVAS</strong></td>
+<td style="width: 574.233px;"><b>Ingrese aquí el nro de tour...</b></td>
+</tr>
+<tr>
+<td style="width: 213px;"><strong>TRASLADO DESDE </strong></td>
+<td style="width: 574.233px;"><strong><b>Ingrese aquí el traslado...</b></strong></td>
+</tr>
+</tbody>
+</table>
+"""
 
 class Categorie(models.Model):
     name = models.CharField(
@@ -71,6 +105,7 @@ class Destination(models.Model):
         _('description'),
         blank=True,
         null=True,
+        default=TEMPLATE_DESCRIPTION,
     )
 
     departure_date = models.DateField(
@@ -691,6 +726,8 @@ class BookingDetail(models.Model):
         decimal_places=2,
         default_currency='USD',
         default=Money(0, 'USD'),
+        blank=True,
+        null=True,
     )
 
     mode = models.CharField(
@@ -720,8 +757,6 @@ class BookingDetail(models.Model):
         ordering = ('start_date', 'end_date')
         verbose_name_plural = _('Booking details')
         verbose_name = _('Booking detail')
-
-
 
 
 class SearchLanding(models.Model):
@@ -841,16 +876,20 @@ class Booking(models.Model):
         verbose_name_plural = _("Booking's")
         verbose_name = _('Booking')
 
+
 class BookingStats(models.Model):
-    booking = models.ForeignKey(Booking,
-                on_delete=False,
-                verbose_name=_("Booking")
+    booking = models.ForeignKey(
+        Booking,
+        verbose_name=_("Booking"),
+        on_delete=False,
     )
+
     user = models.ForeignKey(
         CustomerUser,
         on_delete=False,
         verbose_name=_("Users"),
     )
+
     date = models.DateTimeField(_("Datetime"),auto_now=True)
 
     def __str__(self):
@@ -859,4 +898,3 @@ class BookingStats(models.Model):
     class Meta:
         verbose_name_plural = _("Booking Stats")
         verbose_name = _("Booking Stast")
-    
