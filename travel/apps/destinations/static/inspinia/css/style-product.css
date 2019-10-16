@@ -44,3 +44,18 @@
 .product-input-group-addon{
     display: table-cell;
 }
+
+
+.mw-wrap {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 80%;
+    min-width: 500px;
+    margin-bottom: 10px;
+    display: contents;
+    overflow: hidden;
+}
+
+.pac-container {
+    z-index: 2050;
+
+}
