@@ -143,9 +143,9 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
                 name=request.POST.get('name'),
                 short_description=request.POST.get('short_description'),
                 description=request.POST.get('description'),
-                departure_date=dt.datetime.strptime(request.POST.get('departure_date'), '%M/%d/%Y') or None,
+                departure_date=dt.datetime.strptime(request.POST.get('departure_date'), '%M/%d/%Y') if request.POST.get('departure_date') !='' else None,
                 departure_time=request.POST.get('departure_time') or None,
-                arrival_date=dt.datetime.strptime(request.POST.get('arrival_date'), '%M/%d/%Y') or None,
+                arrival_date=dt.datetime.strptime(request.POST.get('arrival_date'), '%M/%d/%Y') if request.POST.get('arrival_date') != '' else None,
                 arrival_time=request.POST.get('arrival_time') or None,
             )
 
@@ -173,7 +173,7 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             inventario, created = InventarioDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
                 manager=True if request.POST.get('details-0-inventario-0-manager') == 'on' else False,
-                quantity=request.POST.get('ls-0-inventario-0-quantity'),
+                quantity=request.POST.get('details-0-inventario-0-quantity'),
                 reserva=request.POST.get('details-0-inventario-0-reserva'),
                 umb_exist=request.POST.get('details-0-inventario-0-umb_exist'),
                 sold_individually=True if request.POST.get('details-0-inventario-0-sold_individually') == 'on' else False,
@@ -186,11 +186,11 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             #Step 4: Saving the Booking preference data.
             booking, created = BookingDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
-                start_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-start_date]'),
-                end_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-end_date]'),
-                days=request.POST.get('booking_form[booking_form][0][details-0-booking-0-days]'),
-                number_ticket=request.POST.get('booking_form[booking_form][0][details-0-booking-0-number_ticket]'),
-                special_price=request.POST.get('booking_form[booking_form][0][details-0-booking-0-special_price_0]'),
+                start_date=request.POST.get('details-0-booking-0-start_date'),
+                end_date=request.POST.get('details-0-booking-0-end_date'),
+                days=request.POST.get('details-0-booking-0-days'),
+                number_ticket=request.POST.get('details-0-booking-0-number_ticket'),
+                special_price=request.POST.get('details-0-booking-0-special_price_0'),
                 is_active='1',
             )
 
