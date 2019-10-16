@@ -141,16 +141,17 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             destination, created = Destination.objects.update_or_create(
                 user=CustomerUser.objects.get(id=request.POST.get('user')),
                 name=request.POST.get('name'),
-                short_description=request.POST.get('short_description'),
-                description=request.POST.get('description'),
-                departure_date=dt.datetime.strptime(request.POST.get('departure_date'), '%M/%d/%Y') or None,
-                departure_time=request.POST.get('departure_time') or None,
-                arrival_date=dt.datetime.strptime(request.POST.get('arrival_date'), '%M/%d/%Y') or None,
-                arrival_time=request.POST.get('arrival_time') or None,
             )
 
             #Set the categories.
             destination.categorie.set(request.POST.get('categorie'))
+            destination.short_description=request.POST.get('short_description')
+            destination.description=request.POST.get('description')
+            destination.departure_date=dt.datetime.strptime(request.POST.get('departure_date'), '%M/%d/%Y') if request.POST.get('departure_date') !='' else None
+            destination.departure_time=request.POST.get('departure_time') or None
+            destination.arrival_date=dt.datetime.strptime(request.POST.get('arrival_date'), '%M/%d/%Y') if request.POST.get('arrival_date') != '' else None
+            destination.arrival_time=request.POST.get('arrival_time') or None
+            destination.save()
 
             #creating the destination detail object.
             detail, created = DestinationDetail.objects.get_or_create(destination=destination)
@@ -158,13 +159,16 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             #Step 2: Saving DestinationDetail data.
             general_detail, create = GeneralDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
-                regular_price=request.POST.get('details-0-general-0-regular_price_0'),
-                sale_price=request.POST.get('details-0-general-0-sale_price_0'),
-                date_on_sale_from=request.POST.get('details-0-general-0-date_on_sale_from') or None,
-                date_on_sale_to=request.POST.get('details-0-general-0-date_on_sale_to') or None,
-                status_imp=request.POST.get('details-0-general-0-status_imp'),
-                class_imp=request.POST.get('details-0-general-0-class_imp'),
             )
+
+            #Updating necessary fields.
+            general_detail.regular_price=request.POST.get('details-0-general-0-regular_price_0')
+            general_detail.sale_price=request.POST.get('details-0-general-0-sale_price_0')
+            general_detail.date_on_sale_from=request.POST.get('details-0-general-0-date_on_sale_from') or None
+            general_detail.date_on_sale_to=request.POST.get('details-0-general-0-date_on_sale_to') or None
+            general_detail.status_imp=request.POST.get('details-0-general-0-status_imp')
+            general_detail.class_imp=request.POST.get('details-0-general-0-class_imp')
+            general_detail.save()
 
             #Step 3: Saving the Inventario data.
             datedigit = (dt.datetime.now()).strftime('%y')
@@ -172,27 +176,30 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
             sku_destination = (datedigit + '0' + count_dest + destination.name[:4].upper())
             inventario, created = InventarioDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
-                manager=True if request.POST.get('details-0-inventario-0-manager') == 'on' else False,
-                quantity=request.POST.get('ls-0-inventario-0-quantity'),
-                reserva=request.POST.get('details-0-inventario-0-reserva'),
-                umb_exist=request.POST.get('details-0-inventario-0-umb_exist'),
-                sold_individually=True if request.POST.get('details-0-inventario-0-sold_individually') == 'on' else False,
             )
 
-            #Set the new sku.
+            #Updating changes and Set the new sku.
+            inventario.manager=True if request.POST.get('details-0-inventario-0-manager') == 'on' else False
+            inventario.quantity=request.POST.get('details-0-inventario-0-quantity')
+            inventario.reserva=request.POST.get('details-0-inventario-0-reserva')
+            inventario.umb_exist=request.POST.get('details-0-inventario-0-umb_exist')
+            inventario.sold_individually=True if request.POST.get('details-0-inventario-0-sold_individually') == 'on' else False
             inventario.sku=sku_destination
             inventario.save()
 
             #Step 4: Saving the Booking preference data.
             booking, created = BookingDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
-                start_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-start_date]'),
-                end_date=request.POST.get('booking_form[booking_form][0][details-0-booking-0-end_date]'),
-                days=request.POST.get('booking_form[booking_form][0][details-0-booking-0-days]'),
-                number_ticket=request.POST.get('booking_form[booking_form][0][details-0-booking-0-number_ticket]'),
-                special_price=request.POST.get('booking_form[booking_form][0][details-0-booking-0-special_price_0]'),
                 is_active='1',
             )
+
+            #Updating fields.
+            booking.start_date=request.POST.get('details-0-booking-0-start_date') if request.POST.get('details-0-booking-0-start_date') != '' else None
+            booking.end_date=request.POST.get('details-0-booking-0-end_date') if request.POST.get('details-0-booking-0-end_date') != '' else None
+            booking.days=request.POST.get('details-0-booking-0-days')
+            booking.number_ticket=request.POST.get('details-0-booking-0-number_ticket') if request.POST.get('details-0-booking-0-number_ticket') != '' else None
+            booking.special_price=request.POST.get('details-0-booking-0-special_price_0') if request.POST.get('details-0-booking-0-special_price') != '' else None
+            booking.save()
 
         except BaseException:
             print("Destination can not be created/updated")
