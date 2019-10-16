@@ -144,6 +144,5 @@ class BookingSaveStat(View):
 
 class UpdateBooking(View):
     def post(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()
         Booking.objects.filter(pk=request.POST.get('id')).update(process_status=True)
         return HttpResponseRedirect('/destinations/booking-list/')
