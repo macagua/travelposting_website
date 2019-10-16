@@ -169,6 +169,7 @@ class Destination(models.Model):
         verbose_name = _("Destino")
         verbose_name_plural = _("Destinos")
         ordering = ('user',)
+        unique_together = ('user', 'name',)
 
     def get_sku(self):
         return f"{self.details.inventario.sku}".upper()
