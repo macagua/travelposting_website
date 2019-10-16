@@ -60,8 +60,13 @@
             </blockquote>
         </div>
         <div class="modal-footer">
+            <form action="{% url "destinations:update-booking" %}" method="POST">{% csrf_token %}
+                <input type="hidden" name="id" value="{{ object.id }}" readonly />
+ 
             <button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Close" %}</button>
-            {% if not object.process_status %}<button type="button" class="btn btn-primary">{% trans "Mark as solved" %}</button>{% endif %}
+            {% if not object.process_status %}<button type="submit" class="btn btn-primary">{% trans "Mark as solved" %}</button>{% endif %}
+            </form>
+
       </div>
     </div>
   </div>

@@ -45,10 +45,12 @@
                             </p>
                         </td>
                         <td>
-                          <a class="btn btn-success btn-sm" data-toggle="modal" data-target="#booking_modal{{object.id}}">
-                            <i class="fa fa-eye"></i>
-                            {% trans 'See full Details' %}
-                          </a>
+                          <form id="bookingsave" method="POST">{% csrf_token %}
+                            <a id="bookingsend" class="btn btn-success btn-sm" data-toggle="modal" data-target="#booking_modal{{object.id}}">
+                              <i class="fa fa-eye"></i>
+                              {% trans 'See full Details' %}
+                            </a>
+                          </form>
                         </td>
                       </tr>
                     {% endfor %}
@@ -72,6 +74,7 @@
   {{ block.super }}
    <script src="{% static "inspinia/js/plugins/dataTables/datatables.min.js" %}"></script>
    <script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
+
   <script>
     $(document).ready(function(){
         $('#tabla-destinos thead tr').clone(true).appendTo( '#tabla-destinos thead' );

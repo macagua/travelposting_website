@@ -123,3 +123,27 @@ class BookingListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         queryset = super(BookingListView, self).get_queryset()
         return queryset.filter(destination__user=self.request.user)
+
+
+class BookingSaveStat(View):
+    def post(self,request):
+        import ipdb; ipdb.set_trace()
+        if form_map.is_valid():
+            if form_map.save() :
+                return JsonResponse({'msg':_('a new map has been added to your destination'),'status':True},
+                    safe=False,
+                )
+        else:
+            return JsonResponse(
+                {
+                'error':mapped_errors_form(form_map),
+                'status':False
+                },
+                safe=False,
+            )
+
+class UpdateBooking(View):
+    def post(self, request, *args, **kwargs):
+        import ipdb; ipdb.set_trace()
+        Booking.objects.filter(pk=request.POST.get('id')).update(process_status=True)
+        return HttpResponseRedirect('/destinations/booking-list/')

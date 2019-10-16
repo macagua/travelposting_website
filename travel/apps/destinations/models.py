@@ -722,6 +722,8 @@ class BookingDetail(models.Model):
         verbose_name = _('Booking detail')
 
 
+
+
 class SearchLanding(models.Model):
     names = models.CharField(
         'Names',
@@ -838,3 +840,23 @@ class Booking(models.Model):
     class Meta:
         verbose_name_plural = _("Booking's")
         verbose_name = _('Booking')
+
+class BookingStats(models.Model):
+    booking = models.ForeignKey(Booking,
+                on_delete=False,
+                verbose_name=_("Booking")
+    )
+    user = models.ForeignKey(
+        CustomerUser,
+        on_delete=False,
+        verbose_name=_("Users"),
+    )
+    date = models.DateTimeField(_("Datetime"),auto_now=True)
+
+    def __str__(self):
+        return f"{self.booking}-{self.user}-{self.date}"
+
+    class Meta:
+        verbose_name_plural = _("Booking Stats")
+        verbose_name = _("Booking Stast")
+    

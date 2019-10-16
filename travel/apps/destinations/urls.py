@@ -18,6 +18,8 @@ from apps.destinations.views.destination import (
 from apps.destinations.views.booking import (
     BookingListView,
     BookingSaveView,
+    BookingSaveStat,
+    UpdateBooking
 )
 
 from apps.destinations.views.maps import (
@@ -113,6 +115,18 @@ urlpatterns = [
         'booking-charts/',
         BookingCharts,
         name='booking-charts',
+    ),
+
+    path(
+        'booking-save/',
+        BookingSaveStat.as_view(),
+        name='booking-save',
+    ),
+
+    path(
+        'update-booking/',
+        UpdateBooking.as_view(),
+        name='update-booking',
     ),
 
     path(
