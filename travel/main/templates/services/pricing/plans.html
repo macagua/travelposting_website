@@ -13,6 +13,7 @@
                             {{ plan }}
                         </h3>
                         {% for price in plan.price.all %}
+                            
                             {% if price %}
                                 <span class="{% if price.id|divisibleby:2 %}anual{% else %}mensual{% endif %}">
                                     <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
@@ -21,7 +22,8 @@
                             {% else %}
                               --
                             {% endif %}
-                        {% endfor %}
+                        {% endfor %}<br>
+                        <span class="text-secondary ml-1 text-warning"><del>$33.99</del> {%trans 'Saved' %}</span>
                     </header>
                     <!-- End Header -->
                     <!-- Content -->
