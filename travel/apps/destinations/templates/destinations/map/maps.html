@@ -180,7 +180,6 @@
         }
         ).on('select2:select', function (e) {
          resetForm()
-         table_map.ajax.url("{% url 'destinations:list-maps' %}?destiny="+e.params.data.id).load()
         });
 
 
