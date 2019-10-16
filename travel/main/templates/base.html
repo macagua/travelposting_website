@@ -37,7 +37,7 @@
         <link href="{% static 'css/flag-icon.min.css'%}" rel="stylesheet">
 
     </head>
-    <body>
+    {% block body %} <body> {% endblock body %}
         {% cms_toolbar %}
         {% block navbar %}
         <header id="header" class="u-header">
