@@ -70,8 +70,8 @@
               </button>
           </div>
           <div class="modal-body">
-                  <form id="form-map">
-                    <div class="row">
+            <div class="row">
+                <form id="form-map">
                       <input type="hidden" name="pk_i" id="pk_i" readonly />
                       {% csrf_token %}
                       <div class="col-md-12">
@@ -88,19 +88,18 @@
                           </div>
                       </div>
                       <div class="col-md-12 col-lg-12 form-group">
-                              <label class="font-normal">{% trans "Generate  your map"%}</label>
-                              {{form_map.media.js}}
-                              {{form_map.map_destinie}}
+                            <label class="font-normal">{% trans "Generate  your map"%}</label>
+                            {{form_map.media.js}}
+                            {{form_map.map_destinie}}
                       </div>
                     </div>
-          </div>
-          <div class="modal-footer">
-              <button id="reset_maps" class="btn btn-danger" type="button" data-dismiss="modal">{% trans "Cancel"%}</button>
-              <button id="create_map" class="btn btn-success" type="submit">{% trans "Add new map"%}</button>
-              <!-- <button style="display:none;" id="update_map" class="btn btn-success" type="submit">{% trans "Update Map"%}</button> -->
-          </div>
-        </form>
-
+                    </div>
+                    <div class="modal-footer">
+                        <button id="reset_maps" class="btn btn-danger" type="button" data-dismiss="modal">{% trans "Cancel"%}</button>
+                        <button id="create_map" class="btn btn-success" type="submit">{% trans "Add new map"%}</button>
+                        <!-- <button style="display:none;" id="update_map" class="btn btn-success" type="submit">{% trans "Update Map"%}</button> -->
+                    </div>
+            </form>
     </div>
   </div>
 </div>
