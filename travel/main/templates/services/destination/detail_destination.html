@@ -190,11 +190,12 @@
                       <span class="font-size-2 font-weight-medium">{{destino.list_prices.sale_price}}</span>
                       <span class="text-secondary ml-2"><del>{{destino.list_prices.regular_price}}</del></span>
                     </li>
+                    {% if destino.departure_date %}
                     <li class="list-inline-item">
                       <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Fecha" %}:</h2>
-                      <span class="font-size-2 font-weight-medium">08/10/1990</span>
-                      
+                      <span class="font-size-2 font-weight-medium">{{ destino.departure_date|date:'d/m/Y' }}</span>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- End Price -->
@@ -210,6 +211,7 @@
                     <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes"%}</span>
                 </a>
             </div>
+            {% if destino.itinerario2 %}
             <!-- Accordion -->
             <div id="basicsAccordion">
   <!-- Card -->
@@ -221,7 +223,7 @@
                     data-target="#basicsCollapseTwo"
                     aria-expanded="false"
                     aria-controls="basicsCollapseTwo">
-                    {% trans "Discover or download our itinerary here" %}    
+                {% trans "Discover or download our itinerary here" %}
               <span class="card-btn-arrow">
                 <span class="fas fa-arrow-down small"></span>
               </span>
@@ -232,14 +234,14 @@
              aria-labelledby="basicsHeadingTwo"
              data-parent="#basicsAccordion">
           <div class="card-body">
-                {{destino.itinerario2.short_description }}<br><br>
-                {{ destino.itinerario2.detail_itinerary }}
+                {{destino.itinerario2.short_description |safe }}<br><br>
+                {{ destino.itinerario2.detail_itinerary |safe }}
         </div>
         </div>
       </div>
-                  
-                  </div>
-            <!-- End Accordion -->
+    </div>
+    <!-- End Accordion -->
+        {% endif %}
             <div class="mb-4">
                 <button type="button"  data-toggle="modal" data-target="#BookModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
             </div>
