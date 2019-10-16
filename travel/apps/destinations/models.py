@@ -227,6 +227,11 @@ class Destination(models.Model):
         .get(tour_data__destination=self.pk)
         return itine
 
+    @property
+    def itinerario2(self):
+        it2 =   Itinerary.objects.get(destination=self.pk)
+        return it2
+
 
     @property
     def list_prices(self):
@@ -400,6 +405,8 @@ class Itinerary(models.Model):
         _('Detail Itinerary'),
     )
 
+    def __str__(self):
+        return f'{self.destination}-{self.short_description}'
 
 class TabData(models.Model):
     tour_data = models.ForeignKey(
