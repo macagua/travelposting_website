@@ -10,51 +10,47 @@
             </button>
         </div>
         <div class="modal-body">
+            <div class="row">
             <form id="form-itinerary">
-            <input type="hidden" name="pk_i" id="pk_i" readonly />
-            {% csrf_token %}
-            <div class="col-md-12">
-            <div class="form-group">
-            <label class="font-normal">{% trans "Destiny"%}</label>
-            <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
-                {% for destiny in destination_list %}
-                    <option value="{{ destiny.id }}"
-                        {% if destiny == current_destiny %}selected="selected"{% endif %}>
-                        {{ destiny.name|capfirst }}
-                    </option>
-                {% endfor %}
-            </select>
-            </div>
-
-            <div id="body_form" class="ibox-content">
-                <div class="row">
+                <input type="hidden" name="pk_i" id="pk_i" readonly />
+                {% csrf_token %}
                 <div class="col-md-12">
                     <div class="form-group">
-                    <label class="font-normal">
-                        {{form.short_description.label}}
-                    </label>
-                    {{form.short_description}}
+                        <label class="font-normal">{% trans "Destiny"%}</label>
+                        <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
+                            {% for destiny in destination_list %}
+                                <option value="{{ destiny.id }}"
+                                    {% if destiny == current_destiny %}selected="selected"{% endif %}>
+                                    {{ destiny.name|capfirst }}
+                                </option>
+                            {% endfor %}
+                        </select>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                    <label class="font-normal">
-                        {{form.detail_itinerary.label}}
-                    </label>
-                    {{form.detail_itinerary|safe}}
-                    </div>
-                </div>
-                </div>
-            </div>
 
+                    <div id="body_form" class="ibox-content">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="font-normal">
+                                        {{form.short_description.label}}
+                                    </label>
+                                    {{form.short_description}}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="font-normal">
+                                        {{form.detail_itinerary.label}}
+                                    </label>
+                                    {{form.detail_itinerary|safe}}
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <button id="create_itinerary" class="btn btn-success pull-right" type="submit">{% trans "create a new itinerary"%}</button>
+                <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
+            </form>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Close" %}</button>
-            <button id="create_itinerary" class="btn btn-success" type="submit">{% trans "create a new itinerary"%}</button>
-            <button style="display:none;" id="update_itinerary" class="btn btn-success" type="submit">{% trans "update itinerary"%}</button>
-      </div>
-    </form>
     </div>
   </div>
 </div>
