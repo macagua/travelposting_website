@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-04 01:37-0400\n"
+"POT-Creation-Date: 2019-10-19 13:22-0400\n"
 "PO-Revision-Date: 2019-10-04 01:39-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,27 +19,52 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: apps/destinations/admin.py:78
+#: apps/destinations/__OLD_VIEW.py:192
+#: apps/destinations/views/destination.py:214
+msgid "Agregar destino"
+msgstr "Agregar destino"
+
+#: apps/destinations/__OLD_VIEW.py:204
+#: apps/destinations/views/destination.py:226
+msgid "Actualizar destino"
+msgstr "Actualizar destino"
+
+#: apps/destinations/__OLD_VIEW.py:316
+#: apps/destinations/views/destination.py:349
+msgid "A new itinerary item has been registered"
+msgstr ""
+
+#: apps/destinations/__OLD_VIEW.py:345
+#: apps/destinations/views/destination.py:378
+msgid "Itinerary information has been updated"
+msgstr ""
+
+#: apps/destinations/__OLD_VIEW.py:383 apps/destinations/views/booking.py:82
+msgid "New Booking registered"
+msgstr ""
+
+#: apps/destinations/__OLD_VIEW.py:401 apps/destinations/admin.py:105
+#: apps/destinations/views/booking.py:100
+msgid "if you want see the admin site https://travelposting.com/admin/ "
+msgstr ""
+
+#: apps/destinations/admin.py:81
 #, fuzzy
 #| msgid "Destinos"
 msgid "Destination was published"
 msgstr "Destinos"
 
-#: apps/destinations/admin.py:86
+#: apps/destinations/admin.py:89
 msgid "Congratulations your destination was published."
 msgstr ""
 
-#: apps/destinations/admin.py:102 apps/destinations/views.py:376
-msgid "if you want see the admin site https://travelposting.com/admin/ "
-msgstr ""
-
-#: apps/destinations/admin.py:114
+#: apps/destinations/admin.py:117
 #, fuzzy
 #| msgid "Sus destinos"
 msgid "publish destinations"
 msgstr "Sus destinos"
 
-#: apps/destinations/admin.py:118
+#: apps/destinations/admin.py:121
 #, fuzzy
 #| msgid "Sus destinos"
 msgid "unpublish destinations"
@@ -86,391 +111,411 @@ msgstr "Sabado"
 msgid "String for storage days of lists"
 msgstr "Cadena para días de almacenamiento de listas"
 
-#: apps/destinations/forms.py:42
+#: apps/destinations/forms.py:53
 msgid "Category"
 msgstr ""
 
-#: apps/destinations/forms.py:47
+#: apps/destinations/forms.py:60
 msgid "Nombre del tour"
 msgstr "Nombre del tour"
 
-#: apps/destinations/forms.py:129
+#: apps/destinations/forms.py:196
 msgid "Option"
 msgstr "Opción"
 
-#: apps/destinations/forms.py:154
+#: apps/destinations/forms.py:221
 #, python-format
 msgid "El tab '%(tab)s' se encuentra duplicado, debe estar una sola vez."
 msgstr "El tab '%(tab)s' se encuentra duplicado, debe estar una sola vez."
 
-#: apps/destinations/forms.py:308 apps/destinations/models.py:64
+#: apps/destinations/forms.py:431 apps/destinations/models.py:99
 msgid "Short description"
 msgstr "Breve descripción (Aconsejable.Max. 150 caracteres)"
 
-#: apps/destinations/models.py:13 apps/destinations/models.py:57
+#: apps/destinations/forms.py:459
+#, fuzzy
+#| msgid "Description"
+msgid "Description for map"
+msgstr "Descripción"
+
+#: apps/destinations/models.py:48 apps/destinations/models.py:92
 msgid "name"
 msgstr "nombre"
 
-#: apps/destinations/models.py:18
+#: apps/destinations/models.py:53
 msgid "Alias"
 msgstr ""
 
-#: apps/destinations/models.py:25 apps/destinations/models.py:291
+#: apps/destinations/models.py:60 apps/destinations/models.py:399
 #, fuzzy
 #| msgid "Short description"
 msgid "Short Description"
 msgstr "Breve descripción (Aconsejable.Max. 150 caracteres)"
 
-#: apps/destinations/models.py:30
+#: apps/destinations/models.py:65
 #, fuzzy
 #| msgid "Imagen"
 msgid "Image"
 msgstr "Imagen"
 
-#: apps/destinations/models.py:35
+#: apps/destinations/models.py:70
 #: apps/destinations/templates/destinations/booking_modal.html:24
 msgid "Status"
 msgstr "Status"
 
-#: apps/destinations/models.py:46
+#: apps/destinations/models.py:81
 msgid "Categorie"
 msgstr ""
 
-#: apps/destinations/models.py:53
+#: apps/destinations/models.py:88
 msgid "Usuario"
 msgstr "Usuario"
 
-#: apps/destinations/models.py:70
+#: apps/destinations/models.py:105
 msgid "description"
 msgstr ""
 "Descripción larga (Coloque la descripción de su destino, alojamiento o "
 "servicio) tome en cuenta la tabla inferior y escriba en el numero de tour, "
-"las iniciales de su tour por ejemplo: Visite MAdrid en Diciembre VMD-0119 el"
-" 01 es el numero del Tour y el 19, el numero del año) "
+"las iniciales de su tour por ejemplo: Visite MAdrid en Diciembre VMD-0119 el "
+"01 es el numero del Tour y el 19, el numero del año) "
 
-#: apps/destinations/models.py:77
+#: apps/destinations/models.py:150
 msgid "is_published"
 msgstr ""
 
-#: apps/destinations/models.py:83
+#: apps/destinations/models.py:156
 msgid "is_deleted"
 msgstr "is_deleted"
 
-#: apps/destinations/models.py:96 apps/destinations/models.py:175
-#: apps/destinations/models.py:253 apps/destinations/models.py:367
-#: apps/destinations/models.py:437
+#: apps/destinations/models.py:169 apps/destinations/models.py:274
+#: apps/destinations/models.py:360 apps/destinations/models.py:477
+#: apps/destinations/models.py:547
 msgid "Destino"
 msgstr "Destino"
 
-#: apps/destinations/models.py:97
-#: apps/destinations/templates/destinations/navbar_left.html:53
+#: apps/destinations/models.py:170
+#: apps/destinations/templates/destinations/navbar_left.html:59
 msgid "Destinos"
 msgstr "Destinos"
 
-#: apps/destinations/models.py:103 apps/destinations/models.py:538
+#: apps/destinations/models.py:177 apps/destinations/models.py:648
 msgid "SKU"
 msgstr "SKU (Numero del Tour)"
 
-#: apps/destinations/models.py:179 apps/destinations/models.py:333
+#: apps/destinations/models.py:254
+#, fuzzy
+#| msgid "Destinos"
+msgid "Map Destination"
+msgstr "Destinos"
+
+#: apps/destinations/models.py:278 apps/destinations/models.py:443
 msgid "Nombre"
 msgstr "Nombre "
 
-#: apps/destinations/models.py:186
+#: apps/destinations/models.py:285
 msgid "Sort"
 msgstr "Sort"
 
-#: apps/destinations/models.py:192 apps/destinations/models.py:338
+#: apps/destinations/models.py:291 apps/destinations/models.py:448
 msgid "Descripción"
 msgstr "Descripción"
 
-#: apps/destinations/models.py:195
+#: apps/destinations/models.py:294
 msgid "Sin comentario"
 msgstr "Sin comentario"
 
-#: apps/destinations/models.py:199
+#: apps/destinations/models.py:298
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: apps/destinations/models.py:206 apps/destinations/models.py:376
-#: apps/destinations/models.py:390
+#: apps/destinations/models.py:305 apps/destinations/models.py:486
+#: apps/destinations/models.py:500
 msgid "Imagen"
 msgstr "Imagen"
 
-#: apps/destinations/models.py:221
+#: apps/destinations/models.py:320
 msgid "Foto"
 msgstr "Foto"
 
-#: apps/destinations/models.py:222
+#: apps/destinations/models.py:321
 msgid "Fotos"
 msgstr "Fotos"
 
-#: apps/destinations/models.py:227
+#: apps/destinations/models.py:328
+#, fuzzy
+#| msgid "Destinos"
+msgid "Destination Rating"
+msgstr "Destinos"
+
+#: apps/destinations/models.py:334
 #: apps/destinations/templates/destinations/_booking_list.html:28
 #: apps/destinations/templates/destinations/booking_modal.html:21
 msgid "Name"
 msgstr "Nombre"
 
-#: apps/destinations/models.py:232
+#: apps/destinations/models.py:339
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:34
+#: apps/destinations/templates/destinations/map/maps.html:30
 msgid "Description"
 msgstr "Descripción"
 
-#: apps/destinations/models.py:244 apps/destinations/models.py:257
+#: apps/destinations/models.py:351 apps/destinations/models.py:364
 msgid "Badge"
 msgstr "Distintivo"
 
-#: apps/destinations/models.py:245
+#: apps/destinations/models.py:352
 msgid "Badges"
 msgstr "Distintivos"
 
-#: apps/destinations/models.py:262
+#: apps/destinations/models.py:369
 msgid "Ultimo minuto"
 msgstr "Ultimo minuto"
 
-#: apps/destinations/models.py:263
+#: apps/destinations/models.py:370
 msgid "Deal del Mes"
 msgstr "Tour del Mes"
 
-#: apps/destinations/models.py:264
+#: apps/destinations/models.py:371
 msgid "FamTrip"
 msgstr "Famtrip"
 
-#: apps/destinations/models.py:265
+#: apps/destinations/models.py:372
 msgid "Congresos"
 msgstr "Congreso"
 
-#: apps/destinations/models.py:266
+#: apps/destinations/models.py:373
 msgid "Eventos"
 msgstr "Evento"
 
-#: apps/destinations/models.py:267
+#: apps/destinations/models.py:374
 msgid "Hotel"
 msgstr "Hotel"
 
-#: apps/destinations/models.py:268
+#: apps/destinations/models.py:375
 msgid "Movilidad"
 msgstr "Movilidad"
 
-#: apps/destinations/models.py:269
+#: apps/destinations/models.py:376
 msgid "Ocio +"
 msgstr "Ocio +"
 
-#: apps/destinations/models.py:277 apps/destinations/models.py:306
+#: apps/destinations/models.py:384 apps/destinations/models.py:416
 msgid "Tour"
 msgstr "Tour"
 
-#: apps/destinations/models.py:278
+#: apps/destinations/models.py:385
 msgid "Tours"
 msgstr "Tours"
 
-#: apps/destinations/models.py:287
-#: apps/destinations/templates/destinations/navbar_left.html:59
+#: apps/destinations/models.py:395
+#: apps/destinations/templates/destinations/navbar_left.html:64
 msgid "Itinerary"
 msgstr ""
 
-#: apps/destinations/models.py:297
+#: apps/destinations/models.py:405
 #, fuzzy
 #| msgid "Detalle general"
 msgid "Detail Itinerary"
 msgstr "Detalle general"
 
-#: apps/destinations/models.py:313
+#: apps/destinations/models.py:423
 msgid "Option tab"
 msgstr "Opciones de ficha"
 
-#: apps/destinations/models.py:317
+#: apps/destinations/models.py:427
 msgid "Content"
 msgstr "Contenido"
 
-#: apps/destinations/models.py:327
+#: apps/destinations/models.py:437
 msgid "Tabs"
 msgstr "Fichas tecnicas"
 
-#: apps/destinations/models.py:328
+#: apps/destinations/models.py:438
 msgid "Tab"
 msgstr "Ficha tecnica"
 
-#: apps/destinations/models.py:344
+#: apps/destinations/models.py:454
 msgid "Plantilla"
 msgstr "Plantilla"
 
-#: apps/destinations/models.py:358
+#: apps/destinations/models.py:468
 msgid "Opciones de las tabs"
 msgstr "Opciones de las fichas tecnicas"
 
-#: apps/destinations/models.py:359
+#: apps/destinations/models.py:469
 msgid "Opción de la tab"
 msgstr "Opcione de la ficha tecnica"
 
-#: apps/destinations/models.py:371
+#: apps/destinations/models.py:481
 msgid "Display mode"
 msgstr "Modo de visualización"
 
-#: apps/destinations/models.py:375 apps/destinations/models.py:420
+#: apps/destinations/models.py:485 apps/destinations/models.py:530
 msgid "Default"
 msgstr "Por Defecto"
 
-#: apps/destinations/models.py:377
+#: apps/destinations/models.py:487
 msgid "Slider"
 msgstr "Slider"
 
-#: apps/destinations/models.py:378
+#: apps/destinations/models.py:488
 msgid "From list"
 msgstr "De la lista"
 
-#: apps/destinations/models.py:383
+#: apps/destinations/models.py:493
 msgid "Subtitle"
 msgstr "Subtitular"
 
-#: apps/destinations/models.py:397
+#: apps/destinations/models.py:507
 msgid "Parallax"
 msgstr "Parallax"
 
-#: apps/destinations/models.py:402
+#: apps/destinations/models.py:512
 msgid "Imagen repeat"
 msgstr "Imagen repetida"
 
-#: apps/destinations/models.py:407
+#: apps/destinations/models.py:517
 msgid "Repeat"
 msgstr "Repetir"
 
-#: apps/destinations/models.py:408
+#: apps/destinations/models.py:518
 msgid "No repeat"
 msgstr "No repetir imagen"
 
-#: apps/destinations/models.py:409
+#: apps/destinations/models.py:519
 msgid "Repeat horizontally"
 msgstr "Repetir horizontalmente"
 
-#: apps/destinations/models.py:410
+#: apps/destinations/models.py:520
 msgid "Repeat vertically"
 msgstr "Repetir verticalmente"
 
-#: apps/destinations/models.py:415
+#: apps/destinations/models.py:525
 msgid "Mask"
 msgstr "Máscara"
 
-#: apps/destinations/models.py:428
+#: apps/destinations/models.py:538
 msgid "Secciones del encabezado"
 msgstr "Secciones del encabezado "
 
-#: apps/destinations/models.py:429
+#: apps/destinations/models.py:539
 msgid "Sección del encabezado"
 msgstr "Sección del encabezado"
 
-#: apps/destinations/models.py:441
+#: apps/destinations/models.py:551
 msgid "Variable tour"
 msgstr "Tour Variable (Solo para Toures con 2 o mas variantes)"
 
-#: apps/destinations/models.py:446
+#: apps/destinations/models.py:556
 msgid "Virtual"
 msgstr "Virtual (Solo para programas virtuales)"
 
-#: apps/destinations/models.py:451
+#: apps/destinations/models.py:561
 msgid "Descargable"
 msgstr "Descargable (Solo para pdfs)"
 
-#: apps/destinations/models.py:459
+#: apps/destinations/models.py:569
 msgid "Detalles del destino"
 msgstr "Detalles del destino"
 
-#: apps/destinations/models.py:460 apps/destinations/models.py:468
-#: apps/destinations/models.py:534 apps/destinations/models.py:594
+#: apps/destinations/models.py:570 apps/destinations/models.py:578
+#: apps/destinations/models.py:644 apps/destinations/models.py:704
 msgid "Detalle del destino"
 msgstr "Detalle del destino"
 
-#: apps/destinations/models.py:472
+#: apps/destinations/models.py:582
 msgid "Precio normal"
 msgstr "Precio normal"
 
-#: apps/destinations/models.py:480
+#: apps/destinations/models.py:590
 msgid "Precio rebajado"
 msgstr "Precio rebajado \t"
 
-#: apps/destinations/models.py:488
+#: apps/destinations/models.py:598
 msgid "Fecha de rebaja inicial"
 msgstr "Fecha de rebaja inicial"
 
-#: apps/destinations/models.py:494
+#: apps/destinations/models.py:604
 msgid "Fecha de rebaja final"
 msgstr "Fecha de rebaja final"
 
-#: apps/destinations/models.py:500
+#: apps/destinations/models.py:610
 msgid "Estado del impuesto"
 msgstr "Estado del impuesto"
 
-#: apps/destinations/models.py:504
+#: apps/destinations/models.py:614
 msgid "Imponible"
 msgstr "Obligatorio"
 
-#: apps/destinations/models.py:505
+#: apps/destinations/models.py:615
 msgid "Envio solamente"
 msgstr "Envio solamente \t"
 
-#: apps/destinations/models.py:506
+#: apps/destinations/models.py:616
 msgid "Ninguno"
 msgstr "Ninguno"
 
-#: apps/destinations/models.py:511
+#: apps/destinations/models.py:621
 msgid "Clase de impuesto"
 msgstr "Clase de impuesto"
 
-#: apps/destinations/models.py:515
+#: apps/destinations/models.py:625
 msgid "Estandar"
 msgstr "Estándar"
 
-#: apps/destinations/models.py:516
+#: apps/destinations/models.py:626
 msgid "Reduced Rate"
 msgstr "Tasa reducida"
 
-#: apps/destinations/models.py:517
+#: apps/destinations/models.py:627
 msgid "Zero Rate"
 msgstr "Tasa de cero"
 
-#: apps/destinations/models.py:525
+#: apps/destinations/models.py:635
 msgid "Detalles generales"
 msgstr "Detalles generales"
 
-#: apps/destinations/models.py:526
+#: apps/destinations/models.py:636
 msgid "Detalle general"
 msgstr "Detalle general"
 
-#: apps/destinations/models.py:543
+#: apps/destinations/models.py:653
 msgid "¿Gestión de inventario?"
 msgstr "¿Gestión de inventario?"
 
-#: apps/destinations/models.py:545
+#: apps/destinations/models.py:655
 msgid "Activa la gestión de inventario por cada producto"
 msgstr "Activa la gestión de inventario por cada producto"
 
-#: apps/destinations/models.py:549
+#: apps/destinations/models.py:659
 msgid "Cantidad de inventario"
 msgstr "Cantidad de inventario"
 
-#: apps/destinations/models.py:556
+#: apps/destinations/models.py:666
 msgid "¿Permitir reservas?"
 msgstr "¿Permitir reservas?"
 
-#: apps/destinations/models.py:560
+#: apps/destinations/models.py:670
 msgid "No permitir"
 msgstr "No permitir"
 
-#: apps/destinations/models.py:561
+#: apps/destinations/models.py:671
 msgid "Permitir, pero se avisara al cliente"
 msgstr "Permitir, pero se avisara al cliente"
 
-#: apps/destinations/models.py:562
+#: apps/destinations/models.py:672
 msgid "Permitir"
 msgstr "Permitir"
 
-#: apps/destinations/models.py:567
+#: apps/destinations/models.py:677
 msgid "Umbral de pocas existencias"
 msgstr "Poca existencia del producto / destino"
 
-#: apps/destinations/models.py:574
+#: apps/destinations/models.py:684
 msgid "Vendido individualmente"
 msgstr "Vendido individualmente"
 
-#: apps/destinations/models.py:577
+#: apps/destinations/models.py:687
 msgid ""
 "Activa esto para permitir que solo se pueda comprar uno de estos artículos "
 "en cada pedido"
@@ -478,128 +523,149 @@ msgstr ""
 "Activa esto para permitir que solo se pueda comprar uno de estos artículos "
 "en cada pedido"
 
-#: apps/destinations/models.py:585
+#: apps/destinations/models.py:695
 msgid "Detalles de inventario"
 msgstr "Detalles de inventario"
 
-#: apps/destinations/models.py:586
+#: apps/destinations/models.py:696
 msgid "Detalle de inventario"
 msgstr "Detalle de inventario"
 
-#: apps/destinations/models.py:598
+#: apps/destinations/models.py:708
 msgid "Start date"
 msgstr "Fecha de inicio"
 
-#: apps/destinations/models.py:604
+#: apps/destinations/models.py:714
 msgid "End date"
 msgstr "Fecha final"
 
-#: apps/destinations/models.py:612
+#: apps/destinations/models.py:722
 msgid "Días"
 msgstr "Días"
 
-#: apps/destinations/models.py:616
+#: apps/destinations/models.py:726
 msgid "Number of tickets per tour"
 msgstr "Número de entradas por recorrido"
 
-#: apps/destinations/models.py:622
+#: apps/destinations/models.py:732
 msgid "Special price"
 msgstr "Precio especial"
 
-#: apps/destinations/models.py:630
+#: apps/destinations/models.py:742
 msgid "Mode"
 msgstr "Modo"
 
-#: apps/destinations/models.py:634
+#: apps/destinations/models.py:746
 msgid "Week days"
 msgstr "Días de la semana"
 
-#: apps/destinations/models.py:635
+#: apps/destinations/models.py:747
 msgid "Exact dates"
 msgstr "Días exactos"
 
-#: apps/destinations/models.py:640
+#: apps/destinations/models.py:752
 msgid "Is active"
 msgstr "Activar el tour? (NO lo olvide)"
 
-#: apps/destinations/models.py:644
-#: apps/destinations/templates/destinations/gallery/_list.html:133
+#: apps/destinations/models.py:756
+#: apps/destinations/templates/destinations/gallery/_list.html:144
 msgid "No"
 msgstr "No, no deseo activar el tour/servicio"
 
-#: apps/destinations/models.py:645
+#: apps/destinations/models.py:757
 msgid "Yes"
 msgstr "Si, si deseo activar el tour/servicio"
 
-#: apps/destinations/models.py:654
+#: apps/destinations/models.py:766
 msgid "Booking details"
 msgstr "Detalles de la reserva"
 
-#: apps/destinations/models.py:655
+#: apps/destinations/models.py:767
 msgid "Booking detail"
 msgstr "Detalle de la reserva"
 
-#: apps/destinations/models.py:693 apps/destinations/models.py:694
+#: apps/destinations/models.py:804 apps/destinations/models.py:805
 msgid "Search Landing"
 msgstr ""
 
-#: apps/destinations/models.py:704
+#: apps/destinations/models.py:815
 msgid "Firts Name"
 msgstr "Primero Nombre"
 
-#: apps/destinations/models.py:711
+#: apps/destinations/models.py:822
 #, fuzzy
 #| msgid "Name"
 msgid "Last Name"
 msgstr "Apellido"
 
-#: apps/destinations/models.py:718
+#: apps/destinations/models.py:829
 msgid "Identity number"
 msgstr "Número de identidad"
 
-#: apps/destinations/models.py:725
+#: apps/destinations/models.py:836
 msgid "Cellphone"
 msgstr "Teléfono celular"
 
-#: apps/destinations/models.py:732
+#: apps/destinations/models.py:843
 #: apps/destinations/templates/destinations/_booking_list.html:29
 msgid "Email"
 msgstr "Correo Electronico"
 
-#: apps/destinations/models.py:739
+#: apps/destinations/models.py:850
 #, fuzzy
 #| msgid "Number of tickets per tour"
 msgid "Number of people travelling"
 msgstr "Número de entradas por recorrido"
 
-#: apps/destinations/models.py:746 apps/destinations/models.py:774
+#: apps/destinations/models.py:857 apps/destinations/models.py:885
+#: apps/destinations/models.py:891
 #, fuzzy
 #| msgid "Tour Booking"
 msgid "Booking"
 msgstr "Reserva de excursiones"
 
-#: apps/destinations/models.py:753
+#: apps/destinations/models.py:864
 msgid "Comment"
 msgstr "Comentario"
 
-#: apps/destinations/models.py:759
+#: apps/destinations/models.py:870
 msgid "seen"
 msgstr ""
 
-#: apps/destinations/models.py:764
+#: apps/destinations/models.py:875
 #, fuzzy
 #| msgid "Status"
 msgid "status"
 msgstr "Status"
 
-#: apps/destinations/models.py:766
+#: apps/destinations/models.py:877
 msgid "Means if receive following or not."
 msgstr ""
 
-#: apps/destinations/models.py:773
+#: apps/destinations/models.py:884
 #, fuzzy
 #| msgid "Booking details"
 msgid "Booking's"
+msgstr "Detalles de la reserva"
+
+#: apps/destinations/models.py:898
+msgid "Users"
+msgstr ""
+
+#: apps/destinations/models.py:901
+msgid "Datetime"
+msgstr ""
+
+#: apps/destinations/models.py:907
+#, fuzzy
+#| msgid "Booking details"
+msgid "Booking Stats"
+msgstr "Detalles de la reserva"
+
+#: apps/destinations/models.py:908
+#, fuzzy
+#| msgid "Booking details"
+msgid "Booking Stast"
 msgstr "Detalles de la reserva"
 
 #: apps/destinations/templates/dashboard/index.html:3
@@ -658,8 +724,9 @@ msgid "Lista de Reservas"
 msgstr "Lista de Destinos"
 
 #: apps/destinations/templates/destinations/_booking_list.html:27
-#: apps/destinations/templates/destinations/_list.html:27
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:76
+#: apps/destinations/templates/destinations/_list.html:31
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:33
+#: apps/destinations/templates/destinations/map/maps.html:29
 #, fuzzy
 #| msgid "Destinos"
 msgid "Destination's name"
@@ -670,7 +737,7 @@ msgstr "Destinos"
 msgid "Phone"
 msgstr ""
 
-#: apps/destinations/templates/destinations/_booking_list.html:50
+#: apps/destinations/templates/destinations/_booking_list.html:51
 msgid "See full Details"
 msgstr ""
 
@@ -694,8 +761,7 @@ msgstr ""
 "¿Está seguro de elimnar el destino %(object)s?"
 
 #: apps/destinations/templates/destinations/_delete.html:19
-#: apps/destinations/templates/destinations/_list.html:61
-#: apps/destinations/templates/destinations/gallery/_list.html:129
+#: apps/destinations/templates/destinations/gallery/_list.html:140
 #: apps/destinations/templates/destinations/tab_data/_form.html:17
 #: apps/destinations/templates/oauth2/application_delete.html:19
 #: apps/destinations/templates/oauth2/application_detail.html:49
@@ -703,64 +769,96 @@ msgstr ""
 msgid "Eliminar"
 msgstr "Eliminar"
 
-#: apps/destinations/templates/destinations/_form.html:4
+#: apps/destinations/templates/destinations/_form.html:3
+#: apps/destinations/templates/destinations/_form_old.html:4
 msgid "Agregar Destino"
 msgstr "Agregar Destino"
 
-#: apps/destinations/templates/destinations/_form.html:31
+#: apps/destinations/templates/destinations/_form.html:25
+msgid "Create a new Tour"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:33
+#, fuzzy
+#| msgid "Producto"
+msgid "Product"
+msgstr "Producto"
+
+#: apps/destinations/templates/destinations/_form.html:36
+msgid "Record the tour data"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:39
+msgid "This tour has departure and arrival time"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:46
+#, fuzzy
+#| msgid "Special price"
+msgid "Price"
+msgstr "Precio especial"
+
+#: apps/destinations/templates/destinations/_form.html:57
+#, fuzzy
+#| msgid "Inventario"
+msgid "Inventory"
+msgstr "Inventario"
+
+#: apps/destinations/templates/destinations/_form.html:67
+#: apps/destinations/templates/destinations/_form_old.html:164
+msgid "Tour Booking"
+msgstr "Reserva de excursiones"
+
+#: apps/destinations/templates/destinations/_form_old.html:31
 msgid "Producto"
 msgstr "Producto"
 
-#: apps/destinations/templates/destinations/_form.html:37
+#: apps/destinations/templates/destinations/_form_old.html:37
 msgid "Tour Data"
 msgstr "Datos del Tour"
 
-#: apps/destinations/templates/destinations/_form.html:44
+#: apps/destinations/templates/destinations/_form_old.html:44
 msgid "Header Section"
 msgstr "Sección de encabezado"
 
-#: apps/destinations/templates/destinations/_form.html:53
+#: apps/destinations/templates/destinations/_form_old.html:53
 msgid "Detalles del Producto"
 msgstr "Detalles del Producto"
 
-#: apps/destinations/templates/destinations/_form.html:65
+#: apps/destinations/templates/destinations/_form_old.html:65
 #: apps/destinations/templates/oauth2/application_form.html:16
 msgid "Ingrese los datos solicitados"
 msgstr "Ingrese los datos solicitados"
 
-#: apps/destinations/templates/destinations/_form.html:88
+#: apps/destinations/templates/destinations/_form_old.html:88
 msgid "Registre los datos del tour"
 msgstr "Registre los datos del tour"
 
-#: apps/destinations/templates/destinations/_form.html:106
+#: apps/destinations/templates/destinations/_form_old.html:106
 msgid "Agregar otro tab"
 msgstr "Agregar otro carta de registro"
 
-#: apps/destinations/templates/destinations/_form.html:114
+#: apps/destinations/templates/destinations/_form_old.html:114
 msgid "Registre los datos del Header"
 msgstr "Registre los datos del Header"
 
-#: apps/destinations/templates/destinations/_form.html:130
+#: apps/destinations/templates/destinations/_form_old.html:130
 msgid "Registre los detalles del producto"
 msgstr "Registre los detalles del producto"
 
-#: apps/destinations/templates/destinations/_form.html:148
+#: apps/destinations/templates/destinations/_form_old.html:148
 msgid "General"
 msgstr "General"
 
-#: apps/destinations/templates/destinations/_form.html:156
+#: apps/destinations/templates/destinations/_form_old.html:156
 msgid "Inventario"
 msgstr "Inventario"
 
-#: apps/destinations/templates/destinations/_form.html:164
-msgid "Tour Booking"
-msgstr "Reserva de excursiones"
-
-#: apps/destinations/templates/destinations/_form.html:197
+#: apps/destinations/templates/destinations/_form_old.html:197
 msgid "Add period"
 msgstr "Agregar periodo"
 
-#: apps/destinations/templates/destinations/_form.html:216
+#: apps/destinations/templates/destinations/_form_old.html:216
 msgid "Cancelar"
 msgstr "Cancelar"
 
@@ -768,25 +866,60 @@ msgstr "Cancelar"
 msgid "Lista de Destinos"
 msgstr "Lista de Destinos"
 
-#: apps/destinations/templates/destinations/_list.html:29
+#: apps/destinations/templates/destinations/_list.html:23
+msgid "Registrar destino"
+msgstr "Registrar destino"
+
+#: apps/destinations/templates/destinations/_list.html:33
 msgid "Quantity Available"
 msgstr ""
 
-#: apps/destinations/templates/destinations/_list.html:30
+#: apps/destinations/templates/destinations/_list.html:34
 #, fuzzy
 #| msgid "Special price"
 msgid "Sale Price"
 msgstr "Precio especial"
 
-#: apps/destinations/templates/destinations/_list.html:45
+#: apps/destinations/templates/destinations/_list.html:50
 msgid "Hay existencia"
 msgstr "Hay existencia"
 
-#: apps/destinations/templates/destinations/_list.html:64
+#: apps/destinations/templates/destinations/_list.html:66
 #: apps/destinations/templates/destinations/gallery/_list.html:5
-#: apps/destinations/templates/destinations/gallery/_list.html:41
+#: apps/destinations/templates/destinations/gallery/_list.html:52
 msgid "Galería"
 msgstr "Galería"
+
+#: apps/destinations/templates/destinations/_list.html:70
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:52
+#: apps/destinations/templates/destinations/map/maps.html:48
+#, fuzzy
+#| msgid "is_deleted"
+msgid "Delete"
+msgstr "is_deleted"
+
+#: apps/destinations/templates/destinations/_list.html:128
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:87
+#: apps/destinations/templates/destinations/map/maps.html:120
+msgid "Are you sure?"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_list.html:129
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:88
+msgid "If you delete this itinerary you will not be able to recover it"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_list.html:133
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:92
+#: apps/destinations/templates/destinations/map/maps.html:125
+msgid "Yes, delete it!"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_list.html:143
+#, fuzzy
+#| msgid "Destinos"
+msgid "Destination has been deleted."
+msgstr "Destinos"
 
 #: apps/destinations/templates/destinations/base.html:8
 msgid ""
@@ -824,12 +957,17 @@ msgstr ""
 msgid "client comments"
 msgstr "Token Secreto del cliente"
 
-#: apps/destinations/templates/destinations/booking_modal.html:63
+#: apps/destinations/templates/destinations/booking_modal.html:66
+#: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:50
 msgid "Close"
 msgstr ""
 
-#: apps/destinations/templates/destinations/booking_modal.html:64
+#: apps/destinations/templates/destinations/booking_modal.html:67
 msgid "Mark as solved"
+msgstr ""
+
+#: apps/destinations/templates/destinations/destination_detail/booking/_form.html:6
+msgid "Activate manage booking tour"
 msgstr ""
 
 #: apps/destinations/templates/destinations/footer.html:8
@@ -841,27 +979,53 @@ msgstr ""
 "\n"
 "&copy; 2018 - 2020 Todos los derechos del sitio reservados. "
 
-#: apps/destinations/templates/destinations/gallery/_list.html:128
+#: apps/destinations/templates/destinations/gallery/_list.html:20
+msgid "Back to list"
+msgstr ""
+
+#: apps/destinations/templates/destinations/gallery/_list.html:22
+msgid "Gallery for: "
+msgstr ""
+
+#: apps/destinations/templates/destinations/gallery/_list.html:25
+msgid ""
+"By clicking the 'add images' you can access to upload your own photos to "
+"your destination."
+msgstr ""
+
+#: apps/destinations/templates/destinations/gallery/_list.html:26
+msgid ""
+"You can also delete each one as you required or add comments to be displayed "
+"in our system."
+msgstr ""
+
+#: apps/destinations/templates/destinations/gallery/_list.html:27
+msgid ""
+"You can delete a photo by click on the photo and then click on 'remove' "
+"button "
+msgstr ""
+
+#: apps/destinations/templates/destinations/gallery/_list.html:139
 msgid "Agregar imágenes"
 msgstr "Agregar imágenes"
 
-#: apps/destinations/templates/destinations/gallery/_list.html:130
+#: apps/destinations/templates/destinations/gallery/_list.html:141
 msgid "Escribe un comentario"
 msgstr "Escribe un comentario"
 
-#: apps/destinations/templates/destinations/gallery/_list.html:131
+#: apps/destinations/templates/destinations/gallery/_list.html:142
 msgid "Mostrar detalles"
 msgstr "Mostrar detalles"
 
-#: apps/destinations/templates/destinations/gallery/_list.html:134
+#: apps/destinations/templates/destinations/gallery/_list.html:145
 msgid "Si"
 msgstr "Si"
 
-#: apps/destinations/templates/destinations/gallery/_list.html:135
+#: apps/destinations/templates/destinations/gallery/_list.html:146
 msgid "Confirmar acción"
 msgstr "Confirmar acción"
 
-#: apps/destinations/templates/destinations/gallery/_list.html:136
+#: apps/destinations/templates/destinations/gallery/_list.html:147
 msgid "¿Está seguro que desea eliminar este registro?"
 msgstr "¿Está seguro que desea eliminar este registro?"
 
@@ -869,61 +1033,99 @@ msgstr "¿Está seguro que desea eliminar este registro?"
 msgid "Create Itinerary"
 msgstr ""
 
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:29
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:24
+#, fuzzy
+#| msgid "Detalle general"
+msgid "Create new itinerary"
+msgstr "Detalle general"
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:35
+#, fuzzy
+#| msgid "Booking details"
+msgid "Details"
+msgstr "Detalles de la reserva"
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:53
+#: apps/destinations/templates/destinations/map/maps.html:49
+#, fuzzy
+#| msgid "Editar"
+msgid "Edit"
+msgstr "Editar"
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:111
+#: apps/destinations/templates/destinations/map/maps.html:142
+msgid "Has been not deleted"
+msgstr ""
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:149
+msgid "Could not load itinerary data for editing"
+msgstr ""
+
+#: apps/destinations/templates/destinations/itinerary/itinerary.html:159
+#: apps/destinations/templates/destinations/map/maps.html:158
+#, fuzzy
+#| msgid "Detalle del destino"
+msgid "Select a destiny"
+msgstr "Detalle del destino"
+
+#: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:7
+msgid "CREATE itinerary"
+msgstr ""
+
+#: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:19
+#: apps/destinations/templates/destinations/map/maps.html:79
 #, fuzzy
 #| msgid "Destino"
 msgid "Destiny"
 msgstr "Destino"
 
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:30
+#: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:20
+#: apps/destinations/templates/destinations/map/maps.html:80
 msgid "Choose a Destiny..."
 msgstr ""
 
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:36
-msgid "Create new Itinerary"
-msgstr ""
-
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:36
-msgid "Clic Here"
-msgstr ""
-
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:63
-msgid "Create a new itinerary"
-msgstr ""
-
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:77
+#: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:49
 #, fuzzy
-#| msgid "Subtitle"
-msgid "Short Title"
-msgstr "Subtitular"
+#| msgid "Detalle general"
+msgid "create a new itinerary"
+msgstr "Detalle general"
 
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:78
+#: apps/destinations/templates/destinations/map/maps.html:3
+msgid "Add Maps for Tour"
+msgstr ""
+
+#: apps/destinations/templates/destinations/map/maps.html:23
+#: apps/destinations/templates/destinations/map/maps.html:67
+msgid "Add Maps for yours tours"
+msgstr ""
+
+#: apps/destinations/templates/destinations/map/maps.html:31
+msgid "Map"
+msgstr ""
+
+#: apps/destinations/templates/destinations/map/maps.html:86
 #, fuzzy
 #| msgid "Description"
-msgid "Itinerary Description"
+msgid "Description Map"
 msgstr "Descripción"
 
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:111
-msgid "Are you sure?"
+#: apps/destinations/templates/destinations/map/maps.html:91
+msgid "Generate  your map"
 msgstr ""
 
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:112
-msgid "If you delete this itinerary you will not be able to recover it"
+#: apps/destinations/templates/destinations/map/maps.html:96
+msgid "Add new map"
 msgstr ""
 
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:116
-msgid "Yes, delete it!"
-msgstr ""
-
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:133
-msgid "Has been not deleted"
-msgstr ""
-
-#: apps/destinations/templates/destinations/itinerary/itinerary.html:203
+#: apps/destinations/templates/destinations/map/maps.html:97
 #, fuzzy
-#| msgid "Detalle del destino"
-msgid "Select a destiny"
-msgstr "Detalle del destino"
+#| msgid "Cancelar"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: apps/destinations/templates/destinations/map/maps.html:121
+msgid "If you delete this map you will not be able to recover it"
+msgstr ""
 
 #: apps/destinations/templates/destinations/navbar_left.html:18
 msgid "Admin"
@@ -954,25 +1156,31 @@ msgstr ""
 msgid "Translate site"
 msgstr "Traducir sitio"
 
-#: apps/destinations/templates/destinations/navbar_left.html:57
+#: apps/destinations/templates/destinations/navbar_left.html:52
+#, fuzzy
+#| msgid "Admin"
+msgid "Admin site"
+msgstr "Admin"
+
+#: apps/destinations/templates/destinations/navbar_left.html:63
 msgid "Sus destinos"
 msgstr "Sus destinos"
 
-#: apps/destinations/templates/destinations/navbar_left.html:58
-msgid "Registrar destino"
-msgstr "Registrar destino"
-
 #: apps/destinations/templates/destinations/navbar_left.html:65
+msgid "Maps"
+msgstr ""
+
+#: apps/destinations/templates/destinations/navbar_left.html:71
 #, fuzzy
 #| msgid "description"
 msgid "Reservations"
 msgstr ""
 "Descripción larga (Coloque la descripción de su destino, alojamiento o "
 "servicio) tome en cuenta la tabla inferior y escriba en el numero de tour, "
-"las iniciales de su tour por ejemplo: Visite MAdrid en Diciembre VMD-0119 el"
-" 01 es el numero del Tour y el 19, el numero del año) "
+"las iniciales de su tour por ejemplo: Visite MAdrid en Diciembre VMD-0119 el "
+"01 es el numero del Tour y el 19, el numero del año) "
 
-#: apps/destinations/templates/destinations/navbar_left.html:69
+#: apps/destinations/templates/destinations/navbar_left.html:75
 msgid "Your reservations"
 msgstr ""
 
@@ -991,6 +1199,26 @@ msgstr "Aplicaciones"
 #: apps/destinations/templates/destinations/tab_data/_form.html:9
 msgid "Adicional tab"
 msgstr "Carta de registro adicional"
+
+#: apps/destinations/templates/destinations/tour/_form.html:101
+msgid "Include / Doesn't Include"
+msgstr ""
+
+#: apps/destinations/templates/destinations/tour/_form.html:104
+msgid "Include"
+msgstr ""
+
+#: apps/destinations/templates/destinations/tour/_form.html:105
+msgid "Doesn't Include"
+msgstr ""
+
+#: apps/destinations/templates/destinations/tour/_form.html:112
+msgid "Description Tour Include/ Doesn't Include"
+msgstr ""
+
+#: apps/destinations/templates/destinations/tour/_form.html:115
+msgid "Food"
+msgstr ""
 
 #: apps/destinations/templates/oauth2/application_delete.html:13
 #, python-format
@@ -1087,27 +1315,26 @@ msgstr "Token de %(object.application)s"
 #, python-format
 msgid ""
 "\n"
-"        ¿Está seguro de revocar el acceso del token de %(object.application)s?</p>\n"
+"        ¿Está seguro de revocar el acceso del token de "
+"%(object.application)s?</p>\n"
 "      "
 msgstr ""
 "\n"
 "¿Está seguro de revocar el acceso del token de %(object.application)s?</p>"
 
-#: apps/destinations/views.py:191
-msgid "Agregar destino"
-msgstr "Agregar destino"
-
-#: apps/destinations/views.py:203
-msgid "Actualizar destino"
-msgstr "Actualizar destino"
-
-#: apps/destinations/views.py:306
-msgid "A new itinerary item has been registered"
+#: apps/destinations/views/booking.py:133 apps/destinations/views/maps.py:32
+msgid "a new map has been added to your destination"
 msgstr ""
 
-#: apps/destinations/views.py:358
-msgid "New Booking registered"
-msgstr ""
+#, fuzzy
+#~| msgid "Subtitle"
+#~ msgid "Short Title"
+#~ msgstr "Subtitular"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Itinerary Description"
+#~ msgstr "Descripción"
 
 #~ msgid "Tipo de aut."
 #~ msgstr "Tipo de aut."
