@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-04 01:37-0400\n"
+"POT-Creation-Date: 2019-10-19 13:22-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/accounts/admin.py:14 apps/accounts/forms.py:40
-#: apps/accounts/forms.py:68
+#: apps/accounts/admin.py:13 apps/accounts/forms.py:39
+#: apps/accounts/forms.py:67
 msgid "Password"
 msgstr ""
 
-#: apps/accounts/admin.py:15 apps/accounts/forms.py:73
+#: apps/accounts/admin.py:14 apps/accounts/forms.py:72
 msgid "Password confirmation"
 msgstr ""
 
-#: apps/accounts/admin.py:26
+#: apps/accounts/admin.py:25
 msgid "Passwords don't match"
 msgstr ""
 
-#: apps/accounts/admin.py:79
+#: apps/accounts/admin.py:58
 msgid "Personal info"
 msgstr ""
 
-#: apps/accounts/admin.py:80
+#: apps/accounts/admin.py:59
 msgid "Business info"
 msgstr ""
 
-#: apps/accounts/admin.py:81
+#: apps/accounts/admin.py:60
 msgid "Permissions"
 msgstr ""
 
@@ -47,34 +47,35 @@ msgstr ""
 msgid "Accounts"
 msgstr ""
 
-#: apps/accounts/forms.py:31 main/templates/index.html:76
-#: main/templates/services/destination/detail_destination.html:289
+#: apps/accounts/forms.py:30 apps/landing_page/models.py:461
+#: main/templates/datenshutz_form.html:34 main/templates/index.html:76
+#: main/templates/services/destination/detail_destination.html:313
 msgid "Email"
 msgstr ""
 
-#: apps/accounts/forms.py:52
+#: apps/accounts/forms.py:51
 msgid "Your account is blocked due to non-payment"
 msgstr ""
 
-#: apps/accounts/forms.py:72
+#: apps/accounts/forms.py:71
 msgid ""
 "Use at least 8 characters. Do not use a password from another site or a term "
 "that is too obvious, such as your pet's name."
 msgstr ""
 
-#: apps/accounts/forms.py:77
+#: apps/accounts/forms.py:76
 msgid "Enter the same password as above, for verification."
 msgstr ""
 
-#: apps/accounts/forms.py:92
+#: apps/accounts/forms.py:91
 msgid "Select a plan"
 msgstr ""
 
-#: apps/accounts/forms.py:101
+#: apps/accounts/forms.py:100
 msgid "Invalid coupon"
 msgstr ""
 
-#: apps/accounts/forms.py:130
+#: apps/accounts/forms.py:129
 msgid "Non-Permitted Language"
 msgstr ""
 
@@ -121,6 +122,7 @@ msgid "Plan"
 msgstr ""
 
 #: apps/accounts/models.py:81 apps/payments/models/paypal.py:49
+#: apps/paymentsN/models/paypal.py:49
 msgid "Coupon"
 msgstr ""
 
@@ -174,11 +176,11 @@ msgstr ""
 msgid "Déjenos su dirección Web"
 msgstr ""
 
-#: apps/accounts/models.py:179
+#: apps/accounts/models.py:183
 msgid "Usuario"
 msgstr ""
 
-#: apps/accounts/models.py:180
+#: apps/accounts/models.py:184
 msgid "Usuarios"
 msgstr ""
 
@@ -197,6 +199,8 @@ msgstr ""
 #: main/templates/pages/booking_email.html:66
 #: main/templates/pages/email_feedback.html:64
 #: main/templates/pages/published_email.html:60
+#: main/templates/pages/request_delete_feedback.html:60
+#: main/templates/pages/request_form_feedback.html:59
 msgid "if you want see the admin site"
 msgstr ""
 
@@ -248,6 +252,8 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/register_form.html:14
 #: apps/accounts/templates/accounts/registration/succes_register.html:25
 #: main/templates/coming-soon.html:4 main/templates/index.html:4
+#: main/templates/menu/navbar.html:14 main/templates/menu/navbar.html:19
+#: main/templates/menu/navbar.html:24
 msgid "Travelposting"
 msgstr ""
 
@@ -271,7 +277,7 @@ msgid "Email address"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
-#: main/templates/pages/show_header.html:95
+#: main/templates/pages/show_header.html:94
 msgid "Please enter a valid email address."
 msgstr ""
 
@@ -343,7 +349,7 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/landing_page/models.py:402 main/templates/index.html:67
-#: main/templates/services/destination/detail_destination.html:263
+#: main/templates/services/destination/detail_destination.html:287
 msgid "Name"
 msgstr ""
 
@@ -417,10 +423,20 @@ msgid "Do you have a Coupon?"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/register_form.html:58
+#: main/templates/datenshutz_form_privacity.html:49
+#: main/templates/datenshutz_form_privacity.html:72
+#: main/templates/datenshutz_form_privacity.html:96
+#: main/templates/datenshutz_form_privacity.html:120
+#: main/templates/datenshutz_form_privacity.html:142
 msgid "Yes"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/register_form.html:71
+#: main/templates/datenshutz_form_privacity.html:50
+#: main/templates/datenshutz_form_privacity.html:73
+#: main/templates/datenshutz_form_privacity.html:97
+#: main/templates/datenshutz_form_privacity.html:121
+#: main/templates/datenshutz_form_privacity.html:143
 msgid "No"
 msgstr ""
 
@@ -536,7 +552,7 @@ msgstr ""
 msgid "An error, Incorrect User or Password has occurred."
 msgstr ""
 
-#: apps/landing_page/admin.py:78 apps/landing_page/models.py:365
+#: apps/landing_page/admin.py:80 apps/landing_page/models.py:365
 msgid "Company"
 msgstr ""
 
@@ -558,7 +574,7 @@ msgstr ""
 
 #: apps/landing_page/models.py:49
 #: main/templates/services/destination/detail.back.html:144
-#: main/templates/services/destination/detail_destination.html:146
+#: main/templates/services/destination/detail_destination.html:189
 msgid "Price"
 msgstr ""
 
@@ -568,6 +584,7 @@ msgstr ""
 
 #: apps/landing_page/models.py:62 apps/landing_page/models.py:172
 #: apps/landing_page/models.py:226 apps/payments/models/paypal.py:7
+#: apps/paymentsN/models/paypal.py:7
 msgid "name"
 msgstr ""
 
@@ -593,7 +610,7 @@ msgid "plans"
 msgstr ""
 
 #: apps/landing_page/models.py:100 apps/landing_page/models.py:120
-#: apps/payments/models/paypal.py:20
+#: apps/payments/models/paypal.py:20 apps/paymentsN/models/paypal.py:20
 msgid "plan"
 msgstr ""
 
@@ -627,7 +644,7 @@ msgid ""
 msgstr ""
 
 #: apps/landing_page/models.py:263 apps/landing_page/models.py:342
-#: apps/payments/models/paypal.py:24
+#: apps/payments/models/paypal.py:24 apps/paymentsN/models/paypal.py:24
 msgid "description"
 msgstr ""
 
@@ -727,11 +744,80 @@ msgstr ""
 msgid "Megazines"
 msgstr ""
 
-#: apps/landing_page/views.py:71
+#: apps/landing_page/models.py:451 main/templates/datenshutz_form.html:25
+#: main/templates/datenshutz_form.html:26
+#, fuzzy
+#| msgid "Name / Last Name"
+msgid "First Name"
+msgstr "Name / Last Name"
+
+#: apps/landing_page/models.py:456 main/templates/datenshutz_form.html:30
+#: main/templates/services/destination/detail_destination.html:295
+#, fuzzy
+#| msgid "Name / Last Name"
+msgid "Last Name"
+msgstr "Name / Last Name"
+
+#: apps/landing_page/models.py:467
+msgid "Agree?"
+msgstr ""
+
+#: apps/landing_page/models.py:471
+msgid "Status?"
+msgstr ""
+
+#: apps/landing_page/models.py:479
+msgid "Delete Registers"
+msgstr ""
+
+#: apps/landing_page/models.py:480
+msgid "Delete Register"
+msgstr ""
+
+#: apps/landing_page/models.py:484
+msgid "Address IP"
+msgstr ""
+
+#: apps/landing_page/models.py:485
+msgid "cookies"
+msgstr ""
+
+#: apps/landing_page/models.py:486
+msgid "Google Analitys"
+msgstr ""
+
+#: apps/landing_page/models.py:487
+#: main/templates/datenshutz_form_privacity.html:88
+msgid "Facebook Pixel"
+msgstr ""
+
+#: apps/landing_page/models.py:488
+#: main/templates/datenshutz_form_privacity.html:112
+msgid "Twitter"
+msgstr ""
+
+#: apps/landing_page/models.py:489
+msgid "Pinteres"
+msgstr ""
+
+#: apps/landing_page/models.py:495
+#: main/templates/datenshutz_form_privacity.html:18
+msgid "Privacity Settings"
+msgstr ""
+
+#: apps/landing_page/models.py:496
+msgid "Privacity Setting"
+msgstr ""
+
+#: apps/landing_page/views.py:65
+msgid "Don't have exist map yet!"
+msgstr ""
+
+#: apps/landing_page/views.py:87
 msgid "New registered search"
 msgstr ""
 
-#: apps/landing_page/views.py:85
+#: apps/landing_page/views.py:101
 #, python-brace-format
 msgid ""
 "A person has done a new search, please review Mr.'s {name} incoming "
@@ -743,48 +829,69 @@ msgid ""
 "com/admin/ "
 msgstr ""
 
-#: apps/payments/apps.py:7
+#: apps/landing_page/views.py:134
+msgid "New request for delete"
+msgstr ""
+
+#: apps/landing_page/views.py:148 apps/landing_page/views.py:217
+msgid ""
+"if you want see the                     admin site https://travelposting.com/"
+"admin/ "
+msgstr ""
+
+#: apps/landing_page/views.py:202
+msgid "New privacity request."
+msgstr ""
+
+#: apps/payments/apps.py:7 apps/paymentsN/apps.py:7
 msgid "Payments"
 msgstr ""
 
-#: apps/payments/models/paypal.py:12
+#: apps/payments/models/paypal.py:12 apps/paymentsN/models/paypal.py:12
 msgid "code"
 msgstr ""
 
-#: apps/payments/models/paypal.py:30
+#: apps/payments/models/paypal.py:30 apps/paymentsN/models/paypal.py:30
 msgid "start date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:34
+#: apps/payments/models/paypal.py:34 apps/paymentsN/models/paypal.py:34
 msgid "end date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:38
+#: apps/payments/models/paypal.py:38 apps/paymentsN/models/paypal.py:38
 msgid "quantity"
 msgstr ""
 
-#: apps/payments/models/paypal.py:50
+#: apps/payments/models/paypal.py:50 apps/paymentsN/models/paypal.py:50
 msgid "Coupons"
 msgstr ""
 
-#: config/settings/base.py:79
-msgid "en"
+#: apps/payments/paypal/views.py:78
+#, python-brace-format
+msgid "The payment could not be processed {sub.error}."
 msgstr ""
 
 #: config/settings/base.py:80
-msgid "de"
+msgid "en"
 msgstr ""
 
 #: config/settings/base.py:81
+msgid "de"
+msgstr ""
+
+#: config/settings/base.py:82
 msgid "es"
 msgstr ""
 
-#: config/settings/base.py:301
+#: config/settings/base.py:300
 msgid "Feature"
 msgstr ""
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
-#: main/templates/hotels.html:3 main/templates/make_page.html:5
+#: main/templates/datenshutz_form.html:5
+#: main/templates/datenshutz_form_privacity.html:5 main/templates/hotels.html:3
+#: main/templates/make_page.html:5 main/templates/pages/request.html:5
 #: main/templates/template_base_for_text.html:3
 msgid "About us"
 msgstr ""
@@ -818,8 +925,7 @@ msgid "Get special offers on the latest travels add on our platform."
 msgstr ""
 
 #: main/templates/coming-soon.html:19 main/templates/coming-soon.html:24
-#: main/templates/coming-soon.html:29 main/templates/menu/navbar.html:14
-#: main/templates/menu/navbar.html:19 main/templates/menu/navbar.html:24
+#: main/templates/coming-soon.html:29
 msgid "BETA Travelposting"
 msgstr ""
 
@@ -1065,6 +1171,94 @@ msgstr ""
 msgid "Datenschutzerklärung"
 msgstr ""
 
+#: main/templates/datenshutz_form.html:18 main/templates/pages/request.html:18
+msgid "Delete registration"
+msgstr ""
+
+#: main/templates/datenshutz_form.html:22
+msgid ""
+"By completing this form, you will remove all personal information from our "
+"database. (you can always come back if you wish)"
+msgstr ""
+
+#: main/templates/datenshutz_form.html:29
+#, fuzzy
+#| msgid "Name / Last Name"
+msgid "Last name"
+msgstr "Name / Last Name"
+
+#: main/templates/datenshutz_form.html:35
+msgid "email@service.com"
+msgstr ""
+
+#: main/templates/datenshutz_form.html:42
+msgid ""
+"I agree to the deletion of the data for processing in the sense of the DSGVO."
+msgstr ""
+
+#: main/templates/datenshutz_form.html:46
+msgid "Create delete request"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:26
+msgid "Service"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:27
+msgid "Reason for use"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:28
+msgid "Terms"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:29
+msgid "Enabled"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:41
+#: main/templates/footer.html:125
+msgid "Cookies"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:44
+msgid "Wir benutzen Cookies um das Besucherverhalten zu analysieren."
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:64
+msgid "Google Analytics"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:67
+msgid "Google Analytics wird zum Anlayiseren des Websitetraffics verwendet"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:68
+#: main/templates/datenshutz_form_privacity.html:92
+#: main/templates/datenshutz_form_privacity.html:138
+msgid "Term"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:91
+msgid "Facebook Pixel wird zum Analysieren des Besucherverhaltens verwendet."
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:115
+msgid "Twitter wird zum Analysieren des Besucherverhaltens verwendet."
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:134
+msgid "Pinterest"
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:137
+msgid "Pinterest wird zum Analysieren des Besucherverhaltens verwendet."
+msgstr ""
+
+#: main/templates/datenshutz_form_privacity.html:150
+msgid "Save"
+msgstr ""
+
 #: main/templates/footer.html:13
 msgid ""
 "\n"
@@ -1115,10 +1309,6 @@ msgstr ""
 
 #: main/templates/footer.html:93
 msgid "MAKE YOUR PAY"
-msgstr ""
-
-#: main/templates/footer.html:125
-msgid "Cookies"
 msgstr ""
 
 #: main/templates/footer.html:128
@@ -1327,23 +1517,32 @@ msgid ""
 "deposit method at Amazon Seller Central!"
 msgstr ""
 
-#: main/templates/menu/menu.html:42
+#: main/templates/menu/menu.html:6
+msgid "Ingresa"
+msgstr ""
+
+#: main/templates/menu/menu.html:9
+#: main/templates/services/pricing/plans.html:54
+msgid "Register"
+msgstr ""
+
+#: main/templates/menu/menu.html:48
 msgid "Deutsch"
 msgstr ""
 
-#: main/templates/menu/menu.html:43
+#: main/templates/menu/menu.html:49
 msgid "English"
 msgstr ""
 
-#: main/templates/menu/menu.html:44
+#: main/templates/menu/menu.html:50
 msgid "Spanish "
 msgstr ""
 
-#: main/templates/menu/menu.html:49
+#: main/templates/menu/menu.html:55
 msgid "SignUp"
 msgstr ""
 
-#: main/templates/menu/menu.html:54
+#: main/templates/menu/menu.html:60
 msgid "SignIn"
 msgstr ""
 
@@ -1353,6 +1552,7 @@ msgstr ""
 
 #: main/templates/pages/booking_email.html:58
 #: main/templates/pages/email_feedback.html:58
+#: main/templates/pages/request_delete_feedback.html:56
 #, fuzzy
 #| msgid "Name / Last Name"
 msgid "Name / Last Name: "
@@ -1364,6 +1564,7 @@ msgstr ""
 
 #: main/templates/pages/booking_email.html:60
 #: main/templates/pages/email_feedback.html:60
+#: main/templates/pages/request_delete_feedback.html:57
 msgid "Email:"
 msgstr ""
 
@@ -1384,6 +1585,8 @@ msgstr ""
 #: main/templates/pages/booking_email.html:73
 #: main/templates/pages/email_feedback.html:71
 #: main/templates/pages/published_email.html:67
+#: main/templates/pages/request_delete_feedback.html:67
+#: main/templates/pages/request_form_feedback.html:66
 msgid "Admin"
 msgstr ""
 
@@ -1396,8 +1599,8 @@ msgid "Country:"
 msgstr ""
 
 #: main/templates/pages/email_feedback.html:61
-#: main/templates/pages/show_header.html:101
-#: main/templates/pages/show_header.html:103
+#: main/templates/pages/show_header.html:100
+#: main/templates/pages/show_header.html:102
 msgid "Whatsapp"
 msgstr ""
 
@@ -1420,6 +1623,18 @@ msgstr ""
 
 #: main/templates/pages/published_email_user.html:67
 msgid "See it now"
+msgstr ""
+
+#: main/templates/pages/request_delete_feedback.html:48
+msgid "A person has requested to delete all their registration information"
+msgstr ""
+
+#: main/templates/pages/request_form_feedback.html:48
+msgid "New IP request privacity"
+msgstr ""
+
+#: main/templates/pages/request_form_feedback.html:56
+msgid "Address IP: "
 msgstr ""
 
 #: main/templates/pages/safeSearch.html:17
@@ -1447,14 +1662,14 @@ msgstr "Angebot suchen"
 
 #: main/templates/pages/show_header.html:37
 #: main/templates/services/destination/categories.html:6
-#: main/templates/services/destination/destinations_for_categorie.html:3
+#: main/templates/services/destination/destinations_for_categorie.html:5
 #: main/templates/services/destination/detail.back.html:3
-#: main/templates/services/destination/detail_destination.html:3
+#: main/templates/services/destination/detail_destination.html:5
 msgid "Categories"
 msgstr ""
 
 #: main/templates/pages/show_header.html:49
-#: main/templates/services/destination/destinations_for_categorie.html:64
+#: main/templates/services/destination/destinations_for_categorie.html:66
 msgid "Destinations"
 msgstr ""
 
@@ -1470,41 +1685,41 @@ msgstr ""
 msgid "Where would you like to travel this time?"
 msgstr "Wohin möchtest du diesmal reisen?"
 
-#: main/templates/pages/show_header.html:77
-#: main/templates/pages/show_header.html:79
+#: main/templates/pages/show_header.html:76
+#: main/templates/pages/show_header.html:78
 msgid "Name / Last Name"
 msgstr "Name / Last Name"
 
-#: main/templates/pages/show_header.html:85
-#: main/templates/pages/show_header.html:87
+#: main/templates/pages/show_header.html:84
+#: main/templates/pages/show_header.html:86
 msgid "Country / City"
 msgstr ""
 
-#: main/templates/pages/show_header.html:93
-#: main/templates/pages/show_header.html:95
+#: main/templates/pages/show_header.html:92
+#: main/templates/pages/show_header.html:94
 msgid "E-mail"
 msgstr ""
 
-#: main/templates/pages/show_header.html:109
+#: main/templates/pages/show_header.html:108
 msgid "Send"
 msgstr ""
 
-#: main/templates/pages/show_header.html:112
+#: main/templates/pages/show_header.html:111
 msgid ""
 "Leave us your personal data if you want us to send you information regarding "
 "the destinations of your interest. Do you agree that we send you information "
 "to your email of the destinations you are looking for?"
 msgstr ""
 
-#: main/templates/pricing.html:13
+#: main/templates/pricing.html:14
 msgid "Special"
 msgstr ""
 
-#: main/templates/pricing.html:13
+#: main/templates/pricing.html:14
 msgid "Ofert on"
 msgstr ""
 
-#: main/templates/pricing.html:15
+#: main/templates/pricing.html:16
 msgid ""
 "We know that there are many companies on the internet that offer the best of "
 "blue sky and we may not be the best known in the market, but our experience "
@@ -1514,50 +1729,50 @@ msgid ""
 "investment."
 msgstr ""
 
-#: main/templates/pricing.html:19
+#: main/templates/pricing.html:20
 msgid "SELECT YOUR TYPE OF PLAN AND SAVE UP TO € 1200 ANNUAL"
 msgstr ""
 
-#: main/templates/pricing.html:22
+#: main/templates/pricing.html:23
 msgid "Yearly contract"
 msgstr ""
 
-#: main/templates/pricing.html:30
+#: main/templates/pricing.html:31
 msgid "Monthly contract"
 msgstr ""
 
 #: main/templates/services/destination/all.html:22
-#: main/templates/services/destination/destinations_for_categorie.html:72
+#: main/templates/services/destination/destinations_for_categorie.html:74
 #: main/templates/services/destination/test.html:9
 msgid "Default Order"
 msgstr ""
 
 #: main/templates/services/destination/all.html:23
-#: main/templates/services/destination/destinations_for_categorie.html:73
+#: main/templates/services/destination/destinations_for_categorie.html:75
 #: main/templates/services/destination/test.html:10
 msgid "Sort by popularity"
 msgstr ""
 
 #: main/templates/services/destination/all.html:24
-#: main/templates/services/destination/destinations_for_categorie.html:74
+#: main/templates/services/destination/destinations_for_categorie.html:76
 #: main/templates/services/destination/test.html:11
 msgid "Sort by average ranking"
 msgstr ""
 
 #: main/templates/services/destination/all.html:25
-#: main/templates/services/destination/destinations_for_categorie.html:75
+#: main/templates/services/destination/destinations_for_categorie.html:77
 #: main/templates/services/destination/test.html:12
 msgid "Sort by last"
 msgstr ""
 
 #: main/templates/services/destination/all.html:26
-#: main/templates/services/destination/destinations_for_categorie.html:76
+#: main/templates/services/destination/destinations_for_categorie.html:78
 #: main/templates/services/destination/test.html:13
 msgid "Sort by price: Low to High"
 msgstr ""
 
 #: main/templates/services/destination/all.html:27
-#: main/templates/services/destination/destinations_for_categorie.html:77
+#: main/templates/services/destination/destinations_for_categorie.html:79
 #: main/templates/services/destination/test.html:14
 msgid "Sort by price: High to Low"
 msgstr ""
@@ -1597,42 +1812,42 @@ msgstr ""
 msgid "Find out More"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:17
+#: main/templates/services/destination/destinations_for_categorie.html:19
 msgid "You'll have an excellent trip."
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:18
+#: main/templates/services/destination/destinations_for_categorie.html:20
 msgid "Meet our best destinations"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:118
+#: main/templates/services/destination/destinations_for_categorie.html:131
 msgid "See details"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:140
+#: main/templates/services/destination/destinations_for_categorie.html:148
 msgid "what is your budget?"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:160
+#: main/templates/services/destination/destinations_for_categorie.html:168
 msgid "filter to my budget"
 msgstr ""
 
-#: main/templates/services/destination/destinations_for_categorie.html:163
+#: main/templates/services/destination/destinations_for_categorie.html:170
 msgid "Category"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:42
-#: main/templates/services/destination/detail_destination.html:44
+#: main/templates/services/destination/detail_destination.html:45
 msgid "Photos"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:53
-#: main/templates/services/destination/detail_destination.html:55
+#: main/templates/services/destination/detail_destination.html:56
 msgid "Detail"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:63
-#: main/templates/services/destination/detail_destination.html:65
+#: main/templates/services/destination/detail_destination.html:67
 msgid "Map"
 msgstr ""
 
@@ -1641,66 +1856,77 @@ msgid "View Photos"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:152
 msgid "Itinerary"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:168
-#: main/templates/services/destination/detail_destination.html:169
 msgid "Day"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:203
-#: main/templates/services/destination/detail_destination.html:203
 msgid "We still don't have the intenerario for this destination"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:221
-#: main/templates/services/destination/detail_destination.html:220
+#: main/templates/services/destination/detail_destination.html:246
 msgid "Reserve"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:130
+#: main/templates/services/destination/detail_destination.html:137
 msgid "back to list"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:235
+#: main/templates/services/destination/detail_destination.html:142
+msgid "Follow us or recommend us through"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:195
+msgid "Fecha"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:211
+msgid "Califications"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:211
+msgid "Votes"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:226
+msgid "Discover or download our itinerary here"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:261
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:271
-#, fuzzy
-#| msgid "Name / Last Name"
-msgid "Last Name"
-msgstr "Name / Last Name"
-
-#: main/templates/services/destination/detail_destination.html:281
+#: main/templates/services/destination/detail_destination.html:305
 msgid "+49 123 456 789"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:299
+#: main/templates/services/destination/detail_destination.html:323
 msgid "Number of people travelling"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:308
+#: main/templates/services/destination/detail_destination.html:331
 msgid "Do you have a plan you want to book?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:317
+#: main/templates/services/destination/detail_destination.html:340
 msgid ""
 "\n"
-"                          By clicking \"Book\" you agree that Travelposting "
+"                        By clicking \"Book\" you agree that Travelposting "
 "use your data for advertising and marketing purposes between Travelposting, "
 "its alliance partners and Xposting-Service. At any time you can make use of "
 "your rights and request the cancellation of your data.\n"
-"                          "
+"                        "
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:324
+#: main/templates/services/destination/detail_destination.html:347
 msgid "Close"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:325
+#: main/templates/services/destination/detail_destination.html:348
 msgid "Book"
 msgstr ""
 
@@ -1716,32 +1942,31 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:42
+#: main/templates/services/pricing/plans.html:19
 msgid "Monthly"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:50
+#: main/templates/services/pricing/plans.html:25
+msgid "Saved"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:31
 msgid "See plan details"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:73
-msgid "Register"
-msgstr ""
-
-#: main/templates/services/pricing/plans.html:87
+#: main/templates/services/pricing/plans.html:72
 msgid "Contact Us"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:89
+#: main/templates/services/pricing/plans.html:74
 msgid "Limitless"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:104
+#: main/templates/services/pricing/plans.html:89
 msgid ""
 "\n"
-"                                                if what you see doesn't "
-"appeal to you because you want to create a plan tailored to your needs,\n"
-"                                                contact us and we'll work "
-"that out together.\n"
-"                                            "
+"                        if what you see doesn't appeal to you because you "
+"want to create a plan tailored to your needs,\n"
+"                        contact us and we'll work that out together.\n"
+"                        "
 msgstr ""
