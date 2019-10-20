@@ -138,9 +138,12 @@
                 </div><br>
                 <div class="d-flex float-right">
                     <ul class="list-inline mb-0">
+                        {% if destino.user.facebook or destino.user.instagram or destino.user.twitter or destino.user.linkedin %}
+
                         <li class="list-inline-item">
                           <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
-                          </li>
+                        </li>
+                        {% endif %}
                         {% if destino.user.facebook %}
                         <li class="list-inline-item">
                           <a class="" href="{{ destino.user.facebook }}">
