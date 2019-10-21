@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-19 13:22-0400\n"
+"POT-Creation-Date: 2019-10-21 09:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: apps/accounts/forms.py:30 apps/landing_page/models.py:461
 #: main/templates/datenshutz_form.html:34 main/templates/index.html:76
-#: main/templates/services/destination/detail_destination.html:313
+#: main/templates/services/destination/detail_destination.html:316
 msgid "Email"
 msgstr ""
 
@@ -122,7 +122,6 @@ msgid "Plan"
 msgstr ""
 
 #: apps/accounts/models.py:81 apps/payments/models/paypal.py:49
-#: apps/paymentsN/models/paypal.py:49
 msgid "Coupon"
 msgstr ""
 
@@ -349,7 +348,7 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/landing_page/models.py:402 main/templates/index.html:67
-#: main/templates/services/destination/detail_destination.html:287
+#: main/templates/services/destination/detail_destination.html:290
 msgid "Name"
 msgstr ""
 
@@ -574,7 +573,7 @@ msgstr ""
 
 #: apps/landing_page/models.py:49
 #: main/templates/services/destination/detail.back.html:144
-#: main/templates/services/destination/detail_destination.html:189
+#: main/templates/services/destination/detail_destination.html:192
 msgid "Price"
 msgstr ""
 
@@ -584,7 +583,6 @@ msgstr ""
 
 #: apps/landing_page/models.py:62 apps/landing_page/models.py:172
 #: apps/landing_page/models.py:226 apps/payments/models/paypal.py:7
-#: apps/paymentsN/models/paypal.py:7
 msgid "name"
 msgstr ""
 
@@ -610,7 +608,7 @@ msgid "plans"
 msgstr ""
 
 #: apps/landing_page/models.py:100 apps/landing_page/models.py:120
-#: apps/payments/models/paypal.py:20 apps/paymentsN/models/paypal.py:20
+#: apps/payments/models/paypal.py:20
 msgid "plan"
 msgstr ""
 
@@ -644,7 +642,7 @@ msgid ""
 msgstr ""
 
 #: apps/landing_page/models.py:263 apps/landing_page/models.py:342
-#: apps/payments/models/paypal.py:24 apps/paymentsN/models/paypal.py:24
+#: apps/payments/models/paypal.py:24
 msgid "description"
 msgstr ""
 
@@ -750,7 +748,7 @@ msgid "First Name"
 msgstr ""
 
 #: apps/landing_page/models.py:456 main/templates/datenshutz_form.html:30
-#: main/templates/services/destination/detail_destination.html:295
+#: main/templates/services/destination/detail_destination.html:298
 msgid "Last Name"
 msgstr ""
 
@@ -839,27 +837,27 @@ msgstr ""
 msgid "New privacity request."
 msgstr ""
 
-#: apps/payments/apps.py:7 apps/paymentsN/apps.py:7
+#: apps/payments/apps.py:7
 msgid "Payments"
 msgstr ""
 
-#: apps/payments/models/paypal.py:12 apps/paymentsN/models/paypal.py:12
+#: apps/payments/models/paypal.py:12
 msgid "code"
 msgstr ""
 
-#: apps/payments/models/paypal.py:30 apps/paymentsN/models/paypal.py:30
+#: apps/payments/models/paypal.py:30
 msgid "start date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:34 apps/paymentsN/models/paypal.py:34
+#: apps/payments/models/paypal.py:34
 msgid "end date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:38 apps/paymentsN/models/paypal.py:38
+#: apps/payments/models/paypal.py:38
 msgid "quantity"
 msgstr ""
 
-#: apps/payments/models/paypal.py:50 apps/paymentsN/models/paypal.py:50
+#: apps/payments/models/paypal.py:50
 msgid "Coupons"
 msgstr ""
 
@@ -918,6 +916,22 @@ msgstr ""
 
 #: main/templates/about.html:100
 msgid "Get special offers on the latest travels add on our platform."
+msgstr ""
+
+#: main/templates/base.html:75
+msgid "Do you like cookies?"
+msgstr ""
+
+#: main/templates/base.html:75
+msgid "We use cookies to ensure you get the best experience on our website."
+msgstr ""
+
+#: main/templates/base.html:75
+msgid "Learn more"
+msgstr ""
+
+#: main/templates/base.html:78
+msgid "I agree"
 msgstr ""
 
 #: main/templates/coming-soon.html:19 main/templates/coming-soon.html:24
@@ -1540,6 +1554,26 @@ msgstr ""
 msgid "SignIn"
 msgstr ""
 
+#: main/templates/menu/menu_footer.html:8
+#: main/templates/pages/show_header.html:49
+#: main/templates/services/destination/destinations_for_categorie.html:66
+msgid "Destinations"
+msgstr ""
+
+#: main/templates/menu/menu_footer.html:11
+#: main/templates/pages/show_header.html:37
+#: main/templates/services/destination/categories.html:6
+#: main/templates/services/destination/destinations_for_categorie.html:5
+#: main/templates/services/destination/detail.back.html:3
+#: main/templates/services/destination/detail_destination.html:5
+msgid "Categories"
+msgstr ""
+
+#: main/templates/menu/menu_footer.html:14
+#: main/templates/pages/show_header.html:60
+msgid "Request"
+msgstr ""
+
 #: main/templates/pages/booking_email.html:50
 msgid "A person has done a new booking:"
 msgstr ""
@@ -1652,25 +1686,8 @@ msgstr ""
 msgid "Search by"
 msgstr "Search offer"
 
-#: main/templates/pages/show_header.html:37
-#: main/templates/services/destination/categories.html:6
-#: main/templates/services/destination/destinations_for_categorie.html:5
-#: main/templates/services/destination/detail.back.html:3
-#: main/templates/services/destination/detail_destination.html:5
-msgid "Categories"
-msgstr ""
-
-#: main/templates/pages/show_header.html:49
-#: main/templates/services/destination/destinations_for_categorie.html:66
-msgid "Destinations"
-msgstr ""
-
 #: main/templates/pages/show_header.html:59
 msgid "We seek for you?"
-msgstr ""
-
-#: main/templates/pages/show_header.html:60
-msgid "Request"
 msgstr ""
 
 #: main/templates/pages/show_header.html:72
@@ -1860,7 +1877,7 @@ msgid "We still don't have the intenerario for this destination"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:221
-#: main/templates/services/destination/detail_destination.html:246
+#: main/templates/services/destination/detail_destination.html:249
 msgid "Reserve"
 msgstr ""
 
@@ -1868,43 +1885,43 @@ msgstr ""
 msgid "back to list"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:142
+#: main/templates/services/destination/detail_destination.html:144
 msgid "Follow us or recommend us through"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:195
+#: main/templates/services/destination/detail_destination.html:198
 msgid "Fecha"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:211
+#: main/templates/services/destination/detail_destination.html:214
 msgid "Califications"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:211
+#: main/templates/services/destination/detail_destination.html:214
 msgid "Votes"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:226
+#: main/templates/services/destination/detail_destination.html:229
 msgid "Discover or download our itinerary here"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:261
+#: main/templates/services/destination/detail_destination.html:264
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:305
+#: main/templates/services/destination/detail_destination.html:308
 msgid "+49 123 456 789"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:323
+#: main/templates/services/destination/detail_destination.html:326
 msgid "Number of people travelling"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:331
+#: main/templates/services/destination/detail_destination.html:334
 msgid "Do you have a plan you want to book?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:340
+#: main/templates/services/destination/detail_destination.html:343
 msgid ""
 "\n"
 "                        By clicking \"Book\" you agree that Travelposting "
@@ -1914,11 +1931,11 @@ msgid ""
 "                        "
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:347
+#: main/templates/services/destination/detail_destination.html:350
 msgid "Close"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:348
+#: main/templates/services/destination/detail_destination.html:351
 msgid "Book"
 msgstr ""
 
