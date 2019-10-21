@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-21 09:57-0400\n"
+"POT-Creation-Date: 2019-10-21 11:23-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: apps/accounts/forms.py:30 apps/landing_page/models.py:461
 #: main/templates/datenshutz_form.html:34 main/templates/index.html:76
-#: main/templates/services/destination/detail_destination.html:316
+#: main/templates/services/destination/detail_destination.html:313
 msgid "Email"
 msgstr ""
 
@@ -122,6 +122,7 @@ msgid "Plan"
 msgstr ""
 
 #: apps/accounts/models.py:81 apps/payments/models/paypal.py:49
+#: apps/paymentsN/models/paypal.py:49
 msgid "Coupon"
 msgstr ""
 
@@ -348,7 +349,7 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/landing_page/models.py:402 main/templates/index.html:67
-#: main/templates/services/destination/detail_destination.html:290
+#: main/templates/services/destination/detail_destination.html:287
 msgid "Name"
 msgstr ""
 
@@ -583,6 +584,7 @@ msgstr ""
 
 #: apps/landing_page/models.py:62 apps/landing_page/models.py:172
 #: apps/landing_page/models.py:226 apps/payments/models/paypal.py:7
+#: apps/paymentsN/models/paypal.py:7
 msgid "name"
 msgstr ""
 
@@ -608,7 +610,7 @@ msgid "plans"
 msgstr ""
 
 #: apps/landing_page/models.py:100 apps/landing_page/models.py:120
-#: apps/payments/models/paypal.py:20
+#: apps/payments/models/paypal.py:20 apps/paymentsN/models/paypal.py:20
 msgid "plan"
 msgstr ""
 
@@ -642,7 +644,7 @@ msgid ""
 msgstr ""
 
 #: apps/landing_page/models.py:263 apps/landing_page/models.py:342
-#: apps/payments/models/paypal.py:24
+#: apps/payments/models/paypal.py:24 apps/paymentsN/models/paypal.py:24
 msgid "description"
 msgstr ""
 
@@ -748,7 +750,7 @@ msgid "First Name"
 msgstr ""
 
 #: apps/landing_page/models.py:456 main/templates/datenshutz_form.html:30
-#: main/templates/services/destination/detail_destination.html:298
+#: main/templates/services/destination/detail_destination.html:295
 msgid "Last Name"
 msgstr ""
 
@@ -837,27 +839,27 @@ msgstr ""
 msgid "New privacity request."
 msgstr ""
 
-#: apps/payments/apps.py:7
+#: apps/payments/apps.py:7 apps/paymentsN/apps.py:7
 msgid "Payments"
 msgstr ""
 
-#: apps/payments/models/paypal.py:12
+#: apps/payments/models/paypal.py:12 apps/paymentsN/models/paypal.py:12
 msgid "code"
 msgstr ""
 
-#: apps/payments/models/paypal.py:30
+#: apps/payments/models/paypal.py:30 apps/paymentsN/models/paypal.py:30
 msgid "start date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:34
+#: apps/payments/models/paypal.py:34 apps/paymentsN/models/paypal.py:34
 msgid "end date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:38
+#: apps/payments/models/paypal.py:38 apps/paymentsN/models/paypal.py:38
 msgid "quantity"
 msgstr ""
 
-#: apps/payments/models/paypal.py:50
+#: apps/payments/models/paypal.py:50 apps/paymentsN/models/paypal.py:50
 msgid "Coupons"
 msgstr ""
 
@@ -1909,33 +1911,35 @@ msgstr ""
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:308
+#: main/templates/services/destination/detail_destination.html:305
 msgid "+49 123 456 789"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:326
+#: main/templates/services/destination/detail_destination.html:323
 msgid "Number of people travelling"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:334
+#: main/templates/services/destination/detail_destination.html:331
 msgid "Do you have a plan you want to book?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:343
-msgid ""
-"\n"
-"                        By clicking \"Book\" you agree that Travelposting "
-"use your data for advertising and marketing purposes between Travelposting, "
-"its alliance partners and Xposting-Service. At any time you can make use of "
-"your rights and request the cancellation of your data.\n"
-"                        "
+#: main/templates/services/destination/detail_destination.html:336
+msgid "Do you may have some comments or remarks about your booking?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:350
+#: main/templates/services/destination/detail_destination.html:340
+msgid ""
+"By clicking 'Book' you agree that Travelposting use your data for "
+"advertising and marketing purposes between Travelposting, its alliance "
+"partners and Xposting-Service. At any time you can make use of your rights "
+"and request the cancellation of your data."
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:345
 msgid "Close"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:351
+#: main/templates/services/destination/detail_destination.html:346
 msgid "Book"
 msgstr ""
 
