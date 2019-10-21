@@ -14,6 +14,8 @@ from apps.destinations.models import (
 )
 
 from apps.landing_page.models import DeleteReg, PrivacySetting
+from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
+
 # Create your views here.
 
 class CommmunityView(View):
@@ -224,3 +226,16 @@ class PrivacySettingView(View):
                 )
 
         return render(request, 'pages/request.html')
+
+
+class getItineraryPDF(PDFTemplateView):
+    template_name = 'pdf/itinerary.html'
+    download_filename = 'intinerary.pdf'
+
+    def get_context_data(self, **kwargs):
+        return super(getItineraryPDF, self).get_context_data(
+            destino = Destination.objects.get(id=kwargs.get('slug')),
+            pagesize='letter',
+            title=_('Itinerary'),
+            **kwargs
+        )

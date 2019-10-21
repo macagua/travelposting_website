@@ -53,6 +53,7 @@ django-admin-shortcuts = "*"
 django-map-widgets = "*"
 gdal = "*"
 django-mapwidgets = "*"
+xhtml2pdf = "*"
 
 [requires]
 python_version = "3.7"

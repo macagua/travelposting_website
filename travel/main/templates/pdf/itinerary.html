@@ -1,0 +1,97 @@
+{% extends "easy_pdf/base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags static destinations_tags %}
+{% block layout_style %}
+<style type="text/css">
+    @frame header {
+    border: gray 1px;
+    -pdf-frame-content: page-header;
+    margin-top: 1cm;
+    margin-right: 1cm;
+    margin-bottom: 1cm;
+    margin-left: 1cm;
+    }
+</style>
+{% endblock %}
+{% block extra_style %}
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<style type="text/css">
+    body {
+    font-family: "Helvetica", "sans-serif";
+    color: #333333;
+    }
+    .logo { }
+    .logo img { zoom: 60%; }
+    table {
+    margin: auto;
+    border: white 1px solid;
+    border-collapse: collapse;
+    width: 100%;
+    }
+    tr, td, th { border: none; }
+    th {
+    font-size: 9pt;
+    border: 1pt solid white;
+    padding: 3px 0;
+    line-height: 1;
+    font-weight: bold;
+    }
+    td {
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    td:last-child { padding-bottom: 0; }
+    .color_tb1 {
+    background-color: #2f2f2f;
+    color: white;
+    }
+    .sd{ 
+    border: 5px solid #4bceb4; 
+    border-radius: 200px /8px; 
+    height: 0px; 
+    text-align: center; 
+    } 
+	hr{ 
+   		height:5px;  
+   		background-color:#4fc3f7; 
+ 	}
+</style>
+{% endblock %}
+{%block page_header%}
+<div id="page-header">
+    <div class="header">
+        <p class="logo">
+            <img width="200" src="{% static 'img/travelposting4.png' %}">
+        </p>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+        <div id="content">
+
+        <div class="recipient bottom-8">
+            <p class="bottom-8">
+                <strong>{% trans "Destination:" %}</strong> {{ destino.name }}<br>
+                
+                <span class="font-size-2 font-weight-medium"><h2>{% trans 'Price:' %} &nbsp;{{destino.list_prices.sale_price}}</h2></span>
+                <span class="text-secondary ml-2"><del><h4>{{destino.list_prices.regular_price}}</h4></del></span>
+            </p>
+        </div>
+        <p class="info">
+            {{destino.short_description|striptags}}
+        </p>
+        <center><h1>{% trans "ITINERARY" %}</h1></center>
+        <p class="info">
+            {% if destino.itinerario2 %}
+                <h2>{% trans "Description:" %}</h2>
+                {{destino.itinerario2.short_description |safe }}<br><br>
+                <h2>{% trans "Details:" %}</h2>
+
+                {{ destino.itinerario2.detail_itinerary |safe }}<br><br>
+            {% else %}
+            <h2>This Destination has no itinerary</h2>
+            {% endif%}
+        </p>
+</div>
+{% endblock %}

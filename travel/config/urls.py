@@ -13,6 +13,7 @@ from apps.landing_page.views import (
     SaveSearchView,
     DeleteRegisterView,
     PrivacySettingView,
+    getItineraryPDF,
 )
 
 from apps.destinations.views.booking import BookingSaveView
@@ -113,7 +114,9 @@ urlpatterns += i18n_patterns(
         name='setting-privacy',
     ),
 
-
+    url(r'^get-itinerary/(?P<slug>\w+)', 
+        getItineraryPDF.as_view(),
+        name='get_itinerary'),
 
     url(
         r'^',
