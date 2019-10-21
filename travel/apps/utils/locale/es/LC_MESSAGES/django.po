@@ -8,7 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2019-10-21 12:08-0400\n"
+=======
+"POT-Creation-Date: 2019-10-21 11:23-0400\n"
+>>>>>>> e23c1a5e0b1dd15e24b734d2e6897046aadd8ea0
 "PO-Revision-Date: 2019-06-25 16:03-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
