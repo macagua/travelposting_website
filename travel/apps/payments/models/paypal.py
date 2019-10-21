@@ -1,4 +1,6 @@
 from django.db import models
+from djmoney.money import Money
+from djmoney.models.fields import MoneyField
 from django.utils.translation import gettext_lazy as _
 
 
@@ -18,6 +20,16 @@ class Coupon(models.Model):
         on_delete=models.CASCADE,
         related_name='coupons',
         verbose_name=_('plan'),
+    )
+
+    price = MoneyField(
+        _('Precio'),
+        max_digits=8,
+        decimal_places=2,
+        default_currency='USD',
+        default=Money(0, 'USD'),
+        null=True,
+        blank=True,
     )
 
     description = models.TextField(
