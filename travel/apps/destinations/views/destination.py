@@ -386,6 +386,7 @@ class ItineraryView(View):
                 'status': False,
             })
 
+
 class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
     template_name = 'destinations/_socialNetworkList.html'
     success_url = reverse_lazy('destinations:social-network')
@@ -396,38 +397,42 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
         return render(request, self.template_name, {'add':add, 'destinos':destinos})    
 
     def post(self, request, *args, **kwargs):
-        check = request.POST.get('check')
+        #Definition of variables that return from the frontend
+        use_default_networks = request.POST.get('check')
         facebook = request.POST.get('facebook')
         instagram = request.POST.get('instagram')
         twitter = request.POST.get('twitter')
         linkedin = request.POST.get('linkedin')
 
-        if check == None:
-            check = False
+        '''
+        We verify that users checked that comes from the frontend to validate whether the user wants to have 
+        their social networks for all destinations or if you want to use social networks for each destination.
+        '''
+        if use_default_networks == None:
+            use_default_networks = False
         else:
-            check = True
+            use_default_networks = True
 
         try:
-            sn = SocialNetwork.objects.get(destination__pk=request.POST.get('destination'))
 
-            if  sn:
+            social_network = SocialNetwork.objects.get(destination__pk=request.POST.get('destination'))
+
+            if  social_network:
 
                 add = SocialNetwork.objects.filter(destination__user=self.request.user)
                 destinos = Destination.objects.filter(user=self.request.user)
                 errors = _("There is already a configuration of social networks. Do you want to update?")
                 return render(request, self.template_name, {'add':add, 'destinos':destinos, 'errors': errors}) 
-
         except:
             destino = Destination.objects.get(id=request.POST.get('destination'))
             SocialNetwork.objects.create(
                 destination = destino,
-                social_network = check,
+                social_network = use_default_networks,
                 facebook =facebook,
                 instagram = instagram,
                 twitter = twitter,
                 linkedin = linkedin
             )
-
             return HttpResponseRedirect(self.success_url)
     
     def delete(self,request):
@@ -452,23 +457,29 @@ class SocialNetworkUpdateView(UpdateView):
 
 
     def post(self, request, *args, **kwargs):
-        check = request.POST.get('check')
+        #Definition of variables that return from the frontend
+
+        use_default_networks = request.POST.get('check')
         facebook = request.POST.get('facebook')
         instagram = request.POST.get('instagram')
         twitter = request.POST.get('twitter')
         linkedin = request.POST.get('linkedin')
     
-        if check == None:
-            check = False
+        '''
+        We verify that users checked that comes from the frontend to validate whether the user wants to have 
+        their social networks for all destinations or if you want to use social networks for each destination.
+        '''
+        if use_default_networks == None:
+            use_default_networks = False
         else:
-            check = True
+            use_default_networks = True
 
         SocialNetwork.objects.filter(pk=kwargs['pk']).update(
-                                                social_network = check,
+                                                social_network = use_default_networks,
                                                 facebook =facebook,
                                                 instagram = instagram,
                                                 twitter = twitter,
-                                                linkedin = linkedin
-        )
+                                                linkedin = linkedin)
+
         return HttpResponseRedirect(self.success_url)
  
