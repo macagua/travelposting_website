@@ -331,7 +331,7 @@ class ItineraryView(View):
                 )
         else:
             c = {}
-            itinerary_list = Itinerary.objects.all()
+            itinerary_list = Itinerary.objects.filter(destination__user=request.user.id)
             destination_list = Destination.objects.filter(user=request.user)
             c['itinerary_list'] = itinerary_list
             c['destination_list'] = destination_list
@@ -394,7 +394,7 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
     def get(self, request, *args, **kwargs):
         add = SocialNetwork.objects.filter(destination__user=self.request.user)
         destinos = Destination.objects.filter(user=self.request.user)
-        return render(request, self.template_name, {'add':add, 'destinos':destinos})    
+        return render(request, self.template_name, {'add':add, 'destinos':destinos})
 
     def post(self, request, *args, **kwargs):
         #Definition of variables that return from the frontend
@@ -434,7 +434,7 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
                 linkedin = linkedin
             )
             return HttpResponseRedirect(self.success_url)
-    
+
     def delete(self,request):
         pk_social= QueryDict(request.body)
         social = get_object_or_404(SocialNetwork, pk=pk_social['pk'])
@@ -453,7 +453,7 @@ class SocialNetworkUpdateView(UpdateView):
 
     def get(self, request, *args, **kwargs):
         add = SocialNetwork.objects.filter(id=kwargs['pk'])
-        return render(request, self.template_name, {'social':add})  
+        return render(request, self.template_name, {'social':add})
 
 
     def post(self, request, *args, **kwargs):
@@ -482,4 +482,4 @@ class SocialNetworkUpdateView(UpdateView):
                                                 linkedin = linkedin)
 
         return HttpResponseRedirect(self.success_url)
- 
+
