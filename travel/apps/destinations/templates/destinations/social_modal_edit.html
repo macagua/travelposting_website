@@ -1,10 +1,10 @@
 {% load static i18n %}
-<div class="modal inmodal" id="socialModal" tabindex="-1" role="dialog"
+<div class="modal inmodal" id="editModal" tabindex="-1" role="dialog"
      aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="modal-content animated bounceInRight">
     <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">{% trans "Configurations social network" %}</h5>
+            <h5 class="modal-title" id="exampleModalLabel">{% trans "Edit configurations social network" %}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -36,7 +36,7 @@
                                 <label class="font-normal">
                                     Facebook
                                 </label>
-                                <input type="text" name="facebook" class="form-control" placeholder="https://facebook.com/youruser"  maxlength="200" >
+                                <input type="text" name="facebook" class="form-control" placeholder="https://facebook.com/youruser" maxlength="200" >
                             </div>
                     </div>
                     <div class="col-md-12">

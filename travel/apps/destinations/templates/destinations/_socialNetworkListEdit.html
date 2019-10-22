@@ -1,0 +1,95 @@
+
+
+{% extends 'destinations/base.html' %}
+{% load static i18n %}
+{% block title %}{% trans 'Create Social network' %}{% endblock %}
+{%block css%}
+{{ block.super }}
+{{ form.media.css }}
+<link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
+<link href="{% static "inspinia/js/plugins/dataTables/datatables.min.css" %}" rel="stylesheet">
+<link href="{% static "inspinia/js/plugins/toastr/toastr.min.css" %}" rel="stylesheet">
+<link href="{% static "inspinia/js/plugins/sweetalert/sweetalert.css" %}" rel="stylesheet">
+{%endblock css%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>{% trans 'Edit Social Network' %} <small></small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="{% url 'destinations:dashboard-index' %}" class="dropdown-item">{% trans "main page"%}</a>
+                                </li>
+                                <li><a href="{% url 'destinations:social-network' %}" class="dropdown-item">{% trans "See my configurations from social network" %}</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                            <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="POST">{% csrf_token %}
+                            {% for social in social%}
+                            <div class="form-group row"><label class="col-sm-2 col-form-label">{% trans 'Verify' %}</label>
+                                <div class="col-sm-10"><input type="checkbox" value="" name="check" checked=""> <span class="form-text m-b-none">{% trans 'Check for use only social network from user'%}</span>
+                                </div>
+                            </div>
+                            <div class="form-group  row">
+                                <label class="col-sm-2 col-form-label">Facebook</label>
+                                <div class="col-sm-10"><input type="text" name="facebook" class="form-control" placeholder="https://facebook.com/youruser" value="{{ social.facebook }}"></div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Instagram</label>
+                                <div class="col-sm-10"><input type="text" class="form-control" name="instagram" placeholder="https://instagram.com/youruser" value="{{social.instagram}}"> 
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Twitter</label>
+                                <div class="col-sm-10"><input type="text" class="form-control" name="twitter" placeholder="https://twitter.com/youruser" value="{{ social.twitter }}"></div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Linkedin</label>
+                                <div class="col-sm-10"><input type="text" placeholder="https://linkedin.com/youruser" class="form-control" name="linkedin" value="{{social.linkedin}}"></div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <a class="btn btn-white btn-sm" href="{% url 'destinations:social-network'%}">{% trans 'Cancel' %}</a>
+                                    <button class="btn btn-primary btn-sm" type="submit">{% trans 'Save change' %}</button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'destinations/footer.html' %}
+</div>
+{% endblock %}
+{% block js %}
+{{ block.super }}
+{{ form.media.js }}
+<script src="{% static "inspinia/js/plugins/dataTables/datatables.min.js" %}"></script>
+<script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
+<script src="{% static "inspinia/js/plugins/select2/select2.full.min.js" %}"></script>
+<script src="{% static "inspinia/js/plugins/toastr/toastr.min.js" %}"></script>
+<script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
+<script src="{% static "inspinia/js/notifications.js" %}"></script>
+{% endblock %}
+

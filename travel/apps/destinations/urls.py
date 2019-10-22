@@ -14,6 +14,7 @@ from apps.destinations.views.destination import (
     OptionTabDataTemplateAjaxView,
     ItineraryView,
     SocialNetworkListView,
+    SocialNetworkUpdateView,
 )
 
 from apps.destinations.views.booking import (
@@ -70,6 +71,16 @@ urlpatterns = [
         'social-network/',
         SocialNetworkListView.as_view(),
         name='social-network',
+    ),
+    path(
+        'social-network/delete-setting',
+        SocialNetworkListView.as_view(),
+        name='delete-setting',
+    ),
+    path(
+        '<int:pk>/up/',
+        SocialNetworkUpdateView.as_view(),
+        name='update-social',
     ),
 
     path(

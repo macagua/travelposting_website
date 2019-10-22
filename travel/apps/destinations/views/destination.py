@@ -411,6 +411,7 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
             sn = SocialNetwork.objects.get(destination__pk=request.POST.get('destination'))
 
             if  sn:
+
                 add = SocialNetwork.objects.filter(destination__user=self.request.user)
                 destinos = Destination.objects.filter(user=self.request.user)
                 errors = _("There is already a configuration of social networks. Do you want to update?")
@@ -428,5 +429,46 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
             )
 
             return HttpResponseRedirect(self.success_url)
+    
+    def delete(self,request):
+        pk_social= QueryDict(request.body)
+        social = get_object_or_404(SocialNetwork, pk=pk_social['pk'])
+        if social.delete() :
+            return JsonResponse(
+                {
+                'status':True
+                },
+                safe=False,
+            )
 
 
+class SocialNetworkUpdateView(UpdateView):
+    template_name = 'destinations/_socialNetworkListEdit.html'
+    success_url = reverse_lazy('destinations:social-network')
+
+    def get(self, request, *args, **kwargs):
+        add = SocialNetwork.objects.filter(id=kwargs['pk'])
+        return render(request, self.template_name, {'social':add})  
+
+
+    def post(self, request, *args, **kwargs):
+        check = request.POST.get('check')
+        facebook = request.POST.get('facebook')
+        instagram = request.POST.get('instagram')
+        twitter = request.POST.get('twitter')
+        linkedin = request.POST.get('linkedin')
+    
+        if check == None:
+            check = False
+        else:
+            check = True
+
+        SocialNetwork.objects.filter(pk=kwargs['pk']).update(
+                                                social_network = check,
+                                                facebook =facebook,
+                                                instagram = instagram,
+                                                twitter = twitter,
+                                                linkedin = linkedin
+        )
+        return HttpResponseRedirect(self.success_url)
+ 

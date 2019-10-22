@@ -47,12 +47,12 @@
                                             {{ row.destination }}
                                         </th>
                                         <th>
-                                            
+                                            <i class="fa fa-check-circle"></i> 
                                         </th>
 
                                         <th>
-                                            <span class="btn btn-danger btn-sm" onClick="delete_itinerary({{ row.id }})"><i class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
-                                            <!-- <span class="btn btn-success btn-sm"><i onClick="get_map({{destination.id}})" class="fa fa-lg fa-edit"></i>{% trans "Edit" %}</span> -->
+                                            <span class="btn btn-success btn-sm"><a href="{% url 'destinations:update-social' row.pk %}" style="color: #fff;"><i class="fa fa-lg fa-edit"></i>{% trans "Edit" %}</a></span>
+                                            <span class="btn btn-danger btn-sm" onClick="delete_setting({{ row.id }})"><i class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
                                         </th>
                                     </tr>
                                 {% endfor%}
@@ -63,6 +63,7 @@
                 </div>
               </div>
             {% include 'destinations/social_modal.html' %}
+
 
           </div>
         </div>
@@ -82,5 +83,40 @@
     <script src="{% static "inspinia/js/plugins/toastr/toastr.min.js" %}"></script>
     <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
     <script src="{% static "inspinia/js/notifications.js" %}"></script>
+  <script>
+    //Delete fuction
+    function delete_setting(pk_i){
+          swal({
+              title: "{% trans "Are you sure?" %}",
+              text: "{% trans "If you delete this configuration you will not be able to recover it" %}",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "{% trans "Yes, delete it!" %}",
+              closeOnConfirm: false
+          }, function () {
+            $.ajax({
+                  method:'DELETE',
+                  url:'{% url 'destinations:delete-setting' %}',
+                  data:{
+                    pk:pk_i,
+                  },
+                  beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+                  },
+                  success: function (request) {
+                  if(request.status==true){
+                    swal("Deleted!", "This configuration has been deleted.", "success");
+                    setTimeout(function(){
+                        window.location.href = "{% url 'destinations:social-network' %}";
+                    }, 2000);
+                  }else{
+                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
+                  }
+                  }
+              });
+          });
+    }    
+    </script>
 
 {% endblock %}
