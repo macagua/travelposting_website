@@ -139,38 +139,74 @@
                 <br>
                 <div class="d-flex float-right">
                     <ul class="list-inline mb-0">
-                        {% if destino.user.facebook or destino.user.instagram or destino.user.twitter or destino.user.linkedin %}
-                        <li class="list-inline-item">
-                            <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
-                        </li>
-                        {% endif %}
-                        {% if destino.user.facebook %}
-                        <li class="list-inline-item">
-                            <a class="" href="{{ destino.user.facebook }}">
-                            <img src="{% static 'img/facebook.png' %}" >
-                            </a>
-                        </li>
-                        {% endif %}
-                        {% if destino.user.instagram %}
-                        <li class="list-inline-item">
-                            <a class="" href="{{ destino.user.instagram }}">
-                            <img src="{% static 'img/instagram.png' %}" >
-                            </a>
-                        </li>
-                        {% endif %}
-                        {% if destino.user.twitter %}
-                        <li class="list-inline-item">
-                            <a class="" href="{{ destino.user.twitter }}">
-                            <img src="{% static 'img/twitter.png' %}" >
-                            </a>
-                        </li>
-                        {% endif %}
-                        {% if destino.user.linkedin %}
-                        <li class="list-inline-item">
-                            <a class="" href="{{ destino.user.linkedin }}">
-                            <img src="{% static 'img/linkedin.png' %}">
-                            </a>
-                        </li>
+                        {% if destino.social.social_network == True %}
+                            {% if destino.user.facebook or destino.user.instagram or destino.user.twitter or destino.user.linkedin %}
+                            <li class="list-inline-item">
+                                <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
+                            </li>
+                            {% endif %}
+                            {% if destino.user.facebook %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.user.facebook }}">
+                                <img src="{% static 'img/facebook.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.user.instagram %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.user.instagram }}">
+                                <img src="{% static 'img/instagram.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.user.twitter %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.user.twitter }}">
+                                <img src="{% static 'img/twitter.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.user.linkedin %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.user.linkedin }}">
+                                <img src="{% static 'img/linkedin.png' %}">
+                                </a>
+                            </li>
+                            {% endif %}
+                        {% else %}
+                            {% if destino.social.facebook or destino.social.instagram or destino.social.twitter or destino.social.linkedin %}
+                            <li class="list-inline-item">
+                                <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
+                            </li>
+                            {% endif %}
+                            {% if destino.social.facebook %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.social.facebook }}">
+                                <img src="{% static 'img/facebook.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.social.instagram %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.social.instagram }}">
+                                <img src="{% static 'img/instagram.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.social.twitter %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.social.twitter }}">
+                                <img src="{% static 'img/twitter.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.social.linkedin %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.social.linkedin }}">
+                                <img src="{% static 'img/linkedin.png' %}">
+                                </a>
+                            </li>
+                            {% endif %}
                         {% endif %}
                     </ul>
                 </div>
