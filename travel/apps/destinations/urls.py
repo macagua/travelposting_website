@@ -13,6 +13,7 @@ from apps.destinations.views.destination import (
     GalleryListView,
     OptionTabDataTemplateAjaxView,
     ItineraryView,
+    SocialNetworkListView,
 )
 
 from apps.destinations.views.booking import (
@@ -63,6 +64,12 @@ urlpatterns = [
         '<int:pk>/delete/',
         DestinationDeleteView.as_view(),
         name='delete',
+    ),
+
+    path(
+        'social-network/',
+        SocialNetworkListView.as_view(),
+        name='social-network',
     ),
 
     path(

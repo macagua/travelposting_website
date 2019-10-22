@@ -22,6 +22,7 @@ from .models import (
     DestinationMap,
     Itinerary,
     BookingStats,
+    SocialNetwork,
 )
 
 @admin.register(OptionTabData)
@@ -159,3 +160,4 @@ admin.site.register(SearchLanding)
 admin.site.register(DestinationMap)
 admin.site.register(Itinerary)
 admin.site.register(BookingStats)
+admin.site.register(SocialNetwork)

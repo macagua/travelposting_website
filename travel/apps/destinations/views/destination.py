@@ -41,6 +41,7 @@ from apps.destinations.models import (
     Itinerary,
     InventarioDetail,
     BookingDetail,
+    SocialNetwork,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -384,3 +385,48 @@ class ItineraryView(View):
                 'errors': mapped_errors_form(form),
                 'status': False,
             })
+
+class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
+    template_name = 'destinations/_socialNetworkList.html'
+    success_url = reverse_lazy('destinations:social-network')
+
+    def get(self, request, *args, **kwargs):
+        add = SocialNetwork.objects.filter(destination__user=self.request.user)
+        destinos = Destination.objects.filter(user=self.request.user)
+        return render(request, self.template_name, {'add':add, 'destinos':destinos})    
+
+    def post(self, request, *args, **kwargs):
+        check = request.POST.get('check')
+        facebook = request.POST.get('facebook')
+        instagram = request.POST.get('instagram')
+        twitter = request.POST.get('twitter')
+        linkedin = request.POST.get('linkedin')
+
+        if check == None:
+            check = False
+        else:
+            check = True
+
+        try:
+            sn = SocialNetwork.objects.get(destination__pk=request.POST.get('destination'))
+
+            if  sn:
+                add = SocialNetwork.objects.filter(destination__user=self.request.user)
+                destinos = Destination.objects.filter(user=self.request.user)
+                errors = _("There is already a configuration of social networks. Do you want to update?")
+                return render(request, self.template_name, {'add':add, 'destinos':destinos, 'errors': errors}) 
+
+        except:
+            destino = Destination.objects.get(id=request.POST.get('destination'))
+            SocialNetwork.objects.create(
+                destination = destino,
+                social_network = check,
+                facebook =facebook,
+                instagram = instagram,
+                twitter = twitter,
+                linkedin = linkedin
+            )
+
+            return HttpResponseRedirect(self.success_url)
+
+

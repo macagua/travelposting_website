@@ -158,6 +158,12 @@ class Destination(models.Model):
         editable=False,
     )
 
+    social_network = models.BooleanField(
+        _('Social Network'),
+        default=False,
+        help_text = _("If you check this option it will show the social networks of the destination"),
+    )
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     updated_at = models.DateTimeField(auto_now=True)
@@ -232,6 +238,10 @@ class Destination(models.Model):
         it2 =   Itinerary.objects.get(destination=self.pk)
         return it2
 
+    @property
+    def social(self):
+        sn = SocialNetwork.objects.get(destination=self.pk)
+        return sn 
 
     @property
     def list_prices(self):
@@ -906,3 +916,24 @@ class BookingStats(models.Model):
     class Meta:
         verbose_name_plural = _("Booking Stats")
         verbose_name = _("Booking Stast")
+
+
+
+class SocialNetwork(models.Model):
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+    social_network = models.BooleanField(
+        _('Social Network'),
+        default=False,
+        help_text = _("Check for use the network from user"),
+    )
+    facebook = models.CharField(max_length=100, null=True, blank=True)
+    instagram = models.CharField(max_length=100, null=True, blank=True)
+    twitter = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.destination}"
+
+    class Meta:
+        verbose_name_plural = _("Social Networks")
+        verbose_name = _("Social Network")

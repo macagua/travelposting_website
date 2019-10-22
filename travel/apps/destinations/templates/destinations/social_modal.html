@@ -1,0 +1,75 @@
+{% load static i18n %}
+<div class="modal inmodal" id="socialModal" tabindex="-1" role="dialog"
+     aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content animated bounceInRight">
+    <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{% trans "Configurations social network" %}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+            <form id="form-itinerary" method="POST">
+                {% csrf_token %}
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="font-normal">{% trans "Destiny"%}</label>
+                        <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
+                            {% for destiny in destinos %}
+                                <option value="{{ destiny.id }}">
+                                    {{ destiny.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="font-normal">
+                                {% trans "Check for use only social network from user" %}<br>
+                            </label>
+                                <input type="checkbox" value="" name="check" checked="">
+                    </div>
+                    <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="font-normal">
+                                    Facebook
+                                </label>
+                                <input type="text" name="facebook" class="form-control" placeholder="https://facebook.com/youruser" maxlength="200" >
+                            </div>
+                    </div>
+                    <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="font-normal">
+                                    Instagram
+                                </label>
+                                <input type="text" name="instagram" class="form-control" placeholder="https://instagram.com/youruser" maxlength="200" >
+                            </div>
+                    </div>
+                    <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="font-normal">
+                                    Twitter
+                                </label>
+                                <input type="text" name="twitter" class="form-control" placeholder="https://twitter.com/youruser" maxlength="200">
+                            </div>
+                    </div>
+                    <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="font-normal">
+                                    Linkedin
+                                </label>
+                                <input type="text" name="linkedin" class="form-control" placeholder="https://linkedin.com/youruser" maxlength="200">
+                            </div>
+                    </div>
+                </div>
+                <button id="create_itinerary" class="btn btn-success pull-right" type="submit">{% trans "create social network configuration"%}</button>
+                <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">{% trans "Close" %}</button>
+            </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
