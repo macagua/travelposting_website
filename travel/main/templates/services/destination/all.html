@@ -8,9 +8,6 @@
 
 
 
-
-
-
 {% load cms_tags staticfiles i18n %}
 
 
@@ -34,7 +31,7 @@
             <div class="row gallery-items onyx-pagination" items-count="9" items-count-resp="4">
 {% for i in "x"|rjust:"20" %}
             <!-- Gallery item -->
-            <div class="col-sm-6 col-md-4 mb-5 gallery-item-outer" 
+            <div class="col-sm-6 col-md-4 mb-5 gallery-item-outer"
                 data-filter="2017"
                 data-popularity=""
                 data-predetermined=""
@@ -48,7 +45,7 @@
                   <img class="card-img-top" src="{% static 'img/blank.gif' %}" data-original="{% static 'assets/img/1920x1080/img20.jpg' %}" alt="Image Description">
                   <div class="card-body p-5">
                     <h4 class="text-primary" class="mb-0">
-                      <span class="font-weight-semi-bold">Dervins{{destination.name}}</span>
+                      <span class="font-weight-semi-bold">{{destination.name}}</span>
                     </h4>
                   </div>
                   <div class="card-footer bg-light border-0 py-4 px-5">
