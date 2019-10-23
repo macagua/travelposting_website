@@ -54,6 +54,7 @@ django-map-widgets = "*"
 gdal = "*"
 django-mapwidgets = "*"
 xhtml2pdf = "*"
+django-mathfilters = "*"
 
 [requires]
 python_version = "3.7"

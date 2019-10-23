@@ -1,6 +1,6 @@
 
 
-{%load i18n destinations_tags staticfiles mptt_tags landing_extra %}
+{%load i18n destinations_tags staticfiles mptt_tags landing_extra mathfilters %}
 <div class="container">
     <div class="row">
         <div class="col">
@@ -13,16 +13,18 @@
                             {{ plan }}
                         </h3>
                         {% for price in plan.price.all %}
-                            {% if price %}
-                                <span class="{% if price.id|divisibleby:2 %}anual{% else %}mensual{% endif %}">
-                                    <strong style="font-size: 2.5rem;"> {{ price.value }} </strong>
-                                    <span class="d-block text-secondary font-size-1"></span>{% trans "Monthly" %}
-                                </span>
-                            {% else %}
-                              --
-                            {% endif %}
-                        {% endfor %}<br>
-                        <!-- <span class="text-secondary ml-1 text-warning"><del>$33.99</del> {%trans 'Saved' %}</span> -->
+                            <span class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
+                                <strong style="font-size: 2rem;"> {{ price.value }} </strong>
+
+                                {% if price.id|divisibleby:2 %}
+                                    {% trans "Monthly" %}
+                                {% else %}
+                                    {% trans "Anual"%}<br>
+                                {% endif %}
+                            </span>
+                        {% endfor %}
+                        <span class="text-secondary ml-1 text-warning"><del>{{  plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }}</del> {%trans 'off orders' %}</span>
+
                     </header>
                     <!-- End Header -->
                     <!-- Content -->

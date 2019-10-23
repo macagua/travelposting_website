@@ -229,6 +229,7 @@ THIRD_PARTY = [
     'bootstrap_datepicker_plus',
     'oauth2_provider',
     'mapwidgets',
+    'mathfilters',
 ]
 
 LOCAL_APPS = [

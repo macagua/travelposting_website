@@ -8,6 +8,8 @@ from mptt.models import MPTTModel
 from mptt.querysets import TreeQuerySet
 from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
+from djmoney.models.fields import MoneyField
+from djmoney.money import Money
 
 
 class PriceType(models.Model):
@@ -35,11 +37,12 @@ class Price(models.Model):
         on_delete=None,
     )
 
-    value  = models.CharField(
-        _('Valor'),
-        null=False,
-        blank=True,
-        max_length=10,
+    value  = MoneyField(
+        _('Value'),
+        max_digits=19,
+        decimal_places=2,
+        default_currency='EUR',
+        default=Money(0, 'EUR'),
     )
 
     def __str__(self):
