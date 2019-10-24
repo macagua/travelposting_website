@@ -50,6 +50,24 @@
                             <h1 class="h3 text-primary font-weight-normal mb-0">{% trans 'Welcome to' %}<span class="font-weight-semi-bold"> Travelposting</span></h1>
                             <p>{% trans 'Fill out the form to get started.' %}</p>
                         </div>
+                        {% if form.errors %}
+                            <div class="alert alert-dismissable alert-danger">
+                                <ul>
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            <li>
+                                                <strong>{{ field.name|upper }}: {{ error|escape }}</strong>
+                                            </li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                    {% for error in form.non_field_errors %}
+                                        <li>
+                                            <strong>{{ error|escape }}</strong>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
                         <!-- End Title -->
                         <!-- Form Group -->
                         <span >{% trans 'Do you have a Coupon?' %}</span>
@@ -75,7 +93,7 @@
                         <!-- Form Group-->
                         <div class="js-form-message form-group">
                             {{ field }}
-                            <span class="small u-has-error">{{ field.errors }}</span>
+                            <span class="small u-has-error text-danger">{{ field.errors }}</span>
                             <span class="small u-has-success">{{ field.help_text }}</span>
                         </div>
                         <!-- End Form Group -->
