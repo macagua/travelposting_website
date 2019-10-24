@@ -36,22 +36,31 @@
                                             </span>
                                             <span class="text-secondary">
                                             {% if price.id|divisibleby:2 %}
-                                            {% trans "Monthly" %}
-                                            {% else %}
                                             {% trans "Anual"%}
+                                            
+                                            {% else %}
+                                            {% trans "Monthly" %}
                                             {% endif %}
                                             </span>
                                         </div>
                                         {% endfor %}
-                                        <span class="text-secondary ml-1 text-warning">
-                                        <del>
+
+                                        
                                         {% if plan.price.all.1.type.type == 'Mensual' %}
+                                        {% trans "If you select annual will have a discount" %}<br>
+
+                                        <span class="text-secondary ml-1 text-warning">
+                                            <del>
                                         {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }} {%trans 'off orders' %}
+                                            </del> 
+                                        </span>
                                         {% elif plan.price.all.0.type.type == 'Mensual' %}
                                         {{ plan.price.all.0.value|mul:12|sub:plan.price.all.1.value }} {%trans 'off orders' %}
+                                        {% else %}
+                                            {% trans "This plan is anual"%}
+
                                         {% endif %}
-                                        </del> 
-                                        </span>
+ 
                                     </header>
                                     <!-- End Header -->
                                     <!-- Content -->
@@ -116,43 +125,60 @@
     </div>
 </div>
 <!-- Modal -->
+
+
+
+<!--New Modal-->
 {% for plan in plans %}
-<div class="modal fade" id="theModal-{{ plan.pk }}" tabindex="-1" role="dialog" aria-labelledby="TestModal{{plan.pk}}Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TestModal{{plan}}Label">{{ plan }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                    <ul class=" list-group list-group-flush list-group-borderless mb-4">
-                            {% with features=plan|show_features %}
-                            {% for node in features %}
-                                {% if node.is_leaf_node %}
-                                <li id="detail-{{ plan.id }}" class="list-group-item  ">{{ node }}</li>
-                                {% else %}
-                                <li id="detail-{{ plan.id }}" class=" list-group-item ">
-                                    {{ node }}
-                                    <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                        {% for child in node|get_children_plan:plan %}
-                                        <li class="list-group-item">
-                                            {{ child }}
-                                        </li>
-                                        {% endfor %}
-                                    </ul>
-                                </li>
-                                {% endif %}
+
+<!--Modal: modalPush-->
+<div class="modal fade" id="theModal-{{plan.pk}}" tabindex="-1" role="dialog" aria-labelledby="TestModal{{plan.pk}}Label"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info modal-lg" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">{{ plan }}</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <i class="fas fa-info-circle fa-4x animated rotateIn mb-4"></i>
+
+        <ul class=" list-group list-group-flush list-group-borderless mb-4">
+                {% with features=plan|show_features %}
+                {% for node in features %}
+                    {% if node.is_leaf_node %}
+                    <li id="detail-{{ plan.id }}" class="">{{ node }}</li>
+                    {% else %}
+                    <li id="detail-{{ plan.id }}" class=" ">
+                        {{ node }}
+                        <ul class="list-group list-group-flush list-group-borderless mb-4">
+                            {% for child in node|get_children_plan:plan %}
+                            <li class="">
+                                {{ child }}
+                            </li>
                             {% endfor %}
-                            {% endwith %}
-                            </span>
                         </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
-            </div>
-        </div>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+                {% endwith %}
+                </span>
+            </ul>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center">
+        <a href="/es/accounts/register/{{ plan.id }}" class="btn btn-info">{% trans "Register" %}</a>
+        <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">{% trans "No" %}</a>
+      </div>
     </div>
+    <!--/.Content-->
+  </div>
 </div>
+<!--Modal: modalPush--> 
 {% endfor%}
