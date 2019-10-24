@@ -1,78 +1,84 @@
 
 
 {%load i18n destinations_tags staticfiles mptt_tags landing_extra mathfilters %}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col">
-            <div class="card-sm-columns card-sm-2-count card-lg-3-count">
-                {% for plan in plans %}
-                <div class="card transition-3d-hover mt-1 ">
-                    <!-- Header -->
-                    <header class="card-header text-center p-5">
-                        <h3 class="h6 text-primary mb-3">
-                            {{ plan }}
-                        </h3>
-                        {% for price in plan.price.all %}
-                            <span class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
-                                
-                                <strong style="font-size: 2rem;"> {{ price.value }} </strong>
-                                
-                                {% if price.id|divisibleby:2 %}
-                                    {% trans "Monthly" %}
-                                {% else %}
-                                    {% trans "Anual"%}<br>
-                                {% endif %}
-                            </span>
-                        {% endfor %}
-                        <span class="text-secondary ml-1 text-warning">
-                            <del>
-                            {% if plan.price.all.1.type.type == 'Mensual' %}
-                                {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }} {%trans 'off orders' %}
-                            {% elif plan.price.all.0.type.type == 'Mensual' %}
-                                {{ plan.price.all.0.value|mul:12|sub:plan.price.all.1.value }} {%trans 'off orders' %}
-                            {% endif %}
-                            </del> </span>
-
-                    </header>
-                    <!-- End Header -->
-                    <!-- Content -->
-                    <div class="card-body p-5">
-                        <center>
-                            <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="collapse" data-target="#detail-{{ plan.id }}">{% trans 'See plan details' %}</button>
-                        </center>
-                        <ul class=" list-group list-group-flush list-group-borderless mb-4">
-                            {% with features=plan|show_features %}
-                            {% for node in features %}
-                                {% if node.is_leaf_node %}
-                                <li id="detail-{{ plan.id }}" class="list-group-item  collapse">{{ node }}</li>
-                                {% else %}
-                                <li id="detail-{{ plan.id }}" class=" list-group-item collapse">
-                                    {{ node }}
-                                    <ul class="list-group list-group-flush list-group-borderless mb-4">
-                                        {% for child in node|get_children_plan:plan %}
-                                        <li class="list-group-item">
-                                            {{ child }}
-                                        </li>
+            <!-- Cubeportfolio Section -->
+            <div class="">
+                <!-- Content -->
+                <div class="cbp "
+                    data-controls="#cubeFilter"
+                    data-x-gap="16"
+                    data-y-gap="16"
+                    data-media-queries='[
+                    {"width": 1500, "cols": 4},
+                    {"width": 1100, "cols": 4},
+                    {"width": 800, "cols": 3},
+                    {"width": 480, "cols": 2},
+                    {"width": 300, "cols": 1}
+                    ]'>
+                    <!-- Item -->
+                    <div class="card-sm-columns card-sm-2-count card-lg-3-count">
+                        <!-- from here-->
+                        {% for plan in plans %}
+                        <div class="cbp-item ">
+                            <div class="">
+                                <!-- Pricing -->
+                                <div class="card text-center mb-5 mb-md-0">
+                                    <!-- Header -->
+                                    <header class="card-header p-5">
+                                        <h4 class="h6 text-success">{{ plan }}</h4>
+                                        {% for price in plan.price.all %}
+                                        <div class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
+                                            <span class="h1 text-dark font-weight-medium">
+                                            <span class="align-top font-size-3">{{ price.value }}</span>
+                                            </span>
+                                            <span class="text-secondary">
+                                            {% if price.id|divisibleby:2 %}
+                                            {% trans "Monthly" %}
+                                            {% else %}
+                                            {% trans "Anual"%}
+                                            {% endif %}
+                                            </span>
+                                        </div>
                                         {% endfor %}
-                                    </ul>
-                                </li>
-                                {% endif %}
-                            {% endfor %}
-                            {% endwith %}
-                            </span>
-                        </ul>
-                        <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" tabindex="0" href="/es/accounts/register/{{ plan.id }}">{% trans 'Register' %}</a>
-                    </div>
-                    <!-- End Content -->
-                </div> 
-                &nbsp;&nbsp;<br>
-                {% endfor %}
-                <br><br>
-            </div>
-        </div>
-        <br>
-        <div class="col-3 d-none d-sm-block">
+                                        <span class="text-secondary ml-1 text-warning">
+                                        <del>
+                                        {% if plan.price.all.1.type.type == 'Mensual' %}
+                                        {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }} {%trans 'off orders' %}
+                                        {% elif plan.price.all.0.type.type == 'Mensual' %}
+                                        {{ plan.price.all.0.value|mul:12|sub:plan.price.all.1.value }} {%trans 'off orders' %}
+                                        {% endif %}
+                                        </del> 
+                                        </span>
+                                    </header>
+                                    <!-- End Header -->
+                                    <!-- Content -->
+                                    <div class="card-body p-5">
+                                        <center>
+                                            <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}"">{% trans 'See plan details' %}</button>
+                                        </center>
+                                        <!-- date here-->
 
+                                        <!-- enddata here-->
+                                        <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="/es/accounts/register/{{ plan.id }}">{% trans 'Register' %}</a>
+                                    </div>
+                                    <!-- End Content -->
+                                </div>
+                                <!-- End Pricing -->
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- hasta aquí-->
+                    </div>
+                    <!-- End Item -->
+                </div>
+                <!-- End Content -->
+            </div>
+            <!-- End Cubeportfolio Section -->
+        </div>
+        <div class="col-3 d-none d-sm-block">
             <!-- Pricing -->
             <div class="card transition-3d-hover mt-1">
                 <!-- Header -->
@@ -104,9 +110,49 @@
                     <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="mailto:hamburgo@travelposting.com"tabindex="0">Contact Us</a>
                 </div>
                 <!-- End Content -->
-            <!-- End Pricing -->
+                <!-- End Pricing -->
             </div>
         </div>
     </div>
 </div>
-
+<!-- Modal -->
+{% for plan in plans %}
+<div class="modal fade" id="theModal-{{ plan.pk }}" tabindex="-1" role="dialog" aria-labelledby="TestModal{{plan.pk}}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TestModal{{plan}}Label">{{ plan }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <ul class=" list-group list-group-flush list-group-borderless mb-4">
+                            {% with features=plan|show_features %}
+                            {% for node in features %}
+                                {% if node.is_leaf_node %}
+                                <li id="detail-{{ plan.id }}" class="list-group-item  ">{{ node }}</li>
+                                {% else %}
+                                <li id="detail-{{ plan.id }}" class=" list-group-item ">
+                                    {{ node }}
+                                    <ul class="list-group list-group-flush list-group-borderless mb-4">
+                                        {% for child in node|get_children_plan:plan %}
+                                        <li class="list-group-item">
+                                            {{ child }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% endwith %}
+                            </span>
+                        </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor%}
