@@ -1,14 +1,14 @@
 {
   "product_id": "PROD-1M875765LJ8397147",
-  "name": "Advanced",
+  "name": "Fremium",
   "status": "ACTIVE",
-  "description": "Plan Advanced of Travelposting.\n Ideal para medianas empresas ",
+  "description": "Plan Fremium of Travelposting.",
   "billing_cycles": [
     {
       "pricing_scheme": {
         "fixed_price": {
           "currency_code": "EUR",
-          "value": "773.59"
+          "value": "127.71"
         }
       },
       "tenure_type": "REGULAR",

@@ -1,36 +1,21 @@
 {
-  "product_id": "PROD-2SE12032CP922312N",
+  "product_id": "PROD-1M875765LJ8397147",
   "name": "Professional",
   "status": "ACTIVE",
-  "description": "Plan Professional of Travel and Solutions.\n Ideal para grandes empresas.",
+  "description": "Plan Professional of Travelposting.\n Ideal para grandes empresas.",
   "billing_cycles": [
     {
       "pricing_scheme": {
         "fixed_price": {
           "currency_code": "EUR",
-          "value": "249.99"
-        }
-      },
-      "tenure_type": "TRIAL",
-      "sequence": 1,
-      "total_cycles": 6,
-      "frequency": {
-        "interval_unit": "MONTH",
-        "interval_count": 1
-      }
-    },
-    {
-      "pricing_scheme": {
-        "fixed_price": {
-          "currency_code": "EUR",
-          "value": "349.99"
+          "value": "3869.59"
         }
       },
       "tenure_type": "REGULAR",
-      "sequence": 2,
-      "total_cycles": 6,
+      "sequence": 1,
+      "total_cycles": 1,
       "frequency": {
-        "interval_unit": "MONTH",
+        "interval_unit": "YEAR",
         "interval_count": 1
       }
     }

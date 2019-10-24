@@ -1,14 +1,14 @@
 {
-  "product_id": "PROD-4A583988C6468382L",
+  "product_id": "PROD-1M875765LJ8397147",
   "name": "Starter",
   "status": "ACTIVE",
-  "description": "Plan Starter of Travel and Solutions. Ideal para pequenas empresas.",
+  "description": "Plan Starter of Travelposting. Ideal para pequenas empresas.",
   "billing_cycles": [
     {
       "pricing_scheme": {
         "fixed_price": {
           "currency_code": "EUR",
-          "value": "243.81"
+          "value": "386.84"
         }
       },
       "tenure_type": "REGULAR",
