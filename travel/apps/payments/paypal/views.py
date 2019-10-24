@@ -71,12 +71,14 @@ class SubscriptionView(object):
             try:
                 coupon = Coupon.objects.filter(code=code) \
                         .filter(active=True) \
-                        .filter(end_date__lte=timezone.now())
-                if coupon.count()< 1:
+                        .filter(start_date__lte=timezone.now())\
+                        .filter(end_date__gte=timezone.now())
+
+                if coupon.count() < 1:
                     form.add_error(None, _("You are using an invalid coupon for the date"))
                     return self.form_invalid(form)
                 else:
-                    if coupon.quantity<=user_coupon.count():
+                    if coupon[0].quantity <= user_coupon.count():
                         form.add_error(None, _("Coupons are already sold out"))
                         return self.form_invalid(form)
                     else:
