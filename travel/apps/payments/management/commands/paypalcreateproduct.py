@@ -28,7 +28,7 @@ class Command(BaseCommand):
         :param options:
         :return: None
         """
-        self.stdout.write(self.style.SUCCESS(f"Empezando a crear el product Travel Solutions."))
+        self.stdout.write(self.style.SUCCESS(f"Empezando a crear el product Travelposting."))
         pp = ProductPayPal('Travelposting', 'TRAVElPOSTING es el Software de xposting-service, con él podrá conectarse a más de MILES de empresas registradas a nivel mundial, ayudandolo a ofrecer sus destinos turísticos a otras empresas.',
                            'DIGITAL', 'SOFTWARE',
                            'https://travelandsolutions.com/uploads/django-summernote/2019-07-31/c6fc3f44-5b42-49df-bbec-2724ddb633a0.jpg',
