@@ -35,12 +35,7 @@
                                             <span class="align-top font-size-3">{{ price.value }}</span>
                                             </span>
                                             <span class="text-secondary">
-                                            {% if price.id|divisibleby:2 %}
-                                            {% trans "Anual"%}
-                                            
-                                            {% else %}
-                                            {% trans "Monthly" %}
-                                            {% endif %}
+                                                    {{price.type}}
                                             </span>
                                         </div>
                                         {% endfor %}
