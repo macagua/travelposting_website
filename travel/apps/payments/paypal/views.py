@@ -65,7 +65,29 @@ class SubscriptionView(object):
             return form.cleaned_data.get('plan').paypal_id
 
     def form_valid(self, form):
+        code = form.cleaned_data.get('coupon')
+        if code:
+            user_coupon = CustomerUser.objects.filter(coupon=code)
+            try:
+                coupon = Coupon.objects.filter(code=code) \
+                        .filter(active=True) \
+                        .filter(end_date__lte=timezone.now())
+                if coupon.count()< 1:
+                    form.add_error(None, _("You are using an invalid coupon for the date"))
+                    return self.form_invalid(form)
+                else:
+                    if coupon.quantity<=user_coupon.count():
+                        form.add_error(None, _("Coupons are already sold out"))
+                        return self.form_invalid(form)
+                    else:
+                        pass
+
+            except Coupon.DoesNotExist:
+                form.add_error(None, _("Invalid coupon"))
+                return self.form_invalid(form)
+
         sub = self.subscription_class(self.get_subscription_data(form))
+
         if sub.create():
             logger.debug(f'Created subscription successfully wit id: {sub.id}.')
             new_user = self.register(form)
