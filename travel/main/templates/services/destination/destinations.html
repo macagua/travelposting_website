@@ -36,7 +36,20 @@
                     {% for destination in list %}
                     <div class="{% img_class forloop.counter %} px-2 mb-3 image_destination" data-target="#destination_{{forloop.counter}}">
                         <!-- Fancybox -->
-                        <a class="u-media-viewer" href="javascript:;" data-src="{{ destination.first_pic }}" data-fancybox="lightbox-gallery-hidden" data-caption="Front in frames - image #01" data-speed="700">
+                        <a class="u-media-viewer" href="javascript:;"
+                        data-src="{{ destination.first_pic }}"
+                        data-fancybox="lightbox-gallery-hidden"
+                        data-caption="<div class='row'>
+                            <div class='col-lg-8'>
+                                {% trans "Destination" %} - {% trans "image" %} #{{forloop.counter}}
+                            </div>
+                            <div class='col-lg-4 pull-right'>
+                                <a class='btn btn-sm btn-primary btn-wide transition-3d-hover' href='{% url 'view_detail_destination' destination.id %}'>
+                                {% trans "See Destination"%}
+                                </a>
+                            </div>
+                        </div>"
+                        data-speed="700">
                         <img class="img-fluid rounded" src="{{ destination.first_pic }}" alt="{{ destination.name }}">
                         <span class="u-media-viewer__container">
                         <span class="u-media-viewer__icon">

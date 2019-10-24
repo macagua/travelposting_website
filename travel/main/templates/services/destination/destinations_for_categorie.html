@@ -108,8 +108,8 @@
                         {% if forloop.counter == 1 %}
                             <a class="js-fancybox u-media-viewer" href="javascript:;"
                             data-src="/main/media/{{foto.image}}"
-                            data-fancybox="fancyboxGalleryExample2"
-                            data-caption="{%trans "Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
+                            data-fancybox="fancyboxGalleryDestiny{{destino.id}}"
+                            data-caption="{%trans "Destination Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
                             data-speed="700"
                             data-is-infinite="true">
                             <img class="card-img-top w-100" src="/main/media/{{foto.image}}" alt="{{foto.description}}">
@@ -128,9 +128,9 @@
                             </a>
                         {%else%}
                         <img class="js-fancybox d-none" alt="{{foto.description}}"
-         data-fancybox="fancyboxGalleryExample2"
+         data-fancybox="fancyboxGalleryDestiny{{destino.id}}"
          data-src="/main/media/{{foto.image}}"
-         data-caption="{%trans "Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
+         data-caption="{%trans "Destination Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
          data-speed="700"
          data-is-infinite="true">
                         {%endif%}
