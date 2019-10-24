@@ -1,37 +1,22 @@
 {
-  "product_id": "PROD-2SE12032CP922312N",
-  "name": "Advanced (Ap. 01.09.19)",
+  "product_id": "PROD-1M875765LJ8397147",
+  "name": "Advanced",
   "status": "ACTIVE",
-  "description": "Plan Advanced of Travel and Solutions.\n Ideal para medianas empresas ",
+  "description": "Plan Advanced of Travelposting.\n Ideal para medianas empresas ",
   "billing_cycles": [
     {
       "pricing_scheme": {
         "fixed_price": {
           "currency_code": "EUR",
-          "value": "49.99"
-        }
-      },
-      "tenure_type": "TRIAL",
-      "sequence": 1,
-      "total_cycles": 2,
-      "frequency": {
-        "interval_unit": "MONTH",
-        "interval_count": 3
-      }
-    },
-    {
-      "pricing_scheme": {
-        "fixed_price": {
-          "currency_code": "EUR",
-          "value": "69.99"
+          "value": "773.59"
         }
       },
       "tenure_type": "REGULAR",
-      "sequence": 2,
-      "total_cycles": 2,
+      "sequence": 1,
+      "total_cycles": 1,
       "frequency": {
-        "interval_unit": "MONTH",
-        "interval_count": 3
+        "interval_unit": "YEAR",
+        "interval_count": 1
       }
     }
   ],

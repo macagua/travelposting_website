@@ -2,6 +2,10 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
 {% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block extracss %} 
+<link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+{% endblock extracss %}
+
 {% block body %} <body  style="background: #f2f2f2;">{% endblock body %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
@@ -9,7 +13,7 @@
 {% block content %}
 <div id="SVGwave1BottomSMShape" class="svg-preloader position-relative text-center gradient-overlay-half-info-v1 bg-img-hero overflow-hidden" style="background-image: url({% static 'assets/img/1920x800/img10.jpg'%});">
     <div class="container space-top-2 space-top-md-4 space-bottom-4">
-        <div class="w-md-80 w-lg-60 text-center mx-auto">
+        <div class="w-md-120 w-lg-100 text-center mx-auto">
             <div class="mb-6">
                 <h1 class="text-white">{% trans 'Special' %} <span class="font-weight-semi-bold">{% trans 'Ofert on'%}</span> Travelposting</h1>
                 <h6 class="text-white"> 
@@ -20,7 +24,7 @@
             <span class="text-white font-weight-semi-bold">{% trans 'SELECT YOUR TYPE OF PLAN AND SAVE UP TO € 1200 ANNUAL' %}</span><br>
 
             <div class="btn-group btn-group-toggle mb-4">
-                <b class="text-white">{% trans 'Yearly contract' %}</b>
+                <b class="text-white">{% trans 'Monthly contract' %}</b>
                 <div class="custom-control custom-switch">
                     &nbsp;&nbsp;
                     <input type="checkbox" class="custom-control-input" id="customSwitch1">
@@ -28,7 +32,7 @@
                         </span>
                     </label>
                 </div>
-                <b class="text-white">{% trans 'Monthly contract' %}</b>
+                <b class="text-white">{% trans 'Yearly contract' %}</b>
             </div>
             <!-- End Button Group -->
         </div>
@@ -61,5 +65,6 @@
 {% endblock content %}
 
 {% block extrajs %}
+    <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
     <script src="{% static 'js/apps.js' %}"></script>
 {% endblock %}
