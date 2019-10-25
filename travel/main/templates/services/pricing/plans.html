@@ -61,7 +61,7 @@
                                                 <span class="text-secondary">
                                                         {{ plan.price.all.1.type.type}}
                                                 </span><br>
-                                                {% if plan.price.all.1.value == '0.00' %}
+                                                {% if not plan.price.all.1.value %}
                                                     {% trans "This plan is only for yearly"%}
                                                 {% endif %}
 
