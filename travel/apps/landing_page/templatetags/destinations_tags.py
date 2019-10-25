@@ -126,7 +126,7 @@ def background_image():
 
 @register.inclusion_tag('services/pricing/plans.html', takes_context=True)
 def show_pricing(context):
-    list_pricing = Plan.objects.filter(active=True)[:6]
+    list_pricing = Plan.objects.filter(active=True)
     return {
         'plans': list_pricing,
         'request': context.request,

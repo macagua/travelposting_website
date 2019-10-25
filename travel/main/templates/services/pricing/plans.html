@@ -27,17 +27,16 @@
                                     <!-- Header -->
                                     <header class="card-header p-5">
                                         <h4 class="h6 text-success">{{ plan }}</h4>
-                                        {% for price in plan.price.all %}
-                                        <div class="{% if price.id|divisibleby:2 %}mensual{% else %}anual{% endif %}">
+                                        
+                                        <div class="{% if plan.price.all.0.type.type %}anual{% endif %}">
                                             <span class="h1 text-dark font-weight-medium">
                                             <span class="align-top font-size-3">
-                                                {{ price.value }}
+                                                    {{ plan.price.all.0.value}}
                                             </span>
                                             </span>
                                             <span class="text-secondary">
-                                                    {{price.type}}
+                                                    {{ plan.price.all.0.type.type}}
                                             </span><br>
-                                            {% if price.id|divisibleby:2 %}
                                                 {% if plan.price.all.1.type.type == 'Mensual' %}
                                                 {% trans "If you select annual will have a discount" %}<br>
 
@@ -52,13 +51,21 @@
                                                     {% trans "This plan is anual"%}
 
                                                 {% endif %}
-                                            {% else %}
-
-                                            {% endif %}
                                         </div>
+                                        <div class="{% if plan.price.all.1.type.type %}mensual{% endif %}">
+                                                <span class="h1 text-dark font-weight-medium">
+                                                <span class="align-top font-size-3">
+                                                    {{ plan.price.all.1.value }}
+                                                </span>
+                                                </span>
+                                                <span class="text-secondary">
+                                                        {{ plan.price.all.1.type.type}}
+                                                </span><br>
+                                                {% if plan.price.all.1.value == '0.00' %}
+                                                    {% trans "This plan is only for yearly"%}
+                                                {% endif %}
 
-                                        {% endfor %}
-
+                                            </div>
 
  
                                     </header>
