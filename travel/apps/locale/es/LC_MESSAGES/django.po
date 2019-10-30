@@ -8,13 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2019-10-21 12:08-0400\n"
-"PO-Revision-Date: 2019-10-19 13:35-0428\n"
-=======
-"POT-Creation-Date: 2019-10-21 11:23-0400\n"
-"PO-Revision-Date: 2019-10-21 11:30-0428\n"
->>>>>>> e23c1a5e0b1dd15e24b734d2e6897046aadd8ea0
+"POT-Creation-Date: 2019-10-30 02:38-0400\n"
+"PO-Revision-Date: 2019-10-30 02:42-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -53,9 +48,9 @@ msgstr "Permisos"
 msgid "Accounts"
 msgstr "Cuentas"
 
-#: apps/accounts/forms.py:30 apps/landing_page/models.py:461
+#: apps/accounts/forms.py:30 apps/landing_page/models.py:464
 #: main/templates/datenshutz_form.html:34 main/templates/index.html:76
-#: main/templates/services/destination/detail_destination.html:313
+#: main/templates/services/destination/detail_destination.html:346
 msgid "Email"
 msgstr "E-mail"
 
@@ -79,7 +74,7 @@ msgstr "Ingrese el mismo pasword para verificar."
 msgid "Select a plan"
 msgstr "Seleccione un plan"
 
-#: apps/accounts/forms.py:100
+#: apps/accounts/forms.py:100 apps/payments/paypal/views.py:88
 msgid "Invalid coupon"
 msgstr "Cupón invalido"
 
@@ -129,7 +124,7 @@ msgstr "Correo electronico"
 msgid "Plan"
 msgstr "Plan"
 
-#: apps/accounts/models.py:81 apps/payments/models/paypal.py:49
+#: apps/accounts/models.py:81 apps/payments/models/paypal.py:61
 #: apps/paymentsN/models/paypal.py:49
 msgid "Coupon"
 msgstr "Cupón"
@@ -309,7 +304,7 @@ msgstr "Peticion de reseteo"
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:54
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-#: apps/accounts/templates/accounts/registration/register_form.html:88
+#: apps/accounts/templates/accounts/registration/register_form.html:106
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
 #: main/templates/index.html:129
 msgid "Login"
@@ -361,8 +356,8 @@ msgid "User registered"
 msgstr "Usuario registrado"
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
-#: apps/landing_page/models.py:402 main/templates/index.html:67
-#: main/templates/services/destination/detail_destination.html:287
+#: apps/landing_page/models.py:405 main/templates/index.html:67
+#: main/templates/services/destination/detail_destination.html:320
 msgid "Name"
 msgstr "Nombre"
 
@@ -437,11 +432,11 @@ msgstr "Bienvenido a"
 msgid "Fill out the form to get started."
 msgstr "Llene el formulario para iniciar"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:55
+#: apps/accounts/templates/accounts/registration/register_form.html:73
 msgid "Do you have a Coupon?"
 msgstr "¿Posees un Cupón?"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:58
+#: apps/accounts/templates/accounts/registration/register_form.html:76
 #: main/templates/datenshutz_form_privacity.html:49
 #: main/templates/datenshutz_form_privacity.html:72
 #: main/templates/datenshutz_form_privacity.html:96
@@ -450,20 +445,21 @@ msgstr "¿Posees un Cupón?"
 msgid "Yes"
 msgstr "Sí"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:71
+#: apps/accounts/templates/accounts/registration/register_form.html:89
 #: main/templates/datenshutz_form_privacity.html:50
 #: main/templates/datenshutz_form_privacity.html:73
 #: main/templates/datenshutz_form_privacity.html:97
 #: main/templates/datenshutz_form_privacity.html:121
 #: main/templates/datenshutz_form_privacity.html:143
+#: main/templates/services/pricing/plans.html:174
 msgid "No"
 msgstr "NO"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:87
+#: apps/accounts/templates/accounts/registration/register_form.html:105
 msgid "Already have an account?"
 msgstr "¿Ya posees una cuenta?"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:91
+#: apps/accounts/templates/accounts/registration/register_form.html:109
 msgid "Create account"
 msgstr "Crear cuenta"
 
@@ -573,257 +569,261 @@ msgstr ""
 msgid "An error, Incorrect User or Password has occurred."
 msgstr "Se produjo un error, usuario o contraseña incorrectos."
 
-#: apps/landing_page/admin.py:80 apps/landing_page/models.py:365
+#: apps/landing_page/admin.py:80 apps/landing_page/models.py:368
 msgid "Company"
 msgstr "Compañia"
 
-#: apps/landing_page/models.py:18
+#: apps/landing_page/models.py:20
 msgid "Type"
 msgstr "tipo"
 
-#: apps/landing_page/models.py:28
+#: apps/landing_page/models.py:30
 msgid "Price type"
 msgstr "Tipo de precio"
 
-#: apps/landing_page/models.py:29
+#: apps/landing_page/models.py:31
 msgid "Price types"
 msgstr "Tipos de precio"
 
-#: apps/landing_page/models.py:39
-msgid "Valor"
-msgstr "Valor"
+#: apps/landing_page/models.py:41
+#| msgid "value"
+msgid "Value"
+msgstr "valor"
 
-#: apps/landing_page/models.py:49
+#: apps/landing_page/models.py:52
 #: main/templates/services/destination/detail.back.html:144
-#: main/templates/services/destination/detail_destination.html:191
+#: main/templates/services/destination/detail_destination.html:227
 msgid "Price"
 msgstr "Precio"
 
-#: apps/landing_page/models.py:50
+#: apps/landing_page/models.py:53
 msgid "Prices"
 msgstr "Precios"
 
-#: apps/landing_page/models.py:62 apps/landing_page/models.py:172
-#: apps/landing_page/models.py:226 apps/payments/models/paypal.py:7
+#: apps/landing_page/models.py:65 apps/landing_page/models.py:175
+#: apps/landing_page/models.py:229 apps/payments/models/paypal.py:9
 #: apps/paymentsN/models/paypal.py:7
 msgid "name"
 msgstr "Nombre"
 
-#: apps/landing_page/models.py:77 apps/landing_page/models.py:218
+#: apps/landing_page/models.py:80 apps/landing_page/models.py:221
 msgid "features"
 msgstr "funcionalidades"
 
-#: apps/landing_page/models.py:81 apps/landing_page/models.py:135
-#: apps/landing_page/models.py:199 apps/landing_page/models.py:240
-#: apps/landing_page/models.py:311 apps/landing_page/models.py:351
+#: apps/landing_page/models.py:84 apps/landing_page/models.py:138
+#: apps/landing_page/models.py:202 apps/landing_page/models.py:243
+#: apps/landing_page/models.py:314 apps/landing_page/models.py:354
 msgid "active"
 msgstr "activo"
 
-#: apps/landing_page/models.py:86 apps/landing_page/models.py:130
-#: apps/landing_page/models.py:194 apps/landing_page/models.py:245
-#: apps/landing_page/models.py:316 apps/landing_page/models.py:356
-#: apps/landing_page/models.py:431
+#: apps/landing_page/models.py:89 apps/landing_page/models.py:133
+#: apps/landing_page/models.py:197 apps/landing_page/models.py:248
+#: apps/landing_page/models.py:319 apps/landing_page/models.py:359
+#: apps/landing_page/models.py:434
 msgid "order"
 msgstr "orden"
 
-#: apps/landing_page/models.py:99
+#: apps/landing_page/models.py:102
 msgid "plans"
 msgstr "planes"
 
-#: apps/landing_page/models.py:100 apps/landing_page/models.py:120
-#: apps/payments/models/paypal.py:20 apps/paymentsN/models/paypal.py:20
+#: apps/landing_page/models.py:103 apps/landing_page/models.py:123
+#: apps/payments/models/paypal.py:22 apps/paymentsN/models/paypal.py:20
 msgid "plan"
 msgstr "plan"
 
-#: apps/landing_page/models.py:126 apps/landing_page/models.py:217
+#: apps/landing_page/models.py:129 apps/landing_page/models.py:220
 msgid "feature"
 msgstr "funcionalidad"
 
-#: apps/landing_page/models.py:150
+#: apps/landing_page/models.py:153
 msgid "plan-features"
 msgstr "plan-características"
 
-#: apps/landing_page/models.py:151
+#: apps/landing_page/models.py:154
 msgid "plan-feature"
 msgstr "plan-características"
 
-#: apps/landing_page/models.py:182
+#: apps/landing_page/models.py:185
 msgid "parent"
 msgstr "padre"
 
-#: apps/landing_page/models.py:190
+#: apps/landing_page/models.py:193
 msgid "validated to plan"
 msgstr "validado según el plan"
 
-#: apps/landing_page/models.py:231
+#: apps/landing_page/models.py:234
 msgid "icon"
 msgstr "icono"
 
-#: apps/landing_page/models.py:235
+#: apps/landing_page/models.py:238
 msgid ""
 "Icons use of Font Awesome 4.7.0, info: https://fontawesome.com/v4.7.0/icons/"
 msgstr ""
 "Icons use of Font Awesome 4.7.0, info: https://fontawesome.com/v4.7.0/icons/"
 
-#: apps/landing_page/models.py:263 apps/landing_page/models.py:342
-#: apps/payments/models/paypal.py:24 apps/paymentsN/models/paypal.py:24
+#: apps/landing_page/models.py:266 apps/landing_page/models.py:345
+#: apps/payments/models/paypal.py:36 apps/paymentsN/models/paypal.py:24
 msgid "description"
 msgstr "descripción"
 
-#: apps/landing_page/models.py:268
+#: apps/landing_page/models.py:271
 msgid "services"
 msgstr "servicios"
 
-#: apps/landing_page/models.py:269
+#: apps/landing_page/models.py:272
 msgid "service"
 msgstr "servicio"
 
-#: apps/landing_page/models.py:274
+#: apps/landing_page/models.py:277
 msgid "value"
 msgstr "valor"
 
-#: apps/landing_page/models.py:279
+#: apps/landing_page/models.py:282
 msgid "counter"
 msgstr "contador"
 
-#: apps/landing_page/models.py:284
+#: apps/landing_page/models.py:287
 msgid "statistics"
 msgstr "estadísticas"
 
-#: apps/landing_page/models.py:285
+#: apps/landing_page/models.py:288
 msgid "statistic"
 msgstr "estadística"
 
-#: apps/landing_page/models.py:290
+#: apps/landing_page/models.py:293
 msgid "author"
 msgstr "autor"
 
-#: apps/landing_page/models.py:295
+#: apps/landing_page/models.py:298
 msgid "comment"
 msgstr "Comentario"
 
-#: apps/landing_page/models.py:299
+#: apps/landing_page/models.py:302
 msgid "place"
 msgstr "Lugar"
 
-#: apps/landing_page/models.py:304
+#: apps/landing_page/models.py:307
 msgid "photo"
 msgstr "Foto"
 
-#: apps/landing_page/models.py:329
+#: apps/landing_page/models.py:332
 msgid "Testimonies"
 msgstr "Testimonios"
 
-#: apps/landing_page/models.py:330
+#: apps/landing_page/models.py:333
 msgid "Testimony"
 msgstr "Testimonio"
 
-#: apps/landing_page/models.py:335
+#: apps/landing_page/models.py:338
 msgid "title"
 msgstr "Titulo"
 
-#: apps/landing_page/models.py:346
+#: apps/landing_page/models.py:349
+#: main/templates/services/destination/destinations.html:44
+#: main/templates/services/destination/destinations_for_categorie.html:112
+#: main/templates/services/destination/destinations_for_categorie.html:133
 msgid "image"
 msgstr "imagen"
 
-#: apps/landing_page/models.py:361
+#: apps/landing_page/models.py:364
 msgid "type"
 msgstr "tipo"
 
-#: apps/landing_page/models.py:364
+#: apps/landing_page/models.py:367
 msgid "Header"
 msgstr "Encabezado"
 
-#: apps/landing_page/models.py:371
+#: apps/landing_page/models.py:374
 msgid "site"
 msgstr "sitio"
 
-#: apps/landing_page/models.py:385
+#: apps/landing_page/models.py:388
 msgid "sliders"
 msgstr "sliders"
 
-#: apps/landing_page/models.py:386
+#: apps/landing_page/models.py:389
 msgid "slider"
 msgstr "slider"
 
-#: apps/landing_page/models.py:407
+#: apps/landing_page/models.py:410
 msgid "Editor"
 msgstr "Editor"
 
-#: apps/landing_page/models.py:426
+#: apps/landing_page/models.py:429
 msgid "is active?"
 msgstr "esta activo?"
 
-#: apps/landing_page/models.py:436
+#: apps/landing_page/models.py:439
 msgid "outstanding"
 msgstr "sobresaliente"
 
-#: apps/landing_page/models.py:442
+#: apps/landing_page/models.py:445
 msgid "Megazine"
 msgstr "Revista"
 
-#: apps/landing_page/models.py:443
+#: apps/landing_page/models.py:446
 msgid "Megazines"
 msgstr "Revistas"
 
-#: apps/landing_page/models.py:451 main/templates/datenshutz_form.html:25
+#: apps/landing_page/models.py:454 main/templates/datenshutz_form.html:25
 #: main/templates/datenshutz_form.html:26
 msgid "First Name"
 msgstr "Nombre"
 
-#: apps/landing_page/models.py:456 main/templates/datenshutz_form.html:30
-#: main/templates/services/destination/detail_destination.html:295
+#: apps/landing_page/models.py:459 main/templates/datenshutz_form.html:30
+#: main/templates/services/destination/detail_destination.html:328
 msgid "Last Name"
 msgstr "Apellido"
 
-#: apps/landing_page/models.py:467
+#: apps/landing_page/models.py:470
 msgid "Agree?"
 msgstr "Acuerdo?"
 
-#: apps/landing_page/models.py:471
+#: apps/landing_page/models.py:474
 msgid "Status?"
 msgstr "Estatus"
 
-#: apps/landing_page/models.py:479
+#: apps/landing_page/models.py:482
 msgid "Delete Registers"
 msgstr "Borrar registros"
 
-#: apps/landing_page/models.py:480
+#: apps/landing_page/models.py:483
 msgid "Delete Register"
 msgstr "Borrar registro"
 
-#: apps/landing_page/models.py:484
+#: apps/landing_page/models.py:487
 msgid "Address IP"
 msgstr "Dirección IP"
 
-#: apps/landing_page/models.py:485
+#: apps/landing_page/models.py:488
 msgid "cookies"
 msgstr "Cookies"
 
-#: apps/landing_page/models.py:486
+#: apps/landing_page/models.py:489
 msgid "Google Analitys"
 msgstr "Google Analitys"
 
-#: apps/landing_page/models.py:487
+#: apps/landing_page/models.py:490
 #: main/templates/datenshutz_form_privacity.html:88
 msgid "Facebook Pixel"
 msgstr "Facebook Pixel"
 
-#: apps/landing_page/models.py:488
+#: apps/landing_page/models.py:491
 #: main/templates/datenshutz_form_privacity.html:112
 msgid "Twitter"
 msgstr "Twitter"
 
-#: apps/landing_page/models.py:489
+#: apps/landing_page/models.py:492
 msgid "Pinteres"
 msgstr "Pinteres"
 
-#: apps/landing_page/models.py:495
+#: apps/landing_page/models.py:498
 #: main/templates/datenshutz_form_privacity.html:18
 msgid "Privacity Settings"
 msgstr "Configuración de privacidad"
 
-#: apps/landing_page/models.py:496
+#: apps/landing_page/models.py:499
 msgid "Privacity Setting"
 msgstr "Configuración de privacidad"
 
@@ -865,40 +865,48 @@ msgstr ""
 msgid "New privacity request."
 msgstr "Nueva solicitud de privacidad"
 
-<<<<<<< HEAD
 #: apps/landing_page/views.py:239
 #: main/templates/services/destination/detail.back.html:150
 msgid "Itinerary"
 msgstr "Itinerario"
 
-#: apps/payments/apps.py:7
-=======
 #: apps/payments/apps.py:7 apps/paymentsN/apps.py:7
->>>>>>> e23c1a5e0b1dd15e24b734d2e6897046aadd8ea0
 msgid "Payments"
 msgstr "Pagos"
 
-#: apps/payments/models/paypal.py:12 apps/paymentsN/models/paypal.py:12
+#: apps/payments/models/paypal.py:14 apps/paymentsN/models/paypal.py:12
 msgid "code"
 msgstr "codigo"
 
-#: apps/payments/models/paypal.py:30 apps/paymentsN/models/paypal.py:30
+#: apps/payments/models/paypal.py:26
+msgid "Precio"
+msgstr "Precio"
+
+#: apps/payments/models/paypal.py:42 apps/paymentsN/models/paypal.py:30
 msgid "start date"
 msgstr "fecha de inicio"
 
-#: apps/payments/models/paypal.py:34 apps/paymentsN/models/paypal.py:34
+#: apps/payments/models/paypal.py:46 apps/paymentsN/models/paypal.py:34
 msgid "end date"
 msgstr "fecha de finalización"
 
-#: apps/payments/models/paypal.py:38 apps/paymentsN/models/paypal.py:38
+#: apps/payments/models/paypal.py:50 apps/paymentsN/models/paypal.py:38
 msgid "quantity"
 msgstr "cantidad"
 
-#: apps/payments/models/paypal.py:50 apps/paymentsN/models/paypal.py:50
+#: apps/payments/models/paypal.py:62 apps/paymentsN/models/paypal.py:50
 msgid "Coupons"
 msgstr "Cupones"
 
 #: apps/payments/paypal/views.py:78
+msgid "You are using an invalid coupon for the date"
+msgstr "Está utilizando un cupón no válido para la fecha"
+
+#: apps/payments/paypal/views.py:82
+msgid "Coupons are already sold out"
+msgstr "Los cupones ya están agotados"
+
+#: apps/payments/paypal/views.py:102
 #, python-brace-format
 msgid "The payment could not be processed {sub.error}."
 msgstr ""
@@ -917,7 +925,7 @@ msgstr "de"
 msgid "es"
 msgstr "es"
 
-#: config/settings/base.py:300
+#: config/settings/base.py:301
 msgid "Feature"
 msgstr "funcionalidad"
 
@@ -969,12 +977,10 @@ msgstr ""
 "experiencia en nuestro sitio web."
 
 #: main/templates/base.html:75
-#| msgid "See more"
 msgid "Learn more"
 msgstr "Ver más"
 
 #: main/templates/base.html:78
-#| msgid "Agree?"
 msgid "I agree"
 msgstr "Estoy de acuerdo"
 
@@ -1626,7 +1632,8 @@ msgid "Ingresa"
 msgstr "Ingresa"
 
 #: main/templates/menu/menu.html:9
-#: main/templates/services/pricing/plans.html:54
+#: main/templates/services/pricing/plans.html:71
+#: main/templates/services/pricing/plans.html:173
 msgid "Register"
 msgstr "Registro"
 
@@ -1824,7 +1831,6 @@ msgstr ""
 "buscando?"
 
 #: main/templates/pdf/itinerary.html:77
-#, fuzzy
 #| msgid "Price"
 msgid "Price:"
 msgstr "Precio"
@@ -1834,13 +1840,11 @@ msgid "ITINERARY"
 msgstr "ITINERARIO"
 
 #: main/templates/pdf/itinerary.html:87
-#, fuzzy
 #| msgid "description"
 msgid "Description:"
 msgstr "Descripción"
 
 #: main/templates/pdf/itinerary.html:89
-#, fuzzy
 #| msgid "Detail"
 msgid "Details:"
 msgstr "Detalles"
@@ -1849,15 +1853,15 @@ msgstr "Detalles"
 msgid "This Destination has no itinerary"
 msgstr "Este destino no tiene itinerario"
 
-#: main/templates/pricing.html:14
+#: main/templates/pricing.html:18
 msgid "Special"
 msgstr "Especial"
 
-#: main/templates/pricing.html:14
+#: main/templates/pricing.html:18
 msgid "Ofert on"
 msgstr "Oferta en"
 
-#: main/templates/pricing.html:16
+#: main/templates/pricing.html:20
 msgid ""
 "We know that there are many companies on the internet that offer the best of"
 " blue sky and we may not be the best known in the market, but our experience"
@@ -1873,55 +1877,55 @@ msgstr ""
 "del mercado. Si usted consigue a alguien más barato que nosotros y con el "
 "mismo rendimiento le devolveremos su inversión."
 
-#: main/templates/pricing.html:20
+#: main/templates/pricing.html:24
 msgid "SELECT YOUR TYPE OF PLAN AND SAVE UP TO € 1200 ANNUAL"
 msgstr "SELECCIONE SU TIPO DE PLAN Y AHORRE HASTA 1200 € ANUALES"
 
-#: main/templates/pricing.html:23
+#: main/templates/pricing.html:27
 msgid "Yearly contract"
 msgstr "Contrato anual"
 
-#: main/templates/pricing.html:31
+#: main/templates/pricing.html:35
 msgid "Monthly contract"
 msgstr "Contrato mensual"
 
-#: main/templates/services/destination/all.html:22
+#: main/templates/services/destination/all.html:19
 #: main/templates/services/destination/destinations_for_categorie.html:74
 #: main/templates/services/destination/test.html:9
 msgid "Default Order"
 msgstr "Orden por defecto"
 
-#: main/templates/services/destination/all.html:23
+#: main/templates/services/destination/all.html:20
 #: main/templates/services/destination/destinations_for_categorie.html:75
 #: main/templates/services/destination/test.html:10
 msgid "Sort by popularity"
 msgstr "Ordenar por popularidad"
 
-#: main/templates/services/destination/all.html:24
+#: main/templates/services/destination/all.html:21
 #: main/templates/services/destination/destinations_for_categorie.html:76
 #: main/templates/services/destination/test.html:11
 msgid "Sort by average ranking"
 msgstr "Ordenar por ranking medio"
 
-#: main/templates/services/destination/all.html:25
+#: main/templates/services/destination/all.html:22
 #: main/templates/services/destination/destinations_for_categorie.html:77
 #: main/templates/services/destination/test.html:12
 msgid "Sort by last"
 msgstr "Ordenar por último"
 
-#: main/templates/services/destination/all.html:26
+#: main/templates/services/destination/all.html:23
 #: main/templates/services/destination/destinations_for_categorie.html:78
 #: main/templates/services/destination/test.html:13
 msgid "Sort by price: Low to High"
 msgstr "Ordenar por precio: De menor a mayor"
 
-#: main/templates/services/destination/all.html:27
+#: main/templates/services/destination/all.html:24
 #: main/templates/services/destination/destinations_for_categorie.html:79
 #: main/templates/services/destination/test.html:14
 msgid "Sort by price: High to Low"
 msgstr "Ordenar por precio: De mayor a menor"
 
-#: main/templates/services/destination/all.html:55
+#: main/templates/services/destination/all.html:52
 #: main/templates/services/destination/categories.html:45
 #: main/templates/services/destination/test.html:42
 msgid "See more"
@@ -1962,6 +1966,16 @@ msgstr ""
 msgid "Find out More"
 msgstr "Descubra más"
 
+#: main/templates/services/destination/destinations.html:44
+#| msgid "Destinations"
+msgid "Destination"
+msgstr "Destinos"
+
+#: main/templates/services/destination/destinations.html:48
+#| msgid "Destinations"
+msgid "See Destination"
+msgstr "Ver destino"
+
 #: main/templates/services/destination/destinations_for_categorie.html:19
 msgid "You'll have an excellent trip."
 msgstr "Tendrás un excelente viaje."
@@ -1970,19 +1984,25 @@ msgstr "Tendrás un excelente viaje."
 msgid "Meet our best destinations"
 msgstr "Conozca nuestros mejores destinos"
 
-#: main/templates/services/destination/destinations_for_categorie.html:131
+#: main/templates/services/destination/destinations_for_categorie.html:112
+#: main/templates/services/destination/destinations_for_categorie.html:133
+#| msgid "Destinations"
+msgid "Destination Gallery"
+msgstr "Galerias de destinos"
+
+#: main/templates/services/destination/destinations_for_categorie.html:151
 msgid "See details"
 msgstr "Ver detalles"
 
-#: main/templates/services/destination/destinations_for_categorie.html:148
+#: main/templates/services/destination/destinations_for_categorie.html:168
 msgid "what is your budget?"
 msgstr "¿cuál es su presupuesto?"
 
-#: main/templates/services/destination/destinations_for_categorie.html:168
+#: main/templates/services/destination/destinations_for_categorie.html:188
 msgid "filter to my budget"
 msgstr "filtrar a mi presupuesto"
 
-#: main/templates/services/destination/destinations_for_categorie.html:170
+#: main/templates/services/destination/destinations_for_categorie.html:190
 msgid "Category"
 msgstr "Categoria"
 
@@ -2014,7 +2034,7 @@ msgid "We still don't have the intenerario for this destination"
 msgstr "Todavía no tenemos el intenerario para este destino"
 
 #: main/templates/services/destination/detail.back.html:221
-#: main/templates/services/destination/detail_destination.html:250
+#: main/templates/services/destination/detail_destination.html:286
 msgid "Reserve"
 msgstr "Reserve"
 
@@ -2022,55 +2042,49 @@ msgstr "Reserve"
 msgid "back to list"
 msgstr "Volver a la lista"
 
-#: main/templates/services/destination/detail_destination.html:144
+#: main/templates/services/destination/detail_destination.html:145
+#: main/templates/services/destination/detail_destination.html:179
 msgid "Follow us or recommend us through"
 msgstr "Síguenos o recomiendanos a través de:"
 
-#: main/templates/services/destination/detail_destination.html:197
+#: main/templates/services/destination/detail_destination.html:233
 msgid "Fecha"
 msgstr "Fecha"
 
-#: main/templates/services/destination/detail_destination.html:213
+#: main/templates/services/destination/detail_destination.html:249
 msgid "Califications"
 msgstr "Calificaciones"
 
-#: main/templates/services/destination/detail_destination.html:213
+#: main/templates/services/destination/detail_destination.html:249
 msgid "Votes"
 msgstr "Votos"
 
-#: main/templates/services/destination/detail_destination.html:228
+#: main/templates/services/destination/detail_destination.html:264
 msgid "Discover or download our itinerary here"
 msgstr "Descubre o descarga nuestro itinerario aquí "
 
-#: main/templates/services/destination/detail_destination.html:261
+#: main/templates/services/destination/detail_destination.html:297
 msgid "Book your destination!"
 msgstr "¡Reserve su destino!"
 
-#: main/templates/services/destination/detail_destination.html:305
+#: main/templates/services/destination/detail_destination.html:338
 msgid "+49 123 456 789"
 msgstr "+49 123 456 789"
 
-#: main/templates/services/destination/detail_destination.html:323
+#: main/templates/services/destination/detail_destination.html:356
 msgid "Number of people travelling"
 msgstr "Numero de personas viajando"
 
-#: main/templates/services/destination/detail_destination.html:331
+#: main/templates/services/destination/detail_destination.html:364
 msgid "Do you have a plan you want to book?"
 msgstr "¿Te gustaria reservar algun otro Plan?"
 
-#: main/templates/services/destination/detail_destination.html:336
+#: main/templates/services/destination/detail_destination.html:369
 msgid "Do you may have some comments or remarks about your booking?"
 msgstr ""
 "¿Es posible que tenga algunos comentarios o observaciones sobre su reserva?"
 
-#: main/templates/services/destination/detail_destination.html:340
-<<<<<<< HEAD
-=======
-#| msgid ""
-#| "\n"
-#| "                          By clicking \"Book\" you agree that Travelposting use your data for advertising and marketing purposes between Travelposting, its alliance partners and Xposting-Service. At any time you can make use of your rights and request the cancellation of your data.\n"
-#| "                          "
->>>>>>> e23c1a5e0b1dd15e24b734d2e6897046aadd8ea0
+#: main/templates/services/destination/detail_destination.html:373
 msgid ""
 "By clicking 'Book' you agree that Travelposting use your data for "
 "advertising and marketing purposes between Travelposting, its alliance "
@@ -2082,19 +2096,11 @@ msgstr ""
 "la alianza y Xposting-Service. En cualquier momento puede hacer uso de sus "
 "derechos y solicitar la cancelación de sus datos."
 
-<<<<<<< HEAD
-#: main/templates/services/destination/detail_destination.html:347
+#: main/templates/services/destination/detail_destination.html:378
 msgid "Close"
 msgstr "Cerrar"
 
-#: main/templates/services/destination/detail_destination.html:348
-=======
-#: main/templates/services/destination/detail_destination.html:345
-msgid "Close"
-msgstr "Cerrar"
-
-#: main/templates/services/destination/detail_destination.html:346
->>>>>>> e23c1a5e0b1dd15e24b734d2e6897046aadd8ea0
+#: main/templates/services/destination/detail_destination.html:379
 msgid "Book"
 msgstr "Reservar"
 
@@ -2110,27 +2116,31 @@ msgstr "Conozca lo que algunos de nuestros clientes piensan sobre nosotros"
 msgid "Download"
 msgstr "Descargar"
 
-#: main/templates/services/pricing/plans.html:19
-msgid "Monthly"
-msgstr "Mensual"
+#: main/templates/services/pricing/plans.html:33
+msgid "This plan is only for yearly suscription"
+msgstr "Este plan es sólo para la suscripción anual"
 
-#: main/templates/services/pricing/plans.html:25
-msgid "Saved"
-msgstr "Guardado"
+#: main/templates/services/pricing/plans.html:44
+msgid "Select Anual contract and save:"
+msgstr "Seleccione Contrato anual y ahorre:"
 
-#: main/templates/services/pricing/plans.html:31
+#: main/templates/services/pricing/plans.html:51
+msgid "You save:"
+msgstr "Ahorras"
+
+#: main/templates/services/pricing/plans.html:66
 msgid "See plan details"
 msgstr "Ver detalles del plan"
 
-#: main/templates/services/pricing/plans.html:72
+#: main/templates/services/pricing/plans.html:94
 msgid "Contact Us"
 msgstr "Contáctenos"
 
-#: main/templates/services/pricing/plans.html:74
+#: main/templates/services/pricing/plans.html:96
 msgid "Limitless"
 msgstr "Sin limites"
 
-#: main/templates/services/pricing/plans.html:89
+#: main/templates/services/pricing/plans.html:111
 msgid ""
 "\n"
 "                        if what you see doesn't appeal to you because you want to create a plan tailored to your needs,\n"
@@ -2139,6 +2149,15 @@ msgid ""
 msgstr ""
 "\n"
 "Si lo que ve no le atrae porque desea crear un plan adaptado a sus necesidades, contáctenos y lo resolveremos juntos."
+
+#~ msgid "Valor"
+#~ msgstr "Valor"
+
+#~ msgid "Monthly"
+#~ msgstr "Mensual"
+
+#~ msgid "Saved"
+#~ msgstr "Guardado"
 
 #~ msgid "No time for search?"
 #~ msgstr "¿Sin tiempo para buscar?"
