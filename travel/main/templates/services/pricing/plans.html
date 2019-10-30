@@ -27,47 +27,37 @@
                                     <!-- Header -->
                                     <header class="card-header p-5">
                                         <h4 class="h6 text-success">{{ plan }}</h4>
-                                        
-                                        <div class="{% if plan.price.all.0.type.type %}anual{% endif %}">
-                                            <span class="h1 text-dark font-weight-medium">
-                                            <span class="align-top font-size-3">
-                                                    {{ plan.price.all.0.value}}
-                                            </span>
-                                            </span>
-                                            <span class="text-secondary">
-                                                    {{ plan.price.all.0.type.type}}
-                                            </span><br>
-                                                {% if plan.price.all.1.type.type == 'Mensual' %}
-                                                {% trans "If you select annual will have a discount" %}<br>
-
-                                                <span class="text-secondary ml-1 text-warning">
-                                                    <del>
-                                                {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }} {%trans 'off orders' %}
-                                                    </del> 
-                                                </span>
-                                                {% elif plan.price.all.0.type.type == 'Mensual' %}
-                                                {{ plan.price.all.0.value|mul:12|sub:plan.price.all.1.value }} {%trans 'off orders' %}
+                                        {% for price in plan.price.all %}
+                                            <div class="{% ifequal price.type.type  'Anual'%}anual{% else %}mensual{% endifequal %}">
+                                                {% if not price.value %}
+                                                    {% trans "This plan is only for yearly suscription"%}
                                                 {% else %}
-                                                    {% trans "This plan is anual"%}
-
+                                                    <span class="h1 text-dark font-weight-medium">
+                                                        <span class="align-top font-size-3">
+                                                            {{ price.value}}
+                                                        </span>
+                                                    </span>
+                                                    <span class="text-secondary">
+                                                        {{ price.type.type}}
+                                                    </span><br>
+                                                    {% if price.type.type == 'Mensual' %}
+                                                        {% trans "Select Anual contract and save:" %}<br>
+                                                        <span class="text-warning">
+                                                            {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }}
+                                                        </span>
+                                                    {% elif price.type.type == 'Anual' %}
+                                                        {% if  plan.name != 'Fremium' and plan.name != 'Publi365' %}
+                                                            <span class="text-secondary font-size-8 ml-4 text-success">
+                                                                {% trans "You save:" %}
+                                                            </span>
+                                                            <del>
+                                                                {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }}
+                                                            </del>
+                                                        {% endif %}
+                                                    {% endif %}
                                                 {% endif %}
-                                        </div>
-                                        <div class="{% if plan.price.all.1.type.type %}mensual{% endif %}">
-                                                <span class="h1 text-dark font-weight-medium">
-                                                <span class="align-top font-size-3">
-                                                    {{ plan.price.all.1.value }}
-                                                </span>
-                                                </span>
-                                                <span class="text-secondary">
-                                                        {{ plan.price.all.1.type.type}}
-                                                </span><br>
-                                                {% if not plan.price.all.1.value %}
-                                                    {% trans "This plan is only for yearly"%}
-                                                {% endif %}
-
                                             </div>
-
- 
+                                        {% endfor %}
                                     </header>
                                     <!-- End Header -->
                                     <!-- Content -->
