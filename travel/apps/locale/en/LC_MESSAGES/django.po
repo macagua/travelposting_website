@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-30 02:38-0400\n"
+"POT-Creation-Date: 2019-10-30 10:47-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -437,7 +437,6 @@ msgstr ""
 #: main/templates/datenshutz_form_privacity.html:97
 #: main/templates/datenshutz_form_privacity.html:121
 #: main/templates/datenshutz_form_privacity.html:143
-#: main/templates/services/pricing/plans.html:174
 msgid "No"
 msgstr ""
 
@@ -1553,8 +1552,8 @@ msgid "Ingresa"
 msgstr ""
 
 #: main/templates/menu/menu.html:9
-#: main/templates/services/pricing/plans.html:71
-#: main/templates/services/pricing/plans.html:173
+#: main/templates/services/pricing/plans.html:82
+#: main/templates/services/pricing/plans.html:185
 msgid "Register"
 msgstr ""
 
@@ -1989,6 +1988,7 @@ msgid ""
 msgstr ""
 
 #: main/templates/services/destination/detail_destination.html:378
+#: main/templates/services/pricing/plans.html:184
 msgid "Close"
 msgstr ""
 
@@ -2012,27 +2012,39 @@ msgstr ""
 msgid "This plan is only for yearly suscription"
 msgstr ""
 
+#: main/templates/services/pricing/plans.html:42
+msgid "Monthly"
+msgstr ""
+
 #: main/templates/services/pricing/plans.html:44
 msgid "Select Anual contract and save:"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:51
+#: main/templates/services/pricing/plans.html:55
+msgid "Yearly"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:59
+msgid "/ month"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:62
 msgid "You save:"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:66
+#: main/templates/services/pricing/plans.html:77
 msgid "See plan details"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:94
+#: main/templates/services/pricing/plans.html:105
 msgid "Contact Us"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:96
+#: main/templates/services/pricing/plans.html:107
 msgid "Limitless"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:111
+#: main/templates/services/pricing/plans.html:122
 msgid ""
 "\n"
 "                        if what you see doesn't appeal to you because you "

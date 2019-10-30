@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-30 02:38-0400\n"
-"PO-Revision-Date: 2019-10-30 02:42-0428\n"
+"POT-Creation-Date: 2019-10-30 10:47-0400\n"
+"PO-Revision-Date: 2019-10-30 10:48-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -451,7 +451,6 @@ msgstr "Sí"
 #: main/templates/datenshutz_form_privacity.html:97
 #: main/templates/datenshutz_form_privacity.html:121
 #: main/templates/datenshutz_form_privacity.html:143
-#: main/templates/services/pricing/plans.html:174
 msgid "No"
 msgstr "NO"
 
@@ -586,7 +585,6 @@ msgid "Price types"
 msgstr "Tipos de precio"
 
 #: apps/landing_page/models.py:41
-#| msgid "value"
 msgid "Value"
 msgstr "valor"
 
@@ -1632,8 +1630,8 @@ msgid "Ingresa"
 msgstr "Ingresa"
 
 #: main/templates/menu/menu.html:9
-#: main/templates/services/pricing/plans.html:71
-#: main/templates/services/pricing/plans.html:173
+#: main/templates/services/pricing/plans.html:82
+#: main/templates/services/pricing/plans.html:185
 msgid "Register"
 msgstr "Registro"
 
@@ -1831,7 +1829,6 @@ msgstr ""
 "buscando?"
 
 #: main/templates/pdf/itinerary.html:77
-#| msgid "Price"
 msgid "Price:"
 msgstr "Precio"
 
@@ -1840,12 +1837,10 @@ msgid "ITINERARY"
 msgstr "ITINERARIO"
 
 #: main/templates/pdf/itinerary.html:87
-#| msgid "description"
 msgid "Description:"
 msgstr "Descripción"
 
 #: main/templates/pdf/itinerary.html:89
-#| msgid "Detail"
 msgid "Details:"
 msgstr "Detalles"
 
@@ -1967,12 +1962,10 @@ msgid "Find out More"
 msgstr "Descubra más"
 
 #: main/templates/services/destination/destinations.html:44
-#| msgid "Destinations"
 msgid "Destination"
 msgstr "Destinos"
 
 #: main/templates/services/destination/destinations.html:48
-#| msgid "Destinations"
 msgid "See Destination"
 msgstr "Ver destino"
 
@@ -1986,7 +1979,6 @@ msgstr "Conozca nuestros mejores destinos"
 
 #: main/templates/services/destination/destinations_for_categorie.html:112
 #: main/templates/services/destination/destinations_for_categorie.html:133
-#| msgid "Destinations"
 msgid "Destination Gallery"
 msgstr "Galerias de destinos"
 
@@ -2097,6 +2089,7 @@ msgstr ""
 "derechos y solicitar la cancelación de sus datos."
 
 #: main/templates/services/destination/detail_destination.html:378
+#: main/templates/services/pricing/plans.html:184
 msgid "Close"
 msgstr "Cerrar"
 
@@ -2120,27 +2113,39 @@ msgstr "Descargar"
 msgid "This plan is only for yearly suscription"
 msgstr "Este plan es sólo para la suscripción anual"
 
+#: main/templates/services/pricing/plans.html:42
+msgid "Monthly"
+msgstr "Mensual"
+
 #: main/templates/services/pricing/plans.html:44
 msgid "Select Anual contract and save:"
 msgstr "Seleccione Contrato anual y ahorre:"
 
-#: main/templates/services/pricing/plans.html:51
+#: main/templates/services/pricing/plans.html:55
+msgid "Yearly"
+msgstr "Anual"
+
+#: main/templates/services/pricing/plans.html:59
+msgid "/ month"
+msgstr "/ mes"
+
+#: main/templates/services/pricing/plans.html:62
 msgid "You save:"
 msgstr "Ahorras"
 
-#: main/templates/services/pricing/plans.html:66
+#: main/templates/services/pricing/plans.html:77
 msgid "See plan details"
 msgstr "Ver detalles del plan"
 
-#: main/templates/services/pricing/plans.html:94
+#: main/templates/services/pricing/plans.html:105
 msgid "Contact Us"
 msgstr "Contáctenos"
 
-#: main/templates/services/pricing/plans.html:96
+#: main/templates/services/pricing/plans.html:107
 msgid "Limitless"
 msgstr "Sin limites"
 
-#: main/templates/services/pricing/plans.html:111
+#: main/templates/services/pricing/plans.html:122
 msgid ""
 "\n"
 "                        if what you see doesn't appeal to you because you want to create a plan tailored to your needs,\n"
@@ -2152,9 +2157,6 @@ msgstr ""
 
 #~ msgid "Valor"
 #~ msgstr "Valor"
-
-#~ msgid "Monthly"
-#~ msgstr "Mensual"
 
 #~ msgid "Saved"
 #~ msgstr "Guardado"
@@ -2218,9 +2220,6 @@ msgstr ""
 
 #~ msgid "SELECT YOUR PLAN TYPE"
 #~ msgstr "SELECCIONE SU TIPO DE PLAN"
-
-#~ msgid "Yearly"
-#~ msgstr "Anual"
 
 #~ msgid "You\\"
 #~ msgstr "Tú\\"

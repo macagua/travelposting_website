@@ -32,21 +32,32 @@
                                                 {% if not price.value %}
                                                     {% trans "This plan is only for yearly suscription"%}
                                                 {% else %}
-                                                    <span class="h1 text-dark font-weight-medium">
-                                                        <span class="align-top font-size-3">
-                                                            {{ price.value}}
-                                                        </span>
-                                                    </span>
-                                                    <span class="text-secondary">
-                                                        {{ price.type.type}}
-                                                    </span><br>
                                                     {% if price.type.type == 'Mensual' %}
+                                                        <span class="h1 text-dark font-weight-medium">
+                                                            <span class="align-top font-size-3">
+                                                                {{ price.value}}
+                                                            </span>
+                                                        </span>
+                                                        <span class="text-secondary">
+                                                            {% trans "Monthly" %}
+                                                        </span><br>
                                                         {% trans "Select Anual contract and save:" %}<br>
                                                         <span class="text-warning">
                                                             {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }}
                                                         </span>
                                                     {% elif price.type.type == 'Anual' %}
+                                                        <span class="h1 text-dark font-weight-medium">
+                                                            <span class="align-top font-size-3">
+                                                                {{ price.value}}
+                                                            </span>
+                                                        </span>
+                                                        <span class="text-secondary">
+                                                            {% trans "Yearly" %}
+                                                        </span><br>
                                                         {% if  plan.name != 'Fremium' and plan.name != 'Publi365' %}
+                                                        <span class="h3 text-success">
+                                                            {{ price.value|div:12}} {% trans "/ month" %}
+                                                        </span><br>
                                                             <span class="text-secondary font-size-8 ml-4 text-success">
                                                                 {% trans "You save:" %}
                                                             </span>
