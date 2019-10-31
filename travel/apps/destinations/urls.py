@@ -3,6 +3,7 @@ from apps.destinations.charts import (
     BookingCharts,
     DashboardIndex,
     DestinationCharts,
+    messageView,
 )
 from apps.destinations.views.destination import (
     DestinationListView,
@@ -180,5 +181,11 @@ urlpatterns = [
             'maps/',
             DestinationMapView.as_view(),
             name='destination-map',
+    ),
+
+    path(
+        'message/',
+        messageView.as_view(),
+        name='send_message',
     ),
 ]

@@ -5,9 +5,17 @@ from apps.destinations.models import (
     Booking,
     Destination,
 )
+from django.utils.translation import gettext_lazy as _
+from django.template.loader import render_to_string
+from django.core.mail import mail_managers
+from django.core.mail import send_mail
+from django.conf import settings
+
 from django.db.models import Count
 from django.shortcuts import render
-
+from django.views.generic import (
+    View
+)
 
 def BookingCharts(request):
     """
@@ -40,3 +48,31 @@ def DashboardIndex(request):
         Function to render the charts in template.
     """
     return render(request, 'dashboard/index.html')
+
+
+class messageView(View):
+    def post(self, request, *args, **kwargs):
+
+        subject = _('You have a new message')
+
+        ctx = {
+            'user' : request.user.email,
+            'name' : request.user.get_full_name,
+            'message': request.POST.get('message')
+        }
+
+        html_message = render_to_string(
+            'dashboard/dashboard_email.html',
+            context=ctx
+        )
+
+        message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+
+        mail_managers(subject,
+                    message,
+                    fail_silently=True,
+                    html_message=html_message
+                )
+
+        reply = _('Thank you for your message, very soon we will answer back')
+        return render(request, 'dashboard/index.html', {'reply':reply})
