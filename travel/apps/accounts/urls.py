@@ -24,7 +24,7 @@ urlpatterns = [
         name='register',
     ),
 
-    path('register/<int:pk>', views.RegisterView.as_view()),
+    path('register/<valor>/<int>', views.RegisterView.as_view(), name='register2'),
 
     path(
         'login/',

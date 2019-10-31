@@ -66,13 +66,19 @@ It's necessary for every plan select for the client.
 if (lastItem(urlParams) in [1, 2, 3, 4, 5]) {
   if(lastItem(urlParams) == 1){
     planes[0].removeAttribute('selected');
-    planes['2'].selected = true;
+    planes['1'].selected = true;
   }else if(lastItem(urlParams) == 2){
     planes[0].removeAttribute('selected');
-    planes['3'].selected = true;
+    planes['2'].selected = true;
   }else if(lastItem(urlParams) == 3){
     planes[0].removeAttribute('selected');
+    planes['3'].selected = true;
+  }else if(lastItem(urlParams) == 4){
+    planes[0].removeAttribute('selected');
     planes['4'].selected = true;
+  }else if(lastItem(urlParams) == 5){
+    planes[0].removeAttribute('selected');
+    planes['5'].selected = true;
   }
 }
 

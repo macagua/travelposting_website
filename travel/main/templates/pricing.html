@@ -27,7 +27,7 @@
                 <b class="text-white">{% trans 'Yearly contract' %}</b>
                 <div class="custom-control custom-switch">
                     &nbsp;&nbsp;
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1" >
                     <label class="custom-control-label" for="customSwitch1">
                         </span>
                     </label>
@@ -67,4 +67,19 @@
 {% block extrajs %}
     <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
     <script src="{% static 'js/apps.js' %}"></script>
+    <script language="javascript">
+            $("#customSwitch1").on("click", function() {
+              $(".case").prop("checked", this.checked);
+            });
+            
+            // if all checkbox are selected, check the selectall checkbox and viceversa
+            $(".case").on("click", function() {
+              if ($(".case").length == $(".case:checked").length) {
+                $("#customSwitch1").prop("checked", true);
+              } else {
+                $("#customSwitch1").prop("checked", false);
+              }
+            });
+    </script>
+            
 {% endblock %}

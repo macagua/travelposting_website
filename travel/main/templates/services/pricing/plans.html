@@ -25,6 +25,8 @@
                                 <!-- Pricing -->
                                 <div class="card text-center mb-5 mb-md-0">
                                     <!-- Header -->
+                                    
+
                                     <header class="card-header p-5">
                                         <h4 class="h6 text-success">{{ plan }}</h4>
                                         {% for price in plan.price.all %}
@@ -39,12 +41,19 @@
                                                             </span>
                                                         </span>
                                                         <span class="text-secondary">
-                                                            {% trans "Monthly" %}
+                                                            {% trans "Monthly"  as name %}
+                                                            {{name}}
                                                         </span><br>
                                                         {% trans "Select Anual contract and save:" %}<br>
                                                         <span class="text-warning">
                                                             {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }}
                                                         </span>
+                                                        <div class="card-body p-5">
+                                                            <center>
+                                                                <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}"">{% trans 'See plan details' %}</button>
+                                                            </center>
+                                                            <a type="submit" id="test-with-is" class="btn btn-sm btn-block btn-success transition-3d-hover" href="{% url 'accounts:register2' valor=name int=plan.id %}">{% trans 'Register' %}</a>
+                                                        </div>
                                                     {% elif price.type.type == 'Anual' %}
                                                         <span class="h1 text-dark font-weight-medium">
                                                             <span class="align-top font-size-3">
@@ -52,7 +61,8 @@
                                                             </span>
                                                         </span>
                                                         <span class="text-secondary">
-                                                            {% trans "Yearly" %}
+                                                            {% trans "Yearly" as name %}
+                                                            {{ name }}
                                                         </span><br>
                                                         {% if  plan.name != 'Fremium' and plan.name != 'Publi365' %}
                                                         <span class="h3 text-success">
@@ -64,24 +74,21 @@
                                                             <del>
                                                                 {{ plan.price.all.1.value|mul:12|sub:plan.price.all.0.value }}
                                                             </del>
+                                                            <div class="card-body p-5">
+                                                                <center>
+                                                                    <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}"">{% trans 'See plan details' %}</button>
+                                                                </center>
+                                                                <a type="submit" id="test-with-is" class="btn btn-sm btn-block btn-success transition-3d-hover" href="{% url 'accounts:register2' valor=name int=plan.id %}">{% trans 'Register' %}</a>
+                                                            </div>
                                                         {% endif %}
                                                     {% endif %}
                                                 {% endif %}
+
                                             </div>
+
                                         {% endfor %}
                                     </header>
                                     <!-- End Header -->
-                                    <!-- Content -->
-                                    <div class="card-body p-5">
-                                        <center>
-                                            <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}"">{% trans 'See plan details' %}</button>
-                                        </center>
-                                        <!-- date here-->
-
-                                        <!-- enddata here-->
-                                        <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="/es/accounts/register/{{ plan.id }}">{% trans 'Register' %}</a>
-                                    </div>
-                                    <!-- End Content -->
                                 </div>
                                 <!-- End Pricing -->
                             </div>
@@ -190,3 +197,4 @@
 </div>
 <!--Modal: modalPush--> 
 {% endfor%}
+

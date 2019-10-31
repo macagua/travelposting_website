@@ -71,6 +71,7 @@ class RegisterView(SubscriptionView, RegistrationView):
     success_url = reverse_lazy('accounts:register-complete')
     template_name = 'accounts/registration/register_form.html'
     form_class = RegistrationForm
+        
 
     def send_activation_email(self, user):
         html_email = None
