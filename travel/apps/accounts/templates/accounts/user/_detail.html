@@ -1,110 +1,166 @@
 {% extends 'destinations/base.html' %}
 {% load i18n staticfiles %}
-
 {% block title %}{% trans 'Información de usuario' %}{% endblock %}
-
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
     <div class="wrapper wrapper-content">
-            <div class="row animated fadeInRight">
-                <div class="col-md-5">
-                    <div class="ibox ">
-                        <div class="ibox-title">
-                            <h5>{% trans "Profile Detail" %}</h5>
-                            <div class="ibox-tools">
-                                <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white">
-                                    <i class="fa fa-edit"></i>
-                                    {% trans "Edit"%}
-                                </a>
-                            </div>
-                        </div>
-                        <div class="ibox-content no-padding border-left-right">
-                            <img alt="image" class="img-fluid" src="{% static "" %}">
-                        </div>
-                        <div class="ibox-content profile-content">
-                            <h4 class="text-center"><strong>{{ object.get_full_name.capitalize }}</strong></h4>
-                            <h5 class="text-left"><strong>{{ object.username }}</strong></h5>
-                            <p><i class="fa fa-envelope"></i> {{ object.email }}</p>
+        <div class="row animated fadeInRight">
+            <div class="col-md-5">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>{% trans "Profile Detail" %}</h5>
+                        <div class="ibox-tools">
+                            <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white">
+                            <i class="fa fa-edit"></i>
+                            {% trans "Edit"%}
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-7 col-lg-7">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="ibox">
-                                <div class="ibox-title">
-                                    <h3>{% trans "Sessions"%}</h3>
-                                    <div class="ibox-travel-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content ibox-heading">
-                                    <dl class="dl-horizontal">
-                                      <dt>{% trans 'Último inicio de sessión' %}:</dt>
-                                      <dd>{{ object.last_login }}</dd>
-                                      <dt>{% trans 'Fecha de registro' %}:</dt>
-                                      <dd>{{ object.date_joined }}</dd>
-                                      <dt>{% trans 'Teléfono' %}:</dt>
-                                      <dd>{{ object.phone }}</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="ibox">
-                                <div class="ibox-title">
-                                    <h3>{% trans "Direction"%}</h3>
-                                    <div class="ibox-travel-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content ibox-heading">
-                                    <dl class="dl-horizontal">
-                                      <dt>{% trans 'Pais' %}:</dt>
-                                      <dd>{{ object.country }}</dd>
-                                      <dt>{% trans 'Estado' %}:</dt>
-                                      <dd>{{ object.state }}</dd>
-                                      <dt>{% trans 'Codigo postal' %}:</dt>
-                                      <dd>{{ object.postal_code }}</dd>
-                                      <dt>{% trans 'Lenguaje' %}:</dt>
-                                      <dd>{{ object.get_language_display }}</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="ibox">
-                                <div class="ibox-title">
-                                    <h3>{% trans "Plan"%}</h3>
-                                    <div class="ibox-travel-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content ibox-heading">
-                                    <dl class="dl-horizontal">
-                                      <dt>{% trans 'Plan' %}:</dt>
-                                      <dd>{{ object.plan }}</dd>
-                                      <dt>{% trans 'Nombre de la empresa' %}:</dt>
-                                      <dd>{{ object.business_name }}</dd>
-                                      <dt>{% trans 'Direccion de empresa' %}:</dt>
-                                      <dd>{{ object.business_address }}</dd>
-                                      <dt>{% trans 'Cargo en la empresa' %}:</dt>
-                                      <dd>{{ object.business_position }}</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                        
+                    <div class="ibox-content no-padding border-left-right">
+                        <center>
+                            <img alt="image" class="img-fluid" src="{% static "img/user.png" %}" width="80">
+                        </center>
+                    </div>
+                    <div class="ibox-content profile-content">
+                        <h4 class="text-center"><strong>{{ object.get_full_name.capitalize }}</strong></h4>
+                        <h5 class="text-left">
+                            <strong>
+                            {% if object.username != None %}
+                            {{ object.username }}
+                            {% endif %}
+                            </strong>
+                        </h5>
+                        <br>
+                        <p><i class="fa fa-envelope"></i> &nbsp; {{ object.email }}</p>
                     </div>
                 </div>
             </div>
+            <div class="col-md-7 col-lg-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>{% trans "Sessions"%}</h3>
+                                <div class="ibox-travel-tools">
+                                    <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content ibox-heading">
+                                <dl class="dl-horizontal">
+                                    <dt>{% trans 'Último inicio de sessión' %}:</dt>
+                                    <dd>{{ object.last_login }}</dd>
+                                    <dt>{% trans 'Fecha de registro' %}:</dt>
+                                    <dd>{{ object.date_joined }}</dd>
+                                    <dt>{% trans 'Teléfono' %}:</dt>
+                                    <dd>
+                                        {% if object.phone != None %}
+                                        {{ object.phone }}
+                                        {% else %}
+                                        {% trans "Not registered yet"%}
+                                        {% endif %}
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>{% trans "Direction"%}</h3>
+                                <div class="ibox-travel-tools">
+                                    <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content ibox-heading">
+                                <dl class="dl-horizontal">
+                                    <dt>{% trans 'Pais' %}:</dt>
+                                    <dd>
+                                        {% if object.country != None %}  
+                                        {{ object.country }}
+                                        {% else %}
+                                        {% trans "Not registered yet"%}
+                                        {% endif %}
+                                    </dd>
+                                    <dt>{% trans 'Estado' %}:</dt>
+                                    <dd>
+                                        {% if object.state != None %}   
+                                        {{ object.state }}
+                                        {% else %}
+                                        {% trans "Not registered yet "%}
+                                        {% endif%}
+                                    </dd>
+                                    <dt>{% trans 'Codigo postal' %}:</dt>
+                                    <dd>
+                                        {% if object.postal_code %}  
+                                        {{ object.postal_code }}
+                                        {% else %}
+                                        {% trans "Not registered yet "%}
+                                        {% endif %}
+                                    </dd>
+                                    <dt>{% trans 'Lenguaje' %}:</dt>
+                                    <dd>{{ object.get_language_display }}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>{% trans "Plan"%}</h3>
+                                <div class="ibox-travel-tools">
+                                    <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content ibox-heading">
+                                <dl class="dl-horizontal">
+                                    <dt>{% trans 'Plan' %}:</dt>
+                                    <dd>
+                                        {% if object.plan != None%}
+                                            {{ object.plan }}
+                                        {% else %}
+                                            {% trans "Not registered yet "%}
+                                        {% endif %}
+                                    
+                                    </dd>
+                                    <dt>{% trans 'Nombre de la empresa' %}:</dt>
+                                    <dd>
+                                        {% if object.business_name != None %}
+                                            {{ object.business_name }}
+                                        {% else %}
+                                            {% trans "Not registered yet "%}
+                                        {% endif %}
+                                    
+                                    </dd>
+                                    <dt>{% trans 'Direccion de empresa' %}:</dt>
+                                    <dd>
+                                        {% if object.business_address != None %}
+                                            {{ object.business_address }}
+                                        {% else %}
+                                            {% trans "Not registered yet "%}
+                                        {% endif %}
+                                    </dd>
+                                    <dt>{% trans 'Cargo en la empresa' %}:</dt>
+                                    <dd>
+                                        {% if object.business_position != None %}
+                                            {{ object.business_position }}
+                                        {% else %}
+                                            {% trans "Not registered yet "%}
+                                        {% endif %}
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     {% include 'destinations/footer.html' %}
 </div>
