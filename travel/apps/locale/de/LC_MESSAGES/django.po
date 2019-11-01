@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-30 10:47-0400\n"
+"POT-Creation-Date: 2019-11-01 15:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,18 +120,17 @@ msgid "email address"
 msgstr "E-Mail-Adresse"
 
 #: apps/accounts/models.py:67
-#: apps/accounts/templates/accounts/user/_detail.html:83
-#: apps/accounts/templates/accounts/user/_detail.html:92
+#: apps/accounts/templates/accounts/user/_detail.html:114
+#: apps/accounts/templates/accounts/user/_detail.html:123
 msgid "Plan"
 msgstr "Plan"
 
 #: apps/accounts/models.py:81 apps/payments/models/paypal.py:61
-#: apps/paymentsN/models/paypal.py:49
 msgid "Coupon"
 msgstr "Gutschein"
 
 #: apps/accounts/models.py:88
-#: apps/accounts/templates/accounts/user/_detail.html:94
+#: apps/accounts/templates/accounts/user/_detail.html:132
 msgid "Nombre de la empresa"
 msgstr "Name des Unternehmens"
 
@@ -164,7 +163,7 @@ msgid "Título (Persona de contacto)"
 msgstr ""
 
 #: apps/accounts/models.py:144
-#: apps/accounts/templates/accounts/user/_detail.html:98
+#: apps/accounts/templates/accounts/user/_detail.html:149
 msgid "Cargo en la empresa"
 msgstr ""
 
@@ -466,55 +465,69 @@ msgstr ""
 msgid "Visit our page or see our plans"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:4
+#: apps/accounts/templates/accounts/user/_detail.html:3
 msgid "Información de usuario"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:14
+#: apps/accounts/templates/accounts/user/_detail.html:12
 msgid "Profile Detail"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:18
+#: apps/accounts/templates/accounts/user/_detail.html:16
 msgid "Edit"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:37
+#: apps/accounts/templates/accounts/user/_detail.html:44
 msgid "Sessions"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:46
+#: apps/accounts/templates/accounts/user/_detail.html:53
 msgid "Último inicio de sessión"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:48
+#: apps/accounts/templates/accounts/user/_detail.html:55
 msgid "Fecha de registro"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:50
+#: apps/accounts/templates/accounts/user/_detail.html:57
 msgid "Teléfono"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:59
-msgid "Direction"
-msgstr ""
-
-#: apps/accounts/templates/accounts/user/_detail.html:68
-msgid "Pais"
-msgstr ""
-
-#: apps/accounts/templates/accounts/user/_detail.html:70
-msgid "Estado"
+#: apps/accounts/templates/accounts/user/_detail.html:62
+#: apps/accounts/templates/accounts/user/_detail.html:86
+msgid "Not registered yet"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:72
+msgid "Direction"
+msgstr ""
+
+#: apps/accounts/templates/accounts/user/_detail.html:81
+msgid "Pais"
+msgstr ""
+
+#: apps/accounts/templates/accounts/user/_detail.html:89
+msgid "Estado"
+msgstr ""
+
+#: apps/accounts/templates/accounts/user/_detail.html:94
+#: apps/accounts/templates/accounts/user/_detail.html:102
+#: apps/accounts/templates/accounts/user/_detail.html:128
+#: apps/accounts/templates/accounts/user/_detail.html:137
+#: apps/accounts/templates/accounts/user/_detail.html:146
+#: apps/accounts/templates/accounts/user/_detail.html:154
+msgid "Not registered yet "
+msgstr ""
+
+#: apps/accounts/templates/accounts/user/_detail.html:97
 msgid "Codigo postal"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:74
+#: apps/accounts/templates/accounts/user/_detail.html:105
 msgid "Lenguaje"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:96
+#: apps/accounts/templates/accounts/user/_detail.html:141
 msgid "Direccion de empresa"
 msgstr ""
 
@@ -590,7 +603,6 @@ msgstr ""
 
 #: apps/landing_page/models.py:65 apps/landing_page/models.py:175
 #: apps/landing_page/models.py:229 apps/payments/models/paypal.py:9
-#: apps/paymentsN/models/paypal.py:7
 msgid "name"
 msgstr ""
 
@@ -616,7 +628,7 @@ msgid "plans"
 msgstr ""
 
 #: apps/landing_page/models.py:103 apps/landing_page/models.py:123
-#: apps/payments/models/paypal.py:22 apps/paymentsN/models/paypal.py:20
+#: apps/payments/models/paypal.py:22
 msgid "plan"
 msgstr ""
 
@@ -650,7 +662,7 @@ msgid ""
 msgstr ""
 
 #: apps/landing_page/models.py:266 apps/landing_page/models.py:345
-#: apps/payments/models/paypal.py:36 apps/paymentsN/models/paypal.py:24
+#: apps/payments/models/paypal.py:36
 msgid "description"
 msgstr ""
 
@@ -857,11 +869,11 @@ msgstr ""
 msgid "Itinerary"
 msgstr ""
 
-#: apps/payments/apps.py:7 apps/paymentsN/apps.py:7
+#: apps/payments/apps.py:7
 msgid "Payments"
 msgstr ""
 
-#: apps/payments/models/paypal.py:14 apps/paymentsN/models/paypal.py:12
+#: apps/payments/models/paypal.py:14
 msgid "code"
 msgstr ""
 
@@ -869,19 +881,19 @@ msgstr ""
 msgid "Precio"
 msgstr ""
 
-#: apps/payments/models/paypal.py:42 apps/paymentsN/models/paypal.py:30
+#: apps/payments/models/paypal.py:42
 msgid "start date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:46 apps/paymentsN/models/paypal.py:34
+#: apps/payments/models/paypal.py:46
 msgid "end date"
 msgstr ""
 
-#: apps/payments/models/paypal.py:50 apps/paymentsN/models/paypal.py:38
+#: apps/payments/models/paypal.py:50
 msgid "quantity"
 msgstr ""
 
-#: apps/payments/models/paypal.py:62 apps/paymentsN/models/paypal.py:50
+#: apps/payments/models/paypal.py:62
 msgid "Coupons"
 msgstr ""
 
@@ -1566,8 +1578,9 @@ msgid "Ingresa"
 msgstr ""
 
 #: main/templates/menu/menu.html:9
-#: main/templates/services/pricing/plans.html:82
-#: main/templates/services/pricing/plans.html:185
+#: main/templates/services/pricing/plans.html:55
+#: main/templates/services/pricing/plans.html:81
+#: main/templates/services/pricing/plans.html:192
 msgid "Register"
 msgstr ""
 
@@ -2018,7 +2031,7 @@ msgid ""
 msgstr ""
 
 #: main/templates/services/destination/detail_destination.html:378
-#: main/templates/services/pricing/plans.html:184
+#: main/templates/services/pricing/plans.html:191
 msgid "Close"
 msgstr ""
 
@@ -2038,43 +2051,44 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:33
+#: main/templates/services/pricing/plans.html:35
 msgid "This plan is only for yearly suscription"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:42
+#: main/templates/services/pricing/plans.html:44
 msgid "Monthly"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:44
+#: main/templates/services/pricing/plans.html:47
 msgid "Select Anual contract and save:"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:55
-msgid "Yearly"
-msgstr ""
-
-#: main/templates/services/pricing/plans.html:59
-msgid "/ month"
-msgstr ""
-
-#: main/templates/services/pricing/plans.html:62
-msgid "You save:"
-msgstr ""
-
-#: main/templates/services/pricing/plans.html:77
+#: main/templates/services/pricing/plans.html:53
+#: main/templates/services/pricing/plans.html:79
 msgid "See plan details"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:105
+#: main/templates/services/pricing/plans.html:64
+msgid "Yearly"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:69
+msgid "/ month"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:72
+msgid "You save:"
+msgstr ""
+
+#: main/templates/services/pricing/plans.html:112
 msgid "Contact Us"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:107
+#: main/templates/services/pricing/plans.html:114
 msgid "Limitless"
 msgstr ""
 
-#: main/templates/services/pricing/plans.html:122
+#: main/templates/services/pricing/plans.html:129
 msgid ""
 "\n"
 "                        if what you see doesn't appeal to you because you "

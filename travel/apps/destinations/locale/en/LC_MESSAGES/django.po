@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-30 10:47-0400\n"
+"POT-Creation-Date: 2019-11-01 15:12-0400\n"
 "PO-Revision-Date: 2019-06-27 13:37-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,22 +20,22 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: apps/destinations/__OLD_VIEW.py:192
-#: apps/destinations/views/destination.py:215
+#: apps/destinations/views/destination.py:219
 msgid "Agregar destino"
 msgstr "Add destination"
 
 #: apps/destinations/__OLD_VIEW.py:204
-#: apps/destinations/views/destination.py:227
+#: apps/destinations/views/destination.py:231
 msgid "Actualizar destino"
 msgstr "Update destination"
 
 #: apps/destinations/__OLD_VIEW.py:316
-#: apps/destinations/views/destination.py:350
+#: apps/destinations/views/destination.py:354
 msgid "A new itinerary item has been registered"
 msgstr ""
 
 #: apps/destinations/__OLD_VIEW.py:345
-#: apps/destinations/views/destination.py:379
+#: apps/destinations/views/destination.py:383
 msgid "Itinerary information has been updated"
 msgstr ""
 
@@ -45,6 +45,7 @@ msgstr ""
 
 #: apps/destinations/__OLD_VIEW.py:401 apps/destinations/admin.py:106
 #: apps/destinations/views/booking.py:100
+#: apps/destinations/views/destination.py:507
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 
@@ -683,6 +684,18 @@ msgstr ""
 msgid "Social Networks"
 msgstr ""
 
+#: apps/destinations/templates/dashboard/dashboard_email.html:50
+msgid "You have a new message:"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/dashboard_email.html:58
+msgid "User: "
+msgstr ""
+
+#: apps/destinations/templates/dashboard/dashboard_email.html:59
+msgid "Full Name:"
+msgstr ""
+
 #: apps/destinations/templates/dashboard/index.html:3
 msgid "Welcome to your Dashboard"
 msgstr ""
@@ -695,13 +708,13 @@ msgstr ""
 msgid "Here you got some shortcuts option that you may do in our system."
 msgstr ""
 
-#: apps/destinations/templates/dashboard/index.html:42
+#: apps/destinations/templates/dashboard/index.html:43
 #, fuzzy
 #| msgid "Sus destinos"
 msgid "Your Destinations"
 msgstr "Your destinations"
 
-#: apps/destinations/templates/dashboard/index.html:69
+#: apps/destinations/templates/dashboard/index.html:70
 #, fuzzy
 #| msgid "Tour Booking"
 msgid "Your Bookings"
@@ -753,7 +766,12 @@ msgstr "Destinations"
 msgid "Phone"
 msgstr ""
 
-#: apps/destinations/templates/destinations/_booking_list.html:51
+#: apps/destinations/templates/destinations/_booking_list.html:45
+#: apps/destinations/templates/destinations/_booking_list.html:55
+msgid "Not registered yet"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_booking_list.html:65
 msgid "See full Details"
 msgstr ""
 
@@ -1018,30 +1036,37 @@ msgstr "Booking details"
 msgid "E-mail"
 msgstr ""
 
-#: apps/destinations/templates/destinations/booking_modal.html:46
+#: apps/destinations/templates/destinations/booking_modal.html:34
+#: apps/destinations/templates/destinations/booking_modal.html:42
+#: apps/destinations/templates/destinations/booking_modal.html:69
+#: apps/destinations/templates/destinations/booking_modal.html:76
+msgid "No register yet"
+msgstr ""
+
+#: apps/destinations/templates/destinations/booking_modal.html:59
 #, fuzzy
 #| msgid "Number of tickets per tour"
 msgid "Nunber of people"
 msgstr "Number of tickets per tour"
 
-#: apps/destinations/templates/destinations/booking_modal.html:47
+#: apps/destinations/templates/destinations/booking_modal.html:60
 msgid "Extra plan"
 msgstr ""
 
-#: apps/destinations/templates/destinations/booking_modal.html:59
+#: apps/destinations/templates/destinations/booking_modal.html:84
 #, fuzzy
 #| msgid "Client secret"
 msgid "client comments"
 msgstr "Client secret"
 
-#: apps/destinations/templates/destinations/booking_modal.html:66
+#: apps/destinations/templates/destinations/booking_modal.html:91
 #: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:50
 #: apps/destinations/templates/destinations/social_modal.html:68
 #: apps/destinations/templates/destinations/social_modal_edit.html:68
 msgid "Close"
 msgstr ""
 
-#: apps/destinations/templates/destinations/booking_modal.html:67
+#: apps/destinations/templates/destinations/booking_modal.html:92
 msgid "Mark as solved"
 msgstr ""
 
@@ -1400,9 +1425,17 @@ msgstr ""
 msgid "a new map has been added to your destination"
 msgstr ""
 
-#: apps/destinations/views/destination.py:424
+#: apps/destinations/views/destination.py:428
 msgid ""
 "There is already a configuration of social networks. Do you want to update?"
+msgstr ""
+
+#: apps/destinations/views/destination.py:494
+msgid "You have a new message"
+msgstr ""
+
+#: apps/destinations/views/destination.py:515
+msgid "Thank you for your message, very soon we will answer back"
 msgstr ""
 
 #, fuzzy
