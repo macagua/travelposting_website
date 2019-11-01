@@ -27,8 +27,21 @@
                 <tbody>
                     <tr>
                     <td>{{ object.first_name }} {{ object.last_name }}</td>
-                    <td>{{ object.mail }}</td>
-                    <td>{{ object.cellphone }}</td>
+                    <td>
+                        {% if object.mail != None %}
+                        {{ object.mail }}
+                        {% else %}
+                            {% trans "No register yet" %}
+                        {% endif %}
+                    
+                    </td>
+                    <td>
+                        {% if object.mail != None %}
+                        {{ object.cellphone }}
+                        {% else %}
+                        {% trans "No register yet" %}
+                        {% endif %}
+                    </td>
                     <td>
                         {% if object.process_status %}
                             <i class="fa fa-check"></i>
@@ -49,8 +62,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                    <td>{{ object.number_travel }}</td>
-                    <td>{{ object.name_booking }}</td>
+                    <td>
+                        {% if  object.number_travel != None %}
+                            {{ object.number_travel }}
+                        {% else %}
+                            {% trans "No register yet" %}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if object.name_booking != None %}
+                            {{ object.name_booking }}
+                        {% else %}
+                            {% trans "No register yet" %}
+                        {% endif %}
+                    </td>
                     </tr>
                 </tbody>
             </table>

@@ -38,10 +38,24 @@
                         <td>
                             <span>{{ object.first_name }} {{ object.last_name }}</span>
                         </td>
-                        <td>{{ object.mail}}</td>
+                        <td>
+                          {% if object.mail != None %}
+                          {{ object.mail}}
+                          {% else %}
+                            {% trans "Not registered yet"%}
+                          {% endif %}
+                        
+                        </td>
                         <td>
                             <p>
-                              <span>{{ object.cellphone }}</span>
+                              <span>
+                                {% if object.cellphone != None %}
+                                  {{ object.cellphone }}
+                                {% else %}
+                                  {% trans "Not registered yet" %}
+                                {% endif %}
+                              
+                              </span>
                             </p>
                         </td>
                         <td>
