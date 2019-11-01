@@ -3,7 +3,7 @@ from apps.destinations.charts import (
     BookingCharts,
     DashboardIndex,
     DestinationCharts,
-    messageView,
+
 )
 from apps.destinations.views.destination import (
     DestinationListView,
@@ -16,6 +16,7 @@ from apps.destinations.views.destination import (
     ItineraryView,
     SocialNetworkListView,
     SocialNetworkUpdateView,
+    messageView,
 )
 
 from apps.destinations.views.booking import (

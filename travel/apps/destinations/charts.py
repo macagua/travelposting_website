@@ -50,29 +50,4 @@ def DashboardIndex(request):
     return render(request, 'dashboard/index.html')
 
 
-class messageView(View):
-    def post(self, request, *args, **kwargs):
 
-        subject = _('You have a new message')
-
-        ctx = {
-            'user' : request.user.email,
-            'name' : request.user.get_full_name,
-            'message': request.POST.get('message')
-        }
-
-        html_message = render_to_string(
-            'dashboard/dashboard_email.html',
-            context=ctx
-        )
-
-        message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
-
-        mail_managers(subject,
-                    message,
-                    fail_silently=True,
-                    html_message=html_message
-                )
-
-        reply = _('Thank you for your message, very soon we will answer back')
-        return render(request, 'dashboard/index.html', {'reply':reply})
