@@ -109,7 +109,7 @@ MEDIA_URL = '/main/media/'
 MEDIA_ROOT = os.path.join(os.getcwd(),'main/media/')
 STATIC_ROOT = os.path.join(os.getcwd(), 'main/static/')
 STATIC_URL = '/main/static/'
-
+GEOIP_PATH = MEDIA_ROOT + '/GeoLite2'
 STATICFILES_DIRS = (
     os.path.join(os.getcwd(), 'main/private/'),
 )

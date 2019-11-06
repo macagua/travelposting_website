@@ -241,7 +241,7 @@ class Destination(models.Model):
     @property
     def social(self):
         sn = SocialNetwork.objects.get(destination=self.pk)
-        return sn 
+        return sn
 
     @property
     def list_prices(self):
@@ -937,3 +937,11 @@ class SocialNetwork(models.Model):
     class Meta:
         verbose_name_plural = _("Social Networks")
         verbose_name = _("Social Network")
+
+class DestinationVisitor(models.Model):
+    destination = models.ForeignKey(Destination, on_delete = models.CASCADE)
+    ip_address = models.CharField(max_length = 100)
+    dma_code = models.IntegerField()
+    country_code = models.CharField(max_length = 5)
+    country_name = models.CharField(max_length= 100)
+    date_time = models.DateTimeField(auto_now_add=True)

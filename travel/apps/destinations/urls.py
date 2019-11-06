@@ -5,6 +5,10 @@ from apps.destinations.charts import (
     DestinationCharts,
 
 )
+from apps.destinations.views.visitor import (
+    VisitorView,
+)
+
 from apps.destinations.views.destination import (
     DestinationListView,
     DestinationCreateView,
@@ -17,6 +21,7 @@ from apps.destinations.views.destination import (
     SocialNetworkListView,
     SocialNetworkUpdateView,
     messageView,
+
 )
 
 from apps.destinations.views.booking import (
@@ -188,5 +193,11 @@ urlpatterns = [
         'message/',
         messageView.as_view(),
         name='send_message',
+    ),
+
+    path(
+        'visitor/',
+        VisitorView.as_view(),
+        name='visitor',
     ),
 ]
