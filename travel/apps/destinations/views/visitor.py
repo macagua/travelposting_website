@@ -23,7 +23,7 @@ class VisitorView(View):
     		data_visitor = geo_ip.city(str(ip_visitor))
     	try:
 	    	DestinationVisitor.objects.create(
-	    		destination = Destination.objects.get(request.GET['destination']),
+	    		destination = Destination.objects.get(pk=request.GET['destination']),
 	    		ip_address  = ip_visitor,
 	    		dma_code =data_visitor['dma_code'] ,
 	    		country_code = data_visitor['country_code'],

@@ -941,7 +941,7 @@ class SocialNetwork(models.Model):
 class DestinationVisitor(models.Model):
     destination = models.ForeignKey(Destination, on_delete = models.CASCADE)
     ip_address = models.CharField(max_length = 100)
-    dma_code = models.IntegerField()
+    dma_code = models.IntegerField(blank= True, null= True)
     country_code = models.CharField(max_length = 5)
     country_name = models.CharField(max_length= 100)
     date_time = models.DateTimeField(auto_now_add=True)

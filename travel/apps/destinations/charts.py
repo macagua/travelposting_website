@@ -13,6 +13,7 @@ from django.conf import settings
 
 from django.db.models import Count
 from django.shortcuts import render
+from apps.destinations.models import DestinationVisitor
 from django.views.generic import (
     View
 )
@@ -47,7 +48,7 @@ def DashboardIndex(request):
     """
         Function to render the charts in template.
     """
-    return render(request, 'dashboard/index.html')
-
-
-
+    statis_destinies = DestinationVisitor.objects \
+                    .filter(destination__user = request.user) \
+                    .annotate(visitor_count = Count('destination'))
+    return render(request, 'dashboard/index.html',{'statis_destinies':statis_destinies})
