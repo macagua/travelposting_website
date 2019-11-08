@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.gis.db import models
+from django.db.models import Count, Max, F
 from django.utils.translation import gettext_lazy as _
 from djmoney.models.fields import MoneyField
 from djmoney.money import Money
@@ -254,7 +255,6 @@ class Destination(models.Model):
         except BaseException:
             return None
         return list_prices
-
 
 class DestinationMap(models.Model):
     destination = models.OneToOneField(
@@ -939,7 +939,7 @@ class SocialNetwork(models.Model):
         verbose_name = _("Social Network")
 
 class DestinationVisitor(models.Model):
-    destination = models.ForeignKey(Destination, on_delete = models.CASCADE)
+    destination = models.ForeignKey(Destination,related_name='visitor', on_delete = models.CASCADE)
     ip_address = models.CharField(max_length = 100)
     dma_code = models.IntegerField(blank= True, null= True)
     country_code = models.CharField(max_length = 5)

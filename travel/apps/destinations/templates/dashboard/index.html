@@ -106,9 +106,9 @@
                       <tbody>
                         {%for statis_destine in statis_destinies%}
                         <tr>
-                          <td>{{ statis_destine.destination.name }}</td>
-                          <td>{{ statis_destine.date_time.date }}</td>
-                          <td>{{ statis_destine.visitor_count }}</td>
+                          <td>{{ statis_destine.name }}</td>
+                          <td>{{ statis_destine.last_visit|default_if_none:"" }}</td>
+                          <td>{{ statis_destine.visitor_count|default_if_none:"" }}</td>
                         </tr>
                         {%endfor%}
                       </tbody>
