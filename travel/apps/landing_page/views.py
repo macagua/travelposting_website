@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from django.db.models import  Max, Min
 from django.views import View
 from django.utils.translation import gettext_lazy as _
@@ -233,9 +235,16 @@ class getItineraryPDF(PDFTemplateView):
     download_filename = 'intinerary.pdf'
 
     def get_context_data(self, **kwargs):
-        return super(getItineraryPDF, self).get_context_data(
-            destino = Destination.objects.get(id=kwargs.get('slug')),
-            pagesize='letter',
-            title=_('Itinerary'),
-            **kwargs
-        )
+        try:
+            return super(getItineraryPDF, self).get_context_data(
+                destino = Destination.objects.get(id=kwargs.get('slug')),
+                pagesize='letter',
+                title=_('Itinerary'),
+                **kwargs
+            )
+        except:
+            context = super(getItineraryPDF, self).get_context_data(**kwargs)
+            
+            return context
+
+
