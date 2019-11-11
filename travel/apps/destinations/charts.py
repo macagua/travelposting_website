@@ -11,8 +11,9 @@ from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.conf import settings
 
-from django.db.models import Count
+from django.db.models import Count, Max, F
 from django.shortcuts import render
+from apps.destinations.models import DestinationVisitor
 from django.views.generic import (
     View
 )
@@ -47,7 +48,12 @@ def DashboardIndex(request):
     """
         Function to render the charts in template.
     """
-    return render(request, 'dashboard/index.html')
+    statis_destinies = Destination.objects \
+                    .filter(user = request.user)\
+                    .prefetch_related('visitor') \
+                    .annotate(visitor_count = Count('visitor__destination')) \
+                    .annotate(last_visit = Max('visitor__date_time')) \
+                    .annotate(date_time=F('last_visit')) \
+                    .order_by('-visitor_count')
 
-
-
+    return render(request, 'dashboard/index.html',{'statis_destinies':statis_destinies})

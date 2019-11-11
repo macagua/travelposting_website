@@ -23,6 +23,7 @@ from .models import (
     Itinerary,
     BookingStats,
     SocialNetwork,
+    DestinationVisitor,
 )
 
 @admin.register(OptionTabData)
@@ -151,6 +152,18 @@ class BookingAdmin(admin.ModelAdmin):
         'mail',
         'seen_status',
         'process_status',
+    ]
+
+
+@admin.register(DestinationVisitor)
+class VisitorsAdmin(admin.ModelAdmin):
+    search_fields = ('destination__name',)
+    list_filter = ['date_time', 'country_name']
+    list_display = [
+        'destination',
+        'dma_code',
+        'country_name',
+        'date_time',
     ]
 
 
