@@ -31,4 +31,4 @@ class VisitorView(View):
 	    	)
 	    	return JsonResponse({},safe=False,status=200)
     	except Exception as e:
-    		return JsonResponse({},safe=False,status=200)
+    		return JsonResponse({},safe=False,status=500)

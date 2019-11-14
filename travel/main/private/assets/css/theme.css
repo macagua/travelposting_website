@@ -18888,6 +18888,7 @@ label.btn {
   font-weight: 900;
   content: "";
   margin-left: .5rem;
+  border-top: 0;
 }
 
 .dropdown-toggle-collapse::after {
