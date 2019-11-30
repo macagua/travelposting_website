@@ -7,6 +7,78 @@
 {% endblock navbar %}
 
 {% block content %}
+<br><br><br>
+<main id="content" role="main">
+    <!-- Login Form -->
+    <div class="container space-2">
+        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate">
+            <!-- Title -->
+            <div class="mb-7">
+                <h2 class="h3 text-primary font-weight-normal mb-0">{% blocktrans %} Welcome <span class="font-weight-semi-bold">to
+                        Community</span>{% endblocktrans %}</h2>
+                <p>{% trans 'Login to manage your account.' %}</p>
+            </div>
+            <!-- End Title -->
 
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+                <label class="form-label" for="signinSrEmail">{% trans 'Email address'%}</label>
+                <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="{% trans 'Email address'%}"
+                    aria-label="Email address" required="" data-msg="{% trans 'Please enter a valid email address.'%}'"
+                    data-error-class="u-has-error" data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group -->
+
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+                <label class="form-label" for="signinSrPassword">{% trans 'Password' %}</label>
+                <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********"
+                    aria-label="********" required="" data-msg="{% trans 'Your password is invalid. Please try again.' %}'"
+                    data-error-class="u-has-error" data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group -->
+
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+                <label class="form-label" for="signinSrConfirmPassword">{% trans 'Confirm password' %}</label>
+                <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword"
+                    placeholder="********" aria-label="********" required=""
+                    data-msg="{% trans 'Password does not match the confirm password.'%}" data-error-class="u-has-error"
+                    data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group -->
+
+            <!-- Checkbox -->
+            <div class="js-form-message mb-5">
+                <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                    <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox"
+                        required="" data-msg="Please accept our Terms and Conditions." data-error-class="u-has-error"
+                        data-success-class="u-has-success">
+                    <label class="custom-control-label" for="termsCheckbox">
+                        <small>
+                            {% trans 'I agree to the'%}
+                            <a class="link-muted" href="/policy/">{% trans 'Terms and Conditions'%}</a>
+                        </small>
+                    </label>
+                </div>
+            </div>
+            <!-- End Checkbox -->
+
+            <!-- Button -->
+            <div class="row align-items-center mb-5">
+                <div class="col-5 col-sm-6">
+                    <span class="small text-muted">{% trans 'Already have an account?'%}</span>
+                    <a class="small" href="{% url 'login-community' %}">{% trans 'Login' %}</a>
+                </div>
+
+                <div class="col-7 col-sm-6 text-right">
+                    <button type="submit" class="btn btn-primary transition-3d-hover">{% trans 'Get Started' %}</button>
+                </div>
+            </div>
+            <!-- End Button -->
+        </form>
+    </div>
+    <!-- End Login Form -->
+</main>
 
 {% endblock %}
