@@ -18,15 +18,6 @@ from apps.destinations.models import (
 from apps.landing_page.models import DeleteReg, PrivacySetting
 from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
 
-# Create your views here.
-
-class CommmunityView(View):
-    """
-        Vista para pagina comunidad
-    """
-
-    def get(self, request, *args, **kwargs):
-        return render(request, 'community.html')
 
 
 class CategoriesView(View):

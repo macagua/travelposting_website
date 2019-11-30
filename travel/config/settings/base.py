@@ -238,6 +238,7 @@ LOCAL_APPS = [
     'apps.payments.apps.PaymentsConfig',
     'apps.destinations',
     'apps.api',
+    'apps.community',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS

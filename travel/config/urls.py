@@ -7,7 +7,6 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
 from apps.landing_page.views import (
-    CommmunityView,
     CategoriesView,
     DetailDestinationView,
     SaveSearchView,
@@ -65,10 +64,6 @@ urlpatterns += i18n_patterns(
     ),
 
     url(
-        r'^community',
-        CommmunityView.as_view(),
-    ),
-    url(
         r'^category/destination/(?P<slug>\w+)',
         DetailDestinationView.as_view(),
         name='view_detail_destination',
@@ -80,6 +75,11 @@ urlpatterns += i18n_patterns(
         name='view_category',
     ),
 
+    path(
+        'community/',
+        include('apps.community.urls'),
+    ),
+    
     path(
         'paypal/',
             include('apps.payments.paypal.urls'),
