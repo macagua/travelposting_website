@@ -41,14 +41,17 @@
         <!-- Button -->
         <li class="nav-item u-header__nav-item dropdown">
                 {% get_current_language as LANGUAGES %}
+                {% if request.path == '/es/' or request.path == '/en/' or request.path == '/de/'%}
             <a class="dropdown-toggle nav-link u-header__sub-menu-nav-link" style="color: white;" href="/{{ LANGUAGES }}/" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="flag-icon flag-icon-{% if LANGUAGES == 'en' %}gb{% else %}{{ LANGUAGES }}{% endif%}"> </span>
                 </a>
+                
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <a class="dropdown-item" href="/de/"><span class="flag-icon flag-icon-de"> </span> {% trans "Deutsch" %}</a>
                     <a class="dropdown-item" href="/en/"><span class="flag-icon flag-icon-gb"> </span> {% trans "English" %}</a>
                     <a class="dropdown-item" href="/es/"><span class="flag-icon flag-icon-es"> </span> {% trans "Spanish "%}</a>
                 </div>
+                {% endif %}
         </li>
         <li class="nav-item u-header__nav-last-item">
             <a class="btn btn-sm btn-success transition-3d-hover" href="{% url 'accounts:register' %}">

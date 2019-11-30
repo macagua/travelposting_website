@@ -24,7 +24,7 @@
             <div class="js-form-message form-group">
                 <label class="form-label" for="signinSrEmail">{% trans 'Email address' %}</label>
                 <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="{% trans 'Email address' %}"
-                    aria-label="Email address" required="" data-msg="{% trans 'Please enter a valid email address.%}"
+                    aria-label="Email address" required="" data-msg="{% trans 'Please enter a valid email address.' %}"
                     data-error-class="u-has-error" data-success-class="u-has-success">
             </div>
             <!-- End Form Group -->
@@ -47,8 +47,8 @@
             <!-- Button -->
             <div class="row align-items-center mb-5">
                 <div class="col-6">
-                    <span class="small text-muted">{% trans 'Don't have an account?'%}</span>
-                    <a class="small" href="signup-simple.html">{% trans 'Signup' %}</a>
+                    <span class="small text-muted">{% trans 'Don\'t have an account?'%}</span>
+                    <a class="small" href="{% url 'signup-community' %}">{% trans 'Signup' %}</a>
                 </div>
 
                 <div class="col-6 text-right">

@@ -23,3 +23,11 @@ class LoginCommunity(View):
         return render(request, 'community/registration/login.html')
 
 
+class signupCommunity(View):
+    """
+        Login para los usuarios de la comunidad
+    """
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'community/registration/signup.html')
+
