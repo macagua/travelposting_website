@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-01 15:12-0400\n"
+"POT-Creation-Date: 2019-11-30 12:32-0400\n"
 "PO-Revision-Date: 2019-10-30 10:48-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,7 @@ msgstr ""
 
 #: apps/accounts/admin.py:13 apps/accounts/forms.py:39
 #: apps/accounts/forms.py:67
+#: apps/community/templates/community/registration/login.html:36
 msgid "Password"
 msgstr "Contraseña"
 
@@ -284,6 +285,8 @@ msgstr "Ingrese el correo debajo"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:58
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
+#: apps/community/templates/community/registration/login.html:25
+#: apps/community/templates/community/registration/login.html:26
 msgid "Email address"
 msgstr "Correo electrónico"
 
@@ -310,6 +313,7 @@ msgstr "Peticion de reseteo"
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:54
 #: apps/accounts/templates/accounts/registration/register_form.html:106
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
+#: apps/community/templates/community/registration/login.html:55
 #: main/templates/index.html:129
 msgid "Login"
 msgstr "Ingreso"
@@ -339,6 +343,7 @@ msgid "to Travelposting"
 msgstr "a Travelposting"
 
 #: apps/accounts/templates/accounts/registration/login.html:53
+#: apps/community/templates/community/registration/login.html:19
 msgid "Login to manage your account."
 msgstr "Ingrese para administrar su cuenta"
 
@@ -347,6 +352,7 @@ msgid "Don\\"
 msgstr "Don\\"
 
 #: apps/accounts/templates/accounts/registration/login.html:74
+#: apps/community/templates/community/registration/login.html:51
 msgid "Signup"
 msgstr "Ingreso"
 
@@ -589,6 +595,32 @@ msgstr ""
 msgid "An error, Incorrect User or Password has occurred."
 msgstr "Se produjo un error, usuario o contraseña incorrectos."
 
+#: apps/community/templates/community/registration/login.html:4
+#: main/templates/community.html:4 main/templates/community.html:15
+#: main/templates/pricing.html:4
+msgid "Comunity"
+msgstr "Comunidad"
+
+#: apps/community/templates/community/registration/login.html:17
+msgid ""
+" Welcome <span\n"
+"                        class=\"font-weight-semi-bold\">to Community</span>"
+msgstr ""
+
+#: apps/community/templates/community/registration/login.html:38
+msgid "Forgot Password?"
+msgstr "¿Olvido su contraseña?"
+
+#: apps/community/templates/community/registration/login.html:42
+msgid "Your password is invalid. Please try again."
+msgstr "Su contraseña es invalida. por favor intente de nuevo."
+
+#: apps/community/templates/community/registration/login.html:50
+#, fuzzy
+#| msgid "Don\\"
+msgid "Don"
+msgstr "Don\\"
+
 #: apps/landing_page/admin.py:80 apps/landing_page/models.py:368
 msgid "Company"
 msgstr "Compañia"
@@ -739,8 +771,10 @@ msgstr "Titulo"
 
 #: apps/landing_page/models.py:349
 #: main/templates/services/destination/destinations.html:44
-#: main/templates/services/destination/destinations_for_categorie.html:112
-#: main/templates/services/destination/destinations_for_categorie.html:133
+#: main/templates/services/destination/destinations_for_categorie.html:82
+#: main/templates/services/destination/destinations_for_categorie.html:103
+#: main/templates/services/destination/destinations_for_categorie_backup.html:112
+#: main/templates/services/destination/destinations_for_categorie_backup.html:133
 msgid "image"
 msgstr "imagen"
 
@@ -845,15 +879,15 @@ msgstr "Configuración de privacidad"
 msgid "Privacity Setting"
 msgstr "Configuración de privacidad"
 
-#: apps/landing_page/views.py:67
+#: apps/landing_page/views.py:60
 msgid "Don't have exist map yet!"
 msgstr "Aún no existe mapa para este destino"
 
-#: apps/landing_page/views.py:89
+#: apps/landing_page/views.py:82
 msgid "New registered search"
 msgstr "Nueva búsqueda registrada"
 
-#: apps/landing_page/views.py:103
+#: apps/landing_page/views.py:96
 #, python-brace-format
 msgid ""
 "A person has done a new search, please review Mr.'s {name} incoming "
@@ -871,22 +905,22 @@ msgstr ""
 "Whatsapp: {whatsapp}\n"
 "o si quieres ver el sitio de administración https://travelposting.com/admin/"
 
-#: apps/landing_page/views.py:136
+#: apps/landing_page/views.py:129
 msgid "New request for delete"
 msgstr "Nueva petición de borrado"
 
-#: apps/landing_page/views.py:150 apps/landing_page/views.py:219
+#: apps/landing_page/views.py:143 apps/landing_page/views.py:212
 msgid ""
 "if you want see the                     admin site https://travelposting.com/"
 "admin/ "
 msgstr ""
 "Si deseas ver el sitio de administración https://travelposting.com/admin/  "
 
-#: apps/landing_page/views.py:204
+#: apps/landing_page/views.py:197
 msgid "New privacity request."
 msgstr "Nueva solicitud de privacidad"
 
-#: apps/landing_page/views.py:239
+#: apps/landing_page/views.py:233
 #: main/templates/services/destination/detail.back.html:150
 msgid "Itinerary"
 msgstr "Itinerario"
@@ -946,7 +980,7 @@ msgstr "de"
 msgid "es"
 msgstr "es"
 
-#: config/settings/base.py:301
+#: config/settings/base.py:302
 msgid "Feature"
 msgstr "funcionalidad"
 
@@ -1036,11 +1070,6 @@ msgstr "Volver a nuestra página web"
 #: main/templates/coming-soon.html:90 main/templates/coming-soon.html:99
 msgid "Coming Soon"
 msgstr "Próximamente"
-
-#: main/templates/community.html:4 main/templates/community.html:15
-#: main/templates/pricing.html:4
-msgid "Comunity"
-msgstr "Comunidad"
 
 #: main/templates/community.html:16
 msgid ""
@@ -1724,7 +1753,8 @@ msgstr "Ingresa"
 
 #: main/templates/menu/menu_footer.html:8
 #: main/templates/pages/show_header.html:49
-#: main/templates/services/destination/destinations_for_categorie.html:66
+#: main/templates/services/destination/destinations_for_categorie.html:138
+#: main/templates/services/destination/destinations_for_categorie_backup.html:66
 msgid "Destinations"
 msgstr "Destinos"
 
@@ -1732,6 +1762,7 @@ msgstr "Destinos"
 #: main/templates/pages/show_header.html:37
 #: main/templates/services/destination/categories.html:6
 #: main/templates/services/destination/destinations_for_categorie.html:5
+#: main/templates/services/destination/destinations_for_categorie_backup.html:5
 #: main/templates/services/destination/detail.back.html:3
 #: main/templates/services/destination/detail_destination.html:5
 msgid "Categories"
@@ -1915,6 +1946,16 @@ msgstr "Detalles"
 msgid "This Destination has no itinerary"
 msgstr "Este destino no tiene itinerario"
 
+#: main/templates/pdf/itinerary.html:102
+#, fuzzy
+#| msgid "This Destination has no itinerary"
+msgid "There is no itenerary"
+msgstr "Este destino no tiene itinerario"
+
+#: main/templates/pdf/itinerary.html:103
+msgid "Back to home"
+msgstr ""
+
 #: main/templates/pricing.html:18
 msgid "Special"
 msgstr "Especial"
@@ -1952,37 +1993,37 @@ msgid "Monthly contract"
 msgstr "Contrato mensual"
 
 #: main/templates/services/destination/all.html:19
-#: main/templates/services/destination/destinations_for_categorie.html:74
+#: main/templates/services/destination/destinations_for_categorie_backup.html:74
 #: main/templates/services/destination/test.html:9
 msgid "Default Order"
 msgstr "Orden por defecto"
 
 #: main/templates/services/destination/all.html:20
-#: main/templates/services/destination/destinations_for_categorie.html:75
+#: main/templates/services/destination/destinations_for_categorie_backup.html:75
 #: main/templates/services/destination/test.html:10
 msgid "Sort by popularity"
 msgstr "Ordenar por popularidad"
 
 #: main/templates/services/destination/all.html:21
-#: main/templates/services/destination/destinations_for_categorie.html:76
+#: main/templates/services/destination/destinations_for_categorie_backup.html:76
 #: main/templates/services/destination/test.html:11
 msgid "Sort by average ranking"
 msgstr "Ordenar por ranking medio"
 
 #: main/templates/services/destination/all.html:22
-#: main/templates/services/destination/destinations_for_categorie.html:77
+#: main/templates/services/destination/destinations_for_categorie_backup.html:77
 #: main/templates/services/destination/test.html:12
 msgid "Sort by last"
 msgstr "Ordenar por último"
 
 #: main/templates/services/destination/all.html:23
-#: main/templates/services/destination/destinations_for_categorie.html:78
+#: main/templates/services/destination/destinations_for_categorie_backup.html:78
 #: main/templates/services/destination/test.html:13
 msgid "Sort by price: Low to High"
 msgstr "Ordenar por precio: De menor a mayor"
 
 #: main/templates/services/destination/all.html:24
-#: main/templates/services/destination/destinations_for_categorie.html:79
+#: main/templates/services/destination/destinations_for_categorie_backup.html:79
 #: main/templates/services/destination/test.html:14
 msgid "Sort by price: High to Low"
 msgstr "Ordenar por precio: De mayor a menor"
@@ -2037,31 +2078,36 @@ msgid "See Destination"
 msgstr "Ver destino"
 
 #: main/templates/services/destination/destinations_for_categorie.html:19
+#: main/templates/services/destination/destinations_for_categorie_backup.html:19
 msgid "You'll have an excellent trip."
 msgstr "Tendrás un excelente viaje."
 
 #: main/templates/services/destination/destinations_for_categorie.html:20
+#: main/templates/services/destination/destinations_for_categorie_backup.html:20
 msgid "Meet our best destinations"
 msgstr "Conozca nuestros mejores destinos"
 
-#: main/templates/services/destination/destinations_for_categorie.html:112
-#: main/templates/services/destination/destinations_for_categorie.html:133
+#: main/templates/services/destination/destinations_for_categorie.html:82
+#: main/templates/services/destination/destinations_for_categorie.html:103
+#: main/templates/services/destination/destinations_for_categorie_backup.html:112
+#: main/templates/services/destination/destinations_for_categorie_backup.html:133
 msgid "Destination Gallery"
 msgstr "Galerias de destinos"
 
-#: main/templates/services/destination/destinations_for_categorie.html:151
+#: main/templates/services/destination/destinations_for_categorie.html:121
+#: main/templates/services/destination/destinations_for_categorie_backup.html:151
 msgid "See details"
 msgstr "Ver detalles"
 
-#: main/templates/services/destination/destinations_for_categorie.html:168
+#: main/templates/services/destination/destinations_for_categorie_backup.html:168
 msgid "what is your budget?"
 msgstr "¿cuál es su presupuesto?"
 
-#: main/templates/services/destination/destinations_for_categorie.html:188
+#: main/templates/services/destination/destinations_for_categorie_backup.html:188
 msgid "filter to my budget"
 msgstr "filtrar a mi presupuesto"
 
-#: main/templates/services/destination/destinations_for_categorie.html:190
+#: main/templates/services/destination/destinations_for_categorie_backup.html:190
 msgid "Category"
 msgstr "Categoria"
 
@@ -2164,6 +2210,87 @@ msgstr "Cerrar"
 msgid "Book"
 msgstr "Reservar"
 
+#: main/templates/services/destination/filter_destinations.html:9
+#: main/templates/services/destination/filter_destinations.html:16
+msgid "Publicate from"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:37
+#, fuzzy
+#| msgid "Sort by last"
+msgid "Sort by"
+msgstr "Ordenar por último"
+
+#: main/templates/services/destination/filter_destinations.html:47
+msgid "Show all"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:56
+msgid "Another Filter"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:67
+msgid "Added anytime"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:76
+msgid "Last 24 hours"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:85
+msgid "Another time"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:111
+msgid "Budget &&"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:118
+#, fuzzy
+#| msgid "Price type"
+msgid "Price range"
+msgstr "Tipo de precio"
+
+#: main/templates/services/destination/filter_destinations.html:217
+#, fuzzy
+#| msgid "Filter price"
+msgid "Min price"
+msgstr "Filtrar precio"
+
+#: main/templates/services/destination/filter_destinations.html:221
+msgid "Max price"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:230
+#, fuzzy
+#| msgid "Status?"
+msgid "Status"
+msgstr "Estatus"
+
+#: main/templates/services/destination/filter_destinations.html:236
+#, fuzzy
+#| msgid "Last Name"
+msgid "last minute"
+msgstr "Apellido"
+
+#: main/templates/services/destination/filter_destinations.html:240
+msgid "another status"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:248
+msgid "Beds"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:272
+msgid "Baths"
+msgstr ""
+
+#: main/templates/services/destination/filter_destinations.html:303
+#, fuzzy
+#| msgid "Filter price"
+msgid "Filter"
+msgstr "Filtrar precio"
+
 #: main/templates/services/destination/testimonials.html:9
 msgid "Testimonials"
 msgstr "Testimonios"
@@ -2252,12 +2379,6 @@ msgstr ""
 #~ msgid "Please enter a valid whatsapp number"
 #~ msgstr "Por favor, introduzca un número de whatsapp válido"
 
-#~ msgid "Forgot Password?"
-#~ msgstr "¿Olvido su contraseña?"
-
-#~ msgid "Your password is invalid. Please try again."
-#~ msgstr "Su contraseña es invalida. por favor intente de nuevo."
-
 #~ msgid "FQA"
 #~ msgstr "FQA"
 
@@ -2281,9 +2402,6 @@ msgstr ""
 
 #~ msgid "See"
 #~ msgstr "Ver"
-
-#~ msgid "Filter price"
-#~ msgstr "Filtrar precio"
 
 #~ msgid "German"
 #~ msgstr "Alemán"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-01 15:12-0400\n"
+"POT-Creation-Date: 2019-11-30 12:32-0400\n"
 "PO-Revision-Date: 2019-06-27 13:37-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,29 +43,29 @@ msgstr ""
 msgid "New Booking registered"
 msgstr ""
 
-#: apps/destinations/__OLD_VIEW.py:401 apps/destinations/admin.py:106
+#: apps/destinations/__OLD_VIEW.py:401 apps/destinations/admin.py:107
 #: apps/destinations/views/booking.py:100
 #: apps/destinations/views/destination.py:507
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 
-#: apps/destinations/admin.py:82
+#: apps/destinations/admin.py:83
 #, fuzzy
 #| msgid "Destinos"
 msgid "Destination was published"
 msgstr "Destinations"
 
-#: apps/destinations/admin.py:90
+#: apps/destinations/admin.py:91
 msgid "Congratulations your destination was published."
 msgstr ""
 
-#: apps/destinations/admin.py:118
+#: apps/destinations/admin.py:119
 #, fuzzy
 #| msgid "Sus destinos"
 msgid "publish destinations"
 msgstr "Your destinations"
 
-#: apps/destinations/admin.py:122
+#: apps/destinations/admin.py:123
 #, fuzzy
 #| msgid "Sus destinos"
 msgid "unpublish destinations"
@@ -129,7 +129,7 @@ msgstr "Option"
 msgid "El tab '%(tab)s' se encuentra duplicado, debe estar una sola vez."
 msgstr "The tab '%(tab)s'it is duplicated, it must be only once."
 
-#: apps/destinations/forms.py:431 apps/destinations/models.py:99
+#: apps/destinations/forms.py:431 apps/destinations/models.py:100
 msgid "Short description"
 msgstr "Short description"
 
@@ -139,75 +139,75 @@ msgstr "Short description"
 msgid "Description for map"
 msgstr "Description"
 
-#: apps/destinations/models.py:48 apps/destinations/models.py:92
+#: apps/destinations/models.py:49 apps/destinations/models.py:93
 msgid "name"
 msgstr "name"
 
-#: apps/destinations/models.py:53
+#: apps/destinations/models.py:54
 msgid "Alias"
 msgstr ""
 
-#: apps/destinations/models.py:60 apps/destinations/models.py:409
+#: apps/destinations/models.py:61 apps/destinations/models.py:409
 #, fuzzy
 #| msgid "Short description"
 msgid "Short Description"
 msgstr "Short description"
 
-#: apps/destinations/models.py:65
+#: apps/destinations/models.py:66
 #, fuzzy
 #| msgid "Imagen"
 msgid "Image"
 msgstr "Image"
 
-#: apps/destinations/models.py:70
+#: apps/destinations/models.py:71
 #: apps/destinations/templates/destinations/_socialNetworkList.html:37
 #: apps/destinations/templates/destinations/booking_modal.html:24
 msgid "Status"
 msgstr "Status"
 
-#: apps/destinations/models.py:81
+#: apps/destinations/models.py:82
 msgid "Categorie"
 msgstr ""
 
-#: apps/destinations/models.py:88
+#: apps/destinations/models.py:89
 msgid "Usuario"
 msgstr "User"
 
-#: apps/destinations/models.py:105
+#: apps/destinations/models.py:106
 msgid "description"
 msgstr "description"
 
-#: apps/destinations/models.py:150
+#: apps/destinations/models.py:151
 msgid "is_published"
 msgstr ""
 
-#: apps/destinations/models.py:156
+#: apps/destinations/models.py:157
 msgid "is_deleted"
 msgstr "is_deleted"
 
-#: apps/destinations/models.py:162 apps/destinations/models.py:925
+#: apps/destinations/models.py:163 apps/destinations/models.py:925
 #: apps/destinations/models.py:939
 #: apps/destinations/templates/destinations/navbar_left.html:66
 msgid "Social Network"
 msgstr ""
 
-#: apps/destinations/models.py:164
+#: apps/destinations/models.py:165
 msgid ""
 "If you check this option it will show the social networks of the destination"
 msgstr ""
 
-#: apps/destinations/models.py:175 apps/destinations/models.py:284
+#: apps/destinations/models.py:176 apps/destinations/models.py:284
 #: apps/destinations/models.py:370 apps/destinations/models.py:487
 #: apps/destinations/models.py:557
 msgid "Destino"
 msgstr "Destination"
 
-#: apps/destinations/models.py:176
+#: apps/destinations/models.py:177
 #: apps/destinations/templates/destinations/navbar_left.html:59
 msgid "Destinos"
 msgstr "Destinations"
 
-#: apps/destinations/models.py:183 apps/destinations/models.py:658
+#: apps/destinations/models.py:184 apps/destinations/models.py:658
 msgid "SKU"
 msgstr "SKU"
 
@@ -719,6 +719,24 @@ msgstr "Your destinations"
 #| msgid "Tour Booking"
 msgid "Your Bookings"
 msgstr "Tour Booking"
+
+#: apps/destinations/templates/dashboard/index.html:88
+msgid "Visitor"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/index.html:101
+#, fuzzy
+#| msgid "Destinos"
+msgid "Destination"
+msgstr "Destinations"
+
+#: apps/destinations/templates/dashboard/index.html:102
+msgid "Last Visit"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/index.html:103
+msgid "Number Visits"
+msgstr ""
 
 #: apps/destinations/templates/dashboard/widgets.html:11
 #, fuzzy
