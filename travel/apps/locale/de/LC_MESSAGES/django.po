@@ -348,7 +348,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/login.html:74
 #: apps/community/templates/community/registration/login.html:51
 msgid "Signup"
-msgstr ""
+msgstr "Anmelden"
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:50
 msgid "Welcome to Travelposting"
@@ -581,7 +581,7 @@ msgstr ""
 #: main/templates/community.html:4 main/templates/community.html:15
 #: main/templates/pricing.html:4
 msgid "Comunity"
-msgstr ""
+msgstr "Gemeinschaft"
 
 #: apps/community/templates/community/registration/login.html:17
 msgid ""
@@ -597,7 +597,7 @@ msgstr "Passwort"
 
 #: apps/community/templates/community/registration/login.html:42
 msgid "Your password is invalid. Please try again."
-msgstr ""
+msgstr "Dein Passwort ist ungültig. Bitte versuchen Sie es erneut."
 
 #: apps/community/templates/community/registration/login.html:50
 msgid "Don"
