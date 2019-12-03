@@ -4,7 +4,8 @@ from django.contrib.auth.views import logout_then_login
 from apps.community.views import (
     CommmunityView, 
     LoginCommunity, 
-    signupCommunity)
+    signupCommunity,
+    ForgetPasswordCommunity)
 
 urlpatterns = [
     path('', CommmunityView.as_view(), name='index'),
@@ -17,5 +18,10 @@ urlpatterns = [
         'signup/',
         signupCommunity.as_view(),
         name='signup-community',
+    ),
+    path(
+        'forget/',
+        ForgetPasswordCommunity.as_view(),
+        name='forgetpassword-community',
     ),
 ]

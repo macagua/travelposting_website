@@ -31,3 +31,11 @@ class signupCommunity(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'community/registration/signup.html')
 
+
+class ForgetPasswordCommunity(View):
+    """
+        Login para los usuarios de la comunidad
+    """
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'community/registration/forget_password.html')
