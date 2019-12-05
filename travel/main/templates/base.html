@@ -30,6 +30,10 @@
         <link rel="stylesheet" href="{% static 'assets/vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/vendor/hs-bg-video/hs-bg-video.css' %}">
         <link rel="stylesheet" href="{% static 'assets/vendor/slick-carousel/slick/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/custombox/dist/custombox.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
+
+
         {% block extracss %} {% endblock extracss %}
         <!-- CSS Front Template -->
         <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
@@ -125,6 +129,10 @@
         <script src="{% static 'assets/js/components/hs.svg-injector.js' %}"></script>
         <script src="{% static 'assets/js/components/hs.unfold.js' %}"></script>
         <script src="{% static 'assets/js/components/hs.validation.js' %}"></script>
+        <script src="{% static 'assets/vendor/custombox/dist/custombox.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/custombox/dist/custombox.legacy.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
         <!-- JS Plugins Init. -->
         <script>
             $(window).on('load', function () {
@@ -162,6 +170,7 @@
 
               // initialization of cubeportfolio
               $.HSCore.components.HSCubeportfolio.init('.cbp');
+
 
               // initialization of sticky blocks
               $.HSCore.components.HSStickyBlock.init('.js-sticky-block');

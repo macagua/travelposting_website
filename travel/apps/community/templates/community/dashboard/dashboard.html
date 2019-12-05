@@ -1,0 +1,614 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{%load destinations_tags%}
+{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<br><br><br><br>
+<main id="content" role="main">
+    <!-- Breadcrumb Section -->
+    {% include 'community/dashboard/breadcrumb.html' %}
+    <!-- End Breadcrumb Section -->
+
+    <!-- Content Section -->
+    <div class="bg-light">
+        <div class="container space-2">
+            <div class="row justify-content-between align-items-center mb-4">
+                <!-- Title -->
+                <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
+                    <h2 class="h6 mb-0">9 members found</h2>
+                </div>
+                <!-- End Title -->
+
+                <!-- Filter -->
+                <div class="col-sm-8 col-md-6 text-sm-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <!-- Select -->
+                            <div class="dropdown bootstrap-select js-select dropdown-select fit-width"><select
+                                    class="js-select selectpicker dropdown-select" data-width="fit"
+                                    data-style="btn-soft-primary btn-sm" tabindex="-98">
+                                    <option value="alphabeticalOrderSelect1" selected="">A-to-Z</option>
+                                    <option value="alphabeticalOrderSelect2">Z-to-A</option>
+                                </select><button type="button" class="btn dropdown-toggle btn-soft-primary btn-sm"
+                                    data-toggle="dropdown" role="button" title="A-to-Z">
+                                    <div class="filter-option">
+                                        <div class="filter-option-inner">
+                                            <div class="filter-option-inner-inner">A-to-Z</div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu " role="combobox">
+                                    <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1">
+                                        <ul class="dropdown-menu inner show"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Select -->
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-sm btn-soft-primary active" href="members.html">
+                                <span class="fas fa-th-large"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-sm btn-soft-primary" href="members-list.html">
+                                <span class="fas fa-list"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Filter -->
+            </div>
+
+            <div class="card-deck d-block d-md-flex">
+                <!-- Members -->
+                <div class="card text-center mb-5">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <div class="position-relative u-lg-avatar mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img9.jpg"
+                                    alt="Image Description">
+                                <span
+                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </div>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Patrick Garner</a>
+                            </h2>
+                            <a class="small" href="#">@patrickgarner</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+
+                <!-- Members -->
+                <div class="card text-center mb-5">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <span class="btn btn-lg btn-icon btn-soft-danger rounded-circle mb-3">
+                                <span class="btn-icon__inner">AO</span>
+                                <span
+                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </span>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Amanta Owens</a>
+                            </h2>
+                            <a class="small" href="#">@uidesginer</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+
+                <!-- Members -->
+                <div class="card text-center mb-5">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <div class="position-relative u-lg-avatar mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img8.jpg"
+                                    alt="Image Description">
+                                <span
+                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </div>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Sebastian Diaz</a>
+                            </h2>
+                            <a class="small" href="#">@gamechanger</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+            </div>
+
+            <div class="card-deck d-block d-md-flex">
+                <!-- Members -->
+                <div class="card text-center mb-5">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <div class="position-relative u-lg-avatar mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img10.jpg"
+                                    alt="Image Description">
+                                <span
+                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </div>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Eliza Donovan</a>
+                            </h2>
+                            <a class="small" href="#">@eliz</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+
+                <!-- Members -->
+                <div class="card text-center mb-5">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mb-3">
+                                <span class="btn-icon__inner">CL</span>
+                                <span
+                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </span>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Cler Lockhart</a>
+                            </h2>
+                            <a class="small" href="#">@cler</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+
+                <!-- Members -->
+                <div class="card text-center mb-5">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mb-3">
+                                <span class="btn-icon__inner">JC</span>
+                                <span
+                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </span>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">James Collins</a>
+                            </h2>
+                            <a class="small" href="#">@devwinner</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+            </div>
+
+            <div class="card-deck d-block d-md-flex">
+                <!-- Members -->
+                <div class="card text-center mb-5 mb-md-0">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mb-3">
+                                <span class="btn-icon__inner">SL</span>
+                                <span
+                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </span>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Sean Lewis</a>
+                            </h2>
+                            <a class="small" href="#">@sean</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+
+                <!-- Members -->
+                <div class="card text-center mb-5 mb-md-0">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <div class="position-relative u-lg-avatar mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img11.jpg"
+                                    alt="Image Description">
+                                <span
+                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </div>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Joseph Mack</a>
+                            </h2>
+                            <a class="small" href="#">@mackintosh</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+
+                <!-- Members -->
+                <div class="card text-center">
+                    <div class="card-body p-6">
+                        <!-- Team -->
+                        <div class="mb-4">
+                            <div class="position-relative u-lg-avatar mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img12.jpg"
+                                    alt="Image Description">
+                                <span
+                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            </div>
+
+                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Add to favorites">
+                                <span class="far fa-star btn-icon__inner"></span>
+                            </a>
+
+                            <h2 class="h6 mb-0">
+                                <a href="#">Cameron Brown</a>
+                            </h2>
+                            <a class="small" href="#">@cameron</a>
+                        </div>
+                        <!-- End Team -->
+
+                        <!-- Social Networks -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-google btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-twitter btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                    <span class="fab fa-github btn-icon__inner"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Social Networks -->
+                    </div>
+
+                    <div class="card-footer py-4 px-6">
+                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                            <span class="far fa-envelope mr-2"></span>
+                            Send a Message
+                        </a>
+                    </div>
+                </div>
+                <!-- End Members -->
+            </div>
+        </div>
+    </div>
+    <!-- End Content Section -->
+</main>
+
+
+{% endblock%}

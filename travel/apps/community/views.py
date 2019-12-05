@@ -39,3 +39,14 @@ class ForgetPasswordCommunity(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'community/registration/forget_password.html')
+
+
+class DashboardCommunity(View):
+    """
+        Login para los usuarios de la comunidad
+    """
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'community/dashboard/dashboard.html')
+
+

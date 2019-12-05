@@ -5,7 +5,8 @@ from apps.community.views import (
     CommmunityView, 
     LoginCommunity, 
     signupCommunity,
-    ForgetPasswordCommunity)
+    ForgetPasswordCommunity,
+    DashboardCommunity)
 
 urlpatterns = [
     path('', CommmunityView.as_view(), name='index'),
@@ -23,5 +24,10 @@ urlpatterns = [
         'forget/',
         ForgetPasswordCommunity.as_view(),
         name='forgetpassword-community',
+    ),
+    path(
+        'dashboard/',
+        DashboardCommunity.as_view(),
+        name='dashboard-community',
     ),
 ]
