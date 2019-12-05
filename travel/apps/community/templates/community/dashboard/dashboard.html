@@ -9,9 +9,7 @@
 {% block content %}
 <br><br><br><br>
 <main id="content" role="main">
-    <!-- Breadcrumb Section -->
-    {% include 'community/dashboard/breadcrumb.html' %}
-    <!-- End Breadcrumb Section -->
+    {% include 'community/dashboard/breadcrumb.html'%}
 
     <!-- Content Section -->
     <div class="bg-light">
@@ -28,22 +26,27 @@
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
                             <!-- Select -->
-                            <div class="dropdown bootstrap-select js-select dropdown-select fit-width"><select
+                            <div class="dropdown bootstrap-select js-select dropdown-select fit-width dropup"><select
                                     class="js-select selectpicker dropdown-select" data-width="fit"
                                     data-style="btn-soft-primary btn-sm" tabindex="-98">
                                     <option value="alphabeticalOrderSelect1" selected="">A-to-Z</option>
                                     <option value="alphabeticalOrderSelect2">Z-to-A</option>
-                                </select><button type="button" class="btn dropdown-toggle btn-soft-primary btn-sm"
-                                    data-toggle="dropdown" role="button" title="A-to-Z">
-                                    <div class="filter-option">
-                                        <div class="filter-option-inner">
-                                            <div class="filter-option-inner-inner">A-to-Z</div>
-                                        </div>
-                                    </div>
-                                </button>
-                                <div class="dropdown-menu " role="combobox">
-                                    <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1">
-                                        <ul class="dropdown-menu inner show"></ul>
+                                </select>
+                                <div class="dropdown-menu" role="combobox" x-placement="bottom-start"
+                                    style="max-height: 336px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 43px, 0px);">
+                                    <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"
+                                        style="max-height: 304px; overflow-y: auto; min-height: 0px;">
+                                        <ul class="dropdown-menu inner show">
+                                            <li class="selected active"><a role="option"
+                                                    class="dropdown-item selected active" aria-disabled="false"
+                                                    tabindex="0" aria-selected="true"><span
+                                                        class=" bs-ok-default check-mark"></span><span
+                                                        class="text">A-to-Z</span></a></li>
+                                            <li><a role="option" class="dropdown-item" aria-disabled="false"
+                                                    tabindex="0" aria-selected="false"><span
+                                                        class=" bs-ok-default check-mark"></span><span
+                                                        class="text">Z-to-A</span></a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +74,7 @@
                         <!-- Team -->
                         <div class="mb-4">
                             <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img9.jpg"
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img9.jpg'  %}"
                                     alt="Image Description">
                                 <span
                                     class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
@@ -190,7 +193,7 @@
                         <!-- Team -->
                         <div class="mb-4">
                             <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img8.jpg"
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img8.jpg'  %}"
                                     alt="Image Description">
                                 <span
                                     class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
@@ -252,7 +255,7 @@
                         <!-- Team -->
                         <div class="mb-4">
                             <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img10.jpg"
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img10.jpg'  %}"
                                     alt="Image Description">
                                 <span
                                     class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
@@ -491,7 +494,7 @@
                         <!-- Team -->
                         <div class="mb-4">
                             <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img11.jpg"
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img11.jpg'  %}"
                                     alt="Image Description">
                                 <span
                                     class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
@@ -551,7 +554,7 @@
                         <!-- Team -->
                         <div class="mb-4">
                             <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img12.jpg"
+                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img12.jpg'  %}"
                                     alt="Image Description">
                                 <span
                                     class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
@@ -609,6 +612,4 @@
     </div>
     <!-- End Content Section -->
 </main>
-
-
 {% endblock%}
