@@ -1,5 +1,6 @@
 from django.urls import path
 from django.contrib.auth.views import logout_then_login
+from django.contrib.auth.decorators import login_required
 
 from apps.community.views import (
     CommmunityView, 
@@ -9,7 +10,7 @@ from apps.community.views import (
     DashboardCommunity)
 
 urlpatterns = [
-    path('', CommmunityView.as_view(), name='index'),
+    path('', login_required(CommmunityView.as_view()), name='index'),
     path(
         'login/',
         LoginCommunity.as_view(),

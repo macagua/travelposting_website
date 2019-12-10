@@ -49,7 +49,7 @@ class LoginCommunity(View):
 
         if user is not None:
             login(request, user)
-            return redirect(reverse('community:dashboard-community'))
+            return redirect(reverse('dashboard-community'))
         else:
             errors = _('An error, Incorrect User or Password has occurred.')
 
