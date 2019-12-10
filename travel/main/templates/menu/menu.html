@@ -65,6 +65,8 @@
             </a>
         </li>
 
+        {% elif request.path == '/es/community/dashboard/' or request.path == '/en/community//dashboard' or request.path == '/de/community/dashboard/'%}
+
         {% else %}
         <li class="nav-item u-header__nav-last-item">
             <a class="btn btn-sm btn-success transition-3d-hover" href="{% url 'accounts:register' %}">
