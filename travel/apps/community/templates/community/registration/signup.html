@@ -11,7 +11,7 @@
 <main id="content" role="main">
     <!-- Login Form -->
     <div class="container space-2">
-        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate">
+        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate" method="POST">{% csrf_token %}
             <!-- Title -->
             <div class="mb-7">
                 <h2 class="h3 text-primary font-weight-normal mb-0">{% blocktrans %} Welcome <span class="font-weight-semi-bold">to
@@ -20,32 +20,18 @@
             </div>
             <!-- End Title -->
 
-            <!-- Form Group -->
-            <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrEmail">{% trans 'Email address'%}</label>
-                <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="{% trans 'Email address'%}"
-                    aria-label="Email address" required="" data-msg="{% trans 'Please enter a valid email address.'%}'"
-                    data-error-class="u-has-error" data-success-class="u-has-success">
-            </div>
-            <!-- End Form Group -->
+            {% for field in form %}
+                <!-- Form Group-->
+                <div class="js-form-message form-group">
+                    {{ field }}
+                    <span class="small u-has-error text-danger">{{ field.errors }}</span>
+                    <span class="small u-has-success">{{ field.help_text }}</span>
+                </div>
+                <!-- End Form Group -->
+            {% endfor%}
 
-            <!-- Form Group -->
-            <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrPassword">{% trans 'Password' %}</label>
-                <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********"
-                    aria-label="********" required="" data-msg="{% trans 'Your password is invalid. Please try again.' %}'"
-                    data-error-class="u-has-error" data-success-class="u-has-success">
-            </div>
-            <!-- End Form Group -->
 
-            <!-- Form Group -->
-            <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrConfirmPassword">{% trans 'Confirm password' %}</label>
-                <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword"
-                    placeholder="********" aria-label="********" required=""
-                    data-msg="{% trans 'Password does not match the confirm password.'%}" data-error-class="u-has-error"
-                    data-success-class="u-has-success">
-            </div>
+
             <!-- End Form Group -->
 
             <!-- Checkbox -->

@@ -57,7 +57,7 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
         (None, {'fields': ('email', 'password',)}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin')}),
         (_('Business info'), {'fields': ('business_name', 'business_address', 'business_position')}),
-        (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'subscription_id')}),
+        (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'is_community', 'subscription_id')}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.
