@@ -11,7 +11,7 @@
 <main id="content" role="main">
     <!-- Login Form -->
     <div class="container space-2">
-        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate">
+        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate" method="POST" >{% csrf_token %}
             <!-- Title -->
             <div class="mb-7">
                 <h2 class="h3 text-primary font-weight-normal mb-0">{% blocktrans %} Welcome <span
@@ -20,29 +20,19 @@
             </div>
             <!-- End Title -->
 
-            <!-- Form Group -->
-            <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrEmail">{% trans 'Email address' %}</label>
-                <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="{% trans 'Email address' %}"
-                    aria-label="Email address" required="" data-msg="{% trans 'Please enter a valid email address.' %}"
-                    data-error-class="u-has-error" data-success-class="u-has-success">
-            </div>
-            <!-- End Form Group -->
-
-            <!-- Form Group -->
-            <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrPassword">
-                    <span class="d-flex justify-content-between align-items-center">
-                        {% trans 'Password' %}
-                        <a class="link-muted text-capitalize font-weight-normal"
-                            href="{% url 'forgetpassword-community' %}">{% trans 'Forgot Password?' %}</a>
-                    </span>
-                </label>
-                <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********"
-                    aria-label="********" required="" data-msg="{% trans 'Your password is invalid. Please try again.' %}'"
-                    data-error-class="u-has-error" data-success-class="u-has-success">
-            </div>
-            <!-- End Form Group -->
+                        {% if errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ errors }}
+                        </div>
+                        {% endif %}
+                        {% for field in form %}
+                        <div class="js-form-message form-group">
+                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+                            {{ field.help_text }}
+                            {{ field.errors }}
+                        </div>
+                        {% endfor %}
 
             <!-- Button -->
             <div class="row align-items-center mb-5">

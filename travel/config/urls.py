@@ -78,6 +78,7 @@ urlpatterns += i18n_patterns(
     path(
         'community/',
         include('apps.community.urls'),
+        name='community',
     ),
     
     path(

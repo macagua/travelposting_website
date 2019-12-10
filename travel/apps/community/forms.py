@@ -14,7 +14,7 @@ from django.contrib.auth.forms import (
 from django.utils.translation import gettext as _
 
 
-
+# For the class based is for user login
 class CommunitySignUpForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationForm):
     password1 = forms.CharField(label=_("Password"),
                                 widget=forms.PasswordInput(attrs={
@@ -36,3 +36,31 @@ class CommunitySignUpForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationFo
         ] + BASE_REGISTRATION_FIELDS
 
 
+#this class is for login
+class SignInForm(forms.Form):
+    """
+    The Login form where we make able our user to login on the dashboard.
+
+    Args:
+        email: The user's email(username).
+        password: the password field.
+
+    Returns: The cleaned form to proceed to the according View.
+    """
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email'),
+                'class': 'form-control',
+            },
+        ),
+    )
+
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder': _('Password'),
+                'class': 'form-control',
+            },
+        ),
+    )

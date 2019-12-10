@@ -12,11 +12,12 @@ from django.shortcuts import (
     reverse,
 )
 from django.urls import reverse_lazy
-from .forms import CommunitySignUpForm
+from .forms import CommunitySignUpForm, SignInForm
 from apps.accounts.models import CustomerUser
 from django.template import loader
 from config.settings import local as settings
 from django.core.mail import mail_managers
+from django.contrib.auth import authenticate, login
 
 
 
@@ -28,13 +29,36 @@ class CommmunityView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'community.html')
 
+
 class LoginCommunity(View):
-    """
-        Login para los usuarios de la comunidad
-    """
+    template_name = 'community/registration/login.html'
+    form = SignInForm
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'community/registration/login.html')
+        return render(
+            request,
+            self.template_name,
+            {'form': self.form},
+        )
+
+    def post(self, request, *args, **kwargs):
+        user = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(
+            username=user, password=password, is_community=True)
+
+        if user is not None:
+            login(request, user)
+            return redirect(reverse('community:dashboard-community'))
+        else:
+            errors = _('An error, Incorrect User or Password has occurred.')
+
+            return render(
+                request,
+                self.template_name,
+                {'form': self.form, 'errors': errors},
+            )
+
 
 
 class signupCommunity(RegistrationView):
