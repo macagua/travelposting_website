@@ -30,7 +30,7 @@
                 <!-- User Info -->
                 <div class="media d-block d-sm-flex align-items-sm-center">
                     <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
-                        <img class="img-fluid rounded-circle" src="{% static 'assets/img/160x160/img2.jpg' %}"
+                        <img class="img-fluid rounded-circle" src="{% static 'img/user.png' %}"
                             alt="Image Description">
                         <span
                             class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">
@@ -38,8 +38,8 @@
                         </span>
                     </div>
                     <div class="media-body">
-                        <h1 class="h3 text-white font-weight-medium mb-1">Howdy, Natalie!</h1>
-                        <span class="d-block text-white">natalie.curtis@gmail.com</span>
+                        <h1 class="h3 text-white font-weight-medium mb-1">{{ user.get_full_name }}</h1>
+                        <span class="d-block text-white">{{ user.email }}</span>
                     </div>
                 </div>
                 <!-- End User Info -->
@@ -71,6 +71,9 @@
                                 </li>
                                 <li class="nav-item u-header__nav-item">
                                     <a class="nav-link u-header__nav-link" href="plans.html">{% trans 'Accounts' %}</a>
+                                </li>
+                                <li class="nav-item u-header__nav-item">
+                                    <a class="nav-link u-header__nav-link" href="{% url 'logout-community' %}?next={% url 'index' %}">{% trans 'Logout' %}</a>
                                 </li>
                                 <!-- Others -->
                             </ul>
