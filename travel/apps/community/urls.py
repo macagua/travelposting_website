@@ -10,7 +10,7 @@ from apps.community.views import (
     DashboardCommunity)
 
 urlpatterns = [
-    path('', login_required(CommmunityView.as_view()), name='index'),
+    path('', CommmunityView.as_view(), name='index'),
     path(
         'login/',
         LoginCommunity.as_view(),
@@ -28,7 +28,13 @@ urlpatterns = [
     ),
     path(
         'dashboard/',
-        DashboardCommunity.as_view(),
+        login_required(DashboardCommunity.as_view()),
         name='dashboard-community',
+    ),
+
+    path(
+        'logout/',
+        logout_then_login,
+        name='logout',
     ),
 ]
