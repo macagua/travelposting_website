@@ -17,7 +17,8 @@
             <div class="row justify-content-between align-items-center mb-4">
                 <!-- Title -->
                 <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-                    <h2 class="h6 mb-0">9 members found</h2>
+                    
+                    <h2 class="h6 mb-0">{{members.count }} {% trans "members found" %}</h2>
                 </div>
                 <!-- End Title -->
 
@@ -69,13 +70,17 @@
 
             <div class="card-deck d-block d-md-flex">
                 <!-- Members -->
+                {% for user in members %}
                 <div class="card text-center mb-5">
                     <div class="card-body p-6">
                         <!-- Team -->
                         <div class="mb-4">
                             <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img9.jpg'  %}"
-                                    alt="Image Description">
+                                {% if user.avatar %}
+                                <img src="/main/media/{{ user.avatar }}" class="rounded-circle" height="125" />
+                                {% else %}
+                                <img src="{% static 'img/user.png'%}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
+                                {% endif %}
                                 <span
                                     class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
                             </div>
@@ -87,527 +92,61 @@
                             </a>
 
                             <h2 class="h6 mb-0">
-                                <a href="#">Patrick Garner</a>
+                                <a href="#">{{ user.get_full_name }}</a>
                             </h2>
-                            <a class="small" href="#">@patrickgarner</a>
+                            <a class="small" href="#">{{ user.email }}</a>
                         </div>
                         <!-- End Team -->
 
                         <!-- Social Networks -->
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.facebook }}">
                                     <span class="fab fa-facebook-f btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ user.email }}">
                                     <span class="fab fa-google btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.twitter }}">
                                     <span class="fab fa-twitter btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
+                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.instagram }}">
+                                    <span class="fab fa-instagram btn-icon__inner"></span>
                                 </a>
                             </li>
                         </ul>
                         <!-- End Social Networks -->
                     </div>
-
+                    {% with total_followers=user.followers.count %}
+                    <span class="count">
+                        <span class="total">{{ total_followers }}</span>
+                        follower{{ total_followers|pluralize }}
+                    </span>
                     <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
+                        <a class="follow btn btn-sm btn-soft-primary transition-3d-hover" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" href="#">
+                            <span class="fa fa-plus mr-2"></span>
+                            {% if request.user not in user.followers.all %}
+                                Follow
+                            {% else %}
+                                Unfollow
+                            {% endif %}
                         </a>
                     </div>
+
+                    {% endwith %}
                 </div>
+                {% endfor %}
                 <!-- End Members -->
 
-                <!-- Members -->
-                <div class="card text-center mb-5">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <span class="btn btn-lg btn-icon btn-soft-danger rounded-circle mb-3">
-                                <span class="btn-icon__inner">AO</span>
-                                <span
-                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </span>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">Amanta Owens</a>
-                            </h2>
-                            <a class="small" href="#">@uidesginer</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
-                <!-- End Members -->
-
-                <!-- Members -->
-                <div class="card text-center mb-5">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img8.jpg'  %}"
-                                    alt="Image Description">
-                                <span
-                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </div>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">Sebastian Diaz</a>
-                            </h2>
-                            <a class="small" href="#">@gamechanger</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
                 <!-- End Members -->
             </div>
 
-            <div class="card-deck d-block d-md-flex">
-                <!-- Members -->
-                <div class="card text-center mb-5">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img10.jpg'  %}"
-                                    alt="Image Description">
-                                <span
-                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </div>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">Eliza Donovan</a>
-                            </h2>
-                            <a class="small" href="#">@eliz</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
-                <!-- End Members -->
-
-                <!-- Members -->
-                <div class="card text-center mb-5">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mb-3">
-                                <span class="btn-icon__inner">CL</span>
-                                <span
-                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </span>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">Cler Lockhart</a>
-                            </h2>
-                            <a class="small" href="#">@cler</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
-                <!-- End Members -->
-
-                <!-- Members -->
-                <div class="card text-center mb-5">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mb-3">
-                                <span class="btn-icon__inner">JC</span>
-                                <span
-                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </span>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">James Collins</a>
-                            </h2>
-                            <a class="small" href="#">@devwinner</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
-                <!-- End Members -->
-            </div>
-
-            <div class="card-deck d-block d-md-flex">
-                <!-- Members -->
-                <div class="card text-center mb-5 mb-md-0">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mb-3">
-                                <span class="btn-icon__inner">SL</span>
-                                <span
-                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </span>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">Sean Lewis</a>
-                            </h2>
-                            <a class="small" href="#">@sean</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
-                <!-- End Members -->
-
-                <!-- Members -->
-                <div class="card text-center mb-5 mb-md-0">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img11.jpg'  %}"
-                                    alt="Image Description">
-                                <span
-                                    class="badge badge-xs badge-outline-danger badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </div>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">Joseph Mack</a>
-                            </h2>
-                            <a class="small" href="#">@mackintosh</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
-                <!-- End Members -->
-
-                <!-- Members -->
-                <div class="card text-center">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'assets/img/100x100/img12.jpg'  %}"
-                                    alt="Image Description">
-                                <span
-                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
-                            </div>
-
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">Cameron Brown</a>
-                            </h2>
-                            <a class="small" href="#">@cameron</a>
-                        </div>
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="#">
-                                    <span class="fab fa-github btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-
-                    <div class="card-footer py-4 px-6">
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                            <span class="far fa-envelope mr-2"></span>
-                            Send a Message
-                        </a>
-                    </div>
-                </div>
-                <!-- End Members -->
-            </div>
         </div>
     </div>
     <!-- End Content Section -->
@@ -616,3 +155,34 @@
 
 
 {% endblock%}
+{% block extrajs %}
+<script>
+    $('a.follow').click(function (e) {
+        e.preventDefault();
+        $.post('{% url "user_follow" %}',
+            {
+                id: $(this).data('id'),
+                action: $(this).data('action')
+            },
+            function (data) {
+                if (data['status'] == 'ok') {
+                    var previous_action = $('a.follow').data('action');
+
+                    // toggle data-action
+                    $('a.follow').data('action',
+                        previous_action == 'follow' ? 'unfollow' : 'follow');
+                    // toggle link text
+                    $('a.follow').text(
+                        previous_action == 'follow' ? 'Unfollow' : 'Follow');
+
+                    // update total followers
+                    var previous_followers = parseInt(
+                        $('span.count .total').text());
+                    $('span.count .total').text(previous_action == 'follow' ?
+                        previous_followers + 1 : previous_followers - 1);
+                }
+            }
+        );
+    });
+</script>
+{% endblock extrajs%}

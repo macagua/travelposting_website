@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from apps.landing_page.models import Plan
 from django.conf import settings
+from django.contrib.auth.models import User
 
 DEGRE_CHOICES = (
     ('sra', _('Sra.')),
@@ -175,6 +176,7 @@ class CustomerUser(AbstractUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_community = models.BooleanField(default=True)
+    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
 
 
     USERNAME_FIELD = 'email'
@@ -191,3 +193,37 @@ class CustomerUser(AbstractUser):
 
     def get_absolute_url(self):
         return reverse_lazy('accounts:user-details', kwargs={'pk': self.pk})
+
+### Model to interact between one user and another
+'''
+The preceding code shows the Contact model we will use for user relationships. It contains the following fields:
+
+-> user_from: ForeignKey for the user that creates the relationship
+-> user_to: ForeignKey for the user being followed
+-> created: A DateTimeField field with auto_now_add=True to store the time when the relationship was created
+
+'''
+class Contact(models.Model):
+    user_from = models.ForeignKey('accounts.CustomerUser',
+                                  related_name='rel_from_set',
+                                  on_delete=models.CASCADE)
+    user_to = models.ForeignKey('accounts.CustomerUser',
+                                related_name='rel_to_set',
+                                on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True,
+                                   db_index=True)
+
+    class Meta:
+        ordering = ('-created',)
+
+    def __str__(self):
+        return '{} follows {}'.format(self.user_from,
+                                      self.user_to)
+
+
+# Add following field to User dynamically
+User.add_to_class('following',
+                  models.ManyToManyField('self',
+                                         through=Contact,
+                                         related_name='followers',
+                                         symmetrical=False))

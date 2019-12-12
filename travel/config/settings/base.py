@@ -230,6 +230,7 @@ THIRD_PARTY = [
     'oauth2_provider',
     'mapwidgets',
     'mathfilters',
+    'sorl.thumbnail',
 ]
 
 LOCAL_APPS = [

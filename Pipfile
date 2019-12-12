@@ -57,6 +57,8 @@ django-mapwidgets = "*"
 xhtml2pdf = "*"
 django-mathfilters = "*"
 geoip2 = "*"
+sorl-thumbnail = "*"
+common = "*"
 
 [requires]
 python_version = "3.7"

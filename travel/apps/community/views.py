@@ -18,7 +18,9 @@ from django.template import loader
 from config.settings import local as settings
 from django.core.mail import mail_managers
 from django.contrib.auth import authenticate, login
-
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from apps.accounts.models import Contact
 
 
 class CommmunityView(View):
@@ -119,6 +121,25 @@ class DashboardCommunity(View):
     """
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'community/dashboard/dashboard.html')
+        members = CustomerUser.objects.filter(is_active=True, is_community=True)
+        return render(request, 'community/dashboard/dashboard.html', {'members': members})
 
 
+@require_POST
+def user_follow(request):
+    user_id = request.POST.get('id')
+    action = request.POST.get('action')
+    if user_id and action:
+        try:
+            user = User.objects.get(id=user_id)
+            if action == 'follow':
+                Contact.objects.get_or_create(
+                    user_from=request.user,
+                    user_to=user)
+            else:
+                Contact.objects.filter(user_from=request.user,
+                                       user_to=user).delete()
+            return JsonResponse({'status': 'ok'})
+        except User.DoesNotExist:
+            return JsonResponse({'status': 'ko'})
+    return JsonResponse({'status': 'ko'})

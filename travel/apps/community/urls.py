@@ -7,7 +7,8 @@ from apps.community.views import (
     LoginCommunity, 
     signupCommunity,
     ForgetPasswordCommunity,
-    DashboardCommunity)
+    DashboardCommunity,
+    user_follow)
 
 urlpatterns = [
     path('', CommmunityView.as_view(), name='index'),
@@ -37,4 +38,6 @@ urlpatterns = [
         logout_then_login,
         name='logout-community',
     ),
+    path('users/follow/', user_follow, name='user_follow'),
+
 ]
