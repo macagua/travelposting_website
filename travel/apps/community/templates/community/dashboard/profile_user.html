@@ -1,0 +1,402 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{%load destinations_tags%}
+{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<br><br><br><br>
+<main id="content" role="main">
+    <!-- Breadcrumb Section -->
+    {% include 'community/dashboard/breadcrumb.html'%}
+
+    <!-- End Breadcrumb Section -->
+
+    <!-- Content Section -->
+    <div class="bg-light">
+        <div class="container space-2">
+            <div class="row">
+                <div class="col-lg-3 mb-7 mb-lg-0">
+                    <!-- Profile Card -->
+                    <div class="card p-1 mb-4">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                {% if user.avatar %}
+                                <img src="/main/media/{{ user.avatar }}" class="u-lg-avatar  rounded-circle"/>
+                                {% else %}
+                                <img src="{% static 'img/user.png'%}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
+                                {% endif %}
+                            </div>
+
+                            <div class="mb-3">
+                                <h1 class="h6 font-weight-medium mb-0">{{ members.get_full_name }}</h1>
+                            </div>
+
+                            <div class="mb-2">
+                                <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                                    <span class="far fa-envelope mr-2"></span>
+                                    Send a Message
+                                </a>
+                            </div>
+
+                            <a class="text-secondary small" href="#">
+                                <i class="far fa-flag mr-1"></i> Report this user
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Profile Card -->
+
+                    <!-- Contacts  -->
+                    <div class="card mb-4">
+                        <div class="card-header pt-4 pb-3 px-0 mx-4">
+                            <h2 class="h6 mb-0">Contacts</h2>
+                        </div>
+
+                        <div class="card-body pt-3 pb-4 px-4">
+                            <!-- User -->
+                            <a class="d-flex align-items-start mb-4" href="#">
+                                <div class="position-relative u-avatar">
+                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img9.jpg"
+                                        alt="Image Description">
+                                    <span
+                                        class="badge badge-xs badge-outline-success badge-pos badge-pos--bottom-right rounded-circle"></span>
+                                </div>
+
+                                <div class="ml-3">
+                                    <span class="d-block text-dark">Patrick Garner</span>
+                                    <small class="d-block text-secondary">Web Developer</small>
+                                </div>
+                            </a>
+                            <!-- End User -->
+
+                            <!-- User -->
+                            <a class="d-flex align-items-start mb-4" href="#">
+                                <span class="btn btn-icon btn-soft-danger rounded-circle">
+                                    <span class="btn-icon__inner">AO</span>
+                                    <span
+                                        class="badge badge-xs badge-outline-warning badge-pos badge-pos--bottom-right rounded-circle"></span>
+                                </span>
+
+                                <div class="ml-3">
+                                    <span class="d-block text-dark">Amanta Owens</span>
+                                    <small class="d-block text-secondary">UI/UX Designer</small>
+                                </div>
+                            </a>
+                            <!-- End User -->
+
+                            <!-- User -->
+                            <a class="d-flex align-items-start mb-4" href="#">
+                                <div class="position-relative u-avatar">
+                                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg"
+                                        alt="Image Description">
+                                    <span
+                                        class="badge badge-xs badge-outline-warning badge-pos badge-pos--bottom-right rounded-circle"></span>
+                                </div>
+
+                                <div class="ml-3">
+                                    <span class="d-block text-dark">Eliza Donovan</span>
+                                    <small class="d-block text-secondary">Project Manager</small>
+                                </div>
+                            </a>
+                            <!-- End User -->
+
+                            <!-- User -->
+                            <a class="d-flex align-items-start" href="#">
+                                <span class="btn btn-icon btn-soft-success rounded-circle">
+                                    <span class="btn-icon__inner">JC</span>
+                                    <span
+                                        class="badge badge-xs badge-outline-success badge-pos badge-pos--bottom-right rounded-circle"></span>
+                                </span>
+
+                                <div class="ml-3">
+                                    <span class="d-block text-dark">James Collins</span>
+                                    <small class="d-block text-secondary">Angular Developer</small>
+                                </div>
+                            </a>
+                            <!-- End User -->
+                        </div>
+                    </div>
+                    <!-- End Contacts  -->
+
+                    <!-- Social Profiles -->
+                    <div class="card mb-4">
+                        <div class="card-header pt-4 pb-3 px-0 mx-4">
+                            <h3 class="h6 mb-0">{% trans 'Social Profiles' %}</h3>
+                        </div>
+
+                        <div class="card-body pt-3 pb-4 px-4">
+                            <!-- Social Profiles -->
+
+                            <!-- Social Profiles -->
+                            <a class="media mb-4" href="{{ members.twitter }}">
+                                <div class="u-sm-avatar mr-3">
+                                    <img class="img-fluid" src="{% static 'assets/img/160x160/img19.png'%}"
+                                        alt="Image Description">
+                                </div>
+                                <div class="media-body">
+                                    <span class="d-block text-dark">Twitter</span>
+                                </div>
+                            </a>
+                            <!-- End Social Profiles -->
+
+                            <!-- Social Profiles -->
+                            <a class="media" href="{{ members.facebook }}">
+                                <div class="u-sm-avatar mr-3">
+                                    <img class="img-fluid" src="{% static 'assets/img/160x160/img20.png' %}"
+                                        alt="Image Description">
+                                </div>
+                                <div class="media-body">
+                                    <span class="d-block text-dark">Facebook</span>
+                                </div>
+                            </a>
+                            <!-- End Social Profiles -->
+                        </div>
+                    </div>
+                    <!-- End Social Profiles -->
+                </div>
+
+                <div class="col-lg-9">
+                    <!-- User Details -->
+                    <div class="mb-4">
+                        <h2 class="h4">{% trans "Hey, I'am "%} {{ members.get_full_name}}</h2>
+                    </div>
+                    <!-- End User Details -->
+
+                    <!-- Info -->
+                    <div class="mb-4">
+                        {% if members.about_me == 'None' %}
+                        {% else%}
+                        <p>{{ members.about_me }}</p>
+                        {% endif %}
+                    </div>
+                    <!-- End Info -->
+
+                    <!-- Collections -->
+                    <ul class="list-inline d-flex align-items-center">
+                        <li class="list-inline-item mb-3 mb-sm-0 mr-5">
+                            <div class="d-flex align-items-center">
+                                <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg'%}"
+                                    alt="Image Description" style="width: 40px;">
+                                <div class="text-secondary">
+                                    +3 Referrals
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-inline-item mb-3 mb-sm-0">
+                            <div class="d-flex align-items-center">
+                                <img class="mr-2" src="{% static 'assets/svg/illustrations/verified-user.svg' %}"
+                                    alt="Image Description" style="width: 40px;">
+                                <div class="text-secondary">
+                                    {% trans "Verified" %}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- End Collections -->
+
+                    <hr class="my-7">
+
+                    <!-- Icon Blocks -->
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <!-- List Group -->
+                            <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
+                                <li class="list-group-item pt-0 pb-4">
+                                    <div class="media">
+                                        <span class="fas fa-envelope list-group-icon mr-3"></span>
+                                        <div class="media-body text-lh-sm">
+                                            <span class="d-block mb-1">{% trans 'Email:' %}</span>
+                                            <a href="mailto://{{members.email }}">{{ members.email }}</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item pt-0 pb-4">
+                                    <div class="media">
+                                        <span class="fas fa-link list-group-icon mr-3"></span>
+                                        <div class="media-body text-lh-sm">
+                                            <span class="d-block mb-1">{% trans 'Web page:' %}</span>
+                                            <a href="#">{% if members.web_site == None %}{% else%}{{members.web_site }}{% endif %}</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item pt-0 pb-4">
+                                    <div class="media">
+                                        <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
+                                        <div class="media-body text-lh-sm">
+                                            <span class="d-block mb-1">{% trans 'Location'%}:</span>
+                                            <a href="#">{{ members.country }}</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- End List Group -->
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <!-- List Group -->
+                            <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
+                                <li class="list-group-item pt-0 pb-4">
+                                    <div class="media">
+                                        <span class="fas fa-globe list-group-icon mr-3"></span>
+                                        <div class="media-body text-lh-sm">
+                                            <span class="d-block mb-1">{% trans 'Language' %}:</span>
+                                            <span class="d-block text-muted">{% if members.language == 'None' %}{%else%}{{ members.language}}{% endif%}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- End List Group -->
+                        </div>
+                    </div>
+                    <!-- End Icon Blocks -->
+
+                    <hr class="my-7">
+
+                    <!-- Title -->
+                    <div id="reviews" class="mb-3">
+                        <h3 class="h4 mb-0">Reviews <span class="text-muted font-size-1">(125)</span></h3>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- Reviews -->
+                    <div>
+                        <!-- Author -->
+                        <div class="media mb-3">
+                            <img class="u-avatar rounded-circle mr-3" src="../../assets/img/100x100/img3.jpg"
+                                alt="Image Description">
+
+                            <div class="media-body align-self-center">
+                                <h4 class="d-inline-block mb-1">
+                                    <a class="d-block h6 mb-0" href="#">Russel Fernandes</a>
+                                </h4>
+                                <ul class="list-inline text-warning small mb-0">
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star text-warning"></span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="media-body text-right">
+                                <small class="d-block text-muted">3 hours ago.</small>
+                            </div>
+                        </div>
+                        <!-- End Author -->
+
+                        <p>At the end of the day, it's important to not let being busy distract us from having fun.
+                            Smiling, laughing, and hanging helps us work together to achieve this.</p>
+
+                        <!-- Likes/Reply -->
+                        <ul class="list-inline d-flex">
+                            <li class="list-inline-item">
+                                <a class="text-secondary" href="#">
+                                    17
+                                    <span class="far fa-thumbs-up ml-1"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item ml-3">
+                                <a class="text-secondary" href="#">
+                                    0
+                                    <span class="far fa-thumbs-down ml-1"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item ml-auto">
+                                <a class="text-secondary" href="#">
+                                    <span class="far fa-comments mr-1"></span>
+                                    Reply
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Likes/Reply -->
+                    </div>
+                    <!-- End Reviews -->
+
+                    <hr class="my-7">
+
+                    <!-- Reviews -->
+                    <div class="mb-7">
+                        <!-- Author -->
+                        <div class="media mb-3">
+                            <img class="u-avatar rounded-circle mr-3" src="../../assets/img/100x100/img2.jpg"
+                                alt="Image Description">
+
+                            <div class="media-body align-self-center">
+                                <h4 class="d-inline-block mb-1">
+                                    <a class="d-block h6 mb-0" href="#">Elizabeth Lord</a>
+                                </h4>
+                                <ul class="list-inline text-warning small mb-0">
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="fas fa-star"></span>
+                                    </li>
+                                    <li class="list-inline-item mx-0">
+                                        <span class="far fa-star text-warning"></span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="media-body text-right">
+                                <small class="d-block text-muted">1 day ago.</small>
+                            </div>
+                        </div>
+                        <!-- End Author -->
+
+                        <p>It's important to stay detail oriented with every project we tackle. Staying focused allows
+                            us to turn every project we complete into something we love. We strive to embrace and drive
+                            change in our industry which allows us to keep our clients relevant and ready to adapt.</p>
+
+                        <!-- Likes/Reply -->
+                        <ul class="list-inline d-flex">
+                            <li class="list-inline-item">
+                                <a class="text-secondary" href="#">
+                                    17
+                                    <span class="far fa-thumbs-up ml-1"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item ml-3">
+                                <a class="text-secondary" href="#">
+                                    0
+                                    <span class="far fa-thumbs-down ml-1"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item ml-auto">
+                                <a class="text-secondary" href="#">
+                                    <span class="far fa-comments mr-1"></span>
+                                    Reply
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Likes/Reply -->
+                    </div>
+                    <!-- End Reviews -->
+
+                    <a class="btn btn-block btn-soft-primary transition-3d-hover" href="#">See More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content Section -->
+</main>
+
+{% endblock content%}

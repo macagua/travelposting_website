@@ -12,15 +12,43 @@ from django.shortcuts import (
     reverse,
 )
 from django.urls import reverse_lazy
-from .forms import CommunitySignUpForm, SignInForm
-from apps.accounts.models import CustomerUser
 from django.template import loader
 from config.settings import local as settings
 from django.core.mail import mail_managers
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from django.http import HttpResponseBadRequest
+from django.contrib.auth.decorators import login_required
+from django.template import RequestContext
+from django.views.decorators.csrf import csrf_protect
 from apps.accounts.models import Contact
+from apps.accounts.models import CustomerUser
+from .forms import CommunitySignUpForm, SignInForm
+
+
+
+
+def ajax_required(f):
+   """
+   AJAX request required decorator
+   use it in your views:
+
+   @ajax_required
+   def my_view(request):
+       ....
+
+   """   
+
+   def wrap(request, *args, **kwargs):
+       if not request.is_ajax():
+           return HttpResponseBadRequest()
+       return f(request, *args, **kwargs)
+
+   wrap.__doc__=f.__doc__
+   wrap.__name__=f.__name__
+   return wrap
+
 
 
 class CommmunityView(View):
@@ -122,24 +150,32 @@ class DashboardCommunity(View):
 
     def get(self, request, *args, **kwargs):
         members = CustomerUser.objects.filter(is_active=True, is_community=True)
+        a = CustomerUser.objects.filter(id=46)
+
         return render(request, 'community/dashboard/dashboard.html', {'members': members})
 
 
-@require_POST
-def user_follow(request):
-    user_id = request.POST.get('id')
-    action = request.POST.get('action')
-    if user_id and action:
-        try:
-            user = User.objects.get(id=user_id)
-            if action == 'follow':
-                Contact.objects.get_or_create(
-                    user_from=request.user,
-                    user_to=user)
-            else:
-                Contact.objects.filter(user_from=request.user,
-                                       user_to=user).delete()
-            return JsonResponse({'status': 'ok'})
-        except User.DoesNotExist:
-            return JsonResponse({'status': 'ko'})
-    return JsonResponse({'status': 'ko'})
+
+class FollowView(View):
+    def post(self, request, *args, **kwargs):
+        #user_id is the variable that get the id for the user to follow
+        user_id = request.POST.get('id_user')
+        action = request.POST.get('follow')
+        #declare user 
+        user = CustomerUser.objects.get(id=user_id)
+        if action == 'follow':
+            Contact.objects.get_or_create(
+                user_from=request.user,
+                user_to=user)
+            return redirect(reverse('profile_detail', kwargs={'slug': user_id}))
+        else:
+            Contact.objects.filter(user_from=request.user,
+                                   user_to=user).delete()
+            return redirect(reverse('profile_detail', kwargs={'slug': user_id }))
+
+
+
+class DetailProfileView(View):
+    def get(self, request, *args, **kwargs):
+        members = CustomerUser.objects.get(id=kwargs.get('slug'))
+        return render(request, 'community/dashboard/profile_user.html', {'members': members})

@@ -171,7 +171,7 @@ class CustomerUser(AbstractUser):
     instagram = models.CharField(max_length=100, null=True, blank=True)
     twitter = models.CharField(max_length=100, null=True, blank=True)
     linkedin = models.CharField(max_length=100, null=True, blank=True)
-
+    about_me = models.TextField(_('About me'), null=True, blank=True, max_length=2000)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -222,7 +222,7 @@ class Contact(models.Model):
 
 
 # Add following field to User dynamically
-User.add_to_class('following',
+CustomerUser.add_to_class('following',
                   models.ManyToManyField('self',
                                          through=Contact,
                                          related_name='followers',
