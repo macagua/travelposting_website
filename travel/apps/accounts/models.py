@@ -7,6 +7,7 @@ from apps.landing_page.models import Plan
 from django.conf import settings
 from django.contrib.auth.models import User
 
+
 DEGRE_CHOICES = (
     ('sra', _('Sra.')),
     ('sr', _('Sr.')),
@@ -194,6 +195,8 @@ class CustomerUser(AbstractUser):
     def get_absolute_url(self):
         return reverse_lazy('accounts:user-details', kwargs={'pk': self.pk})
 
+
+
 ### Model to interact between one user and another
 '''
 The preceding code shows the Contact model we will use for user relationships. It contains the following fields:
@@ -227,3 +230,38 @@ CustomerUser.add_to_class('following',
                                          through=Contact,
                                          related_name='followers',
                                          symmetrical=False))
+
+
+from apps.destinations.models import Destination
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Destination, related_name='comments', on_delete=None)
+    user_comment = models.ForeignKey(
+        CustomerUser,
+        max_length=80,
+        related_name='user_comment_to',
+        on_delete=models.CASCADE)
+    user_answer = models.ForeignKey(
+        CustomerUser,
+        max_length=80,
+        related_name='user_answer_to',
+        on_delete=models.CASCADE)
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    # manually deactivate inappropriate comments from admin site
+    active = models.BooleanField(default=True)
+    parent = models.ForeignKey(
+        'self',
+        null=True,
+        blank=True,
+        related_name='replies',
+        on_delete=models.CASCADE)
+
+    class Meta:
+        # sort comments in chronological order by default
+        ordering = ('created',)
+
+    def __str__(self):
+        return 'Comment by {}'.format(self.name)
