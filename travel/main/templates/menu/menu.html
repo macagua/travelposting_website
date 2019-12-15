@@ -53,7 +53,7 @@
                 </div>
                 {% endif %}
         </li>
-        {% if request.path == '/es/community/' or request.path == '/en/community/' or request.path == '/de/community/'%}
+        {% if request.user.is_authenticated != True and request.path == '/es/community/' or request.path == '/en/community/' or request.path == '/de/community/'%}
         <li class="nav-item u-header__nav-last-item">
             <a class="btn btn-sm btn-success transition-3d-hover" style="font-size: 12px;" href="{% url 'signup-community' %}">
                 {% trans 'SignUp on community' %}
@@ -65,7 +65,7 @@
             </a>
         </li>
 
-        {% elif request.path == '/es/community/dashboard/' or request.path == '/en/community//dashboard' or request.path == '/de/community/dashboard/'%}
+        {% elif request.user.is_authenticated == True %}
 
         {% else %}
         <li class="nav-item u-header__nav-last-item">

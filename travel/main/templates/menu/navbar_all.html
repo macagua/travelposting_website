@@ -77,7 +77,7 @@ data-header-fix-effect="slide">
 
 
                     <!-- Account Login -->
-                    {% if request.path == '/es/community/dashboard/' or request.path == '/en/community//dashboard' or request.path == '/de/community/dashboard/'%}
+                    {% if request.user.is_authenticated == True %}
                     <!-- Account Login -->
                     <li class="list-inline-item">
                         <!-- Account Sidebar Toggle Button -->
@@ -141,6 +141,8 @@ data-header-fix-effect="slide">
     </div>
 </header>
  <!-- ========== SECONDARY CONTENTS ========== -->
+{% if request.user.is_authenticated == True %}
+
   <!-- Account Sidebar Navigation -->
   <aside id="sidebarContent" class="u-sidebar" aria-labelledby="sidebarNavToggler">
     <div class="u-sidebar__scroller">
@@ -310,3 +312,4 @@ data-header-fix-effect="slide">
     </div>
   </aside>
   <!-- End Account Sidebar Navigation -->
+  {% endif %}

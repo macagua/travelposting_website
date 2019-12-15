@@ -11,6 +11,12 @@
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
+{% if request.user.is_authenticated == True %}
+<br><br><br><br>
+
+{% include 'community/dashboard/breadcrumb.html'%}
+
+{% endif %}
 <div id="SVGwave1BottomSMShape" class="svg-preloader position-relative text-center gradient-overlay-half-info-v1 bg-img-hero overflow-hidden" style="background-image: url({% static 'assets/img/1920x800/img10.jpg'%});">
     <div class="container space-top-2 space-top-md-4 space-bottom-4">
         <div class="w-md-120 w-lg-100 text-center mx-auto">

@@ -6,6 +6,12 @@
 {% endblock navbar %}
 {% block content %}
 <!-- Hero Section -->
+{% if request.user.is_authenticated == True %}
+<br><br><br><br>
+{% include 'community/dashboard/breadcrumb.html'%}
+
+{% endif %}
+
 <div class="container space-top-md-3 space-top-lg-2">
     <div class="w-lg-80 text-center mx-lg-auto">
         <div class="mb-11">
