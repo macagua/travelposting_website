@@ -70,6 +70,12 @@ urlpatterns += i18n_patterns(
     ),
 
     url(
+        r'^search/',
+        CategoriesView.as_view(),
+        name='search_category',
+    ),
+
+    url(
         r'^category/(?P<alias>\w+)',
         CategoriesView.as_view(),
         name='view_category',

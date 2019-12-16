@@ -1,0 +1,33 @@
+{%load i18n destinations_tags %}
+{%load mathfilters %}
+
+
+<nav class="d-flex justify-content-between align-items-center" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item {% if not lista_destinos.has_previous %} disabled {%endif%}">
+      <a class="page-link" href="{% if not lista_destinos.has_previous %} javascript:void(0) {%else%} ?page={{ lista_destinos.previous_page_number }} {%endif%}" aria-label="Previous">
+        <span aria-hidden="true">«</span>
+        <span class="sr-only">{% trans "Previous" %}</span>
+      </a>
+    </li>
+    {% if lista_destinos.paginator.num_pages > 3 %}
+      <li class="page-item {%ifequal 1 lista_destinos.number %}active{%endifequal%}"><a class="page-link" href="?page=1">1</a></li>
+      <li class="page-item {%ifequal 2 lista_destinos.number %}active{%endifequal%}"><a class="page-link" href="?page=2">2</a></li>
+      <li class="page-item {%ifequal page lista_destinos.number %}active{%endifequal%}"><a class="page-link" href="?page=3">3</a></li>
+      <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+      <li class="page-item {%ifequal page lista_destinos.number %}active{%endifequal%}"><a class="page-link" href="?page={{lista_destinos.paginator.num_pages }}">{{lista_destinos.paginator.num_pages }}</a></li>
+    {%else%}
+      {%for page in lista_destinos.paginator.num_pages|parse_to_list %}
+      <li class="page-item {%ifequal page|add:1 lista_destinos.number %}active{%endifequal%}"><a class="page-link" href="?page={{page|add:1}}">{{page|add:1}}</a></li>
+      {%endfor%}
+    {%endif%}
+    
+    <li class="page-item {% if not lista_destinos.has_next %} disabled {%endif%}">
+      <a class="page-link" href="{% if not lista_destinos.has_next %} javascript:void(0) {%else%} ?page={{ lista_destinos.next_page_number }} {%endif%}" aria-label="Next">
+        <span aria-hidden="true">»</span>
+        <span class="sr-only">{% trans "Next" %}</span>
+      </a>
+    </li>
+  </ul>
+  <small class="text-muted pull-right">{% trans "Showing page" %} {{ lista_destinos.number }} {% trans "of" %} {{lista_destinos.paginator.num_pages }}</small>
+</nav>
