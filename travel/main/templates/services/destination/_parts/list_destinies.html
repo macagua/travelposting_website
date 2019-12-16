@@ -1,0 +1,61 @@
+{%load i18n destinations_tags%}
+
+{%for destino in lista_destinos %}
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mix"
+                    data-popularity=""
+                    data-average=""
+                    data-datepublished="{{destino.published_date.date_from}}"
+                    data-price="{{ destino.list_prices.sale_price.amount }}"
+                    >
+                    <!-- Destino Card -->
+                    <article class="card shadow h-100">
+                        {% for foto in destino.photos %}
+                        {% if forloop.counter == 1 %}
+                            <a class="js-fancybox u-media-viewer" href="javascript:;"
+                            data-src="/main/media/{{foto.image}}"
+                            data-fancybox="fancyboxGalleryDestiny{{destino.id}}"
+                            data-caption="{%trans "Destination Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
+                            data-speed="700"
+                            data-is-infinite="true">
+                            <img class="img-thumbnail" style="width: 100%;height: 210px; overflow: hidden;" src="/main/media/{{foto.image}}" alt="{{foto.description}}">
+                            <div class="position-absolute bottom-0 left-0 right-0 pb-2 px-3">
+                                <div class="row justify-content-between align-items-center">
+                                    <div class="col-8">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <span class="btn btn-icon btn-sm btn-white">
+                                            <span class="fas fa-images btn-icon__inner"></span>
+                                        </span>
+                                  </div>
+                                </div>
+                            </div>
+                            </a>
+                        {%else%}
+                        <img class="js-fancybox d-none" alt="{{foto.description}}"
+         data-fancybox="fancyboxGalleryDestiny{{destino.id}}"
+         data-src="/main/media/{{foto.image}}"
+         data-caption="{%trans "Destination Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
+         data-speed="700"
+         data-is-infinite="true">
+                        {%endif%}
+                        {% endfor %}
+                        <div class="card-body p-5">
+                            {% for category in destino.categorie.all %}
+                            <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="/category/{{ category|lower }}/">{{category.name}}</a>
+                            {% endfor %}
+                            <div class="d-block">
+                                <h3 class="h4">{{ destino.name }}</h3>
+                                <div class="ml-3">
+                                    <span class="font-weight-normal"><strong>{{destino.list_prices.sale_price}}</strong></span>
+                                </div>
+                                {{ destino.short_description|striptags | truncatechars:120 }}
+                            </div>
+                        </div>
+                        <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
+                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See details"%}</a>
+                        </div>
+                    </article>
+                    <!-- End Desrino Card -->
+                </div>
+                {% endfor%}

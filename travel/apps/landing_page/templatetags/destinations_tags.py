@@ -153,3 +153,10 @@ def filter_dashboard_index(user):
     }
 
     return dashboard_list
+
+@register.filter
+def parse_to_list(value_int):
+    list = []
+    for i in range(0,value_int):
+        list.append(i)
+    return list

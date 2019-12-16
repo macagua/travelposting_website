@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
+from django.db.models import Q
+from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.db.models import  Max, Min
@@ -24,20 +27,56 @@ class CategoriesView(View):
     """
         Vista para categorias
     """
+    def get_filter_query(self, request):
+        query_base = Q(is_deleted=False, is_published=True) 
+        if request.GET['nameDestination'] != "":
+            nameDestination= Q(name__contains=request.GET['nameDestination'])
+        else:
+            nameDestination =Q(name__contains="")
+
+        if request.GET['added']!="":
+            if request.GET['added'] == "24hrs":
+                time_ago = timezone.now()-timezone.timedelta(hours=24)
+
+            if request.GET['added'] == "lastWeek":
+                time_ago = timezone.now()-timezone.timedelta(days=7)
+            
+            if request.GET['added'] == "anytime":
+                time_ago =timezone.now()
+            
+            added= Q(updated_at__gte=time_ago, updated_at__lte=timezone.now())
+
+        if request.GET['category'] != "" and request.GET['category'] != "all":
+            query_base&= Q(categorie__alias=request.GET['category'])
+        else:
+            query_base&= Q(categorie__alias__contains="")
+        
+        query_base&= Q(nameDestination | added)
+        return query_base
+
     def get(self, request, *args, **kwargs):
-        if kwargs.get('alias') == 'all':
-            destination_for_category = Destination.objects.filter(is_deleted=False, is_published=True)
+        if  request.resolver_match.url_name =="search_category":
             all_categories = True
             categorie = Categorie.objects.all()
+            filter_category = Destination.objects.filter(self.get_filter_query(request))
         else:
-            destination_for_category = Destination.objects.filter(categorie__alias=kwargs.get('alias'), is_deleted=False, is_published=True)
-            categorie = Categorie.objects.filter(alias=kwargs.get('alias'))
-            all_categories = False
+            if kwargs.get('alias') == 'all':
+                filter_category = Destination.objects.filter(is_deleted=False, is_published=True)
+                all_categories = True
+                categorie = Categorie.objects.all()
+            else:
+                filter_category = Destination.objects.filter(categorie__alias=kwargs.get('alias'), is_deleted=False, is_published=True)
+                categorie = Categorie.objects.filter(alias=kwargs.get('alias'))
+                all_categories = False
+        print(filter_category.query)
         range_min = GeneralDetail.objects.all().aggregate(Min('regular_price'))
         range_max = GeneralDetail.objects.all().aggregate(Max('regular_price'))
+        paginator = Paginator(filter_category, 8)
+        page = request.GET.get('page')
+        lista_destinos = paginator.get_page(page)
         return render(request, 'services/destination/destinations_for_categorie.html',{
             'all_categories': all_categories,
-            'lista_destinos':destination_for_category,
+            'lista_destinos':lista_destinos,
             'active_alias':kwargs.get('alias'),
             'categorie':categorie,
             'range_min':range_min,
