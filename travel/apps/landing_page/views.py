@@ -17,7 +17,7 @@ from apps.destinations.models import (
     SearchLanding,
     DestinationMap
 )
-
+from apps.accounts.models import Comment
 from apps.landing_page.models import DeleteReg, PrivacySetting
 from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
 
@@ -87,6 +87,8 @@ class DetailDestinationView(View):
     def get(self, request, *args, **kwargs):
         destination= Destination.objects.get(id=kwargs.get('slug'))
         key = settings.GOOGLE_MAPS_API_KEY
+        import ipdb; ipdb.set_trace()
+        comment = Comment.objects.filter(post=kwargs.get('slug')).order_by('-created')[0:3]
 
         try:
             destino_map = DestinationMap.objects.get(destination_id=kwargs.get('slug'))
@@ -94,6 +96,7 @@ class DetailDestinationView(View):
                 'destino':destination,
                 'map': destino_map,
                 'key': key,
+                'comment': comment,
             })
         except:
             data = _("Don't have exist map yet!")
@@ -101,6 +104,7 @@ class DetailDestinationView(View):
                 'destino':destination,
                 'data': data,
                 'key': key,
+                'comment': comment,
             })
 
 class SaveSearchView(View):

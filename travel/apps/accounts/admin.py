@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 from impersonate.admin import UserAdminImpersonateMixin
-from apps.accounts.models import CustomerUser
+from apps.accounts.models import CustomerUser, Contact, Comment
 
 
 class UserCreationForm(forms.ModelForm):
@@ -55,7 +55,7 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     readonly_fields = ('subscription_id',)
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me')}),
         (_('Business info'), {'fields': ('business_name', 'business_address', 'business_position')}),
         (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'is_community', 'subscription_id')}),
     )
@@ -82,3 +82,26 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.
 admin.site.unregister(Group)
+
+# Register your models here.
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    search_fields = ('user_from',)
+    list_filter = ['user_from', ]
+    list_display = [
+        'user_from',
+        'user_to',
+        'created',
+    ]
+
+
+# Register your models here.
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    search_fields = ('user_comment', 'user_answer',)
+    list_filter = ['user_comment', 'user_answer']
+    list_display = [
+        'post',
+        'user_comment',
+        'created'    
+    ]

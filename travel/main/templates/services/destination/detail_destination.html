@@ -9,6 +9,15 @@
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
+
+{% if request.user.is_authenticated == True %}
+<br><br><br><br>
+
+{% include 'community/dashboard/breadcrumb.html'%}
+
+{% endif %}
+
+
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url(/main/media/{{ destino.photos.first.image }});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
         <div class="w-md-65 w-lg-50">
@@ -382,6 +391,11 @@
         </div>
     </div>
 </div>
+
+<!-- Comentarios --> 
+{% include 'services/destination/comments.html' %}
+<!-- Final de comentarios-->
+
 {% endblock content %}
 {% block extrajs %}
 <script>

@@ -72,6 +72,7 @@
                 <!-- Members -->
                 {% for user in members %}
                 <div class="card text-center mb-5">
+                    <a href="{% url 'profile_detail' user.id %}">
                     <div class="card-body p-6">
                         <!-- Team -->
                         <div class="mb-4">
@@ -96,6 +97,7 @@
                             </h2>
                             <a class="small" href="#">{{ user.email }}</a>
                         </div>
+                        
                         <!-- End Team -->
 
                         <!-- Social Networks -->
@@ -123,30 +125,35 @@
                         </ul>
                         <!-- End Social Networks -->
                     </div>
+                    </a>
                     {% with total_followers=user.followers.count %}
                     <span class="count">
                         <span class="total">{{ total_followers }}</span>
                         follower{{ total_followers|pluralize }}
                     </span>
                     <div class="card-footer py-4 px-6">
-                        <a class="follow btn btn-sm btn-soft-primary transition-3d-hover" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" href="#">
-                            <span class="fa fa-plus mr-2"></span>
+                        <form action="{% url 'user_follow' %}" method="POST">{% csrf_token %}
+                            <input type="hidden" value="{{ user.id }}" name="id_user">
                             {% if request.user not in user.followers.all %}
-                                Follow
+                                <input type="hidden" value="follow" name="follow">
                             {% else %}
-                                Unfollow
+                                <input type="hidden" value="unfollow" name="unfollow">
                             {% endif %}
-                        </a>
+                            <button class="follow btn btn-sm btn-soft-primary transition-3d-hover">
+                                <span class="fa fa-plus mr-2"></span>
+                                {% if request.user not in user.followers.all %}
+                                    Follow
+                                {% else %}
+                                    Unfollow
+                                {% endif %}
+                            </button>
+                        </form>
                     </div>
-
                     {% endwith %}
                 </div>
                 {% endfor %}
                 <!-- End Members -->
-
-                <!-- End Members -->
             </div>
-
         </div>
     </div>
     <!-- End Content Section -->
@@ -156,33 +163,5 @@
 
 {% endblock%}
 {% block extrajs %}
-<script>
-    $('a.follow').click(function (e) {
-        e.preventDefault();
-        $.post('{% url "user_follow" %}',
-            {
-                id: $(this).data('id'),
-                action: $(this).data('action')
-            },
-            function (data) {
-                if (data['status'] == 'ok') {
-                    var previous_action = $('a.follow').data('action');
 
-                    // toggle data-action
-                    $('a.follow').data('action',
-                        previous_action == 'follow' ? 'unfollow' : 'follow');
-                    // toggle link text
-                    $('a.follow').text(
-                        previous_action == 'follow' ? 'Unfollow' : 'Follow');
-
-                    // update total followers
-                    var previous_followers = parseInt(
-                        $('span.count .total').text());
-                    $('span.count .total').text(previous_action == 'follow' ?
-                        previous_followers + 1 : previous_followers - 1);
-                }
-            }
-        );
-    });
-</script>
 {% endblock extrajs%}

@@ -7,6 +7,7 @@ from apps.landing_page.models import Plan
 from django.conf import settings
 from django.contrib.auth.models import User
 
+
 DEGRE_CHOICES = (
     ('sra', _('Sra.')),
     ('sr', _('Sr.')),
@@ -171,7 +172,7 @@ class CustomerUser(AbstractUser):
     instagram = models.CharField(max_length=100, null=True, blank=True)
     twitter = models.CharField(max_length=100, null=True, blank=True)
     linkedin = models.CharField(max_length=100, null=True, blank=True)
-
+    about_me = models.TextField(_('About me'), null=True, blank=True, max_length=2000)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -193,6 +194,8 @@ class CustomerUser(AbstractUser):
 
     def get_absolute_url(self):
         return reverse_lazy('accounts:user-details', kwargs={'pk': self.pk})
+
+
 
 ### Model to interact between one user and another
 '''
@@ -222,8 +225,57 @@ class Contact(models.Model):
 
 
 # Add following field to User dynamically
-User.add_to_class('following',
+CustomerUser.add_to_class('following',
                   models.ManyToManyField('self',
                                          through=Contact,
                                          related_name='followers',
                                          symmetrical=False))
+
+
+from apps.destinations.models import Destination
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Destination, related_name='comments', on_delete=None)
+    user_comment = models.ForeignKey(
+        CustomerUser,
+        max_length=80,
+        related_name='user_comment_to',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
+    user_answer = models.ForeignKey(
+        CustomerUser,
+        max_length=80,
+        related_name='user_answer_to',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
+    name = models.CharField('Name', max_length=200, null=False, blank=False)
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    # manually deactivate inappropriate comments from admin site
+    active = models.BooleanField(default=True)
+    parent = models.ForeignKey(
+        'self',
+        null=True,
+        blank=True,
+        related_name='replies',
+        on_delete=models.CASCADE)
+
+    likes = models.PositiveIntegerField(default=0)
+    dislikes = models.PositiveIntegerField(default=0)    
+    liked_user = models.ForeignKey(
+        CustomerUser, 
+        related_name='liked_user_click', 
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
+
+    class Meta:
+        # sort comments in chronological order by default
+        ordering = ('created',)
+
+    def __str__(self):
+        return 'Comment by {}'.format(self.body)

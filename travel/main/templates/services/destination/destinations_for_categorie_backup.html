@@ -12,6 +12,12 @@
 <link rel="stylesheet" href="{% static 'assets/vendor/MixitUpV3/dist/mixtup.css' %}">
 {% endblock extracss %}
 {% block content %}
+{% if request.user.is_authenticated == True %}
+<br><br><br><br>
+
+{% include 'community/dashboard/breadcrumb.html'%}
+
+{% endif %}
 {% if all_categories %}
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url({% static 'img/trains.jpg' %});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
