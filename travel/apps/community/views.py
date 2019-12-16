@@ -195,7 +195,6 @@ class DetailProfileView(View):
 
 class CommentSaveView(View):
     def post(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()
         user_id = request.POST.get('user_id')
         destination_id = request.POST.get('destination_id')
         name = request.POST.get('name')
