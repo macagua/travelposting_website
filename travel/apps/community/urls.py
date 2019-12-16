@@ -12,6 +12,7 @@ from apps.community.views import (
     DashboardCommunity,
     FollowView,
     DetailProfileView,
+    heartView,
     )
 
 from apps.community import views
@@ -37,6 +38,12 @@ urlpatterns = [
         'dashboard/',
         login_required(DashboardCommunity.as_view()),
         name='dashboard-community',
+    ),
+
+    path(
+        'heart/',
+        heartView,
+        name='heart',
     ),
 
     path(

@@ -25,6 +25,7 @@ from django.views.decorators.csrf import csrf_protect
 from apps.accounts.models import Contact
 from apps.accounts.models import CustomerUser
 from .forms import CommunitySignUpForm, SignInForm
+from django.http import JsonResponse
 
 
 
@@ -50,6 +51,13 @@ def ajax_required(f):
    return wrap
 
 
+def heartView(request):
+    pk = request.GET.get('pk', None)
+    book = Book.objects.get(pk=pk)
+    book.like = True
+    book.save()
+    data = {'book', book}
+    return JsonResponse('data')
 
 class CommmunityView(View):
     """

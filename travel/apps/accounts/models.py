@@ -241,12 +241,17 @@ class Comment(models.Model):
         CustomerUser,
         max_length=80,
         related_name='user_comment_to',
+        null=True,
+        blank=True,
         on_delete=models.CASCADE)
     user_answer = models.ForeignKey(
         CustomerUser,
         max_length=80,
         related_name='user_answer_to',
+        null=True,
+        blank=True,
         on_delete=models.CASCADE)
+    name = models.CharField('Name', max_length=200, null=False, blank=False)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -259,9 +264,18 @@ class Comment(models.Model):
         related_name='replies',
         on_delete=models.CASCADE)
 
+    likes = models.PositiveIntegerField(default=0)
+    dislikes = models.PositiveIntegerField(default=0)    
+    liked_user = models.ForeignKey(
+        CustomerUser, 
+        related_name='liked_user_click', 
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
+
     class Meta:
         # sort comments in chronological order by default
         ordering = ('created',)
 
     def __str__(self):
-        return 'Comment by {}'.format(self.name)
+        return 'Comment by {}'.format(self.body)
