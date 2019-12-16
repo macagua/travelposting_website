@@ -13,6 +13,7 @@ from apps.community.views import (
     FollowView,
     DetailProfileView,
     heartView,
+    CommentSaveView
     )
 
 from apps.community import views
@@ -44,6 +45,12 @@ urlpatterns = [
         'heart/',
         heartView,
         name='heart',
+    ),
+
+    path(
+        'make-comment/',
+        CommentSaveView.as_view(),
+        name='make-comment',
     ),
 
     path(
