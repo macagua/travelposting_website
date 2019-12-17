@@ -9,7 +9,6 @@
 {% block extracss %}
 <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
 <link rel="stylesheet" href="{% static 'assets/vendor/ion-rangeslider/css/ion.rangeSlider.css' %}">
-<link rel="stylesheet" href="{% static 'assets/vendor/MixitUpV3/dist/mixtup.css' %}">
 {% endblock extracss %}
 {% block content %}
 {% if request.user.is_authenticated == True %}
@@ -71,7 +70,7 @@
 
         <div class="col-lg-12">
             <!--Destinies -->
-            <div id="list-destinies" class="row mx-n2 mb-2">
+            <div class="row mx-n2 mb-2">
                 {%include "services/destination/_parts/list_destinies.html"%}  
             </div>
             <!-- End Destinies -->
@@ -96,52 +95,9 @@
 <script src="{% static 'assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js' %}"></script>
 <script src="{% static 'assets/js/components/hs.selectpicker.js' %}"></script>
 <script src="{% static 'assets/js/components/hs.range-slider.js' %}"></script>
-<script src="{% static 'assets/vendor/MixitUpV3/dist/mixitup.min.js' %}"></script>
-<script src="{% static 'assets/vendor/MixItUp/dist/mixitup-pagination.min.js' %}"></script>
+
 <script>
     $.HSCore.components.HSRangeSlider.init('.js-range-slider');
     $.HSCore.components.HSSelectPicker.init('.js-select');
-              var $filterSelect = $('#FilterDestinies');
-              var containerEl = document.querySelector('#list-destinies');
-              var mixer = mixitup(containerEl, {
-                    pagination: {
-                        limit: 8,
-                        loop: true,
-                        maintainActivePage: false,
-                        hidePageListIfSinglePage: true
-                    },
-                    animation: {
-                        nudge: false
-                    },
-                    callbacks: {
-                        onMixStart: state => {
-
-                        }
-                    }
-              });
-              //
-              $filterSelect.on('change', function(){
-                  if(this.value=='all')
-                    mixer.filter(this.value);
-                  else
-                    mixer.sort(this.value);
-              });
-
-              $("#filter_with_price").on('click', function(event) {
-                event.preventDefault();
-                var collection = Array.from(containerEl.querySelectorAll('.mix'));
-                // Filter the collection manually
-                var filtered = collection.filter(function(target) {
-                        return parseFloat(target.getAttribute('data-price')) >= $("#rangeSliderMinPrice").val() && parseFloat(target.getAttribute('data-price')) <= $("#rangeSliderMaxPrice").val();
-                });
-                // console.log(filtered.length);
-                // Pass the filtered collection to MixItUp
-                mixer.filter(filtered)
-                     .then(function(state) {
-                            //console.log(state.activeFilter.collection.length); // 22
-                     });
-              });
-
-
 </script>
 {% endblock extrajs %}

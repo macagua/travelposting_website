@@ -84,9 +84,9 @@
             <div class="row">
               <div class="col-lg-7 u-ver-divider u-ver-divider--none-lg mb-5 mb-lg-0">
                 <div class="pr-lg-2">
-                  <label class="form-label mb-2">{% trans "Price range" %}</label>
+                  <label class="form-label mb-6">{% trans "Price range" %}</label>
 
-                  <!-- Area Charts -->
+                  <!-- Area Charts 
                   <div class="position-relative overflow-hidden mb-2" style="height: 80px;">
                     <div class="js-area-chart position-absolute w-100"
                          data-height="80px"
@@ -170,25 +170,27 @@
 
                   <!-- Range Slider -->
                   <input name ="" class="js-range-slider" type="text"
-                         data-extra-classes="u-range-slider"
+                         data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
                          data-type="double"
                          data-prefix="$"
+                         data-hide-from-to="false"
                          data-foreground-target="#foregroundAreaChartDoubleResult"
                          data-min="0"
                          data-max="{{range_max.regular_price__max|floatformat:0}}"
                          data-from="{{range_min.regular_price__min|floatformat:0}}"
                          data-to="{{range_max.regular_price__max|floatformat:0}}"
-                         data-result-min="#rangeSliderExample7MinResult"
-                         data-result-max="#rangeSliderExample7MaxResult">
+                         data-result-min="#rangeMinPrice"
+                         data-result-max="#rangeMaxPrice">
 
                   <div class="d-flex justify-content-between align-items-center mt-6">
                     <div>
                       <span class="text-muted">{% trans "Min price" %}:</span>
                       <span id="rangeSliderExample7MinResult" class="text-muted"></span>
+                      <input type="text" name="minPrice" class="form-control max-width-9" id="rangeMinPrice">
                     </div>
                     <div>
                       <span class="text-muted">{% trans "Max price" %}:</span>
-                      <span id="rangeSliderExample7MaxResult" class="text-muted"></span>
+                      <input type="text" name="maxPrice" class="form-control max-width-9" id="rangeMaxPrice">
                     </div>
                   </div>
                 </div>
@@ -203,7 +205,7 @@
                     <div class="col-sm-12">
                     <!-- Radio Checkbox -->
                     <div class="custom-control custom-radio mb-2">
-                      <input type="radio" class="custom-control-input" id="propertyAddedTimeRadioChechbox1" name="added" value="anytime" checked>
+                      <input type="radio" class="custom-control-input" id="propertyAddedTimeRadioChechbox1" name="added" value="anytime" {% if request.GET.added == "anytime" %}checked{%endif%} >
                       <label class="custom-control-label" for="propertyAddedTimeRadioChechbox1">
                         {% trans "Added anytime" %}
                       </label>
@@ -212,7 +214,7 @@
 
                     <!-- Radio Checkbox -->
                     <div class="custom-control custom-radio mb-2">
-                      <input type="radio" class="custom-control-input" id="propertyAddedTimeRadioChechbox2" name="added" value="24hrs"  >
+                      <input type="radio" class="custom-control-input" id="propertyAddedTimeRadioChechbox2" name="added" value="24hrs" {% if request.GET.added == "24hrs" %}checked{%endif%} >
                       <label class="custom-control-label" for="propertyAddedTimeRadioChechbox2">
                         {% trans "Last 24 hours" %}
                       </label>
@@ -221,7 +223,7 @@
 
                     <!-- Radio Checkbox -->
                     <div class="custom-control custom-radio mb-2">
-                      <input type="radio" class="custom-control-input" id="propertyAddedTimeRadioChechbox3" name="added" value="lastWeek" >
+                      <input type="radio" class="custom-control-input" id="propertyAddedTimeRadioChechbox3" name="added" value="lastWeek" {% if request.GET.added == "lastWeek" %}checked{%endif%} >
                       <label class="custom-control-label" for="propertyAddedTimeRadioChechbox3">
                        {%trans "Last week"%}
                       </label>

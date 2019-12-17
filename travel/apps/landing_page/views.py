@@ -28,13 +28,14 @@ class CategoriesView(View):
         Vista para categorias
     """
     def get_filter_query(self, request):
-        query_base = Q(is_deleted=False, is_published=True) 
-        if request.GET['nameDestination'] != "":
-            nameDestination= Q(name__contains=request.GET['nameDestination'])
-        else:
-            nameDestination =Q(name__contains="")
+        query_base = Q(is_deleted=False, is_published=True)
+        if "minPrice" in request.GET and request.GET['minPrice'] != "" and "maxPrice" in request.GET and request.GET['maxPrice'] != "":
+            query_base|= Q(details__general__regular_price__range=[request.GET['minPrice'],request.GET['maxPrice']])
 
-        if request.GET['added']!="":
+        if "nameDestination" in request.GET and request.GET['nameDestination'] != "":
+            query_base&= Q(name__contains=request.GET['nameDestination'])
+
+        if "added" in request.GET  and request.GET['added']!="":
             if request.GET['added'] == "24hrs":
                 time_ago = timezone.now()-timezone.timedelta(hours=24)
 
@@ -44,14 +45,11 @@ class CategoriesView(View):
             if request.GET['added'] == "anytime":
                 time_ago =timezone.now()
             
-            added= Q(updated_at__gte=time_ago, updated_at__lte=timezone.now())
+            query_base|= Q(updated_at__gte=time_ago, updated_at__lte=timezone.now())
 
-        if request.GET['category'] != "" and request.GET['category'] != "all":
+        if "category" in request.GET  and request.GET['category'] != "" and request.GET['category'] != "all":
             query_base&= Q(categorie__alias=request.GET['category'])
-        else:
-            query_base&= Q(categorie__alias__contains="")
         
-        query_base&= Q(nameDestination | added)
         return query_base
 
     def get(self, request, *args, **kwargs):
@@ -68,7 +66,6 @@ class CategoriesView(View):
                 filter_category = Destination.objects.filter(categorie__alias=kwargs.get('alias'), is_deleted=False, is_published=True)
                 categorie = Categorie.objects.filter(alias=kwargs.get('alias'))
                 all_categories = False
-        print(filter_category.query)
         range_min = GeneralDetail.objects.all().aggregate(Min('regular_price'))
         range_max = GeneralDetail.objects.all().aggregate(Max('regular_price'))
         paginator = Paginator(filter_category, 8)
