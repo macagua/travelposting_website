@@ -247,3 +247,59 @@ class CommentSaveView(View):
         )
 
         return redirect(reverse('view_detail_destination', kwargs={'slug': destination_id}))
+
+
+class CommentRwSaveView(View):
+    def post(self, request, *args, **kwargs):
+        user_id = request.POST.get('user_id')
+        destination_id = request.POST.get('destination_id')
+        name = request.POST.get('name')
+        body = request.POST.get('body')
+
+        if destination_id == '':
+            dest = None
+        else:
+            dest = Destination.objects.get(id=destination_id)
+
+        user = CustomerUser.objects.get(id=user_id)
+
+        Comment.objects.create(
+            post=dest,
+            user_comment=user,
+            name=name,
+            body=body,
+        )
+
+        subject = _('New comment add')
+
+        ctx = {
+            'post':  dest,
+            'user_comment': user,
+            'name': name,
+            'body': body,
+        }
+
+        html_message = render_to_string(
+            'community/dashboard/_email.html',
+            context=ctx
+        )
+
+        message = _(
+            f'if you want see the admin site https://travelposting.com/admin/ ')
+
+        mail_managers(subject,
+                      message,
+                      fail_silently=True,
+                      html_message=html_message
+                      )
+
+        send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [dest.user.email],
+            fail_silently=False,
+            html_message=html_message
+        )
+
+        return redirect(reverse('view_detail_destination', kwargs={'slug': destination_id}))

@@ -13,7 +13,8 @@ from apps.community.views import (
     FollowView,
     DetailProfileView,
     heartView,
-    CommentSaveView
+    CommentSaveView,
+    CommentRwSaveView
     )
 
 from apps.community import views
@@ -51,6 +52,12 @@ urlpatterns = [
         'make-comment/',
         CommentSaveView.as_view(),
         name='make-comment',
+    ),
+
+    path(
+        'make-rw/',
+        CommentRwSaveView.as_view(),
+        name='make-rw',
     ),
 
     path(

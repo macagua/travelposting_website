@@ -154,7 +154,58 @@
                             <a class="" href="javascript:;" id="safe_heart"><i class="far fa-heart"></i></a>
                         </span>
                         <span class="ml-2">
-                            <a class="" href=""><i class="far fa-comments"></i></a>
+                            <a  href="" data-toggle="modal" data-target=".answer-modal">
+                                <i class="far fa-comments"></i>
+                            </a>
+                            <!-- Modal-->
+                            <div class="modal fade answer-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="BookModalLabel">{% trans "Let us your comment" %}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form name="comment" action="{% url 'make-rw' %}" method="POST">{% csrf_token %}
+                                                <div class="form-row">
+                                                    <input type="hidden" id="user_id" name="user_id" value="{{ comment.user_comment.pk }}">
+                                                </div>
+                                                <div class="form-row">
+                                                    <input type="hidden" id="destination_id" name="destination_id" value="{{ comment.post.pk }}">
+                                                </div>
+                                                <div class="form-row">
+                                                    <input type="hidden" id="parent_id" name="parent_id" value="{{ comment.pk }}">
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">{%trans "Title"%}</span>
+                                                    </div>
+                                                    <input type="text" readonly class="form-control" required name="name" value="Rw: {{comment.name }}"placeholder="{% trans 'Title' %}"
+                                                        aria-label="Amount (to the nearest dollar)">
+                                                </div>
+
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">{% trans "Body" %}</span>
+                                                    </div>
+                                                    <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message"%}'
+                                                        aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">{% trans 'Close' %}</button>
+                                                    <button type="submit" class="btn btn-primary">{% trans 'Send' %}</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fin Modal-->
                         </span>
 
                     </div>
@@ -172,6 +223,7 @@
         </div>
     </div>
 </div>
+
 
 {% endif %}
 

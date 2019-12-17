@@ -256,12 +256,10 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
-    parent = models.ForeignKey(
-        'self',
+    parent = models.IntegerField(
+        'Parent',
         null=True,
-        blank=True,
-        related_name='replies',
-        on_delete=models.CASCADE)
+        blank=True)
     likes = models.ManyToManyField(
         settings.AUTH_USER_MODEL, blank=True, related_name='post_likes')
     height_field = models.IntegerField(default=0)
