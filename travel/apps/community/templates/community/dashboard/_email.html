@@ -1,0 +1,189 @@
+{% load static i18n cms_tags menu_tags sekizai_tags staticfiles %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- utf-8 works for most cases -->
+        <meta name="viewport" content="width=device-width">
+        <!-- Forcing initial-scale shouldn't be necessary -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Use the latest (edge) version of IE rendering engine -->
+        <meta name="x-apple-disable-message-reformatting">
+        <!-- Disable auto-scale in iOS 10 Mail entirely -->
+        <title></title>
+        <!-- The title tag shows in email notifications, like Android 4.4. -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+    </head>
+
+    <body>
+        <div
+            style="background-color:#ffffff;font-family:Lato,Arial,sans-serif;margin:0;max-width:600px;min-width:100%;padding:0">
+            <center style="font-family:Lato,Arial,sans-serif;table-layout:fixed;width:100%">
+                <div style="font-family:Lato,Arial,sans-serif;max-width:600px">
+                    <table
+                        style="Margin:0 auto;border-spacing:0;font-family:Arial,Helvetica,sans-serif;max-width:600px;width:100%"
+                        align="center">
+                        <tbody>
+                            <tr>
+                                <td
+                                    style="color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:1px;margin:0;padding:0;text-align:center">
+                                    <span style="font-family:Lato,Arial,sans-serif;text-align:left">Recuerda hablar solo
+                                        del producto.</span></td>
+                            </tr>
+                            <tr style="font-family:Lato,Arial,sans-serif">
+                                <td style="font-family:Lato,Arial,sans-serif;padding:0">
+                                    <table
+                                        style="Margin:0 auto;border-spacing:0;font-family:Arial,Helvetica,sans-serif;max-width:600px;width:100%"
+                                        align="center">
+                                        <tbody>
+                                            <tr style="font-family:Lato,Arial,sans-serif">
+                                                <td style="font-family:Lato,Arial,sans-serif;padding:0">
+                                                    <table
+                                                        style="background:#377dff;border-spacing:0;font-family:Lato,Arial,sans-serif;height:55px"
+                                                        width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                        <tbody>
+                                                            <tr style="font-family:Lato,Arial,sans-serif">
+                                                                <td style="float:left;font-family:Lato,Arial,sans-serif;height:36px;line-height:100%;padding:9px 20px 8px 20px;vertical-align:middle"
+                                                                    valign="top">
+                                                                    <a href="https://travelposting.com"
+                                                                        style="color:#3483fa;font-family:Lato,Arial,sans-serif;font-weight:normal;margin:0;padding:0;text-decoration:none;word-break:normal"
+                                                                        target="_blank">
+                                                                        <img alt="Ir a Trravelposting"
+                                                                            src="https://travelposting.com/static/img/logo-round-0.5x.png"
+                                                                            style="border:0;font-family:Lato,Arial,sans-serif;margin:0;padding:1px 0 0 0;text-align:left;vertical-align:middle;"
+                                                                            width="30" height="30">
+                                                                        <b
+                                                                            style="color:#ffffff; font-size: 20px;">TravelPosting</b>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table class="m_9203303517950782099template-itemPrincipal"
+                                                        style="background-color:#ffffff;border-spacing:0;font-family:Lato,Arial,sans-serif;padding-bottom:20px;width:100%"
+                                                        cellspacing="0" cellpadding="0" border="0">
+                                                        <tbody>
+                                                            <tr
+                                                                style="font-family:Lato,Arial,sans-serif;background-image: url(https://travelposting.com/static/img/bg_1.jpg); background-size: cover; height: 400px;">
+                                                                <td
+                                                                    style="font-family:Lato,Arial,sans-serif;margin:0 auto;padding:0;text-align:center; color:#fff; font-size: 18px;">
+                                                                    <h2>{% trans 'A person has done a new comment:' %}
+                                                                    </h2>
+                                                                </td>
+                                                            </tr>
+                                                            <tr
+                                                                style="font-family:Lato,Arial,sans-serif;background:#2f2f2f;">
+                                                                <td
+                                                                    style="font-family:Lato,Arial,sans-serif;margin:0 auto;padding:0;text-align:center">
+                                                                    <h2
+                                                                        style="color:#fff;font-family:Lato,Arial,sans-serif;font-size:24px;font-weight:normal;line-height:20px;margin:0 auto;max-width:280px;padding:20px 0 0 0;text-align:left;text-indent:0;word-break:normal">
+                                                                        <a style="color:#ffff;font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-height:1.4;margin-bottom:5px;margin-top:0;padding:0;text-align:left;text-decoration:none;text-indent:0;word-break:normal"
+                                                                            target="_blank">
+                                                                            <p>
+                                                                                <b> {% trans 'Title: ' %}
+                                                                                </b>{{ title }}<br>
+                                                                                <b> {% trans 'Body:' %}</b>
+                                                                                {{ body }}<br>
+                                                                                <b>
+                                                                                    {% trans 'Person:' %}</b>{{ user_comment }}<br>
+
+                                                                            </p>
+                                                                            <p>
+                                                                                {% trans 'if you want see the admin site' %}
+                                                                            </p>
+                                                                        </a>
+                                                                        <a href="https://travelposting.com/admin/accounts/comment/"
+                                                                            style="color:#3483fa;display:block;font-family:Lato,Arial,sans-serif;font-weight:normal;margin:0;padding:0;padding-left:0;text-decoration:none;width:100%;word-break:normal"
+                                                                            target="_blank">
+                                                                            <table
+                                                                                style="border-spacing:0;display:table!important;font-family:Lato,Arial,sans-serif;height:48px;margin:0 auto;max-height:48px;width:280px"
+                                                                                cellspacing="0" cellpadding="0"
+                                                                                border="0">
+                                                                                <tbody>
+                                                                                    <tr
+                                                                                        style="font-family:Lato,Arial,sans-serif">
+                                                                                        <td style="background-color:#3483fa;border:0;border-radius:4px;color:#ffffff;font-family:Lato,Arial,sans-serif;font-size:18px;font-weight:400;height:48px;margin:5px 0;max-height:48px;max-width:280px;outline:0;padding:0 30px;text-align:center;text-decoration:none;width:100%"
+                                                                                            align="center">
+                                                                                            {% trans 'Admin' %}</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </a>
+                                                                        <br>
+                                                                    </h2>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table
+                                                        style="background:#eee;border-spacing:0;font-family:Lato,Arial,sans-serif;padding:0"
+                                                        width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                        <tbody>
+                                                            <tr style="font-family:Lato,Arial,sans-serif">
+                                                                <td
+                                                                    style="font-family:Lato,Arial,sans-serif;padding:0;text-align:center">
+                                                                    <div
+                                                                        style="display:inline-block;font-family:Lato,Arial,sans-serif;font-size:17px;max-width:230px;min-width:90px;padding:20px 40px;vertical-align:middle">
+                                                                        <span
+                                                                            style="color:#666666;display:block;font-family:Lato,Arial,sans-serif;font-size:14px;font-weight:300;text-align:center;width:auto;word-break:normal">¡Muy
+                                                                            Pronto nuestra aplicación totalmente gratis
+                                                                            !</span>
+                                                                        <table
+                                                                            style="border-spacing:0;font-family:Lato,Arial,sans-serif;padding-top:10px"
+                                                                            cellspacing="0" cellpadding="0" border="0">
+                                                                            <tbody
+                                                                                style="font-family:Lato,Arial,sans-serif">
+                                                                                <tr
+                                                                                    style="font-family:Lato,Arial,sans-serif">
+                                                                                    <td
+                                                                                        style="font-family:Lato,Arial,sans-serif;padding:0">
+                                                                                        <a href="https://travelposting.com/es/coming-soon/"
+                                                                                            title="Descargar para iOS"
+                                                                                            style="color:#3483fa;font-family:Lato,Arial,sans-serif;font-weight:normal;padding:0!important;text-decoration:none;word-break:normal"
+                                                                                            target="_blank"
+                                                                                            data-saferedirecturl="https://www.google.com/url?q=https://itunes.apple.com/es/app/mercadolibre/id463624852&amp;source=gmail&amp;ust=1570061298950000&amp;usg=AFQjCNG7cVXwtOscO5ZT77TBspcFrhrhjw"><img
+                                                                                                src="https://ci3.googleusercontent.com/proxy/41275EbLjm9plNwFcD5JaXH2h76YPdO7z3f1BrTcIB8bpHGKosIMZ1utTQa3-YUQkDwmjhfX1oNUcu3wzjR_YO971e46Hi3M2fN8tvL9Slcccjnygzfgl9r4dEg=s0-d-e1-ft#http://static.mlstatic.com/org-img/mkt/email-mkt-assets/2x/appleStore.png"
+                                                                                                alt="Descargar para iOS"
+                                                                                                style="border:0;font-family:Lato,Arial,sans-serif"
+                                                                                                class="CToWUd"
+                                                                                                width="104" height="32"
+                                                                                                border="0"></a></td>
+                                                                                    <td style="font-family:Lato,Arial,sans-serif;padding:0"
+                                                                                        width="20">&nbsp;</td>
+                                                                                    <td
+                                                                                        style="font-family:Lato,Arial,sans-serif;padding:0;padding-left:0px">
+                                                                                        <a href="https://travelposting.com/es/coming-soon/"
+                                                                                            title="Descargar para Android"
+                                                                                            style="color:#3483fa;font-family:Lato,Arial,sans-serif;font-weight:normal;padding:0!important;text-decoration:none;word-break:normal"
+                                                                                            target="_blank"
+                                                                                            data-saferedirecturl="https://www.google.com/url?q=https://play.google.com/store/apps/details?id%3Dcom.mercadolibre%26hl%3Des_419&amp;source=gmail&amp;ust=1570061298950000&amp;usg=AFQjCNG3SLCwIQvP5iv0NqsmL6HMFq1N5w"><img
+                                                                                                src="https://ci3.googleusercontent.com/proxy/E6B6umYmAQlGRy-8CiHfB8tC3fkFq2KaaWSwxaM_VgG06vJ1vipUrUDrFbRM0_6ghGbEZk4X6dw_ZC2QAhCgU8sSp8_YgcksJgVmfI_vy-mtXGLM2ZpdL20jfl0=s0-d-e1-ft#http://static.mlstatic.com/org-img/mkt/email-mkt-assets/2x/googlePlay.png"
+                                                                                                alt="Descargar para Android"
+                                                                                                style="border:0;font-family:Lato,Arial,sans-serif"
+                                                                                                class="CToWUd"
+                                                                                                width="104" height="32"
+                                                                                                border="0"></a></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </center>
+        </div>
+    </body>
+
+</html>

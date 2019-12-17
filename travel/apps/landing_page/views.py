@@ -84,7 +84,6 @@ class DetailDestinationView(View):
     def get(self, request, *args, **kwargs):
         destination= Destination.objects.get(id=kwargs.get('slug'))
         key = settings.GOOGLE_MAPS_API_KEY
-        import ipdb; ipdb.set_trace()
         comment = Comment.objects.filter(post=kwargs.get('slug')).order_by('-created')[0:3]
 
         try:

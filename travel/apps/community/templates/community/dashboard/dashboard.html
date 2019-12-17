@@ -71,6 +71,7 @@
             <div class="card-deck d-block d-md-flex">
                 <!-- Members -->
                 {% for user in members %}
+                {% if user != request.user %}
                 <div class="card text-center mb-5">
                     <a href="{% url 'profile_detail' user.id %}">
                     <div class="card-body p-6">
@@ -151,6 +152,7 @@
                     </div>
                     {% endwith %}
                 </div>
+                {% endif %}
                 {% endfor %}
                 <!-- End Members -->
             </div>

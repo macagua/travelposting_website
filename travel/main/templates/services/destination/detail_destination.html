@@ -292,10 +292,57 @@
             <!-- End Accordion -->
             {% endif %}
             <div class="mb-4">
+                {% if request.user.is_authenticated == True %}
+                <button type="button" class="btn btn-block btn-secondary btn-pill transition-3d-hover reserve" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    {% trans "Add comment" %}
+                </button>
+
+                {% endif %}
                 <button type="button"  data-toggle="modal" data-target="#BookModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
             </div>
         </div>
         <!-- End Product Description -->
+    </div>
+</div>
+<!--modal 01-->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="BookModalLabel">{% trans "Let us your comment" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="comment" action="{% url 'make-comment' %}" method="POST">{% csrf_token %}
+                    <div class="form-row">
+                        <input type="hidden" id="user_id" name="user_id" value="{{ request.user.pk }}">
+                    </div>
+                    <div class="form-row">
+                        <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">{%trans "Title"%}</span>
+                        </div>
+                        <input type="text" class="form-control" required name="name" placeholder="{% trans 'Title' %}" aria-label="Amount (to the nearest dollar)">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">{% trans "Body" %}</span>
+                        </div>
+                        <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message"%}' aria-label="With textarea"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans 'Send' %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Modal -->

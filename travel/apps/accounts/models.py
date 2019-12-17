@@ -255,23 +255,16 @@ class Comment(models.Model):
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    # manually deactivate inappropriate comments from admin site
     active = models.BooleanField(default=True)
-    parent = models.ForeignKey(
-        'self',
+    parent = models.IntegerField(
+        'Parent',
         null=True,
-        blank=True,
-        related_name='replies',
-        on_delete=models.CASCADE)
+        blank=True)
+    likes = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, blank=True, related_name='post_likes')
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
 
-    likes = models.PositiveIntegerField(default=0)
-    dislikes = models.PositiveIntegerField(default=0)    
-    liked_user = models.ForeignKey(
-        CustomerUser, 
-        related_name='liked_user_click', 
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE)
 
     class Meta:
         # sort comments in chronological order by default
@@ -279,3 +272,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment by {}'.format(self.body)
+
