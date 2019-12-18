@@ -58,29 +58,36 @@
     </div>
     <!-- End Title -->
     <!-- Form -->
-    <form class="js-validate w-lg-75 mx-lg-auto">
-        <div class="form-row">
-            <div class="col-sm-4 mb-2 mb-sm-0">
-                <div class="js-form-message">
-                    <label class="sr-only" for="signupSrName">Name</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="name" id="signupSrName" placeholder="{% trans 'Name' %}" aria-label="Name" required
-                            data-msg="Name must contain only letters.">
-                    </div>
-                </div>
+    <form class="js-validate card w-lg-75 mx-lg-auto">
+        <div class="js-form-message form-group">
+                    <label class="sr-only" for="signupSrName">{% trans "E-mail"%} <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" 
+                    name="emailAddress" id="emailAddress" 
+                    placeholder="alexhecker@pixeel.com" 
+                    aria-label="alexhecker@pixeel.com" 
+                    required 
+                    data-msg="{% trans "Please enter a valid email address." %}" 
+                    data-error-class="u-has-error" 
+                    data-success-class="u-has-success">
             </div>
-            <div class="col-sm-4 mb-2 mb-sm-0">
-                <div class="js-form-message">
-                    <label class="sr-only" for="signupSrEmail">Email</label>
-                    <div class="input-group">
-                        <input type="email" class="form-control" name="email" id="signupSrEmail" placeholder="{% trans 'Email'%}" aria-label="Email" required data-msg="Please enter a valid email address.">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
+        <div class="js-form-message form-group mb-4">
+            <label for="descriptionTextarea" class="form-label">
+                Tell us more <span class="text-danger">*</span>
+            </label>
+            <textarea class="form-control" 
+                rows="3" 
+                id="descriptionTextarea" 
+                placeholder="Hi there, I would like to ..." 
+                required 
+                data-msg="Please enter your message." 
+                data-error-class="u-has-error" 
+                data-success-class="u-has-success">
+            </textarea>
+        </div>
+            <div class="col-sm-12 text-center">
                 <button type="submit" class="btn btn-block btn-primary transition-3d-hover">{% trans "Suscribe" %}</button>
             </div>
-        </div>
+
     </form>
     <!-- End Form -->
 </div>
