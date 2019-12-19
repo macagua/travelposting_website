@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.utils import timezone
@@ -190,7 +191,10 @@ class DeleteRegisterView(View):
 
         return render(request, 'pages/request.html')
 
-
+class ContactUs(View):
+    def post(self,request):
+        messages.success(request, _('Thank you very much for contacting us, we will be responding very soon '), extra_tags='success_contact_us')
+        return redirect('/')
 class PrivacySettingView(View):
     def post(self, request, *args, **kwargs):
         cookie = request.POST.get('cookie')

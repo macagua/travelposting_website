@@ -51,42 +51,46 @@
     <!-- Title -->
     <div class="w-md-80 w-lg-50 text-center mx-md-auto">
         <div class="mb-9">
-            <span class="btn btn-xs btn-soft-primary btn-pill mb-2">Subscribe</span>
-            <h2 class="font-weight-normal">{% trans "Stay in the know" %}</h2>
-            <p class="mb-0">{% trans "Subscribe now and get special offers on the latest developments from Travelposting." %}</p>
+            
+            <h2 class="font-weight-normal">{% trans "Contact us" %}</h2>
         </div>
     </div>
     <!-- End Title -->
     <!-- Form -->
-    <form class="js-validate card w-lg-75 mx-lg-auto">
+    <form method="POST" action="contact-us" class="js-validate w-lg-75 mx-lg-auto">
+        {% csrf_token %}
         <div class="js-form-message form-group">
-                    <label class="sr-only" for="signupSrName">{% trans "E-mail"%} <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" 
-                    name="emailAddress" id="emailAddress" 
-                    placeholder="alexhecker@pixeel.com" 
-                    aria-label="alexhecker@pixeel.com" 
+            <label class="form-label" for="emailAddress">
+                {% trans "E-mail"%}
+                <span class="text-danger">*</span>
+            </label>
+            <input type="email" class="form-control" 
+                    name="email" id="emailAddress" 
+                    placeholder="" 
+                    aria-label="" 
                     required 
                     data-msg="{% trans "Please enter a valid email address." %}" 
                     data-error-class="u-has-error" 
                     data-success-class="u-has-success">
-            </div>
+        </div>
         <div class="js-form-message form-group mb-4">
             <label for="descriptionTextarea" class="form-label">
-                Tell us more <span class="text-danger">*</span>
+                {% trans "Tell us more" %} <span class="text-danger">*</span>
             </label>
-            <textarea class="form-control" 
+            <textarea 
+                class="form-control" 
                 rows="3" 
+                name = "message"
                 id="descriptionTextarea" 
-                placeholder="Hi there, I would like to ..." 
+                placeholder="{% trans "Hi there, I would like to ..." %}" 
                 required 
-                data-msg="Please enter your message." 
+                data-msg="{% trans "Please enter your message. " %}" 
                 data-error-class="u-has-error" 
-                data-success-class="u-has-success">
-            </textarea>
+                data-success-class="u-has-success"></textarea>
         </div>
-            <div class="col-sm-12 text-center">
-                <button type="submit" class="btn btn-block btn-primary transition-3d-hover">{% trans "Suscribe" %}</button>
-            </div>
+        <div class="col-sm-12 text-center">
+                <button type="submit" class="btn btn-block btn-primary transition-3d-hover">{% trans "Contact us" %}</button>
+        </div>
 
     </form>
     <!-- End Form -->

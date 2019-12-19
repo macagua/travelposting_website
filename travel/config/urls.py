@@ -13,6 +13,7 @@ from apps.landing_page.views import (
     DeleteRegisterView,
     PrivacySettingView,
     getItineraryPDF,
+    ContactUs,
 )
 
 from apps.destinations.views.booking import BookingSaveView
@@ -124,6 +125,10 @@ urlpatterns += i18n_patterns(
     url(r'^get-itinerary/(?P<slug>\w+)', 
         getItineraryPDF.as_view(),
         name='get_itinerary'),
+
+    url(r'contact-us', 
+            ContactUs.as_view(),
+            name='contact-us'),
 
     url(
         r'^',

@@ -20,6 +20,10 @@ ROOT_DIR = (
         environ.Path(__file__) - 3
 )
 
+RECAPTCHA_PUBLIC_KEY = '6LdCeMgUAAAAANJteBA1bB6kzImkzwNsqraAnaNN'
+RECAPTCHA_PRIVATE_KEY = '6LdCeMgUAAAAALzAYJJZQjItM-_6cZjRQ2HgISy8'
+
+
 APPS_DIR = ROOT_DIR.path("apps/")
 
 env = environ.Env()
@@ -231,6 +235,7 @@ THIRD_PARTY = [
     'mapwidgets',
     'mathfilters',
     'sorl.thumbnail',
+    'captcha'
 ]
 
 LOCAL_APPS = [

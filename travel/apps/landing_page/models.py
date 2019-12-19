@@ -497,3 +497,20 @@ class PrivacySetting(models.Model):
     class Meta:
         verbose_name_plural = _('Privacity Settings')
         verbose_name = _('Privacity Setting')
+
+
+class ContactUs(models.Model):
+    email = models.EmailField(
+        blank=False,
+        null = False
+    )
+    message = models.CharField(
+        max_length = 300,
+        blank = False,
+        null = False
+    )
+    ip_client = models.GenericIPAddressField(
+        _('Address IP'), 
+        blank=True, 
+        null=True
+    )
