@@ -51,7 +51,7 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
     list_display = ('email', 'date_joined', 'is_staff', 'is_active', 'password_link')
-    list_filter = ('is_staff', 'is_active', ('last_login'))
+    list_filter = ('is_staff', 'is_active', ('last_login'), 'is_community')
     readonly_fields = ('subscription_id',)
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
@@ -103,5 +103,5 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = [
         'post',
         'user_comment',
-        'created'    
+        'created'
     ]
