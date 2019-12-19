@@ -239,22 +239,27 @@
 {% if messages %}
     {% for message in messages %}
       {% if 'success_contact_us' in message.extra_tags %}
-        <script>
-            jQuery('#popupRegister').modal('show')
-        </script>
+      {% include "modal_contact_us/modal.html"%}
       {% endif %}
     {% endfor %}
 {% endif %}
-
-
 {% endblock content %}
+
 {% block extrajs %}
 <script src="{% static 'js/destinations.js' %}"></script>
 {% if messages %}
     {% for message in messages %}
       {% if 'success_contact_us' in message.extra_tags %}
-        <script>
-            jQuery('#popupRegister').modal('show')
+          <script>
+                $(window).on('load', function () {
+                    var modal_contact = new Custombox.modal({
+                              content: {
+                                effect: 'fadein',
+                                target: '#ContactUsModal'
+                              }
+                            });
+                    modal_contact.open();
+                })
         </script>
       {% endif %}
     {% endfor %}
