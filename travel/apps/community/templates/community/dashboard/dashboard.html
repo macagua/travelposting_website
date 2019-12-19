@@ -68,89 +68,91 @@
                 <!-- End Filter -->
             </div>
 
-            <div class="card-deck d-block d-md-flex">
+            <div class="row">
                 <!-- Members -->
                 {% for user in members %}
                 {% if user != request.user %}
-                <div class="card text-center mb-5">
-                    <a href="{% url 'profile_detail' user.id %}">
-                    <div class="card-body p-6">
-                        <!-- Team -->
-                        <div class="mb-4">
-                            <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                {% if user.avatar %}
-                                <img src="/main/media/{{ user.avatar }}" class="rounded-circle" height="125" />
-                                {% else %}
-                                <img src="{% static 'img/user.png'%}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
-                                {% endif %}
-                                <span
-                                    class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                <div class="col-md-4">
+                    <div class="card text-center mb-5">
+                        <a href="{% url 'profile_detail' user.id %}">
+                        <div class="card-body p-6">
+                            <!-- Team -->
+                            <div class="mb-4">
+                                <div class="position-relative u-lg-avatar mx-auto mb-3">
+                                    {% if user.avatar %}
+                                    <img src="/main/media/{{ user.avatar }}" class="rounded-circle" height="125" />
+                                    {% else %}
+                                    <img src="{% static 'img/user.png'%}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
+                                    {% endif %}
+                                    <span
+                                        class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                                </div>
+
+                                <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                    href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title="Add to favorites">
+                                    <span class="far fa-star btn-icon__inner"></span>
+                                </a>
+
+                                <h2 class="h6 mb-0">
+                                    <a href="#">{{ user.get_full_name }}</a>
+                                </h2>
+                                <a class="small" href="#">{{ user.email }}</a>
                             </div>
+                            
+                            <!-- End Team -->
 
-                            <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                data-original-title="Add to favorites">
-                                <span class="far fa-star btn-icon__inner"></span>
-                            </a>
-
-                            <h2 class="h6 mb-0">
-                                <a href="#">{{ user.get_full_name }}</a>
-                            </h2>
-                            <a class="small" href="#">{{ user.email }}</a>
+                            <!-- Social Networks -->
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.facebook }}">
+                                        <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ user.email }}">
+                                        <span class="fab fa-google btn-icon__inner"></span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.twitter }}">
+                                        <span class="fab fa-twitter btn-icon__inner"></span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.instagram }}">
+                                        <span class="fab fa-instagram btn-icon__inner"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- End Social Networks -->
                         </div>
-                        
-                        <!-- End Team -->
-
-                        <!-- Social Networks -->
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.facebook }}">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ user.email }}">
-                                    <span class="fab fa-google btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.twitter }}">
-                                    <span class="fab fa-twitter btn-icon__inner"></span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.instagram }}">
-                                    <span class="fab fa-instagram btn-icon__inner"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- End Social Networks -->
-                    </div>
-                    </a>
-                    {% with total_followers=user.followers.count %}
-                    <span class="count">
-                        <span class="total">{{ total_followers }}</span>
-                        follower{{ total_followers|pluralize }}
-                    </span>
-                    <div class="card-footer py-4 px-6">
-                        <form action="{% url 'user_follow' %}" method="POST">{% csrf_token %}
-                            <input type="hidden" value="{{ user.id }}" name="id_user">
-                            {% if request.user not in user.followers.all %}
-                                <input type="hidden" value="follow" name="follow">
-                            {% else %}
-                                <input type="hidden" value="unfollow" name="unfollow">
-                            {% endif %}
-                            <button class="follow btn btn-sm btn-soft-primary transition-3d-hover">
-                                <span class="fa fa-plus mr-2"></span>
+                        </a>
+                        {% with total_followers=user.followers.count %}
+                        <span class="count">
+                            <span class="total">{{ total_followers }}</span>
+                            follower{{ total_followers|pluralize }}
+                        </span>
+                        <div class="card-footer py-4 px-6">
+                            <form action="{% url 'user_follow' %}" method="POST">{% csrf_token %}
+                                <input type="hidden" value="{{ user.id }}" name="id_user">
                                 {% if request.user not in user.followers.all %}
-                                    Follow
+                                    <input type="hidden" value="follow" name="follow">
                                 {% else %}
-                                    Unfollow
+                                    <input type="hidden" value="unfollow" name="unfollow">
                                 {% endif %}
-                            </button>
-                        </form>
+                                <button class="follow btn btn-sm btn-soft-primary transition-3d-hover">
+                                    <span class="fa fa-plus mr-2"></span>
+                                    {% if request.user not in user.followers.all %}
+                                        Follow
+                                    {% else %}
+                                        Unfollow
+                                    {% endif %}
+                                </button>
+                            </form>
+                        </div>
+                        {% endwith %}
                     </div>
-                    {% endwith %}
                 </div>
                 {% endif %}
                 {% endfor %}
