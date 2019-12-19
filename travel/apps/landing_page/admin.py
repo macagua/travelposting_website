@@ -15,7 +15,8 @@ from apps.landing_page.models import (
     Price,
     Magazine,
     DeleteReg,
-    PrivacySetting
+    PrivacySetting,
+    ContactUs,
 )
 
 BASE_LIST = ('order', 'active')
@@ -105,5 +106,6 @@ class MagazineAdmin(admin.ModelAdmin):
 admin.site.register(Magazine, MagazineAdmin)
 
 
+admin.site.register(ContactUs)
 admin.site.register(DeleteReg)
 admin.site.register(PrivacySetting)
