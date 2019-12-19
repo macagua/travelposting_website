@@ -4,7 +4,8 @@ from django import template
 from django.template.defaultfilters import stringfilter
 
 from apps.landing_page.models import Feature
-
+from apps.landing_page.models import ContactUs
+from apps.landing_page.forms import ContactUsForm
 register = template.Library()
 
 
@@ -45,3 +46,8 @@ def get_children_plan(feature, plan):
 @register.filter
 def list_count(number):
     return range(number)
+
+@register.simple_tag()
+def get_form_contact():
+    form_contact = ContactUsForm()
+    return form_contact

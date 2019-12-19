@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
+{%load landing_extra %}
 {% block title %}{% trans 'Travelposting' %}{% endblock title %}
 {% block extracss %} 
 <link rel="stylesheet" href="{% static 'css/destinations.css' %}">
@@ -57,6 +58,17 @@
     </div>
     <!-- End Title -->
     <!-- Form -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show w-lg-75 mx-lg-auto" role="alert">
+              <strong>{{ message }}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+        {% endfor %}
+      {% endif %}
+
     <form method="POST" action="contact-us" class="js-validate w-lg-75 mx-lg-auto">
         {% csrf_token %}
         <div class="js-form-message form-group">
@@ -88,9 +100,14 @@
                 data-error-class="u-has-error" 
                 data-success-class="u-has-success"></textarea>
         </div>
+        {% get_form_contact as form_contact %}
+        <div class="js-form-message form-group mb-4">
+            {{form_contact.captcha}}
+        </div>
         <div class="col-sm-12 text-center">
                 <button type="submit" class="btn btn-block btn-primary transition-3d-hover">{% trans "Contact us" %}</button>
         </div>
+
 
     </form>
     <!-- End Form -->
@@ -219,10 +236,29 @@
     </figure>
     <!-- End SVG Component -->
 </div>
+{% if messages %}
+    {% for message in messages %}
+      {% if 'success_contact_us' in message.extra_tags %}
+        <script>
+            jQuery('#popupRegister').modal('show')
+        </script>
+      {% endif %}
+    {% endfor %}
+{% endif %}
+
+
 {% endblock content %}
 {% block extrajs %}
 <script src="{% static 'js/destinations.js' %}"></script>
-
+{% if messages %}
+    {% for message in messages %}
+      {% if 'success_contact_us' in message.extra_tags %}
+        <script>
+            jQuery('#popupRegister').modal('show')
+        </script>
+      {% endif %}
+    {% endfor %}
+{% endif %}
 <script>
     //Listener to receive the request to show the search form.
     document.getElementById("show_form").addEventListener("click", showSearchForm);

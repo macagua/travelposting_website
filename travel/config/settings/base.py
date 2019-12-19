@@ -22,7 +22,7 @@ ROOT_DIR = (
 
 RECAPTCHA_PUBLIC_KEY = '6LdCeMgUAAAAANJteBA1bB6kzImkzwNsqraAnaNN'
 RECAPTCHA_PRIVATE_KEY = '6LdCeMgUAAAAALzAYJJZQjItM-_6cZjRQ2HgISy8'
-
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 APPS_DIR = ROOT_DIR.path("apps/")
 

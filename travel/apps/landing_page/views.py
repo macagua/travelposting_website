@@ -18,7 +18,9 @@ from apps.destinations.models import (
     SearchLanding,
     DestinationMap
 )
+from apps.destinations.utils import get_client_ip
 from apps.accounts.models import Comment
+from apps.landing_page.forms import ContactUsForm
 from apps.landing_page.models import DeleteReg, PrivacySetting
 from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
 
@@ -193,8 +195,17 @@ class DeleteRegisterView(View):
 
 class ContactUs(View):
     def post(self,request):
-        messages.success(request, _('Thank you very much for contacting us, we will be responding very soon '), extra_tags='success_contact_us')
+        updated_data = request.POST.copy()
+        updated_data.update({'ip_client': get_client_ip(request)})
+        form = ContactUsForm(updated_data)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('Thank you very much for contacting us, we will be responding very soon '), extra_tags='success_contact_us')
+        else:
+            messages.error(request, _('A error has ocurred while processing your message'), extra_tags='danger')
+            print(form.errors)
         return redirect('/')
+
 class PrivacySettingView(View):
     def post(self, request, *args, **kwargs):
         cookie = request.POST.get('cookie')
