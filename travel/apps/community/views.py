@@ -190,7 +190,7 @@ class FollowView(View):
         else:
             Contact.objects.filter(user_from=request.user,
                                    user_to=user).delete()
-            return redirect(reverse('profile_detail', kwargs={'slug': user_id }))
+            return redirect(reverse('dashboard-community'callable))
 
 
 
