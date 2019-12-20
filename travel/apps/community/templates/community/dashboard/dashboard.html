@@ -160,7 +160,40 @@
                 {% endif %}
                 {% endfor %}
                 <!-- End Members -->
+
             </div>
+            <nav aria-label="...">
+                <ul class="pagination justify-content-center">
+                    {% if members.has_previous %}
+                    <li class="page-item disabled">
+                        <a href="?page=1"><span class="page-link"> << </span></a>
+                    </li>
+                    <li class="page-item disabled">
+                        <a href="?page={{ posts.previous_page_number }}"><span class="page-link">Previous</span></a>
+                    </li>
+                    {% endif %}
+                    {% for num in members.paginator.page_range %}
+                    
+                    {% if members.number == num %}
+                    <li class="page-item"><a class="page-link">{{ num }}</a></li>
+
+                    {% elif num > members.number|add:'-3' and num < members.number|add:'3' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                    
+                    {% endfor %}
+
+                    {% if members.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ members.next_page_number }}">{% trans 'Next' %}</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ members.paginator.num_pages }}">>></a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </nav>
         </div>
     </div>
     <!-- End Content Section -->

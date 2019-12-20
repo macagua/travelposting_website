@@ -31,6 +31,7 @@ from apps.destinations.models import Destination
 from django.template.loader import render_to_string
 from django.core.mail import mail_managers
 from django.core.mail import send_mail
+from django.core.paginator import Paginator  # < Import the Paginator class
 
 
 
@@ -159,11 +160,15 @@ class DashboardCommunity(View):
     """
         Login para los usuarios de la comunidad
     """
+    paginate_by = 3
+
 
     def get(self, request, *args, **kwargs):
         members = CustomerUser.objects.filter(is_active=True, is_community=True)
-        a = CustomerUser.objects.filter(id=46)
-
+        paginator = Paginator(members, 6)
+        page = request.GET.get('page')
+        members = paginator.get_page(page)
+        
         return render(request, 'community/dashboard/dashboard.html', {'members': members})
 
 
