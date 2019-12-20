@@ -150,7 +150,7 @@ data-header-fix-effect="slide">
         <div class="u-sidebar--account__footer-offset">
           <!-- Toggle Button -->
           <div class="d-flex justify-content-between align-items-center pt-4 px-7">
-            <h3 class="h6 mb-0">My Account</h3>
+            <h3 class="h6 mb-0">{% trans 'My Account'%}</h3>
 
             <button type="button" class="close ml-auto"
                     aria-controls="sidebarContent"
@@ -198,9 +198,9 @@ data-header-fix-effect="slide">
                 </a>
 
                 <div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="#">{% trans 'Settings'%}</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{% url 'logout-community' %}?next={% url 'index' %}">Sign Out</a>
+                  <a class="dropdown-item" href="{% url 'logout-community' %}?next={% url 'index' %}">{% trans 'Sign Out' %}</a>
                 </div>
               </div>
               <!-- End Settings -->
@@ -253,7 +253,7 @@ data-header-fix-effect="slide">
 
           <!-- SVG Background Shape -->
           <div class="position-absolute right-0 bottom-0 left-0">
-            <img class="js-svg-injector" src="{% static 'assets/svg/components/wave-bottom-with-dots.svg% '}" alt="Image Description"
+            <img class="js-svg-injector" src="{% static 'assets/svg/components/wave-bottom-with-dots.svg' %}" alt="Image Description"
                    data-parent="#SVGwaveWithDots">
           </div>
           <!-- End SVG Background Shape -->

@@ -190,7 +190,7 @@ class FollowView(View):
         else:
             Contact.objects.filter(user_from=request.user,
                                    user_to=user).delete()
-            return redirect(reverse('dashboard-community'callable))
+            return redirect(reverse('dashboard-community'))
 
 
 
