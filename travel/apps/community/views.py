@@ -165,11 +165,13 @@ class DashboardCommunity(View):
 
     def get(self, request, *args, **kwargs):
         members = CustomerUser.objects.filter(is_active=True, is_community=True)
+        count = CustomerUser.objects.filter(is_active=True, is_community=True)
+
         paginator = Paginator(members, 6)
         page = request.GET.get('page')
         members = paginator.get_page(page)
-        
-        return render(request, 'community/dashboard/dashboard.html', {'members': members})
+
+        return render(request, 'community/dashboard/dashboard.html', {'members': members, 'count': count})
 
 
 
@@ -195,7 +197,11 @@ class FollowView(View):
 class DetailProfileView(View):
     def get(self, request, *args, **kwargs):
         members = CustomerUser.objects.get(id=kwargs.get('slug'))
-        return render(request, 'community/dashboard/profile_user.html', {'members': members})
+        reviews = Comment.objects.filter(user_comment=kwargs.get('slug'))
+        paginator = Paginator(reviews, 3)
+        page = request.GET.get('page')
+        reviews = paginator.get_page(page)
+        return render(request, 'community/dashboard/profile_user.html', {'members': members, 'reviews':reviews})
 
 
 class CommentSaveView(View):

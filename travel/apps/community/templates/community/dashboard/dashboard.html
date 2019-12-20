@@ -20,50 +20,18 @@
                 <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
                     
                     <h2 class="h6 mb-0">
-                        {{ members.count|sub:1 }}
-                        {% trans "members found" %}</h2>
+                        {{ count.count|sub:1 }}
+                        {% trans "members found" %}
+                    </h2>
                 </div>
                 <!-- End Title -->
 
                 <!-- Filter -->
                 <div class="col-sm-8 col-md-6 text-sm-right">
-                    <ul class="list-inline mb-0">
+                    <ul class="list-inline mb-0">                        
                         <li class="list-inline-item">
-                            <!-- Select -->
-                            <div class="dropdown bootstrap-select js-select dropdown-select fit-width dropup"><select
-                                    class="js-select selectpicker dropdown-select" data-width="fit"
-                                    data-style="btn-soft-primary btn-sm" tabindex="-98">
-                                    <option value="alphabeticalOrderSelect1" selected="">A-to-Z</option>
-                                    <option value="alphabeticalOrderSelect2">Z-to-A</option>
-                                </select>
-                                <div class="dropdown-menu" role="combobox" x-placement="bottom-start"
-                                    style="max-height: 336px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 43px, 0px);">
-                                    <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"
-                                        style="max-height: 304px; overflow-y: auto; min-height: 0px;">
-                                        <ul class="dropdown-menu inner show">
-                                            <li class="selected active"><a role="option"
-                                                    class="dropdown-item selected active" aria-disabled="false"
-                                                    tabindex="0" aria-selected="true"><span
-                                                        class=" bs-ok-default check-mark"></span><span
-                                                        class="text">A-to-Z</span></a></li>
-                                            <li><a role="option" class="dropdown-item" aria-disabled="false"
-                                                    tabindex="0" aria-selected="false"><span
-                                                        class=" bs-ok-default check-mark"></span><span
-                                                        class="text">Z-to-A</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Select -->
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn btn-sm btn-soft-primary active" href="members.html">
+                            <a class="btn btn-sm btn-soft-primary active" href="{% url 'dashboard-community'%}">
                                 <span class="fas fa-th-large"></span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn btn-sm btn-soft-primary" href="members-list.html">
-                                <span class="fas fa-list"></span>
                             </a>
                         </li>
                     </ul>
