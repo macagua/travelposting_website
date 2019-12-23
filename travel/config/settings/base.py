@@ -323,6 +323,7 @@ CMS_TEMPLATES = (
     ('hotels.html', 'Hotels template'),
     ('pricing.html', 'Pricing'),
     ('make_page.html', 'Make page'),
+    ('term.html', 'Terms'),
 )
 
 CMS_PERMISSION = True
