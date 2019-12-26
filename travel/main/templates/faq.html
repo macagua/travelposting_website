@@ -1,0 +1,645 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% block title %}{% trans 'About us' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<main id="content" role="main">
+    <!-- Hero Section -->
+    <div class="gradient-overlay-half-primary-v1 bg-img-hero"
+        style="background-image: url({% static 'assets/img/1920x800/img14.jpg' %});">
+        <div class="container space-2 space-top-md-5 space-bottom-md-3">
+            <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <!-- Title -->
+                <div class="mb-5">
+                    <h1 class="display-4 font-size-md-down-5 text-white mb-0">{% trans "How can we" %} <span
+                            class="font-weight-semi-bold">{% trans "help?" %}</span></h1>
+                </div>
+                <!-- End Title -->
+                <!-- Text/Links -->
+                <p class="text-white-70">
+                    {% trans "Popular help topics:" %}
+                    <a class="link-light" href="/pricing/">{% trans "pricing"%},</a>
+                    <a class="link-light ml-1" href="/category/all">{% trans "destinos" %},</a>
+                    <a class="link-light ml-1" href="/community/login/">{% trans "community"%}</a>
+                </p>
+                <!-- End Text/Links -->
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+    <hr class="my-0">
+    <!-- FAQ Topics Section -->
+    <div class="container space-2 space-md-3">
+        <div class="row">
+            <div id="stickyBlockStartPoint" class="col-lg-3 mb-7 mb-lg-0" style="">
+                <!-- Nav -->
+                <nav class="js-sticky-block card border-0 bg-primary" data-offset-target="#logoAndNav"
+                    data-parent="#stickyBlockStartPoint" data-sticky-view="lg" data-start-point="#stickyBlockStartPoint"
+                    data-end-point="#stickyBlockEndPoint" data-offset-top="24" data-offset-bottom="24" style="">
+                    <ul
+                        class="js-scroll-nav list-group list-group-transparent list-group-white list-group-flush list-group-borderless py-3 px-5">
+                        <li class="active">
+                            <a class="list-group-item list-group-item-action py-3" href="#basics">Travelposting</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Nav -->
+            </div>
+            <div class="col-lg-9">
+                <div id="basics" class="space-bottom-2 active">
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <h3 class="text-primary font-weight-semi-bold">{% trans "¡Preguntas Frecuentes!"%}</h3>
+                    </div>
+                    <!-- End Title -->
+                    <!-- Basics Accordion -->
+                    <div id="basicsAccordion">
+                        <!-- Card -->
+                        <div class="card mb-3">
+                            <div class="card-header card-collapse" id="basicsHeadingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link btn-block d-flex justify-content-between card-btn p-3"
+                                        data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true"
+                                        aria-controls="basicsCollapseOne">
+                                        {% trans "¿Qué es Travelposting?"%}
+                                        <span class="card-btn-arrow">
+                                            <span class="fas fa-arrow-down small"></span>
+                                        </span>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="basicsCollapseOne" class="collapse show" aria-labelledby="basicsHeadingOne"
+                                data-parent="#basicsAccordion">
+                                <div class="card-body">
+                                    {% blocktrans %}
+                                    Travelposting es un portal diseñado en primera linea para brindar a los Hoteles, agencias de viaje y tour operadores de
+                                    cualquier tamaño, una ventana de publicidad y así poder presentar sus ofertas actuales.
+                                    {% endblocktrans%}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+                        <!-- Card -->
+                        <div class="card mb-3">
+                            <div class="card-header card-collapse" id="basicsHeadingTwo">
+                                <h5 class="mb-0">
+                                    <button
+                                        class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                                        data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false"
+                                        aria-controls="basicsCollapseTwo">
+                                        {% trans "¿Cual es el concepto de travelposting?" %}
+                                        <span class="card-btn-arrow">
+                                            <span class="fas fa-arrow-down small"></span>
+                                        </span>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo"
+                                data-parent="#basicsAccordion">
+                                <div class="card-body">
+                                    {% blocktrans %}
+                                    El concepto de travelposting es “En primer lugar” crear una comunidad de viajeros a nivel mundial que se ayuden unos con
+                                    otros y aprovechen las ofertas y excelencia de calidad en los sitios recomendados por otros viajeros que han vivido
+                                    experiencia en estos sitios de recreación."
+                                    {% endblocktrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+                        <!-- Card -->
+                        <div class="card mb-3">
+                            <div class="card-header card-collapse" id="basicsHeadingThree">
+                                <h5 class="mb-0">
+                                    <button
+                                        class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                                        data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false"
+                                        aria-controls="basicsCollapseThree">
+                                        {% trans "¿Para quien esta diseñada la publicidad de travelposting.com?" %}
+                                        <span class="card-btn-arrow">
+                                            <span class="fas fa-arrow-down small"></span>
+                                        </span>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree"
+                                data-parent="#basicsAccordion">
+                                <div class="card-body">
+                                    {% blocktrans %}
+                                    Travelposting esta diseñado para que Agencias de Viajes, Hoteles, sitios recreacionales, Restaurantes cerca de Hoteles,
+                                    Servicios de lavanderías cerca de Hoteles, Alquiler de Autos, Escuelas de Buceo, Museos, centro de información o
+                                    cualquier otro Servicio que sea útil a el viajero pueda presentarse y ofrecer sus productos directamente desde su portal
+                                    web o directamente en su dirección física.
+                                    {% endblocktrans%}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+                        <!-- Card -->
+                        <div class="card mb-3">
+                            <div class="card-header card-collapse" id="basicsHeadingFour">
+                                <h5 class="mb-0">
+                                    <button
+                                        class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                                        data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                                        aria-controls="basicsCollapseFour">
+                                        {% trans "Cual es la ventaja de inscribir mi agencia de viajes o mi sitio recreacional en travelposting.com?"%}
+                                        <span class="card-btn-arrow">
+                                            <span class="fas fa-arrow-down small"></span>
+                                        </span>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour"
+                                data-parent="#basicsAccordion">
+                                <div class="card-body">
+                                    {% blocktrans %}
+                                    La gran ventaja de inscribir ahora su agencia, Hotel o sitio recreacional es variable, en primer lugar:
+                                    1 – Entre el 01. Marzo y 30. Agosto del 2017 podrá inscribir su empresa por el precio Básico y disfrutara de tarifa fija
+                                    por 36 meses indiscutiblemente si nuestro precio aumenta o no.
+                                    
+                                    2 – Su empresa aparecerá señalada en todas las publicaciones online o impresas que hasta Julio 2018 hagamos.
+                                    
+                                    3 – Tendrá un puesto especial en la publicidad del Evento “ARTURISMOS” que estaremos realizando en Marzo / Julio del
+                                    2018, evento que presentara diferentes regiones de Colombia y Latinoamérica exaltando sus sitios turísticos y de gran
+                                    valor.
+                                    {% endblocktrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+<!-- Card -->
+                        <div class="card mb-3">
+                            <div class="card-header card-collapse" id="basicsHeadingFour">
+                                <h5 class="mb-0">
+                                    <button
+                                        class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                                        data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                                        aria-controls="basicsCollapseFour">
+                                        {% trans "Cual es la ventaja de inscribir mi agencia de viajes o mi sitio recreacional en travelposting.com?"%}
+                                        <span class="card-btn-arrow">
+                                            <span class="fas fa-arrow-down small"></span>
+                                        </span>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour"
+                                data-parent="#basicsAccordion">
+                                <div class="card-body">
+                                    {% blocktrans %}
+                                    La gran ventaja de inscribir ahora su agencia, Hotel o sitio recreacional es variable, en primer lugar:
+                                    1 – Entre el 01. Marzo y 30. Agosto del 2017 podrá inscribir su empresa por el precio Básico y disfrutara de tarifa fija
+                                    por 36 meses indiscutiblemente si nuestro precio aumenta o no.
+                                    
+                                    2 – Su empresa aparecerá señalada en todas las publicaciones online o impresas que hasta Julio 2018 hagamos.
+                                    
+                                    3 – Tendrá un puesto especial en la publicidad del Evento “ARTURISMOS” que estaremos realizando en Marzo / Julio del
+                                    2018, evento que presentara diferentes regiones de Colombia y Latinoamérica exaltando sus sitios turísticos y de gran
+                                    valor.
+                                    {% endblocktrans %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card -->
+<!-- Card -->
+<div class="card mb-3">
+    <div class="card-header card-collapse" id="basicsHeadingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                aria-controls="basicsCollapseFour">
+                {% trans "¿Como puedo inscribir mi agencia, hotel o sitio recreacional en travelposting.com?"%}
+                <span class="card-btn-arrow">
+                    <span class="fas fa-arrow-down small"></span>
+                </span>
+            </button>
+        </h5>
+    </div>
+    <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
+        <div class="card-body">
+            {% blocktrans %}
+            La inscripción puede hacerla a través del email inscribir@travelposting.com o directamente en nuestro portal a través
+            del Registro de Empresa
+            {% endblocktrans %}
+        </div>
+    </div>
+</div>
+<!-- End Card -->
+<!-- Card -->
+<div class="card mb-3">
+    <div class="card-header card-collapse" id="basicsHeadingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                aria-controls="basicsCollapseFour">
+                {% trans "¿Cual es el valor del alquiler del espacio publicitario en el portal travelposting.com?"%}
+                <span class="card-btn-arrow">
+                    <span class="fas fa-arrow-down small"></span>
+                </span>
+            </button>
+        </h5>
+    </div>
+    <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
+        <div class="card-body">
+            {% blocktrans %}
+Para facilitar la inscripción y que cada quien pueda registrar su empresa sin importar el tamaño de la misma, hemos
+creado un plan Básico: Por pagina principal 3,55- € por día = 1.296,- € que incluye:
+
+<br>• Su destino en el idioma Español
+
+<br>• Galería con 5 Fotos
+
+<br>• Galería con 5 Videos
+
+<br>• 1 Pagina principal y 4 Tabs individuales.
+
+<br>• Subdominio Eplo: suhotel.travelposting.com
+            {% endblocktrans %}
+        </div>
+    </div>
+</div>
+<!-- End Card -->
+<!-- Card -->
+<div class="card mb-3">
+    <div class="card-header card-collapse" id="basicsHeadingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                aria-controls="basicsCollapseFour">
+                {% trans "Me gustaría tener una pagina web nueva."%}
+                <span class="card-btn-arrow">
+                    <span class="fas fa-arrow-down small"></span>
+                </span>
+            </button>
+        </h5>
+    </div>
+    <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
+        <div class="card-body">
+            {% blocktrans %}
+Trabajamos de la mano con la empresa Xposting-Service en Alemania, teniendo esta sus servidores en la ciudad de
+Frankfurt con una garantía en sus Hosting de un 99,9% de seguridad y estabilidad, el precio de creación es de 850,- €
+por pagina y 600 € por mantenimiento anual, ejemplo: www.sunombre.com o puede escoger entre, .net, .org. travel. en este
+precio esta incluido la actualización de todos los plugins necesarios para el correcto funcionamiento de su pagina web
+<br>
+Por favor tome en cuenta que los precios acá mostrados son sin el impuesto. el impuesto será cobrado aparte y será
+sumado al momento de elaborar su factura.
+<br>
+Para mejorar su publicación hemos creado una serie de módulos que le pueden ser de interés:
+<br>
+M1– Traducción: Alemán / Ingles. Precios de acorde a la cantidad del texto que desee traducir.
+<br>
+M2 – Foto galería extra: hasta 5 Fotos. 60 € anual / 10 Fotos. 100 € anual / 25 Fotos 200 € anual. Las fotos nos deben
+de ser enviadas en formato JPG o PNG con una resolución de mínimo 72 dpi para ser presentadas online y mínimo 300 dpi
+para impresión y un tamaño de mínimo 1200 pixel de ancho por 800 pixel de alto, las fotos serán utilizadas tanto en su
+propia publicidad así como en nuestros Slider publicitarios.
+<br>
+Es importante que tenga en cuenta que una vez que nos envíe las fotos también nos esta autorizando a utilizar estas
+fotos públicamente para beneficio de su publicidad así como para la publicidad de nuestro portal.
+<br>
+M3 – Video galería extra: hasta 5 videos. 90 € anual / 10 videos. 150 € anual / 25 videos 250 € anual. Los videos nos
+pueden ser enviados en formato original, de no estar en algún portal como Youtube o Vimeo, nosotros nos encargaremos de
+colocarlos y presentarlos dentro del portal. Es importante que tenga en cuenta que una vez que nos envíe el video
+también nos esta autorizando a utilizar estos videos públicamente para beneficio de su propia publicidad así como para
+la publicidad de nuestro portal.
+<br>
+M4 – Su propia pagina web: Al ser travelposting.com un portal de Xposting-Service Alemania, usted cuenta con la
+facilidad de obtener por un precio bastante razonable su propia pagina web y su propio dominio ( www.suempresa.com) el
+dominio seguirá siendo suyo aunque no siga con nuestra publicidad.
+<br>
+M5 – Subdominio: En caso de que no desee una pagina web podemos darles un subdominio propio el cual podrá utilizar para
+dar a conocer su publicidad online ejemplo: suempresa.travelposting.com por un precio de 240 € anuales, este subdominio
+le permite usar 3 paginas en nuestro portal: 1ra. Pagina principal, 2da. Pagina de información 3ra. Pagina sus datos de
+contacto inclusive un mapa digital.
+<br>
+M6 – Feedback: Por un precio de tan solo 300 € anuales podrá interactuar con sus clientes y saber exactamente lo que
+ellos piensas sobre su empresa. Aproveche la oportunidad de mejorar sus servicios a través de los comentarios que sus
+clientes le envían personalmente, con myfeedback podrá hacerles preguntas directas a sus clientes y estos entregaran el
+comentario directamente en su bandeja de correos, usted decide si quiere hacer publico o no lo que el cliente bajo
+“Anonimato” sobre su servicio le comento.
+            {% endblocktrans %}
+        </div>
+    </div>
+</div>
+<!-- End Card -->
+<!-- Card -->
+<div class="card mb-3">
+    <div class="card-header card-collapse" id="basicsHeadingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                aria-controls="basicsCollapseFour">
+                {% trans "¿Puedo cambiar de módulo publicitario cuando necesite mas, o menos publicidad?"%}
+                <span class="card-btn-arrow">
+                    <span class="fas fa-arrow-down small"></span>
+                </span>
+            </button>
+        </h5>
+    </div>
+    <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
+        <div class="card-body">
+            {% blocktrans %}
+Nuestra finalidad no es amarrar a nadie en nuestro portal, sin embargo y por motivos de organización todos los módulos
+contratados serán de mínimo un año, la publicación de sus módulos podrá ser modificada durante ese año de modo que sus
+campañas puedan crecer según sus necesidades.
+            {% endblocktrans %}
+        </div>
+    </div>
+</div>
+<!-- End Card -->
+<!-- Card -->
+<div class="card mb-3">
+    <div class="card-header card-collapse" id="basicsHeadingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                aria-controls="basicsCollapseFour">
+                {% trans "¿Como hago el pago de mi suscripción o de los módulos?"%}
+                <span class="card-btn-arrow">
+                    <span class="fas fa-arrow-down small"></span>
+                </span>
+            </button>
+        </h5>
+    </div>
+    <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
+        <div class="card-body">
+            {% blocktrans %}
+El pago de su suscripción o módulos puede hacerla vía Paypal o con tarjeta de crédito. Por el momento solo tenemos
+cuenta en Alemania, pronto tendremos cuenta en Colombia.
+            {% endblocktrans %}
+        </div>
+    </div>
+</div>
+<!-- End Card -->
+<!-- Card -->
+<div class="card mb-3">
+    <div class="card-header card-collapse" id="basicsHeadingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                aria-controls="basicsCollapseFour">
+                {% trans "¿Por cuanto tiempo debo hacer la suscripción Básica de mi espació publicitario y o de los módulos?"%}
+                <span class="card-btn-arrow">
+                    <span class="fas fa-arrow-down small"></span>
+                </span>
+            </button>
+        </h5>
+    </div>
+    <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
+        <div class="card-body">
+            {% blocktrans %}
+La suscripción Básica de los espacios publicitarios será de mínimo 24 meses y se renovara automáticamente por 12 meses
+en caso de que no haga una renuncia con mínimo tres meses de anticipación.
+            {% endblocktrans %}
+        </div>
+    </div>
+</div>
+<!-- End Card -->
+<!-- Card -->
+<div class="card mb-3">
+    <div class="card-header card-collapse" id="basicsHeadingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                aria-controls="basicsCollapseFour">
+                {% trans "¿Si tengo problemas con mi suscripción, pago, o Update en la publicidad a quien debo dirigirme?"%}
+                <span class="card-btn-arrow">
+                    <span class="fas fa-arrow-down small"></span>
+                </span>
+            </button>
+        </h5>
+    </div>
+    <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion">
+        <div class="card-body">
+            {% blocktrans %}
+Para cualquier pregunta adicional o referente a lo arriba expuesto le rogamos enviarnos un email a
+pregunta@travelposting.com déjenos saber su pregunta o su inquietud y con gusto le responderemos a la brevedad posible.
+            {% endblocktrans %}
+        </div>
+    </div>
+</div>
+<!-- End Card -->
+</div>
+                    <!-- End Basics Accordion -->
+                </div>
+                <hr class="my-0">
+                    <!-- End Privacy Accordion -->
+            </div>
+        </div>
+    </div>
+    <!-- End FAQ Topics Section -->
+    <!-- Sticky Block End Point -->
+    <div id="stickyBlockEndPoint"></div>
+    <hr class="my-0">
+    <!-- Contacts Section -->
+    <div class="container">
+        <div class="row space-2">
+            <div class="col-lg-6 u-ver-divider u-ver-divider--none-lg mb-7 mb-lg-0">
+                <!-- Contacts Info -->
+                <div class="media pr-lg-9">
+                    <figure id="icon15" class="ie-height-56 w-100 max-width-8 mr-4" style="">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;"
+                            xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#icon15">
+                            <style type="text/css">
+                                .icon-15-0 {
+                                    fill: none;
+                                    stroke: #BDC5D1;
+                                }
+
+                                .icon-15-1 {
+                                    fill: #BDC5D1;
+                                }
+
+                                .icon-15-2 {
+                                    fill: #377DFF;
+                                }
+
+                                .icon-15-3 {
+                                    fill: none;
+                                    stroke: #FFFFFF;
+                                }
+
+                                .icon-15-4 {
+                                    fill: none;
+                                    stroke: #377DFF;
+                                }
+                            </style>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="25.2"
+                                y1="66.2" x2="35.9" y2="66.2"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="44.3"
+                                y1="76.4" x2="33.2" y2="76.4"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="27.8"
+                                y1="76.5" x2="22.3" y2="76.5"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="6.4" y1="85.8"
+                                x2="11.8" y2="85.8"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="17.1"
+                                y1="85.8" x2="33.1" y2="85.8"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="17.1"
+                                y1="76.5" x2="1.8" y2="76.5"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="19" y1="66.2"
+                                x2="15.4" y2="66.2"></line>
+                            <path class="icon-15-1 fill-gray-400" opacity=".5"
+                                d="M115.7,114.2H38.7c-2.4,0-4.3-2-4.3-4.3v-48c0-2.4,2-4.3,4.3-4.3h76.9c2.4,0,4.3,2,4.3,4.3v48  C120,112.2,118,114.2,115.7,114.2z">
+                            </path>
+                            <path class="icon-15-2 fill-primary"
+                                d="M106.1,102.9H29.2c-2.4,0-4.3-2-4.3-4.3v-48c0-2.4,2-4.3,4.3-4.3h76.9c2.4,0,4.3,2,4.3,4.3v48  C110.4,100.9,108.5,102.9,106.1,102.9z">
+                            </path>
+                            <g>
+                                <line class="icon-15-3 fill-none stroke-white" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-miterlimit="10" x1="78.4" y1="81.6" x2="109.6"
+                                    y2="101.5"></line>
+                                <line class="icon-15-3 fill-none stroke-white" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-miterlimit="10" x1="56.9" y1="81.6" x2="25.6"
+                                    y2="101.5"></line>
+                                <line class="icon-15-3 fill-none stroke-white" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-miterlimit="10" x1="25.6" y1="47.9" x2="67.6"
+                                    y2="78.6"></line>
+                                <line class="icon-15-3 fill-none stroke-white" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-miterlimit="10" x1="109.6" y1="47.9" x2="67.6"
+                                    y2="78.6"></line>
+                            </g>
+                            <path class="icon-15-4 fill-none stroke-primary" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M106.1,102.9H29.2c-2.4,0-4.3-2-4.3-4.3v-48c0-2.4,2-4.3,4.3-4.3h76.9c2.4,0,4.3,2,4.3,4.3v48  C110.4,100.9,108.5,102.9,106.1,102.9z">
+                            </path>
+                            <line class="icon-15-3 fill-none stroke-white" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="70" y1="95.1"
+                                x2="55.8" y2="95.1"></line>
+                            <line class="icon-15-3 fill-none stroke-white" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="76.2"
+                                y1="95.1" x2="82.6" y2="95.1"></line>
+                            <path class="icon-15-0 fill-none stroke-gray-400" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10" d="M89.9,107.9"></path>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="72.5"
+                                y1="36.3" x2="90.4" y2="36.3"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="108.7"
+                                y1="27.9" x2="103.4" y2="27.9"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="98" y1="27.9"
+                                x2="82.1" y2="27.9"></line>
+                            <line class="icon-15-0 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="97" y1="36.2"
+                                x2="112.4" y2="36.2"></line>
+                            <path class="icon-15-0 fill-none stroke-gray-400" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M5,41.6V14.7c0-2.1,1.8-3.9,3.9-3.9h77.8c2.2,0,3.9,1.7,3.9,3.9v5.5"></path>
+                            <g>
+                                <line class="icon-15-0 fill-none stroke-gray-400" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="17.5"
+                                    y1="20.3" x2="47.4" y2="39.2"></line>
+                                <line class="icon-15-0 fill-none stroke-gray-400" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="78"
+                                    y1="20" x2="47.6" y2="39.2"></line>
+                            </g>
+                            <path class="icon-15-0 fill-none stroke-gray-400" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10" d="M25.2,5.8"></path>
+                        </svg>
+                    </figure>
+                    <div class="media-body">
+                        <h3 class="h5">{% trans "Can't find your answer?" %}</h3>
+                        <p class="mb-1">
+                            {% blocktrans %}
+                            We want to answer all of your queries. Get in touch and we'll get back to you as
+                            soon as we can.
+                            {% endblocktrans %}
+                        </p>
+                        <a class="font-size-1" href="mailto://pregunta@travelposting.com">{% trans "Email us" %} <span
+                                class="fas fa-angle-right align-middle ml-2"></span></a>
+                    </div>
+                </div>
+                <!-- End Contacts Info -->
+            </div>
+            <div class="col-lg-6">
+                <!-- Contacts Info -->
+                <div class="media pl-lg-9">
+                    <figure id="icon4" class="ie-height-56 w-100 max-width-8 mr-4" style="">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;"
+                            xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#icon4">
+                            <style type="text/css">
+                                .icon-4-0 {
+                                    fill: none;
+                                    stroke: #377DFF;
+                                }
+
+                                .icon-4-1 {
+                                    fill: none;
+                                    stroke: #BDC5D1;
+                                }
+
+                                .icon-4-2 {
+                                    fill: none;
+                                    stroke: #FFFFFF;
+                                }
+
+                                .icon-4-3 {
+                                    fill: #BDC5D1;
+                                }
+
+                                .icon-4-4 {
+                                    fill: #377DFF;
+                                }
+                            </style>
+                            <path class="icon-4-0 fill-none stroke-primary" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M27.8,37.1c0,1.5-1.3,2.8-2.8,2.8c-1.5,0-2.8-1.2-2.8-2.8c0-1.5,1.3-2.8,2.8-2.8C26.6,34.3,27.8,35.5,27.8,37.1  z">
+                            </path>
+                            <path class="icon-4-1 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M41,37.1c0,1.5-1.2,2.8-2.8,2.8c-1.5,0-2.8-1.2-2.8-2.8c0-1.5,1.2-2.8,2.8-2.8C39.8,34.3,41,35.5,41,37.1z">
+                            </path>
+                            <path class="icon-4-1 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M54.2,37.1c0,1.5-1.3,2.8-2.8,2.8c-1.5,0-2.8-1.2-2.8-2.8c0-1.5,1.3-2.8,2.8-2.8C53,34.3,54.2,35.5,54.2,37.1z">
+                            </path>
+                            <path class="icon-4-1 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M105.8,61.7c0.8,1.4,1.4,2.9,1.9,4.5"></path>
+                            <path class="icon-4-1 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M76.8,48c9.7-1.8,19.3,1.7,25.4,8.6"></path>
+                            <path class="icon-4-1 fill-none stroke-gray-400" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M72.2,41.2C74.6,23.3,62.6,6.4,44.6,3C26-0.6,8,11.7,4.5,30.3c-1.8,9.6,0.6,19,5.8,26.4L5.3,71.8l16.1-5.2  c3.2,1.8,6.7,3.1,10.4,3.8c5.5,1,10.9,0.7,15.9-0.8">
+                            </path>
+                            <path class="icon-4-3 fill-gray-400" opacity=".5"
+                                d="M74.3,50.5c18.6-3.5,36.6,8.7,40.1,27.3c1.8,9.6-0.6,19-5.8,26.4l5.1,15.1l-16.1-5.2c-3.2,1.8-6.7,3.1-10.4,3.8  c-18.6,3.5-36.6-8.7-40.1-27.3C43.4,72,55.7,54.1,74.3,50.5z">
+                            </path>
+                            <path class="icon-4-4 fill-primary"
+                                d="M75.4,40.4c18.6-3.5,36.6,8.7,40.1,27.3c1.8,9.6-0.6,19-5.8,26.4l5.1,15.1l-16.1-5.2c-3.2,1.8-6.7,3.1-10.4,3.8  c-18.6,3.5-36.6-8.7-40.1-27.3C44.5,61.9,56.8,44,75.4,40.4z">
+                            </path>
+                            <circle class="icon-4-2 fill-none stroke-white" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="95" cy="74.5"
+                                r="2.8"></circle>
+                            <circle class="icon-4-2 fill-none stroke-white" opacity=".5" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="81.8"
+                                cy="74.5" r="2.8"></circle>
+                            <circle class="icon-4-2 fill-none stroke-white" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10" cx="68.6" cy="74.5" r="2.8"></circle>
+                        </svg>
+                    </figure>
+                    <div class="media-body">
+                        <h3 class="h5">{% trans "Technical questions" %}</h3>
+                        <p class="mb-1">{% trans "Have some technical questions? Hit us on community page or just say hello." %}</p>
+                        <a class="font-size-1" href="mailto://pregunta@travelposting.com">Email us <span
+                                class="fas fa-angle-right align-middle ml-2"></span></a>
+                    </div>
+                </div>
+                <!-- End Contacts Info -->
+            </div>
+        </div>
+        <hr class="my-0">
+    </div>
+    <!-- End Contacts Section -->
+</main>
+{% endblock %}

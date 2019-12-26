@@ -324,6 +324,7 @@ CMS_TEMPLATES = (
     ('pricing.html', 'Pricing'),
     ('make_page.html', 'Make page'),
     ('term.html', 'Terms'),
+    ('faq.html','FAQ'),
 )
 
 CMS_PERMISSION = True
