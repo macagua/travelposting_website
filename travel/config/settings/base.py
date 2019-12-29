@@ -326,6 +326,8 @@ CMS_TEMPLATES = (
     ('term.html', 'Terms'),
     ('faq.html','FAQ'),
     ('page01.html', 'Page type 01'),
+    ('page02.html', 'Page type 02'),
+
 )
 
 CMS_PERMISSION = True
