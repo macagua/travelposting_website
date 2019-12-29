@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% block title %}{% trans 'About us' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<main id="content" role="main">
+<!-- CTA Section --><br>
+<br>
+
+<div class="bg-primary text-center bg-img-hero"
+    style="background-image: url({% static 'assets/svg/components/abstract-shapes-15.svg'%});">
+    <div class="container space-2">
+        <div class="mb-5">
+        </div>
+        <a class="btn btn-white transition-3d-hover" href="/category/all/">{% trans "Get to know our destinations" %}</a>
+    </div>
+</div>
+<!-- End CTA Section -->
+    <!-- End Hero Section -->
+<div class="container2">
+    {% placeholder 'iframe para seccion' %}
+</div>
+<br>
+<!-- CTA -->
+<div class="gradient-overlay-half-primary-v1 bg-img-hero"
+    style="background-image: url({% static 'assets/img/1920x400/community.jpg'%});">
+    <div class="container space-2">
+        <div class="row align-items-md-center">
+            <div class="col-md-8 mb-7 mb-md-0">
+                <!-- Content -->
+                <div class="media">
+                    <span class="btn btn-lg btn-icon btn-soft-light rounded-circle mr-4">
+                        <span class="fas fa-user-friends btn-icon__inner"></span>
+                    </span>
+                    <div class="media-body">
+                        <h2 class="text-white font-weight-semi-bold">{% trans 'What Happened to' %} <span
+                                class="text-warning">{% trans 'Community'%}?</span></h2>
+                        <p class="text-white-70 mb-0"><strong class="text-white">Our Community</strong> – Discover new
+                            destinations that can seduce you and you will want to return to them.</p>
+                    </div>
+                </div>
+                <!-- End Content -->
+            </div>
+
+            <div class="col-md-4 text-md-right">
+                <!-- Button Link -->
+                <a class="btn btn-warning transition-3d-hover" href="/community/login/">
+                    {% trans "Register on our community" %}
+                    <span class="fas fa-angle-right ml-2"></span>
+                </a>
+                <!-- End Button Link -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End CTA -->
+</main>
+{% endblock content %}
