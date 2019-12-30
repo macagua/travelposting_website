@@ -106,6 +106,10 @@ class MagazineAdmin(admin.ModelAdmin):
 admin.site.register(Magazine, MagazineAdmin)
 
 
-admin.site.register(ContactUs)
+@admin.register(ContactUs)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('email', 'message', 'ip_client')
+    search_fields = ('ip_client', 'email')
+
 admin.site.register(DeleteReg)
 admin.site.register(PrivacySetting)
