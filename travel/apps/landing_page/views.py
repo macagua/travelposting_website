@@ -3,8 +3,6 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.utils import timezone
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 from django.db.models import  Max, Min
 from django.views import View
 from django.utils.translation import gettext_lazy as _
@@ -22,7 +20,7 @@ from apps.destinations.utils import get_client_ip
 from apps.accounts.models import Comment
 from apps.landing_page.forms import ContactUsForm
 from apps.landing_page.models import DeleteReg, PrivacySetting
-from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
+from easy_pdf.views import PDFTemplateView
 
 
 
@@ -32,11 +30,14 @@ class CategoriesView(View):
     """
     def get_filter_query(self, request):
         query_base = Q(is_deleted=False, is_published=True)
-        if "minPrice" in request.GET and request.GET['minPrice'] != "" and "maxPrice" in request.GET and request.GET['maxPrice'] != "":
-            query_base|= Q(details__general__regular_price__range=[request.GET['minPrice'],request.GET['maxPrice']])
 
         if "nameDestination" in request.GET and request.GET['nameDestination'] != "":
             query_base&= Q(name__contains=request.GET['nameDestination'])
+            return query_base
+
+        if "minPrice" in request.GET and request.GET['minPrice'] != "" and "maxPrice" in request.GET and request.GET['maxPrice'] != "":
+            query_base|= Q(details__general__regular_price__range=[request.GET['minPrice'],request.GET['maxPrice']])
+            return query_base
 
         if "added" in request.GET  and request.GET['added']!="":
             if request.GET['added'] == "24hrs":
@@ -44,16 +45,16 @@ class CategoriesView(View):
 
             if request.GET['added'] == "lastWeek":
                 time_ago = timezone.now()-timezone.timedelta(days=7)
-            
+
             if request.GET['added'] == "anytime":
                 time_ago =timezone.now()
-            
+
             query_base|= Q(updated_at__gte=time_ago, updated_at__lte=timezone.now())
+            return query_base
 
         if "category" in request.GET  and request.GET['category'] != "" and request.GET['category'] != "all":
             query_base&= Q(categorie__alias=request.GET['category'])
-        
-        return query_base
+            return query_base
 
     def get(self, request, *args, **kwargs):
         if  request.resolver_match.url_name =="search_category":
@@ -154,7 +155,7 @@ class DeleteRegisterView(View):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         agree = request.POST.get('check')
-        
+
         if agree==None:
             agree = False
         else:
@@ -289,7 +290,7 @@ class getItineraryPDF(PDFTemplateView):
             )
         except:
             context = super(getItineraryPDF, self).get_context_data(**kwargs)
-            
+
             return context
 
 
