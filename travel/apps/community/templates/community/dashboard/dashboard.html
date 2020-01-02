@@ -15,6 +15,61 @@
     <!-- Content Section -->
     <div class="bg-light">
         <div class="container space-2">
+
+<div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+    <!-- Card -->
+    <div class="card mb-3 mb-lg-0">
+        <div class="card-body p-5">
+            <div class="media align-items-center">
+                <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mr-4">
+                    <span class="fas fa-users btn-icon__inner"></span>
+                </span>
+                <div class="media-body">
+                    <span class="d-block font-size-3">{{ count.count }} {% trans "Peoples" %}</span>
+                    <h2 class="h6 text-secondary font-weight-normal mb-0">{% trans "Customers registered in the community" %}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <div class="card mb-3 mb-lg-0">
+        <a href="/category/all">
+        <div class="card-body p-5">
+            <div class="media align-items-center">
+                <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mr-4">
+                    <span class="fas fa-plane-departure btn-icon__inner"></span>
+                </span>
+                <div class="media-body">
+                    <span class="d-block font-size-2" style="color: black;">{{ destination.count }} {% trans "Registered" %}</span>
+                    <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "See destinations"%}</h3>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <div class="card">
+        <a href="/pricing/">
+            <div class="card-body p-5">
+                <div class="media align-items-center">
+                    <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mr-4">
+                        <span class="fas fa-euro-sign btn-icon__inner"></span>
+                    </span>
+                    <div class="media-body">
+                        <span class="d-block font-size-1" style="color: black;">{% trans "from" %} 24.99 € {% trans "Monthly" %}</span>
+                        <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "see Pricing" %}</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- End Card -->
+</div>
+
             <div class="row justify-content-between align-items-center mb-4">
                 <!-- Title -->
                 <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">

@@ -171,7 +171,10 @@ class DashboardCommunity(View):
         page = request.GET.get('page')
         members = paginator.get_page(page)
 
-        return render(request, 'community/dashboard/dashboard.html', {'members': members, 'count': count})
+        destination = Destination.objects.filter(
+            is_deleted=False, is_published=True)
+
+        return render(request, 'community/dashboard/dashboard.html', {'members': members, 'count': count, 'destination': destination})
 
 
 
