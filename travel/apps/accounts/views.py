@@ -51,9 +51,14 @@ class LoginView(View):
         password = request.POST.get('password')
         user = authenticate(username=user, password=password)
 
-        if user is not None and user.is_community ==False:
+        if user is not None and user.is_community==False:
             login(request, user)
             return redirect(reverse('destinations:dashboard-index'))
+
+        elif user is not None and user.is_community==True:
+            login(request, user)
+            return redirect(reverse('dashboard-community'))
+            
         else:
             errors =  _('An error, Incorrect User or Password has occurred.')
 

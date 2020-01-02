@@ -21,11 +21,11 @@ from apps.community import views
 
 urlpatterns = [
     path('', CommmunityView.as_view(), name='index'),
-    path(
-        'login/',
-        LoginCommunity.as_view(),
-        name='login-community',
-    ),
+    #path(
+    #    'login/',
+    #    LoginCommunity.as_view(),
+    #    name='login-community',
+    #),
     path(
         'signup/',
         signupCommunity.as_view(),
