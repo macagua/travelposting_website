@@ -67,15 +67,12 @@
                         </div>
                         {% endfor %}
                         <a class="link-muted text-capitalize font-weight-normal small" href="{% url 'accounts:password-reset' %}">Forgot Password?</a>
-                        <br><a class="link-muted text-capitalize font-weight-normal small" href="{% url 'signup-community' %}">
-                            sign up for our community
-                            </a>
 
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
                             <div class="col-6">
                                 <span class="small text-muted">{% trans 'Don\'t have an account?' %}</span>
-                                <a class="small" href="{% url 'accounts:register' %}">{% trans 'Signup' %}</a>
+                                <a class="small" href="/pre-register/">{% trans 'Signup' %}</a>
                             </div>
                             <div class="col-6 text-right">
                                 <button type="submit" class="btn btn-primary transition-3d-hover">{% trans 'Login' %}</button>

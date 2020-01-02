@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% block title %}{% trans 'About us' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<!-- Hero Section -->
+<br><br><br><br><br>
+<div id="SVGheroBottomShape" class="svg-preloader position-relative gradient-half-primary-v5 z-index-2 overflow-hidden">
+    <div class="container space-top-2 space-top-md-3">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+            <h1 class="display-4 font-size-md-down-5 text-white">Travel<strong class="font-weight-semi-bold">posting</strong></h1>
+
+            <p class="lead text-white-70">{% trans "Please select a registration type."%}</p>
+        </div>
+        <!-- End Title -->
+
+        <!-- Slick Carousel -->
+        <div class="js-slick-carousel u-slick u-slick--gutters-3 z-index-2" data-slides-show="5" data-slides-scroll="1"
+            data-pagi-classes="d-lg-none text-center u-slick__pagination mt-7 mb-0" data-responsive='[{
+           "breakpoint": 1200,
+           "settings": {
+             "slidesToShow": 4
+           }
+         }, {
+           "breakpoint": 992,
+           "settings": {
+             "slidesToShow": 3
+           }
+         }, {
+           "breakpoint": 768,
+           "settings": {
+             "slidesToShow": 2
+           }
+         }, {
+           "breakpoint": 480,
+           "settings": {
+             "slidesToShow": 1
+           }
+         }]'>
+
+
+            <div class="">
+                <!-- Icon Block -->
+                <article class="card border-0 shadow-sm transition-3d-hover mb-4">
+                    <div class="card-body bg-primary rounded-top p-5">
+                        <div class="u-avatar bg-white rounded p-2 mx-auto">
+                            <i class="fas fa-users img-fluid" style="font-size: 1.8rem; color: #2f2f2f;"></i>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <h2 class="h6 mb-0">{% trans "Our Community"%}</h2><br>
+                        </div>
+                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'signup-community'%}">{% trans "Go it" %}</a>
+                    </div>
+                </article>
+                <!-- End Icon Block -->
+            </div>
+
+            <div class="">
+                <!-- Icon Block -->
+                <article class="card border-0 shadow-sm transition-3d-hover mb-4">
+                    <div class="card-body bg-success rounded-top p-5">
+                        <div class="u-avatar bg-white rounded p-2 mx-auto">
+                            <i class="fas fa-user-shield img-fluid" style="font-size: 1.8rem; color: #2f2f2f;"></i>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <h2 class="h6 mb-0">{% trans "Suppliers or companies"%}</h2>
+                        </div>
+                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'accounts:register'%}">{% trans "Go it" %}</a>
+                    </div>
+                </article>
+                <!-- End Icon Block -->
+            </div>
+
+
+
+
+        </div>
+        <!-- End Slick Carousel -->
+    </div>
+
+    <!-- SVG Bottom Shape -->
+    <figure class="position-absolute right-0 bottom-0 left-0">
+        <img class="js-svg-injector" src="{% static 'assets/svg/components/irregular-shape-1-bottom.svg'%}"
+            alt="Image Description" data-parent="#SVGheroBottomShape">
+    </figure>
+    <!-- End SVG Bottom Shape -->
+
+    <!-- SVG Background Element -->
+    <figure class="position-absolute top-0 right-0 left-0 z-index-n1">
+        <img class="js-svg-injector" src="{% static 'assets/svg/components/bg-elements-9.svg' %}" alt="Image Description"
+            data-parent="#SVGheroBottomShape">
+    </figure>
+    <!-- End SVG Background Element -->
+</div>
+<!-- End Hero Section -->
+
+<!-- Subscribe Section -->
+<div class="space-1">
+    <div class="bg-img-hero" style="background-image: url({% static 'assets/img/bg-shapes/bg5.png' %});">
+        <div class="container space-2 space-bottom-lg-3">
+            <!-- Title -->
+            <div class="w-md-60 text-center mx-auto mb-7">
+                <p>{% placeholder "acerca del registro"%}</p>
+            </div>
+            <!-- End Title -->
+        </div>
+    </div>
+</div>
+{% endblock content %}

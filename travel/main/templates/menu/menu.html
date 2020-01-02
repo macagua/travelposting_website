@@ -6,7 +6,7 @@
             <a class="nav-link u-header__nav-link" href="{% url 'accounts:login' %}">{% trans "Ingresa" %}</a>
         </li>
         <li class="nav-item u-header__nav-item d-block d-sm-none">
-            <a class="nav-link u-header__nav-link" href="{% url 'accounts:register' %}">{% trans "Register" %}</a>
+            <a class="nav-link u-header__nav-link" href="/pre-register/">{% trans "Register" %}</a>
         </li>
         {% for child in children %}
         <!-- no child pages  -->
@@ -55,8 +55,8 @@
         </li>
         {% if request.user.is_authenticated != True and request.path == '/es/community/' or request.path == '/en/community/' or request.path == '/de/community/'%}
         <li class="nav-item u-header__nav-last-item">
-            <a class="btn btn-sm btn-success transition-3d-hover" style="font-size: 12px;" href="{% url 'signup-community' %}">
-                {% trans 'SignUp on community' %}
+            <a class="btn btn-sm btn-success transition-3d-hover" style="font-size: 12px;" href="/pre-register/">
+                {% trans 'SignUp' %}
             </a>
         </li>
         <li class="nav-item u-header__nav-last-item">
@@ -69,7 +69,7 @@
 
         {% else %}
         <li class="nav-item u-header__nav-last-item">
-            <a class="btn btn-sm btn-success transition-3d-hover" href="{% url 'accounts:register' %}">
+            <a class="btn btn-sm btn-success transition-3d-hover" href="/pre-register/">
             {% trans 'SignUp' %}
             </a>
         </li>
