@@ -362,11 +362,11 @@ class MakeRecomendationView(View):
         message = _(
             f'if you want see the admin site https://travelposting.com/admin/ ')
 
-        mail_managers(subject,
-                      message,
-                      fail_silently=True,
-                      html_message=html_message
-                      )
+        #mail_managers(subject,
+        #              message,
+        #              fail_silently=True,
+        #              html_message=html_message
+        #              )
 
         send_mail(
             subject,
