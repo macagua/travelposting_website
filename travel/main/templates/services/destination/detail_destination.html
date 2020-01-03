@@ -296,9 +296,12 @@
                 <button type="button" class="btn btn-block btn-secondary btn-pill transition-3d-hover reserve" data-toggle="modal" data-target=".bd-example-modal-lg">
                     {% trans "Add comment" %}
                 </button>
+                <a type="button" href="{% url 'make-recomm' destino.id %}" class="btn btn-block btn-success btn-pill transition-3d-hover">{% trans "Make a recommendation" %}</a>
 
                 {% endif %}
+
                 <button type="button"  data-toggle="modal" data-target="#BookModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
+
             </div>
         </div>
         <!-- End Product Description -->

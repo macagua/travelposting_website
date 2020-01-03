@@ -32,7 +32,7 @@ from django.template.loader import render_to_string
 from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.core.paginator import Paginator  # < Import the Paginator class
-
+from .models import Recommendation
 
 
 def ajax_required(f):
@@ -317,3 +317,65 @@ class CommentRwSaveView(View):
         )
 
         return redirect(reverse('view_detail_destination', kwargs={'slug': destination_id}))
+
+
+class MakeRecomendationView(View):
+    def get(self, request, *args, **kwargs):
+        id_destination = Destination.objects.get(id=kwargs.get('slug'))
+        return render(request, 'community/dashboard/make_recomm.html', {'id_destination': id_destination})
+
+    def post(self, request, *args, **kwargs):
+
+        usuario = request.POST.get('usuario')
+        destino = request.POST.get('destino')
+        recomendacion1 = request.POST.get('recomendacion1')
+        recomendacion2 = request.POST.get('recomendacion2')
+
+        if destino == '':
+            dest = None
+        else:
+            dest = Destination.objects.get(id=destino)
+
+        user = CustomerUser.objects.get(id=usuario)
+
+        Recommendation.objects.create(
+            destino=dest,
+            user_recommendation=user,
+            recommendation=recomendacion1,
+            recommendation2=recomendacion2,
+        )
+
+        subject = _('New comment add')
+
+        ctx = {
+            'dest':  dest,
+            'user_recommendation': user,
+            'recomendacion1': recomendacion1,
+            'recomendacion2': recomendacion2,
+        }
+
+        html_message = render_to_string(
+            'community/dashboard/_recommendation.html',
+            context=ctx
+        )
+
+        message = _(
+            f'if you want see the admin site https://travelposting.com/admin/ ')
+
+        mail_managers(subject,
+                      message,
+                      fail_silently=True,
+                      html_message=html_message
+                      )
+
+        send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [dest.user.email],
+            fail_silently=False,
+            html_message=html_message
+        )
+
+        return redirect(reverse('view_detail_destination', kwargs={'slug': destino}))
+

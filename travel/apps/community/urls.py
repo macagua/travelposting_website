@@ -14,7 +14,8 @@ from apps.community.views import (
     DetailProfileView,
     heartView,
     CommentSaveView,
-    CommentRwSaveView
+    CommentRwSaveView,
+    MakeRecomendationView
     )
 
 from apps.community import views
@@ -75,5 +76,11 @@ urlpatterns = [
     url(r'^dashboard/(?P<slug>\w+)',
         DetailProfileView.as_view(),
         name='profile_detail',
+    ),
+
+    url(
+        r'^make/(?P<slug>\w+)',
+        MakeRecomendationView.as_view(),
+        name='make-recomm',
     ),
 ]

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{%load destinations_tags%}
+{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<br><br><br><br>
+<main id="content" role="main">
+    <!-- Breadcrumb Section -->
+    {% include 'community/dashboard/breadcrumb.html'%}
+    <!-- Contacts Form -->
+    <div class="container space-bottom-2">
+        <br>
+        <h1 class="h5">{% trans "Hi" %} {{ request.user }}, {% trans "Do you want to make a recommendation?" %}</h1>
+        <div class="card bg-light p-5">
+        <form class="js-validate" method="POST">{% csrf_token %}
+            <input type="hidden" name="usuario" value="{{ request.user.id }}">
+            <input type="hidden" name="destino" value="{{ id_destination.id }}">
+                <!-- Input -->
+                <div class="js-form-message mb-6">
+                    <label class="form-label">
+                        {% trans "Would you recommend this trip again?" %}
+                        <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                        <textarea class="form-control" rows="4" name="recomendacion1" placeholder="{% trans 'Hi there, I would like to ...'%}"
+                            aria-label="{% trans 'Hi there, I would like to ...'%}" required data-msg="{% trans 'Please enter a reason.'%}"
+                            data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
+                    </div>
+                </div>
+                <div class="js-form-message mb-6">
+                    <label class="form-label">
+                        {% trans "Do you think we should get better?" %}
+                        <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                        <textarea class="form-control" rows="4" name="recomendacion2" placeholder="{% trans 'Hi there, I would like to ...'%}"
+                            aria-label="{% trans 'Hi there, I would like to ...'%}" required
+                            data-msg="{% trans 'Please enter a reason.'%}" data-error-class="u-has-error"
+                            data-success-class="u-has-success"></textarea>
+                    </div>
+                </div>
+                <!-- End Input -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-wide transition-3d-hover mb-4">{% trans "Submit" %}</button>
+                </div>
+        </form>
+        </div>
+    </div>
+    <!-- End Contacts Form -->
+</main>
+{% endblock content %}
