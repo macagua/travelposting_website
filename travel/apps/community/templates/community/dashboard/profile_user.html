@@ -35,14 +35,14 @@
                             </div>
 
                             <div class="mb-2">
-                                <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+                                <button class="btn btn-sm btn-soft-primary transition-3d-hover" data-toggle="modal" data-target=".bd-example-modal-lg" >
                                     <span class="far fa-envelope mr-2"></span>
-                                    Send a Message
-                                </a>
+                                    {% trans "Send a Message" %}
+                                </button>
                             </div>
 
                             <a class="text-secondary small" href="#">
-                                <i class="far fa-flag mr-1"></i> Report this user
+                                <i class="far fa-flag mr-1"></i> {% trans "Report this user" %}
                             </a>
                         </div>
                     </div>
@@ -273,4 +273,37 @@
     <!-- End Content Section -->
 </main>
 
+
+<!-- the modal-->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form method="POST" action="{% url 'send-messages' %}">{% csrf_token %}
+                <input type="hidden" name="recipient" value="{{ members.id}}">
+                <input type="hidden" name="sender" value="{{ request.user.id }}">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Send message to" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" placeholder='{% trans "Recipient:" %} {{members.get_full_name }}' class="form-control input-group-pill mb-2" aria-label="Readonly" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">{% trans "Message" %}:</label>
+                    <textarea class="form-control input-group-pill mb-2 " name="message"  id="message-text"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Cancel" %}</button>
+                <button type="submit" class="btn btn-primary">{% trans "Send" %}</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- end the modal-->
 {% endblock content%}

@@ -64,6 +64,11 @@ urlpatterns += i18n_patterns(
         include("apps.accounts.urls", namespace='accounts'),
     ),
 
+    path(
+        'directmessages/',
+        include("apps.directmessages.urls")
+    ),
+
     url(
         r'^category/destination/(?P<slug>\w+)',
         DetailDestinationView.as_view(),
