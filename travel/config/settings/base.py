@@ -244,6 +244,7 @@ LOCAL_APPS = [
     'apps.destinations',
     'apps.api',
     'apps.community',
+    'apps.directmessages',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
