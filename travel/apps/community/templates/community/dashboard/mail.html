@@ -12,6 +12,13 @@
     {% include 'community/dashboard/breadcrumb.html'%}
     <div class="bg-light">
         <div class="container space-2">
+            {% if text %}
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">{% trans "Well done!"%} </h4>
+                <p class="alert-text">{{ text }}</p>
+                <hr />
+            </div>
+            {% endif %}
             <div class="card">
                 <div class="card-body p-4">
                     <!-- Nav -->
@@ -64,6 +71,12 @@
                                                         aria-label="{% trans 'Search received messages'%}"
                                                         aria-describedby="searchActivities">
                                                 </div>
+                                                <!-- End Search -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex float-right">
+                                                <button type="button" class="btn btn-soft-primary btn-sm" data-toggle="modal" data-target=".compose-modal-new"> <i class="fas fa-plus"></i> {% trans "Compose" %}</button>
                                                 <!-- End Search -->
                                             </div>
                                         </div>
@@ -267,10 +280,10 @@
                                     <div class="table-responsive-md u-datatable">
                                         <table
                                             class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5"
-                                            data-dt-info="#datatableInfo" data-dt-search="#datatableSearchSent" data-dt-entries="#datatableEntries"
+                                            data-dt-info="#datatableInfo2" data-dt-search="#datatableSearchSent" data-dt-entries="#datatableEntries"
                                             data-dt-page-length="12" data-dt-is-responsive="false" data-dt-is-show-paging="true"
                                             data-dt-details-invoker=".js-datatabale-details" data-dt-select-all-control="#invoiceToggleAllCheckbox"
-                                            data-dt-pagination="datatablePagination" data-dt-pagination-classes="pagination mb-0"
+                                            data-dt-pagination="datatablePagination2" data-dt-pagination-classes="pagination mb-0"
                                             data-dt-pagination-items-classes="page-item" data-dt-pagination-links-classes="page-link"
                                             data-dt-pagination-next-classes="page-item" data-dt-pagination-next-link-classes="page-link"
                                             data-dt-pagination-next-link-markup='<span aria-hidden="true">»</span>'
@@ -362,8 +375,8 @@
                                     <!-- End Activity Table -->
                                     <!-- Pagination -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <nav id="datatablePagination" aria-label="Activity pagination"></nav>
-                                        <small id="datatableInfo" class="text-secondary"></small>
+                                        <nav id="datatablePagination2" aria-label="Activity pagination"></nav>
+                                        <small id="datatableInfo2" class="text-secondary"></small>
                                         <!-- End Pagination -->
                                     </div>
                                 </div>
@@ -380,4 +393,59 @@
 </main>
 
 
+<!-- the modal-->
+<div class="modal fade compose-modal-new" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form method="POST" action="{% url 'send-messages' %}">{% csrf_token %}
+                <input type="hidden" name="sender" value="{{ request.user.id }}">
+                <div class="modal-header">
+                    <h5 class="modal-title">{% trans "Send message to" %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <select name="recipient" class="form-control form-control-sm js-example-basic-single f">
+                            <option>{% trans "Please Select a user" %}</option>
+                            {% for u in user %}
+                            <option value="{{ u.id }} ">{{ u.get_full_name }}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">{% trans "Subject" %}:</label>
+
+                        <input type="text" name="subject" placeholder='{% trans "Subject" %}'
+                            class="form-control input-group-pill mb-2">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">{% trans "Message" %}:</label>
+                        <textarea class="form-control input-group-pill mb-2 " name="message"
+                            id="message-text"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Cancel" %}</button>
+                    <button type="submit" class="btn btn-primary">{% trans "Send" %}</button>
+                </div>
+
+        </div>
+    </div>
+</div>
+<!-- end the modal-->
+
 {% endblock content %}
+{% block extrajs %}
+<script>
+    $(document).ready(function () {
+        $('.js-example-basic-single').select2({
+            theme: 'bootstrap4',
+            placeholder: "Select a state"
+        });
+    });
+</script>
+{% endblock extrajs%}

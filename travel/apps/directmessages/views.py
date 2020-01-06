@@ -51,11 +51,17 @@ class sendViews(View):
 
         text = _("Your message has been sent successfully")
 
-        return redirect(reverse('profile_detail', kwargs={'slug': recipient.id}))
+        #return redirect(reverse('profile_detail', kwargs={'slug': recipient.id}))
+        recipient = Message.objects.filter(recipient=request.user)
+        sender = Message.objects.filter(sender=request.user)
+        user = CustomerUser.objects.filter(is_community=True)
+
+        return render(request, 'community/dashboard/mail.html', {'recipient': recipient, 'sender': sender, 'user': user, 'text':text})
 
 
 class InboxView(View):
     def get(self, request, *args, **kwargs):
         recipient = Message.objects.filter(recipient=request.user)
         sender = Message.objects.filter(sender=request.user)
-        return render(request, 'community/dashboard/mail.html', {'recipient':recipient, 'sender':sender})
+        user = CustomerUser.objects.filter(is_community=True)
+        return render(request, 'community/dashboard/mail.html', {'recipient':recipient, 'sender':sender, 'user':user})
