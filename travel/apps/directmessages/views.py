@@ -24,6 +24,8 @@ from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext as _
 from .models import Message
 from .signals import message_read, message_sent
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
 
 
 class sendViews(View):
@@ -50,6 +52,29 @@ class sendViews(View):
             sender=message, from_user=message.sender, to=message.recipient)
 
         text = _("Your message has been sent successfully")
+
+        subject = _('You have a new message')
+
+        ctx = {
+            'sender':  sender,
+        }
+        html_message = render_to_string(
+            'community/dashboard/_email_inbox.html',
+            context=ctx
+        )
+
+        message = _(
+            f'if you want see the admin site https://travelposting.com/admin/ ')
+
+
+        send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [recipient.email],
+            fail_silently=False,
+            html_message=html_message
+        )
 
         #return redirect(reverse('profile_detail', kwargs={'slug': recipient.id}))
         recipient = Message.objects.filter(recipient=request.user)
