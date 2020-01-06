@@ -10,6 +10,7 @@ from apps.accounts.models import CustomerUser
 
 #A private directmessage
 class Message(models.Model):
+    subject = models.CharField('Subject', blank=False, null=False, max_length=1000)
     content = models.TextField(_('Content'))
     sender = models.ForeignKey(
         CustomerUser, related_name='sent_dm', verbose_name=_("Sender"), on_delete=models.CASCADE)

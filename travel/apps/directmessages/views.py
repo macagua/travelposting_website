@@ -28,6 +28,7 @@ from .signals import message_read, message_sent
 
 class sendViews(View):
     def post(self, request, *args, **kwargs):
+        subject = request.POST.get("subject")
         sender = request.POST.get("sender")
         recipient = request.POST.get("recipient")
         content = request.POST.get("message")
@@ -41,6 +42,7 @@ class sendViews(View):
         message = Message(
                         sender=sender, 
                         recipient=recipient,
+                        subject=subject,
                         content=content)
         message.save()
 
@@ -52,3 +54,8 @@ class sendViews(View):
         return redirect(reverse('profile_detail', kwargs={'slug': recipient.id}))
 
 
+class InboxView(View):
+    def get(self, request, *args, **kwargs):
+        recipient = Message.objects.filter(recipient=request.user)
+        sender = Message.objects.filter(sender=request.user)
+        return render(request, 'community/dashboard/mail.html', {'recipient':recipient, 'sender':sender})

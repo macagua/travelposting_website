@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% load mathfilters %}
+{% load destinations_tags%}
+{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+<br><br><br><br>
+<main id="content" role="main">
+    {% include 'community/dashboard/breadcrumb.html'%}
+    <div class="bg-light">
+        <div class="container space-2">
+            <div class="card">
+                <div class="card-body p-4">
+                    <!-- Nav -->
+                    <div class="row justify-content-between align-items-center mb-4">
+                        <div class="col-md-5 order-md-2 text-md-right mb-3 mb-md-0">
+                            <!-- End Select -->
+                        </div>
+                        <div class="col-md-7 order-md-1">
+                            <!-- Nav Classic -->
+                            <ul class="nav nav-classic nav-borderless px-0" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-one-tab" data-toggle="pill" href="#pills-one"
+                                        role="tab" aria-controls="pills-one" aria-selected="true">{% trans "Inbox"%}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-two-tab" data-toggle="pill" href="#pills-two"
+                                        role="tab" aria-controls="pills-two"
+                                        aria-selected="false">{% trans "Sent" %}</a>
+                                </li>
+                            </ul>
+                            <!-- End Nav Classic -->
+                        </div>
+                    </div>
+                    <!-- End Nav -->
+                    <!-- Datatable -->
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- Content One -->
+                        <div class="tab-pane fade active show" id="pills-one" role="tabpanel"
+                            aria-labelledby="pills-one-tab">
+                            <!-- Transaction Table -->
+                            <div class="card">
+                                <div class="card-header py-4 px-0 mx-4">
+                                    <!-- Activity Menu -->
+                                    <div class="row justify-content-sm-between align-items-sm-center">
+                                        <div class="col-md-6">
+                                            <div class="d-flex">
+                                                <!-- Search -->
+                                                <div class="js-focus-state input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="searchActivities">
+                                                            <span class="fas fa-search"></span>
+                                                        </span>
+                                                    </div>
+                                                    <input id="datatableSearch" type="email" class="form-control"
+                                                        placeholder="{% trans 'Search received messages'%}"
+                                                        aria-label="{% trans 'Search received messages'%}"
+                                                        aria-describedby="searchActivities">
+                                                </div>
+                                                <!-- End Search -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Activity Menu -->
+                                </div>
+                                <div class="card-body p-4">
+                                    <!-- Activity Table -->
+                                    <div class="table-responsive-md u-datatable">
+                                        <table
+                                            class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5"
+                                            data-dt-info="#datatableInfo" data-dt-search="#datatableSearch"
+                                            data-dt-entries="#datatableEntries" data-dt-page-length="12"
+                                            data-dt-is-responsive="false" data-dt-is-show-paging="true"
+                                            data-dt-details-invoker=".js-datatabale-details"
+                                            data-dt-select-all-control="#invoiceToggleAllCheckbox"
+                                            data-dt-pagination="datatablePagination"
+                                            data-dt-pagination-classes="pagination mb-0"
+                                            data-dt-pagination-items-classes="page-item"
+                                            data-dt-pagination-links-classes="page-link"
+                                            data-dt-pagination-next-classes="page-item"
+                                            data-dt-pagination-next-link-classes="page-link"
+                                            data-dt-pagination-next-link-markup='<span aria-hidden="true">»</span>'
+                                            data-dt-pagination-prev-classes="page-item"
+                                            data-dt-pagination-prev-link-classes="page-link"
+                                            data-dt-pagination-prev-link-markup='<span aria-hidden="true">«</span>'>
+                                            <thead>
+                                                <tr class="text-uppercase font-size-1">
+                                                    <th scope="col" class="font-weight-medium">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            {% trans "From to" %}
+                                                            <div class="ml-2">
+                                                                <span
+                                                                    class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span
+                                                                    class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col" class="font-weight-medium">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            {% trans "Subject" %}
+                                                            <div class="ml-2">
+                                                                <span
+                                                                    class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span
+                                                                    class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col" class="font-weight-medium">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            {% trans "Date" %}
+                                                            <div class="ml-2">
+                                                                <span
+                                                                    class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span
+                                                                    class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody class="font-size-1">
+                                                {% for r in recipient %}
+                                                <tr class="js-datatabale-details" data-details='
+                                                    <div class="border rounded p-5">
+                                                    <h4 class="h3">{{ r.subject }}</h4>
+                                                    <div class="row mb-6">
+                                                    <div class="col-6">
+                                                    <span class="text-secondary">{% trans "Sent" %}:</span>
+                                                    <span class="font-weight-medium">{{ r.sent_at }}</span>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                    <span class="text-secondary">{% trans "Sender"%}:</span>
+                                                    <span class="font-weight-medium">{{ r.sender.get_full_name }}</span>
+                                                    </div>
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                                    <h5 class="text-dark font-size-1 text-uppercase">{% trans "Content"%}:</h5>
+                                                    <address class="text-secondary">
+                                                        <p>{{ r.content }}</p>
+                                                    </address>
+                                                    </div>
+
+                                                    </div>
+                                                    
+                                                    <ul class="list-inline mb-0">
+                                                    <li class="list-inline-item u-ver-divider pr-3 mr-3">
+                                                    <a href="#">
+                                                    
+                                                    </a>
+                                                    </li>
+
+                                                    </ul>
+                                                    </div>'>
+                                                    <td
+                                                        class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">
+                                                        {{r.sender }}</td>
+                                                    <td class="align-middle">
+                                                        <div class="media align-items-center">
+                                                            <span
+                                                                class="btn btn-sm btn-icon btn-soft-success rounded-circle mr-2">
+                                                                <span
+                                                                    class="btn-icon__inner font-weight-medium"></span>
+                                                            </span>
+                                                            <span>{{ r.subject }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="align-middle text-secondary">{{ r.sent_at }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- End Activity Table -->
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                                        <small id="datatableInfo" class="text-secondary"></small>
+                                    <!-- End Pagination -->
+                                </div>
+                            </div>
+                            <!-- End Transaction Table -->
+                            </div>
+                        </div>
+                        <!-- End Content One -->
+                        <!-- Content Two -->
+                        <div class="tab-pane fade" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
+                            <div class="card">
+                                <div class="card-header py-4 px-0 mx-4">
+                                    <!-- Activity Menu -->
+                                    <div class="row justify-content-sm-between align-items-sm-center">
+                                        <div class="col-md-6">
+                                            <div class="d-flex">
+                                                <!-- Search -->
+                                                <div class="js-focus-state input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="searchActivities">
+                                                            <span class="fas fa-search"></span>
+                                                        </span>
+                                                    </div>
+                                                    <input id="datatableSearchSent" type="email" class="form-control"
+                                                        placeholder="{% trans 'Search sent messages'%}"
+                                                        aria-label="{% trans 'Search sent messages'%}" aria-describedby="searchActivities">
+                                                </div>
+                                                <!-- End Search -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Activity Menu -->
+                                </div>
+                                <div class="card-body p-4">
+                                    <!-- Activity Table -->
+                                    <div class="table-responsive-md u-datatable">
+                                        <table
+                                            class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5"
+                                            data-dt-info="#datatableInfo" data-dt-search="#datatableSearchSent" data-dt-entries="#datatableEntries"
+                                            data-dt-page-length="12" data-dt-is-responsive="false" data-dt-is-show-paging="true"
+                                            data-dt-details-invoker=".js-datatabale-details" data-dt-select-all-control="#invoiceToggleAllCheckbox"
+                                            data-dt-pagination="datatablePagination" data-dt-pagination-classes="pagination mb-0"
+                                            data-dt-pagination-items-classes="page-item" data-dt-pagination-links-classes="page-link"
+                                            data-dt-pagination-next-classes="page-item" data-dt-pagination-next-link-classes="page-link"
+                                            data-dt-pagination-next-link-markup='<span aria-hidden="true">»</span>'
+                                            data-dt-pagination-prev-classes="page-item" data-dt-pagination-prev-link-classes="page-link"
+                                            data-dt-pagination-prev-link-markup='<span aria-hidden="true">«</span>'>
+                                            <thead>
+                                                <tr class="text-uppercase font-size-1">
+                                                    <th scope="col" class="font-weight-medium">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            {% trans "To" %}
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col" class="font-weight-medium">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            {% trans "Subject" %}
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col" class="font-weight-medium">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            {% trans "Date" %}
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                            
+                                                </tr>
+                                            </thead>
+                                            <tbody class="font-size-1">
+                                                {% for e in sender %}
+                                                <tr class="js-datatabale-details" data-details='
+                                                                                <div class="border rounded p-5">
+                                                                                <h4 class="h3">{{ e.subject }}</h4>
+                                                                                <div class="row mb-6">
+                                                                                <div class="col-6">
+                                                                                <span class="text-secondary">{% trans "Sent" %}:</span>
+                                                                                <span class="font-weight-medium">{{ e.sent_at }}</span>
+                                                                                </div>
+                            
+                                                                                <div class="col-6">
+                                                                                <span class="text-secondary">{% trans "Recipient"%}:</span>
+                                                                                <span class="font-weight-medium">{{ e.recipient.get_full_name }}</span>
+                                                                                </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                                                                <h5 class="text-dark font-size-1 text-uppercase">{% trans "Content"%}:</h5>
+                                                                                <address class="text-secondary">
+                                                                                    <p>{{ e.content }}</p>
+                                                                                </address>
+                                                                                </div>
+                            
+                                                                                </div>
+                                                                                
+                                                                                <ul class="list-inline mb-0">
+                                                                                <li class="list-inline-item u-ver-divider pr-3 mr-3">
+                                                                                <a href="#">
+                                                                                
+                                                                                </a>
+                                                                                </li>
+                            
+                                                                                </ul>
+                                                                                </div>'>
+                                                    <td class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">
+                                                        {{e.recipient }}</td>
+                                                    <td class="align-middle">
+                                                        <div class="media align-items-center">
+                                                            <span class="btn btn-sm btn-icon btn-soft-success rounded-circle mr-2">
+                                                                <span class="btn-icon__inner font-weight-medium"></span>
+                                                            </span>
+                                                            <span>{{ e.subject }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="align-middle text-secondary">{{ e.sent_at }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- End Activity Table -->
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                                        <small id="datatableInfo" class="text-secondary"></small>
+                                        <!-- End Pagination -->
+                                    </div>
+                                </div>
+                                <!-- End Transaction Table -->
+                            </div>
+                        </div>
+                        <!-- End Content Two -->
+                    </div>
+                    <!-- End Datatable -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

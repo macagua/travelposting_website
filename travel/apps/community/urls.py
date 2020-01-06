@@ -15,8 +15,12 @@ from apps.community.views import (
     heartView,
     CommentSaveView,
     CommentRwSaveView,
-    MakeRecomendationView
-    )
+    MakeRecomendationView,
+)
+
+from apps.directmessages.views import (
+    InboxView,
+)
 
 from apps.community import views
 
@@ -41,6 +45,12 @@ urlpatterns = [
         'dashboard/',
         login_required(DashboardCommunity.as_view()),
         name='dashboard-community',
+    ),
+
+    path(
+        'inbox/',
+        login_required(InboxView.as_view()),
+        name='inbox-community',
     ),
 
     path(

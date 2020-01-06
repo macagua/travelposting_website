@@ -132,6 +132,8 @@
         <script src="{% static 'assets/vendor/custombox/dist/custombox.min.js' %}"></script>
         <script src="{% static 'assets/vendor/custombox/dist/custombox.legacy.min.js' %}"></script>
         <script src="{% static 'assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/datatables/media/js/jquery.dataTables.min.js'%}"></script>
+        <script src="{% static 'assets/js/components/hs.datatables.js'%}"></script>
 
         <!-- JS Plugins Init. -->
         <script>
@@ -177,6 +179,10 @@
 
               // initialization of go to
               $.HSCore.components.HSGoTo.init('.js-go-to');
+
+              // initialization of datatable
+              $.HSCore.components.HSDatatables.init('.js-datatable');
+
 
             </script>
 
