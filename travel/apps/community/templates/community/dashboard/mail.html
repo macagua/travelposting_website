@@ -152,8 +152,9 @@
                                                     
                                                     <ul class="list-inline mb-0">
                                                     <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                                                    <a href="#">
-                                                    
+                                                    <a data-toggle="modal" data-target=".bd-example-modal-lg" >
+                                                        <i class="fas fa-reply"></i>
+                                                        {% trans "Reply" %}
                                                     </a>
                                                     </li>
 
@@ -161,7 +162,7 @@
                                                     </div>'>
                                                     <td
                                                         class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">
-                                                        {{r.sender }}</td>
+                                                        {{r.sender.get_full_name }}</td>
                                                     <td class="align-middle">
                                                         <div class="media align-items-center">
                                                             <span
@@ -174,6 +175,48 @@
                                                     </td>
                                                     <td class="align-middle text-secondary">{{ r.sent_at }}</td>
                                                 </tr>
+                                                <!-- the modal-->
+                                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-content">
+                                                            <form method="POST" action="{% url 'send-messages' %}">{% csrf_token %}
+                                                                <input type="hidden" name="recipient" value="{{ r.sender.id}}">
+                                                                <input type="hidden" name="sender" value="{{ request.user.id }}">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title">{% trans "Send message to" %}</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="form-group">
+                                                                        <input type="text" placeholder='{% trans "to:" %} {{r.sender.get_full_name }}'
+                                                                            class="form-control input-group-pill mb-2" aria-label="Readonly" readonly>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="message-text" class="col-form-label">{% trans "Subject" %}:</label>
+
+                                                                        <input type="text" name="subject" placeholder='{% trans "Subject" %}'
+                                                                            class="form-control input-group-pill mb-2" value="Rw {{ r.subject }}: ">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="message-text" class="col-form-label">{% trans "Message" %}:</label>
+                                                                        <textarea class="form-control input-group-pill mb-2 " name="message"
+                                                                            id="message-text"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Cancel" %}</button>
+                                                                    <button type="submit" class="btn btn-primary">{% trans "Send" %}</button>
+                                                                </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end the modal-->
+
+
                                                 {% endfor %}
                                             </tbody>
                                         </table>
@@ -331,4 +374,6 @@
         </div>
     </div>
 </main>
+
+
 {% endblock content %}
