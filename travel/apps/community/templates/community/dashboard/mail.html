@@ -405,6 +405,41 @@
             </div>
         </div>
     </div>
+    <div class="container2">
+        <hr>
+        <h1 class="h3 font-weight-medium">{% trans "Our destinations"%}</h1>
+<div class="row">
+    {% for destino in destino %}
+    <div class="col-md-4">
+        <!-- Blog Card -->
+        {% for foto in destino.photos %}
+        {% if forloop.counter == 1 %}
+        <a href="{% url 'view_detail_destination' destino.id %}">
+        <article
+            class="d-flex align-items-start flex-wrap height-380 gradient-overlay-half-dark-v2 bg-img-hero rounded-pseudo transition-3d-hover p-5 mt-1"
+            style="background-image: url(/main/media/{{foto.image}});">
+            {% endif %}
+            {% endfor %}
+            <header class="w-100 d-flex justify-content-between mb-3">
+                <small class="d-block text-white-70">{{destino.list_prices.sale_price}}</small>
+            </header>
+
+            <!-- Info -->
+            <div class="mt-auto">
+                <h2 class="h5 text-white">
+                    <a href="{% url 'view_detail_destination' destino.id %}">{{ destino.name }}</a>
+                </h2>
+                <p class="text-white-70 mb-0">{{ destino.short_description|striptags | truncatechars:120 }}</p>
+            </div>
+            <!-- End Info -->
+        </article>
+        </a>
+        <!-- End Blog Card -->
+    </div>
+    {% endfor %}
+</div>
+<br>
+    </div>
 </main>
 
 

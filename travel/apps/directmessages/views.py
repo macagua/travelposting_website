@@ -28,6 +28,11 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.utils import timezone
+from apps.destinations.models import (
+    Destination,
+
+)
+
 
 class sendViews(View):
     def post(self, request, *args, **kwargs):
@@ -90,7 +95,10 @@ class InboxView(View):
         recipient = Message.objects.filter(recipient=request.user)
         sender = Message.objects.filter(sender=request.user)
         user = CustomerUser.objects.filter(is_community=True)
-        return render(request, 'community/dashboard/mail.html', {'recipient':recipient, 'sender':sender, 'user':user})
+        destino = Destination.objects.filter(
+            is_deleted=False, is_published=True).order_by('?')[:3]
+
+        return render(request, 'community/dashboard/mail.html', {'recipient':recipient, 'sender':sender, 'user':user, 'destino':destino})
 
 
 
