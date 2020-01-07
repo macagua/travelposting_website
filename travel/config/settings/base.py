@@ -234,7 +234,8 @@ THIRD_PARTY = [
     'mapwidgets',
     'mathfilters',
     'sorl.thumbnail',
-    'captcha'
+    'captcha',
+    #'notifications',
 ]
 
 LOCAL_APPS = [

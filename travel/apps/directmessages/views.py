@@ -32,6 +32,8 @@ from apps.destinations.models import (
     Destination,
 
 )
+from notifications.signals import notify
+
 
 
 class sendViews(View):
@@ -56,6 +58,11 @@ class sendViews(View):
 
         message_sent.send(
             sender=message, from_user=message.sender, to=message.recipient)
+
+        #send notifications
+        #notify.send(recipient, recipient=recipient,
+        #            verb='You have a new message.')
+
 
         text = _("Your message has been sent successfully")
 

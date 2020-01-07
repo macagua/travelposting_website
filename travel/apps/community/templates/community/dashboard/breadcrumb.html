@@ -1,5 +1,6 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
+{% load message_tags %}
 <!-- Breadcrumb Section -->
 <div class="bg-primary">
     <div class="container space-top-1 pb-3">
@@ -56,7 +57,9 @@
                                     <a class="nav-link u-header__nav-link" href="{% url 'dashboard-community' %}">{% trans 'Home' %}</a>
                                 </li>
                                 <li class="nav-item u-header__nav-item">
-                                    <a class="nav-link u-header__nav-link" href="{% url 'inbox-community' %}">{% trans "Inbox" %}</a>
+                                    <a class="nav-link u-header__nav-link" href="{% url 'inbox-community' %}">
+                                        {% trans "Inbox" %} {% notifications_inbox %}
+                                    </a>
                                 </li>
                                 <li class="nav-item u-header__nav-item">
                                     <a class="nav-link u-header__nav-link" href="/pricing/">{% trans 'Prices' %}</a>

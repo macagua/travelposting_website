@@ -25,3 +25,13 @@ def notifications_lat(context):
         'notifications': n,
         'request': context.request,
     }
+
+
+@register.inclusion_tag('menu/notifications_inbox.html', takes_context=True)
+def notifications_inbox(context):
+    user = context.request.user
+    n = Message.objects.filter(recipient=user, read_at=None)
+    return {
+        'notifications': n,
+        'request': context.request,
+    }

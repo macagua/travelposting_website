@@ -60,6 +60,9 @@ sorl-thumbnail = "*"
 common = "*"
 django-easy-pdf = "*"
 django-recaptcha = "*"
+pinax-notifications = "*"
+django-notifications-hq = "*"
+install = "*"
 
 [requires]
 python_version = "3.7"
