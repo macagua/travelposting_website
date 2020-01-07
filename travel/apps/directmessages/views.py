@@ -101,6 +101,12 @@ class InboxView(View):
         return render(request, 'community/dashboard/mail.html', {'recipient':recipient, 'sender':sender, 'user':user, 'destino':destino})
 
 
+class NotificationsView(View):
+    def get(self, request, *args, **kwargs):
+        recipient = Message.objects.filter(recipient=request.user)
+        return render(request, 'community/dashboard/notifications.html', {'recipient': recipient})
+
+
 
 def validate_message(request):
     if request.method == 'GET':

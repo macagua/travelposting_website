@@ -1,7 +1,7 @@
 {% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
 {% load message_tags %}
 <li class="u-sidebar--account__list-item">
-    <a class="u-sidebar--account__list-link" href="">
+    <a class="u-sidebar--account__list-link" href="{% url 'notifications-community'%}">
         <span class="fas fa-cubes u-sidebar--account__list-icon mr-2"></span>
         {% trans "Notifications" %}
         {% if notifications.count != '0' %}

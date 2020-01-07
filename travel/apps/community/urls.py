@@ -21,6 +21,7 @@ from apps.community.views import (
 from apps.directmessages.views import (
     InboxView,
     validate_message,
+    NotificationsView,
 )
 
 from apps.community import views
@@ -52,6 +53,12 @@ urlpatterns = [
         'inbox/',
         login_required(InboxView.as_view()),
         name='inbox-community',
+    ),
+
+    path(
+        'notifications/',
+        login_required(NotificationsView.as_view()),
+        name='notifications-community',
     ),
 
     path(
