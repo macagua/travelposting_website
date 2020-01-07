@@ -1,0 +1,5 @@
+{% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
+{% load message_tags %}
+{% if notifications.count != '0' %}
+    <span class="badge badge-sm badge-success badge-pos rounded-circle">{{notifications.count }}</span>
+{% endif %}

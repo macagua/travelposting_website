@@ -6,6 +6,13 @@
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
+{% block extracss %}
+<style>
+.read_at{
+    color: #b71c1c;
+}
+</style>
+{% endblock extracss %}
 {% block content %}
 <br><br><br><br>
 <main id="content" role="main">
@@ -177,9 +184,17 @@
 
                                                     </ul>
                                                     </div>'>
+                                                    {% if r.read_at == None %}
                                                     <td
-                                                        class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">
-                                                        {{r.sender.get_full_name }}</td>
+                                                        class="likebutton align-middle font-weight-normal u-datatable__trigger-icon read_at" id="mark_read{{ r.id }}" data-catid="{{ r.id }}">
+                                                        {{r.sender.get_full_name }}
+                                                    </td>
+                                                    {% else %}
+                                                    <td class="likebutton align-middle font-weight-normal u-datatable__trigger-icon" id="mark_read{{ r.id }}" data-catid="{{ r.id }}">
+                                                        {{r.sender.get_full_name }}
+                                                    </td>
+                                                    {% endif %}
+
                                                     <td class="align-middle">
                                                         <div class="media align-items-center">
                                                             <span
@@ -440,12 +455,22 @@
 
 {% endblock content %}
 {% block extrajs %}
-<script>
-    $(document).ready(function () {
-        $('.js-example-basic-single').select2({
-            theme: 'bootstrap4',
-            placeholder: "Select a state"
-        });
+<script type="text/javascript">
+    $('.likebutton').click(function () {
+    var id;
+    id = $(this).attr("data-catid");
+    $.ajax(
+    {
+        type: "GET",
+        url: "{% url 'validate_message' %}",
+        data: {
+            post_id: id 
+        },
+        success: function (data) {
+            $('#mark_read' + id).removeClass('align-middle font-weight-normal u-datatable__trigger-icon read_at');
+            $('#mark_read'+ id ).addClass('align-middle font-weight-normal u-datatable__trigger-icon');
+        }
+    })
     });
 </script>
-{% endblock extrajs%}
+{% endblock extrajs %}

@@ -26,7 +26,8 @@ from .models import Message
 from .signals import message_read, message_sent
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
-
+from django.http import JsonResponse
+from django.utils import timezone
 
 class sendViews(View):
     def post(self, request, *args, **kwargs):
@@ -90,3 +91,16 @@ class InboxView(View):
         sender = Message.objects.filter(sender=request.user)
         user = CustomerUser.objects.filter(is_community=True)
         return render(request, 'community/dashboard/mail.html', {'recipient':recipient, 'sender':sender, 'user':user})
+
+
+
+def validate_message(request):
+    if request.method == 'GET':
+        post_id = request.GET['post_id']
+        message = Message.objects.get(id=post_id)
+
+        message.read_at = timezone.now()
+        message.save()
+        return HttpResponse('success')
+    else:
+        return HttpResponse("unsuccesful")

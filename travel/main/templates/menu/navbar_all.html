@@ -1,4 +1,5 @@
 {% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
+{% load message_tags %}
 {% get_current_language as LANGUAGES %}
 
 <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md"
@@ -89,7 +90,8 @@ data-header-fix-effect="slide">
                             <span class="position-relative">
                                 <span class="u-sidebar--account__toggle-text">{{ user.email }}</span>
                                 <img class="u-sidebar--account__toggle-img" src="{% static 'img/user.png' %}" alt="Image Description">
-                            </span>
+                                {% notifications_message %}
+                              </span>
                         </a>
                         <!-- End Account Sidebar Toggle Button -->
                     </li>
@@ -226,9 +228,10 @@ data-header-fix-effect="slide">
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="/pricing/">
                     <span class="fas fa-cubes u-sidebar--account__list-icon mr-2"></span>
-                    Plans
+                    {% trans "Plans" %}
                   </a>
                 </li>
+                {% notifications_lat %}
               </ul>
               <!-- End List Links -->
 

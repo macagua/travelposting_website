@@ -20,6 +20,7 @@ from apps.community.views import (
 
 from apps.directmessages.views import (
     InboxView,
+    validate_message,
 )
 
 from apps.community import views
@@ -93,4 +94,7 @@ urlpatterns = [
         MakeRecomendationView.as_view(),
         name='make-recomm',
     ),
+    url(r'^a/validate_message/$',
+        validate_message, name='validate_message'),
+
 ]
