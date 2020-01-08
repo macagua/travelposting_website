@@ -119,7 +119,7 @@ class CustomPasswordChangeForm(BaseBootstrapForm, PasswordChangeForm):
 class CustomerUserChangeForm(BaseBootstrapForm, forms.ModelForm):
     class Meta:
         model = CustomerUser
-        fields = ('first_name', 'last_name', 'business_name', 'business_address', 'business_position', 'postal_code',
+        fields = ('avatar','first_name', 'last_name', 'business_name', 'business_address', 'business_position', 'postal_code',
                   'state', 'country', 'language', 'degree', 'phone', 'mobile', 'web_site','facebook','instagram','twitter','linkedin')
 
     def clean_language(self):
