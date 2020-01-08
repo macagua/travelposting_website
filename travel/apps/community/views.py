@@ -207,7 +207,7 @@ class ProfileEditView(View):
         if form.is_valid():
             form.save()
             return redirect('my-profile')
-        else:
+        else:.
             form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
             return render(request, 'community/profile/edit_profile.html', {'form': form})
 
