@@ -9,189 +9,207 @@
 
 {% block content %}
 <main id="content" role="main">
-  {% include "community/dashboard/breadcrumb_profile.html" with edit_profile=False%}
+	{% include "community/dashboard/breadcrumb_profile.html" with edit_profile=False%}
 
-  <div class="bg-light">
-    <div class="container space-2">
-      <!-- Personal Info Form -->
-      <form class="js-validate" method="post">
-        {% csrf_token %}
-        <div class="row">
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <label id="{{form.first_name.id_for_label}}" class="form-label">
-                {{form.first_name.label}}
-                <span class="text-danger">*</span>
-              </label>
+	<div class="bg-light">
+		<div class="container space-2">
+			<!-- Personal Info Form -->
+			<form class="js-validate" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="row">
+					<!-- Input -->
+					<div class="col-sm-12 col-md-12 media align-items-center mb-6">
+						<div class="u-lg-avatar mr-3">
+							<img class="img-fluid rounded-circle" src="{%if not request.user.avatar %}{% static 'img/user.png' %}{%else%}{{request.user.avatar}}{%endif%}" alt="Image Description">
+						</div>
 
-              <div class="form-group">
-                {{form.first_name}}
-                <small class="form-text text-muted">{{ form.first_name.help_text|safe }}</small>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
+						<div class="media-body">
+							<label class="btn btn-sm btn-primary transition-3d-hover file-attachment-btn mb-1 mb-sm-0 mr-1" for="fileAttachmentBtn">
+								{% trans "Upload New Picture" %}
+								<input id="fileAttachmentBtn" name="avatar" type="file" class="file-attachment-btn__label">
+							</label>
+						<!--
+							<button type="submit" class="btn btn-sm btn-soft-secondary transition-3d-hover mb-1 mb-sm-0">Delete</button>
+						-->
+						</div>
+					</div>
 
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <label id="{{form.last_name.id_for_label}}" class="form-label">
-                {{form.last_name.label}}
-                <span class="text-danger">*</span>
-              </label>
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.first_name.id_for_label}}" class="form-label">
+								{{form.first_name.label}}
+								<span class="text-danger">*</span>
+							</label>
 
-              <div class="form-group">
-                {{form.last_name}}
-                <small class="form-text text-muted">{{ form.last_name.help_text|safe }}</small>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-        </div>
+							<div class="form-group">
+								{{form.first_name}}
+								<small class="form-text text-muted">{{ form.first_name.help_text|safe }}</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
 
-        <div class="row">
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <label id="{{form.business_address.id_for_label}}" class="form-label">
-                {% trans "Location" %}
-                <span class="text-danger">*</span>
-              </label>
+					<!-- Input -->
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.last_name.id_for_label}}" class="form-label">
+								{{form.last_name.label}}
+								<span class="text-danger">*</span>
+							</label>
 
-              <div class="form-group">
-                {{form.business_address}}
-                <small class="form-text text-muted">{{ form.business_address.help_text|safe }}</small>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
+							<div class="form-group">
+								{{form.last_name}}
+								<small class="form-text text-muted">{{ form.last_name.help_text|safe }}</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
+				</div>
 
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <label id="{{form.postal_code.id_for_label}}" class="form-label">
-                {{form.postal_code.label}}
-                <span class="text-danger">*</span>
-              </label>
+				<div class="row">
+					<!-- Input -->
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.business_address.id_for_label}}" class="form-label">
+								{% trans "Location" %}
+								<span class="text-danger">*</span>
+							</label>
 
-              <div class="form-group">
-                {{form.postal_code}}
-                <small class="form-text text-muted">{{ form.postal_code.help_text|safe }}</small>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-        </div>
+							<div class="form-group">
+								{{form.business_address}}
+								<small class="form-text text-muted">{{ form.business_address.help_text|safe }}</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
 
-        <div class="row">
+					<!-- Input -->
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.postal_code.id_for_label}}" class="form-label">
+								{{form.postal_code.label}}
+								<span class="text-danger">*</span>
+							</label>
 
+							<div class="form-group">
+								{{form.postal_code}}
+								<small class="form-text text-muted">{{ form.postal_code.help_text|safe }}</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
+				</div>
 
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <label id="{{form.web_site.label.id_for_label}}" class="form-label">
-                {{form.web_site.label}}
-                <span class="text-danger">*</span>
-              </label>
-
-              <div class="form-group">
-                {{form.web_site}}
-                <small class="form-text text-muted">{{ form.web_site.help_text|safe }}</small>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-        </div>
-
-        <div class="row">
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <label id="{{form.mobile.label.id_for_label}}" class="form-label">
-                {{form.mobile.label}}
-                <span class="text-danger">*</span>
-              </label>
-              <div class="form-group">
-                {{form.mobile}}
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-
-          <!-- Input -->
-          <div class="col-sm-6 mb-6">
-            <div class="js-form-message">
-              <label for="{{form.web_site.label.id_for_label}}" class="form-label">
-                {{form.language.label}}
-                <span class="text-danger">*</span>
-              </label>
-
-              <div class="form-group">
-                {{form.language}}
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-        </div>
-        <hr class="my-7">
-        <div class="mb-5">
-        <h3 class="h5 mb-1">{% trans "Social profiles" %}</h3>
-        <p>{% trans "Add elsewhere links to your profile" %}.</p>
-      </div>
-      <!-- End Title -->
-        <!-- Input Group -->
-        <div class="mb-6">
-          <div class="js-focus-state form-group">
-            <div class="input-group">
-              <div id="facebookProfileLabel" class="input-group-prepend">
-                <span class="input-group-text">https://facebook.com/</span>
-              </div>
-              {{form.facebook}}
-            </div>
-            <small class="form-text text-muted">{% trans "Add your Facebook username (e.g. nickname)" %}</small>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="js-focus-state form-group">
-            <div class="input-group">
-              <div id="instagramProfileLabel" class="input-group-prepend">
-                <span class="input-group-text">https://instagram.com/</span>
-              </div>
-              {{form.instagram}}
-            </div>
-            <small class="form-text text-muted">{% trans "Add your Instagram username (e.g. nickname)" %}</small>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="js-focus-state form-group">
-            <div class="input-group">
-              <div id="twitterProfileLabel" class="input-group-prepend">
-                <span class="input-group-text">https://twitter.com/</span>
-              </div>
-              {{form.twitter}}
-            </div>
-            <small class="form-text text-muted">{% trans "Add your Twitter username (e.g. nickname)" %}</small>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="js-focus-state form-group">
-            <div class="input-group">
-              <div id="linkedinProfileLabel" class="input-group-prepend">
-                <span class="input-group-text">https://linkedin.com/</span>
-              </div>
-              {{form.linkedin}}
-            </div>
-            <small class="form-text text-muted">{% trans "Add your Linkedin username (e.g. nickname)" %}</small>
-          </div>
-        </div>
-        <!-- End Input Group -->
-        <!-- Buttons -->
-        <button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">{% trans "Save Changes" %}</button>
-        <button type="reset" class="btn btn-sm btn-soft-secondary transition-3d-hover">{% trans "Cancel" %}</button>
-        <!-- End Buttons -->
+				<div class="row">
 
 
-      </form>
+					<!-- Input -->
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.web_site.label.id_for_label}}" class="form-label">
+								{{form.web_site.label}}
+								<span class="text-danger">*</span>
+							</label>
+
+							<div class="form-group">
+								{{form.web_site}}
+								<small class="form-text text-muted">{{ form.web_site.help_text|safe }}</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
+				</div>
+
+				<div class="row">
+					<!-- Input -->
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.mobile.label.id_for_label}}" class="form-label">
+								{{form.mobile.label}}
+								<span class="text-danger">*</span>
+							</label>
+							<div class="form-group">
+								{{form.mobile}}
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
+
+					<!-- Input -->
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label for="{{form.web_site.label.id_for_label}}" class="form-label">
+								{{form.language.label}}
+								<span class="text-danger">*</span>
+							</label>
+
+							<div class="form-group">
+								{{form.language}}
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
+				</div>
+				<hr class="my-7">
+				<div class="mb-5">
+					<h3 class="h5 mb-1">{% trans "Social profiles" %}</h3>
+					<p>{% trans "Add elsewhere links to your profile" %}.</p>
+				</div>
+				<!-- End Title -->
+				<!-- Input Group -->
+				<div class="mb-6">
+					<div class="js-focus-state form-group">
+						<div class="input-group">
+							<div id="facebookProfileLabel" class="input-group-prepend">
+								<span class="input-group-text">https://facebook.com/</span>
+							</div>
+							{{form.facebook}}
+						</div>
+						<small class="form-text text-muted">{% trans "Add your Facebook username (e.g. nickname)" %}</small>
+					</div>
+				</div>
+				<div class="mb-6">
+					<div class="js-focus-state form-group">
+						<div class="input-group">
+							<div id="instagramProfileLabel" class="input-group-prepend">
+								<span class="input-group-text">https://instagram.com/</span>
+							</div>
+							{{form.instagram}}
+						</div>
+						<small class="form-text text-muted">{% trans "Add your Instagram username (e.g. nickname)" %}</small>
+					</div>
+				</div>
+				<div class="mb-6">
+					<div class="js-focus-state form-group">
+						<div class="input-group">
+							<div id="twitterProfileLabel" class="input-group-prepend">
+								<span class="input-group-text">https://twitter.com/</span>
+							</div>
+							{{form.twitter}}
+						</div>
+						<small class="form-text text-muted">{% trans "Add your Twitter username (e.g. nickname)" %}</small>
+					</div>
+				</div>
+				<div class="mb-6">
+					<div class="js-focus-state form-group">
+						<div class="input-group">
+							<div id="linkedinProfileLabel" class="input-group-prepend">
+								<span class="input-group-text">https://linkedin.com/</span>
+							</div>
+							{{form.linkedin}}
+						</div>
+						<small class="form-text text-muted">{% trans "Add your Linkedin username (e.g. nickname)" %}</small>
+					</div>
+				</div>
+				<!-- End Input Group -->
+				<!-- Buttons -->
+				<button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">{% trans "Save Changes" %}</button>
+				<button type="reset" class="btn btn-sm btn-soft-secondary transition-3d-hover">{% trans "Cancel" %}</button>
+				<!-- End Buttons -->
+
+
+			</form>
+		</div>
+	</div>
 </main>
 {% endblock content %}
