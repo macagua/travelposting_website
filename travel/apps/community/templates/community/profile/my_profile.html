@@ -10,84 +10,7 @@
 {% block content %}
 <br><br><br><br>
 <main id="content" role="main">
-	<div class="bg-primary">
-		<div class="container space-top-1 pb-3">
-			<div class="row">
-				<div class="col-lg-7 order-lg-1">
-					<!-- User Info -->
-					<div class="media d-block d-sm-flex align-items-sm-center">
-						<div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
-							<img class="img-fluid rounded-circle" src="{% static 'img/user.png' %}"
-								 alt="user image">
-							<span class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right
-							rounded-circle">
-								<span class="fas fa-check"></span>
-							</span>
-						</div>
-						<div class="media-body">
-							<h1 class="h3 text-white font-weight-medium mb-1">{{ user.get_full_name }}</h1>
-							<span class="d-block text-white">{{ user.email }}</span>
-						</div>
-					</div>
-					<!-- End User Info -->
-				</div>
-			</div>
-		</div>
-		<div class="container space-bottom-1 space-bottom-lg-0">
-			<div class="d-lg-flex justify-content-lg-between align-items-lg-center">
-				<!-- Navbar -->
-				<div class="u-header u-header-left-aligned-nav u-header--bg-transparent-lg u-header--white-nav-links
-				z-index-4">
-					<div class="u-header__section bg-transparent">
-						<nav class="js-breadcrumb-menu navbar navbar-expand-lg u-header__navbar
-						u-header__navbar--no-space hs-menu-initialized hs-menu-horizontal">
-							<div id="breadcrumbNavBar" class="collapse navbar-collapse u-header__navbar-collapse">
-								<ul class="navbar-nav u-header__navbar-nav">
-									<li class="nav-item u-header__nav-item">
-										<a class="nav-link u-header__nav-link" href="{% url 'dashboard-community' %}">
-											{% trans 'Home' %}
-										</a>
-									</li>
-									<li class="nav-item u-header__nav-item">
-										<a class="nav-link u-header__nav-link" href="{% url 'inbox-community' %}">
-											{% trans "Inbox" %}
-										</a>
-									</li>
-									<li class="nav-item u-header__nav-item">
-										<a class="nav-link u-header__nav-link" href="/pricing/">{% trans 'Prices' %}</a>
-									</li>
-									<li class="nav-item u-header__nav-item">
-										<a class="nav-link u-header__nav-link" href="/category/all">
-											{% trans 'Destinations' %}
-										</a>
-									</li>
-									<li class="nav-item u-header__nav-item">
-										<a class="nav-link u-header__nav-link"
-										   href="{% url 'logout-community' %}?next={% url 'index' %}">
-											{% trans 'Logout' %}
-										</a>
-									</li>
-									<!-- Others -->
-								</ul>
-							</div>
-						</nav>
-					</div>
-				</div>
-				<!-- End Navbar -->
-
-				<div class="ml-lg-auto">
-					<!-- Button -->
-					<a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover"
-					   href="{% url 'my-profile' %}">
-						<span class="fas fa-user-cog small mr-2"></span>
-						{%trans "Edit Profile"%}
-					</a>
-					<!-- End Button -->
-				</div>
-			</div>
-		</div>
-	</div>
-
+  {% include "community/dashboard/breadcrumb_profile.html" with edit_profile=True%}
 	<!--INIT-->
 	<div class="bg-light">
       <div class="container space-2">
@@ -103,19 +26,7 @@
 
                 <div class="mb-3">
                   <h1 class="h6 font-weight-medium mb-0">{{ user.get_full_name }}</h1>
-                  <small class="d-block text-muted">UI/UX Designer</small>
                 </div>
-
-                <div class="mb-2">
-                  <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                    <span class="far fa-envelope mr-2"></span>
-                    Send a Message
-                  </a>
-                </div>
-
-                <a class="text-secondary small" href="#">
-                  <i class="far fa-flag mr-1"></i> Report this user
-                </a>
               </div>
             </div>
             <!-- End Profile Card -->
@@ -123,25 +34,11 @@
             <!-- Contacts  -->
             <div class="card mb-4">
               <div class="card-header pt-4 pb-3 px-0 mx-4">
-                <h2 class="h6 mb-0">Contacts</h2>
+                <h2 class="h6 mb-0">{%trans "Random" %}</h2>
               </div>
 
               <div class="card-body pt-3 pb-4 px-4">
-                <!-- User -->
-                <a class="d-flex align-items-start mb-4" href="#">
-                  <div class="position-relative u-avatar">
-                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img9.jpg" alt="Image Description">
-                    <span class="badge badge-xs badge-outline-success badge-pos badge-pos--bottom-right rounded-circle"></span>
-                  </div>
-
-                  <div class="ml-3">
-                    <span class="d-block text-dark">Patrick Garner</span>
-                    <small class="d-block text-secondary">Web Developer</small>
-                  </div>
-                </a>
-                <!-- End User -->
-
-                <!-- User -->
+                <!-- User
                 <a class="d-flex align-items-start mb-4" href="#">
                   <span class="btn btn-icon btn-soft-danger rounded-circle">
                     <span class="btn-icon__inner">AO</span>
@@ -153,111 +50,13 @@
                     <small class="d-block text-secondary">UI/UX Designer</small>
                   </div>
                 </a>
-                <!-- End User -->
-
-                <!-- User -->
-                <a class="d-flex align-items-start mb-4" href="#">
-                  <div class="position-relative u-avatar">
-                    <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
-                    <span class="badge badge-xs badge-outline-warning badge-pos badge-pos--bottom-right rounded-circle"></span>
-                  </div>
-
-                  <div class="ml-3">
-                    <span class="d-block text-dark">Eliza Donovan</span>
-                    <small class="d-block text-secondary">Project Manager</small>
-                  </div>
-                </a>
-                <!-- End User -->
-
-                <!-- User -->
-                <a class="d-flex align-items-start" href="#">
-                  <span class="btn btn-icon btn-soft-success rounded-circle">
-                    <span class="btn-icon__inner">JC</span>
-                    <span class="badge badge-xs badge-outline-success badge-pos badge-pos--bottom-right rounded-circle"></span>
-                  </span>
-
-                  <div class="ml-3">
-                    <span class="d-block text-dark">James Collins</span>
-                    <small class="d-block text-secondary">Angular Developer</small>
-                  </div>
-                </a>
-                <!-- End User -->
+                 End User -->
               </div>
             </div>
             <!-- End Contacts  -->
-
-            <!-- Social Profiles -->
-            <div class="card mb-4">
-              <div class="card-header pt-4 pb-3 px-0 mx-4">
-                <h3 class="h6 mb-0">Social Profiles</h3>
-              </div>
-
-              <div class="card-body pt-3 pb-4 px-4">
-                <!-- Social Profiles -->
-                <a class="media mb-4" href="#">
-                  <div class="u-sm-avatar mr-3">
-                    <img class="img-fluid" src="../../assets/img/160x160/img18.png" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="d-block text-dark">Behance</span>
-                    <small class="d-block text-secondary">1.2k followers</small>
-                  </div>
-                </a>
-                <!-- End Social Profiles -->
-
-                <!-- Social Profiles -->
-                <a class="media mb-4" href="#">
-                  <div class="u-sm-avatar mr-3">
-                    <img class="img-fluid" src="../../assets/img/160x160/img21.png" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="d-block text-dark">Dribbble</span>
-                    <small class="d-block text-secondary">4.5k followers</small>
-                  </div>
-                </a>
-                <!-- End Social Profiles -->
-
-                <!-- Social Profiles -->
-                <a class="media mb-4" href="#">
-                  <div class="u-sm-avatar mr-3">
-                    <img class="img-fluid" src="../../assets/img/160x160/img19.png" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="d-block text-dark">Twitter</span>
-                    <small class="d-block text-secondary">2.7k followers</small>
-                  </div>
-                </a>
-                <!-- End Social Profiles -->
-
-                <!-- Social Profiles -->
-                <a class="media" href="#">
-                  <div class="u-sm-avatar mr-3">
-                    <img class="img-fluid" src="../../assets/img/160x160/img20.png" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="d-block text-dark">Facebook</span>
-                    <small class="d-block text-secondary">3k followers</small>
-                  </div>
-                </a>
-                <!-- End Social Profiles -->
-              </div>
-            </div>
-            <!-- End Social Profiles -->
           </div>
 
           <div class="col-lg-9">
-            <!-- User Details -->
-            <div class="mb-4">
-              <h2 class="h4">Hey, I am Natalie Curtis <span class="badge badge-success ml-1">Pro</span></h2>
-              <h4 class="h6 text-secondary mb-0">London, UK <small>- Joined in July 2017</small></h4>
-            </div>
-            <!-- End User Details -->
-
-            <!-- Info -->
-            <div class="mb-4">
-              <p>I am a project manager from England. This is where I sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is key. The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
-            </div>
-            <!-- End Info -->
 
             <!-- Collections -->
             <ul class="list-inline d-flex align-items-center">
@@ -271,17 +70,19 @@
               </li>
               <li class="list-inline-item mb-3 mb-sm-0 mr-5">
                 <div class="d-flex align-items-center">
-                  <img class="mr-2" src="../../assets/svg/illustrations/referral.svg" alt="Image Description" style="width: 40px;">
+                  <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg' %}"
+                       alt="Image Description" style="width: 40px;">
                   <div class="text-secondary">
-                    +3 Referrals
+                    XXXXXXX
                   </div>
                 </div>
               </li>
               <li class="list-inline-item mb-3 mb-sm-0">
                 <div class="d-flex align-items-center">
-                  <img class="mr-2" src="../../assets/svg/illustrations/verified-user.svg" alt="Image Description" style="width: 40px;">
+                  <img class="mr-2" src="{% static 'assets/svg/illustrations/verified-user.svg' %}"
+                       alt="Image Description" style="width: 40px;">
                   <div class="text-secondary">
-                    Verified
+                    XXXXXXX
                   </div>
                 </div>
               </li>
@@ -299,8 +100,8 @@
                     <div class="media">
                       <span class="fas fa-envelope list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Email:</span>
-                        <a href="#">natalie.curtis@gmail.com</a>
+                        <span class="d-block mb-1">{% trans "Email" %}:</span>
+                        <a href="#">{{request.user.email}}</a>
                       </div>
                     </div>
                   </li>
@@ -308,20 +109,12 @@
                     <div class="media">
                       <span class="fas fa-link list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Web page:</span>
-                        <a href="#">www.htmlstream.com/natalie</a>
+                        <span class="d-block mb-1">{% trans "Web page" %}:</span>
+                        <a href="#">{{request.user.web_site}}</a>
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Location:</span>
-                        <a href="#">London, England</a>
-                      </div>
-                    </div>
-                  </li>
+
                 </ul>
                 <!-- End List Group -->
               </div>
@@ -329,21 +122,21 @@
               <div class="col-md-6 col-lg-4">
                 <!-- List Group -->
                 <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
-                  <li class="list-group-item pt-0 pb-4">
+                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-birthday-cake list-group-icon mr-3"></span>
+                      <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Birthday:</span>
-                        <span class="d-block text-muted">May 3, 1986</span>
+                        <span class="d-block mb-1">{% trans "Location" %}:</span>
+                        <a href="#">{{request.user.business_address}}</a>
                       </div>
                     </div>
                   </li>
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-building list-group-icon mr-3"></span>
+                      <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Organization:</span>
-                        <a href="#">Pixeel Ltd.</a>
+                        <span class="d-block mb-1">{% trans "Postal Code" %}:</span>
+                        <span class="d-block text-muted">{{request.user.postal_code}}</span>
                       </div>
                     </div>
                   </li>
@@ -351,8 +144,8 @@
                     <div class="media">
                       <span class="fas fa-mobile-alt list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Phone number:</span>
-                        <a href="#">+44 (0161) 347 8854</a>
+                        <span class="d-block mb-1">{% trans "Phone number" %}:</span>
+                        <a href="#">{{request.user.mobile}}</a>
                       </div>
                     </div>
                   </li>
@@ -367,8 +160,8 @@
                     <div class="media">
                       <span class="fas fa-globe list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Language:</span>
-                        <span class="d-block text-muted">English, French</span>
+                        <span class="d-block mb-1">{% trans "Language" %}:</span>
+                        <span class="d-block text-muted">{{request.user.language}}</span>
                       </div>
                     </div>
                   </li>
@@ -376,11 +169,26 @@
                     <div class="media">
                       <span class="fas fa-tags list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Skills:</span>
-                        <a href="#">HTML5,</a>
-                        <a href="#">CSS3,</a>
-                        <a href="#">JavaScript,</a>
-                        <a href="#">jQuery</a>
+                        <span class="d-block mb-1">{% trans "Social Profiles" %}:</span>
+                        <a href="{{request.user.facebook}}" target="_blank">
+                          <i class="fab fa-facebook-square list-group-icon mr-3"></i>
+                          {{request.user.facebook}}
+                        </a>
+                        <div class="clearfix"></div>
+                        <a href="{{request.user.instagram}}" target="_blank">
+                          <i class="fab fa-instagram list-group-icon mr-3"></i>
+                          {{request.user.instagram}}
+                        </a>
+                        <div class="clearfix"></div>
+                        <a href="{{request.user.twitter}}" target="_blank">
+                          <i class="fab fa-twitter-square list-group-icon mr-3"></i>
+                          {{request.user.twitter}}
+                        </a>
+                        <div class="clearfix"></div>
+                        <a href="{{request.user.linkedin}}" target="_blank">
+                          <i class="fab fa-linkedin list-group-icon mr-3"></i>
+                          {{request.user.linkedin}}
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -392,209 +200,6 @@
 
             <hr class="my-7">
 
-            <!-- Info -->
-            <div class="row mb-7">
-              <div class="col-md-6 mb-7 mb-md-0">
-                <!-- Title -->
-                <div class="mb-3">
-                  <h3 class="h6 mb-0">Work experience</h3>
-                </div>
-                <!-- End Title -->
-
-                <!-- Info -->
-                <div class="d-flex mb-5">
-                  <img class="u-avatar align-self-center mr-4" src="../../assets/img/160x160/img17.png" alt="Image Description">
-                  <div>
-                    <small class="d-block text-secondary">Jul 2018</small>
-                    <h4 class="h6 mb-0">Senior Frontend Developer</h4>
-                    <span class="d-block text-secondary">at Google - SF, US</span>
-                  </div>
-                </div>
-                <!-- End Info -->
-
-                <!-- Info -->
-                <div class="d-flex">
-                  <img class="u-avatar align-self-center mr-4" src="../../assets/img/160x160/img14.png" alt="Image Description">
-                  <div>
-                    <small class="d-block text-secondary">Aug 2016 - Jul 2018</small>
-                    <h4 class="h6 mb-0">Junior Frontend Developer</h4>
-                    <span class="d-block text-secondary">at Slack Inc - London, UK</span>
-                  </div>
-                </div>
-                <!-- End Info -->
-              </div>
-
-              <div class="col-md-6 mb-3 mb-md-0">
-                <!-- Title -->
-                <div class="mb-3">
-                  <h3 class="h6 mb-0">Education</h3>
-                </div>
-                <!-- End Title -->
-
-                <!-- Info -->
-                <div class="row align-items-center mb-5">
-                  <div class="col-4">
-                    <img class="img-fluid" src="../../assets/img/logos/harvard-university.png" alt="Image Description">
-                  </div>
-                  <div class="col-8">
-                    <small class="d-block text-secondary">Sep 2009 - June 2013</small>
-                    <h4 class="h6 mb-0">BS in Computer Science</h4>
-                    <span class="d-block text-secondary">Harvard University</span>
-                  </div>
-                </div>
-                <!-- End Info -->
-
-                <!-- Info -->
-                <div class="row align-items-center">
-                  <div class="col-4">
-                    <img class="img-fluid" src="../../assets/img/logos/ubc.png" alt="Image Description">
-                  </div>
-                  <div class="col-8">
-                    <small class="d-block text-secondary">Sep 2014 - June 2016</small>
-                    <h4 class="h6 mb-0">MBA in Marketing</h4>
-                    <span class="d-block text-secondary">University of British Columbia</span>
-                  </div>
-                </div>
-                <!-- End Info -->
-              </div>
-            </div>
-            <!-- End Info -->
-
-            <hr class="my-7">
-
-            <!-- Title -->
-            <div id="reviews" class="mb-3">
-              <h3 class="h4 mb-0">Reviews <span class="text-muted font-size-1">(125)</span></h3>
-            </div>
-            <!-- End Title -->
-
-            <!-- Reviews -->
-            <div>
-              <!-- Author -->
-              <div class="media mb-3">
-                <img class="u-avatar rounded-circle mr-3" src="../../assets/img/100x100/img3.jpg" alt="Image Description">
-
-                <div class="media-body align-self-center">
-                  <h4 class="d-inline-block mb-1">
-                    <a class="d-block h6 mb-0" href="#">Russel Fernandes</a>
-                  </h4>
-                  <ul class="list-inline text-warning small mb-0">
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star text-warning"></span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="media-body text-right">
-                  <small class="d-block text-muted">3 hours ago.</small>
-                </div>
-              </div>
-              <!-- End Author -->
-
-              <p>At the end of the day, it's important to not let being busy distract us from having fun. Smiling, laughing, and hanging helps us work together to achieve this.</p>
-
-              <!-- Likes/Reply -->
-              <ul class="list-inline d-flex">
-                <li class="list-inline-item">
-                  <a class="text-secondary" href="#">
-                    17
-                    <span class="far fa-thumbs-up ml-1"></span>
-                  </a>
-                </li>
-                <li class="list-inline-item ml-3">
-                  <a class="text-secondary" href="#">
-                    0
-                    <span class="far fa-thumbs-down ml-1"></span>
-                  </a>
-                </li>
-                <li class="list-inline-item ml-auto">
-                  <a class="text-secondary" href="#">
-                    <span class="far fa-comments mr-1"></span>
-                    Reply
-                  </a>
-                </li>
-              </ul>
-              <!-- End Likes/Reply -->
-            </div>
-            <!-- End Reviews -->
-
-            <hr class="my-7">
-
-            <!-- Reviews -->
-            <div class="mb-7">
-              <!-- Author -->
-              <div class="media mb-3">
-                <img class="u-avatar rounded-circle mr-3" src="../../assets/img/100x100/img2.jpg" alt="Image Description">
-
-                <div class="media-body align-self-center">
-                  <h4 class="d-inline-block mb-1">
-                    <a class="d-block h6 mb-0" href="#">Elizabeth Lord</a>
-                  </h4>
-                  <ul class="list-inline text-warning small mb-0">
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="fas fa-star"></span>
-                    </li>
-                    <li class="list-inline-item mx-0">
-                      <span class="far fa-star text-warning"></span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="media-body text-right">
-                  <small class="d-block text-muted">1 day ago.</small>
-                </div>
-              </div>
-              <!-- End Author -->
-
-              <p>It's important to stay detail oriented with every project we tackle. Staying focused allows us to turn every project we complete into something we love. We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt.</p>
-
-              <!-- Likes/Reply -->
-              <ul class="list-inline d-flex">
-                <li class="list-inline-item">
-                  <a class="text-secondary" href="#">
-                    17
-                    <span class="far fa-thumbs-up ml-1"></span>
-                  </a>
-                </li>
-                <li class="list-inline-item ml-3">
-                  <a class="text-secondary" href="#">
-                    0
-                    <span class="far fa-thumbs-down ml-1"></span>
-                  </a>
-                </li>
-                <li class="list-inline-item ml-auto">
-                  <a class="text-secondary" href="#">
-                    <span class="far fa-comments mr-1"></span>
-                    Reply
-                  </a>
-                </li>
-              </ul>
-              <!-- End Likes/Reply -->
-            </div>
-            <!-- End Reviews -->
-
-            <a class="btn btn-block btn-soft-primary transition-3d-hover" href="#">See More</a>
           </div>
         </div>
       </div>

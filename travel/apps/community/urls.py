@@ -100,13 +100,13 @@ urlpatterns = [
     ),
 
     url(r'^my-profile',
-        ProfileView.as_view(),
+        login_required(ProfileView.as_view()),
         name='my-profile',
     ),
 
     url(r'^edit-profile',
-            ProfileEditView.as_view(),
-            name='my-profile',
+        login_required(ProfileEditView.as_view()),
+        name='edit-profile',
     ),
 
     url(

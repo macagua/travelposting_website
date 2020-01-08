@@ -33,7 +33,7 @@ from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.core.paginator import Paginator  # < Import the Paginator class
 from .models import Recommendation
-
+from apps.accounts.forms import CustomerUserChangeForm
 
 def ajax_required(f):
    """
@@ -191,7 +191,16 @@ class ProfileView(View):
 
 class ProfileEditView(View):
     def get(self, request):
-        return render(request,'community/profile/my_profile.html')
+        exist_user = CustomerUser.objects \
+            .filter(pk=request.user.id) \
+            .filter(is_active=True) \
+            .filter(is_community=True) \
+            .exists()
+        if exist_user:
+            form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
+            return render(request, 'community/profile/edit_profile.html', {'form': form})
+        else:
+            return redirect('dashboard-community')
 
 class FollowView(View):
     def post(self, request, *args, **kwargs):
