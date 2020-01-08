@@ -202,6 +202,15 @@ class ProfileEditView(View):
         else:
             return redirect('dashboard-community')
 
+    def post(self, request):
+        form = CustomerUserChangeForm(request.POST,instance=CustomerUser.objects.get(pk=request.user.id))
+        if form.is_valid():
+            form.save()
+            return redirect('my-profile')
+        else:
+            form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
+            return render(request, 'community/profile/edit_profile.html', {'form': form})
+
 class FollowView(View):
     def post(self, request, *args, **kwargs):
         #user_id is the variable that get the id for the user to follow
