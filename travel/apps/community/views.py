@@ -3,6 +3,7 @@ from django.views.generic import (
     UpdateView,
     View,
     CreateView,
+    ListView,
 )
 from django.utils.translation import gettext as _
 from django_registration.backends.activation.views import RegistrationView, ActivationView
@@ -33,6 +34,7 @@ from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.core.paginator import Paginator  # < Import the Paginator class
 from .models import Recommendation
+from django.db.models import Q
 
 
 def ajax_required(f):
@@ -379,3 +381,17 @@ class MakeRecomendationView(View):
 
         return redirect(reverse('view_detail_destination', kwargs={'slug': destino}))
 
+
+class SearchResultsView(ListView):
+    model = CustomerUser
+    template_name = 'accounts/customeruser_list.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = CustomerUser.objects.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |
+            Q(email__icontains=query) | 
+            Q(country__icontains=query)
+        )
+        return object_list
