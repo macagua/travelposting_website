@@ -1,11 +1,9 @@
 from django.views.generic import (
-    DetailView,
-    UpdateView,
     View,
-    CreateView,
+    ListView,
 )
 from django.utils.translation import gettext as _
-from django_registration.backends.activation.views import RegistrationView, ActivationView
+from django_registration.backends.activation.views import RegistrationView
 from django.shortcuts import (
     render,
     redirect,
@@ -17,22 +15,18 @@ from config.settings import local as settings
 from django.core.mail import mail_managers
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
-from django.views.decorators.http import require_POST
 from django.http import HttpResponseBadRequest
-from django.contrib.auth.decorators import login_required
-from django.template import RequestContext
-from django.views.decorators.csrf import csrf_protect
 from apps.accounts.models import Contact
 from apps.accounts.models import CustomerUser
 from .forms import CommunitySignUpForm, SignInForm
-from django.http import JsonResponse
 from apps.accounts.models import Comment
 from apps.destinations.models import Destination
 from django.template.loader import render_to_string
-from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.core.paginator import Paginator  # < Import the Paginator class
 from .models import Recommendation
+from django.db.models import Q
+
 from apps.accounts.forms import CustomerUserChangeForm
 
 def ajax_required(f):
@@ -44,7 +38,7 @@ def ajax_required(f):
    def my_view(request):
        ....
 
-   """   
+   """
 
    def wrap(request, *args, **kwargs):
        if not request.is_ajax():
@@ -57,6 +51,7 @@ def ajax_required(f):
 
 
 def heartView(request):
+    """@TODO: que es esto?"""
     pk = request.GET.get('pk', None)
     book = Book.objects.get(pk=pk)
     book.like = True
@@ -216,7 +211,7 @@ class FollowView(View):
         #user_id is the variable that get the id for the user to follow
         user_id = request.POST.get('id_user')
         action = request.POST.get('follow')
-        #declare user 
+        #declare user
         user = CustomerUser.objects.get(id=user_id)
         if action == 'follow':
             Contact.objects.get_or_create(
@@ -412,3 +407,19 @@ class MakeRecomendationView(View):
 
         return redirect(reverse('view_detail_destination', kwargs={'slug': destino}))
 
+
+class SearchResultsView(ListView):
+    model = CustomerUser
+    template_name = 'accounts/customeruser_list.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+
+        object_list = CustomerUser.objects.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |
+            Q(email__icontains=query) |
+            Q(country__icontains=query)
+        ).filter(is_community=True)
+
+        return object_list

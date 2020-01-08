@@ -18,6 +18,7 @@ from apps.community.views import (
     CommentSaveView,
     CommentRwSaveView,
     MakeRecomendationView,
+    SearchResultsView,
 )
 
 from apps.directmessages.views import (
@@ -116,5 +117,8 @@ urlpatterns = [
     ),
     url(r'^a/validate_message/$',
         validate_message, name='validate_message'),
+
+
+    path('search/', SearchResultsView.as_view(), name='search_results'),
 
 ]

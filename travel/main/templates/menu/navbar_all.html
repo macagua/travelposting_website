@@ -89,7 +89,9 @@
 						   data-unfold-duration="500">
                             <span class="position-relative">
                                 <span class="u-sidebar--account__toggle-text">{{ user.email }}</span>
-                                <img class="u-sidebar--account__toggle-img" src="{% static 'img/user.png' %}" alt="Image Description">
+								<img class="u-sidebar--account__toggle-img" src="{% static 'img/user.png' %}" alt="Image Description">
+								{% notifications_message %}
+
                             </span>
 						</a>
 						<!-- End Account Sidebar Toggle Button -->
@@ -231,7 +233,9 @@
 							<li class="u-sidebar--account__list-item">
 								<a class="u-sidebar--account__list-link" href="/pricing/">
 									<span class="fas fa-cubes u-sidebar--account__list-icon mr-2"></span>
-									Plans
+									{% trans "Plans" %}
+									{% notifications_lat %}
+
 								</a>
 							</li>
 						</ul>

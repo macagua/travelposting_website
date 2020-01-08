@@ -6,7 +6,6 @@
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
-
 {% block content %}
 <br><br><br><br>
 <main id="content" role="main">
@@ -15,75 +14,100 @@
     <!-- Content Section -->
     <div class="bg-light">
         <div class="container space-2">
-
-<div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
-    <!-- Card -->
-    <div class="card mb-3 mb-lg-0">
-        <div class="card-body p-5">
-            <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mr-4">
-                    <span class="fas fa-users btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                    <span class="d-block font-size-3">{{ count.count }} {% trans "Peoples" %}</span>
-                    <h2 class="h6 text-secondary font-weight-normal mb-0">{% trans "Customers registered in the community" %}</h2>
+            <!-- Tags -->
+            <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
+                <!-- Card -->
+                <div class="card mb-3 mb-lg-0">
+                    <div class="card-body p-5">
+                        <div class="media align-items-center">
+                            <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mr-4">
+                                <span class="fas fa-users btn-icon__inner"></span>
+                            </span>
+                            <div class="media-body">
+                                <span class="d-block font-size-3">{{ count.count }} {% trans "Peoples" %}</span>
+                                <h2 class="h6 text-secondary font-weight-normal mb-0">
+                                    {% trans "Customers registered in the community" %}</h2>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Card -->
-
-    <!-- Card -->
-    <div class="card mb-3 mb-lg-0">
-        <a href="/category/all">
-        <div class="card-body p-5">
-            <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mr-4">
-                    <span class="fas fa-plane-departure btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                    <span class="d-block font-size-2" style="color: black;">{{ destination.count }} {% trans "Registered" %}</span>
-                    <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "See destinations"%}</h3>
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="card mb-3 mb-lg-0">
+                    <a href="/category/all">
+                        <div class="card-body p-5">
+                            <div class="media align-items-center">
+                                <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mr-4">
+                                    <span class="fas fa-plane-departure btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="d-block font-size-2" style="color: black;">{{ destination.count }}
+                                        {% trans "Registered" %}</span>
+                                    <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "See destinations"%}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="card">
+                    <a href="/pricing/">
+                        <div class="card-body p-5">
+                            <div class="media align-items-center">
+                                <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mr-4">
+                                    <span class="fas fa-euro-sign btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="d-block font-size-1" style="color: black;">{% trans "from" %} 24.99 €
+                                        {% trans "Monthly" %}</span>
+                                    <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "see Pricing" %}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Card -->
             </div>
-        </div>
-        </a>
-    </div>
-    <!-- End Card -->
-
-    <!-- Card -->
-    <div class="card">
-        <a href="/pricing/">
-            <div class="card-body p-5">
-                <div class="media align-items-center">
-                    <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mr-4">
-                        <span class="fas fa-euro-sign btn-icon__inner"></span>
-                    </span>
-                    <div class="media-body">
-                        <span class="d-block font-size-1" style="color: black;">{% trans "from" %} 24.99 € {% trans "Monthly" %}</span>
-                        <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "see Pricing" %}</h3>
+            <!-- End tags-->
+            <hr>
+            <!-- Search -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-9">
+                        <form class="js-validate js-form-message w-lg-85 mx-lg-auto"  action="{% url 'search_results' %}" method="get">
+                            <div class="input-group input-group-pill">
+                                <input type="text" class="form-control" name="q"
+                                    placeholder="{% trans 'Search our community members'%}" aria-label="Email address"
+                                    aria-describedby="subscribeButton" required="">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary btn-sm-wide" id="subscribeButton"> <i
+                                            class="fas fa-search fa-1x"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="text-center mb-4">
+                            <p>{% trans "You can search by first name, last name or email"%}</p>
+                        </div>
+                        <!-- End Subscribe Form -->
                     </div>
                 </div>
             </div>
-        </a>
-    </div>
-    <!-- End Card -->
-</div>
-
+            <!-- End search -->
+            <hr>
             <div class="row justify-content-between align-items-center mb-4">
                 <!-- Title -->
                 <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-                    
                     <h2 class="h6 mb-0">
                         {{ count.count|sub:1 }}
                         {% trans "members found" %}
                     </h2>
                 </div>
                 <!-- End Title -->
-
                 <!-- Filter -->
                 <div class="col-sm-8 col-md-6 text-sm-right">
-                    <ul class="list-inline mb-0">                        
+                    <ul class="list-inline mb-0">
                         <li class="list-inline-item">
                             <a class="btn btn-sm btn-soft-primary active" href="{% url 'dashboard-community'%}">
                                 <span class="fas fa-th-large"></span>
@@ -93,7 +117,6 @@
                 </div>
                 <!-- End Filter -->
             </div>
-
             <div class="row">
                 <!-- Members -->
                 {% for user in members %}
@@ -101,58 +124,58 @@
                 <div class="col-md-4">
                     <div class="card text-center mb-5">
                         <a href="{% url 'profile_detail' user.id %}">
-                        <div class="card-body p-6">
-                            <!-- Team -->
-                            <div class="mb-4">
-                                <div class="position-relative u-lg-avatar mx-auto mb-3">
-                                    {% if user.avatar %}
-                                    <img src="/main/media/{{ user.avatar }}" class="rounded-circle" height="125" />
-                                    {% else %}
-                                    <img src="{% static 'img/user.png'%}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
-                                    {% endif %}
-                                    <span
-                                        class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                            <div class="card-body p-6">
+                                <!-- Team -->
+                                <div class="mb-4">
+                                    <div class="position-relative u-lg-avatar mx-auto mb-3">
+                                        {% if user.avatar %}
+                                        <img src="/main/media/{{ user.avatar }}" class="rounded-circle" height="125" />
+                                        {% else %}
+                                        <img src="{% static 'img/user.png'%}" width="80" class="img-responsive"
+                                            alt="Actualize su foto de Perfil" />
+                                        {% endif %}
+                                        <span
+                                            class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
+                                    </div>
+                                    <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
+                                        href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
+                                        data-original-title="Add to favorites">
+                                        <span class="far fa-star btn-icon__inner"></span>
+                                    </a>
+                                    <h2 class="h6 mb-0">
+                                        <a href="#">{{ user.get_full_name }}</a>
+                                    </h2>
                                 </div>
-
-                                <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
-                                    href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                    data-original-title="Add to favorites">
-                                    <span class="far fa-star btn-icon__inner"></span>
-                                </a>
-
-                                <h2 class="h6 mb-0">
-                                    <a href="#">{{ user.get_full_name }}</a>
-                                </h2>
-                                
+                                <!-- End Team -->
+                                <!-- Social Networks -->
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                            href="{{ user.facebook }}">
+                                            <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                            href="mailto://{{ user.email }}">
+                                            <span class="fab fa-google btn-icon__inner"></span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                            href="{{ user.twitter }}">
+                                            <span class="fab fa-twitter btn-icon__inner"></span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                            href="{{ user.instagram }}">
+                                            <span class="fab fa-instagram btn-icon__inner"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Social Networks -->
                             </div>
-                            
-                            <!-- End Team -->
-
-                            <!-- Social Networks -->
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item">
-                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.facebook }}">
-                                        <span class="fab fa-facebook-f btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ user.email }}">
-                                        <span class="fab fa-google btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.twitter }}">
-                                        <span class="fab fa-twitter btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ user.instagram }}">
-                                        <span class="fab fa-instagram btn-icon__inner"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End Social Networks -->
-                        </div>
                         </a>
                         {% with total_followers=user.followers.count %}
                         <span class="count">
@@ -163,16 +186,16 @@
                             <form action="{% url 'user_follow' %}" method="POST">{% csrf_token %}
                                 <input type="hidden" value="{{ user.id }}" name="id_user">
                                 {% if request.user not in user.followers.all %}
-                                    <input type="hidden" value="follow" name="follow">
+                                <input type="hidden" value="follow" name="follow">
                                 {% else %}
-                                    <input type="hidden" value="unfollow" name="unfollow">
+                                <input type="hidden" value="unfollow" name="unfollow">
                                 {% endif %}
                                 <button class="follow btn btn-sm btn-soft-primary transition-3d-hover">
                                     <span class="fa fa-plus mr-2"></span>
                                     {% if request.user not in user.followers.all %}
-                                        Follow
+                                    Follow
                                     {% else %}
-                                        Unfollow
+                                    Unfollow
                                     {% endif %}
                                 </button>
                             </form>
@@ -183,29 +206,24 @@
                 {% endif %}
                 {% endfor %}
                 <!-- End Members -->
-
             </div>
             <nav aria-label="...">
                 <ul class="pagination justify-content-center">
                     {% if members.has_previous %}
                     <li class="page-item disabled">
-                        <a href="?page=1"><span class="page-link"> << </span></a>
-                    </li>
-                    <li class="page-item disabled">
-                        <a href="?page={{ posts.previous_page_number }}"><span class="page-link">Previous</span></a>
+                        <a href="?page=1"><span class="page-link">
+                                << </span> </a> </li> <li class="page-item disabled">
+                                    <a href="?page={{ posts.previous_page_number }}"><span
+                                            class="page-link">Previous</span></a>
                     </li>
                     {% endif %}
                     {% for num in members.paginator.page_range %}
-                    
                     {% if members.number == num %}
                     <li class="page-item"><a class="page-link">{{ num }}</a></li>
-
                     {% elif num > members.number|add:'-3' and num < members.number|add:'3' %}
                     <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
                     {% endif %}
-                    
                     {% endfor %}
-
                     {% if members.has_next %}
                     <li class="page-item">
                         <a class="page-link" href="?page={{ members.next_page_number }}">{% trans 'Next' %}</a>
@@ -214,17 +232,12 @@
                         <a class="page-link" href="?page={{ members.paginator.num_pages }}">>></a>
                     </li>
                     {% endif %}
-
                 </ul>
             </nav>
         </div>
     </div>
     <!-- End Content Section -->
 </main>
-
-
-
 {% endblock%}
 {% block extrajs %}
-
 {% endblock extrajs%}

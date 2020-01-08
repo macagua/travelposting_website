@@ -18,12 +18,19 @@ for linea in archivo:
     print(linea)
     usuario, create = CustomerUser.objects.get_or_create(
         email=linea[0],
+        first_name=linea[1],
+        last_name=linea[2],
+        phone=linea[3],
+        mobile=linea[4],
+        business_address=linea[13],
+        country=linea[10],
         is_active=True,
         is_community=True,
-        password='$2a$10$8nCLD8zPSFLkYScG4Ihcde9q7YiEG5zvT8VgVr6hit3nrCQ5w/YVy',
     )
 
     if create:
+        usuario.set_password('travelposting2020')
+        usuario.save()
         print(f"Usuario creado con exito. {linea[0]}")
     else:
         print(f"Usuario Ignorado..... {linea[0]}")
