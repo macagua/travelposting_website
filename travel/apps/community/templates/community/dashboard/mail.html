@@ -176,7 +176,7 @@
                                                     
                                                     <ul class="list-inline mb-0">
                                                     <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                                                    <a data-toggle="modal" data-target=".bd-example-modal-lg" >
+                                                    <a data-toggle="modal" data-target="#reply_modal" >
                                                         <i class="fas fa-reply"></i>
                                                         {% trans "Reply" %}
                                                     </a>
@@ -208,12 +208,13 @@
                                                     <td class="align-middle text-secondary">{{ r.sent_at }}</td>
                                                 </tr>
                                                 <!-- the modal-->
-                                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                                <div id="reply_modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <form method="POST" action="{% url 'send-messages' %}">{% csrf_token %}
-                                                                <input type="hidden" name="recipient" value="{{ r.sender.id}}">
+                                                                <h3>{{r.sender}}
+                                                                <input type="hidden" id="reply_to" name="reply_to" value="{{ r.sender.id}}">
                                                                 <input type="hidden" name="sender" value="{{ request.user.id }}">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title">{% trans "Send message to" %}</h5>
