@@ -232,7 +232,17 @@
                 setCookie("acceptCookies", true, 1); // Create a 1 day cookie
                 cookieAlert.classList.remove("show");
               });
+
+              
             
+            </script>
+            <script>
+              $(document).ready(function () {
+                $('.js-example-basic-single').select2({
+                  theme: 'bootstrap4',
+                  placeholder: "Select a state"
+                });
+              });
             </script>
           {% endblock extrajsinit %}
 

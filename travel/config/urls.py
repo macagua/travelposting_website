@@ -17,6 +17,7 @@ from apps.landing_page.views import (
 )
 
 from apps.destinations.views.booking import BookingSaveView
+#import notifications.urls
 
 admin.autodiscover()
 
@@ -140,6 +141,9 @@ urlpatterns += i18n_patterns(
         include('cms.urls'),
         name='index',
     ),
+
+    #url('^inbox/notifications/',
+    #    include(notifications.urls, namespace='notifications')),
 
 
 )

@@ -22,9 +22,10 @@ from apps.community.views import (
 
 from apps.directmessages.views import (
     InboxView,
+    validate_message,
+    NotificationsView,
 )
 
-from apps.community import views
 
 
 
@@ -55,6 +56,12 @@ urlpatterns = [
         'inbox/',
         login_required(InboxView.as_view()),
         name='inbox-community',
+    ),
+
+    path(
+        'notifications/',
+        login_required(NotificationsView.as_view()),
+        name='notifications-community',
     ),
 
     path(
@@ -107,4 +114,7 @@ urlpatterns = [
         MakeRecomendationView.as_view(),
         name='make-recomm',
     ),
+    url(r'^a/validate_message/$',
+        validate_message, name='validate_message'),
+
 ]
