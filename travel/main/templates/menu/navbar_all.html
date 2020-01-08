@@ -3,23 +3,23 @@
 {% get_current_language as LANGUAGES %}
 
 <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md"
-data-header-fix-moment="500"
-data-header-fix-effect="slide">
-    <div class="u-header__section">
-        <div class="container u-header__hide-content pt-2">
-            <div class="d-flex align-items-center">
-                <!-- Language -->
-                <div class="position-relative">
-                    {% get_current_language as LANGUAGES %}
-                    <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center"
-                        href="javascript::" role="button" aria-controls="languageDropdown" aria-haspopup="true"
-                        aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown"
-                        data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
-                        data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
-                        data-unfold-animation-out="fadeOut">
-                        <span class="flag-icon flag-icon-{% if LANGUAGES == 'en' %}gb{% else %}{{ LANGUAGES }}{% endif%}"> </span>
-                        <span class="d-inline-block d-sm-none">{{ LANGUAGES }}</span>
-                        <span class="d-none d-sm-inline-block">
+		data-header-fix-moment="500"
+		data-header-fix-effect="slide">
+	<div class="u-header__section">
+		<div class="container u-header__hide-content pt-2">
+			<div class="d-flex align-items-center">
+				<!-- Language -->
+				<div class="position-relative">
+					{% get_current_language as LANGUAGES %}
+					<a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center"
+					   href="javascript::" role="button" aria-controls="languageDropdown" aria-haspopup="true"
+					   aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown"
+					   data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
+					   data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
+					   data-unfold-animation-out="fadeOut">
+						<span class="flag-icon flag-icon-{% if LANGUAGES == 'en' %}gb{% else %}{{ LANGUAGES }}{% endif%}"> </span>
+						<span class="d-inline-block d-sm-none">{{ LANGUAGES }}</span>
+						<span class="d-none d-sm-inline-block">
                             {% if LANGUAGES == 'en' %}
                                 {% trans 'English' %}
                             {% elif LANGUAGES == 'de' %}
@@ -28,242 +28,242 @@ data-header-fix-effect="slide">
                                 {% trans 'Spanish' %}
                             {% endif %}
                         </span>
-                    </a>
+					</a>
 
-                    <div id="languageDropdown" class="dropdown-menu dropdown-unfold u-unfold--css-animation u-unfold--hidden"
-                        aria-labelledby="languageDropdownInvoker" style="animation-duration: 300ms; left: 0px;">
-                        <a class="dropdown-item active" href="/en/">{% trans 'English' %}</a>
-                        <a class="dropdown-item" href="/de/">{% trans 'Deutsch' %}</a>
-                        <a class="dropdown-item" href="/es/">{% trans 'Spanish' %}</a>
-                    </div>
-                </div>
-                <!-- End Language -->
+					<div id="languageDropdown" class="dropdown-menu dropdown-unfold u-unfold--css-animation u-unfold--hidden"
+						 aria-labelledby="languageDropdownInvoker" style="animation-duration: 300ms; left: 0px;">
+						<a class="dropdown-item active" href="/en/">{% trans 'English' %}</a>
+						<a class="dropdown-item" href="/de/">{% trans 'Deutsch' %}</a>
+						<a class="dropdown-item" href="/es/">{% trans 'Spanish' %}</a>
+					</div>
+				</div>
+				<!-- End Language -->
 
-                <div class="ml-auto">
-                    <!-- Jump To -->
-                    <div class="d-inline-block d-sm-none position-relative mr-2">
-                        <a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center"
-                            href="javascript:;" role="button" aria-controls="jumpToDropdown" aria-haspopup="true"
-                            aria-expanded="false" data-unfold-event="hover" data-unfold-target="#jumpToDropdown"
-                            data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
-                            data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
-                            data-unfold-animation-out="fadeOut">
-                            Jump to
-                        </a>
+				<div class="ml-auto">
+					<!-- Jump To -->
+					<div class="d-inline-block d-sm-none position-relative mr-2">
+						<a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center"
+						   href="javascript:;" role="button" aria-controls="jumpToDropdown" aria-haspopup="true"
+						   aria-expanded="false" data-unfold-event="hover" data-unfold-target="#jumpToDropdown"
+						   data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
+						   data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
+						   data-unfold-animation-out="fadeOut">
+							Jump to
+						</a>
 
-                        <div id="jumpToDropdown"
-                            class="dropdown-menu dropdown-unfold u-unfold--css-animation u-unfold--hidden fadeOut"
-                            aria-labelledby="jumpToDropdownInvoker" style="animation-duration: 300ms;">
-                            <a class="dropdown-item" href="/faq/">FAQs</a>
-                            <a class="dropdown-item" href="/#contact">{% trans 'Contacts' %}</a>
-                        </div>
-                    </div>
-                    <!-- End Jump To -->
+						<div id="jumpToDropdown"
+							 class="dropdown-menu dropdown-unfold u-unfold--css-animation u-unfold--hidden fadeOut"
+							 aria-labelledby="jumpToDropdownInvoker" style="animation-duration: 300ms;">
+							<a class="dropdown-item" href="/faq/">FAQs</a>
+							<a class="dropdown-item" href="/#contact">{% trans 'Contacts' %}</a>
+						</div>
+					</div>
+					<!-- End Jump To -->
 
-                    <!-- Links -->
-                    <div class="d-none d-sm-inline-block ml-sm-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item mr-0">
-                                <a class="u-header__navbar-link" href="/faq/">FAQs</a>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                                <a class="u-header__navbar-link" href="/#contact">{% trans 'Contacts' %}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- End Links -->
-                </div>
+					<!-- Links -->
+					<div class="d-none d-sm-inline-block ml-sm-auto">
+						<ul class="list-inline mb-0">
+							<li class="list-inline-item mr-0">
+								<a class="u-header__navbar-link" href="/faq/">FAQs</a>
+							</li>
+							<li class="list-inline-item mr-0">
+								<a class="u-header__navbar-link" href="/#contact">{% trans 'Contacts' %}</a>
+							</li>
+						</ul>
+					</div>
+					<!-- End Links -->
+				</div>
 
-                <ul class="list-inline ml-2 mb-0">
+				<ul class="list-inline ml-2 mb-0">
 
 
-                    <!-- Account Login -->
-                    {% if request.user.is_authenticated == True %}
-                    <!-- Account Login -->
-                    <li class="list-inline-item">
-                        <!-- Account Sidebar Toggle Button -->
-                        <a id="sidebarNavToggler" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1"
-                            href="javascript:;" role="button" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false"
-                            data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
-                            data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
-                            data-unfold-duration="500">
+					<!-- Account Login -->
+					{% if request.user.is_authenticated == True %}
+					<!-- Account Login -->
+					<li class="list-inline-item">
+						<!-- Account Sidebar Toggle Button -->
+						<a id="sidebarNavToggler" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1"
+						   href="javascript:;" role="button" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false"
+						   data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
+						   data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
+						   data-unfold-duration="500">
                             <span class="position-relative">
                                 <span class="u-sidebar--account__toggle-text">{{ user.email }}</span>
                                 <img class="u-sidebar--account__toggle-img" src="{% static 'img/user.png' %}" alt="Image Description">
-                                {% notifications_message %}
-                              </span>
-                        </a>
-                        <!-- End Account Sidebar Toggle Button -->
-                    </li>
-                    {% else %}
-                    <li class="list-inline-item">
-                        <!-- Account Sidebar Toggle Button -->
-                        <a id="sidebarNavToggler" class="btn btn-xs btn-icon btn-text-secondary target-of-invoker-has-unfolds"
-                            href="javascript:;" role="button" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false"
-                            data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
-                            data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
-                            data-unfold-duration="500">
-                            <span class="fas fa-user-circle btn-icon__inner font-size-1"></span>
-                        </a>
-                        <!-- End Account Sidebar Toggle Button -->
-                    </li>
-                    {% endif %}
-                    <!-- End Account Login -->
-                </ul>
-            </div>
-        </div>
-        <div id="logoAndNav" class="container">
-            <!-- Nav -->
-            <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
-                <!-- White Logo -->                
-                <a href="/{{LANGUAGES}}/">
-                    <img src="{% static 'img/travelposting4.png' %}" width="100">
-                </a>
-
-                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
-                </a>
-                <!-- End White Logo -->
-                <!-- End On Scroll Logo -->
-                <!-- Responsive Toggle Button -->
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false"
-                    aria-controls="navBar"
-                    data-toggle="collapse"
-                    data-target="#navBar">
+                            </span>
+						</a>
+						<!-- End Account Sidebar Toggle Button -->
+					</li>
+					{% else %}
+					<li class="list-inline-item">
+						<!-- Account Sidebar Toggle Button -->
+						<a id="sidebarNavToggler" class="btn btn-xs btn-icon btn-text-secondary target-of-invoker-has-unfolds"
+						   href="javascript:;" role="button" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false"
+						   data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
+						   data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
+						   data-unfold-duration="500">
+							<span class="fas fa-user-circle btn-icon__inner font-size-1"></span>
+						</a>
+						<!-- End Account Sidebar Toggle Button -->
+					</li>
+					{% endif %}
+					<!-- End Account Login -->
+				</ul>
+			</div>
+		</div>
+		<div id="logoAndNav" class="container">
+			<!-- Nav -->
+			<nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+				<!-- White Logo -->
+				<a href="/{{LANGUAGES}}/">
+					<img src="{% static 'img/travelposting4.png' %}" width="100">
+				</a>
+				<a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
+				</a>
+				<!-- End White Logo -->
+				<!-- End On Scroll Logo -->
+				<!-- Responsive Toggle Button -->
+				<button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
+						aria-label="Toggle navigation"
+						aria-expanded="false"
+						aria-controls="navBar"
+						data-toggle="collapse"
+						data-target="#navBar">
                 <span id="hamburgerTrigger" class="u-hamburger__box">
                 <span class="u-hamburger__inner"></span>
                 </span>
-                </button>
-                <!-- End Responsive Toggle Button -->
-                {% show_menu 0 10 10 10 "menu/menu.html" %}
-            </nav>
-            <!-- End Nav -->
-        </div>
-    </div>
+				</button>
+				<!-- End Responsive Toggle Button -->
+				{% show_menu 0 10 10 10 "menu/menu.html" %}
+			</nav>
+			<!-- End Nav -->
+		</div>
+	</div>
 </header>
- <!-- ========== SECONDARY CONTENTS ========== -->
+<!-- ========== SECONDARY CONTENTS ========== -->
 {% if request.user.is_authenticated == True %}
 
-  <!-- Account Sidebar Navigation -->
-  <aside id="sidebarContent" class="u-sidebar" aria-labelledby="sidebarNavToggler">
-    <div class="u-sidebar__scroller">
-      <div class="u-sidebar__container">
-        <div class="u-sidebar--account__footer-offset">
-          <!-- Toggle Button -->
-          <div class="d-flex justify-content-between align-items-center pt-4 px-7">
-            <h3 class="h6 mb-0">{% trans 'My Account'%}</h3>
+<!-- Account Sidebar Navigation -->
+<aside id="sidebarContent" class="u-sidebar" aria-labelledby="sidebarNavToggler">
+	<div class="u-sidebar__scroller">
+		<div class="u-sidebar__container">
+			<div class="u-sidebar--account__footer-offset">
+				<!-- Toggle Button -->
+				<div class="d-flex justify-content-between align-items-center pt-4 px-7">
+					<h3 class="h6 mb-0">{% trans 'My Account'%}</h3>
 
-            <button type="button" class="close ml-auto"
-                    aria-controls="sidebarContent"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    data-unfold-event="click"
-                    data-unfold-hide-on-scroll="false"
-                    data-unfold-target="#sidebarContent"
-                    data-unfold-type="css-animation"
-                    data-unfold-animation-in="fadeInRight"
-                    data-unfold-animation-out="fadeOutRight"
-                    data-unfold-duration="500">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!-- End Toggle Button -->
+					<button type="button" class="close ml-auto"
+							aria-controls="sidebarContent"
+							aria-haspopup="true"
+							aria-expanded="false"
+							data-unfold-event="click"
+							data-unfold-hide-on-scroll="false"
+							data-unfold-target="#sidebarContent"
+							data-unfold-type="css-animation"
+							data-unfold-animation-in="fadeInRight"
+							data-unfold-animation-out="fadeOutRight"
+							data-unfold-duration="500">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<!-- End Toggle Button -->
 
-          <!-- Content -->
-          <div class="js-scrollbar u-sidebar__body">
-            <!-- Holder Info -->
-            <header class="d-flex align-items-center u-sidebar--account__holder mt-3">
-              <div class="position-relative">
-                <img class="u-sidebar--account__holder-img" src="{% static 'img/user.png' %}" alt="Image Description">
-              </div>
-              <div class="ml-3">
-                <span class="font-weight-semi-bold">{{ user.get_full_name }}</span>
-                <span class="u-sidebar--account__holder-text">{{ user.email }}</span>
-              </div>
+				<!-- Content -->
+				<div class="js-scrollbar u-sidebar__body">
+					<!-- Holder Info -->
+					<header class="d-flex align-items-center u-sidebar--account__holder mt-3">
+						<div class="position-relative">
+							<img class="u-sidebar--account__holder-img" src="{% static 'img/user.png' %}" alt="Image Description">
+						</div>
+						<div class="ml-3">
+							<span class="font-weight-semi-bold">{{ user.get_full_name }}</span>
+							<span class="u-sidebar--account__holder-text">{{ user.email }}</span>
+						</div>
 
-              <!-- Settings -->
-              <div class="btn-group position-relative ml-auto mb-auto">
-                <a id="sidebar-account-settings-invoker" class="btn btn-xs btn-icon btn-text-secondary rounded" href="javascript:;" role="button"
-                        aria-controls="sidebar-account-settings"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        data-toggle="dropdown"
-                        data-unfold-event="click"
-                        data-unfold-target="#sidebar-account-settings"
-                        data-unfold-type="css-animation"
-                        data-unfold-duration="300"
-                        data-unfold-delay="300"
-                        data-unfold-animation-in="slideInUp"
-                        data-unfold-animation-out="fadeOut">
-                  <span class="fas fa-ellipsis-v btn-icon__inner"></span>
-                </a>
+						<!-- Settings -->
+						<div class="btn-group position-relative ml-auto mb-auto">
+							<a id="sidebar-account-settings-invoker" class="btn btn-xs btn-icon btn-text-secondary rounded" href="javascript:;" role="button"
+							   aria-controls="sidebar-account-settings"
+							   aria-haspopup="true"
+							   aria-expanded="false"
+							   data-toggle="dropdown"
+							   data-unfold-event="click"
+							   data-unfold-target="#sidebar-account-settings"
+							   data-unfold-type="css-animation"
+							   data-unfold-duration="300"
+							   data-unfold-delay="300"
+							   data-unfold-animation-in="slideInUp"
+							   data-unfold-animation-out="fadeOut">
+								<span class="fas fa-ellipsis-v btn-icon__inner"></span>
+							</a>
 
-                <div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
-                  <a class="dropdown-item" href="#">{% trans 'Settings'%}</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{% url 'logout-community' %}?next={% url 'index' %}">{% trans 'Sign Out' %}</a>
-                </div>
-              </div>
-              <!-- End Settings -->
-            </header>
-            <!-- End Holder Info -->
+							<div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
+								<a class="dropdown-item" href="#">{% trans 'Settings'%}</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{% url 'logout-community' %}?next={% url 'index' %}">{% trans 'Sign Out' %}</a>
+							</div>
+						</div>
+						<!-- End Settings -->
+					</header>
+					<!-- End Holder Info -->
 
-            <div class="u-sidebar__content--account">
-              <!-- List Links -->
-              <ul class="list-unstyled u-sidebar--account__list">
-                <li class="u-sidebar--account__list-item">
-                  <a class="u-sidebar--account__list-link" href="{% url 'dashboard-community' %}">
-                    <span class="fas fa-home u-sidebar--account__list-icon mr-2"></span>
-                    {% trans "Dashboard" %}
-                  </a>
-                </li>
+					<div class="u-sidebar__content--account">
+						<!-- List Links -->
+						<ul class="list-unstyled u-sidebar--account__list">
+							<li class="u-sidebar--account__list-item">
+								<a class="u-sidebar--account__list-link" href="{% url 'dashboard-community' %}">
+									<span class="fas fa-home u-sidebar--account__list-icon mr-2"></span>
+									{% trans "Dashboard" %}
+								</a>
+							</li>
+							<li class="u-sidebar--account__list-item">
+								<a class="u-sidebar--account__list-link" href="{% url 'my-profile' %}">
+									<span class="fas fa-user-circle u-sidebar--account__list-icon mr-2"></span>
+									{% trans "My Profile" %}
+								</a>
+							</li>
+							<li class="u-sidebar--account__list-item">
+								<a class="u-sidebar--account__list-link" href="{% url 'dashboard-community' %}">
+									<span class="fas fa-users u-sidebar--account__list-icon mr-2"></span>
+									{% trans "Members" %}
+								</a>
+							</li>
+							<li class="u-sidebar--account__list-item">
+								<a class="u-sidebar--account__list-link" href="/pricing/">
+									<span class="fas fa-cubes u-sidebar--account__list-icon mr-2"></span>
+									Plans
+								</a>
+							</li>
+						</ul>
+						<!-- End List Links -->
+						<div class="u-sidebar--account__list-divider"></div>
+						<!-- End List Links -->
+					</div>
+				</div>
+			</div>
 
-                <li class="u-sidebar--account__list-item">
-                  <a class="u-sidebar--account__list-link" href="{% url 'dashboard-community' %}">
-                    <span class="fas fa-users u-sidebar--account__list-icon mr-2"></span>
-                    {% trans "Members" %}
-                  </a>
-                </li>
-                <li class="u-sidebar--account__list-item">
-                  <a class="u-sidebar--account__list-link" href="/pricing/">
-                    <span class="fas fa-cubes u-sidebar--account__list-icon mr-2"></span>
-                    {% trans "Plans" %}
-                  </a>
-                </li>
-                {% notifications_lat %}
-              </ul>
-              <!-- End List Links -->
+			<!-- Footer -->
+			<footer id="SVGwaveWithDots" class="svg-preloader u-sidebar__footer u-sidebar__footer--account">
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item pr-3">
+						<a class="u-sidebar__footer--account__text" href="/policy/">{% trans "Privacy" %}</a>
+					</li>
+					<li class="list-inline-item pr-3">
+						<a class="u-sidebar__footer--account__text" href="/cookies/">{% trans "Cookies" %}</a>
+					</li>
 
-              <div class="u-sidebar--account__list-divider"></div>
+				</ul>
 
-              <!-- End List Links -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <footer id="SVGwaveWithDots" class="svg-preloader u-sidebar__footer u-sidebar__footer--account">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item pr-3">
-              <a class="u-sidebar__footer--account__text" href="/policy/">{% trans "Privacy" %}</a>
-            </li>
-            <li class="list-inline-item pr-3">
-              <a class="u-sidebar__footer--account__text" href="/cookies/">{% trans "Cookies" %}</a>
-            </li>
-
-          </ul>
-
-          <!-- SVG Background Shape -->
-          <div class="position-absolute right-0 bottom-0 left-0">
-            <img class="js-svg-injector" src="{% static 'assets/svg/components/wave-bottom-with-dots.svg' %}" alt="Image Description"
-                   data-parent="#SVGwaveWithDots">
-          </div>
-          <!-- End SVG Background Shape -->
-        </footer>
-        <!-- End Footer -->
-      </div>
-    </div>
-  </aside>
-  <!-- End Account Sidebar Navigation -->
-  {% endif %}
+				<!-- SVG Background Shape -->
+				<div class="position-absolute right-0 bottom-0 left-0">
+					<img class="js-svg-injector" src="{% static 'assets/svg/components/wave-bottom-with-dots.svg' %}" alt="Image Description"
+						 data-parent="#SVGwaveWithDots">
+				</div>
+				<!-- End SVG Background Shape -->
+			</footer>
+			<!-- End Footer -->
+		</div>
+	</div>
+</aside>
+<!-- End Account Sidebar Navigation -->
+{% endif %}

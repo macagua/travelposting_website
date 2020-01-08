@@ -11,6 +11,8 @@ from apps.community.views import (
     ForgetPasswordCommunity,
     DashboardCommunity,
     FollowView,
+    ProfileView,
+    ProfileEditView,
     DetailProfileView,
     heartView,
     CommentSaveView,
@@ -25,7 +27,8 @@ from apps.directmessages.views import (
     NotificationsView,
 )
 
-from apps.community import views
+
+
 
 urlpatterns = [
     path('', CommmunityView.as_view(), name='index'),
@@ -95,6 +98,16 @@ urlpatterns = [
     url(r'^dashboard/(?P<slug>\w+)',
         DetailProfileView.as_view(),
         name='profile_detail',
+    ),
+
+    url(r'^my-profile',
+        login_required(ProfileView.as_view()),
+        name='my-profile',
+    ),
+
+    url(r'^edit-profile',
+        login_required(ProfileEditView.as_view()),
+        name='edit-profile',
     ),
 
     url(

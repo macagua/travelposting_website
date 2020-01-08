@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% load mathfilters %}
+{% load destinations_tags%}
+{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<br><br><br><br>
+<main id="content" role="main">
+  {% include "community/dashboard/breadcrumb_profile.html" with edit_profile=True%}
+	<!--INIT-->
+	<div class="bg-light">
+      <div class="container space-2">
+        <div class="row">
+          <div class="col-lg-3 mb-7 mb-lg-0">
+            <!-- Profile Card -->
+            <div class="card p-1 mb-4">
+              <div class="card-body text-center">
+                <div class="mb-3">
+                  <img class="u-lg-avatar rounded-circle" src="{% static 'img/user.png' %}"
+					alt="Image Description">
+                </div>
+
+                <div class="mb-3">
+                  <h1 class="h6 font-weight-medium mb-0">{{ user.get_full_name }}</h1>
+                </div>
+              </div>
+            </div>
+            <!-- End Profile Card -->
+
+            <!-- Contacts  -->
+            <div class="card mb-4">
+              <div class="card-header pt-4 pb-3 px-0 mx-4">
+                <h2 class="h6 mb-0">{%trans "Random" %}</h2>
+              </div>
+
+              <div class="card-body pt-3 pb-4 px-4">
+                <!-- User
+                <a class="d-flex align-items-start mb-4" href="#">
+                  <span class="btn btn-icon btn-soft-danger rounded-circle">
+                    <span class="btn-icon__inner">AO</span>
+                    <span class="badge badge-xs badge-outline-warning badge-pos badge-pos--bottom-right rounded-circle"></span>
+                  </span>
+
+                  <div class="ml-3">
+                    <span class="d-block text-dark">Amanta Owens</span>
+                    <small class="d-block text-secondary">UI/UX Designer</small>
+                  </div>
+                </a>
+                 End User -->
+              </div>
+            </div>
+            <!-- End Contacts  -->
+          </div>
+
+          <div class="col-lg-9">
+
+            <!-- Collections -->
+            <ul class="list-inline d-flex align-items-center">
+              <li class="list-inline-item mb-3 mb-sm-0 mr-5">
+                <div class="d-flex align-items-center">
+                  <span class="bg-warning text-white font-weight-medium rounded py-2 px-3 mr-2">125</span>
+                  <div class="text-secondary">
+                    Reviews
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-sm-0 mr-5">
+                <div class="d-flex align-items-center">
+                  <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg' %}"
+                       alt="Image Description" style="width: 40px;">
+                  <div class="text-secondary">
+                    XXXXXXX
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-sm-0">
+                <div class="d-flex align-items-center">
+                  <img class="mr-2" src="{% static 'assets/svg/illustrations/verified-user.svg' %}"
+                       alt="Image Description" style="width: 40px;">
+                  <div class="text-secondary">
+                    XXXXXXX
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- End Collections -->
+
+            <hr class="my-7">
+
+            <!-- Icon Blocks -->
+            <div class="row">
+              <div class="col-md-6 col-lg-4">
+                <!-- List Group -->
+                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="fas fa-envelope list-group-icon mr-3"></span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">{% trans "Email" %}:</span>
+                        <a href="#">{{request.user.email}}</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="fas fa-link list-group-icon mr-3"></span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">{% trans "Web page" %}:</span>
+                        <a href="#">{{request.user.web_site}}</a>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+                <!-- End List Group -->
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <!-- List Group -->
+                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
+                   <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">{% trans "Location" %}:</span>
+                        <a href="#">{{request.user.business_address}}</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">{% trans "Postal Code" %}:</span>
+                        <span class="d-block text-muted">{{request.user.postal_code}}</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="fas fa-mobile-alt list-group-icon mr-3"></span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">{% trans "Phone number" %}:</span>
+                        <a href="#">{{request.user.mobile}}</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- End List Group -->
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <!-- List Group -->
+                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="fas fa-globe list-group-icon mr-3"></span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">{% trans "Language" %}:</span>
+                        <span class="d-block text-muted">{{request.user.language}}</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="fas fa-tags list-group-icon mr-3"></span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">{% trans "Social Profiles" %}:</span>
+                        <a href="{{request.user.facebook}}" target="_blank">
+                          <i class="fab fa-facebook-square list-group-icon mr-3"></i>
+                          {{request.user.facebook}}
+                        </a>
+                        <div class="clearfix"></div>
+                        <a href="{{request.user.instagram}}" target="_blank">
+                          <i class="fab fa-instagram list-group-icon mr-3"></i>
+                          {{request.user.instagram}}
+                        </a>
+                        <div class="clearfix"></div>
+                        <a href="{{request.user.twitter}}" target="_blank">
+                          <i class="fab fa-twitter-square list-group-icon mr-3"></i>
+                          {{request.user.twitter}}
+                        </a>
+                        <div class="clearfix"></div>
+                        <a href="{{request.user.linkedin}}" target="_blank">
+                          <i class="fab fa-linkedin list-group-icon mr-3"></i>
+                          {{request.user.linkedin}}
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- End List Group -->
+              </div>
+            </div>
+            <!-- End Icon Blocks -->
+
+            <hr class="my-7">
+
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+
+
+{% endblock%}
+{% block extrajs %}
+
+{% endblock extrajs%}

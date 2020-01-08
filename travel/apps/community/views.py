@@ -36,6 +36,7 @@ from django.core.paginator import Paginator  # < Import the Paginator class
 from .models import Recommendation
 from django.db.models import Q
 
+from apps.accounts.forms import CustomerUserChangeForm
 
 def ajax_required(f):
    """
@@ -179,6 +180,39 @@ class DashboardCommunity(View):
         return render(request, 'community/dashboard/dashboard.html', {'members': members, 'count': count, 'destination': destination})
 
 
+class ProfileView(View):
+    def get(self, request):
+        exist_user = CustomerUser.objects \
+            .filter(pk=request.user.id) \
+            .filter(is_active=True) \
+            .filter(is_community=True) \
+            .exists()
+        if exist_user:
+            return render(request,'community/profile/my_profile.html')
+        else:
+            return redirect('dashboard-community')
+
+class ProfileEditView(View):
+    def get(self, request):
+        exist_user = CustomerUser.objects \
+            .filter(pk=request.user.id) \
+            .filter(is_active=True) \
+            .filter(is_community=True) \
+            .exists()
+        if exist_user:
+            form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
+            return render(request, 'community/profile/edit_profile.html', {'form': form})
+        else:
+            return redirect('dashboard-community')
+
+    def post(self, request):
+        form = CustomerUserChangeForm(request.POST,instance=CustomerUser.objects.get(pk=request.user.id))
+        if form.is_valid():
+            form.save()
+            return redirect('my-profile')
+        else:
+            form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
+            return render(request, 'community/profile/edit_profile.html', {'form': form})
 
 class FollowView(View):
     def post(self, request, *args, **kwargs):
