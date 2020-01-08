@@ -177,6 +177,21 @@ class DashboardCommunity(View):
         return render(request, 'community/dashboard/dashboard.html', {'members': members, 'count': count, 'destination': destination})
 
 
+class ProfileView(View):
+    def get(self, request):
+        exist_user = CustomerUser.objects \
+            .filter(pk=request.user.id) \
+            .filter(is_active=True) \
+            .filter(is_community=True) \
+            .exists()
+        if exist_user:
+            return render(request,'community/profile/my_profile.html')
+        else:
+            return redirect('dashboard-community')
+
+class ProfileEditView(View):
+    def get(self, request):
+        return render(request,'community/profile/my_profile.html')
 
 class FollowView(View):
     def post(self, request, *args, **kwargs):
