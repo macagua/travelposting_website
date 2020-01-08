@@ -1,0 +1,10 @@
+<!-- templates/search_results.html -->
+<h1>Search Results</h1>
+
+<ul>
+    {% for u in object_list %}
+    <li>
+        {{ u.user }}, {{ u.get_full_name }}
+    </li>
+    {% endfor %}
+</ul>

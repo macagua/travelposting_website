@@ -32,7 +32,7 @@ from apps.destinations.models import (
     Destination,
 
 )
-from notifications.signals import notify
+from django.core.exceptions import ValidationError
 
 
 
