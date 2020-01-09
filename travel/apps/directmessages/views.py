@@ -25,8 +25,11 @@ class sendViews(View):
     def post(self, request, *args, **kwargs):
         subject = request.POST.get("subject")
         sender = request.POST.get("sender")
-        recipient = request.POST.get("reply_to")
         content = request.POST.get("message")
+        try:
+            recipient = request.POST["reply_to"]
+        except KeyError:
+            recipient = request.POST["recipient"]
 
         sender = CustomerUser.objects.get(id=sender)
         recipient = CustomerUser.objects.get(id=recipient)
