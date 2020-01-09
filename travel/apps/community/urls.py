@@ -19,6 +19,7 @@ from apps.community.views import (
     CommentRwSaveView,
     MakeRecomendationView,
     SearchResultsView,
+    change_password,
 )
 
 from apps.directmessages.views import (
@@ -118,6 +119,7 @@ urlpatterns = [
     url(r'^a/validate_message/$',
         validate_message, name='validate_message'),
 
+    path('reset/password/', login_required(change_password), name='change_password'),
 
     path('search/', SearchResultsView.as_view(), name='search_results'),
 

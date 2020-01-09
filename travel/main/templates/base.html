@@ -136,6 +136,7 @@
         <script src="{% static 'assets/vendor/datatables/media/js/jquery.dataTables.min.js'%}"></script>
         <script src="{% static 'assets/js/components/hs.datatables.js'%}"></script>
         <script src="{% static 'js/select2.min.js'%}"></script>
+        <script src="{% static 'assets/js/components/hs.password-strength.js'%}"></script>
         
 
         <!-- JS Plugins Init. -->
@@ -186,6 +187,17 @@
               // initialization of datatable
               $.HSCore.components.HSDatatables.init('.js-datatable');
 
+              // initialization of password strength module
+              $.HSCore.components.HSPasswordStrength.init('#newPassword');
+
+              // initialization of form validation
+              $.HSCore.components.HSValidation.init('.js-validate', {
+                rules: {
+                  confirmNewPassword: {
+                    equalTo: '#newPassword'
+                  }
+                }
+              });
 
             </script>
 
