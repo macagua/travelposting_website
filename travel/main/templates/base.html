@@ -231,6 +231,8 @@
               acceptCookies.addEventListener("click", function() {
                 setCookie("acceptCookies", true, 1); // Create a 1 day cookie
                 cookieAlert.classList.remove("show");
+                document.cookie = "list=travelposting; expires=Thu, 18 Dec 2040 12:00:00 UTC; path=/";
+
               });
 
               
