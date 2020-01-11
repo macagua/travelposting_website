@@ -137,6 +137,9 @@
         <script src="{% static 'assets/js/components/hs.datatables.js'%}"></script>
         <script src="{% static 'js/select2.min.js'%}"></script>
         <script src="{% static 'assets/js/components/hs.password-strength.js'%}"></script>
+        <script src="{% static 'assets/vendor/clipboard/dist/clipboard.min.js'%}"></script>
+        <script src="{% static 'assets/js/components/hs.clipboard.js'%}"></script>
+
         
 
         <!-- JS Plugins Init. -->
@@ -186,6 +189,8 @@
 
               // initialization of datatable
               $.HSCore.components.HSDatatables.init('.js-datatable');
+              // initialization of clipboard
+              $.HSCore.components.HSClipboard.init('.js-clipboard');
 
               // initialization of password strength module
               $.HSCore.components.HSPasswordStrength.init('#newPassword');

@@ -56,13 +56,16 @@
                     <a href="/pricing/">
                         <div class="card-body p-5">
                             <div class="media align-items-center">
-                                <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mr-4">
-                                    <span class="fas fa-euro-sign btn-icon__inner"></span>
-                                </span>
                                 <div class="media-body">
-                                    <span class="d-block font-size-1" style="color: black;">{% trans "from" %} 24.99 €
-                                        {% trans "Monthly" %}</span>
-                                    <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "see Pricing" %}</h3>
+                                    <div class="js-focus-state input-group mb-4">
+                                        <input id="textExample" type="text" class="form-control form-control-sm" value="I am a text example">
+                                        <div class="input-group-append">
+                                            <a class="js-clipboard input-group-text form-control-sm" href="javascript:;" data-content-target="#textExample"
+                                                data-success-text="{% trans 'Copied!'%}'">{% trans "Copy"%}</a>
+                                        </div>
+                                    </div>
+                                    <small class="form-text text-muted">{% trans "Copy or share your referral link with friends" %}</small>
+                                    <!-- End Clipboard -->
                                 </div>
                             </div>
                         </div>

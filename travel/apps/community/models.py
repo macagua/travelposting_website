@@ -35,3 +35,20 @@ class Recommendation(models.Model):
         return self.destino
 
 
+class Referral(models.Model):
+    user = models.OneToOneField(
+        CustomerUser, related_name='user', on_delete=models.CASCADE)
+    referredBy = models.ForeignKey(
+        CustomerUser, related_name='referredBy', on_delete=models.CASCADE)
+    code = models.CharField(max_length=40, unique=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        if self.user:
+            return "{} ({})".format(self.user, self.code)
+        else:
+            return self.code
+
+    class Meta:
+        verbose_name = _('Referral')
+        verbose_name_plural = _('Referrals')

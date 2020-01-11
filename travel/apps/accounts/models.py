@@ -178,6 +178,7 @@ class CustomerUser(AbstractUser):
     is_superuser = models.BooleanField(default=False)
     is_community = models.BooleanField(default=True)
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
+    ref_code = models.CharField(_("Code Referral"), max_length=100, null=True, blank=True)
 
 
     USERNAME_FIELD = 'email'
