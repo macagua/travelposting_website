@@ -31,8 +31,9 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from apps.accounts.forms import CustomerUserChangeForm
 
+
 def ajax_required(f):
-   """
+    """
    AJAX request required decorator
    use it in your views:
 
@@ -42,14 +43,14 @@ def ajax_required(f):
 
    """
 
-   def wrap(request, *args, **kwargs):
-       if not request.is_ajax():
-           return HttpResponseBadRequest()
-       return f(request, *args, **kwargs)
+    def wrap(request, *args, **kwargs):
+        if not request.is_ajax():
+            return HttpResponseBadRequest()
+        return f(request, *args, **kwargs)
 
-   wrap.__doc__=f.__doc__
-   wrap.__name__=f.__name__
-   return wrap
+    wrap.__doc__ = f.__doc__
+    wrap.__name__ = f.__name__
+    return wrap
 
 
 def heartView(request):
@@ -60,6 +61,7 @@ def heartView(request):
     book.save()
     data = {'book', book}
     return JsonResponse('data')
+
 
 class CommmunityView(View):
     """
@@ -98,7 +100,6 @@ class LoginCommunity(View):
                 self.template_name,
                 {'form': self.form, 'errors': errors},
             )
-
 
 
 class signupCommunity(RegistrationView):
@@ -143,7 +144,6 @@ class signupCommunity(RegistrationView):
                       html_message=html_body)
 
 
-
 class ForgetPasswordCommunity(View):
     """
         Login para los usuarios de la comunidad
@@ -159,7 +159,6 @@ class DashboardCommunity(View):
     """
     paginate_by = 3
 
-
     def get(self, request, *args, **kwargs):
         members = CustomerUser.objects.filter(is_active=True, is_community=True)
         count = CustomerUser.objects.filter(is_active=True, is_community=True)
@@ -171,7 +170,8 @@ class DashboardCommunity(View):
         destination = Destination.objects.filter(
             is_deleted=False, is_published=True)
 
-        return render(request, 'community/dashboard/dashboard.html', {'members': members, 'count': count, 'destination': destination})
+        return render(request, 'community/dashboard/dashboard.html',
+                      {'members': members, 'count': count, 'destination': destination})
 
 
 class ProfileView(View):
@@ -182,9 +182,10 @@ class ProfileView(View):
             .filter(is_community=True) \
             .exists()
         if exist_user:
-            return render(request,'community/profile/my_profile.html')
+            return render(request, 'community/profile/my_profile.html')
         else:
             return redirect('dashboard-community')
+
 
 class ProfileEditView(View):
     def get(self, request):
@@ -200,7 +201,8 @@ class ProfileEditView(View):
             return redirect('dashboard-community')
 
     def post(self, request):
-        form = CustomerUserChangeForm(request.POST,request.FILES,instance=CustomerUser.objects.get(pk=request.user.id))
+        form = CustomerUserChangeForm(request.POST, request.FILES,
+                                      instance=CustomerUser.objects.get(pk=request.user.id))
         if form.is_valid():
             form.save()
             return redirect('my-profile')
@@ -208,12 +210,13 @@ class ProfileEditView(View):
             form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
             return render(request, 'community/profile/edit_profile.html', {'form': form})
 
+
 class FollowView(View):
     def post(self, request, *args, **kwargs):
-        #user_id is the variable that get the id for the user to follow
+        # user_id is the variable that get the id for the user to follow
         user_id = request.POST.get('id_user')
         action = request.POST.get('follow')
-        #declare user
+        # declare user
         user = CustomerUser.objects.get(id=user_id)
         if action == 'follow':
             Contact.objects.get_or_create(
@@ -226,7 +229,6 @@ class FollowView(View):
             return redirect(reverse('dashboard-community'))
 
 
-
 class DetailProfileView(View):
     def get(self, request, *args, **kwargs):
         members = CustomerUser.objects.get(id=kwargs.get('slug'))
@@ -234,7 +236,7 @@ class DetailProfileView(View):
         paginator = Paginator(reviews, 3)
         page = request.GET.get('page')
         reviews = paginator.get_page(page)
-        return render(request, 'community/dashboard/profile_user.html', {'members': members, 'reviews':reviews})
+        return render(request, 'community/dashboard/profile_user.html', {'members': members, 'reviews': reviews})
 
 
 class CommentSaveView(View):
@@ -261,7 +263,7 @@ class CommentSaveView(View):
         subject = _('New comment add')
 
         ctx = {
-            'post':  dest,
+            'post': dest,
             'user_comment': user,
             'name': name,
             'body': body,
@@ -317,7 +319,7 @@ class CommentRwSaveView(View):
         subject = _('New comment add')
 
         ctx = {
-            'post':  dest,
+            'post': dest,
             'user_comment': user,
             'name': name,
             'body': body,
@@ -378,7 +380,7 @@ class MakeRecomendationView(View):
         subject = _('New comment add')
 
         ctx = {
-            'dest':  dest,
+            'dest': dest,
             'user_recommendation': user,
             'recomendacion1': recomendacion1,
             'recomendacion2': recomendacion2,
@@ -392,7 +394,7 @@ class MakeRecomendationView(View):
         message = _(
             f'if you want see the admin site https://travelposting.com/admin/ ')
 
-        #mail_managers(subject,
+        # mail_managers(subject,
         #              message,
         #              fail_silently=True,
         #              html_message=html_message

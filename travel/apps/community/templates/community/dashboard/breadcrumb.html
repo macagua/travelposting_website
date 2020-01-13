@@ -25,7 +25,9 @@
 				<!-- User Info -->
 				<div class="media d-block d-sm-flex align-items-sm-center">
 					<div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
-						<img class="img-fluid rounded-circle" src="{% static 'img/user.png' %}"
+						<img class="img-fluid rounded-circle"
+							 src="{%if not request.user.avatar %}
+							 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
 							 alt="Image Description">
 						<span
 								class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">

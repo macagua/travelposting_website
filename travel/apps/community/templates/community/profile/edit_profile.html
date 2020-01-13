@@ -20,7 +20,10 @@
 					<!-- Input -->
 					<div class="col-sm-12 col-md-12 media align-items-center mb-6">
 						<div class="u-lg-avatar mr-3">
-							<img class="img-fluid rounded-circle" src="{%if not request.user.avatar %}{% static 'img/user.png' %}{%else%}{{request.user.avatar}}{%endif%}" alt="Image Description">
+							<img class="img-fluid rounded-circle"
+								 src="{%if not request.user.avatar %}
+								 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
+								 alt="Image Description">
 						</div>
 
 						<div class="media-body">

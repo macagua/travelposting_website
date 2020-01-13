@@ -20,8 +20,10 @@
             <div class="card p-1 mb-4">
               <div class="card-body text-center">
                 <div class="mb-3">
-                  <img class="u-lg-avatar rounded-circle" src="{% static 'img/user.png' %}"
-					alt="Image Description">
+                  <img class="u-lg-avatar rounded-circle"
+                       src="{%if not request.user.avatar %}
+                       {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
+                       alt="Image Description">
                 </div>
 
                 <div class="mb-3">
