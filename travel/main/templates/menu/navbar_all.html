@@ -89,7 +89,10 @@
 						   data-unfold-duration="500">
                             <span class="position-relative">
                                 <span class="u-sidebar--account__toggle-text">{{ user.email }}</span>
-								<img class="u-sidebar--account__toggle-img" src="{% static 'img/user.png' %}" alt="Image Description">
+								<img class="u-sidebar--account__toggle-img"
+									 src="{%if not request.user.avatar %}
+									 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
+									 alt="Image Description">
 								{% notifications_message %}
 
                             </span>
