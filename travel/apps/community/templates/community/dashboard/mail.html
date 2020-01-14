@@ -213,7 +213,6 @@
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <form id="reply_form" method="POST" action="{% url 'send-messages' %}">{% csrf_token %}
-                                                                <h3>{{r.sender}}
                                                                 <input type="hidden" id="reply_to" name="reply_to" value="{{ r.sender.id}}">
                                                                 <input type="hidden" name="sender" value="{{ request.user.id }}">
                                                                 <div class="modal-header">
