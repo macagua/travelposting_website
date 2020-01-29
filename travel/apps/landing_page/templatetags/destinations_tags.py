@@ -2,7 +2,13 @@ import os
 import random
 from django import template
 from django.conf import settings
-from apps.landing_page.models import Testimony, Magazine, Plan
+from apps.landing_page.models import (
+    Testimony,
+    Magazine,
+    Plan,
+    Slider,
+)
+
 from apps.destinations.models import (
     Destination,
     Categorie,
@@ -55,6 +61,15 @@ def testimonials_list(context):
     list_testimonials = Testimony.objects.all()
     return {
         'list': list_testimonials,
+        'request': context.request,
+    }
+
+
+@register.inclusion_tag('services/destination/sponsors.html', takes_context=True)
+def sponsors_list(context):
+    list_sponsors = Slider.objects.filter(active=True)
+    return {
+        'list': list_sponsors,
         'request': context.request,
     }
 
