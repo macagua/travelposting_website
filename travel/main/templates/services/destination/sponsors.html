@@ -1,0 +1,52 @@
+{%load i18n destinations_tags staticfiles %}
+<!-- sponsor Section -->
+<div class="bg-light">
+    <div class="container space-2">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+            <span class="btn btn-xs btn-soft-primary btn-pill mb-2">{% trans 'Partners' %}</span>
+            <h2 class="h5 font-weight-normal">{% trans 'Know some of our partners' %}</h2>
+        </div>
+        <!-- End Title -->
+        <!-- Slick Carousel -->
+        <div class="js-slick-carousel u-slick u-slick-zoom u-slick--gutters-3"
+            data-slides-show="3"
+            data-center-mode="true"
+            data-autoplay="true"
+            data-speed="5000"
+            data-pagi-classes="text-center u-slick__pagination mt-7 mb-0"
+            data-responsive='[{
+            "breakpoint": 992,
+            "settings": {
+            "slidesToShow": 2
+            }
+            }, {
+            "breakpoint": 768,
+            "settings": {
+            "slidesToShow": 1
+            }
+            }]'>
+            {% for sponsor in list %}
+            <div class="js-slide my-4">
+                <!-- Testimonials -->
+                <div class="u-slick-zoom__slide text-center">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-7">
+                            <img class="img-fluid rounded-circle" src="{{ sponsor.image.url }}" alt="Image Description">
+                        </div>
+                    </div>
+                    <div class="position-relative z-index-2 mt-n5 mb-3">
+                        <div class="u-avatar mx-auto">
+                            <p class="mb-0"></p>
+                        </div>
+                    </div>
+                    <h4 class="h6 mb-0"><a href="{{sponsor.title}}">{{ sponsor.title }}</a></h4>
+                </div>
+                <!-- End Testimonials -->
+            </div>
+            {% endfor %}
+        </div>
+        <!-- End Slick Carousel -->
+    </div>
+</div>
+<!-- End sponsor Section -->
