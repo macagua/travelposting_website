@@ -69,11 +69,13 @@ class RegistrationForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationForm)
             'class':'form-control first',
         }),
         help_text=_('Use at least 8 characters. Do not use a password from another site or a term that is too obvious, such as your pet\'s name.'))
+
     password2 = forms.CharField(label=_("Password confirmation"),
         widget=forms.PasswordInput(attrs={
             'class':'form-control last',
         }),
         help_text=_("Enter the same password as above, for verification."))
+
     class Meta(BaseRegistrationForm.Meta):
         #Preparing vars to add the new user
         BASE_REGISTRATION_FIELDS = BaseRegistrationForm.Meta.fields
@@ -119,8 +121,27 @@ class CustomPasswordChangeForm(BaseBootstrapForm, PasswordChangeForm):
 class CustomerUserChangeForm(BaseBootstrapForm, forms.ModelForm):
     class Meta:
         model = CustomerUser
-        fields = ('avatar','first_name', 'last_name', 'business_name', 'business_address', 'business_position', 'postal_code',
-                  'state', 'country', 'language', 'degree', 'phone', 'mobile', 'web_site','facebook','instagram','twitter','linkedin')
+        fields = (
+            'avatar',
+            'first_name',
+            'last_name',
+            'ref_code',
+            'business_name',
+            'business_address',
+            'business_position',
+            'postal_code',
+            'state',
+            'country',
+            'language',
+            'degree',
+            'phone',
+            'mobile',
+            'web_site',
+            'facebook',
+            'instagram',
+            'twitter',
+            'linkedin',
+        )
 
     def clean_language(self):
         lang = self.cleaned_data.get('language')
