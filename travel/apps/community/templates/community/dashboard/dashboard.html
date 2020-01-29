@@ -53,23 +53,17 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="card">
-                    <a href="/pricing/">
                         <div class="card-body p-5">
                             <div class="media align-items-center">
                                 <div class="media-body">
                                     <div class="js-focus-state input-group mb-4">
-                                        <input id="textExample" type="text" class="form-control form-control-sm" value="I am a text example">
-                                        <div class="input-group-append">
-                                            <a class="js-clipboard input-group-text form-control-sm" href="javascript:;" data-content-target="#textExample"
-                                                data-success-text="{% trans 'Copied!'%}'">{% trans "Copy"%}</a>
-                                        </div>
+                                        <input id="referralText" type="text" class="form-control form-control-sm" value="{{ user.referral }}" readonly>
                                     </div>
                                     <small class="form-text text-muted">{% trans "Copy or share your referral link with friends" %}</small>
                                     <!-- End Clipboard -->
                                 </div>
                             </div>
                         </div>
-                    </a>
                 </div>
                 <!-- End Card -->
             </div>
