@@ -168,17 +168,55 @@ class CustomerUser(AbstractUser):
         blank=True,
         null=True,
     )
-    facebook = models.CharField(max_length=100, null=True, blank=True)
-    instagram = models.CharField(max_length=100, null=True, blank=True)
-    twitter = models.CharField(max_length=100, null=True, blank=True)
-    linkedin = models.CharField(max_length=100, null=True, blank=True)
-    about_me = models.TextField(_('About me'), null=True, blank=True, max_length=2000)
+
+    ref_code = models.CharField(
+        _("Code Referral"),
+        max_length=100,
+        null=True,
+        blank=True,
+    )
+
+    facebook = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+    )
+
+    instagram = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+    )
+
+    twitter = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+    )
+
+    linkedin = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+    )
+
+    about_me = models.TextField(
+        _('About me'),
+        null=True,
+        blank=True,
+        max_length=2000,
+    )
+
+    avatar = models.ImageField(
+        upload_to='avatars/',
+        null=True,
+        blank=True,
+    )
+
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_community = models.BooleanField(default=True)
-    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
-    ref_code = models.CharField(_("Code Referral"), max_length=100, null=True, blank=True)
 
 
     USERNAME_FIELD = 'email'
