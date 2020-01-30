@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-23 12:18-0400\n"
-"PO-Revision-Date: 2019-10-30 10:48-0428\n"
-"Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
+"POT-Creation-Date: 2019-11-30 12:32-0400\n"
+"PO-Revision-Date: 2020-01-18 10:15-0428\n"
+"Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -62,11 +62,11 @@ msgstr "Su cuenta ha sido bloqueada por falta de pago"
 
 #: apps/accounts/forms.py:71 apps/community/forms.py:23
 msgid ""
-"Use at least 8 characters. Do not use a password from another site or a term "
-"that is too obvious, such as your pet's name."
+"Use at least 8 characters. Do not use a password from another site or a term"
+" that is too obvious, such as your pet's name."
 msgstr ""
-"Use al menos 8 caracteres, No use contraseñas de otros sitios o obvias, como "
-"el nombre de su mascota. "
+"Use al menos 8 caracteres, No use contraseñas de otros sitios o obvias, como"
+" el nombre de su mascota. "
 
 #: apps/accounts/forms.py:76 apps/community/forms.py:28
 msgid "Enter the same password as above, for verification."
@@ -181,7 +181,6 @@ msgid "Déjenos su dirección Web"
 msgstr "Déjenos su dirección Web"
 
 #: apps/accounts/models.py:175
-#, fuzzy
 #| msgid "About"
 msgid "About me"
 msgstr "Acerca de"
@@ -201,8 +200,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"&copy; 2019 Todos los derechos reservados Mapa del sitio Descargo de "
-"responsabilidad."
+"&copy; 2019 Todos los derechos reservados Mapa del sitio Descargo de responsabilidad."
 
 #: apps/accounts/templates/accounts/registration/activation_complete.html:50
 #: apps/community/templates/community/registration/activation_complete.html:50
@@ -237,10 +235,8 @@ msgstr "Confirmación del correo"
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por "
-"registarse en Travel&Solutions.\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar "
-"la creación de su cuenta.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por registarse en Travel&Solutions.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar la creación de su cuenta.\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 "\n"
@@ -252,10 +248,8 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: "
-"%(activation_key)s,\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por "
-"%(expiration_days)s días.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: %(activation_key)s,\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por %(expiration_days)s días.\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 "\n"
@@ -345,7 +339,8 @@ msgstr "Necesitamos verificar tu identidad"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
 msgid "Please check your email, and follow the next intructions"
-msgstr "Por favor verifique su e-mail, y siga las instrucciones a continuación"
+msgstr ""
+"Por favor verifique su e-mail, y siga las instrucciones a continuación"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
 msgid "accounts:register"
@@ -459,8 +454,8 @@ msgstr "Resetear contraseña"
 msgid ""
 "Reset password for email: %(email)s. Press the button to reset your password"
 msgstr ""
-"Restablecer contraseña para correo electrónico: %(email)s. Presione el botón "
-"para restablecer su contraseña"
+"Restablecer contraseña para correo electrónico: %(email)s. Presione el botón"
+" para restablecer su contraseña"
 
 #: apps/accounts/templates/accounts/registration/register_form.html:50
 msgid "Welcome to"
@@ -543,7 +538,6 @@ msgstr "Teléfono"
 
 #: apps/accounts/templates/accounts/user/_detail.html:62
 #: apps/accounts/templates/accounts/user/_detail.html:86
-#, fuzzy
 #| msgid "New registered search"
 msgid "Not registered yet"
 msgstr "Nueva búsqueda registrada"
@@ -566,7 +560,6 @@ msgstr "Estado"
 #: apps/accounts/templates/accounts/user/_detail.html:137
 #: apps/accounts/templates/accounts/user/_detail.html:146
 #: apps/accounts/templates/accounts/user/_detail.html:154
-#, fuzzy
 #| msgid "New registered search"
 msgid "Not registered yet "
 msgstr "Nueva búsqueda registrada"
@@ -626,26 +619,23 @@ msgid "An error, Incorrect User or Password has occurred."
 msgstr "Se produjo un error, usuario o contraseña incorrectos."
 
 #: apps/community/templates/community/dashboard/_email.html:72
-#, fuzzy
 #| msgid "A person has done a new booking:"
 msgid "A person has done a new comment:"
 msgstr "Una persona ha realizado una nueva reserva:"
 
 #: apps/community/templates/community/dashboard/_email.html:85
-#, fuzzy
 #| msgid "title"
 msgid "Title: "
 msgstr "Titulo"
 
 #: apps/community/templates/community/dashboard/_email.html:87
 msgid "Body:"
-msgstr ""
+msgstr "Cuerpo:"
 
 #: apps/community/templates/community/dashboard/_email.html:90
-#, fuzzy
 #| msgid "Personal info"
 msgid "Person:"
-msgstr "Información personal"
+msgstr "Persona:"
 
 #: apps/community/templates/community/dashboard/_email.html:109
 #: main/templates/pages/booking_email.html:73
@@ -670,7 +660,7 @@ msgstr "Destinos"
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:67
 msgid "Logout"
-msgstr ""
+msgstr "Cierre de sesión"
 
 #: apps/community/templates/community/dashboard/dashboard.html:5
 #: apps/community/templates/community/dashboard/profile_user.html:4
@@ -684,25 +674,25 @@ msgstr "Comunidad"
 
 #: apps/community/templates/community/dashboard/dashboard.html:24
 msgid "members found"
-msgstr ""
+msgstr "miembros encontrados"
 
 #: apps/community/templates/community/dashboard/dashboard.html:156
 #: apps/community/templates/community/dashboard/profile_user.html:267
 #: main/templates/services/destination/_parts/pagination_destinies.html:28
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: apps/community/templates/community/dashboard/profile_user.html:57
 msgid "Social Profiles"
-msgstr ""
+msgstr "Perfiles Sociales"
 
 #: apps/community/templates/community/dashboard/profile_user.html:97
 msgid "Hey, I'am "
-msgstr ""
+msgstr "Hola, yo soy"
 
 #: apps/community/templates/community/dashboard/profile_user.html:126
 msgid "Verified"
-msgstr ""
+msgstr "Verificado"
 
 #: apps/community/templates/community/dashboard/profile_user.html:144
 #: main/templates/pages/booking_email.html:60
@@ -713,55 +703,56 @@ msgstr "E-mail"
 
 #: apps/community/templates/community/dashboard/profile_user.html:153
 msgid "Web page:"
-msgstr ""
+msgstr "Página web:"
 
 #: apps/community/templates/community/dashboard/profile_user.html:162
 msgid "Location"
-msgstr ""
+msgstr "Localización"
 
 #: apps/community/templates/community/dashboard/profile_user.html:178
-#, fuzzy
 #| msgid "Lenguaje"
 msgid "Language"
 msgstr "Lenguaje"
 
 #: apps/community/templates/community/dashboard/profile_user.html:193
 msgid "Reviews"
-msgstr ""
+msgstr "Reseñas"
 
 #: apps/community/templates/community/dashboard/profile_user.html:234
 msgid "Reply"
-msgstr ""
+msgstr "Respuesta"
 
 #: apps/community/templates/community/registration/forget_password.html:17
-#, fuzzy
 #| msgid "Forgot Password?"
 msgid "Forgot your"
-msgstr "¿Olvido su contraseña?"
+msgstr "¿Olvidó su?"
 
 #: apps/community/templates/community/registration/forget_password.html:18
-#, fuzzy
 #| msgid "Password"
 msgid "password?"
 msgstr "Contraseña"
 
 #: apps/community/templates/community/registration/forget_password.html:19
-#, fuzzy
 #| msgid "Enter your email address below."
 msgid "Enter your email address below and we\\"
-msgstr "Ingrese el correo debajo"
+msgstr ""
+"Introduzca su dirección de correo electrónico a continuación y nosotros"
 
 #: apps/community/templates/community/registration/login.html:17
 msgid ""
 " Welcome <span\n"
 "                        class=\"font-weight-semi-bold\">to Community</span>"
 msgstr ""
+"Bienvenido <span\n"
+"class=\"font-weight-semi-bold\">a la Comunidad</span> "
 
 #: apps/community/templates/community/registration/signup.html:17
 msgid ""
 " Welcome <span class=\"font-weight-semi-bold\">to\n"
 "                        Community</span>"
 msgstr ""
+"Bienvenido <span class=\"font-weight-semi-bold\">to\n"
+"Comunidad</span>"
 
 #: apps/community/templates/community/registration/signup.html:45
 #, fuzzy
@@ -771,11 +762,11 @@ msgstr "Estoy de acuerdo"
 
 #: apps/community/templates/community/registration/signup.html:46
 msgid "Terms and Conditions"
-msgstr ""
+msgstr "Términos y Condiciones"
 
 #: apps/community/templates/community/registration/signup.html:61
 msgid "Get Started"
-msgstr ""
+msgstr "Empiece a trabajar"
 
 #: apps/community/views.py:228 apps/community/views.py:284
 #, fuzzy
@@ -786,8 +777,8 @@ msgstr "Comentario"
 #: apps/community/views.py:243 apps/community/views.py:299
 #, fuzzy
 #| msgid ""
-#| "if you want see the                     admin site https://travelposting."
-#| "com/admin/ "
+#| "if you want see the                     admin site "
+#| "https://travelposting.com/admin/ "
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 "Si deseas ver el sitio de administración https://travelposting.com/admin/  "
@@ -1057,16 +1048,13 @@ msgstr "Nueva búsqueda registrada"
 #: apps/landing_page/views.py:138
 #, python-brace-format
 msgid ""
-"A person has done a new search, please review Mr.'s {name} incoming "
-"application. \n"
+"A person has done a new search, please review Mr.'s {name} incoming application. \n"
 " Search                     the country or city: {country} \n"
 " Email:  {email} \n"
 "  Whatsapp: {whatsapp} \n"
-" or if you want see the                     admin site https://travelposting."
-"com/admin/ "
+" or if you want see the                     admin site https://travelposting.com/admin/ "
 msgstr ""
-"Una persona ha realizado una nueva búsqueda, revise la solicitud entrante "
-"del Sr. {name}.\n"
+"Una persona ha realizado una nueva búsqueda, revise la solicitud entrante del Sr. {name}.\n"
 "Busque el país o la ciudad: {country}\n"
 "Correo electrónico: {email}\n"
 "Whatsapp: {whatsapp}\n"
@@ -1078,18 +1066,19 @@ msgstr "Nueva petición de borrado"
 
 #: apps/landing_page/views.py:185 apps/landing_page/views.py:266
 msgid ""
-"if you want see the                     admin site https://travelposting.com/"
-"admin/ "
+"if you want see the                     admin site "
+"https://travelposting.com/admin/ "
 msgstr ""
 "Si deseas ver el sitio de administración https://travelposting.com/admin/  "
 
 #: apps/landing_page/views.py:203
-msgid "Thank you very much for contacting us, we will be responding very soon "
-msgstr ""
+msgid ""
+"Thank you very much for contacting us, we will be responding very soon "
+msgstr "Muchas gracias por contactarnos, responderemos muy pronto."
 
 #: apps/landing_page/views.py:205
 msgid "A error has ocurred while processing your message"
-msgstr ""
+msgstr "Se ha producido un error al procesar su mensaje"
 
 #: apps/landing_page/views.py:251
 msgid "New privacity request."
@@ -1161,8 +1150,9 @@ msgstr "funcionalidad"
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
 #: main/templates/datenshutz_form.html:5
-#: main/templates/datenshutz_form_privacity.html:5 main/templates/hotels.html:3
-#: main/templates/make_page.html:5 main/templates/pages/request.html:5
+#: main/templates/datenshutz_form_privacity.html:5
+#: main/templates/hotels.html:3 main/templates/make_page.html:5
+#: main/templates/pages/request.html:5
 #: main/templates/template_base_for_text.html:3
 msgid "About us"
 msgstr "Sobre nosotros"
@@ -1197,7 +1187,9 @@ msgstr "Obtén ofertas especiales de los últimos viajes y nuestros planes"
 
 #: main/templates/base.html:79
 msgid "Do you like cookies?"
-msgstr "¿Te gustan las galletas?"
+msgstr ""
+"¿Te gustan las galletas, estas son necesarias y obligatorias por la nueva "
+"ley de proteción de datos?"
 
 #: main/templates/base.html:79
 msgid "We use cookies to ensure you get the best experience on our website."
@@ -1228,8 +1220,8 @@ msgstr "pronto"
 
 #: main/templates/coming-soon.html:71
 msgid ""
-"Our apps is under construction. We'll be here soon with our new awesome apps "
-"for your device"
+"Our apps is under construction. We'll be here soon with our new awesome apps"
+" for your device"
 msgstr ""
 "Nuestras aplicaciones están en construcción. Estaremos aquí pronto con "
 "nuestras nuevas e increíbles aplicaciones para tu dispositivo"
@@ -1248,11 +1240,12 @@ msgstr "Próximamente"
 
 #: main/templates/community.html:22
 msgid ""
-"Our community is not yet open to the general public, for now it is a project "
-"that we will be making known on social networks as of 02.10.19"
+"Our community is not yet open to the general public, for now it is a project"
+" that we will be making known on social networks as of 02.10.19"
 msgstr ""
-"Nuestra comunidad aún no está abierta al público en general, por ahora es un "
-"proyecto que daremos a conocer en las redes sociales a partir del 02.11.19."
+"Nuestra comunidad es una comunidad de aventureros, de personas amantes a los viajes y a descubrir el mundo, por esto es una comunidad abierta solo hasta el 02.02.2020 luego cerraremos nuestras puertas y pasara a ser una comunidad cerrada, a la cual solo podrás acceder por recomendación de algún amigo inscrito.\n"
+"\n"
+"Por ahora es un proyecto que ya cuenta con casi 500 Miembros de diferentes países y que daremos a conocer en las redes sociales a partir del 07.01.2020."
 
 #: main/templates/community.html:49
 msgid "Discover our benefits"
@@ -1260,19 +1253,20 @@ msgstr "Descubra nuestros beneficios"
 
 #: main/templates/community.html:62
 msgid "Welcome to our Travelposting Community."
-msgstr "Bienvenido a nuestra comunidad de Travelposting."
+msgstr "Bienvenido a la comunidad Travelposting."
 
 #: main/templates/community.html:74
 msgid ""
 "The purpose of our Community is to be able to offer you tourist packages at "
-"a very good price, since by having a good number of members in our community "
-"we can negotiate much better prices so that each of you has the opportunity "
-"to enjoy without spending much money"
+"a very good price, since by having a good number of members in our community"
+" we can negotiate much better prices so that each of you has the opportunity"
+" to enjoy without spending much money"
 msgstr ""
-"La finalidad de nuestra Comunidad es poder ofrecerles paquetes turísticos a "
-"muy buen precio, ya que al tener un buen número de miembros en nuestra "
-"comunidad podemos negociar precios mucho mejores para que cada uno de "
-"ustedes tenga la oportunidad de disfrutar sin gastar mucho dinero."
+"La finalidad de nuestra Comunidad es ofrecerle paquetes turísticos a muy buen precio y la oportunidad de ser los primeros en conocer nuevos destinos turísticos o probar nuevos servicios en el área de turismo. \n"
+"\n"
+"Queremos llegar a un buen numero de usuarios ya que ésto nos permitirá poder conseguir buenos precios para que ustedes logren disfrutar de más destinos donde viajar gastando menos y siendo parte de las mejoras que cada nuevo destino puede tener.\n"
+"\n"
+"Atrévete y se parte de esta comunidad y ayuda a cambiar la forma como se ofrecen los nuevos destinos hoy en día. Ven y descubre con nosotros el mundo."
 
 #: main/templates/community.html:89
 msgid "My duties"
@@ -1281,39 +1275,25 @@ msgstr "Mis deberes"
 #: main/templates/community.html:101
 msgid ""
 "\n"
-"              1 • By being members of the Community we commit ourselves to "
-"give our Feedback to the Travel Agencies, Resorts or Companies that offer us "
-"to test their services for a very low price.\n"
+"              1 • By being members of the Community we commit ourselves to give our Feedback to the Travel Agencies, Resorts or Companies that offer us to test their services for a very low price.\n"
 "\n"
-"              2 • Our Feedback can no longer be already, all good or NOT no "
-"no, all bad, you must commit to give feedback (real recommendation) from "
-"your point of view to the Hotels or any company of the tourism sector that "
-"invites us.\n"
+"              2 • Our Feedback can no longer be already, all good or NOT no no, all bad, you must commit to give feedback (real recommendation) from your point of view to the Hotels or any company of the tourism sector that invites us.\n"
 "\n"
-"              3 • You must link and comment on the Hotel, Resort or company "
-"that invites us to your social networks at least two, (Example Instagram or "
-"facebook, or Instagram and Travelposting), to publicize the company that "
-"invites us\n"
+"              3 • You must link and comment on the Hotel, Resort or company that invites us to your social networks at least two, (Example Instagram or facebook, or Instagram and Travelposting), to publicize the company that invites us\n"
 "\n"
-"              4 • You must fill in your Feedback / Recommendation form at "
-"the end of the trip, or maximum seven days after the end of the trip.\n"
+"              4 • You must fill in your Feedback / Recommendation form at the end of the trip, or maximum seven days after the end of the trip.\n"
 "            "
 msgstr ""
 "\n"
-"1 - Al ser miembros de la Comunidad nos comprometemos a dar nuestro Feedback "
-"a las Agencias de Viajes, Resorts o Compañías que nos ofrecen probar sus "
-"servicios a un precio muy bajo.\n"
+"1 - Al ser miembro de la Comunidad te comprometes a dar tu Feedback (Recomendación) a las Agencias de Viajes, Resorts o Compañías que nos ofrecen probar sus servicios a un precio muy bajo.\n"
 "\n"
-"2 - Nuestro Feedback ya no puede ser ya, todo bueno o NO, todo malo, debes "
-"comprometerte a dar feedback (recomendación real) desde tu punto de vista a "
-"los Hoteles o a cualquier empresa del sector turístico que nos invite.\n"
+"2 - Nuestro Feedback no puede ser YA!, Todo bueno o NO, todo malo, debes comprometerte a dar un feedback (recomendación real) desde tu punto de vista a los Hoteles o a cualquier empresa del sector turístico que nos invite.\n"
 "\n"
-"3 - Debe enlazar y comentar sobre el Hotel, Resort o empresa que nos invita "
-"a sus redes sociales al menos dos, (Ejemplo Instagram o facebook, o "
-"Instagram y Travelposting), para publicitar la empresa que nos invita.\n"
+"3 - Debes comentar sobre el Hotel, Resort o empresa que nos invita en tus redes sociales al menos dos, (Ejemplo Instagram o facebook, o Instagram y Travelposting), asimismo debes de seguir a esté Hotel o agencia sus redes y hacer algunos comentarios en sus redes.\n"
 "\n"
-"4 - Debe rellenar su formulario de Retroalimentación / Recomendación al "
-"final del viaje, o como máximo siete días después del final del viaje.\n"
+"4 - Debes llenar su formulario de Retroalimentación / Recomendación al final del viaje, o como máximo siete días después del final del viaje.\n"
+"\n"
+"Recuerda que esto es obligatorio, es parte de tu deber como miembro activo de la comunidad travelposting.\n"
 "\t"
 
 #: main/templates/community.html:125
@@ -1324,67 +1304,49 @@ msgstr "Mis beneficios"
 #, python-format
 msgid ""
 "\n"
-"            1 • Travel with discounts of 20%% up to 50%% discount on the "
-"tourist package of your choice\n"
+"            1 • Travel with discounts of 20%% up to 50%% discount on the tourist package of your choice\n"
 "\n"
-"            2 • Be able to invite your friends to register on the "
-"travelposting page and can travel with you and also save up to 50%%\n"
+"            2 • Be able to invite your friends to register on the travelposting page and can travel with you and also save up to 50%%\n"
 "\n"
-"            3 • Participate free in all draws that travelposting makes in "
-"reference to the tourism sector\n"
+"            3 • Participate free in all draws that travelposting makes in reference to the tourism sector\n"
 "\n"
-"            4 • Receive free trial products that companies in the tourism "
-"sector make available to the community\n"
+"            4 • Receive free trial products that companies in the tourism sector make available to the community\n"
 "\n"
-"            5 • Be able to go out in advertising magazines that "
-"travelposting airs\n"
+"            5 • Be able to go out in advertising magazines that travelposting airs\n"
 "\n"
-"            6 • Attend events that travelposting concerning organized "
-"tourism\n"
+"            6 • Attend events that travelposting concerning organized tourism\n"
 "\n"
-"            7 • Get discounts on purchases made with the Travelposting Card "
-"*\n"
+"            7 • Get discounts on purchases made with the Travelposting Card *\n"
 "\n"
-"            * The prepaid credit card will be being released after "
-"completing the minimum amount of 1500 members.\n"
+"            * The prepaid credit card will be being released after completing the minimum amount of 1500 members.\n"
 "\n"
-"            It is your chance to help us grow, the longer we are, the faster "
-"we can get our credit card.\n"
+"            It is your chance to help us grow, the longer we are, the faster we can get our credit card.\n"
 "\n"
-"            From now we wish you much enjoyment in your travels with us and "
-"to prepare bags that your next destination is waiting for you.\n"
+"            From now we wish you much enjoyment in your travels with us and to prepare bags that your next destination is waiting for you.\n"
 "          "
 msgstr ""
 "\n"
-"1 - Viaje con descuentos de 20%% hasta 50%% de descuento en el paquete "
-"turístico de su elección.\n"
+"Antes de conocer cuales serán tus beneficios al registrarte gratis en la comunidad travelposting, te diremos que si te registras antes del 31.12.2019 a las 23:59 minutos, tu registro quedara grabado y serás uno de nuestros miembros fundadores y tu membresía será gratuita de por vida. (Nunca te cobraremos la cuota de afiliación que comenzara a regir a partir del 02.02.2020) Después de esta fecha todos los afiliados deberán cancelar una cuota de afiliación de € 100,- Anual para obtener los beneficios que conocerás a continuación.\n"
 "\n"
-"2 - Podrás invitar a tus amigos a registrarse en la página de publicación de "
-"viajes y viajar contigo, además de ahorrar hasta un 50%%.\n"
+"1 - Viajes con descuentos de un 20%% hasta 50%% de descuento en el paquete turístico de su elección.\n"
 "\n"
-"3 - Participar gratuitamente en todos los sorteos que haga el travelposting "
-"en referencia al sector turístico.\n"
+"2 - Podrás invitar a tus amigos a registrarse en la página de publicación de viajes y viajar contigo, además de ahorrar entre 20 y hasta 50%% sobre el precio de venta al publico normal.\n"
 "\n"
-"4 - Recibir productos de prueba gratuitos que las empresas del sector "
-"turístico ponen a disposición de la comunidad.\n"
+"3 - Participar gratuitamente en todos los sorteos que haga travelposting en referencia al sector turístico.\n"
 "\n"
-"5 - Poder salir en las revistas de publicidad que viajan con aires de "
-"posteo\n"
+"4 - Recibir productos de prueba gratuitos que las empresas del sector turístico ponen a disposición de la comunidad.\n"
 "\n"
-"6 - Asistir a los eventos que se realizan en el marco del turismo "
-"organizado\n"
+"5 - Salir en la revista digital www.travelposting.net en la sección AnBord, donde podrás detallar como te fue en tu viaje.\n"
 "\n"
-"7 - Obtenga descuentos en las compras realizadas con la Travelposting Card "
-"*\n"
+"6 - Asistir a los eventos que se realizan en el marco del turismo.\n"
 "\n"
-"* La tarjeta de crédito prepagada será liberada después de completar la "
-"cantidad mínima de 1500 miembros.\n"
+"7 - Obtener descuentos en las compras realizadas con la Tarjeta de Crédito Travelposting Card.*\n"
 "\n"
-"Es su oportunidad de ayudarnos a crecer, cuanto más tiempo estemos, más "
-"rápido podremos obtener nuestra tarjeta de crédito.\n"
+"* La tarjeta de crédito prépagada será liberada después de completar la cantidad mínima de 1500 miembros.\n"
 "\n"
-"Desde ahora te deseamos mucha diversión en tus viajes con nosotros y que "
-"prepares las bolsas que tu próximo destino te está esperando."
+"Es su oportunidad de ahorrar en sus viajes y ayudarnos a crecer, cuanto más rápido lleguemos a los 1500 miembros, más rápido podremos obtener nuestra tarjeta de crédito.\n"
+"\n"
+"Desde ahora te deseamos mucha diversión en tus viajes con nosotros y que prepares las maletas que tu próximo destino te está esperando."
 
 #: main/templates/community.html:169
 msgid "WHY CHOOSE US?"
@@ -1399,7 +1361,7 @@ msgid ""
 "Discover new destinations that will seduce you and you want to return to "
 "them."
 msgstr ""
-"Descubre nuevos destinos qeu te pueden seducir y querrás volver a ellos."
+"Descubre nuevos destinos que te pueden seducir y querrás volver a ellos."
 
 #: main/templates/community.html:197
 msgid "Value for money"
@@ -1408,7 +1370,7 @@ msgstr "Más valor a tu dinero"
 #: main/templates/community.html:198
 msgid ""
 "Take advantage of the offers that we will be offering you for your trips."
-msgstr "Aproveche las ofertas que le ofreceremos para sus viajes."
+msgstr "Aproveche las ofertas que te ofreceremos para ahorrar en tus viajes."
 
 #: main/templates/community.html:212
 msgid "Beautiful places"
@@ -1416,7 +1378,7 @@ msgstr "Hermosos lugares"
 
 #: main/templates/community.html:213
 msgid "Travel and know beautiful places taken out of a fairy tale."
-msgstr "Viaja y conoce hermosos lugares sacados de un cuento de hadas."
+msgstr "Viaja y conoce exuberantes lugares sacados de un cuento de hadas."
 
 #: main/templates/community.html:228
 msgid "Quick bookings"
@@ -1426,8 +1388,7 @@ msgstr "Reservas rápidas"
 msgid ""
 "Make your reservation directly and without intermediaries that cost your "
 "trip."
-msgstr ""
-"Realice su reserva directamente y sin intermediarios que le cuesten el viaje."
+msgstr "Realiza tu reserva directamente y sin intermediarios."
 
 #: main/templates/community.html:243
 msgid "Support team"
@@ -1452,13 +1413,13 @@ msgstr "¿QUÉ PUEDES GANAR REGISTRÁNDOTE EN NUESTRA COMUNIDAD?"
 
 #: main/templates/community.html:286
 msgid "Savings on your trips"
-msgstr "Ahorro en sus viajes"
+msgstr "Ahorra en tus viajes"
 
 #: main/templates/community.html:287
 msgid ""
 "Save while traveling and enjoying with your family or on your business trip."
 msgstr ""
-"Ahorre mientras viaja y disfruta con su familia o en su viaje de negocios."
+"Ahorra mientras viajas y disfrutas con tu familia o en tu viaje de negocios."
 
 #: main/templates/community.html:301
 msgid "Birthday raffles."
@@ -1466,7 +1427,8 @@ msgstr "Sorteos de cumpleaños."
 
 #: main/templates/community.html:302
 msgid "Do not worry if others do not greet you, we will remember you."
-msgstr "No te preocupes si los demás no te saludan, te recordaremos."
+msgstr ""
+"No te preocupes si los demás no te felicitan, nosotros si nos acordaremos."
 
 #: main/templates/community.html:316
 msgid "Tailor-made discounts"
@@ -1475,22 +1437,22 @@ msgstr "Descuentos a la medida"
 #: main/templates/community.html:317
 msgid "Enjoy offers from our Travelposting affiliated companies."
 msgstr ""
-"Disfrute de las ofertas de nuestras empresas afiliadas de Travelposting."
+"Disfrute de las ofertas de nuestras empresas afiliadas a Travelposting."
 
 #: main/templates/community.html:333
 msgid "Win travel packages"
-msgstr "Gane paquetes de viaje"
+msgstr "Gana paquetes de viaje"
 
 #: main/templates/community.html:334
 msgid ""
-"There is always a destination we would like to offer and nothing better than "
-"earning it."
+"There is always a destination we would like to offer and nothing better than"
+" earning it."
 msgstr ""
-"Siempre hay un destino que nos gustaría ofrecer y nada mejor que ganarlo."
+"Siempre hay un destino que nos gustaría ofrecer y nada mejor que regalarlo."
 
 #: main/templates/community.html:348
 msgid "Participate in raffles"
-msgstr "Participa gratis sorteos"
+msgstr "Participa gratis en sorteos"
 
 #: main/templates/community.html:349
 msgid "We want many to be the winners and few remain at home."
@@ -1506,11 +1468,12 @@ msgid ""
 "With many benefits, such as the Travelposting card, which will give you "
 "discounts."
 msgstr ""
-"Con muchos beneficios, como la tarjeta Travelposting, que te dará descuentos."
+"Con grandes beneficios como la tarjeta Travelposting, que te dará "
+"descuentos."
 
 #: main/templates/community.html:376
 msgid "Sign up for Travelposting and enjoy its benefits"
-msgstr "Regístrese en Travelposting y disfrute de sus ventajas"
+msgstr "Regístrate en Travelposting y disfruta de sus ventajas"
 
 #: main/templates/datenschutz.html:16
 msgid "Datenschutzerklärung"
@@ -1525,8 +1488,8 @@ msgid ""
 "By completing this form, you will remove all personal information from our "
 "database. (you can always come back if you wish)"
 msgstr ""
-"completando este formulario removerá toda su información personal de nuestra "
-"base de datos (siempre podrás volver si lo deseas)"
+"completando este formulario removerá toda su información personal de nuestra"
+" base de datos (siempre podrás volver si lo deseas)"
 
 #: main/templates/datenshutz_form.html:29
 msgid "Last name"
@@ -1534,14 +1497,15 @@ msgstr "Apellido"
 
 #: main/templates/datenshutz_form.html:35
 msgid "email@service.com"
-msgstr "email@service.com"
+msgstr "suemail@suproveedor.com"
 
 #: main/templates/datenshutz_form.html:42
 msgid ""
-"I agree to the deletion of the data for processing in the sense of the DSGVO."
+"I agree to the deletion of the data for processing in the sense of the "
+"DSGVO."
 msgstr ""
-"Estoy de acuerdo con la eliminación de los datos para su procesamiento en el "
-"sentido de DSGVO."
+"Estoy de acuerdo con la eliminación de los datos para su procesamiento en el"
+" sentido de DSGVO."
 
 #: main/templates/datenshutz_form.html:46
 msgid "Create delete request"
@@ -1611,33 +1575,25 @@ msgstr "Guardar"
 #: main/templates/footer.html:13
 msgid ""
 "\n"
-"                        We are Travelposting.com a web portal owned by "
-"Xposting-Service, International Marketing and Digital Promotion Company,\n"
-"                        opened on March 1, 2009 with its headquarters in the "
-"city of Hamburg, Germany.\n"
+"                        We are Travelposting.com a web portal owned by Xposting-Service, International Marketing and Digital Promotion Company,\n"
+"                        opened on March 1, 2009 with its headquarters in the city of Hamburg, Germany.\n"
 "                    "
 msgstr ""
 "\n"
-"Somos Travelposting.com, un portal International de Marketing y Promoción "
-"digital. Funcionamos desde el 1 de marzo de 2009 con sede en la ciudad de "
-"Hamburgo, Alemania y somos colaboradores de Xposting-Service.\n"
-"Trabajamos con agencias internacionales para brindarles una mayor expansión "
-"en la promoción de sus productos."
+"Somos Travelposting.com, una agencia International de Marketing y Promoción digital en el sector turismo. \n"
+"\n"
+"Funcionamos desde el 1 de marzo de 2009 con sede en la ciudad de Hamburgo Alemania, actualmente tenemos registros en 180 países y contamos con una comunidad de mas casi 500 personas amantes de los viajes.\n"
+"\n"
+"Trabajamos con agencias y prestadores de servicio turístico tanto nacionales como internacionales para brindarles una mayor expansión en la promoción de sus productos."
 
 #: main/templates/footer.html:21
 msgid ""
 "\n"
-"                    In development of the provisions of article 17 of Law "
-"679 of 2001, the Agency warns the tourist that the exploitation and sexual "
-"abuse of minors in the country are criminally and administratively "
-"sanctioned, in accordance with current laws.\n"
+"                    In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.\n"
 "                    "
 msgstr ""
 "\n"
-" En desarrollo de lo dispuesto en el artículo 17 de la Ley 679 de 2001, el "
-"Organismo advierte al turista que la explotación y el abuso sexual de "
-"menores en el país son sancionados penal y administrativamente, de "
-"conformidad con las leyes vigentes."
+"En desarrollo de lo dispuesto en el artículo 17 de la Ley 679 de 2001, el Organismo advierte al turista que la explotación y el abuso sexual de menores en el país son sancionados penal y administrativamente, de conformidad con las leyes vigentes."
 
 #: main/templates/footer.html:40
 msgid "Currency Converter"
@@ -1669,7 +1625,7 @@ msgstr "VUELOS"
 
 #: main/templates/footer.html:93
 msgid "MAKE YOUR PAY"
-msgstr "HAZ TU PAGO"
+msgstr "REALICE SU PAGO"
 
 #: main/templates/footer.html:128
 msgid "FAQs"
@@ -1687,11 +1643,11 @@ msgstr "Viaja y comparte tu aventura"
 
 #: main/templates/hotels.html:67
 msgid "Follow us"
-msgstr ""
+msgstr "Síganos"
 
 #: main/templates/hotels.html:107
 msgid "What Happened to"
-msgstr ""
+msgstr "¿Qué pasó con la"
 
 #: main/templates/hotels.html:108
 #, fuzzy
@@ -1702,6 +1658,9 @@ msgstr "Comunidad"
 #: main/templates/hotels.html:118
 msgid "Register on our community"
 msgstr ""
+"En union con la agencia Booking podemos brindarle los disguientes hoteles en"
+" el mundo, busque y reserve su hotel haciendo clic en el enlace de nuestra "
+"página de Reservas."
 
 #: main/templates/hotels.html:135
 msgid "modern"
@@ -1733,7 +1692,7 @@ msgstr "ver más"
 
 #: main/templates/index.html:97
 msgid "Hi there, I would like to ..."
-msgstr ""
+msgstr "Hola, me gustaría..."
 
 #: main/templates/index.html:99
 #, fuzzy
@@ -1747,7 +1706,7 @@ msgstr "¿Listo para empezar?"
 
 #: main/templates/index.html:155
 msgid "Visit all our tour and travel available."
-msgstr "Visite todos nuestros tours y viajes disponibles."
+msgstr "Visita todos nuestros tours y viajes disponibles."
 
 #: main/templates/magazine.html:3
 msgid "Tours from travelposting"
@@ -1763,7 +1722,7 @@ msgstr "Revista"
 
 #: main/templates/make_page.html:13
 msgid "Make your payments"
-msgstr "Has tus pagos"
+msgstr "Realiza tus pagos"
 
 #: main/templates/make_page.html:67
 msgid "Pay on Payoneer or Paypal"
@@ -1828,7 +1787,9 @@ msgstr "Las transferencias en USD serán rechazadas automáticamente"
 
 #: main/templates/make_page.html:111 main/templates/make_page.html:149
 msgid "Wire transfers are not supported"
-msgstr "No se admiten transferencias bancarias"
+msgstr ""
+"No se admiten transferencias bancarias de países sancionados por la EU o por"
+" los Estados Unidos de América USA."
 
 #: main/templates/make_page.html:125
 msgid "EUR Receiving Account (SEPA)"
@@ -1841,11 +1802,11 @@ msgstr ""
 
 #: main/templates/make_page.html:148
 msgid ""
-"Transfers in USD will be made automatically and may result in the suspension "
-"of this service"
+"Transfers in USD will be made automatically and may result in the suspension"
+" of this service"
 msgstr ""
-"Las transferencias en USD se realizarán automáticamente y pueden resultar en "
-"la suspensión de este servicio."
+"Las transferencias en USD se realizarán automáticamente y pueden resultar en"
+" la suspensión de este servicio."
 
 #: main/templates/make_page.html:164
 msgid "Receiving Account USD (ACH) / US Local Bank UU"
@@ -1857,7 +1818,7 @@ msgstr "Camino (ABA)"
 
 #: main/templates/make_page.html:181
 msgid "CHECKING"
-msgstr "CHECKING"
+msgstr "VERIFICACIÓN"
 
 #: main/templates/make_page.html:184
 msgid "Beneficiary Name:"
@@ -1879,7 +1840,9 @@ msgstr "Las transferencias de individuos se harán automáticamente"
 
 #: main/templates/make_page.html:193
 msgid "Electronic transfer is not supported"
-msgstr "No se admite la transferencia electrónica"
+msgstr ""
+"No se admiten transferencias bancarias de países sancionados por la EU o por"
+" los Estados Unidos de América USA."
 
 #: main/templates/make_page.html:203
 msgid "Receiving AUD account (direct deposit) / Bank of Australia..."
@@ -1895,7 +1858,7 @@ msgstr "Tipo de cuenta"
 
 #: main/templates/make_page.html:230
 msgid "Please keep that in mind!"
-msgstr "Por favor, tener en cuenta!"
+msgstr "Téngalo en cuenta!"
 
 #: main/templates/make_page.html:231
 msgid "Only direct entry payments (BECS) are accepted in AUD"
@@ -1940,11 +1903,11 @@ msgstr "Español"
 
 #: main/templates/menu/menu.html:59
 msgid "SignUp on community"
-msgstr ""
+msgstr "Registrarse gratis"
 
 #: main/templates/menu/menu.html:64
 msgid "SignIn on community"
-msgstr ""
+msgstr "Inicia sesión"
 
 #: main/templates/menu/menu.html:73
 msgid "SignUp"
@@ -1991,40 +1954,36 @@ msgid "My Account"
 msgstr "Cuentas"
 
 #: main/templates/menu/navbar_all.html:201
-#, fuzzy
 #| msgid "Privacity Settings"
 msgid "Settings"
-msgstr "Configuración de privacidad"
+msgstr "Configuración"
 
 #: main/templates/menu/navbar_all.html:203
-#, fuzzy
 #| msgid "Signup"
 msgid "Sign Out"
 msgstr "Ingreso"
 
 #: main/templates/menu/navbar_all.html:216
 msgid "Dashboard"
-msgstr ""
+msgstr "Tablero de mandos"
 
 #: main/templates/menu/navbar_all.html:223
 msgid "Members"
-msgstr ""
+msgstr "Miembros"
 
 #: main/templates/menu/navbar_all.html:246
-#, fuzzy
 #| msgid "Privacy & policy"
 msgid "Privacy"
 msgstr "Política de privacidad"
 
 #: main/templates/modal_contact_us/modal.html:14
-#, fuzzy
 #| msgid "Contact Us"
 msgid "Thanks for Contact Us"
 msgstr "Contáctenos"
 
 #: main/templates/modal_contact_us/modal.html:15
 msgid "Here another Message"
-msgstr ""
+msgstr "Aquí otro mensaje"
 
 #: main/templates/pages/booking_email.html:50
 msgid "A person has done a new booking:"
@@ -2128,7 +2087,7 @@ msgstr "Buscar por"
 
 #: main/templates/pages/show_header.html:59
 msgid "We seek for you?"
-msgstr "¿Buscamos por ti?"
+msgstr "¿Pide Buscar ?"
 
 #: main/templates/pages/show_header.html:72
 msgid "Where would you like to travel this time?"
@@ -2152,9 +2111,9 @@ msgstr "Enviar"
 
 #: main/templates/pages/show_header.html:111
 msgid ""
-"Leave us your personal data if you want us to send you information regarding "
-"the destinations of your interest. Do you agree that we send you information "
-"to your email of the destinations you are looking for?"
+"Leave us your personal data if you want us to send you information regarding"
+" the destinations of your interest. Do you agree that we send you "
+"information to your email of the destinations you are looking for?"
 msgstr ""
 "Déjanos tus datos personales si quieres que te enviemos información "
 "referente a los destinos de tu interés. ¿Por favor activa o desactiva la "
@@ -2183,14 +2142,13 @@ msgid "This Destination has no itinerary"
 msgstr "Este destino no tiene itinerario"
 
 #: main/templates/pdf/itinerary.html:102
-#, fuzzy
 #| msgid "This Destination has no itinerary"
 msgid "There is no itenerary"
-msgstr "Este destino no tiene itinerario"
+msgstr "No hay ningún itenerario"
 
 #: main/templates/pdf/itinerary.html:103
 msgid "Back to home"
-msgstr ""
+msgstr "Volver a la página de inicio"
 
 #: main/templates/pricing.html:24
 msgid "Special"
@@ -2202,23 +2160,22 @@ msgstr "Oferta en"
 
 #: main/templates/pricing.html:26
 msgid ""
-"We know that there are many companies on the internet that offer the best of "
-"blue sky and we may not be the best known in the market, but our experience "
-"of almost 10 years in the market allows us to manage a portfolio of experts "
-"with whom we can provide the most and best offers in the market. If you get "
-"someone cheaper than us and with the same return we will return your "
+"We know that there are many companies on the internet that offer the best of"
+" blue sky and we may not be the best known in the market, but our experience"
+" of almost 10 years in the market allows us to manage a portfolio of experts"
+" with whom we can provide the most and best offers in the market. If you get"
+" someone cheaper than us and with the same return we will return your "
 "investment."
 msgstr ""
-"Sabemos que hay muchas empresas en Internet que ofrecen lo mejor del cielo "
-"azul y puede que no seamos las más conocidas en el mercado, pero nuestra "
-"experiencia de casi 10 años en el mercado nos permite gestionar un "
-"portafolio de expertos con los que podemos ofrecer la mayor y mejor oferta "
-"del mercado. Si usted consigue a alguien más barato que nosotros y con el "
-"mismo rendimiento le devolveremos su inversión."
+"Sabemos que hay muchas empresas en Internet que ofrecen lo mejor del cielo azul y puede que aún le seamos desconocidos, pero nuestra experiencia de más de 10 años en el mercado nos permite gestionar un portafolio de expertos con los que podemos ofrecer la mayor y mejor oferta del mercado.\n"
+"\n"
+"Actualmente manejamos en nuestra base de datos más de 100.000 agencias y empresas del sector turismo en 180 países.  Pronto las tendremos todas canalizadas para brindarles la mayor y mejor información directa posible del mercado.\n"
+"\n"
+"¡Confié en nosotros al igual que nuestros actuales afiliados, quienes al principio también dudaron de nosotros pero que con el tiempo se cercioraron de algo muy importante! Su éxito es nuestro mayor compromiso."
 
 #: main/templates/pricing.html:30
 msgid "SELECT YOUR TYPE OF PLAN AND SAVE UP TO € 1200 ANNUAL"
-msgstr "SELECCIONE SU TIPO DE PLAN Y AHORRE HASTA 1200 € ANUALES"
+msgstr "SELECCIONE SU TIPO DE PLAN Y AHORRE HASTA € 1.200,- ANUALES"
 
 #: main/templates/pricing.html:33
 msgid "Yearly contract"
@@ -2229,19 +2186,16 @@ msgid "Monthly contract"
 msgstr "Contrato mensual"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:10
-#, fuzzy
 #| msgid "See Destination"
 msgid "Search Destinies"
 msgstr "Ver destino"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:17
-#, fuzzy
 #| msgid "See Destination"
 msgid "Search Destination"
 msgstr "Ver destino"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:38
-#, fuzzy
 #| msgid "Filter price"
 msgid "Filter by"
 msgstr "Filtrar precio"
@@ -2253,7 +2207,7 @@ msgstr "Todo"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:80
 msgid "Budget &&"
-msgstr ""
+msgstr "Presupuesto &&"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:87
 #, fuzzy
@@ -2262,38 +2216,35 @@ msgid "Price range"
 msgstr "Tipo de precio"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:187
-#, fuzzy
 #| msgid "Filter price"
 msgid "Min price"
-msgstr "Filtrar precio"
+msgstr "Precio minimo"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:192
 msgid "Max price"
-msgstr ""
+msgstr "Precio máximo"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:201
 msgid "Added"
-msgstr ""
+msgstr "Añadido"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:210
 msgid "Added anytime"
-msgstr ""
+msgstr "Añadido en cualquier momento"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:219
 msgid "Last 24 hours"
-msgstr ""
+msgstr "Últimas 24 horas"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:228
-#, fuzzy
 #| msgid "Last Name"
 msgid "Last week"
 msgstr "Apellido"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:245
-#, fuzzy
 #| msgid "Filter price"
 msgid "Filter"
-msgstr "Filtrar precio"
+msgstr "Filtrar"
 
 #: main/templates/services/destination/_parts/list_destinies.html:17
 #: main/templates/services/destination/_parts/list_destinies.html:38
@@ -2309,15 +2260,15 @@ msgstr "Ver detalles"
 
 #: main/templates/services/destination/_parts/pagination_destinies.html:10
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: main/templates/services/destination/_parts/pagination_destinies.html:32
 msgid "Showing page"
-msgstr ""
+msgstr "Mostrando la página"
 
 #: main/templates/services/destination/_parts/pagination_destinies.html:32
 msgid "of"
-msgstr ""
+msgstr "de"
 
 #: main/templates/services/destination/all.html:19
 #: main/templates/services/destination/destinations_for_categorie_backup.html:80
@@ -2364,22 +2315,21 @@ msgstr "Encontrados"
 
 #: main/templates/services/destination/comments.html:29
 msgid "Verified Purchase"
-msgstr ""
+msgstr "Compra verificada"
 
 #: main/templates/services/destination/comments.html:35
 msgid "Was this helpful?"
-msgstr ""
+msgstr "¿Fue esto de ayuda?"
 
 #: main/templates/services/destination/comments.html:50
 #: main/templates/services/destination/detail_destination.html:313
 msgid "Let us your comment"
-msgstr ""
+msgstr "Déjenos su comentario"
 
 #: main/templates/services/destination/comments.html:68
 #: main/templates/services/destination/comments.html:70
 #: main/templates/services/destination/detail_destination.html:328
 #: main/templates/services/destination/detail_destination.html:330
-#, fuzzy
 #| msgid "title"
 msgid "Title"
 msgstr "Titulo"
@@ -2387,12 +2337,12 @@ msgstr "Titulo"
 #: main/templates/services/destination/comments.html:76
 #: main/templates/services/destination/detail_destination.html:335
 msgid "Body"
-msgstr ""
+msgstr "Cuerpo"
 
 #: main/templates/services/destination/comments.html:78
 #: main/templates/services/destination/detail_destination.html:337
 msgid "Please let us your message"
-msgstr ""
+msgstr "Por favor, déjenos su mensaje"
 
 #: main/templates/services/destination/comments.html:83
 #: main/templates/services/destination/detail_destination.html:340
@@ -2413,12 +2363,11 @@ msgid ""
 "Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin "
 "Germany, or the Fitur in Madrid Spain among others."
 msgstr ""
-"Nuestro potencial a su favor se basa en la facilidad que tenemos para captar "
-"nuevos potenciales clientes para sus productos gracias a los constantes "
-"viajes que realizamos y a las ferias turísticas y tecnológicas en las que "
-"estamos presentes, como es el caso de la Ventana Turística ANATO en Bogotá "
-"Colombia, la Feria de Turismo ITB en Berlín Alemania, o la Fitur en Madrid "
-"España entre otras. "
+"Nuestro mayor potencial se basa en la facilidad que tenemos para captar nuevos y potenciales usuarios para sus productos o servicios gracias a los constantes viajes que realizamos y a las ferias y eventos turísticos y tecnológicos en los que estamos presentes, como es el caso de la Ventana Turística ANATO en Bogotá Colombia, la Feria de Turismo ITB en Berlín Alemania, o FITUR en Madrid España, o en los Congresos Internacionales de Turismo a los que en ocasiones somos invitados como ponentes en materia de Digitalización de destinos entré otros Workshops o Seminarios que diferentes países brindamos.\n"
+"\n"
+"Le es imposible viajar a presentarse en una feria o quiere darse a conocer! No se preocupe nosotros lo podemos hacer por usted, con nuestro portafolio virtual le ayudamos a que se de a conocer en las ferias de turismos que usted desee y en donde necesite conocer mas agencias o servicios de turismo en especial.\n"
+"\n"
+"Contáctenos y con gusto le daremos más información al respecto."
 
 #: main/templates/services/destination/destinations.html:16
 msgid "Find out More"
@@ -2448,7 +2397,7 @@ msgstr "¿cuál es su presupuesto?"
 
 #: main/templates/services/destination/destinations_for_categorie_backup.html:194
 msgid "filter to my budget"
-msgstr "filtrar a mi presupuesto"
+msgstr "filtrar mi presupuesto"
 
 #: main/templates/services/destination/destinations_for_categorie_backup.html:196
 msgid "Category"
@@ -2512,7 +2461,6 @@ msgid "Discover or download our itinerary here"
 msgstr "Descubre o descarga nuestro itinerario aquí "
 
 #: main/templates/services/destination/detail_destination.html:297
-#, fuzzy
 #| msgid "comment"
 msgid "Add comment"
 msgstr "Comentario"
@@ -2554,13 +2502,88 @@ msgstr ""
 msgid "Book"
 msgstr "Reservar"
 
+#: main/templates/services/destination/filter_destinations.html:9
+#: main/templates/services/destination/filter_destinations.html:16
+msgid "Publicate from"
+msgstr "Publicar desde"
+
+#: main/templates/services/destination/filter_destinations.html:37
+#| msgid "Sort by last"
+msgid "Sort by"
+msgstr "Ordenar por último"
+
+#: main/templates/services/destination/filter_destinations.html:47
+msgid "Show all"
+msgstr "Mostrar todo"
+
+#: main/templates/services/destination/filter_destinations.html:56
+msgid "Another Filter"
+msgstr "Otro filtro"
+
+#: main/templates/services/destination/filter_destinations.html:67
+msgid "Added anytime"
+msgstr "Añadido en cualquier momento"
+
+#: main/templates/services/destination/filter_destinations.html:76
+msgid "Last 24 hours"
+msgstr "Últimas 24 horas"
+
+#: main/templates/services/destination/filter_destinations.html:85
+msgid "Another time"
+msgstr "En otra ocasión"
+
+#: main/templates/services/destination/filter_destinations.html:111
+msgid "Budget &&"
+msgstr "Presupuesto &&"
+
+#: main/templates/services/destination/filter_destinations.html:118
+#| msgid "Price type"
+msgid "Price range"
+msgstr "Rango de precios"
+
+#: main/templates/services/destination/filter_destinations.html:217
+#| msgid "Filter price"
+msgid "Min price"
+msgstr "Precio mínimo"
+
+#: main/templates/services/destination/filter_destinations.html:221
+msgid "Max price"
+msgstr "Precio máximo"
+
+#: main/templates/services/destination/filter_destinations.html:230
+#| msgid "Status?"
+msgid "Status"
+msgstr "Estatus"
+
+#: main/templates/services/destination/filter_destinations.html:236
+#| msgid "Last Name"
+msgid "last minute"
+msgstr "último minuto"
+
+#: main/templates/services/destination/filter_destinations.html:240
+msgid "another status"
+msgstr "otro estatus"
+
+#: main/templates/services/destination/filter_destinations.html:248
+msgid "Beds"
+msgstr "Camas"
+
+#: main/templates/services/destination/filter_destinations.html:272
+msgid "Baths"
+msgstr "Baños"
+
+#: main/templates/services/destination/filter_destinations.html:303
+#| msgid "Filter price"
+msgid "Filter"
+msgstr "Filtrar"
+
 #: main/templates/services/destination/testimonials.html:9
 msgid "Testimonials"
 msgstr "Testimonios"
 
 #: main/templates/services/destination/testimonials.html:10
 msgid "Know our audiencie"
-msgstr "Conozca lo que algunos de nuestros clientes piensan sobre nosotros"
+msgstr "Conozca lo que algunos de nuestros clientes piensan sobre nosotros!"
 
 #: main/templates/services/magazine/magazine.html:14
 msgid "Download"
@@ -2606,20 +2629,17 @@ msgstr "Sin limites"
 #: main/templates/services/pricing/plans.html:129
 msgid ""
 "\n"
-"                        if what you see doesn't appeal to you because you "
-"want to create a plan tailored to your needs,\n"
+"                        if what you see doesn't appeal to you because you want to create a plan tailored to your needs,\n"
 "                        contact us and we'll work that out together.\n"
 "                        "
 msgstr ""
 "\n"
-"Si lo que ve no le atrae porque desea crear un plan adaptado a sus "
-"necesidades, contáctenos y lo resolveremos juntos."
+"Si lo que ve no le atrae porque desea crear un plan adaptado a sus necesidades, contáctenos y con gusto creamos uno juntos."
 
 #~ msgid "Your password is invalid. Please try again."
 #~ msgstr "Su contraseña es invalida. por favor intente de nuevo."
 
 #, fuzzy
-#~| msgid "Don\\"
 #~ msgid "Don"
 #~ msgstr "Don\\"
 
@@ -2630,8 +2650,8 @@ msgstr ""
 #~ msgstr "Agencia de viajes"
 
 #~ msgid ""
-#~ "We are the number one travel agency, Search and book your Hotel by "
-#~ "clicking on the link of our Partner-Booking"
+#~ "We are the number one travel agency, Search and book your Hotel by clicking "
+#~ "on the link of our Partner-Booking"
 #~ msgstr ""
 #~ "Trabajamos de la mano con la agencia Booking, busque y reserve su hotel "
 #~ "haciendo clic en el enlace de nuestra página de Reservas."
@@ -2640,25 +2660,21 @@ msgstr ""
 #~ "Subscribe now and get special offers on the latest developments from "
 #~ "Travelposting."
 #~ msgstr ""
-#~ "Suscríbete ahora y recibe ofertas especiales sobre las últimas novedades "
-#~ "de Travelposting, te estaremos enviando entre uno y dos Newsletter por "
-#~ "mes."
+#~ "Suscríbete ahora y recibe ofertas especiales sobre las últimas novedades de "
+#~ "Travelposting, te estaremos enviando entre uno y dos Newsletter por mes."
 
 #~ msgid "Suscribe"
 #~ msgstr "Suscríbete"
 
 #, fuzzy
-#~| msgid "Sort by last"
 #~ msgid "Sort by"
 #~ msgstr "Ordenar por último"
 
 #, fuzzy
-#~| msgid "Status?"
 #~ msgid "Status"
 #~ msgstr "Estatus"
 
 #, fuzzy
-#~| msgid "Last Name"
 #~ msgid "last minute"
 #~ msgstr "Apellido"
 
