@@ -32,8 +32,9 @@
                 <div class="u-slick-zoom__slide text-center">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-7">
-                            <img class="img-fluid" src="{{ sponsor.image.url }}" alt="Image Description">
-                            <h4 class="h6 mb-0"><a href="{{sponsor.title}}" target="_blank">{{ sponsor.title }}</a></h4>
+                            <a href="{{sponsor.title}}" target="_blank">
+                                <img class="img-fluid" src="{{ sponsor.image.url }}" alt="Image Description">
+                            </a>
                         </div>
                     </div>
                     <div class="position-relative z-index-2 mt-n5 mb-3">
