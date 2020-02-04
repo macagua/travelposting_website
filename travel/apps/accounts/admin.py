@@ -5,6 +5,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 from impersonate.admin import UserAdminImpersonateMixin
 from apps.accounts.models import CustomerUser, Contact, Comment
+from apps.utils.views import get_referal_code
 
 
 class UserCreationForm(forms.ModelForm):
@@ -34,6 +35,12 @@ class UserCreationForm(forms.ModelForm):
         return user
 
 
+def assing_referal_code(modeladmin, request, queryset):
+    for user in queryset:
+        user.ref_code=get_referal_code()
+        user.save()
+assing_referal_code.short_description = _("Assing refferal code")
+
 @admin.register(CustomerUser)
 class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     """
@@ -42,6 +49,8 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
         what they saw, so we can attend their requirements or understand their\
         problems; other use for this class is the normal crud for admin users.
     """
+
+    actions = [assing_referal_code]
 
     # The forms to add and change user instances
     add_form = UserCreationForm

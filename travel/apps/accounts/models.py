@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from apps.landing_page.models import Plan
 from django.conf import settings
-from django.contrib.auth.models import User
+from apps.utils.views import get_referal_code
 
 
 DEGRE_CHOICES = (
@@ -171,9 +171,8 @@ class CustomerUser(AbstractUser):
 
     ref_code = models.CharField(
         _("Code Referral"),
-        max_length=100,
-        null=True,
-        blank=True,
+        max_length=20,
+        default=get_referal_code,
     )
 
     facebook = models.CharField(
@@ -233,7 +232,6 @@ class CustomerUser(AbstractUser):
 
     def get_absolute_url(self):
         return reverse_lazy('accounts:user-details', kwargs={'pk': self.pk})
-
 
 
 ### Model to interact between one user and another
