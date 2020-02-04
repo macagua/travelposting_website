@@ -30,6 +30,8 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from apps.accounts.forms import CustomerUserChangeForm
+from apps.community.models import Referral
+from apps.utils.views import get_referal_code
 
 
 def ajax_required(f):
@@ -111,6 +113,13 @@ class signupCommunity(RegistrationView):
     form_class = CommunitySignUpForm
 
     def send_activation_email(self, user):
+        code = self.get_form_kwargs()['data']['referal']
+        patrocinador = CustomerUser.objects.get(ref_code=code)
+        Referral.objects.create(
+            user=user,
+            referredBy=patrocinador,
+            code='ref',
+        )
         html_email = None
         activation_key = self.get_activation_key(user)
         context = self.get_email_context(activation_key)
