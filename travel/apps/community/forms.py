@@ -9,7 +9,7 @@ from django.utils.translation import gettext as _
 class CommunitySignUpForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationForm):
     referal = forms.CharField(
         label=_("Referred by"),
-        help_text=_("Enter the referal code just in case."),
+        help_text = _("Enter the referal code just in case."),
     )
 
     password1 = forms.CharField(
@@ -17,7 +17,7 @@ class CommunitySignUpForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationFo
         widget=forms.PasswordInput(attrs={
             'class': 'form-control first',
         }),
-        help_text=_('Use at least 8 characters. Do not use a password from another site or a term that is too obvious, such as your pet\'s name.'),
+        help_text = _('Use at least 8 characters. Do not use a password from another site or a term that is too obvious, such as your pet\'s name.'),
     )
 
     password2 = forms.CharField(
@@ -25,7 +25,7 @@ class CommunitySignUpForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationFo
         widget=forms.PasswordInput(attrs={
             'class': 'form-control last',
         }),
-        help_text=_("Enter the same password as above, for verification."),
+        help_text = _("Enter the same password as above, for verification."),
     )
 
     class Meta(BaseRegistrationForm.Meta):
