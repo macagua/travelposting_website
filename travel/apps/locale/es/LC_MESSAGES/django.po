@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 11:49-0400\n"
-"PO-Revision-Date: 2020-01-30 12:37-0428\n"
+"POT-Creation-Date: 2020-02-07 06:59-0400\n"
+"PO-Revision-Date: 2020-02-07 07:03-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,30 +19,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: apps/accounts/admin.py:13 apps/accounts/forms.py:39
-#: apps/accounts/forms.py:67 apps/community/forms.py:19
-#: apps/community/forms.py:62
+#: apps/accounts/admin.py:14 apps/accounts/forms.py:39
+#: apps/accounts/forms.py:67 apps/community/forms.py:16
+#: apps/community/forms.py:69
 msgid "Password"
 msgstr "Contraseña"
 
-#: apps/accounts/admin.py:14 apps/accounts/forms.py:73
+#: apps/accounts/admin.py:15 apps/accounts/forms.py:73
 #: apps/community/forms.py:24
 msgid "Password confirmation"
 msgstr "Confirmación"
 
-#: apps/accounts/admin.py:25
+#: apps/accounts/admin.py:26
 msgid "Passwords don't match"
 msgstr "Las contraseñas no coinciden"
 
-#: apps/accounts/admin.py:58
+#: apps/accounts/admin.py:42
+msgid "Assing refferal code"
+msgstr "agregar código de referencia"
+
+#: apps/accounts/admin.py:67
 msgid "Personal info"
 msgstr "Información personal"
 
-#: apps/accounts/admin.py:59
+#: apps/accounts/admin.py:68
 msgid "Business info"
 msgstr "Información comercial"
 
-#: apps/accounts/admin.py:60
+#: apps/accounts/admin.py:69
 msgid "Permissions"
 msgstr "Permisos"
 
@@ -50,7 +54,9 @@ msgstr "Permisos"
 msgid "Accounts"
 msgstr "Cuentas"
 
-#: apps/accounts/forms.py:30 apps/community/forms.py:53
+#: apps/accounts/forms.py:30
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:59
+#: apps/community/forms.py:60
 #: apps/community/templates/community/profile/my_profile.html:105
 #: apps/landing_page/models.py:464 main/templates/datenshutz_form.html:34
 #: main/templates/services/destination/detail_destination.html:405
@@ -61,7 +67,7 @@ msgstr "E-mail"
 msgid "Your account is blocked due to non-payment"
 msgstr "Su cuenta ha sido bloqueada por falta de pago"
 
-#: apps/accounts/forms.py:71 apps/community/forms.py:23
+#: apps/accounts/forms.py:71 apps/community/forms.py:20
 msgid ""
 "Use at least 8 characters. Do not use a password from another site or a term"
 " that is too obvious, such as your pet's name."
@@ -186,15 +192,15 @@ msgstr "Déjenos su dirección Web"
 msgid "Code Referral"
 msgstr "Código de referido"
 
-#: apps/accounts/models.py:204
+#: apps/accounts/models.py:203
 msgid "About me"
 msgstr "Acerca de"
 
-#: apps/accounts/models.py:227
+#: apps/accounts/models.py:226
 msgid "Usuario"
 msgstr "Usuario"
 
-#: apps/accounts/models.py:228
+#: apps/accounts/models.py:227
 msgid "Usuarios"
 msgstr "Usuarios"
 
@@ -207,12 +213,12 @@ msgstr ""
 "\n"
 "&copy; 2019 Todos los derechos reservados Mapa del sitio Descargo de responsabilidad."
 
-#: apps/accounts/templates/accounts/registration/activation_complete.html:50
+#: apps/accounts/templates/accounts/registration/activation_complete.html:48
 #: apps/community/templates/community/registration/activation_complete.html:50
 msgid "Accounts Activate"
 msgstr "Activacion de cuenta"
 
-#: apps/accounts/templates/accounts/registration/activation_complete.html:59
+#: apps/accounts/templates/accounts/registration/activation_complete.html:57
 #: apps/community/templates/community/dashboard/_email.html:94
 #: apps/community/templates/community/dashboard/_recommendation.html:96
 #: apps/community/templates/community/registration/activation_complete.html:59
@@ -224,45 +230,43 @@ msgstr "Activacion de cuenta"
 msgid "if you want see the admin site"
 msgstr "si quieres ver el sitio de administración"
 
-#: apps/accounts/templates/accounts/registration/activation_complete.html:66
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:69
+#: apps/accounts/templates/accounts/registration/activation_complete.html:64
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:67
 #: apps/community/templates/community/registration/activation_complete.html:66
 #: apps/community/templates/community/registration/notify_register_admin_body.html:69
 msgid "Click here to login"
 msgstr "click aquí para ingresar"
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:50
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:48
 #: apps/community/templates/community/registration/activation_email_body.html:50
 msgid "Confirmación del correo"
 msgstr "Confirmación del correo"
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:57
-#: apps/community/templates/community/registration/activation_email_body.html:57
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:55
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por registarse en Travel&Solutions.\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar la creación de su cuenta.\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
+"                                                                                    %(user.first_name)s Gracias por registarse en Travelposting.\n"
+"                                                                                    Confirme su cuenta para finalizar la creación de su cuenta.\n"
+"                                                                                  "
 msgstr ""
 "\n"
-"%(user.first_name)s Gracias por registarse en Travel&Solutions.\n"
+"%(user.first_name)s Gracias por registarse en Travelposting.\n"
 "Confirme su cuenta para finalizar la creación de su cuenta."
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:63
-#: apps/community/templates/community/registration/activation_email_body.html:63
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:61
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: %(activation_key)s,\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por %(expiration_days)s días.\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
+"                                                                                    Su clave de activación es: %(activation_key)s,\n"
+"                                                                                    esa clave será válida por %(expiration_days)s días.\n"
+"                                                                                  "
 msgstr ""
 "\n"
 "Su clave de activación es: %(activation_key)s,\n"
 "esa clave será válida por %(expiration_days)s días."
 
-#: apps/accounts/templates/accounts/registration/activation_email_body.html:72
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:70
 #: apps/community/templates/community/registration/activation_email_body.html:72
 msgid "Confirmar correo electrónico"
 msgstr "Confirmar correo electrónico"
@@ -366,7 +370,6 @@ msgstr "a Travelposting"
 
 #: apps/accounts/templates/accounts/registration/login.html:53
 #: apps/community/templates/community/registration/login.html:19
-#: apps/community/templates/community/registration/signup.html:19
 msgid "Login to manage your account."
 msgstr "Ingrese para administrar su cuenta"
 
@@ -380,29 +383,24 @@ msgstr "Don\\"
 msgid "Signup"
 msgstr "Ingreso"
 
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:50
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:48
 #: apps/community/templates/community/registration/notify_register_admin_body.html:50
 msgid "Welcome to Travelposting"
 msgstr "Bienvenido a Travelposting"
 
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:59
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:57
 #: apps/community/templates/community/registration/notify_register_admin_body.html:59
 msgid "User registered"
 msgstr "Usuario registrado"
 
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:58
 #: apps/community/templates/community/registration/notify_register_admin_body.html:60
 #: apps/landing_page/models.py:405
 #: main/templates/services/destination/detail_destination.html:379
 msgid "Name"
 msgstr "Nombre"
 
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:61
-#: apps/community/templates/community/registration/notify_register_admin_body.html:61
-msgid "Company name"
-msgstr "Compañia"
-
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:62
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/community/templates/community/registration/notify_register_admin_body.html:62
 msgid "Country"
 msgstr "País"
@@ -451,12 +449,12 @@ msgstr ""
 msgid "accounts:login"
 msgstr "accounts:login"
 
-#: apps/accounts/templates/accounts/registration/password_reset_email.html:50
-#: apps/accounts/templates/accounts/registration/password_reset_email.html:67
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:48
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:65
 msgid "Reset Password"
 msgstr "Resetear contraseña"
 
-#: apps/accounts/templates/accounts/registration/password_reset_email.html:57
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:55
 #, python-format
 msgid ""
 "Reset password for email: %(email)s. Press the button to reset your password"
@@ -620,9 +618,22 @@ msgstr ""
 "\n"
 " Su contraseña fue cambiada exitosamente."
 
-#: apps/accounts/views.py:63 apps/community/views.py:96
+#: apps/accounts/views.py:63 apps/community/views.py:98
 msgid "An error, Incorrect User or Password has occurred."
 msgstr "Se produjo un error, usuario o contraseña incorrectos."
+
+#: apps/community/forms.py:11
+#| msgid "Referral"
+msgid "Referred by"
+msgstr "Referido por"
+
+#: apps/community/forms.py:12
+msgid "Enter the referal code just in case."
+msgstr "Ingrese el código de referencia, solo en acaso."
+
+#: apps/community/forms.py:42
+msgid "Invalid referal code"
+msgstr "Código de referencia invalido"
 
 #: apps/community/models.py:27
 msgid "Would you recommend this trip again? "
@@ -634,12 +645,10 @@ msgid "Do you think we should get better?"
 msgstr "¿Que piensas que deberiamos mejorar?"
 
 #: apps/community/models.py:36
-#| msgid "comment"
 msgid "Recommendation"
 msgstr "Recomendación"
 
 #: apps/community/models.py:37
-#| msgid "comment"
 msgid "Recommendations"
 msgstr "Recomendaciones"
 
@@ -652,7 +661,6 @@ msgid "Referrals"
 msgstr "Referidos"
 
 #: apps/community/templates/accounts/change_password.html:5
-#| msgid "Change Password"
 msgid "Change password"
 msgstr "Cambiar contraseña"
 
@@ -666,7 +674,6 @@ msgid "Well done!"
 msgstr "Bien hecho!"
 
 #: apps/community/templates/accounts/change_password.html:46
-#| msgid "Reset Password"
 msgid "Current password"
 msgstr "Contraseña actual"
 
@@ -675,33 +682,27 @@ msgid "Enter your current password"
 msgstr "Ingrese su contraseña actual"
 
 #: apps/community/templates/accounts/change_password.html:52
-#| msgid "Passwords don't match"
 msgid "Password does not match."
 msgstr "Las contraseñas no coinciden"
 
 #: apps/community/templates/accounts/change_password.html:62
-#| msgid "password?"
 msgid "New password"
 msgstr "Nueva Contraseña"
 
 #: apps/community/templates/accounts/change_password.html:67
-#| msgid "Enter your email address below."
 msgid "Enter your password"
 msgstr "Ingrese la contraseña"
 
 #: apps/community/templates/accounts/change_password.html:68
 #: apps/community/templates/accounts/change_password.html:75
-#| msgid "Please enter a valid email address."
 msgid "Please enter your password."
 msgstr "Por favor ingrese su contraseña"
 
 #: apps/community/templates/accounts/change_password.html:83
-#| msgid "Confirm New Password"
 msgid "Confirm password"
 msgstr "Confirmación de contraseña"
 
 #: apps/community/templates/accounts/change_password.html:88
-#| msgid "Confirm New Password"
 msgid "Confirm your password"
 msgstr "Confirmación de contraseña"
 
@@ -710,7 +711,6 @@ msgid "Password does not match the confirm password."
 msgstr "Las contraseñas no coinciden"
 
 #: apps/community/templates/accounts/change_password.html:99
-#| msgid "Change Password"
 msgid "Save Password"
 msgstr "Guardar contraseña"
 
@@ -740,13 +740,11 @@ msgid "Comunity"
 msgstr "Comunidad"
 
 #: apps/community/templates/accounts/customeruser_list.html:20
-#| msgid "Search Destinies"
 msgid "Search Result"
 msgstr "Resultado de busqueda"
 
 #: apps/community/templates/accounts/customeruser_list.html:26
 #: apps/community/templates/community/dashboard/dashboard.html:79
-#| msgid "Register on our community"
 msgid "Search our community members"
 msgstr "Busque entre los miembros de nuestra comunidad"
 
@@ -829,7 +827,6 @@ msgid "You have a new message"
 msgstr "Tienes un nuevo mensaje"
 
 #: apps/community/templates/community/dashboard/_email_inbox.html:85
-#| msgid "Please enter a valid email address."
 msgid "has sent you a new message"
 msgstr "te ha enviado un nuevo mensaje"
 
@@ -841,12 +838,10 @@ msgid "Inbox"
 msgstr "Buzon"
 
 #: apps/community/templates/community/dashboard/_recommendation.html:72
-#| msgid "A person has done a new comment:"
 msgid "A person has done a new reccomendation:"
 msgstr "Una persona ha realizado una nueva recomendacion:"
 
 #: apps/community/templates/community/dashboard/_recommendation.html:85
-#| msgid "Destination:"
 msgid "Destination: "
 msgstr "Destino:"
 
@@ -883,12 +878,10 @@ msgstr "Cierre de sesión"
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:84
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:75
-#| msgid "Social Profiles"
 msgid "Edit Profile"
 msgstr "Editar perfil"
 
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
-#| msgid "See more"
 msgid "See my profile"
 msgstr "Ver mi perfil"
 
@@ -897,17 +890,14 @@ msgid "Peoples"
 msgstr "Personas"
 
 #: apps/community/templates/community/dashboard/dashboard.html:29
-#| msgid "Register on our community"
 msgid "Customers registered in the community"
 msgstr "Clientes registrados en la comunidad"
 
 #: apps/community/templates/community/dashboard/dashboard.html:45
-#| msgid "Register"
 msgid "Registered"
 msgstr "Registrado"
 
 #: apps/community/templates/community/dashboard/dashboard.html:46
-#| msgid "See Destination"
 msgid "See destinations"
 msgstr "Ver destinos"
 
@@ -947,14 +937,12 @@ msgstr "Fecha"
 
 #: apps/community/templates/community/dashboard/mail.html:163
 #: apps/directmessages/models.py:16
-#| msgid "Send"
 msgid "Sender"
 msgstr "Emisor"
 
 #: apps/community/templates/community/dashboard/mail.html:169
 #: apps/community/templates/community/dashboard/mail.html:358
 #: apps/directmessages/models.py:14
-#| msgid "Contact us"
 msgid "Content"
 msgstr "Contenido"
 
@@ -969,7 +957,6 @@ msgstr "para:"
 
 #: apps/community/templates/community/dashboard/mail.html:285
 #: apps/community/templates/community/dashboard/mail.html:286
-#| msgid "Search Destinies"
 msgid "Search sent messages"
 msgstr "Buscar mensajes enviados"
 
@@ -983,12 +970,10 @@ msgid "Recipient"
 msgstr "Receptor"
 
 #: apps/community/templates/community/dashboard/mail.html:411
-#| msgid "Destinations"
 msgid "Our destinations"
 msgstr "Nuestros Destinos"
 
 #: apps/community/templates/community/dashboard/mail.html:463
-#| msgid "Please let us your message"
 msgid "Please Select a user"
 msgstr "Por favor seleccione un usuario"
 
@@ -1014,7 +999,6 @@ msgstr "Hola, me gustaría..."
 
 #: apps/community/templates/community/dashboard/make_recomm.html:29
 #: apps/community/templates/community/dashboard/make_recomm.html:41
-#| msgid "Please enter a valid email address."
 msgid "Please enter a reason."
 msgstr "Por favor ingrese una razón"
 
@@ -1043,7 +1027,6 @@ msgid "From"
 msgstr "De"
 
 #: apps/community/templates/community/dashboard/profile_user.html:40
-#| msgid "Here another Message"
 msgid "Send a Message"
 msgstr "Enviar un mensaje"
 
@@ -1088,7 +1071,6 @@ msgid "Upload New Picture"
 msgstr "Subir una nueva foto"
 
 #: apps/community/templates/community/profile/edit_profile.html:158
-#| msgid "Social Profiles"
 msgid "Social profiles"
 msgstr "Perfiles Sociales"
 
@@ -1121,7 +1103,6 @@ msgid "Random"
 msgstr "Aleatorio"
 
 #: apps/community/templates/community/profile/my_profile.html:114
-#| msgid "Web page:"
 msgid "Web page"
 msgstr "Página web"
 
@@ -1130,9 +1111,32 @@ msgid "Postal Code"
 msgstr "Codigo Postal"
 
 #: apps/community/templates/community/profile/my_profile.html:149
-#| msgid "Account number"
 msgid "Phone number"
 msgstr "Número de telefono"
+
+#: apps/community/templates/community/registration/activation_email_body.html:57
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por registarse en Travel&Solutions.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar la creación de su cuenta.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
+msgstr ""
+"\n"
+"%(user.first_name)s Gracias por registarse en Travel&Solutions.\n"
+"Confirme su cuenta para finalizar la creación de su cuenta."
+
+#: apps/community/templates/community/registration/activation_email_body.html:63
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: %(activation_key)s,\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por %(expiration_days)s días.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
+msgstr ""
+"\n"
+"Su clave de activación es: %(activation_key)s,\n"
+"esa clave será válida por %(expiration_days)s días."
 
 #: apps/community/templates/community/registration/forget_password.html:17
 msgid "Forgot your"
@@ -1155,16 +1159,29 @@ msgstr ""
 "Bienvenido <span\n"
 "class=\"font-weight-semi-bold\">a la Comunidad</span> "
 
+#: apps/community/templates/community/registration/notify_register_admin_body.html:61
+msgid "Company name"
+msgstr "Compañia"
+
 #: apps/community/templates/community/registration/signup.html:17
+#| msgid ""
+#| " Welcome <span class=\"font-weight-semi-bold\">to\n"
+#| "                        Community</span>"
 msgid ""
-" Welcome <span class=\"font-weight-semi-bold\">to\n"
-"                        Community</span>"
+" Welcome to <span class=\"font-weight-semi-bold\">\n"
+"                        TravelPosting travelers Community</span>"
 msgstr ""
-"Bienvenido <span class=\"font-weight-semi-bold\">to\n"
-"Comunidad</span>"
+"Bienvenido a la<span class=\"font-weight-semi-bold\">to\n"
+"Comunidad de viajeros Travelposting</span>"
+
+#: apps/community/templates/community/registration/signup.html:19
+msgid ""
+"Create your account in just three steps to start enjoying our services."
+msgstr ""
+"Cree su cuenta en solo tres pasos para comenzar a disfrutar de nuestros "
+"servicios."
 
 #: apps/community/templates/community/registration/signup.html:45
-#| msgid "I agree"
 msgid "I agree to the"
 msgstr "Estoy de acuerdo"
 
@@ -1173,30 +1190,25 @@ msgid "Terms and Conditions"
 msgstr "Términos y Condiciones"
 
 #: apps/community/templates/community/registration/signup.html:61
-msgid "Get Started"
-msgstr "Empiece a trabajar"
+msgid "Start saving"
+msgstr "Empiece a ahorrar"
 
-#: apps/community/views.py:263 apps/community/views.py:319
-#: apps/community/views.py:380
-#| msgid "comment"
+#: apps/community/views.py:271 apps/community/views.py:327
+#: apps/community/views.py:388
 msgid "New comment add"
 msgstr "nuevo Comentario agregado"
 
-#: apps/community/views.py:278 apps/community/views.py:334
-#: apps/community/views.py:395 apps/directmessages/views.py:68
-#| msgid ""
-#| "if you want see the                     admin site "
-#| "https://travelposting.com/admin/ "
+#: apps/community/views.py:286 apps/community/views.py:342
+#: apps/community/views.py:403 apps/directmessages/views.py:68
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 "Si deseas ver el sitio de administración https://travelposting.com/admin/  "
 
-#: apps/community/views.py:439
-#| msgid "Your account was successfully activated"
+#: apps/community/views.py:447
 msgid "Your password was successfully updated!"
 msgstr "¡Tu contraseña ha sido cambiada exitosamente!"
 
-#: apps/community/views.py:446
+#: apps/community/views.py:454
 msgid "Please correct the error below."
 msgstr "Por favor corrija los siguientes errores"
 
@@ -1213,7 +1225,6 @@ msgid "You can't send messages to yourself"
 msgstr "No puedes enviarte mensajes a ti mismo"
 
 #: apps/directmessages/views.py:55
-#| msgid "Your password has been changed successfully!"
 msgid "Your message has been sent successfully"
 msgstr "Se ha enviado correctamente tu mensaje."
 
@@ -2026,12 +2037,10 @@ msgid "pricing"
 msgstr "Precios"
 
 #: main/templates/faq.html:24
-#| msgid "Destinations"
 msgid "destinos"
 msgstr "Destinos"
 
 #: main/templates/faq.html:25
-#| msgid "Comunity"
 msgid "community"
 msgstr "Comunidad"
 
@@ -2040,7 +2049,6 @@ msgid "¡Preguntas Frecuentes!"
 msgstr "¡Preguntas Frecuentes!"
 
 #: main/templates/faq.html:66
-#| msgid " Travelposting"
 msgid "¿Qué es Travelposting?"
 msgstr "¿Qué es Travelposting?"
 
@@ -2056,7 +2064,6 @@ msgstr ""
 "cualquier tamaño, una ventana de publicidad y así poder presentar sus ofertas actuales."
 
 #: main/templates/faq.html:92
-#| msgid "Welcome to Travelposting"
 msgid "¿Cual es el concepto de travelposting?"
 msgstr "¿Cual es el concepto de travelposting?"
 
@@ -2354,11 +2361,6 @@ msgid "Can't find your answer?"
 msgstr "¿No encuentras tu respuesta?"
 
 #: main/templates/faq.html:551
-#| msgid ""
-#| "\n"
-#| "                        if what you see doesn't appeal to you because you want to create a plan tailored to your needs,\n"
-#| "                        contact us and we'll work that out together.\n"
-#| "                        "
 msgid ""
 "\n"
 "                            We want to answer all of your queries. Get in touch and we'll get back to you as\n"
@@ -2369,7 +2371,6 @@ msgstr ""
 "Deseamos responder todas sus preguntas. Siga n contacto y le escribiremos tan pronto como podamos."
 
 #: main/templates/faq.html:556
-#| msgid "Email"
 msgid "Email us"
 msgstr "Escribanos"
 
@@ -2448,7 +2449,6 @@ msgid "Use policies"
 msgstr "Politicas de uso"
 
 #: main/templates/hotels.html:17
-#| msgid "Travel and share your adventure"
 msgid "Live the adventure"
 msgstr "Vive tu aventura"
 
@@ -2461,7 +2461,6 @@ msgid "What Happened to"
 msgstr "¿Qué pasó con la"
 
 #: main/templates/hotels.html:108 main/templates/page01.html:39
-#| msgid "Comunity"
 msgid "Community"
 msgstr "Comunidad"
 
@@ -2495,12 +2494,10 @@ msgid "E-mail"
 msgstr "E-mail que uses"
 
 #: main/templates/index.html:90
-#| msgid "See more"
 msgid "Tell us more"
 msgstr "Diganos más"
 
 #: main/templates/index.html:99
-#| msgid "Please enter a valid email address."
 msgid "Please enter your message. "
 msgstr "Por favor ingrese su mensje"
 
@@ -2731,18 +2728,15 @@ msgstr "Petición"
 
 #: main/templates/menu/navbar_all.html:28
 #: main/templates/menu/navbar_all.html:37
-#| msgid "Spanish "
 msgid "Spanish"
 msgstr "Español"
 
 #: main/templates/menu/navbar_all.html:58
 #: main/templates/menu/navbar_all.html:70
-#| msgid "Contact us"
 msgid "Contacts"
 msgstr "Contáctos"
 
 #: main/templates/menu/navbar_all.html:158
-#| msgid "Accounts"
 msgid "My Account"
 msgstr "Mi cuenta"
 
@@ -2755,7 +2749,6 @@ msgid "Dashboard"
 msgstr "Tablero de mandos"
 
 #: main/templates/menu/navbar_all.html:230
-#| msgid "Social Profiles"
 msgid "My Profile"
 msgstr "Mi perfil"
 
@@ -2764,7 +2757,6 @@ msgid "Members"
 msgstr "Miembros"
 
 #: main/templates/menu/navbar_all.html:242
-#| msgid "Plan"
 msgid "Plans"
 msgstr "Planes"
 
@@ -2777,7 +2769,6 @@ msgid "New"
 msgstr "Nuevo"
 
 #: main/templates/menu/notifications_lat.html:6
-#| msgid "Califications"
 msgid "Notifications"
 msgstr "Notificaciones"
 
@@ -2790,7 +2781,6 @@ msgid "Here another Message"
 msgstr "Aquí otro mensaje"
 
 #: main/templates/page01.html:17
-#| msgid "Book your destination!"
 msgid "Get to know our destinations"
 msgstr "Conozca nuestros destinos"
 
@@ -2959,12 +2949,10 @@ msgid "Back to home"
 msgstr "Volver a la página de inicio"
 
 #: main/templates/presignup.html:15
-#| msgid "Delete registration"
 msgid "Please select a registration type."
 msgstr "Por favor seleccione su tipo de registro"
 
 #: main/templates/presignup.html:54
-#| msgid "Comunity"
 msgid "Our Community"
 msgstr "Nuestra Comunidad"
 
@@ -3033,7 +3021,6 @@ msgid "Budget &&"
 msgstr "Presupuesto &&"
 
 #: main/templates/services/destination/_parts/filter_destinations.html:87
-#| msgid "Price type"
 msgid "Price range"
 msgstr "Rango de precio"
 
@@ -3389,6 +3376,9 @@ msgid ""
 msgstr ""
 "\n"
 "Si lo que ve no le atrae porque desea crear un plan adaptado a sus necesidades, contáctenos y con gusto creamos uno juntos."
+
+#~ msgid "Get Started"
+#~ msgstr "Empiece a trabajar"
 
 #~ msgid "SignUp on community"
 #~ msgstr "Registrarse gratis"
