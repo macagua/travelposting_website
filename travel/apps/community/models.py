@@ -55,7 +55,6 @@ class Referral(models.Model):
 
     code = models.CharField(
         max_length=40,
-        unique=True,
     )
 
     created_at = models.DateTimeField(default=timezone.now)
