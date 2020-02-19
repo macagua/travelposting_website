@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-07 06:59-0400\n"
+"POT-Creation-Date: 2020-02-10 18:07-0400\n"
 "PO-Revision-Date: 2020-01-30 12:33-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,12 @@ msgstr ""
 
 #: apps/accounts/admin.py:14 apps/accounts/forms.py:39
 #: apps/accounts/forms.py:67 apps/community/forms.py:16
-#: apps/community/forms.py:69
+#: apps/community/forms.py:70
 msgid "Password"
 msgstr "Passwort"
 
 #: apps/accounts/admin.py:15 apps/accounts/forms.py:73
-#: apps/community/forms.py:24
+#: apps/community/forms.py:25
 msgid "Password confirmation"
 msgstr "Passwortbestätigung"
 
@@ -56,7 +56,7 @@ msgstr "Konten"
 
 #: apps/accounts/forms.py:30
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:59
-#: apps/community/forms.py:60
+#: apps/community/forms.py:61
 #: apps/community/templates/community/profile/my_profile.html:105
 #: apps/landing_page/models.py:464 main/templates/datenshutz_form.html:34
 #: main/templates/services/destination/detail_destination.html:405
@@ -67,7 +67,7 @@ msgstr "E-Mail"
 msgid "Your account is blocked due to non-payment"
 msgstr "Dein Konto ist wegen Nichtzahlung gesperrt."
 
-#: apps/accounts/forms.py:71 apps/community/forms.py:20
+#: apps/accounts/forms.py:71
 msgid ""
 "Use at least 8 characters. Do not use a password from another site or a term "
 "that is too obvious, such as your pet's name."
@@ -76,7 +76,7 @@ msgstr ""
 "anderen Website oder einen zu naheliegenden Begriff, wie z.B. den Namen "
 "Ihres Haustieres."
 
-#: apps/accounts/forms.py:77 apps/community/forms.py:28
+#: apps/accounts/forms.py:77 apps/community/forms.py:29
 msgid "Enter the same password as above, for verification."
 msgstr "Geben Sie zur Überprüfung das gleiche Passwort wie oben angegeben ein."
 
@@ -135,7 +135,6 @@ msgid "Plan"
 msgstr "Plan"
 
 #: apps/accounts/models.py:83 apps/payments/models/paypal.py:61
-#: apps/paymentsN/models/paypal.py:49
 msgid "Coupon"
 msgstr "Gutschein"
 
@@ -637,7 +636,20 @@ msgstr ""
 msgid "Enter the referal code just in case."
 msgstr ""
 
-#: apps/community/forms.py:42
+#: apps/community/forms.py:20
+#, fuzzy
+#| msgid ""
+#| "Use at least 8 characters. Do not use a password from another site or a "
+#| "term that is too obvious, such as your pet's name."
+msgid ""
+"Use at least 8 characters. Do not use a password from another site or a term "
+"that is too obvious, such as your pet’s name"
+msgstr ""
+"Verwenden Sie mindestens 8 Zeichen. Verwenden Sie kein Passwort von einer "
+"anderen Website oder einen zu naheliegenden Begriff, wie z.B. den Namen "
+"Ihres Haustieres."
+
+#: apps/community/forms.py:43
 msgid "Invalid referal code"
 msgstr ""
 
@@ -1253,7 +1265,9 @@ msgstr ""
 "class=\"font-weight-semi-bold\">zur Community</span>"
 
 #: apps/community/templates/community/registration/signup.html:19
-msgid "Create your account in just three steps to start enjoying our services."
+msgid ""
+"Create your account in just three steps to start enjoying our tourist offers "
+"and travel the world without worrying about costs."
 msgstr ""
 
 #: apps/community/templates/community/registration/signup.html:45
@@ -1337,7 +1351,6 @@ msgstr "Preis"
 
 #: apps/landing_page/models.py:65 apps/landing_page/models.py:175
 #: apps/landing_page/models.py:229 apps/payments/models/paypal.py:9
-#: apps/paymentsN/models/paypal.py:7
 msgid "name"
 msgstr "Name"
 
@@ -1363,7 +1376,7 @@ msgid "plans"
 msgstr "Pläne"
 
 #: apps/landing_page/models.py:103 apps/landing_page/models.py:123
-#: apps/payments/models/paypal.py:22 apps/paymentsN/models/paypal.py:20
+#: apps/payments/models/paypal.py:22
 msgid "plan"
 msgstr "Plan"
 
@@ -1399,7 +1412,7 @@ msgstr ""
 "v4.7.0/icons/"
 
 #: apps/landing_page/models.py:266 apps/landing_page/models.py:345
-#: apps/payments/models/paypal.py:36 apps/paymentsN/models/paypal.py:24
+#: apps/payments/models/paypal.py:36
 msgid "description"
 msgstr "Beschreibung"
 
@@ -1624,11 +1637,11 @@ msgstr "Neue Anfrage zur Privatsphäre."
 msgid "Itinerary"
 msgstr "Reiseverlauf"
 
-#: apps/payments/apps.py:7 apps/paymentsN/apps.py:7
+#: apps/payments/apps.py:7
 msgid "Payments"
 msgstr "Zahlungen"
 
-#: apps/payments/models/paypal.py:14 apps/paymentsN/models/paypal.py:12
+#: apps/payments/models/paypal.py:14
 msgid "code"
 msgstr "Code"
 
@@ -1636,19 +1649,19 @@ msgstr "Code"
 msgid "Precio"
 msgstr "Preise"
 
-#: apps/payments/models/paypal.py:42 apps/paymentsN/models/paypal.py:30
+#: apps/payments/models/paypal.py:42
 msgid "start date"
 msgstr "Beginndatum"
 
-#: apps/payments/models/paypal.py:46 apps/paymentsN/models/paypal.py:34
+#: apps/payments/models/paypal.py:46
 msgid "end date"
 msgstr "Enddatum"
 
-#: apps/payments/models/paypal.py:50 apps/paymentsN/models/paypal.py:38
+#: apps/payments/models/paypal.py:50
 msgid "quantity"
 msgstr "Menge"
 
-#: apps/payments/models/paypal.py:62 apps/paymentsN/models/paypal.py:50
+#: apps/payments/models/paypal.py:62
 msgid "Coupons"
 msgstr "Gutscheine"
 
