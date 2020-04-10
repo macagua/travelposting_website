@@ -199,9 +199,28 @@ class ContactUs(View):
         updated_data = request.POST.copy()
         updated_data.update({'ip_client': get_client_ip(request)})
         form = ContactUsForm(updated_data)
-        if form.is_valid():
-            form.save()
+        if form.is_valid() == False:
+            subject = _('You have a new contact')
+            ctx = {
+                'user' : request.POST.get('email'),
+                'message': request.POST.get('message')
+            }
+
+            html_message = render_to_string(
+                'dashboard/dashboard_email.html',
+                context=ctx
+            )
+
+            message = _(f'if you want see the admin site https://travelposting.com/admin/landing_page/contactus/')
+
+            mail_managers(subject,
+                        message,
+                        fail_silently=True,
+                        html_message=html_message
+                    )
+
             messages.success(request, _('Thank you very much for contacting us, we will be responding very soon '), extra_tags='success_contact_us')
+            form.save()
         else:
             messages.error(request, _('A error has ocurred while processing your message'), extra_tags='danger')
             print(form.errors)
