@@ -211,7 +211,7 @@ class ContactUs(View):
                 context=ctx
             )
 
-            message = _(f'if you want see the admin site https://travelposting.com/admin/landing_page/contactus/')
+            message = _(f'if you want see the admin site https://travelposting.com/admin/')
 
             mail_managers(subject,
                         message,
@@ -220,7 +220,7 @@ class ContactUs(View):
                     )
 
             messages.success(request, _('Thank you very much for contacting us, we will be responding very soon '), extra_tags='success_contact_us')
-            form.save()
+            #form.save()
         else:
             messages.error(request, _('A error has ocurred while processing your message'), extra_tags='danger')
             print(form.errors)
