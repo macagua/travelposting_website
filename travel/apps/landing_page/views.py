@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404 
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -86,7 +86,7 @@ class CategoriesView(View):
 
 class DetailDestinationView(View):
     def get(self, request, *args, **kwargs):
-        destination= Destination.objects.get(id=kwargs.get('slug'))
+        destination= get_object_or_404(Destination, id=kwargs.get('slug'))
         key = settings.GOOGLE_MAPS_API_KEY
         comment = Comment.objects.filter(post=kwargs.get('slug')).order_by('-created')[0:3]
 
