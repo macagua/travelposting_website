@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.utils import timezone
 from django.db.models import  Max, Min
 from django.views import View
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
 from django.core.mail import mail_managers
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -70,6 +70,11 @@ class CategoriesView(View):
                 filter_category = Destination.objects.filter(categorie__alias=kwargs.get('alias'), is_deleted=False, is_published=True)
                 categorie = Categorie.objects.filter(alias=kwargs.get('alias'))
                 all_categories = False
+        
+        # Mostrar solo las que tengan name en el idioma seleccionado
+        language_filter = {'name_%s' % get_language(): None}
+        filter_category = filter_category.exclude(**language_filter)
+
         range_min = GeneralDetail.objects.all().aggregate(Min('regular_price'))
         range_max = GeneralDetail.objects.all().aggregate(Max('regular_price'))
         paginator = Paginator(filter_category, 8)
