@@ -6,7 +6,7 @@ Travelposting definition
 
 You need depends necessary for run the app:
 ```bash
-$ sudo apt install build-essential git curl python3.7.4-dev 
+$ sudo apt install build-essential git curl python3.7.4-dev libgdal-dev
 ```
 
 Use the package manager [pipenv](https://docs.pipenv.org/en/latest/)
