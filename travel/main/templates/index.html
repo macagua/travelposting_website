@@ -7,6 +7,12 @@
 <link rel="stylesheet" href="{% static 'css/destinations.css' %}">
 {% endblock extracss %}
 
+{% block navbar %}
+{% if user.is_authenticated %}
+{% include 'menu/navbar_all.html' %}
+{% endif %}
+{% endblock navbar %}
+
 {% block content %}
 {% include "pages/show_header.html" %}
 
