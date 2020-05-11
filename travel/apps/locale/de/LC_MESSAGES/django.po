@@ -3417,7 +3417,7 @@ msgstr "Entdecken oder downloaden Sie unseren Reiseplan hier"
 
 #: main/templates/services/destination/detail_destination.html:297
 msgid "Add comment"
-msgstr "ommentar schreiben"
+msgstr "Kommentar schreiben"
 
 #: main/templates/services/destination/detail_destination.html:299
 msgid "Make a recommendation"
