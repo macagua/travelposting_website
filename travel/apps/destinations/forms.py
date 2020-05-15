@@ -63,6 +63,7 @@ class DestinationForm(forms.ModelForm):
             }),
 
             'short_description': forms.Textarea(attrs ={
+                'maxlength': 250,
                 'class':'form-control',
                 'required':True,
             }),
