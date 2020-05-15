@@ -19,7 +19,7 @@
                     </div>
                     <div class="ibox-content no-padding border-left-right">
                         <center>
-                            <img alt="image" class="img-fluid" src="{% static "img/user.png" %}" width="80">
+                            <img alt="image" class="img-fluid" src="{% if user.avatar %}{{user.avatar.url}}{% else %} {% static "img/user.png" %}{% endif %}" width="80">
                         </center>
                     </div>
                     <div class="ibox-content profile-content">

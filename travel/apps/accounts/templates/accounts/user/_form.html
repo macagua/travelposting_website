@@ -18,7 +18,7 @@
               <div class="row">
                 <div class="col-lg-12">
                   {% include 'accounts/non_field_errors.html' %}
-                  <form class="form-horizontal" role="form" method="post">
+                  <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ object.get_absolute_url }}">
                     {% for field in form %}
