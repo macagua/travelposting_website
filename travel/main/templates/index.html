@@ -10,6 +10,8 @@
 {% block navbar %}
 {% if user.is_authenticated %}
 {% include 'menu/navbar_all.html' %}
+{% else %}
+{% block.super %}
 {% endif %}
 {% endblock navbar %}
 
