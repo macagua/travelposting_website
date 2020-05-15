@@ -930,6 +930,8 @@ class SocialNetwork(models.Model):
     instagram = models.CharField(max_length=100, null=True, blank=True)
     twitter = models.CharField(max_length=100, null=True, blank=True)
     linkedin = models.CharField(max_length=100, null=True, blank=True)
+    pinterest = models.URLField(max_length=100, null=True, blank=True)
+    website = models.URLField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return f"{self.destination}"
@@ -937,6 +939,7 @@ class SocialNetwork(models.Model):
     class Meta:
         verbose_name_plural = _("Social Networks")
         verbose_name = _("Social Network")
+
 
 class DestinationVisitor(models.Model):
     destination = models.ForeignKey(Destination,related_name='visitor', on_delete = models.CASCADE)

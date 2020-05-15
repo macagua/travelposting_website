@@ -468,6 +468,8 @@ class SocialNetworkUpdateView(UpdateView):
         instagram = request.POST.get('instagram')
         twitter = request.POST.get('twitter')
         linkedin = request.POST.get('linkedin')
+        website = request.POST.get('website')
+        pinterest = request.POST.get('pinterest')
     
         '''
         We verify that users checked that comes from the frontend to validate whether the user wants to have 
@@ -483,7 +485,9 @@ class SocialNetworkUpdateView(UpdateView):
                                                 facebook =facebook,
                                                 instagram = instagram,
                                                 twitter = twitter,
-                                                linkedin = linkedin)
+                                                linkedin = linkedin,
+                                                website = website,
+                                                pinterest = pinterest)
 
         return HttpResponseRedirect(self.success_url)
 
