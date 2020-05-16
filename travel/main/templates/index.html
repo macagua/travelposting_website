@@ -11,7 +11,9 @@
 {% if user.is_authenticated %}
 {% include 'menu/navbar_all.html' %}
 {% else %}
-{% block.super %}
+        <header id="header" class="u-header">
+          {% include 'menu/navbar.html' %}
+        </header>
 {% endif %}
 {% endblock navbar %}
 
