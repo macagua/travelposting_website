@@ -141,6 +141,7 @@ class CustomerUserChangeForm(BaseBootstrapForm, forms.ModelForm):
             'instagram',
             'twitter',
             'linkedin',
+            'pinterest'
         )
 
     def clean_language(self):
