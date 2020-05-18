@@ -407,6 +407,8 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
         instagram = request.POST.get('instagram')
         twitter = request.POST.get('twitter')
         linkedin = request.POST.get('linkedin')
+        pinterest = request.POST.get('pinterest')
+        website = request.POST.get('website')
 
         '''
         We verify that users checked that comes from the frontend to validate whether the user wants to have 
@@ -435,7 +437,9 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
                 facebook =facebook,
                 instagram = instagram,
                 twitter = twitter,
-                linkedin = linkedin
+                linkedin = linkedin,
+                website = website,
+                pinterest = pinterest
             )
             return HttpResponseRedirect(self.success_url)
 
