@@ -5,7 +5,11 @@
     <ul class="nav metismenu" id="side-menu">
       <li class="nav-header">
         <div class="dropdown profile-element">
+            {% if request.user.avatar %}
               <img src="{{ request.user.avatar.url }}" width="39" height="39"  />
+            {% else %}
+              <i class="fa fa-user fa-3x" style="color: white;"></i>
+            {% endif %}
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
               <span class="clear">
                 <span class="block m-t-xs">
