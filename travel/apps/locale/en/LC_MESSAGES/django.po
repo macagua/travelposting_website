@@ -3081,7 +3081,7 @@ msgstr ""
 #: main/templates/services/destination/detail_destination.html:154
 #: main/templates/services/destination/detail_destination.html:188
 msgid "Follow us or recommend us through"
-msgstr ""
+msgstr "Follow us"
 
 #: main/templates/services/destination/detail_destination.html:242
 msgid "Fecha"
