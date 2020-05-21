@@ -182,6 +182,13 @@
                                 </a>
                             </li>
                             {% endif %}
+                            {% if destino.user.pinterest %}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.user.pinterest }}">
+                                <img src="{% static 'img/pinterest.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
                         {% else %}
                             {% if destino.social.facebook or destino.social.instagram or destino.social.twitter or destino.social.linkedin %}
                             <li class="list-inline-item">
@@ -213,6 +220,20 @@
                             <li class="list-inline-item">
                                 <a class="" href="{{ destino.social.linkedin }}">
                                 <img src="{% static 'img/linkedin.png' %}">
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.social.pinterest%}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.social.pinterest }}">
+                                <img src="{% static 'img/pinterest.png' %}" >
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if destino.social.website%}
+                            <li class="list-inline-item">
+                                <a class="" href="{{ destino.social.website}}">
+                                <img src="{% static 'img/website.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
