@@ -299,6 +299,18 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
     def get_queryset(self):
         return self.object.gallery.all()
 
+class ItineraryCreateView(View):
+    def get(self, request,*args,**kwargs):
+        c = {}
+        destination_list = Destination.objects.filter(user=request.user)
+        c['form'] = ItineraryForm
+        c['destination_list'] = destination_list
+
+        return render(
+            request,
+            'destinations/itinerary/itinerary_create.html',
+            c,
+        )
 
 class ItineraryView(View):
     def get(self, request,*args,**kwargs):

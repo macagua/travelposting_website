@@ -18,6 +18,7 @@ from apps.destinations.views.destination import (
     GalleryListView,
     OptionTabDataTemplateAjaxView,
     ItineraryView,
+    ItineraryCreateView,
     SocialNetworkListView,
     SocialNetworkUpdateView,
     messageView,
@@ -122,6 +123,11 @@ urlpatterns = [
             'itinerary/delete-itinerary',
             ItineraryView.as_view(),
             name='delete-itinerary',
+    ),
+    path(
+        'itinerary/create/',
+        ItineraryCreateView.as_view(),
+        name='itinerary-create',
     ),
 
     path(
