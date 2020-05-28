@@ -12,57 +12,53 @@
 {%endblock css%}
 
 {% block content %}
-  <div id="page-wrapper" class="gray-bg">
+  <div id="page-wrapper">
     {% include 'destinations/navbar_top.html' %}
 
-    <div class="wrapper wrapper-content animated fadeInRight">
-      <div class="p-w-md m-t-sm">
         <div class="row">
-            <form id="form-itinerary">
-                <input type="hidden" name="pk_i" id="pk_i" readonly />
-                {% csrf_token %}
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="form-group">
-                        <label class="font-normal">{% trans "Destiny"%}</label>
-                        <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
-                            {% for destiny in destination_list %}
-                                <option value="{{ destiny.id }}"
-                                    {% if destiny == current_destiny %}selected="selected"{% endif %}>
-                                    {{ destiny.name|capfirst }}
-                                </option>
-                            {% endfor %}
-                        </select>
+            <div class="col-md-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                            <label class="font-normal">{% trans "Destiny"%}</label>
                     </div>
 
                     <div id="body_form" class="ibox-content">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="font-normal">
-                                        {{form.short_description.label}}
-                                    </label>
-                                    {{form.short_description}}
-                                </div>
+                        <form id="form-itinerary">
+                            <input type="hidden" name="pk_i" id="pk_i" readonly />
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
+                                    {% for destiny in destination_list %}
+                                        <option value="{{ destiny.id }}"
+                                            {% if destiny == current_destiny %}selected="selected"{% endif %}>
+                                            {{ destiny.name|capfirst }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="font-normal">
-                                        {{form.detail_itinerary.label}}
-                                    </label>
-                                    {{form.detail_itinerary|safe}}
-                                </div>
+
+                            <div class="form-group">
+                                <label class="font-normal">
+                                    {{form.short_description.label}}
+                                </label>
+                                {{form.short_description}}
                             </div>
+                            <div class="form-group">
+                                <label class="font-normal">
+                                    {{form.detail_itinerary.label}}
+                                </label>
+                                {{form.detail_itinerary|safe}}
+                            </div>
+                            <div class="form-group row">
+                                <button id="create_itinerary" class="btn btn-success pull-right" type="submit">{% trans "create a new itinerary"%}</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <button id="create_itinerary" class="btn btn-success pull-right" type="submit">{% trans "create a new itinerary"%}</button>
             </div>
-            </form>
-        </div>
           </div>
-        </div>
-      </div>
-    </div>
-    {% include 'destinations/footer.html' %}
   </div>
+    {% include 'destinations/footer.html' %}
 {% endblock %}
 
 
@@ -75,147 +71,5 @@
   <script src="{% static "inspinia/js/plugins/toastr/toastr.min.js" %}"></script>
   <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
   <script src="{% static "inspinia/js/notifications.js" %}"></script>
-  <script>
-    //Delete fuction
-    function delete_itinerary(pk_i){
-          swal({
-              title: "{% trans "Are you sure?" %}",
-              text: "{% trans "If you delete this itinerary you will not be able to recover it" %}",
-              type: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "#DD6B55",
-              confirmButtonText: "{% trans "Yes, delete it!" %}",
-              closeOnConfirm: false
-          }, function () {
-            $.ajax({
-                  method:'DELETE',
-                  url:'{% url 'destinations:delete-itinerary' %}',
-                  data:{
-                    pk:pk_i,
-                  },
-                  beforeSend: function(xhr) {
-                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
-                  },
-                  success: function (request) {
-                  if(request.status==true){
-                    swal("Deleted!", "Itinerary has been deleted.", "success");
-                    setTimeout(function(){
-                        window.location.href = "{% url 'destinations:itinerary-list' %}";
-                    }, 2000);
-                  }else{
-                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
-                  }
-                  }
-              });
-          });
-    }
-
-    //Reset the form.
-    function resetForm(){
-      $("#form-itinerary")[0].reset();
-      $("#id_detail_itinerary").summernote("reset")
-      $("#update_itinerary").hide()
-      $("#create_itinerary").show()
-      $("#body_form").css('display', 'none');
-      $("#content_itinerary").removeClass('border-bottom');
-    }
-
-
-    function get_itinerary(pk){
-      $.ajax({
-                  url:'{% url 'destinations:get-itinerary' %}',
-                  data:{
-                    pk_i:pk,
-                  },
-                  beforeSend: function(xhr) {
-                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
-                  },
-                  success: function (request) {
-                  if(request.status==true){
-                    $("#id_detail_itinerary").summernote("code",request.data.content)
-                    $("#id_short_description").val(request.data.short_title)
-                    $("#pk_i").val(request.data.pk)
-                    $("#update_itinerary").show()
-                    $("#create_itinerary").hide()
-                    $("#body_form").css('display', 'block');
-                    $("#content_itinerary").addClass('border-bottom');
-                    table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
-                  }else{
-                    swal("Error!", "{% trans "Could not load itinerary data for editing"%}", "error");
-                  }
-                  }
-    });
-
-    }
-
-
-
-        $("#select_destiny").select2({
-          placeholder: "{% trans 'Select a destiny' %}",
-           ajax: {
-                  url: "{% url 'destinations:get-itinerary' %}",
-                  dataType: "json",
-                  delay: 250,
-                  data: function (params) {
-                      return {
-                          q: (params.term) ? params.term : "", // search term
-                          page: params.page || 1
-                      };
-                  },
-                  processResults: function (response) {
-                      return {
-                         results: response
-                      };
-                  },
-                  cache: true
-              },
-              minimumInputLength: 0,
-        }
-        ).on('select2:select', function (e) {
-          resetForm()
-          table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+e.params.data.id).load()
-        }); 
-
-
-        $("#reset_itinerary").on('click', function(event) {
-          event.preventDefault();
-          resetForm()
-        });
-
-
-        $("#form-itinerary").submit(function( event ) {
-            event.preventDefault();
-            if($("#create_itinerary").is(":visible")){
-                url = '{% url 'destinations:add-itinerary' %}'
-                type = "POST"
-            }else{
-                url= '{% url 'destinations:update-itinerary' %}'
-                type="PUT"
-            }
-            $.ajax({
-                url: url,
-                type: type,
-                dataType: 'json',
-                data: $(this).serialize(),
-                beforeSend: function(xhr) {
-                        xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
-                },
-            })
-            .done(function(request) {
-                if(request.status ==false){
-                    notificationErrorFormLabels(request.error)
-                }else{
-                    $('#itineraryModal').modal('hide');
-                    notification('success',request.msg)
-                    setTimeout(function(){
-                        window.location.href = "{% url 'destinations:itinerary-list' %}";
-                    }, 2000);
-                }
-            })
-            .fail(function() {
-                console.log("error");
-            })
-        });
-  </script>
   <script>initSummernote();</script>
 {% endblock %}

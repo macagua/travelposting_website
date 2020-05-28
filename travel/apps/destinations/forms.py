@@ -434,6 +434,7 @@ class ItineraryForm(forms.ModelForm):
             ),
 
             'detail_itinerary': SummernoteInplaceWidget(attrs={
+                'style': 'display: block',
                 'summernote': {'width': '100%', 'height': '200px'}
             }),
         }
