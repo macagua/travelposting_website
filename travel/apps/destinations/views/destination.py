@@ -299,7 +299,7 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
     def get_queryset(self):
         return self.object.gallery.all()
 
-class ItineraryCreateView(View):
+class ItineraryCreateView(LoginRequiredMixin, View):
     def get(self, request,*args,**kwargs):
         c = {}
         destination_list = Destination.objects.filter(user=request.user)
