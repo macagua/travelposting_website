@@ -17,6 +17,8 @@ from apps.landing_page.views import (
 )
 
 from apps.destinations.views.booking import BookingSaveView
+from django.contrib.auth.decorators import login_required
+
 #import notifications.urls
 
 admin.autodiscover()
@@ -101,7 +103,8 @@ urlpatterns += i18n_patterns(
 
     path(
         'destinations/',
-        include("apps.destinations.urls", namespace='destinations'),
+        login_required(include("apps.destinations.urls",
+                              namespace='destinations')),
     ),
 
     path(

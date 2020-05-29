@@ -120,9 +120,9 @@ urlpatterns = [
         name='update-itinerary',
     ),
     path(
-            'itinerary/delete-itinerary',
-            ItineraryView.as_view(),
-            name='delete-itinerary',
+        'itinerary/delete-itinerary',
+        ItineraryView.as_view(),
+        name='delete-itinerary',
     ),
     path(
         'itinerary/create/',
@@ -190,9 +190,9 @@ urlpatterns = [
 
 
     path(
-            'maps/',
-            DestinationMapView.as_view(),
-            name='destination-map',
+        'maps/',
+        DestinationMapView.as_view(),
+        name='destination-map',
     ),
 
     path(
