@@ -24,6 +24,7 @@ from .models import (
     BookingStats,
     SocialNetwork,
     DestinationVisitor,
+    Advertising
 )
 
 @admin.register(OptionTabData)
@@ -166,6 +167,18 @@ class VisitorsAdmin(admin.ModelAdmin):
         'date_time',
     ]
 
+
+@admin.register(Advertising)
+class AdvertisingAdmin(admin.ModelAdmin):
+    search_fields = ('name', 'company')
+    list_display = [
+        'name', 
+        'company', 
+        'from_date', 
+        'to_date', 
+        'status', 
+        'position'
+    ]
 
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)
