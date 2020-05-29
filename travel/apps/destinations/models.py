@@ -8,6 +8,10 @@ from easy_thumbnails.fields import ThumbnailerImageField
 from apps.accounts.models import CustomerUser
 from apps.destinations.fields import DaysCommaField
 from apps.destinations.utils import TEMPLATE_DESCRIPTION
+from filer.fields.image import FilerImageField
+import datetime
+
+
 
 TEMPLATE_DESCRIPTION = """
 <strong>Quienes somos</strong><br><br>
@@ -948,3 +952,40 @@ class DestinationVisitor(models.Model):
     country_code = models.CharField(max_length = 5)
     country_name = models.CharField(max_length= 100)
     date_time = models.DateTimeField(auto_now_add=True)
+
+
+class Advertising(models.Model):
+    
+    POSITION = (
+        (1, _('Up')),
+        (2, _('Middle')),
+        (2, _('Down')),
+    )
+
+    name = models.CharField(_('Name'), max_length=30, blank=True)
+    company = models.CharField(_('Company'), max_length=30, blank=True)
+    imagen_desktop = FilerImageField(related_name=_('Desktop'),
+                                    null=True,
+                                    blank=True,
+                                    on_delete=False,
+                                    help_text=_('Image to be displayed in desktop resolutions'))
+    imagen_mobile = FilerImageField(related_name=_('mobile'),
+                                    null=True,
+                                    blank=True,
+                                    on_delete=False,
+                                    help_text=_('Image to be displayed in mobile resolution'))
+    position = models.IntegerField(choices=POSITION, default=1)
+    from_date = models.DateField(_('Start of advertising'),
+                             default=datetime.date.today)
+    to_date = models.DateField(_('End of advertising'), default=datetime.date.today)
+    status = models.BooleanField(_('Active'), default=False, help_text=(
+        _('Indicate Advertising Status')))
+    url = models.URLField(max_length=200, blank=False)
+    created_on = models.DateTimeField(_('Created'), auto_now_add=True)
+
+    def __str__(self):
+        return self.nombre
+
+    class Meta:
+        db_table='Advertising'
+        verbose_name_plural = 'Ads'
