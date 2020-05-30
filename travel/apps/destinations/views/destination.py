@@ -312,16 +312,23 @@ class BaseItineraryMixin(object):
 
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
+        c['button_label'] = _('create a new itinerary') if self.request.method == 'GET' else _('update itinerary')
         c['destination_list'] = Destination.objects.filter(user=self.request.user)
         return c
 
-class ItineraryCreateView(LoginRequiredMixin, BaseItineraryMixin, CreateView):
-    pass
 
+class ItineraryCreateView(LoginRequiredMixin, BaseItineraryMixin, CreateView):
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['button_label'] = _('create a new itinerary')
+        return c 
 
 
 class ItineraryUpdateView(LoginRequiredMixin, BaseItineraryMixin, UpdateView):
-    pass
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['button_label'] = _('update itinerary')
+        return c 
 
 
 class ItineraryView(View):
