@@ -299,18 +299,30 @@ class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
     def get_queryset(self):
         return self.object.gallery.all()
 
-class ItineraryCreateView(LoginRequiredMixin, View):
-    def get(self, request,*args,**kwargs):
-        c = {}
-        destination_list = Destination.objects.filter(user=request.user)
-        c['form'] = ItineraryForm
-        c['destination_list'] = destination_list
+class BaseItineraryMixin(object):
+    form_class = ItineraryForm
+    template_name = 'destinations/itinerary/itinerary_create.html'
+    model = Itinerary
+    success_url = reverse_lazy('destinations:itinerary-list')
 
-        return render(
-            request,
-            'destinations/itinerary/itinerary_create.html',
-            c,
-        )
+    def get_queryset(self):
+        q = super().get_queryset()
+        q.filter(destination__user=self.request.user)
+        return q
+
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['destination_list'] = Destination.objects.filter(user=self.request.user)
+        return c
+
+class ItineraryCreateView(LoginRequiredMixin, BaseItineraryMixin, CreateView):
+    pass
+
+
+
+class ItineraryUpdateView(LoginRequiredMixin, BaseItineraryMixin, UpdateView):
+    pass
+
 
 class ItineraryView(View):
     def get(self, request,*args,**kwargs):
@@ -347,7 +359,7 @@ class ItineraryView(View):
                 )
         else:
             c = {}
-            itinerary_list = Itinerary.objects.filter(destination__user=request.user.id)
+            itinerary_list = Itinerary.objects.filter(destination__user=request.user)
             destination_list = Destination.objects.filter(user=request.user)
             c['itinerary_list'] = itinerary_list
             c['destination_list'] = destination_list
