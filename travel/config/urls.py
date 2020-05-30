@@ -95,16 +95,16 @@ urlpatterns += i18n_patterns(
         include('apps.community.urls'),
         name='community',
     ),
-    
+
     path(
         'paypal/',
-            include('apps.payments.paypal.urls'),
+        include('apps.payments.paypal.urls'),
     ),
 
     path(
         'destinations/',
-        login_required(include("apps.destinations.urls",
-                              namespace='destinations')),
+        include("apps.destinations.urls",
+                namespace='destinations'),
     ),
 
     path(
@@ -131,13 +131,13 @@ urlpatterns += i18n_patterns(
         name='setting-privacy',
     ),
 
-    url(r'^get-itinerary/(?P<slug>\w+)', 
+    url(r'^get-itinerary/(?P<slug>\w+)',
         getItineraryPDF.as_view(),
         name='get_itinerary'),
 
-    url(r'contact-us', 
-            ContactUs.as_view(),
-            name='contact-us'),
+    url(r'contact-us',
+        ContactUs.as_view(),
+        name='contact-us'),
 
     url(
         r'^',
