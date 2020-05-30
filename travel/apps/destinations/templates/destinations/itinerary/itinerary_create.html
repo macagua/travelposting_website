@@ -23,14 +23,14 @@
                     </div>
 
                     <div id="body_form" class="ibox-content">
-                        <form id="form-itinerary">
+                       <form id="form-itinerary" method="POST">
                             <input type="hidden" name="pk_i" id="pk_i" readonly />
                             {% csrf_token %}
                             <div class="form-group">
                                 <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
                                     {% for destiny in destination_list %}
                                         <option value="{{ destiny.id }}"
-                                            {% if destiny == current_destiny %}selected="selected"{% endif %}>
+                                            {% if destiny == object.destination %}selected="selected"{% endif %}>
                                             {{ destiny.name|capfirst }}
                                         </option>
                                     {% endfor %}
