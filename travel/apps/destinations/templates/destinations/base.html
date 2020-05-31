@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-{% load static i18n %}
+{% load static i18n favtags%}
 <html lang="es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{% blocktrans %}Travelposting Solutions.
-    Ingrese sus destinos turísticos a nivel mundial{% endblocktrans %}">
-  <meta name="author" content="Joseph Pérez">
-  <title>Travelposting - {% block title %}{% endblock %}</title>
-  {% block css %}
-    <link href="{% static 'inspinia/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'inspinia/font-awesome/css/font-awesome.css' %}" rel="stylesheet">
-    <link href="{% static 'inspinia/css/animate.css' %}" rel="stylesheet">
-    <link href="{% static 'inspinia/css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'inspinia/css/skin-travelsolution.css' %}" rel="stylesheet">
-  {% endblock %}
-</head>
-<body class="fixed-sidebar pace-done tarvelsolutions-skin">
-<div id="wrapper">
-  {% include 'destinations/navbar_left.html' %}
-
-  {% block content %}{% endblock %}
-
-{#  {% include 'destinations/sidebar.html' %}#}
-</div>
-
-{% block js %}
-  <script src="{% static 'inspinia/js/jquery-3.1.1.min.js' %}"></script>
-  <script src="{% static 'inspinia/js/bootstrap.min.js' %}"></script>
-  <!-- Custom and plugin javascript -->
-  <script src="{% static 'inspinia/js/inspinia.js' %}"></script>
-  <script src="{% static 'inspinia/js/plugins/pace/pace.min.js' %}"></script>
-
-  <script src="{% static 'inspinia/js/plugins/metisMenu/jquery.metisMenu.js' %}"></script>
-  <script src="{% static 'inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
-{% endblock %}
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% blocktrans %}Travelposting Solutions.
+            Ingrese sus destinos turísticos a nivel mundial{% endblocktrans %}">
+        <meta name="author" content="Joseph Pérez">
+        <title>Dashboard - Travelposting {% block title %}{% endblock %}</title>
+        {% placeFavicon %}
+        {% block css %}
+        <link href="{% static 'inspinia/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'inspinia/font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+        <link href="{% static 'inspinia/css/animate.css' %}" rel="stylesheet">
+        <link href="{% static 'inspinia/css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'inspinia/css/skin-travelsolution.css' %}" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body class="fixed-sidebar pace-done tarvelsolutions-skin">
+        <div id="wrapper">
+            {% include 'destinations/navbar_left.html' %}
+            {% block content %}{% endblock %}
+            {#  {% include 'destinations/sidebar.html' %}#}
+        </div>
+        {% block js %}
+        <script src="{% static 'inspinia/js/jquery-3.1.1.min.js' %}"></script>
+        <script src="{% static 'inspinia/js/bootstrap.min.js' %}"></script>
+        <!-- Custom and plugin javascript -->
+        <script src="{% static 'inspinia/js/inspinia.js' %}"></script>
+        <script src="{% static 'inspinia/js/plugins/pace/pace.min.js' %}"></script>
+        <script src="{% static 'inspinia/js/plugins/metisMenu/jquery.metisMenu.js' %}"></script>
+        <script src="{% static 'inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+        {% endblock %}
+    </body>
 </html>
