@@ -258,7 +258,6 @@ ADMINS = [
 ]
 
 MANAGERS = [
-    ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
     ('Tablero travel', 'tablero@travelpostig.com'),
     ('Soporte', 'support@travelpostig.com'),
 ]
