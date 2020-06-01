@@ -91,7 +91,7 @@ class LoginView(View):
             )
 
 
-class RegisterView(SubscriptionView, RegistrationView):
+class RegisterView(RegistrationView):
     email_body_template = 'accounts/registration/activation_email_body.html'
     html_email_template_name = 'accounts/registration/activation_email_body.html'
     email_subject_template = 'accounts/registration/activation_email_subject.txt'
