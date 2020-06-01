@@ -1,0 +1,190 @@
+{% load i18n static %}
+<div class="row">
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="float-right">
+                    <span style="font-size: 1.5em; color: #23c6c8;">
+                    <i class="fa fa-plane"></i>
+                    </span>
+                </div>
+                <h5>{% trans "Destinations" %}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ dashboard_list.destination_count }}</h1>
+                <small>
+                <a href="{% url 'destinations:list' %}" class="label label-info">
+                {% trans "Show Destinations" %}
+                </a>
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="float-right">
+                    <span style="font-size: 1.5em; color: #1c84c6;">
+                    <i class="fa fa-credit-card"></i>
+                    </span>
+                    </span>
+                </div>
+                <h5>{% trans "Booking" %}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ dashboard_list.booking_count }}</h1>
+                <small>
+                <a href="{% url 'destinations:booking-list' %}" class="label label-success">
+                {% trans "Show Bookings" %}
+                </a>
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="label label-primary float-right">Today</span>
+                </div>
+                <h5>{% trans "User Connected" %}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ dashboard_list.user_last }}</h1>
+                <div class="stat-percent font-bold text-navy"><i class="fa fa-level-up"></i></div>
+                <small>{% trans "Number of users connected" %}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="label label-danger float-right">Low value</span>
+                </div>
+                <h5>User activity</h5>
+            </div>
+            <div class="ibox-content">
+                <h4 class="no-margins">{{ request.user.last_login }}</h4>
+                <br>
+                <div class="stat-percent font-bold text-success"> <i class="fa fa-level-up"></i></div>
+                <small>{% trans "Last Visit" %}</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>{% trans "Visitor by Destinations"%}</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                    <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content table-responsive">
+                <table class="table table-hover no-margins">
+                    <thead>
+                        <tr>
+                            <th>{% trans "Destinations"%}</th>
+                            <th>{% trans "Last Visit"%}</th>
+                            <th>{% trans "Number visits"%}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for statis_destine in statis_destinies%}
+                        <tr>
+                            <td><small>{{ statis_destine.name }}</small></td>
+                            <td>{{ statis_destine.last_visit|default_if_none:"" }}</td>
+                            <td><span class="label label-primary">{{ statis_destine.visitor_count|default_if_none:"" }}</span></td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>{% trans "Number of visits per country"%}</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                    <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <table class="table table-hover margin bottom">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%" class="text-center">No.</th>
+                                    <th>Transaction</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td> Security doors
+                                    </td>
+                                    <td class="text-center small">16 Jun 2014</td>
+                                    <td class="text-center"><span class="label label-primary">$483.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td> Wardrobes
+                                    </td>
+                                    <td class="text-center small">10 Jun 2014</td>
+                                    <td class="text-center"><span class="label label-primary">$327.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td> Set of tools
+                                    </td>
+                                    <td class="text-center small">12 Jun 2014</td>
+                                    <td class="text-center"><span class="label label-warning">$125.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">4</td>
+                                    <td> Panoramic pictures</td>
+                                    <td class="text-center small">22 Jun 2013</td>
+                                    <td class="text-center"><span class="label label-primary">$344.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">5</td>
+                                    <td>Phones</td>
+                                    <td class="text-center small">24 Jun 2013</td>
+                                    <td class="text-center"><span class="label label-primary">$235.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">6</td>
+                                    <td>Monitors</td>
+                                    <td class="text-center small">26 Jun 2013</td>
+                                    <td class="text-center"><span class="label label-primary">$100.00</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="world-map" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
