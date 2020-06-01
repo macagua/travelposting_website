@@ -23,6 +23,7 @@ from apps.destinations.views.destination import (
     ItineraryView,
     SocialNetworkListView,
     SocialNetworkUpdateView,
+    MailboxView,
     messageView,
 
 )
@@ -45,6 +46,12 @@ urlpatterns = [
         '',
         login_required(DashboardIndex),
         name='dashboard-index',
+    ),
+
+    path(
+        'mailbox',
+        login_required(MailboxView.as_view()),
+        name='mailbox',
     ),
 
     path(

@@ -15,6 +15,7 @@
           <link href="{% static 'dashboard/css/animate.css' %}" rel="stylesheet">
           <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet">
         {% endblock %}
+        {% block extracss %} {% endblock extracss%}
     </head>
     <body class="fixed-sidebar pace-done tarvelsolutions-skin">
         <div id="wrapper">
@@ -62,6 +63,8 @@
     <!-- Sparkline demo data  -->
     <script src="{% static 'dashboard/js/demo/sparkline-demo.js' %}"></script>
 
+
+
     <script>
         $(document).ready(function() {
             $('.chart').easyPieChart({
@@ -81,7 +84,7 @@
             });
             
             var mapData = {
-                "US": 298,
+                "US": 500,
                 "SA": 200,
                 "DE": 220,
                 "FR": 540,
@@ -116,5 +119,6 @@
         });
     </script>
         {% endblock %}
+        {% block extrajs %} {% endblock extrajs%}
     </body>
 </html>

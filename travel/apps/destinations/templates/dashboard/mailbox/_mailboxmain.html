@@ -1,0 +1,138 @@
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Mailbox - Travelposting' %}{% endblock %}
+{% block extracss %}
+<!-- FooTable -->
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css'%}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
+
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="ibox ">
+                    <div class="ibox-content mailbox-content">
+                        <div class="file-manager">
+                            <a class="btn btn-block btn-primary compose-mail"
+                                href="mail_compose.html">{% trans "New Message" %}</a>
+                            <div class="space-25"></div>
+                            <h5>{% trans "Folders"%}</h5>
+                            <ul class="folder-list m-b-md" style="padding: 0">
+                                <li>
+                                    <a href="mailbox.html">
+                                        <i class="fa fa-inbox "></i> {% trans "Inbox" %}
+                                        <span class="label label-warning float-right">1</span> </a>
+                                </li>
+                                <li><a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
+                                        {% trans "Send message" %}</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 animated fadeInRight">
+                <div class="mail-box-header">
+                    <h2>
+                        {% trans "Inbox" %}(1)
+                    </h2>
+                </div>
+                <div class="mail-box">
+                        <div class="ibox-content">
+                            <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
+                                placeholder="{% trans 'Search message' %} "">
+
+                            <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+                                <tbody>
+                                    <tr class="gradeA">
+                                        <td>
+                                            <center>
+                                                <span class="label label-warning ">{% trans "Read" %}</span>
+                                            </center>
+                                        </td>
+                                        <td>Anna Smith</td>
+                                        <td>Aldus PageMaker including versions of Lorem Ipsum.
+                                        </td>
+                                        <td>08:00 AM</td>
+                                        <td>
+                                            <a href="" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
+                                            </a>
+                                            <a href="" class="btn btn-outline btn-danger btn-xs">{% trans "Delete" %}
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="gradeA">
+                                        <td>
+                                            <center><span class="label label-success ">{% trans "Read" %}</span></center>
+                                        </td>
+                                        <td>Nilo Escobar</td>
+                                        <td>Verificación de todas las aplicaciones
+                                        </td>
+                                        <td>15:00 Hrs</td>
+                                        <td>
+                                            <a href="" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
+                                            </a>
+                                            <a href="" class="btn btn-outline btn-danger btn-xs">{% trans "Delete" %}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr class="gradeC">
+                                        <td>
+                                            <center><span class="label label-success">{% trans "Read" %}</span></center>
+                                        </td>
+                                        <td>Orlando Fiol</td>
+                                        <td>Test
+                                        </td>
+                                        <td>13:00 Hrs</td>
+                                        <td>
+                                            <a href="" class="btn btn-outline btn-primary  btn-xs"> 
+                                                {% trans "See" %}
+                                            </a>
+                                            <a href="" class="btn btn-outline btn-danger btn-xs">
+                                                {% trans "Delete" %}
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <ul class="pagination float-right"></ul>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'destinations/footer.html' %}
+</div>
+{% endblock content %}
+{% block extrajs%} 
+<!-- FooTable -->
+<script src="{% static 'dashboard/js/plugins/footable/footable.all.min.js' %}"></script>
+<!-- iCheck -->
+<script src="{% static 'dashboard/js/plugins/iCheck/icheck.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+        });
+    });
+</script>
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function () {
+        $('.footable').footable();
+        $('.footable2').footable();
+    });
+</script>
+{% endblock extrajs %}

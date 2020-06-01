@@ -265,7 +265,7 @@ MANAGERS = [
 # Authentication options
 AUTH_USER_MODEL = 'accounts.CustomerUser'
 LOGIN_URL = 'accounts:login'
-LOGIN_REDIRECT_URL = 'destinations:dashboard-index'
+LOGIN_REDIRECT_URL = 'dashboard:dashboard-index'
 LOGOUT_URL = 'accounts:logout'
 LOGOUT_REDIRECT_URL = 'accounts:logout'
 

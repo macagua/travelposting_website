@@ -102,9 +102,9 @@ urlpatterns += i18n_patterns(
     ),
 
     path(
-        'destinations/',
+        'dashboard/',
         include("apps.destinations.urls",
-                namespace='destinations'),
+                namespace='dashboard'),
     ),
 
     path(

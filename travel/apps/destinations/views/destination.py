@@ -553,3 +553,10 @@ class messageView(View):
         reply = _('Thank you for your message, very soon we will answer back')
         
         return render(request, 'dashboard/index.html', {'reply':reply})
+
+
+class MailboxView(View):
+    template_name = 'dashboard/mailbox/_mailboxmain.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
