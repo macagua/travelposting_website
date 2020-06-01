@@ -1,7 +1,8 @@
 import logging
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin
-from apps.accounts.models import CustomerUser
+from django.contrib.gis.geoip2 import GeoIP2
+from apps.accounts.models import CustomerUser, LastVisitIP
 from apps.payments.paypal.views import SubscriptionView
 from config.settings import local as settings
 from django.core.mail import mail_managers
@@ -47,9 +48,30 @@ class LoginView(View):
         )
 
     def post(self, request, *args, **kwargs):
+        def get_client_ip(request):
+            x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+            if x_forwarded_for:
+                ip = x_forwarded_for.split(',')[0]
+            else:
+                ip = request.META.get('REMOTE_ADDR')
+            return ip
         user = request.POST.get('email')
         password = request.POST.get('password')
         user = authenticate(username=user, password=password)
+
+        if user is not None:
+            ip = get_client_ip(request)
+            if ip != user.last_ip:
+                user.last_ip = ip 
+                try:
+                    location = GeoIP2().country(user.last_ip)
+                except:
+                    pass
+                else:
+                    user.location = location.get('country_name')
+
+                user.save()
+                LastVisitIP.add(user)
 
         if user is not None and user.is_community==False:
             login(request, user)
