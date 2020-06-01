@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 from impersonate.admin import UserAdminImpersonateMixin
-from apps.accounts.models import CustomerUser, Contact, Comment
+from apps.accounts.models import CustomerUser, Contact, Comment, LastVisitIP
 from apps.utils.views import get_referal_code
 
 
@@ -61,10 +61,10 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     # that reference specific fields on auth.User.
     list_display = ('email', 'date_joined', 'is_staff', 'is_active', 'password_link')
     list_filter = ('is_staff', 'is_active', ('last_login'), 'is_community')
-    readonly_fields = ('subscription_id',)
+    readonly_fields = ('subscription_id', 'last_ip', 'location')
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'last_ip', 'location', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me')}),
         (_('Business info'), {'fields': ('business_name', 'business_address', 'business_position')}),
         (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'is_community', 'subscription_id')}),
     )
@@ -113,3 +113,13 @@ class CommentAdmin(admin.ModelAdmin):
         'user_comment',
         'created'
     ]
+
+
+@admin.register(LastVisitIP)
+class LastVisitAdmin(admin.ModelAdmin):
+    readonly_fields = ('user', 'location', 'last_ip_login')
+    list_display = [
+            'user',
+            'location',
+            'last_ip_login'
+            ]
