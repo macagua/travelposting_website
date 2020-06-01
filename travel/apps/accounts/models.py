@@ -219,6 +219,9 @@ class CustomerUser(AbstractUser):
     is_superuser = models.BooleanField(default=False)
     is_community = models.BooleanField(default=True)
 
+    last_ip = models.GenericIPAddressField(protocol='IPv4', verbose_name="Last Login IP", null=True, blank=True)
+    location = models.CharField(max_length=50, blank=True, null=True)
+
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -235,6 +238,23 @@ class CustomerUser(AbstractUser):
     def get_absolute_url(self):
         return reverse_lazy('accounts:user-details', kwargs={'pk': self.pk})
 
+
+class LastVisitIP(models.Model):
+    user = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
+    last_ip_login = models.GenericIPAddressField(protocol='IPv4', verbose_name="Last Login", null=True, blank=True)
+    location = models.CharField(max_length=50, blank=True, null=True)
+
+    @classmethod
+    def add(self, user):
+        last, new = self.objects.get_or_create(
+                user=user,
+                last_ip_login=user.last_ip,
+                defaults={
+                    'location': user.location 
+                    })
+
+    def str(self):
+        return str(self.user) +" "+ str(self.last_ip_login)
 
 ### Model to interact between one user and another
 '''
