@@ -1,0 +1,28 @@
+{% load static i18n destinations_tags static %}
+
+<div class="ibox ">
+    <div class="ibox-content mailbox-content">
+        <div class="file-manager">
+            <a class="btn btn-block btn-primary compose-mail" href="{% url 'dashboard:mailbox-add' %}">
+                {% trans "New Message" %}
+            </a>
+            <div class="space-25"></div>
+                <h5>{% trans "Folders"%}</h5>
+                <ul class="folder-list m-b-md" style="padding: 0">
+                    <li>
+                        <a href="{% url 'dashboard:mailbox'%}">
+                            <i class="fa fa-inbox "></i> 
+                            {% trans "Inbox" %}
+                            <span class="label label-warning float-right">1</span> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
+                            {% trans "Messages sent" %}
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>

@@ -57,13 +57,20 @@
     </li>
     <li class="dropdown-divider"></li>
     <li>
-      <div class="text-center link-block">
-        <a href="{% url 'dashboard:mailbox' %}" class="dropdown-item">
-          <i class="fa fa-envelope"></i> <strong>{% trans "Read All Messages" %}</strong>
-        </a>
-        <a href="mailbox.html" class="dropdown-item">
-          <i class="fa fa-envelope"></i> <strong>{% trans "Send Message" %}</strong>
-        </a>
+      <div class="link-block">
+        <div class="row">
+          <div class="col-lg-6">
+            <a href="{% url 'dashboard:mailbox' %}" class="dropdown-item">
+              <i class="fa fa-envelope"></i> <strong>{% trans "Read All Messages" %}</strong>
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a href="mailbox.html" class="dropdown-item">
+              <i class="fa fa-edit"></i> <strong>{% trans "Send Message" %}</strong>
+            </a>
+          </div>
+        </div>
+
       </div>
     </li>
   </ul>

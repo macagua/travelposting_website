@@ -12,29 +12,10 @@
     {% include 'destinations/navbar_top.html' %}
     <div class="wrapper wrapper-content">
         <div class="row">
-            <div class="col-lg-2">
-                <div class="ibox ">
-                    <div class="ibox-content mailbox-content">
-                        <div class="file-manager">
-                            <a class="btn btn-block btn-primary compose-mail"
-                                href="mail_compose.html">{% trans "New Message" %}</a>
-                            <div class="space-25"></div>
-                            <h5>{% trans "Folders"%}</h5>
-                            <ul class="folder-list m-b-md" style="padding: 0">
-                                <li>
-                                    <a href="mailbox.html">
-                                        <i class="fa fa-inbox "></i> {% trans "Inbox" %}
-                                        <span class="label label-warning float-right">1</span> </a>
-                                </li>
-                                <li><a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
-                                        {% trans "Send message" %}</a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-3">
+                {% include 'dashboard/mailbox/mailbox_menu_left.html' %}
             </div>
-            <div class="col-lg-10 animated fadeInRight">
+            <div class="col-lg-9 animated fadeInRight">
                 <div class="mail-box-header">
                     <h2>
                         {% trans "Inbox" %}(1)

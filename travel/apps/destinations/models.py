@@ -9,6 +9,7 @@ from apps.accounts.models import CustomerUser
 from apps.destinations.fields import DaysCommaField
 from apps.destinations.utils import TEMPLATE_DESCRIPTION
 from filer.fields.image import FilerImageField
+from django.utils import timezone
 import datetime
 
 
@@ -989,3 +990,34 @@ class Advertising(models.Model):
     class Meta:
         db_table='Advertising'
         verbose_name_plural = 'Ads'
+
+
+#A private directmessage on the dashboard
+class MessageDashboard(models.Model):
+    subject = models.CharField(
+        'Subject', blank=False, null=False, max_length=1000)
+    content = models.TextField(_('Content'))
+    sender = models.ForeignKey(
+        CustomerUser, related_name='dash_sender', verbose_name=_("Sender"), on_delete=models.CASCADE)
+    recipient = models.ForeignKey(
+        CustomerUser, related_name='dash_recipient', verbose_name=_("Recipient"), on_delete=models.CASCADE)
+    sent_at = models.DateTimeField(_("sent at"), null=True, blank=True)
+    read_at = models.DateTimeField(_("read at"), null=True, blank=True)
+
+    @property
+    def unread(self):
+        """returns whether the message was read or not"""
+        if self.read_at is not None:
+            return False
+        return True
+
+    def __str__(self):
+        return self.content
+
+    def save(self, **kwargs):
+        if self.sender == self.recipient:
+            raise ValidationError(_("You can't send messages to yourself"))
+
+        if not self.id:
+            self.sent_at = timezone.now()
+        super(MessageDashboard, self).save(**kwargs)

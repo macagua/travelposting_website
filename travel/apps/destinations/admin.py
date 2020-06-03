@@ -24,7 +24,8 @@ from .models import (
     BookingStats,
     SocialNetwork,
     DestinationVisitor,
-    Advertising
+    Advertising,
+    MessageDashboard
 )
 
 @admin.register(OptionTabData)
@@ -179,6 +180,14 @@ class AdvertisingAdmin(admin.ModelAdmin):
         'status', 
         'position'
     ]
+
+class MessageAdmin(admin.ModelAdmin):
+    model = MessageDashboard
+    list_display = ('id', 'sender', 'recipient', 'subject', 'content', )
+
+
+admin.site.register(MessageDashboard, MessageAdmin)
+
 
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)

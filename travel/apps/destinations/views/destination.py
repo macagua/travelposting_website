@@ -46,6 +46,7 @@ from apps.destinations.models import (
     InventarioDetail,
     BookingDetail,
     SocialNetwork,
+    MessageDashboard,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -544,11 +545,12 @@ class messageView(View):
 
         message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
 
-        mail_managers(subject,
-                    message,
-                    fail_silently=True,
-                    html_message=html_message
-                )
+        mail_managers(
+            subject,
+            message,
+            fail_silently=True,
+            html_message=html_message
+        )
 
         reply = _('Thank you for your message, very soon we will answer back')
         
@@ -560,3 +562,26 @@ class MailboxView(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+
+
+class MailboxAdd(View):
+    template_name = 'dashboard/mailbox/_mailboxadd.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        import ipdb; ipdb.set_trace()
+        reply = _('Thank you for your message, very soon we will answer back')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        user_sender = CustomerUser.objects.get(pk=request.user.id)
+        #this filter will be used when we apply all the group for magnament the other dashboard!
+        #user_recipient = CustomerUser.object.get()
+        MessageDashboard.objects.create(
+            subject=subject,
+            content=message,
+            sender=user_sender,
+        )
+
+        return render(request, 'dashboard/index.html', {'reply': reply})
