@@ -1,36 +1,34 @@
-from django.views.generic import (
-    View,
-    ListView,
-)
-from django.utils.translation import gettext as _
-from django_registration.backends.activation.views import RegistrationView
+from django.db.models import Q
+from django.core.mail import mail_managers
+from django.contrib.auth import authenticate, login, update_session_auth_hash
+from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
+from django.core.mail import send_mail
+from django.core.paginator import Paginator  # < Import the Paginator class
+from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import (
     render,
     redirect,
     reverse,
 )
-from django.urls import reverse_lazy
-from django.template import loader
-from config.settings import local as settings
-from django.core.mail import mail_managers
-from django.contrib.auth import authenticate, login
-from django.http import JsonResponse
-from django.http import HttpResponseBadRequest
-from apps.accounts.models import Contact
-from apps.accounts.models import CustomerUser
-from .forms import CommunitySignUpForm, SignInForm
-from apps.accounts.models import Comment
-from apps.destinations.models import Destination
 from django.template.loader import render_to_string
-from django.core.mail import send_mail
-from django.core.paginator import Paginator  # < Import the Paginator class
-from .models import Recommendation
-from django.db.models import Q
-from django.contrib import messages
-from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.forms import PasswordChangeForm
+from django.template import loader
+from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
+from django.views.generic import (
+    View,
+    ListView,
+)
+
+from django_registration.backends.activation.views import RegistrationView
+from config.settings import local as settings
+
+from apps.accounts.models import Comment, Contact, CustomerUser
 from apps.accounts.forms import CustomerUserChangeForm
 from apps.community.models import Referral
+from apps.destinations.models import Destination
+from .forms import CommunitySignUpForm, SignInForm
+from .models import Recommendation
 from apps.utils.views import get_referal_code
 
 
@@ -114,12 +112,13 @@ class signupCommunity(RegistrationView):
 
     def send_activation_email(self, user):
         code = self.get_form_kwargs()['data']['referal']
-        patrocinador = CustomerUser.objects.get(ref_code=code)
-        Referral.objects.create(
-            user=user,
-            referredBy=patrocinador,
-            code='ref',
-        )
+        if code:
+            patrocinador = CustomerUser.objects.get(ref_code=code)
+            Referral.objects.create(
+                user=user,
+                referredBy=patrocinador,
+                code='ref',
+            )
         html_email = None
         activation_key = self.get_activation_key(user)
         context = self.get_email_context(activation_key)
@@ -168,8 +167,11 @@ class DashboardCommunity(View):
     paginate_by = 3
 
     def get(self, request, *args, **kwargs):
-        members = CustomerUser.objects.filter(is_active=True, is_community=True)
-        count = CustomerUser.objects.filter(is_active=True, is_community=True)
+        count = CustomerUser.objects.filter(is_active=True, is_community=True).count()
+        # Followers
+        members = Contact.objects.filter(
+                Q(user_from=request.user)|Q(user_to=request.user)
+                )
 
         paginator = Paginator(members, 6)
         page = request.GET.get('page')
@@ -179,7 +181,7 @@ class DashboardCommunity(View):
             is_deleted=False, is_published=True)
 
         return render(request, 'community/dashboard/dashboard.html',
-                      {'members': members, 'count': count, 'destination': destination})
+                {'members': members, 'count': count, 'destination': destination})
 
 
 class ProfileView(View):

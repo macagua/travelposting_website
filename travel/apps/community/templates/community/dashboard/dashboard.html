@@ -24,7 +24,7 @@
                                 <span class="fas fa-users btn-icon__inner"></span>
                             </span>
                             <div class="media-body">
-                                <span class="d-block font-size-3">{{ count.count }} {% trans "Peoples" %}</span>
+                                <span class="d-block font-size-3">{{ count }} {% trans "Peoples" %}</span>
                                 <h2 class="h6 text-secondary font-weight-normal mb-0">
                                     {% trans "Customers registered in the community" %}</h2>
                             </div>
@@ -97,8 +97,12 @@
                 <!-- Title -->
                 <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
                     <h2 class="h6 mb-0">
-                        {{ count.count|sub:1 }}
+                        {% if members %}
+                        {{ members.count|sub:1 }}
                         {% trans "members found" %}
+                        {% else %}
+                        {% trans "Not members found." %}
+                        {% endif %}
                     </h2>
                 </div>
                 <!-- End Title -->

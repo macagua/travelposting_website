@@ -89,34 +89,37 @@
                                         <h2 class="h6 mb-0">
                                             <a href="{% url 'profile_detail' u.id %}">{{ u.get_full_name }}</a>
                                         </h2>
-                                        <a class="small" href="{% url 'profile_detail' u.id %}">{{ u.email }}</a>
+                                        {% comment %} <a class="small" href="{% url 'profile_detail' u.id %}">{{ u.email }}</a>{% endcomment %}
                                     </div>
                                     <!-- End User Info -->
 
+                                    {% comment %}
                                     <!-- Social Networks -->
                                     <ul class="list-inline mb-0">
+                                        {% if u.facebook %}
                                         <li class="list-inline-item mr-0">
                                             <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.facebook }}">
                                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
                                             </a>
                                         </li>
-                                        <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ u.email }}">
-                                                <span class="fab fa-google btn-icon__inner"></span>
-                                            </a>
-                                        </li>
+                                        {% endif %}
+                                        {% if u.twitter%}
                                         <li class="list-inline-item mr-0">
                                             <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.twitter }}">
                                                 <span class="fab fa-twitter btn-icon__inner"></span>
                                             </a>
                                         </li>
+                                        {% endif %}
+                                        {% if u.instagram %}
                                         <li class="list-inline-item mr-0">
                                             <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.instagram }}">
                                                 <span class="fab fa-instagram btn-icon__inner"></span>
                                             </a>
                                         </li>
+                                        {% endif %}
                                     </ul>
                                     <!-- End Social Networks -->
+                                    {% endcomment %}
                                 </div>
                             </div>
                         </div>
