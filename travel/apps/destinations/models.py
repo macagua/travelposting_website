@@ -956,7 +956,7 @@ class DestinationVisitor(models.Model):
 
 
 class Advertising(models.Model):
-    
+
     POSITION = (
         (1, _('Up')),
         (2, _('Middle')),
@@ -999,8 +999,8 @@ class MessageDashboard(models.Model):
     content = models.TextField(_('Content'))
     sender = models.ForeignKey(
         CustomerUser, related_name='dash_sender', verbose_name=_("Sender"), on_delete=models.CASCADE)
-    recipient = models.ForeignKey(
-        CustomerUser, related_name='dash_recipient', verbose_name=_("Recipient"), on_delete=models.CASCADE)
+    # the variable recipient will be active when we'll work that the group
+    #recipient = models.ForeignKey(CustomerUser, related_name='dash_recipient', verbose_name=_("Recipient"), on_delete=models.CASCADE)
     sent_at = models.DateTimeField(_("sent at"), null=True, blank=True)
     read_at = models.DateTimeField(_("read at"), null=True, blank=True)
 
@@ -1015,8 +1015,8 @@ class MessageDashboard(models.Model):
         return self.content
 
     def save(self, **kwargs):
-        if self.sender == self.recipient:
-            raise ValidationError(_("You can't send messages to yourself"))
+        #if self.sender == self.recipient:
+        #    raise ValidationError(_("You can't send messages to yourself"))
 
         if not self.id:
             self.sent_at = timezone.now()

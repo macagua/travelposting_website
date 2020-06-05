@@ -254,10 +254,11 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
 # https://docs.djangoproject.com/en/2.1/topics/email/#module-django.core.mail
 # python -m smtpd -n -c DebuggingServer localhost:1025
 ADMINS = [
-    ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
+    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
 ]
 
 MANAGERS = [
+    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
     ('Tablero travel', 'tablero@travelpostig.com'),
     ('Soporte', 'support@travelpostig.com'),
 ]

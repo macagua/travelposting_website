@@ -5,6 +5,7 @@
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
+                    
     <div class="wrapper wrapper-content">
       {% filter_dashboard_index user as dashboard_list %}
       {% include 'dashboard/widgets.html' %}

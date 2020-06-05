@@ -1,11 +1,3 @@
-{% load static i18n destinations_tags %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>{% trans "New Messages"%}</title>
-    <style>
 /* -------------------------------------
     GLOBAL
     A very basic CSS reset
@@ -270,60 +262,3 @@ a {
         width: 100% !important;
     }
 }
-    </style>
-</head>
-
-<body>
-
-<table class="body-wrap">
-    <tr>
-        <td></td>
-        <td class="container" width="600">
-            <div class="content">
-                <table class="main" width="100%" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td class="alert alert-good">
-                            <b>Travelposting</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="content-wrap">
-                            <table width="100%" cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td class="content-block">
-                                        {% trans 'You have a new message:' %}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="content-block">
-                                        <b> {% trans 'User: ' %} </b>{{ user }}<br>
-                                        <b> {% trans 'Full Name:' %}</b> {{ name }}<br>
-                                        <br>
-                                        {{ message }} 
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="content-block">
-                                        <a href="#" class="btn-primary">{% trans "See all your messages"%}</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="content-block">
-                                        <a href="https://travelposting.com/">https://travelposting.com</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-                <div class="footer">
-
-                </div></div>
-        </td>
-        <td></td>
-    </tr>
-</table>
-
-</body>
-</html>

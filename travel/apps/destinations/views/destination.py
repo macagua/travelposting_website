@@ -26,6 +26,7 @@ from django.template.loader import render_to_string
 from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.conf import settings
+from django.urls import reverse
 
 from apps.destinations.forms import (
     DestinationForm,
@@ -321,14 +322,14 @@ class ItineraryCreateView(LoginRequiredMixin, BaseItineraryMixin, CreateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['button_label'] = _('create a new itinerary')
-        return c 
+        return c
 
 
 class ItineraryUpdateView(LoginRequiredMixin, BaseItineraryMixin, UpdateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['button_label'] = _('update itinerary')
-        return c 
+        return c
 
 
 class ItineraryView(View):
@@ -442,7 +443,7 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
         website = request.POST.get('website')
 
         '''
-        We verify that users checked that comes from the frontend to validate whether the user wants to have 
+        We verify that users checked that comes from the frontend to validate whether the user wants to have
         their social networks for all destinations or if you want to use social networks for each destination.
         '''
         if use_default_networks == None:
@@ -459,7 +460,7 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
                 add = SocialNetwork.objects.filter(destination__user=self.request.user)
                 destinos = Destination.objects.filter(user=self.request.user)
                 errors = _("There is already a configuration of social networks. Do you want to update?")
-                return render(request, self.template_name, {'add':add, 'destinos':destinos, 'errors': errors}) 
+                return render(request, self.template_name, {'add':add, 'destinos':destinos, 'errors': errors})
         except:
             destino = Destination.objects.get(id=request.POST.get('destination'))
             SocialNetwork.objects.create(
@@ -505,9 +506,9 @@ class SocialNetworkUpdateView(UpdateView):
         linkedin = request.POST.get('linkedin')
         website = request.POST.get('website')
         pinterest = request.POST.get('pinterest')
-    
+
         '''
-        We verify that users checked that comes from the frontend to validate whether the user wants to have 
+        We verify that users checked that comes from the frontend to validate whether the user wants to have
         their social networks for all destinations or if you want to use social networks for each destination.
         '''
         if use_default_networks == None:
@@ -553,7 +554,7 @@ class messageView(View):
         )
 
         reply = _('Thank you for your message, very soon we will answer back')
-        
+
         return render(request, 'dashboard/index.html', {'reply':reply})
 
 
@@ -566,12 +567,12 @@ class MailboxView(View):
 
 class MailboxAdd(View):
     template_name = 'dashboard/mailbox/_mailboxadd.html'
+    success_url = reverse_lazy('destinations:mailbox')
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
     def post(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()
         reply = _('Thank you for your message, very soon we will answer back')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
@@ -584,4 +585,26 @@ class MailboxAdd(View):
             sender=user_sender,
         )
 
-        return render(request, 'dashboard/index.html', {'reply': reply})
+        #now we send the mail
+        subject = subject
+
+        ctx = {
+            'user' : request.user.email,
+            'name' : request.user.get_full_name,
+            'message': request.POST.get('message')
+        }
+
+        html_message = render_to_string(
+            'dashboard/dashboard_email.html',
+            context=ctx
+        )
+
+        message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+
+        mail_managers(
+            subject,
+            message,
+            fail_silently=True,
+            html_message=html_message
+        )
+        return HttpResponseRedirect(self.success_url)
