@@ -562,7 +562,9 @@ class MailboxView(View):
     template_name = 'dashboard/mailbox/_mailboxmain.html'
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+        mensajes = MessageDashboard.objects.all().order_by('-sent_at')
+        conteo = mensajes.filter(read_at=None).count()
+        return render(request, self.template_name, {'mensajes':mensajes, 'conteo':conteo})
 
 
 class MailboxAdd(View):

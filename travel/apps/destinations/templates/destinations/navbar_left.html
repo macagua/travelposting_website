@@ -30,7 +30,11 @@
                     T&S
                 </div>
             </li>
+            {% if request.get_full_path == '/es/dashboard/' or request.get_full_path == '/en/dashboard/' or request.get_full_path == '/de/dashboard/' %}
             <li class="special_link">
+            {% else %}
+            <li>
+            {% endif %}
               <a href="{% url 'dashboard:dashboard-index' %}"><i class="fa fa-th-large"></i> <span class="nav-label">{% trans 'Home' %}</span></a>
             </li>
             {% if request.user.is_staff %}
@@ -40,7 +44,12 @@
                 <span class="nav-label">{% trans "Translate site" %}</span>
               </a>
             </li>
-            <li class="">
+            {% if request.get_full_path == '/es/dashboard/mailbox' or request.get_full_path == '/en/dashboard/mailbox' or request.get_full_path == '/de/dashboard/mailbox' %}
+
+            <li class="special_link">
+            {% else %}
+            <li>
+            {% endif %}
               <a href="{% url 'dashboard:mailbox'%}">
                 <i class="fa fa-envelope-o fa-lg"></i>
                 <span class="nav-label">{% trans "Mailbox" %}</span>

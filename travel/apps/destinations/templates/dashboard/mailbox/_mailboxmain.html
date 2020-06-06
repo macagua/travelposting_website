@@ -18,78 +18,10 @@
             <div class="col-lg-9 animated fadeInRight">
                 <div class="mail-box-header">
                     <h2>
-                        {% trans "Inbox" %}(1)
+                        {% trans "Inbox" %} ({{ conteo }})
                     </h2>
                 </div>
-                <div class="mail-box">
-                        <div class="ibox-content">
-                            <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
-                                placeholder="{% trans 'Search message' %} "">
-
-                            <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
-                                <tbody>
-                                    <tr class="gradeA">
-                                        <td>
-                                            <center>
-                                                <span class="label label-warning ">{% trans "Read" %}</span>
-                                            </center>
-                                        </td>
-                                        <td>Anna Smith</td>
-                                        <td>Aldus PageMaker including versions of Lorem Ipsum.
-                                        </td>
-                                        <td>08:00 AM</td>
-                                        <td>
-                                            <a href="" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
-                                            </a>
-                                            <a href="" class="btn btn-outline btn-danger btn-xs">{% trans "Delete" %}
-                                            </a>
-                                        </td>
-                                    </tr>
-
-                                    <tr class="gradeA">
-                                        <td>
-                                            <center><span class="label label-success ">{% trans "Read" %}</span></center>
-                                        </td>
-                                        <td>Nilo Escobar</td>
-                                        <td>Verificación de todas las aplicaciones
-                                        </td>
-                                        <td>15:00 Hrs</td>
-                                        <td>
-                                            <a href="" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
-                                            </a>
-                                            <a href="" class="btn btn-outline btn-danger btn-xs">{% trans "Delete" %}
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>
-                                            <center><span class="label label-success">{% trans "Read" %}</span></center>
-                                        </td>
-                                        <td>Orlando Fiol</td>
-                                        <td>Test
-                                        </td>
-                                        <td>13:00 Hrs</td>
-                                        <td>
-                                            <a href="" class="btn btn-outline btn-primary  btn-xs"> 
-                                                {% trans "See" %}
-                                            </a>
-                                            <a href="" class="btn btn-outline btn-danger btn-xs">
-                                                {% trans "Delete" %}
-                                            </a>
-                                        </td>
-
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="5">
-                                            <ul class="pagination float-right"></ul>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>  
-                </div>
+                {% include "dashboard/mailbox/tablemain.html"%}
             </div>
         </div>
     </div>
