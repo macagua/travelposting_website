@@ -1,9 +1,10 @@
+
+
 {% load static i18n destinations_tags static %}
 <div class="mail-box">
     <div class="ibox-content">
         <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
             placeholder="{% trans 'Search message' %} "">
-
         <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
             <tbody>
                 {% for mensajes in mensajes %}
@@ -24,8 +25,8 @@
                     <td>
                         <a href="" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
                         </a>
-                        <a href="" class="btn btn-outline btn-danger btn-xs">{% trans "Delete" %}
-                        </a>
+                        <span class="btn btn-outline btn-danger  btn-xs" onClick="delete_mail({{ mensajes.id }})">{% trans "Delete" %}
+                        </span>
                     </td>
                 </tr>
                 {% endfor %}
@@ -38,5 +39,6 @@
                 </tr>
             </tfoot>
         </table>
-    </div>  
+    </div>
 </div>
+

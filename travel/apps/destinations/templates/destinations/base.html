@@ -12,6 +12,8 @@
         {% block css %}
           <link href="{% static 'dashboard/css/bootstrap.min.css' %}" rel="stylesheet">
           <link href="{% static 'dashboard/font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+          <!-- Sweetalert -->
+          <link href="{% static 'dashboard/css/plugins/sweetalert/sweetalert.css' %}" rel="stylesheet">
           <link href="{% static 'dashboard/css/animate.css' %}" rel="stylesheet">
           <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet">
         {% endblock %}
@@ -62,6 +64,10 @@
 
     <!-- Sparkline demo data  -->
     <script src="{% static 'dashboard/js/demo/sparkline-demo.js' %}"></script>
+
+    <!-- Sweetalert -->
+    <script src="{% static 'dashboard/js/plugins/sweetalert/sweetalert.min.js' %}"></script>
+
 
 
 

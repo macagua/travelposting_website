@@ -55,6 +55,11 @@ urlpatterns = [
         name='mailbox',
     ),
     path(
+        'mailbox/delete-mail',
+        login_required(MailboxView.as_view()),
+        name='delete-mail',
+    ),
+    path(
         'mailbox/add',
         login_required(MailboxAdd.as_view()),
         name='mailbox-add',

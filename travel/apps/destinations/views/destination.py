@@ -567,6 +567,19 @@ class MailboxView(View):
         return render(request, self.template_name, {'mensajes':mensajes, 'conteo':conteo})
 
 
+
+    def delete(self,request):
+        pk_mail= QueryDict(request.body)
+        mail = get_object_or_404(MessageDashboard, pk=pk_mail['pk'])
+        if mail.delete() :
+            return JsonResponse(
+                {
+                'status':True
+                },
+                safe=False,
+            )
+
+
 class MailboxAdd(View):
     template_name = 'dashboard/mailbox/_mailboxadd.html'
     success_url = reverse_lazy('destinations:mailbox')
