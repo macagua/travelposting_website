@@ -25,6 +25,7 @@ from apps.destinations.views.destination import (
     SocialNetworkUpdateView,
     MailboxView,
     MailboxAdd,
+    MailboxDetail,
     messageView,
 
 )
@@ -63,6 +64,11 @@ urlpatterns = [
         'mailbox/add',
         login_required(MailboxAdd.as_view()),
         name='mailbox-add',
+    ),
+    path(
+        'mailbox/<int>',
+        login_required(MailboxDetail.as_view()),
+        name='mailbox-detail'
     ),
 
     path(

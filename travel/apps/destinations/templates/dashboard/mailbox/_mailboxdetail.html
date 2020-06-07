@@ -1,0 +1,64 @@
+
+
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Mailbox - Travelposting' %}{% endblock %}
+{% block extracss %}
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-3">
+                {% include 'dashboard/mailbox/mailbox_menu_left.html' %}
+            </div>
+            <div class="col-lg-9 animated fadeInRight">
+                <div class="mail-box-header">
+                    <div class="float-right tooltip-demo">
+                        <!--<a href="mail_compose.html" class="btn btn-white btn-sm"><i class="fa fa-reply"></i> Reply</a>-->
+                        <!--<a href="#" class="btn btn-white btn-sm" ><i class="fa fa-print"></i> </a>-->
+                        <a href="mailbox.html" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> </a>
+                    </div>
+                    <h2>
+                        {% trans "View Message" %}
+                    </h2>
+                    <div class="mail-tools tooltip-demo m-t-md">
+    
+    
+                        <h3>
+                            <span class="font-normal">{% trans "Subject" %}: </span> {{ msg.subject }}
+                        </h3>
+                        <h5>
+                            <span class="float-right font-normal">{{ msg.sent_at }}</span>
+                            <span class="font-normal">{% trans "From" %}: </span>{{ msg.sender.email }}
+                        </h5>
+                    </div>
+                </div>
+                <div class="mail-box">
+
+
+                    <div class="mail-body">
+                        <p>
+                            {{ msg.content}}
+                        </p>
+                    </div>
+                    <div class="mail-body text-right tooltip-demo">
+                        <button title=""  class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
+                </div>
+                </div>
+
+                            <div class="clearfix"></div>
+    
+    
+                    </div>
+            </div>
+        </div>
+    </div>
+    {% include 'destinations/footer.html' %}
+</div>
+{% endblock content %}
+{% block extrajs %}
+
+{% endblock extrajs %}
+

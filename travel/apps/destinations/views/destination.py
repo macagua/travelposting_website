@@ -27,6 +27,9 @@ from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
+from django.utils import timezone
+
+
 
 from apps.destinations.forms import (
     DestinationForm,
@@ -623,3 +626,19 @@ class MailboxAdd(View):
             html_message=html_message
         )
         return HttpResponseRedirect(self.success_url)
+
+
+class MailboxDetail(View):
+    template_name = 'dashboard/mailbox/_mailboxdetail.html'
+
+    def get(self, request, *args, **kwargs):
+        pk = kwargs['int']
+        msg_pk = MessageDashboard.objects.get(pk=pk)
+        if msg_pk.read_at == None:
+            MessageDashboard.objects.filter(pk=pk).update(
+                read_at = timezone.now()
+            )
+
+        mensajes = MessageDashboard.objects.all().order_by('-sent_at')
+        conteo = mensajes.filter(read_at=None).count()
+        return render(request, self.template_name, {'conteo':conteo, 'msg':msg_pk})

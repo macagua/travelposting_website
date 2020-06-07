@@ -23,7 +23,7 @@
                     </td>
                     <td>{{mensajes.sent_at|date:'d-m-yy H:i' }}</td>
                     <td>
-                        <a href="" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
+                        <a href="{% url 'dashboard:mailbox-detail' int=mensajes.id %}" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
                         </a>
                         <span class="btn btn-outline btn-danger  btn-xs" onClick="delete_mail({{ mensajes.id }})">{% trans "Delete" %}
                         </span>
