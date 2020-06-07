@@ -5,9 +5,10 @@ from django.views.generic import (
 from django.utils.translation import gettext as _
 from django_registration.backends.activation.views import RegistrationView
 from django.shortcuts import (
-    render,
-    redirect,
-    reverse,
+        get_object_or_404,
+        render,
+        redirect,
+        reverse,
 )
 from django.urls import reverse_lazy
 from django.template import loader
@@ -239,8 +240,8 @@ class FollowView(View):
 
 class DetailProfileView(View):
     def get(self, request, *args, **kwargs):
-        members = CustomerUser.objects.get(id=kwargs.get('slug'))
-        reviews = Comment.objects.filter(user_comment=kwargs.get('slug'))
+        members = get_object_or_404(CustomerUser, slug=kwargs.get('slug'))
+        reviews = Comment.objects.filter(user_comment=members)
         paginator = Paginator(reviews, 3)
         page = request.GET.get('page')
         reviews = paginator.get_page(page)
