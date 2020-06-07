@@ -130,3 +130,4 @@ wcwidth==0.1.7
 webencodings==0.5.1
 xhtml2pdf==0.2.4
 YURL==1.0.0
+django-yubin==1.6.0
