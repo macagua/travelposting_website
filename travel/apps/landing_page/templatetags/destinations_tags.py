@@ -16,6 +16,7 @@ from apps.destinations.models import (
     Photo,
     GeneralDetail,
     Booking,
+    MessageDashboard
 )
 from django.utils import timezone
 
@@ -179,3 +180,13 @@ def parse_to_list(value_int):
     for i in range(0,value_int):
         list.append(i)
     return list
+
+
+@register.inclusion_tag('dashboard/mailbox/message_accounts.html', takes_context=True)
+def show_notification(context):
+    mensajes = MessageDashboard.objects.filter(recipient=context.request.user, read_at=None).order_by('-sent_at')
+    conteo = mensajes.filter(recipient=context.request.user, read_at=None).count()    
+    return {
+        'mensajes': mensajes,
+        'conteo': conteo,
+    }

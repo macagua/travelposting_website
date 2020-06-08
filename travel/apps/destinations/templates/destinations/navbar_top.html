@@ -1,4 +1,4 @@
-{% load i18n static %}
+{% load i18n static destinations_tags %}
 
 <div class="row border-bottom">
   <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
@@ -12,69 +12,7 @@
       </form>
     </div>
     <ul class="nav navbar-top-links navbar-right">
-<li class="dropdown">
-  <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-    <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
-  </a>
-  <ul class="dropdown-menu dropdown-messages">
-    <li>
-      <div class="dropdown-messages-box">
-        <a class="dropdown-item float-left" href="profile.html">
-          <img alt="image" class="rounded-circle" src="{% static 'dashboard/img/a7.jpg' %}">
-        </a>
-        <div class="media-body">
-          <small class="float-right">46h ago</small>
-          <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-          <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-        </div>
-      </div>
-    </li>
-    <li class="dropdown-divider"></li>
-    <li>
-      <div class="dropdown-messages-box">
-        <a class="dropdown-item float-left" href="profile.html">
-          <img alt="image" class="rounded-circle" src="{% static 'dashboard/img/a4.jpg' %}">
-        </a>
-        <div class="media-body ">
-          <small class="float-right text-navy">5h ago</small>
-          <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-          <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-        </div>
-      </div>
-    </li>
-    <li class="dropdown-divider"></li>
-    <li>
-      <div class="dropdown-messages-box">
-        <a class="dropdown-item float-left" href="profile.html">
-          <img alt="image" class="rounded-circle" src="{% static 'dashboard/img/profile.jpg' %}">
-        </a>
-        <div class="media-body ">
-          <small class="float-right">23h ago</small>
-          <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-          <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-        </div>
-      </div>
-    </li>
-    <li class="dropdown-divider"></li>
-    <li>
-      <div class="link-block">
-        <div class="row">
-          <div class="col-lg-6">
-            <a href="{% url 'dashboard:mailbox' %}" class="dropdown-item">
-              <i class="fa fa-envelope"></i> <strong>{% trans "Read All Messages" %}</strong>
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a href="mailbox.html" class="dropdown-item">
-              <i class="fa fa-edit"></i> <strong>{% trans "Send Message" %}</strong>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </li>
-  </ul>
-</li>
+    {% show_notification %}
       <li>
         <a href="{% url 'accounts:logout' %}">
           <i class="fa fa-sign-out"></i> {% trans 'Cerrar sesión' %}
