@@ -604,7 +604,7 @@ class MailboxAdd(View):
         message = request.POST.get('message')
         user_sender = CustomerUser.objects.get(pk=request.user.id)
         #this filter will be used when we apply all the group for magnament the other dashboard!
-        admins = ['manager']
+        admins = ['Manager']
         gr = request.user.groups.get_queryset().filter(name__in=admins).exists()
         #por el momento solo se enviara al admin los mensajes de todos los usuarios por lo que seusa
         #support@travelpostig.com
