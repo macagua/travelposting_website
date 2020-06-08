@@ -10,6 +10,7 @@ from apps.landing_page.models import Plan
 from apps.utils.views import get_referal_code
 
 from random import randint
+import uuid
 
 
 DEGRE_CHOICES = (
@@ -235,6 +236,7 @@ class CustomerUser(AbstractUser):
     
     def add_slug(self):
         name = self.get_full_name() if not self.business_name else self.business_name
+        name = name if name.strip() != '' else uuid.uuid4()
         slug = slugify(name)
         if Customer.objects.filter(slug=slug).exists():
             slug = slugify(name+"-"+str(randint(300,999)))
