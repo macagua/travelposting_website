@@ -223,6 +223,7 @@ THIRD_PARTY = [
     'djangocms_style',
     'djangocms_snippet',
     'djangocms_googlemap',
+    'django_yubin',
     'djangocms_video',
     'django_summernote',
     'impersonate',
@@ -430,7 +431,8 @@ OAUTH2_PROVIDER = {
     }
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django_yubin.smtp_queue.EmailBackend'
 
 
 #FOR GOOGLE-MAP-WIDGETS
