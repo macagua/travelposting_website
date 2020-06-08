@@ -608,7 +608,7 @@ class MailboxAdd(View):
         gr = request.user.groups.get_queryset().filter(name__in=admins).exists()
         #por el momento solo se enviara al admin los mensajes de todos los usuarios por lo que seusa
         #support@travelpostig.com
-        re_admin = CustomerUser.objects.get(email='nilo@xposting-service.com')       
+        re_admin = CustomerUser.objects.get(email='info@xposting-service.com')       
         if not gr:
             MessageDashboard.objects.create(
                 subject=subject,
