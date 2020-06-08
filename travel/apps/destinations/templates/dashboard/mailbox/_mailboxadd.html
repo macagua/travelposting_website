@@ -5,6 +5,8 @@
 <!-- FooTable -->
 <link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
 <link href="{% static 'dashboard/css/plugins/summernote/summernote-bs4.css'%}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/select2/select2.min.css'%}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/select2/select2-bootstrap4.min.css'%}" rel="stylesheet">
 {% endblock extracss%}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
@@ -22,6 +24,16 @@
                 </div>
                 <div class="mail-box">
                     <form method="POST">{% csrf_token %}
+                        {% if user.groups.all.0.name == "manager"%}
+                        <div class="mail-body">
+                            <label class="col-form-label"><b>{% trans "Select an user"%}:</b></label>
+                            <select class="select2_demo_2 form-control" name="recipient" multiple="multiple" placeholder="Seleccione un usuario">
+                                {% for usuarios in usuarios %}
+                                <option value="{{ usuarios.pk }}">{{usuarios.email}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        {% endif %}
 
                         <div class="mail-body">
                                 <div class="form-group row">
@@ -53,9 +65,13 @@
 {% block extrajs%}
 <!-- SUMMERNOTE -->
 <script src="{% static 'dashboard/js/plugins/summernote/summernote-bs4.js' %}"></script>
+<script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js'%}"></script>
 <script>
-    $(document).ready(function () {
 
+    $(document).ready(function () {
+        $(".select2_demo_2").select2({
+            theme: 'bootstrap4',
+        });
         $('.summernote').summernote();
 
     });

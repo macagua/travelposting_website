@@ -565,11 +565,9 @@ class MailboxView(View):
     template_name = 'dashboard/mailbox/_mailboxmain.html'
 
     def get(self, request, *args, **kwargs):
-        mensajes = MessageDashboard.objects.all().order_by('-sent_at')
+        mensajes = MessageDashboard.objects.filter(recipient=request.user).order_by('-sent_at')
         conteo = mensajes.filter(read_at=None).count()
         return render(request, self.template_name, {'mensajes':mensajes, 'conteo':conteo})
-
-
 
     def delete(self,request):
         pk_mail= QueryDict(request.body)
@@ -583,12 +581,22 @@ class MailboxView(View):
             )
 
 
+class MailboxSent(View):
+    template_name = 'dashboard/mailbox/_mailboxsent.html'
+
+    def get(self, request, *args, **kwargs):
+        mensajes = MessageDashboard.objects.filter(sender=request.user).order_by('-sent_at')
+        conteo = mensajes.filter(read_at=None).count()
+        return render(request, self.template_name, {'mensajes':mensajes, 'conteo':conteo})
+
+
 class MailboxAdd(View):
     template_name = 'dashboard/mailbox/_mailboxadd.html'
     success_url = reverse_lazy('destinations:mailbox')
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+        usuarios = CustomerUser.objects.all().exclude(email=request.user.email)
+        return render(request, self.template_name, {'usuarios':usuarios})
 
     def post(self, request, *args, **kwargs):
         reply = _('Thank you for your message, very soon we will answer back')
@@ -596,35 +604,58 @@ class MailboxAdd(View):
         message = request.POST.get('message')
         user_sender = CustomerUser.objects.get(pk=request.user.id)
         #this filter will be used when we apply all the group for magnament the other dashboard!
-        #user_recipient = CustomerUser.object.get()
-        MessageDashboard.objects.create(
-            subject=subject,
-            content=message,
-            sender=user_sender,
-        )
+        admins = ['manager']
+        gr = request.user.groups.get_queryset().filter(name__in=admins).exists()
+        #por el momento solo se enviara al admin los mensajes de todos los usuarios por lo que seusa
+        #support@travelpostig.com
+        re_admin = CustomerUser.objects.get(email='nilo@xposting-service.com')       
+        if not gr:
+            MessageDashboard.objects.create(
+                subject=subject,
+                content=message,
+                sender=user_sender,
+                recipient= re_admin
+            )
 
-        #now we send the mail
-        subject = subject
+            #now we send the mail
+            subject = subject
 
-        ctx = {
-            'user' : request.user.email,
-            'name' : request.user.get_full_name,
-            'message': request.POST.get('message')
-        }
+            ctx = {
+                'user' : request.user.email,
+                'name' : request.user.get_full_name,
+                'message': request.POST.get('message')
+            }
 
-        html_message = render_to_string(
-            'dashboard/dashboard_email.html',
-            context=ctx
-        )
+            html_message = render_to_string(
+                'dashboard/dashboard_email.html',
+                context=ctx
+            )
 
-        message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+            message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
 
-        mail_managers(
-            subject,
-            message,
-            fail_silently=True,
-            html_message=html_message
-        )
+            mail_managers(
+                subject,
+                message,
+                fail_silently=True,
+                html_message=html_message
+            )
+        else:
+            recipient = CustomerUser.objects.get(id=request.POST.get('recipient'))
+            MessageDashboard.objects.create(
+                subject=subject,
+                content=message,
+                sender=user_sender,
+                recipient= recipient
+            )  
+
+            send_mail(
+                subject,
+                message,
+                request.user.email,
+                [recipient.email],
+            )          
+
+
         return HttpResponseRedirect(self.success_url)
 
 

@@ -26,8 +26,8 @@ from apps.destinations.views.destination import (
     MailboxView,
     MailboxAdd,
     MailboxDetail,
+    MailboxSent,
     messageView,
-
 )
 
 from apps.destinations.views.booking import (
@@ -54,6 +54,11 @@ urlpatterns = [
         'mailbox',
         login_required(MailboxView.as_view()),
         name='mailbox',
+    ),
+    path(
+        'mailbox/sent',
+        login_required(MailboxSent.as_view()),
+        name='mailbox-sent',
     ),
     path(
         'mailbox/delete-mail',
