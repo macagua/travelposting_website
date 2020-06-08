@@ -115,12 +115,13 @@ class signupCommunity(RegistrationView):
 
     def send_activation_email(self, user):
         code = self.get_form_kwargs()['data']['referal']
-        patrocinador = CustomerUser.objects.get(ref_code=code)
-        Referral.objects.create(
-            user=user,
-            referredBy=patrocinador,
-            code='ref',
-        )
+        if code:
+            patrocinador = CustomerUser.objects.get(ref_code=code)
+            Referral.objects.create(
+                user=user,
+                referredBy=patrocinador,
+                code='ref',
+            )
         html_email = None
         activation_key = self.get_activation_key(user)
         context = self.get_email_context(activation_key)
