@@ -120,7 +120,7 @@
                 {% if user != request.user %}
                 <div class="col-md-4">
                     <div class="card text-center mb-5">
-                        <a href="{% url 'profile_detail' user.id %}">
+                        <a href="{% url 'profile_detail' user.slug %}">
                             <div class="card-body p-6">
                                 <!-- Team -->
                                 <div class="mb-4">

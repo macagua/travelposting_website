@@ -96,7 +96,7 @@ urlpatterns = [
         name='user_follow',
     ),
 
-    url(r'^dashboard/(?P<slug>\w+)',
+    path('dashboard/<slug>',
         DetailProfileView.as_view(),
         name='profile_detail',
     ),

@@ -1,11 +1,16 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.core import validators
 from django.db import models
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+from django.utils.text import slugify
+
 from apps.landing_page.models import Plan
-from django.conf import settings
 from apps.utils.views import get_referal_code
+
+from random import randint
+import uuid
 
 
 DEGRE_CHOICES = (
@@ -222,10 +227,25 @@ class CustomerUser(AbstractUser):
     last_ip = models.GenericIPAddressField(protocol='IPv4', verbose_name="Last Login IP", null=True, blank=True)
     location = models.CharField(max_length=50, blank=True, null=True)
 
+    slug = models.SlugField(unique=True)
+
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
     objects = UserManager()
+    
+    def add_slug(self):
+        name = self.get_full_name() if not self.business_name else self.business_name
+        name = name if name.strip() != '' else uuid.uuid4()
+        slug = slugify(name)
+        if Customer.objects.filter(slug=slug).exists():
+            slug = slugify(name+"-"+str(randint(300,999)))
+        self.slug = slug
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.add_slug()
+        super().save(*args, **kwargs)
 
     class Meta(AbstractUser.Meta):
         verbose_name = _("Usuario")
