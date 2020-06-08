@@ -87,9 +87,8 @@
                                     <!-- User Info -->
                                     <div class="mb-2">
                                         <h2 class="h6 mb-0">
-                                            <a href="{% url 'profile_detail' u.id %}">{{ u.get_full_name }}</a>
+                                            <a href="{% url 'profile_detail' u.slug %}">{{ u.get_full_name }}</a>
                                         </h2>
-                                        {% comment %} <a class="small" href="{% url 'profile_detail' u.id %}">{{ u.email }}</a>{% endcomment %}
                                     </div>
                                     <!-- End User Info -->
 
@@ -103,6 +102,11 @@
                                             </a>
                                         </li>
                                         {% endif %}
+                 		        <li class="list-inline-item mr-0">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ u.email }}">
+                                                <span class="fab fa-google btn-icon__inner"></span>
+                                            </a>
+                                        </li>
                                         {% if u.twitter%}
                                         <li class="list-inline-item mr-0">
                                             <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.twitter }}">
