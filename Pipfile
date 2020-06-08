@@ -136,6 +136,7 @@ webencodings = "==0.5.1"
 xhtml2pdf = "==0.2.4"
 yurl = "==1.0.0"
 django-hitcount = "*"
+django-yubin = "==1.6.0"
 
 [dev-packages]
 
