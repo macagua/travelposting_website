@@ -1,4 +1,4 @@
-{% load i18n static %}
+{% load i18n static charts%}
 <div class="row">
     <div class="col-lg-3">
         <div class="ibox ">
@@ -127,12 +127,13 @@
             </div>
             <div class="ibox-content">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <table class="table table-hover margin bottom">
                             <thead>
                                 <tr>
                                     <th class="text-center">{% trans "IP Address" %}</th>
                                     <th>{% trans "Location" %}</th>
+                                    <th class="text-center">{% trans "Total visits from country" %}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -140,12 +141,13 @@
                                 <tr>
                                     <td class="text-center">{{ visits.last_ip }}</td>
                                     <td> {{ visits.location|default:'Unknown' }} </td>
+                                    <td class="text-center"> {% total_visits visits.location %}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-7">
                         <div id="world-map" style="height: 300px;"></div>
                     </div>
                 </div>

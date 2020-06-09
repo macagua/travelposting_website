@@ -10,11 +10,11 @@ from django.views.generic import (
     View
 )
 
-from apps.accounts.models import CustomerUser
-from apps.destinations.models import DestinationVisitor
+from apps.accounts.models import CustomerUser, LastVisitIP
 from apps.destinations.models import (
     Booking,
     Destination,
+    DestinationVisitor
 )
 
 import json
@@ -59,9 +59,12 @@ def DashboardIndex(request):
                     .order_by('-visitor_count')
 
     last_visits = CustomerUser.objects.all().exclude(last_ip=None).values('last_ip', 'location',)[:8]
+    only_location = list(set(map(lambda x: x['location'] != None and x['location'] or 'Unknown', last_visits)))
+    location ={}
+    location.update({visit['location']: visit['visits'] for visit in  LastVisitIP.objects.filter(location__in=only_location).values('location').annotate(visits=Count('location'))})
 
     return render(request, 'dashboard/index.html', {
         'statis_destinies':statis_destinies,
-        'last_visits': last_visits
-
+        'last_visits': last_visits,
+        'visits_counter': location
         })
