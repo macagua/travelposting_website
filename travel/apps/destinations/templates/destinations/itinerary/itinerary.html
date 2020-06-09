@@ -11,7 +11,19 @@
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
-
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{% trans "Itinerary" %}</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home"%}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a>{% trans "List Itinerary" %}</a>
+                </li>
+            </ol>
+        </div>
+    </div>
     <div class="wrapper wrapper-content animated fadeInRight">
       <div class="row">
         <div class="col-md-12">
@@ -40,18 +52,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                              {% for row in itinerary_list %}
-
+                            {% for row in itinerary_list %}
+                            <tr>  
                                 <td>{{ row.destination }}</td>
                                 <td> {{ row.short_description }}</td>
                                 <td>
                                   <span class="btn btn-danger btn-sm" onClick="delete_itinerary({{ row.id }})"><i class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
                                   <a href="{% url 'destinations:itinerary-edit' row.id %}" class="btn btn-success btn-sm"><i class="fa fa-lg fa-edit"></i>{% trans "Edit" %}</a>
                                 </td>
-                                {% endfor %}
-                            </tr>
-
+                              </tr>
+                              {% endfor %}
                             </tbody>
                         </table>
                     </div>
@@ -73,7 +83,8 @@
   <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js'%}"></script>
   <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
   <script src="{% static 'dashboard/js/plugins/toastr/toastr.min.js' %}"></script>
-  <script src="{% static 'dashboard/js/notifications.js' %}"></script>
+    <!-- SUMMERNOTE -->
+    <script src="{% static 'dashboard/js/plugins/summernote/summernote-bs4.js' %}"></script>
   <script>
     //Delete fuction
     function delete_itinerary(pk_i){

@@ -24,7 +24,7 @@
                 </div>
                 <div class="mail-box">
                     <form method="POST">{% csrf_token %}
-                        {% if user.groups.all.0.name == "manager"%}
+                        {% if user.groups.all.0.name == "Manager"%}
                         <div class="mail-body">
                             <label class="col-form-label"><b>{% trans "Select an user"%}:</b></label>
                             <select class="select2_demo_2 form-control" name="recipient" multiple="multiple" placeholder="Seleccione un usuario">
