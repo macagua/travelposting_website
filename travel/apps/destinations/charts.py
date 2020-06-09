@@ -1,22 +1,24 @@
-import json
-from django.http import HttpResponse
+from django.conf import settings
 from django.core.serializers.json import DjangoJSONEncoder
+from django.core.mail import mail_managers, send_mail
+from django.db.models import Count, Max, F
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.template.loader import render_to_string
+from django.utils.translation import gettext_lazy as _
+from django.views.generic import (
+    View
+)
+
+from apps.accounts.models import CustomerUser
+from apps.destinations.models import DestinationVisitor
 from apps.destinations.models import (
     Booking,
     Destination,
 )
-from django.utils.translation import gettext_lazy as _
-from django.template.loader import render_to_string
-from django.core.mail import mail_managers
-from django.core.mail import send_mail
-from django.conf import settings
 
-from django.db.models import Count, Max, F
-from django.shortcuts import render
-from apps.destinations.models import DestinationVisitor
-from django.views.generic import (
-    View
-)
+import json
+
 
 def BookingCharts(request):
     """
@@ -56,4 +58,10 @@ def DashboardIndex(request):
                     .annotate(date_time=F('last_visit')) \
                     .order_by('-visitor_count')
 
-    return render(request, 'dashboard/index.html',{'statis_destinies':statis_destinies})
+    last_visits = CustomerUser.objects.all().exclude(last_ip=None).values('last_ip', 'location',)[:8]
+
+    return render(request, 'dashboard/index.html', {
+        'statis_destinies':statis_destinies,
+        'last_visits': last_visits
+
+        })

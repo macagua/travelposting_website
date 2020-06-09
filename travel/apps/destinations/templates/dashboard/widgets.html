@@ -131,52 +131,17 @@
                         <table class="table table-hover margin bottom">
                             <thead>
                                 <tr>
-                                    <th style="width: 1%" class="text-center">No.</th>
-                                    <th>Transaction</th>
-                                    <th class="text-center">Date</th>
-                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">{% trans "IP Address" %}</th>
+                                    <th>{% trans "Location" %}</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for visits in last_visits %}
                                 <tr>
-                                    <td class="text-center">1</td>
-                                    <td> Security doors
-                                    </td>
-                                    <td class="text-center small">16 Jun 2014</td>
-                                    <td class="text-center"><span class="label label-primary">$483.00</span></td>
+                                    <td class="text-center">{{ visits.last_ip }}</td>
+                                    <td> {{ visits.location|default:'Unknown' }} </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td> Wardrobes
-                                    </td>
-                                    <td class="text-center small">10 Jun 2014</td>
-                                    <td class="text-center"><span class="label label-primary">$327.00</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">3</td>
-                                    <td> Set of tools
-                                    </td>
-                                    <td class="text-center small">12 Jun 2014</td>
-                                    <td class="text-center"><span class="label label-warning">$125.00</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">4</td>
-                                    <td> Panoramic pictures</td>
-                                    <td class="text-center small">22 Jun 2013</td>
-                                    <td class="text-center"><span class="label label-primary">$344.00</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">5</td>
-                                    <td>Phones</td>
-                                    <td class="text-center small">24 Jun 2013</td>
-                                    <td class="text-center"><span class="label label-primary">$235.00</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">6</td>
-                                    <td>Monitors</td>
-                                    <td class="text-center small">26 Jun 2013</td>
-                                    <td class="text-center"><span class="label label-primary">$100.00</span></td>
-                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
