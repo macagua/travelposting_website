@@ -3,14 +3,11 @@
 {% extends 'destinations/base.html' %}
 {% load static i18n %}
 {% block title %}{% trans 'Create Social network' %}{% endblock %}
-{%block css%}
-{{ block.super }}
-{{ form.media.css }}
-<link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
-<link href="{% static "inspinia/js/plugins/dataTables/datatables.min.css" %}" rel="stylesheet">
-<link href="{% static "inspinia/js/plugins/toastr/toastr.min.css" %}" rel="stylesheet">
-<link href="{% static "inspinia/js/plugins/sweetalert/sweetalert.css" %}" rel="stylesheet">
-{%endblock css%}
+{%block extracss%}
+<link href="{% static 'dashboard/css/plugins/select2/select2.min.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/dataTables/datatables.min.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/toastr/toastr.min.css' %}" rel="stylesheet">
+{%endblock extracss%}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
@@ -92,14 +89,11 @@
     {% include 'destinations/footer.html' %}
 </div>
 {% endblock %}
-{% block js %}
-{{ block.super }}
-{{ form.media.js }}
-<script src="{% static "inspinia/js/plugins/dataTables/datatables.min.js" %}"></script>
-<script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
-<script src="{% static "inspinia/js/plugins/select2/select2.full.min.js" %}"></script>
-<script src="{% static "inspinia/js/plugins/toastr/toastr.min.js" %}"></script>
-<script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
-<script src="{% static "inspinia/js/notifications.js" %}"></script>
-{% endblock %}
+{% block extrajs %}
+
+<script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
+<script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js'%}"></script>
+<script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
+<script src="{% static 'dashboard/js/plugins/toastr/toastr.min.js' %}"></script>
+{% endblock extrajs%}
 
