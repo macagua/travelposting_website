@@ -18,6 +18,8 @@ from apps.destinations.models import (
 )
 
 import json
+import pycountry
+
 
 
 def BookingCharts(request):
@@ -61,7 +63,7 @@ def DashboardIndex(request):
     last_visits = CustomerUser.objects.all().exclude(last_ip=None).values('last_ip', 'location',)[:8]
     only_location = list(set(map(lambda x: x['location'] != None and x['location'] or 'Unknown', last_visits)))
     location ={}
-    location.update({visit['location']: visit['visits'] for visit in  LastVisitIP.objects.filter(location__in=only_location).values('location').annotate(visits=Count('location'))})
+    location.update({visit['location']: { 'visits': visit['visits'], 'code': pycountry.countries.search_fuzzy(visit['location'])[0].alpha_2} for visit in  LastVisitIP.objects.filter(location__in=only_location).values('location').annotate(visits=Count('location'))})
 
     return render(request, 'dashboard/index.html', {
         'statis_destinies':statis_destinies,

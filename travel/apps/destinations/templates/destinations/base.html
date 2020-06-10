@@ -70,7 +70,7 @@
 
 
 
-
+    {% if visits_counter %}
     <script>
         $(document).ready(function() {
             $('.chart').easyPieChart({
@@ -88,17 +88,10 @@
                 lineWidth: 4,
                 size: 80
             });
-            
             var mapData = {
-                "US": 500,
-                "SA": 200,
-                "DE": 220,
-                "FR": 540,
-                "CN": 120,
-                "AU": 760,
-                "BR": 550,
-                "IN": 200,
-                "GB": 120,
+                {% for visit,values in visits_counter.items %}
+                "{{values.code}}": {{values.visits}},
+                {% endfor %}
             };
 
             $('#world-map').vectorMap({
@@ -124,6 +117,7 @@
             });
         });
     </script>
+    {% endif %}
         {% endblock %}
         {% block extrajs %} {% endblock extrajs%}
     </body>
