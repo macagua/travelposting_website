@@ -3,17 +3,18 @@
     {{ hidden_field }}
 {% endfor %}
 
-<div class="form-group">
     <div class ="row">
         <div class="col-md-6 col-lg-6">
-            <label class="control-label" for="{{ form.categorie.id }}">
-                    {{ form.categorie.label }}:
-            </label>
-            {{ form.categorie }}
-            <span class="help-block m-b-none">
-                {{ field.categorie.help_text|safe }}
-            </span>
-            {{ form.categorie.error|safe }}
+            <div class="form-group">
+                <label class="control-label" for="{{ form.categorie.id }}">
+                        {{ form.categorie.label }}:
+                </label>
+                {{ form.categorie }}
+                <span class="help-block m-b-none">
+                    {{ field.categorie.help_text|safe }}
+                </span>
+                {{ form.categorie.error|safe }}
+            </div>
         </div>
         <div class="col-md-6 col-lg-6">
             <label class="control-label" for="{{ form.name.id }}">
@@ -26,7 +27,6 @@
             {{ form.name.error|safe }}
         </div>
     </div>
-</div>
 
 
 

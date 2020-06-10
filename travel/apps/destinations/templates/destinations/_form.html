@@ -31,16 +31,16 @@
 					        {{ destination_detail_inlineformset.management_form }}
 	                		<h1>{% trans 'Product' %}</h1>
 	                		<fieldset>
-	                			<div class="col-md-12 col-lg-12">
-	                			<h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
-	                			<div class="checkbox checkbox-success pull-right">
-                                            <input type="checkbox" id="setTimeDate" value="">
-                                            <label for="setTimeDate">{%trans "This tour has departure and arrival time"%} </label>
-                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12">
+                                        <h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
+                                        <div class="checkbox checkbox-success pull-right">
+                                                    <input type="checkbox" id="setTimeDate" value="">
+                                                    <label for="setTimeDate">{%trans "This tour has departure and arrival time"%} </label>
+                                        </div>
+                                    </div>
 	                			</div>
-	                			<div class="row">
-									{% include 'destinations/tour/_form.html' %}
-	                			</div>
+                                {% include 'destinations/tour/_form.html' %}
 	                		</fieldset>
 	                		<h1>{% trans 'Price' %}</h1>
 	                		<fieldset>
