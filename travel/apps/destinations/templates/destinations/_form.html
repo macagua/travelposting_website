@@ -2,8 +2,7 @@
 {% load i18n staticfiles %}
 {% block title %}{% trans 'Agregar Destino' %}{% endblock %}
 
-{% block css %}
-  {{ block.super }}
+{% block extracss %}
   {{ form.media.css }}
   {{ tour_data_inlineformset.media.css }}
   {{ tour_data_inlineformset.0.tab_data_inlineformset.media.css }}
@@ -84,7 +83,7 @@
 {% endblock %}
 
 
-{% block js %}
+{% block extrajs %}
   	{{ block.super }}
   	{{ tour_data_inlineformset.media.js }}
   	{{ tour_data_inlineformset.0.tab_data_inlineformset.media.js }}
