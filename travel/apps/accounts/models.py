@@ -238,7 +238,7 @@ class CustomerUser(AbstractUser):
         name = self.get_full_name() if not self.business_name else self.business_name
         name = name if name.strip() != '' else uuid.uuid4()
         slug = slugify(name)
-        if Customer.objects.filter(slug=slug).exists():
+        if CustomerUser.objects.filter(slug=slug).exists():
             slug = slugify(name+"-"+str(randint(300,999)))
         self.slug = slug
 
