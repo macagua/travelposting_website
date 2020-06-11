@@ -5,16 +5,39 @@
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
-                    
     <div class="wrapper wrapper-content">
       {% filter_dashboard_index user as dashboard_list %}
       {% include 'dashboard/widgets.html' %}
     </div>
     {% include 'destinations/footer.html' %}
   </div>
+
+
+    <!-- Toast notifications -->
+    <div style="position: absolute; top: 20px; right: 20px;">
+
+        <div class="toast toast-bootstrap" data-delay="5000" data-autohide="true" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="fa fa-newspaper-o"> </i>
+                <strong class="mr-auto m-l-sm">{% trans "Welcome to new Dashboard" %}</strong><br>
+                <small>{% trans "1 seconds ago" %}</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                {% trans "We work for you, we present the new Travelposting board." %}
+            </div>
+        </div>
+
+    </div>
+
+
 {% endblock %}
 
-{% block js %}
+{% block extrajs %}
     {{ block.super }}
-
-{% endblock %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+{% endblock extrajs %}
