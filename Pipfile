@@ -138,6 +138,7 @@ yurl = "==1.0.0"
 django-hitcount = "*"
 django-yubin = "==1.6.0"
 pycountry = "==19.8.18"
+django-notify-x = "*"
 
 [dev-packages]
 
