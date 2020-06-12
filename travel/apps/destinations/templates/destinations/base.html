@@ -25,7 +25,6 @@
             {% block content %}{% endblock %}
             {#  {% include 'destinations/sidebar.html' %}#}
         </div>
-        {% block js %}
 
     <!-- Mainly scripts -->
     <script src="{% static 'dashboard/js/jquery-3.1.1.min.js' %}"></script>
@@ -118,7 +117,6 @@
         });
     </script>
     {% endif %}
-        {% endblock %}
         {% block extrajs %} {% endblock extrajs%}
     </body>
 </html>
