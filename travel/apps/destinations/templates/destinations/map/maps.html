@@ -5,13 +5,25 @@
 {% block css %}
   {{ block.super }}
   {{ form_map.media.css }}
-  <link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
-  <link href="{% static "inspinia/js/plugins/dataTables/datatables.min.css" %}" rel="stylesheet">
-  <link href="{% static "inspinia/js/plugins/toastr/toastr.min.css" %}" rel="stylesheet">
-  <link href="{% static "inspinia/js/plugins/sweetalert/sweetalert.css" %}" rel="stylesheet">
-  <link href="{% static "inspinia/css/style-product.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/plugins/select2/select2.min.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/plugins/dataTables/datatables.min.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/plugins/toastr/toastr.min.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/plugins/sweetalert/sweetalert.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/style-product.css" %}" rel="stylesheet">
 {% endblock %}
 
+{% block extrajs %}
+  {{ block.super }}
+  {{ form.media.js }}
+
+{{form_map.media.js}}
+  <script src="{% static "dashboard/js/plugins/dataTables/datatables.min.js" %}"></script>
+  <script src="{% static "dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
+  <script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
+  <script src="{% static "dashboard/js/plugins/toastr/toastr.min.js" %}"></script>
+  <script src="{% static "dashboard/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
+  <script src="{% static "inspinia/js/notifications.js" %}"></script>
+{%endblock%}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
 {% include 'destinations/navbar_top.html' %}
@@ -77,8 +89,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="font-normal">{% trans "Destiny"%}</label>
-                                <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="select_destiny" tabindex="2" style ="width:100%" required="required">
-                                </select>
+                                    {{ form_map.destination }}
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -89,7 +100,6 @@
                         </div>
                         <div class="col-md-12 col-lg-12 form-group">
                             <label class="font-normal">{% trans "Generate  your map"%}</label>
-                            {{form_map.media.js}}
                             {{form_map.map_destinie}}
                         </div>
 
@@ -102,18 +112,6 @@
   </div>
 </div>
 </div>
-{% endblock content %}
-
-
-{% block js %}
-  {{ block.super }}
-  {{ form.media.js }}
-  <script src="{% static "inspinia/js/plugins/dataTables/datatables.min.js" %}"></script>
-  <script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
-  <script src="{% static "inspinia/js/plugins/select2/select2.full.min.js" %}"></script>
-  <script src="{% static "inspinia/js/plugins/toastr/toastr.min.js" %}"></script>
-  <script src="{% static "inspinia/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
-  <script src="{% static "inspinia/js/notifications.js" %}"></script>
   <script>
     function delete_map(id){
           swal({
@@ -154,6 +152,7 @@
     }
 
 
+(function($){
     $("#select_destiny").select2({
           placeholder: "{% trans 'Select a destiny' %}",
            ajax: {
@@ -211,7 +210,9 @@
           })
           .fail(function() {
             console.log("error");
-          })
-        });
+          });
+    })})(jQuery);
   </script>
-{%endblock%}
+{% endblock content %}
+
+

@@ -438,7 +438,7 @@ EMAIL_BACKEND = 'django_yubin.smtp_queue.EmailBackend'
 #FOR GOOGLE-MAP-WIDGETS
 #https://django-map-widgets.readthedocs.io/en/latest/widgets/point_field_map_widgets.html#usage
 
-GOOGLE_MAPS_API_KEY = "AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo"
+GOOGLE_MAPS_API_KEY = env('GOOGLE_MAPS_API_KEY', default="AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo")
 
 MAP_WIDGETS = {
     "GooglePointFieldWidget": (

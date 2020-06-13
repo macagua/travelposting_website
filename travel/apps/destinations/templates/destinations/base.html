@@ -18,14 +18,7 @@
           <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet">
         {% endblock %}
         {% block extracss %} {% endblock extracss%}
-    </head>
-    <body class="fixed-sidebar pace-done tarvelsolutions-skin">
-        <div id="wrapper">
-            {% include 'destinations/navbar_left.html' %}
-            {% block content %}{% endblock %}
-            {#  {% include 'destinations/sidebar.html' %}#}
-        </div>
-
+        {% block extrajs %}
     <!-- Mainly scripts -->
     <script src="{% static 'dashboard/js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'dashboard/js/popper.min.js' %}"></script>
@@ -45,7 +38,7 @@
 
     <!-- Peity -->
     <script src="{% static 'dashboard/js/plugins/peity/jquery.peity.min.js' %}"></script>
-    <script src="{% static 'dashboard/js/demo/peity-demo.js' %}"></script>
+
 
     <!-- Custom and plugin javascript -->
     <script src="{% static 'dashboard/js/inspinia.js' %}"></script>
@@ -61,11 +54,21 @@
     <!-- Sparkline -->
     <script src="{% static 'dashboard/js/plugins/sparkline/jquery.sparkline.min.js' %}"></script>
 
-    <!-- Sparkline demo data  -->
-    <script src="{% static 'dashboard/js/demo/sparkline-demo.js' %}"></script>
 
     <!-- Sweetalert -->
     <script src="{% static 'dashboard/js/plugins/sweetalert/sweetalert.min.js' %}"></script>
+        
+        {% endblock extrajs %}
+    </head>
+    <body class="fixed-sidebar pace-done tarvelsolutions-skin">
+
+        <div id="wrapper">
+            {% include 'destinations/navbar_left.html' %}
+            {% block content %}{% endblock %}
+            {#  {% include 'destinations/sidebar.html' %}#}
+        </div>
+        {% block js %}
+
 
 
 
@@ -117,6 +120,7 @@
         });
     </script>
     {% endif %}
-        {% block extrajs %} {% endblock extrajs%}
+        {% endblock %}
+
     </body>
 </html>

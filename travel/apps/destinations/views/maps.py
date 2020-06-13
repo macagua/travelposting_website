@@ -8,7 +8,7 @@ from django.shortcuts import (
 from django.http import QueryDict
 from apps.destinations.forms import DestinationMapForm
 
-from apps.destinations.models import DestinationMap
+from apps.destinations.models import Destination, DestinationMap
 from django.views.generic import (
     View,
 )
@@ -22,6 +22,9 @@ logger = logging.getLogger(__name__)
 class DestinationMapView(View):
     def get(self, request):
         form_map =  DestinationMapForm()
+        form_map.fields['destination'].queryset = Destination.objects.filter(
+                user=request.user,
+                map=None)
         destination = DestinationMap.objects.filter(destination__user=request.user.id)
         return render(request,'destinations/map/maps.html',{'form_map':form_map, 'destination':destination})
 
