@@ -33,8 +33,7 @@ class DestinationMapView(View):
         if form_map.is_valid():
             if form_map.save() :
                 return JsonResponse({'msg':_('a new map has been added to your destination'),'status':True},
-                    safe=False,
-                )
+                    safe=False)
         else:
             return JsonResponse(
                 {

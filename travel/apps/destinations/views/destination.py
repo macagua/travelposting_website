@@ -67,8 +67,13 @@ from apps.destinations.serializers import (
 
 logger = logging.getLogger(__name__)
 
+class NoCommunityRequiredMixin(LoginRequiredMixin):
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_community:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
 
-class DestinationListView(LoginRequiredMixin, ListView):
+class DestinationListView(NoCommunityRequiredMixin, ListView):
     template_name = 'destinations/_list.html'
     queryset = Destination.objects.filter(is_deleted=False)
 
@@ -77,7 +82,7 @@ class DestinationListView(LoginRequiredMixin, ListView):
         return queryset.filter(user=self.request.user)
 
 
-class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
+class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
     template_name = 'destinations/_form.html'
     form_class = DestinationForm
     queryset = Destination.objects.filter(is_deleted=False)
@@ -262,12 +267,12 @@ class DestinationUpdateView(BaseDestinationView, UpdateView):
         return HttpResponseRedirect(self.get_success_url())
 
 
-class DestinationDetailView(LoginRequiredMixin, DetailView):
+class DestinationDetailView(NoCommunityRequiredMixin, DetailView):
     template_name = 'destinations/_details.html'
     queryset = Destination.objects.filter(is_deleted=False)
 
 
-class DestinationDeleteView(LoginRequiredMixin, DeleteView):
+class DestinationDeleteView(NoCommunityRequiredMixin, DeleteView):
     template_name = 'destinations/_delete.html'
     queryset = Destination.objects.filter(is_deleted=False)
     success_url = reverse_lazy('destinations:list')
@@ -281,7 +286,7 @@ class DestinationDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class OptionTabDataTemplateAjaxView(
-        LoginRequiredMixin, JSONResponseMixin, BaseDetailView):
+        NoCommunityRequiredMixin, JSONResponseMixin, BaseDetailView):
     model = OptionTabData
 
     def render_to_response(self, context, **response_kwargs):
@@ -289,7 +294,7 @@ class OptionTabDataTemplateAjaxView(
             context, encoder=ModelEncoder, **response_kwargs)
 
 
-class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
+class GalleryListView(NoCommunityRequiredMixin, SingleObjectMixin, ListView):
     template_name = 'destinations/gallery/_list.html'
 
     def get(self, request, *args, **kwargs):
@@ -321,14 +326,14 @@ class BaseItineraryMixin(object):
         return c
 
 
-class ItineraryCreateView(LoginRequiredMixin, BaseItineraryMixin, CreateView):
+class ItineraryCreateView(NoCommunityRequiredMixin, BaseItineraryMixin, CreateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['button_label'] = _('create a new itinerary')
         return c
 
 
-class ItineraryUpdateView(LoginRequiredMixin, BaseItineraryMixin, UpdateView):
+class ItineraryUpdateView(NoCommunityRequiredMixin, BaseItineraryMixin, UpdateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['button_label'] = _('update itinerary')
@@ -426,7 +431,7 @@ class ItineraryView(View):
             })
 
 
-class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
+class SocialNetworkListView(NoCommunityRequiredMixin, SingleObjectMixin, ListView):
     template_name = 'destinations/_socialNetworkList.html'
     success_url = reverse_lazy('destinations:social-network')
 
@@ -561,7 +566,7 @@ class messageView(View):
         return render(request, 'dashboard/index.html', {'reply':reply})
 
 
-class MailboxView(View):
+class MailboxView(NoCommunityRequiredMixin, View):
     template_name = 'dashboard/mailbox/_mailboxmain.html'
 
     def get(self, request, *args, **kwargs):
