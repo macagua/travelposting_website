@@ -65,13 +65,10 @@ from apps.destinations.serializers import (
     mapped_errors_form,
 )
 
+from apps.utils.mixins  import NoCommunityRequiredMixin
+
 logger = logging.getLogger(__name__)
 
-class NoCommunityRequiredMixin(LoginRequiredMixin):
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_community:
-            return self.handle_no_permission()
-        return super().dispatch(request, *args, **kwargs)
 
 class DestinationListView(NoCommunityRequiredMixin, ListView):
     template_name = 'destinations/_list.html'
