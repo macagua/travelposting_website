@@ -8,8 +8,9 @@ from django.utils.translation import gettext as _
 # For the class based is for user login
 class CommunitySignUpForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationForm):
     referal = forms.CharField(
-        label=_("Referred by"),
-        help_text=_("Enter the referal code just in case."),
+            required=False,
+            label=_("Referred by"),
+            help_text=_("Enter the referal code just in case."),
     )
 
     password1 = forms.CharField(
