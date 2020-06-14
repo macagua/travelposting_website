@@ -2,16 +2,15 @@
 {% load i18n staticfiles %}
 {% block title %}{% trans 'Agregar Destino' %}{% endblock %}
 
-{% block css %}
-  {{ block.super }}
+{% block extracss %}
   {{ form.media.css }}
   {{ tour_data_inlineformset.media.css }}
   {{ tour_data_inlineformset.0.tab_data_inlineformset.media.css }}
   {{ destination_detail_inlineformset.0.general_inlineformset.media.css }}
-  <link href="{% static "inspinia/js/plugins/steps/jquery.steps.css" %}" rel="stylesheet">
-  <link href="{% static "inspinia/js/plugins/select2/select2.min.css" %}" rel="stylesheet">
-  <link href="{% static "inspinia/js/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" %}" rel="stylesheet">
-  <link href="{% static "inspinia/css/style-product.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/plugins/steps/jquery.steps.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/plugins/select2/select2.min.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" %}" rel="stylesheet">
+  <link href="{% static "dashboard/css/style.css" %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -32,16 +31,16 @@
 					        {{ destination_detail_inlineformset.management_form }}
 	                		<h1>{% trans 'Product' %}</h1>
 	                		<fieldset>
-	                			<div class="col-md-12 col-lg-12">
-	                			<h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
-	                			<div class="checkbox checkbox-success pull-right">
-                                            <input type="checkbox" id="setTimeDate" value="">
-                                            <label for="setTimeDate">{%trans "This tour has departure and arrival time"%} </label>
-                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12">
+                                        <h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
+                                        <div class="checkbox checkbox-success pull-right">
+                                                    <input type="checkbox" id="setTimeDate" value="">
+                                                    <label for="setTimeDate">{%trans "This tour has departure and arrival time"%} </label>
+                                        </div>
+                                    </div>
 	                			</div>
-	                			<div class="row">
-									{% include 'destinations/tour/_form.html' %}
-	                			</div>
+                                {% include 'destinations/tour/_form.html' %}
 	                		</fieldset>
 	                		<h1>{% trans 'Price' %}</h1>
 	                		<fieldset>
@@ -84,16 +83,16 @@
 {% endblock %}
 
 
-{% block js %}
+{% block extrajs %}
   	{{ block.super }}
   	{{ tour_data_inlineformset.media.js }}
   	{{ tour_data_inlineformset.0.tab_data_inlineformset.media.js }}
   	{{ destination_detail_inlineformset.0.general_inlineformset.media.js }}
   	<script src="{% static "inspinia/js/plugins/chosen/chosen.jquery.js" %}"></script>
-  	<script src="{% static "inspinia/js/plugins/select2/select2.full.min.js" %}"></script>
-	<script src="{% static "inspinia/js/plugins/steps/jquery.steps.min.js" %}"></script>
+  	<script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
+	<script src="{% static "dashboard/js/plugins/steps/jquery.steps.min.js" %}"></script>
 	<script src="{% static "inspinia/js/plugins/dynamic-form.js" %}"></script>
-	<script src="{% static "inspinia/js/plugins/validate/jquery.validate.min.js"%}"></script>
+	<script src="{% static "dashboard/js/plugins/validate/jquery.validate.min.js"%}"></script>
 	<script type="template/tab_data">
     	{% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
   	</script>

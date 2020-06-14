@@ -1,0 +1,30 @@
+
+
+{% load static i18n destinations_tags static %}
+<div class="mail-box">
+    <div class="ibox-content">
+        <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
+            placeholder="{% trans 'Search message' %} "">
+        <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+            <tbody>
+                {% for mensajes in mensajes %}
+                <tr class="gradeA">
+                    <td>{{ mensajes.recipient}}</td>
+                    <td>{{ mensajes.subject|truncatewords:40}}
+                    </td>
+                    <td>{{mensajes.sent_at|date:'d-m-yy H:i' }}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <ul class="pagination float-right"></ul>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+

@@ -26,6 +26,10 @@ from django.template.loader import render_to_string
 from django.core.mail import mail_managers
 from django.core.mail import send_mail
 from django.conf import settings
+from django.urls import reverse
+from django.utils import timezone
+
+
 
 from apps.destinations.forms import (
     DestinationForm,
@@ -46,6 +50,7 @@ from apps.destinations.models import (
     InventarioDetail,
     BookingDetail,
     SocialNetwork,
+    MessageDashboard,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -62,8 +67,13 @@ from apps.destinations.serializers import (
 
 logger = logging.getLogger(__name__)
 
+class NoCommunityRequiredMixin(LoginRequiredMixin):
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_community:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
 
-class DestinationListView(LoginRequiredMixin, ListView):
+class DestinationListView(NoCommunityRequiredMixin, ListView):
     template_name = 'destinations/_list.html'
     queryset = Destination.objects.filter(is_deleted=False)
 
@@ -72,7 +82,7 @@ class DestinationListView(LoginRequiredMixin, ListView):
         return queryset.filter(user=self.request.user)
 
 
-class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
+class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
     template_name = 'destinations/_form.html'
     form_class = DestinationForm
     queryset = Destination.objects.filter(is_deleted=False)
@@ -257,12 +267,12 @@ class DestinationUpdateView(BaseDestinationView, UpdateView):
         return HttpResponseRedirect(self.get_success_url())
 
 
-class DestinationDetailView(LoginRequiredMixin, DetailView):
+class DestinationDetailView(NoCommunityRequiredMixin, DetailView):
     template_name = 'destinations/_details.html'
     queryset = Destination.objects.filter(is_deleted=False)
 
 
-class DestinationDeleteView(LoginRequiredMixin, DeleteView):
+class DestinationDeleteView(NoCommunityRequiredMixin, DeleteView):
     template_name = 'destinations/_delete.html'
     queryset = Destination.objects.filter(is_deleted=False)
     success_url = reverse_lazy('destinations:list')
@@ -276,7 +286,7 @@ class DestinationDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class OptionTabDataTemplateAjaxView(
-        LoginRequiredMixin, JSONResponseMixin, BaseDetailView):
+        NoCommunityRequiredMixin, JSONResponseMixin, BaseDetailView):
     model = OptionTabData
 
     def render_to_response(self, context, **response_kwargs):
@@ -284,7 +294,7 @@ class OptionTabDataTemplateAjaxView(
             context, encoder=ModelEncoder, **response_kwargs)
 
 
-class GalleryListView(LoginRequiredMixin, SingleObjectMixin, ListView):
+class GalleryListView(NoCommunityRequiredMixin, SingleObjectMixin, ListView):
     template_name = 'destinations/gallery/_list.html'
 
     def get(self, request, *args, **kwargs):
@@ -316,18 +326,18 @@ class BaseItineraryMixin(object):
         return c
 
 
-class ItineraryCreateView(LoginRequiredMixin, BaseItineraryMixin, CreateView):
+class ItineraryCreateView(NoCommunityRequiredMixin, BaseItineraryMixin, CreateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['button_label'] = _('create a new itinerary')
-        return c 
+        return c
 
 
-class ItineraryUpdateView(LoginRequiredMixin, BaseItineraryMixin, UpdateView):
+class ItineraryUpdateView(NoCommunityRequiredMixin, BaseItineraryMixin, UpdateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['button_label'] = _('update itinerary')
-        return c 
+        return c
 
 
 class ItineraryView(View):
@@ -421,7 +431,7 @@ class ItineraryView(View):
             })
 
 
-class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
+class SocialNetworkListView(NoCommunityRequiredMixin, SingleObjectMixin, ListView):
     template_name = 'destinations/_socialNetworkList.html'
     success_url = reverse_lazy('destinations:social-network')
 
@@ -441,7 +451,7 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
         website = request.POST.get('website')
 
         '''
-        We verify that users checked that comes from the frontend to validate whether the user wants to have 
+        We verify that users checked that comes from the frontend to validate whether the user wants to have
         their social networks for all destinations or if you want to use social networks for each destination.
         '''
         if use_default_networks == None:
@@ -458,7 +468,7 @@ class SocialNetworkListView(LoginRequiredMixin, SingleObjectMixin, ListView):
                 add = SocialNetwork.objects.filter(destination__user=self.request.user)
                 destinos = Destination.objects.filter(user=self.request.user)
                 errors = _("There is already a configuration of social networks. Do you want to update?")
-                return render(request, self.template_name, {'add':add, 'destinos':destinos, 'errors': errors}) 
+                return render(request, self.template_name, {'add':add, 'destinos':destinos, 'errors': errors})
         except:
             destino = Destination.objects.get(id=request.POST.get('destination'))
             SocialNetwork.objects.create(
@@ -504,9 +514,9 @@ class SocialNetworkUpdateView(UpdateView):
         linkedin = request.POST.get('linkedin')
         website = request.POST.get('website')
         pinterest = request.POST.get('pinterest')
-    
+
         '''
-        We verify that users checked that comes from the frontend to validate whether the user wants to have 
+        We verify that users checked that comes from the frontend to validate whether the user wants to have
         their social networks for all destinations or if you want to use social networks for each destination.
         '''
         if use_default_networks == None:
@@ -544,12 +554,127 @@ class messageView(View):
 
         message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
 
-        mail_managers(subject,
-                    message,
-                    fail_silently=True,
-                    html_message=html_message
-                )
+        mail_managers(
+            subject,
+            message,
+            fail_silently=True,
+            html_message=html_message
+        )
 
         reply = _('Thank you for your message, very soon we will answer back')
-        
+
         return render(request, 'dashboard/index.html', {'reply':reply})
+
+
+class MailboxView(NoCommunityRequiredMixin, View):
+    template_name = 'dashboard/mailbox/_mailboxmain.html'
+
+    def get(self, request, *args, **kwargs):
+        mensajes = MessageDashboard.objects.filter(recipient=request.user).order_by('-sent_at')
+        conteo = mensajes.filter(read_at=None).count()
+        return render(request, self.template_name, {'mensajes':mensajes, 'conteo':conteo})
+
+    def delete(self,request):
+        pk_mail= QueryDict(request.body)
+        mail = get_object_or_404(MessageDashboard, pk=pk_mail['pk'])
+        if mail.delete() :
+            return JsonResponse(
+                {
+                'status':True
+                },
+                safe=False,
+            )
+
+
+class MailboxSent(View):
+    template_name = 'dashboard/mailbox/_mailboxsent.html'
+
+    def get(self, request, *args, **kwargs):
+        mensajes = MessageDashboard.objects.filter(sender=request.user).order_by('-sent_at')
+        conteo = mensajes.filter(read_at=None).count()
+        return render(request, self.template_name, {'mensajes':mensajes, 'conteo':conteo})
+
+
+class MailboxAdd(View):
+    template_name = 'dashboard/mailbox/_mailboxadd.html'
+    success_url = reverse_lazy('destinations:mailbox')
+
+    def get(self, request, *args, **kwargs):
+        usuarios = CustomerUser.objects.all().exclude(email=request.user.email)
+        return render(request, self.template_name, {'usuarios':usuarios})
+
+    def post(self, request, *args, **kwargs):
+        reply = _('Thank you for your message, very soon we will answer back')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        user_sender = CustomerUser.objects.get(pk=request.user.id)
+        #this filter will be used when we apply all the group for magnament the other dashboard!
+        admins = ['Manager']
+        gr = request.user.groups.get_queryset().filter(name__in=admins).exists()
+        #por el momento solo se enviara al admin los mensajes de todos los usuarios por lo que seusa
+        #support@travelpostig.com
+        re_admin = CustomerUser.objects.get(email='info@xposting-service.com')       
+        if not gr:
+            MessageDashboard.objects.create(
+                subject=subject,
+                content=message,
+                sender=user_sender,
+                recipient= re_admin
+            )
+
+            #now we send the mail
+            subject = subject
+
+            ctx = {
+                'user' : request.user.email,
+                'name' : request.user.get_full_name,
+                'message': request.POST.get('message')
+            }
+
+            html_message = render_to_string(
+                'dashboard/dashboard_email.html',
+                context=ctx
+            )
+
+            message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+
+            mail_managers(
+                subject,
+                message,
+                fail_silently=True,
+                html_message=html_message
+            )
+        else:
+            recipient = CustomerUser.objects.get(id=request.POST.get('recipient'))
+            MessageDashboard.objects.create(
+                subject=subject,
+                content=message,
+                sender=user_sender,
+                recipient= recipient
+            )  
+
+            send_mail(
+                subject,
+                message,
+                request.user.email,
+                [recipient.email],
+            )          
+
+
+        return HttpResponseRedirect(self.success_url)
+
+
+class MailboxDetail(View):
+    template_name = 'dashboard/mailbox/_mailboxdetail.html'
+
+    def get(self, request, *args, **kwargs):
+        pk = kwargs['int']
+        msg_pk = MessageDashboard.objects.get(pk=pk)
+        if msg_pk.read_at == None:
+            MessageDashboard.objects.filter(pk=pk).update(
+                read_at = timezone.now()
+            )
+
+        mensajes = MessageDashboard.objects.all().order_by('-sent_at')
+        conteo = mensajes.filter(read_at=None).count()
+        return render(request, self.template_name, {'conteo':conteo, 'msg':msg_pk})

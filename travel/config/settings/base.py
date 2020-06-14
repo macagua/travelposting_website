@@ -255,10 +255,11 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
 # https://docs.djangoproject.com/en/2.1/topics/email/#module-django.core.mail
 # python -m smtpd -n -c DebuggingServer localhost:1025
 ADMINS = [
-    ('Dehivis Pérez', 'dehivis.oliver@gmail.com'),
+    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
 ]
 
 MANAGERS = [
+    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
     ('Tablero travel', 'tablero@travelpostig.com'),
     ('Soporte', 'support@travelpostig.com'),
 ]
@@ -266,7 +267,7 @@ MANAGERS = [
 # Authentication options
 AUTH_USER_MODEL = 'accounts.CustomerUser'
 LOGIN_URL = 'accounts:login'
-LOGIN_REDIRECT_URL = 'destinations:dashboard-index'
+LOGIN_REDIRECT_URL = 'dashboard:dashboard-index'
 LOGOUT_URL = 'accounts:logout'
 LOGOUT_REDIRECT_URL = 'accounts:logout'
 
@@ -437,7 +438,7 @@ EMAIL_BACKEND = 'django_yubin.smtp_queue.EmailBackend'
 #FOR GOOGLE-MAP-WIDGETS
 #https://django-map-widgets.readthedocs.io/en/latest/widgets/point_field_map_widgets.html#usage
 
-GOOGLE_MAPS_API_KEY = "AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo"
+GOOGLE_MAPS_API_KEY = env('GOOGLE_MAPS_API_KEY', default="AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo")
 
 MAP_WIDGETS = {
     "GooglePointFieldWidget": (

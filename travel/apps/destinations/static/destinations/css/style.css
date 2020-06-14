@@ -9,3 +9,6 @@
 .tab-pane > .panel-body .booking {
     margin-bottom: 20px;
 }
+.pac-container {
+    z-index: 9999;
+}

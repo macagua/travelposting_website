@@ -1,67 +1,157 @@
-{%load i18n static %}
-<div class="wrapper wrapper-content animated fadeInRight">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="widget style1 navy-bg">
-                    <div class="row">
-                        <div class="col-4">
-                            <i class="fa fa-globe fa-5x"></i>
-                        </div>
-                        <div class="col-8 text-right">
-                            <span> {% trans "Destinations" %} </span>
-                                <h2 class="font-bold">{{ dashboard_list.destination_count }}</h2>
-                        </div>
-                    </div>
+{% load i18n static charts%}
+<div class="row">
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="float-right">
+                    <span style="font-size: 1.5em; color: #23c6c8;">
+                    <i class="fa fa-plane"></i>
+                    </span>
+                </div>
+                <h5>{% trans "Destinations" %}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ dashboard_list.destination_count }}</h1>
+                <small>
+                <a href="{% url 'destinations:list' %}" class="label label-info">
+                {% trans "Show Destinations" %}
+                </a>
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="float-right">
+                    <span style="font-size: 1.5em; color: #1c84c6;">
+                    <i class="fa fa-credit-card"></i>
+                    </span>
+                    </span>
+                </div>
+                <h5>{% trans "Booking" %}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ dashboard_list.booking_count }}</h1>
+                <small>
+                <a href="{% url 'destinations:booking-list' %}" class="label label-success">
+                {% trans "Show Bookings" %}
+                </a>
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="label label-primary float-right">Today</span>
+                </div>
+                <h5>{% trans "User Connected" %}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ dashboard_list.user_last }}</h1>
+                <div class="stat-percent font-bold text-navy"><i class="fa fa-level-up"></i></div>
+                <small>{% trans "Number of users connected" %}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <div class="ibox-tools">
+                    <span class="label label-danger float-right">Low value</span>
+                </div>
+                <h5>User activity</h5>
+            </div>
+            <div class="ibox-content">
+                <h4 class="no-margins">{{ request.user.last_login }}</h4>
+                <br>
+                <div class="stat-percent font-bold text-success"> <i class="fa fa-level-up"></i></div>
+                <small>{% trans "Last Visit" %}</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>{% trans "Visitor by Destinations"%}</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                    <i class="fa fa-times"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="widget style1 lazur-bg">
-                    <div class="row">
-                        <div class="col-4">
-                            <i class="fa fa-envelope-o fa-5x"></i>
-                        </div>
-                        <div class="col-8 text-right">
-                            <span> {% trans "Bookings" %} </span>
-                            <h2 class="font-bold">{{ dashboard_list.booking_count }}</h2>
-                        </div>
-                    </div>
+            <div class="ibox-content table-responsive">
+                <table class="table table-hover no-margins">
+                    <thead>
+                        <tr>
+                            <th>{% trans "Destinations"%}</th>
+                            <th>{% trans "Last Visit"%}</th>
+                            <th>{% trans "Number visits"%}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for statis_destine in statis_destinies%}
+                        <tr>
+                            <td><small>{{ statis_destine.name }}</small></td>
+                            <td>{{ statis_destine.last_visit|default_if_none:"" }}</td>
+                            <td><span class="label label-primary">{{ statis_destine.visitor_count|default_if_none:"" }}</span></td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>{% trans "Number of visits per country"%}</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                    <i class="fa fa-times"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="ibox ">
-
-                    <div class="ibox-content">
-
-                        <div>
-                <div class="chat-activity-list">
-                    <div class="chat-element ">
-                        <div class="media-body ">
-                            <p class="m-b-xs">
-                                {% trans "If you have any questions or comments, do not hesitate to send us a message" %}
-                            </p>
-                        </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <table class="table table-hover margin bottom">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">{% trans "IP Address" %}</th>
+                                    <th>{% trans "Location" %}</th>
+                                    <th class="text-center">{% trans "Total visits from country" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for visits in last_visits %}
+                                <tr>
+                                    <td class="text-center">{{ visits.last_ip }}</td>
+                                    <td> {{ visits.location|default:'Unknown' }} </td>
+                                    <td class="text-center"> {% total_visits visits.location %}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                </div>
-                        <div class="chat-form">
-                            <form role="form" action="{% url 'destinations:send_message' %}" method="POST">{% csrf_token %}
-                                <div class="form-group">
-                                    <textarea name="message" class="form-control" placeholder="{% trans 'Message' %}"></textarea>
-                                </div>
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-sm btn-primary m-t-n-xs"><strong>{% trans "Send message" %}</strong></button>
-                                </div>
-                            </form>
-                        </div>
-                        {% if reply %}
-                        <br><br>
-                        <div class="alert alert-success alert-dismissable">
-                          <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                          {{ reply }} <a class="alert-link" href="#"></a>.
-                        </div>
-                        {% endif %}
-                </div>
+                    <div class="col-lg-7">
+                        <div id="world-map" style="height: 300px;"></div>
+                    </div>
                 </div>
             </div>
         </div>
-   </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import os
 import random
 from django import template
 from django.conf import settings
+from apps.accounts.models import CustomerUser
 from apps.landing_page.models import (
     Testimony,
     Magazine,
@@ -15,7 +16,9 @@ from apps.destinations.models import (
     Photo,
     GeneralDetail,
     Booking,
+    MessageDashboard
 )
+from django.utils import timezone
 
 register = template.Library()
 
@@ -161,10 +164,12 @@ def filter_dashboard_index(user):
     """
     destination_user = Destination.objects.filter(user=user).count()
     booking_user = Booking.objects.filter(destination__user=user).count()
+    user_last = CustomerUser.objects.filter(last_login__startswith=timezone.now().date()).count()
 
     dashboard_list = {
         'destination_count': destination_user,
         'booking_count': booking_user,
+        'user_last': user_last,
     }
 
     return dashboard_list
@@ -175,3 +180,13 @@ def parse_to_list(value_int):
     for i in range(0,value_int):
         list.append(i)
     return list
+
+
+@register.inclusion_tag('dashboard/mailbox/message_accounts.html', takes_context=True)
+def show_notification(context):
+    mensajes = MessageDashboard.objects.filter(recipient=context.request.user, read_at=None).order_by('-sent_at')
+    conteo = mensajes.filter(recipient=context.request.user, read_at=None).count()    
+    return {
+        'mensajes': mensajes,
+        'conteo': conteo,
+    }

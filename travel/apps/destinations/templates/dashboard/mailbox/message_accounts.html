@@ -1,0 +1,39 @@
+{% load static i18n %}
+<li class="dropdown">
+    {% if conteo != 0 %}
+    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+      <i class="fa fa-envelope"></i> <span class="label label-warning">{{ conteo }}</span>
+    </a>
+    {% else %}
+
+    {% endif %}
+    <ul class="dropdown-menu dropdown-messages">
+      {% for mensajes in mensajes %}
+      <li>
+        <div class="dropdown-messages-box">
+          <a class="dropdown-item float-left" href="{% url 'dashboard:mailbox-detail' int=mensajes.id %}">
+            {% if mensajes.sender.avatar %}
+            <img alt="image" class="rounded-circle" src="/main/media/{{ mensajes.sender.avatar}}">
+            {% else %}
+            <i class="fa fa-user fa-3x" style="color: black;"></i>
+
+            {% endif %}
+          </a>
+          <div class="media-body">
+            
+            <strong>{{ mensajes.sender.email }}</strong> {% trans "has sent a" %}  <strong>{% trans "new message" %}</strong>. <br>
+            <small class="text-muted">{{ mensajes.send.sent_at}}</small>
+        </div>
+        </div>
+      </li>
+      <li class="dropdown-divider"></li>
+      {% endfor %}
+        <li>
+            <div class="text-center link-block">
+                <a href="{% url 'dashboard:mailbox'%}" class="dropdown-item">
+                    <i class="fa fa-envelope"></i> <strong>{% trans "Read All Messages" %}</strong>
+                </a>
+            </div>
+        </li>
+    </ul>
+</li>

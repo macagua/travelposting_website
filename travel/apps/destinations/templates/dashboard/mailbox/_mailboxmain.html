@@ -1,0 +1,91 @@
+
+
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Mailbox - Travelposting' %}{% endblock %}
+{% block extracss %}
+<!-- FooTable -->
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css'%}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-3">
+                {% include 'dashboard/mailbox/mailbox_menu_left.html' %}
+            </div>
+            <div class="col-lg-9 animated fadeInRight">
+                <div class="mail-box-header">
+                    <h2>
+                        {% trans "Inbox" %} ({{ conteo }})
+                    </h2>
+                </div>
+                {% include "dashboard/mailbox/tablemain.html"%}
+            </div>
+        </div>
+    </div>
+    {% include 'destinations/footer.html' %}
+</div>
+{% endblock content %}
+{% block js %}
+{{ block.super }}
+{{ form.media.js }}
+<!-- FooTable -->
+<script src="{% static 'dashboard/js/plugins/footable/footable.all.min.js' %}"></script>
+<!-- iCheck -->
+<script src="{% static 'dashboard/js/plugins/iCheck/icheck.min.js' %}"></script>
+<script>
+    //Delete fuction
+    function delete_mail(pk_i){
+          swal({
+              title: "{% trans "Are you sure?" %}",
+              text: "{% trans "If you delete this message you will not be able to recover it" %}",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "{% trans "Yes, delete it!" %}",
+              closeOnConfirm: false
+          }, function () {
+            $.ajax({
+                  method:'DELETE',
+                  url:'{% url 'destinations:delete-mail' %}',
+                  data:{
+                    pk:pk_i,
+                  },
+                  beforeSend: function(xhr) {
+                      xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+                  },
+                  success: function (request) {
+                  if(request.status==true){
+                    swal("Deleted!", "Message has been deleted.", "success");
+                    setTimeout(function(){
+                        window.location.href = "{% url 'destinations:mailbox' %}";
+                    }, 2000);
+                  }else{
+                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
+                  }
+                  }
+              });
+          });
+    }
+
+    /* End fuction */
+    
+    
+    $(document).ready(function () {
+     $('.i-checks').iCheck({
+         checkboxClass: 'icheckbox_square-green',
+             radioClass: 'iradio_square-green',
+     });
+    });
+    
+    
+    $(document).ready(function () {
+     $('.footable').footable();
+     $('.footable2').footable();
+    });
+</script>
+{% endblock js %}
+

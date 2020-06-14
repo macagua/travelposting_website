@@ -1,60 +1,67 @@
 {% load i18n %}
 
 <nav class="navbar-default navbar-static-side" role="navigation">
-  <div class="sidebar-collapse">
-    <ul class="nav metismenu" id="side-menu">
-      <li class="nav-header">
-        <div class="dropdown profile-element">
-            {% if request.user.avatar %}
-              <img src="{{ request.user.avatar.url }}" width="39" height="39"  />
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu" style="">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    {% if request.user.avatar %}
+                    <img alt="image" class="rounded-circle" src="{{ request.user.avatar.url }}" height="48" width="48">
+                    {% else %}
+                    <i class="fa fa-user fa-3x" style="color: white;"></i>
+                    {% endif %}
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <span class="block m-t-xs font-bold">{{ user.get_full_name }}</span>
+                    <span class="text-muted text-xs block">
+                      {% if request.user.is_staff %}
+                      {% trans 'Admin' %}
+                      {% else %}
+                      {% trans 'Empresa' %}
+                      {% endif %}
+                      <b class="caret"></b></span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                      <li><a href="{% url 'accounts:user-details' request.user.pk %}">{% trans 'Información' %}</a></li>
+                      <li><a href="{% url 'accounts:password-change' %}">{% trans 'Cambiar contraseña' %}</a></li>
+                      <li><a href="{% url 'accounts:logout' %}">{% trans 'Cerrar sesión' %}</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    T&S
+                </div>
+            </li>
+            {% if request.get_full_path == '/es/dashboard/' or request.get_full_path == '/en/dashboard/' or request.get_full_path == '/de/dashboard/' %}
+            <li class="special_link">
             {% else %}
-              <i class="fa fa-user fa-3x" style="color: white;"></i>
+            <li>
             {% endif %}
-          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-              <span class="clear">
-                <span class="block m-t-xs">
-                  <strong class="font-bold">{{ user.get_full_name }}</strong>
-                </span>
-                <span class="text-muted text-xs block">
-                  {% if request.user.is_staff %}
-                    {% trans 'Admin' %}
-                  {% else %}
-                    {% trans 'Empresa' %}
-                  {% endif %}
-                  <b class="caret"></b>
-                </span>
-              </span>
-          </a>
-          <ul class="dropdown-menu animated fadeInRight m-t-xs">
-            <li><a href="{% url 'accounts:user-details' request.user.pk %}">{% trans 'Información' %}</a></li>
-            <li><a href="{% url 'accounts:password-change' %}">{% trans 'Cambiar contraseña' %}</a></li>
-            <li><a href="{% url 'accounts:logout' %}">{% trans 'Cerrar sesión' %}</a></li>
-{#            <li class="divider"></li>#}
-{#            <li><a href="login.html">Logout</a></li>#}
-          </ul>
-        </div>
-        <div class="logo-element">T&S</div>
-      </li>
-      <li class="">
-        <a href="{% url 'destinations:dashboard-index' %}">
-          <i class="fa fa-home fa-lg"></i>
-          <span class="nav-label">{% trans 'Home' %}</span>
-        </a>
-      </li>
-      {% if request.user.is_staff %}
-        <li class="">
-            <a href="/rosetta/">
-            <i class="fa fa-language fa-lg"></i>
-            <span class="nav-label">{% trans "Translate site" %}</span>
-            </a>
-        </li>
-        <li class="">
-            <a href="/admin/">
-            <i class="fa fa-user-secret fa-lg"></i>
-            <span class="nav-label">{% trans "Admin site" %}</span>
-            </a>
-        </li>
-      {% endif %}
+              <a href="{% url 'dashboard:dashboard-index' %}"><i class="fa fa-th-large"></i> <span class="nav-label">{% trans 'Home' %}</span></a>
+            </li>
+              {% if request.get_full_path == '/es/dashboard/mailbox' or request.get_full_path == '/en/dashboard/mailbox' or request.get_full_path == '/de/dashboard/mailbox' %}
+
+                <li class="special_link">
+              {% else %}
+                <li>
+              {% endif %}
+                  <a href="{% url 'dashboard:mailbox'%}">
+                    <i class="fa fa-envelope-o fa-lg"></i>
+                    <span class="nav-label">{% trans "Mailbox" %}</span>
+                  </a>
+                </li>
+            {% if request.user.is_staff %}
+            <li class="">
+              <a href="/rosetta/">
+                <i class="fa fa-language fa-lg"></i>
+                <span class="nav-label">{% trans "Translate site" %}</span>
+              </a>
+            </li>
+            <li class="">
+              <a href="/admin/">
+                <i class="fa fa-user-secret fa-lg"></i>
+                <span class="nav-label">{% trans "Admin site" %}</span>
+              </a>
+            </li>
+            {% endif %}
       <li class="">
         <a href="#">
           <i class="fa fa-globe fa-lg"></i>
@@ -62,10 +69,10 @@
           <span class="fa arrow"></span>
         </a>
         <ul class="nav nav-second-level">
-          <li class=""><a href="{% url 'destinations:list' %}">{% trans 'Sus destinos' %}</a></li>
-          <li class=""><a href="{% url 'destinations:itinerary-list' %}">{% trans 'Itinerary' %}</a></li>
-          <li class=""><a href="{% url 'destinations:destination-map' %}">{% trans 'Maps' %}</a></li>
-          <li class=""><a href="{% url 'destinations:social-network' %}">{% trans 'Social Network' %}</a></li>
+          <li class=""><a href="{% url 'dashboard:list' %}">{% trans 'Sus destinos' %}</a></li>
+          <li class=""><a href="{% url 'dashboard:itinerary-list' %}">{% trans 'Itinerary' %}</a></li>
+          <li class=""><a href="{% url 'dashboard:destination-map' %}">{% trans 'Maps' %}</a></li>
+          <li class=""><a href="{% url 'dashboard:social-network' %}">{% trans 'Social Network' %}</a></li>
         </ul>
       </li>
       <li class="">
@@ -75,9 +82,9 @@
           <span class="fa arrow"></span>
         </a>
         <ul class="nav nav-second-level">
-          <li class=""><a href="{% url 'destinations:booking-list' %}">{% trans 'Your reservations' %}</a></li>
+          <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
         </ul>
       </li>
-    </ul>
-  </div>
+        </ul>
+    </div>
 </nav>

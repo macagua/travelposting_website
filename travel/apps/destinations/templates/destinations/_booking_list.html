@@ -2,17 +2,29 @@
 {% load static i18n %}
 
 {% block title %}{% trans 'Lista de Reservas' %}{% endblock %}
-{% block css%}
-    {{ block.super }}
+{% block extracss%}
+
     <style>
         .dataTables_filter, .dataTables_info { display: none; }
         .dataTables_length{ display: none; }
     </style>
-{% endblock%}
+{% endblock extracss%}
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
-
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{% trans "Booking" %}</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home"%}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a>{% trans "List Booking" %}</a>
+                </li>
+            </ol>
+        </div>
+    </div>
     <div class="wrapper wrapper-content animated fadeInRight">
       <div class="p-w-md m-t-sm">
         <div class="row">
@@ -82,12 +94,12 @@
     </div>
     {% include 'destinations/footer.html' %}
   </div>
-{% endblock %}
+{% endblock content%}
 
-{% block js %}
+{% block extrajs %}
   {{ block.super }}
-   <script src="{% static "inspinia/js/plugins/dataTables/datatables.min.js" %}"></script>
-   <script src="{% static "inspinia/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
+   <script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
+   <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js'%}"></script>
 
   <script>
     $(document).ready(function(){
@@ -121,5 +133,5 @@
     });
     </script>
   <script type="text/javascript" src="{% static 'destinations/js/modal.js' %}"></script>
-{% endblock %}
+{% endblock extrajs %}
 
