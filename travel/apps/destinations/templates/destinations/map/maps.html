@@ -82,37 +82,49 @@
               </button>
           </div>
           <div class="modal-body">
+                <form id="form-map" method="POST">
                 <div class="row">
-                    <form id="form-map" method="POST">
-                        <input type="hidden" name="pk_i" id="pk_i" readonly />
-                        {% csrf_token %}
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="font-normal">{% trans "Destiny"%}</label>
-                                    {{ form_map.destination }}
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" name="pk_i" id="pk_i" readonly />
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="font-normal">{% trans "Destiny"%}</label>
+                                        {{ form_map.destination }}
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="font-normal">{% trans "Description Map"%}</label>
-                                {{form_map.description_map}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="font-normal">{% trans "Description Map"%}</label>
+                                    {{form_map.description_map}}
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-12 col-lg-12 form-group">
-                            <label class="font-normal">{% trans "Generate  your map"%}</label>
-                            {{form_map.map_destinie}}
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 form-group">
+                                <label class="font-normal">{% trans "Generate  your map"%}</label>
+                                {{form_map.map_destinie}}
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 form-group">
 
-                        <button id="create_map" class="btn btn-success pull-right" type="submit">{% trans "Add new map"%}</button>
-                        <button id="reset_maps" class="btn btn-danger pull-right" type="button" data-dismiss="modal">{% trans "Cancel"%}</button>
-                    </form>
+                                <button id="create_map" class="btn btn-success pull-right" type="submit">{% trans "Add new map"%}</button>
+                                <button id="reset_maps" class="btn btn-danger pull-right" type="button" data-dismiss="modal">{% trans "Cancel"%}</button>
+                            </div>
+                        </div>
                 </div>
-            </div>
+                </form>
+           </div>
     </div>
   </div>
 </div>
 </div>
   <script>
+(function(){
     function delete_map(id){
           swal({
               title: "{% trans "Are you sure?" %}",
@@ -152,7 +164,6 @@
     }
 
 
-(function($){
     $("#select_destiny").select2({
           placeholder: "{% trans 'Select a destiny' %}",
            ajax: {
@@ -213,6 +224,4 @@
           });
     })})(jQuery);
   </script>
-{% endblock content %}
-
-
+{%endblock%}
