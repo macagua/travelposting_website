@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name=“p:domain_verify” content=“e2424510280fa4ceafe4f7b218d74f53"/>
+        <meta name="p:domain_verify" content="e2424510280fa4ceafe4f7b218d74f53"/>
         <link rel="manifest" href="{% static "manifest.json" %}">
         {% block feed %}
         {% endblock feed %}
@@ -106,6 +106,8 @@
         {% render_block "js" %}
         {% block extrajsinit %}
         <!-- JS Global Compulsory -->
+        <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+
         <script src="{% static 'assets/vendor/popper.js/popper.min.js' %}"></script>
         <script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
         <!-- JS Implementing Plugins -->
