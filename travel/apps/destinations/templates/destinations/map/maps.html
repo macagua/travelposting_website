@@ -12,18 +12,7 @@
   <link href="{% static "dashboard/css/style-product.css" %}" rel="stylesheet">
 {% endblock %}
 
-{% block js %}
-  {{ block.super }}
-  {{ form.media.js }}
 
-{{form_map.media.js}}
-  <script src="{% static "dashboard/js/plugins/dataTables/datatables.min.js" %}"></script>
-  <script src="{% static "dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
-  <script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
-  <script src="{% static "dashboard/js/plugins/toastr/toastr.min.js" %}"></script>
-  <script src="{% static "dashboard/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
-  <script src="{% static "inspinia/js/notifications.js" %}"></script>
-{%endblock%}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
 {% include 'destinations/navbar_top.html' %}
@@ -123,6 +112,20 @@
   </div>
 </div>
 </div>
+
+{%endblock%}
+{% block extrajs %}
+  {{ block.super }}
+  {{ form.media.js }}
+
+  {{form_map.media.js}}
+  <script src="{% static "dashboard/js/plugins/dataTables/datatables.min.js" %}"></script>
+  <script src="{% static "dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js"%}"></script>
+  <script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
+  <script src="{% static "dashboard/js/plugins/toastr/toastr.min.js" %}"></script>
+  <script src="{% static "dashboard/js/plugins/sweetalert/sweetalert.min.js" %}"></script>
+  <script src="{% static "inspinia/js/notifications.js" %}"></script>
+
   <script>
 (function(){
     function delete_map(id){
