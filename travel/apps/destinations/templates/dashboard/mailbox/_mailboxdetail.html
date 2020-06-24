@@ -16,7 +16,7 @@
             <div class="col-lg-9 animated fadeInRight">
                 <div class="mail-box-header">
                     <div class="float-right tooltip-demo">
-                        <!--<a href="mail_compose.html" class="btn btn-white btn-sm"><i class="fa fa-reply"></i> Reply</a>-->
+                        <a href="{% url 'dashboard:mailbox-reply' int=msg.id %}" class="btn btn-white btn-sm"><i class="fa fa-reply"></i> {% trans "Reply" %}</a>
                         <!--<a href="#" class="btn btn-white btn-sm" ><i class="fa fa-print"></i> </a>-->
                         <a href="mailbox.html" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> </a>
                     </div>
@@ -44,8 +44,9 @@
                         </p>
                     </div>
                     <div class="mail-body text-right tooltip-demo">
+                        <a href="{% url 'dashboard:mailbox-reply' int=msg.id %}" class="btn btn-white btn-sm"><i class="fa fa-reply"></i> {% trans "Reply" %}</a>
                         <button title=""  class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
-                </div>
+                    </div>
                 </div>
 
                             <div class="clearfix"></div>

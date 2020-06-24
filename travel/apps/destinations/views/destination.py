@@ -660,6 +660,59 @@ class MailboxAdd(View):
 
         return HttpResponseRedirect(self.success_url)
 
+'''
+Function for reply message
+'''
+class MailboxReply(View):
+    template_name = 'dashboard/mailbox/_mailboxReply.html'
+    success_url = reverse_lazy('destinations:mailbox')
+
+    def get(self, request, *args, **kwargs):
+        pk = kwargs['int']
+        mensaje = MessageDashboard.objects.get(id=pk)
+        return render(request, self.template_name, {'mensaje':mensaje})
+
+    def post(self, request, *args, **kwargs):
+        reply = _('Thank you for your message, very soon we will answer back')
+        message = request.POST.get('message')
+        user_sender = CustomerUser.objects.get(pk=request.user.id)
+        pk = kwargs['int']
+        mensaje = MessageDashboard.objects.get(id=pk)
+        subject = str("Rw: "+mensaje.subject) 
+
+        MessageDashboard.objects.create(
+            subject=subject,
+            content=message,
+            sender=user_sender,
+            recipient= mensaje.sender
+        )
+
+        #now we send the mail
+        subject = subject
+
+        ctx = {
+            'user' : request.user.email,
+            'name' : request.user.get_full_name,
+            'message': request.POST.get('message')
+        }
+
+        html_message = render_to_string(
+            'dashboard/dashboard_email.html',
+            context=ctx
+        )
+
+        send_mail(
+            subject,
+            message,
+            request.user.email,
+            [mensaje.sender],
+        )          
+
+        return HttpResponseRedirect(self.success_url)
+
+'''
+end function to reply message
+'''
 
 class MailboxDetail(View):
     template_name = 'dashboard/mailbox/_mailboxdetail.html'

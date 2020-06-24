@@ -27,6 +27,7 @@ from apps.destinations.views.destination import (
     SocialNetworkUpdateView,
     MailboxView,
     MailboxAdd,
+    MailboxReply,
     MailboxDetail,
     MailboxSent,
     messageView,
@@ -43,6 +44,7 @@ from apps.destinations.views.maps import (
     DestinationMapView,
     MapListView,
 )
+
 
 def nocommunity_access(function=None, redirect_field_name=REDIRECT_FIELD_NAME, login_url=None):
     actual_decorator = user_passes_test(
@@ -88,6 +90,11 @@ urlpatterns = [
         'mailbox/add',
         nocommunity_access(MailboxAdd.as_view()),
         name='mailbox-add',
+    ),
+    path(
+        'mailbox/reply/<int>',
+        nocommunity_access(MailboxReply.as_view()),
+        name='mailbox-reply',
     ),
     path(
         'mailbox/<int>',
