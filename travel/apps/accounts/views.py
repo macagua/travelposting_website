@@ -134,7 +134,7 @@ def isuccess(request):
 
 
 class ActivateAccountView(ActivationView):
-    success_url = reverse_lazy('accounts:activate-complete')
+    success_url = reverse_lazy('accounts:login')
     template_name = 'accounts/registration/activation_failed.html'
 
 
