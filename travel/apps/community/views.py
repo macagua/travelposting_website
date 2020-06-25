@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, update_session_auth_hash
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.core.paginator import Paginator  # < Import the Paginator class
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import (
@@ -460,10 +460,30 @@ def change_password(request):
 
 class CompleteProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'community/profile/complete_profile.html'
+    template_email = 'accounts/mail_profile_complete.html'
     model = CustomerUser
     form_class = CompleteProfileForm 
-    success_url = reverse_lazy('dashboard-comunity')
+    success_url = reverse_lazy('dashboard-community')
 
     def get_object(self, *args, **kwargs):
         return get_object_or_404(CustomerUser, id=self.request.user.id)
 
+    def form_valid(self, form ):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
+        body = render_to_string(
+            self.template_email, 
+            request=self.request
+        )
+        email_message = EmailMessage(
+            subject = _('Travelposting send a new import message'),
+            body = body,
+            from_email = settings.DEFAULT_FROM_EMAIL,
+            to = [self.request.user.email,]
+        )
+        email_message.content_subtype = 'html'
+        email_message.attach_file('main/static/img/brasil.jpg')
+        email_message.send()
+
+
+        return super().form_valid(form)
