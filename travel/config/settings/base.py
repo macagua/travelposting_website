@@ -178,6 +178,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'impersonate.middleware.ImpersonateMiddleware',
+    'apps.community.middleware.CampaignMiddleware',
 ]
 
 DJANGO_APPS = [

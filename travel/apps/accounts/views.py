@@ -23,12 +23,13 @@ from django.views.generic import (
 from django.views.i18n import set_language
 from django_registration.backends.activation.views import RegistrationView, ActivationView
 from apps.accounts.forms import (
-    SignInForm,
-    RegistrationForm,
-    CustomPasswordResetForm,
-    PasswordResetConfirmForm,
+    CompleteProfileForm,
     CustomPasswordChangeForm,
+    CustomPasswordResetForm,
     CustomerUserChangeForm,
+    PasswordResetConfirmForm,
+    RegistrationForm,
+    SignInForm,
 )
 from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext as _
@@ -182,3 +183,9 @@ class PasswordChangeView(LoginRequiredMixin, auth_views.PasswordChangeView):
 
 class PasswordChangeDoneView(LoginRequiredMixin, auth_views.PasswordChangeDoneView):
     template_name = 'accounts/user/password_change_done.html'
+
+class CompleteProfileView(LoginRequiredMixin, UpdateView):
+    template_name = 'accounts/user/_form.html'
+    model = CustomerUser
+    form_class = CompleteProfileForm
+
