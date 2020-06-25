@@ -11,9 +11,10 @@ from django.http import HttpResponse
 from django.template import loader
 from django.urls import reverse_lazy
 from django.shortcuts import (
-    render,
-    redirect,
-    reverse,
+        get_object_or_404,
+        render,
+        redirect,
+        reverse,
 )
 from django.views.generic import (
     DetailView,
@@ -27,6 +28,7 @@ from apps.accounts.forms import (
     RegistrationForm,
     CustomPasswordResetForm,
     PasswordResetConfirmForm,
+    CompleteProfileForm,
     CustomPasswordChangeForm,
     CustomerUserChangeForm,
 )
@@ -182,3 +184,14 @@ class PasswordChangeView(LoginRequiredMixin, auth_views.PasswordChangeView):
 
 class PasswordChangeDoneView(LoginRequiredMixin, auth_views.PasswordChangeDoneView):
     template_name = 'accounts/user/password_change_done.html'
+
+
+class CompleteProfileView(LoginRequiredMixin, UpdateView):
+    template_name = 'accounts/user/_form.html'
+    model = CustomerUser
+    form_class = CompleteProfileForm 
+
+    def get_object(self, *args, **kwargs):
+        return get_object_or_404(CustomerUser, id=self.request.user.id)
+
+

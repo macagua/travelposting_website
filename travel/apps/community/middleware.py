@@ -20,5 +20,5 @@ class CampaignMiddleware:
 
     def process_view(self, request, view_func, *args, **kwargs):
         if not request.user.is_superuser and request.resolver_match.url_name != 'user-complete-profile' and request.user.is_active and request.user.user.referredBy.ref_code == self.campaign_ref_code and request.user.get_full_name() == '' :
-            return redirect('accounts:user-complete-profile', request.user.id)
+            return redirect('accounts:user-complete-profile')
         return None
