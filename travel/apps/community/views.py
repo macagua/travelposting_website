@@ -104,8 +104,8 @@ class LoginCommunity(View):
 
 
 class signupCommunity(RegistrationView):
-    email_body_template = 'accounts/registration/activation_email_body.html'
-    html_email_template_name = 'accounts/registration/activation_email_body.html'
+    email_body_template = 'accounts/mail_body.html'
+    html_email_template_name = 'accounts/mail_body.html'
     email_subject_template = 'accounts/registration/activation_email_subject.txt'
     success_url = reverse_lazy('accounts:register-complete')
     template_name = 'community/registration/signup.html'
