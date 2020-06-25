@@ -462,6 +462,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'community/profile/complete_profile.html'
     model = CustomerUser
     form_class = CompleteProfileForm 
+    success_url = reverse_lazy('dashboard-comunity')
 
     def get_object(self, *args, **kwargs):
         return get_object_or_404(CustomerUser, id=self.request.user.id)
