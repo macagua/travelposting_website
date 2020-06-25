@@ -1,6 +1,7 @@
 from django.db.models import Q
 from django.core.mail import mail_managers
 from django.contrib.auth import authenticate, login, update_session_auth_hash
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
 from django.core.mail import send_mail
@@ -19,6 +20,7 @@ from django.utils.translation import gettext as _
 from django.views.generic import (
     View,
     ListView,
+    UpdateView
 )
 
 from django_registration.backends.activation.views import RegistrationView
@@ -28,7 +30,7 @@ from apps.accounts.models import Comment, Contact, CustomerUser
 from apps.accounts.forms import CustomerUserChangeForm
 from apps.community.models import Referral
 from apps.destinations.models import Destination
-from .forms import CommunitySignUpForm, SignInForm
+from .forms import CommunitySignUpForm, CompleteProfileForm, SignInForm
 from .models import Recommendation
 from apps.utils.views import get_referal_code
 
@@ -200,13 +202,8 @@ class ProfileView(View):
 
 class ProfileEditView(View):
     def get(self, request):
-        exist_user = CustomerUser.objects \
-            .filter(pk=request.user.id) \
-            .filter(is_active=True) \
-            .filter(is_community=True) \
-            .exists()
-        if exist_user:
-            form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
+        if request.user.is_community:
+            form = CustomerUserChangeForm(instance=request.user)
             return render(request, 'community/profile/edit_profile.html', {'form': form})
         else:
             return redirect('dashboard-community')
@@ -460,3 +457,12 @@ def change_password(request):
     return render(request, 'accounts/change_password.html', {
         'form': form
     })
+
+class CompleteProfileView(LoginRequiredMixin, UpdateView):
+    template_name = 'community/profile/complete_profile.html'
+    model = CustomerUser
+    form_class = CompleteProfileForm 
+
+    def get_object(self, *args, **kwargs):
+        return get_object_or_404(CustomerUser, id=self.request.user.id)
+

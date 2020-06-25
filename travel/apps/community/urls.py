@@ -6,6 +6,7 @@ from django.conf.urls import include, url
 
 from apps.community.views import (
     CommmunityView, 
+    CompleteProfileView,
     LoginCommunity, 
     signupCommunity,
     ForgetPasswordCommunity,
@@ -122,5 +123,11 @@ urlpatterns = [
     path('reset/password/', login_required(change_password), name='change_password'),
 
     path('search/', SearchResultsView.as_view(), name='search_results'),
+
+    path(
+        'user/complete/',
+        CompleteProfileView.as_view(),
+        name='user-complete-profile',
+    ),
 
 ]

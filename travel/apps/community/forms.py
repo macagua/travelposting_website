@@ -73,3 +73,13 @@ class SignInForm(forms.Form):
             },
         ),
     )
+
+
+class CompleteProfileForm(BaseBootstrapForm, forms.ModelForm):
+    class Meta:
+        model = CustomerUser
+        fields = (
+            'avatar',
+            'first_name',
+            'last_name',
+        )
