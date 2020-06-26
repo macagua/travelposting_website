@@ -492,8 +492,8 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 while CustomerUser.objects.filter(ref_code=coupon_code).exists():
                     counter =+ 1
                     coupon_code = campaign_ref_code + str(counter).zfill(len(str(settings.CAMPAIGN_COUPON_LIMIT)))
-                self.request.user.ref_code = coupon_code
-                self.request.user.save()
+                self.object.ref_code = coupon_code
+                self.object.save()
                 
                 # cover for campaign
                 Image1 = Image.open('main/static/img/campaign/front.png') 
@@ -508,7 +508,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 Image1copy.paste(Image2copy, (120, 110)) 
 
                 # save the image  
-                Image1copy.save('main/media/id_campaign/'+str(self.request.user.id)+'_front.png')
+                Image1copy.save('main/media/id_campaign/'+str(self.object.id)+'_front.png')
                 
                 #now we save the back file front
                 Image3 = Image.open('main/static/img/campaign/back.png') 
@@ -519,14 +519,12 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 #get ref_code fron user
                 ref_code = coupon_code.split('-')[2]
                 #get name and last name from user
-                first_name = self.request.POST['first_name']
-                last_name = self.request.POST['last_name']
-                nombre = first_name+' '+last_name 
+                nombre = self.object.get_full_name()
                 color = (0, 0, 0)
                 draw.text((240, 367), ref_code, font= font, fill = color)  
                 draw.text((540, 367), nombre, font= font, fill = color)
 
-                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'_back.png')
+                Image3.save('main/media/id_campaign/'+str(self.object.id)+'_back.png')
 
                 #end campaign
 
@@ -540,7 +538,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                     subject = _('Travelposting send a new import message'),
                     body = body,
                     from_email = settings.DEFAULT_FROM_EMAIL,
-                    to = [self.request.user.email,]
+                    to = [self.object.email,]
                 )
                 email_message.content_subtype = 'html'
                 email_message.attach_file('main/static/img/brasil.jpg')
