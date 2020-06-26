@@ -480,28 +480,28 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
             if count <= settings.CAMPAIGN_COUPON_LIMIT:
 
                 coupon_code = campaign_ref_code + str(count+1).zfill(len(str(settings.CAMPAIGN_COUPON_LIMIT)))
-            counter = count 
-            while CustomerUser.objects.filter(ref_code=coupon_code).exists():
-                counter =+ 1
-                coupon_code = campaign_ref_code + str(counter).zfill(len(settings.CAMPAIGN_COUPON_LIMIT))
-            self.request.user.ref_code = coupon_code
-            self.request.user.save()
+                counter = count 
+                while CustomerUser.objects.filter(ref_code=coupon_code).exists():
+                    counter =+ 1
+                    coupon_code = campaign_ref_code + str(counter).zfill(len(settings.CAMPAIGN_COUPON_LIMIT))
+                self.request.user.ref_code = coupon_code
+                self.request.user.save()
 
-            # This method is called when valid form data has been POSTed.
-            # It should return an HttpResponse.
-            body = render_to_string(
-                self.template_email, 
-                request=self.request
-            )
-            email_message = EmailMessage(
-                subject = _('Travelposting send a new import message'),
-                body = body,
-                from_email = settings.DEFAULT_FROM_EMAIL,
-                to = [self.request.user.email,]
-            )
-            email_message.content_subtype = 'html'
-            email_message.attach_file('main/static/img/brasil.jpg')
-            email_message.send()
+                # This method is called when valid form data has been POSTed.
+                # It should return an HttpResponse.
+                body = render_to_string(
+                    self.template_email, 
+                    request=self.request
+                )
+                email_message = EmailMessage(
+                    subject = _('Travelposting send a new import message'),
+                    body = body,
+                    from_email = settings.DEFAULT_FROM_EMAIL,
+                    to = [self.request.user.email,]
+                )
+                email_message.content_subtype = 'html'
+                email_message.attach_file('main/static/img/brasil.jpg')
+                email_message.send()
 
 
         return super().form_valid(form)
