@@ -139,6 +139,8 @@ django-hitcount = "*"
 django-yubin = "==1.6.0"
 pycountry = "==19.8.18"
 django-notify-x = "*"
+pyqrcode = "*"
+pypng = "*"
 
 [dev-packages]
 

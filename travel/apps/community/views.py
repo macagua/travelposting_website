@@ -35,6 +35,9 @@ from .forms import CommunitySignUpForm, CompleteProfileForm, SignInForm
 from .models import Recommendation
 from apps.utils.views import get_referal_code
 from PIL import Image, ImageDraw, ImageFont
+from pyqrcode import QRCode 
+import pyqrcode 
+import png 
 import os
 
 
@@ -493,7 +496,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 self.request.user.save()
                 
                 # cover for campaign
-                Image1 = Image.open('main/static/img/campaign/front.jpg') 
+                Image1 = Image.open('main/static/img/campaign/front.png') 
                 # make a copy the image so that the  
                 # original image does not get affected 
                 Image1copy = Image1.copy() 
@@ -505,10 +508,10 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 Image1copy.paste(Image2copy, (120, 110)) 
 
                 # save the image  
-                Image1copy.save('main/media/id_campaign/'+str(self.request.user.id)+'_front.jpg')
+                Image1copy.save('main/media/id_campaign/'+str(self.request.user.id)+'_front.png')
                 
                 #now we save the back file front
-                Image3 = Image.open('main/static/img/campaign/back.jpg') 
+                Image3 = Image.open('main/static/img/campaign/back.png') 
 
                 draw = ImageDraw.Draw(Image3)
                 #define font for text 
@@ -523,7 +526,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 draw.text((240, 367), ref_code, font= font, fill = color)  
                 draw.text((540, 367), nombre, font= font, fill = color)
 
-                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'_back.jpg')
+                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'_back.png')
 
                 #end campaign
 
