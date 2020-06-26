@@ -473,8 +473,8 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
         return get_object_or_404(CustomerUser, id=self.request.user.id)
 
     def form_valid(self, form ):
-        import ipdb; ipdb.set_trace()
         success = super().form_valid(form)
+        self.object.save()
         campaign_ref_code = settings.CAMPAIGN_REF_CODE if hasattr(settings, 'CAMPAIGN_REF_CODE') else 'TPCW-20'
 
         if self.request.user.user.referredBy.ref_code == campaign_ref_code and not self.request.user.ref_code.startswith('TPCW-'):
