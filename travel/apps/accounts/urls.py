@@ -91,4 +91,10 @@ urlpatterns = [
         views.CustomUserUpdateView.as_view(),
         name='user-update',
     ),
+
+    path(
+        'user/<int:pk>/update/',
+        views.CustomUserUpdateView.as_view(),
+        name='user-update',
+    ),
 ]

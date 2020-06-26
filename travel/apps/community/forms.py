@@ -73,3 +73,14 @@ class SignInForm(forms.Form):
             },
         ),
     )
+
+
+class CompleteProfileForm(BaseBootstrapForm, forms.ModelForm):
+    avatar = forms.ImageField(required=True)
+    class Meta:
+        model = CustomerUser
+        fields = (
+            'avatar',
+            'first_name',
+            'last_name',
+        )

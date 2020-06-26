@@ -64,9 +64,9 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     readonly_fields = ('subscription_id', 'last_ip', 'location')
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'last_ip', 'location', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'last_ip', 'location', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me', 'avatar')}),
         (_('Business info'), {'fields': ('business_name', 'business_address', 'business_position')}),
-        (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'is_community', 'subscription_id', 'groups')}),
+        (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'is_community', 'subscription_id', 'groups','ref_code')}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.

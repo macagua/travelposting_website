@@ -208,7 +208,7 @@
 							<div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
 								<a class="dropdown-item" href="{% url 'change_password'%}">{% trans 'Change Password'%}</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{% url 'logout-community' %}?next={% url 'index' %}">{% trans 'Sign Out' %}</a>
+								<a class="dropdown-item" href="{% url 'accounts:logout' %}?next={% url 'index' %}">{% trans 'Sign Out' %}</a>
 							</div>
 						</div>
 						<!-- End Settings -->
