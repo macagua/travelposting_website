@@ -523,8 +523,19 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 color = (0, 0, 0)
                 draw.text((240, 367), ref_code, font= font, fill = color)  
                 draw.text((540, 367), nombre, font= font, fill = color)
-
-                Image3.save('main/media/id_campaign/'+str(self.object.id)+'_back.png')
+                #generate qr 
+                # String which represents the QR code 
+                s = ""+nombre+", Code:"+coupon_code+", Website: https://travelposting.com/community/"
+                # Generate QR code 
+                url = pyqrcode.create(s) 
+                # Create and save the png file 
+                url.png('main/media/id_campaign/'+str(self.request.user.id)+'_qr.png', scale = 8) 
+                open_qr = Image.open('main/media/id_campaign/'+str(self.request.user.id)+'_qr.png')
+                n_open_qr = open_qr.resize((200, 200))
+                c_n_open_qr = n_open_qr.copy()
+                Image3.paste(c_n_open_qr, (730, 80)) 
+                #create the imag with text and qr
+                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'_back.png')
 
                 #end campaign
 
@@ -541,7 +552,9 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                     to = [self.object.email,]
                 )
                 email_message.content_subtype = 'html'
-                email_message.attach_file('main/static/img/brasil.jpg')
+                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'_front.png')
+                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'_back.png')
+
                 email_message.send()
 
         return success 
