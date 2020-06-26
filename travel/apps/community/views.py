@@ -510,7 +510,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 #now we save the back file front
                 Image3 = Image.open('main/static/img/campaign/back.jpg') 
 
-                draw = ImageDraw.Draw(Image1)
+                draw = ImageDraw.Draw(Image3)
                 #define font for text 
                 font = ImageFont.truetype('main/static/font/roboto/' + 'Roboto-Bold.ttf', size=24)
                 #get ref_code fron user
