@@ -24,6 +24,7 @@ from django.views.generic import (
 )
 
 from django_registration.backends.activation.views import RegistrationView
+
 from config.settings import local as settings
 
 from apps.accounts.models import Comment, Contact, CustomerUser
@@ -33,6 +34,9 @@ from apps.destinations.models import Destination
 from .forms import CommunitySignUpForm, CompleteProfileForm, SignInForm
 from .models import Recommendation
 from apps.utils.views import get_referal_code
+from PIL import Image, ImageDraw, ImageFont
+import os
+
 
 
 def ajax_required(f):
@@ -469,6 +473,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
         return get_object_or_404(CustomerUser, id=self.request.user.id)
 
     def form_valid(self, form ):
+        import ipdb; ipdb.set_trace()
         success = super().form_valid(form)
         campaign_ref_code = settings.CAMPAIGN_REF_CODE if hasattr(settings, 'CAMPAIGN_REF_CODE') else 'TPCW-20'
 
@@ -486,6 +491,41 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                     coupon_code = campaign_ref_code + str(counter).zfill(len(str(settings.CAMPAIGN_COUPON_LIMIT)))
                 self.request.user.ref_code = coupon_code
                 self.request.user.save()
+                
+                # cover for campaign
+                Image1 = Image.open('main/static/img/campaign/front.jpg') 
+                # make a copy the image so that the  
+                # original image does not get affected 
+                Image1copy = Image1.copy() 
+                #get the image from user
+                Image2 = Image.open(self.request.FILES['avatar']) 
+                new_image2 = Image2.resize((320, 320))
+                Image2copy = new_image2.copy()
+                # paste image giving dimensions 
+                Image1copy.paste(Image2copy, (120, 110)) 
+
+                # save the image  
+                Image1copy.save('main/media/id_campaign/'+str(self.request.user.id)+'_front.jpg')
+                
+                #now we save the back file front
+                Image3 = Image.open('main/static/img/campaign/back.jpg') 
+
+                draw = ImageDraw.Draw(Image1)
+                #define font for text 
+                font = ImageFont.truetype('main/static/font/roboto/' + 'Roboto-Bold.ttf', size=24)
+                #get ref_code fron user
+                ref_code = coupon_code.split('-')[2]
+                #get name and last name from user
+                first_name = self.request.POST['first_name']
+                last_name = self.request.POST['last_name']
+                nombre = first_name+' '+last_name 
+                color = (0, 0, 0)
+                draw.text((240, 367), ref_code, font= font, fill = color)  
+                draw.text((540, 367), nombre, font= font, fill = color)
+
+                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'_back.jpg')
+
+                #end campaign
 
                 # This method is called when valid form data has been POSTed.
                 # It should return an HttpResponse.
