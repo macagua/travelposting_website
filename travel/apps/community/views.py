@@ -508,7 +508,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 Image1copy.paste(Image2copy, (120, 110)) 
 
                 # save the image  
-                Image1copy.save('main/media/id_campaign/'+str(self.object.id)+'_front.png')
+                Image1copy.save('main/media/id_campaign/'+str(self.object.id)+'travelpostingCard_front.png')
                 
                 #now we save the back file front
                 Image3 = Image.open('main/static/img/campaign/back.png') 
@@ -535,7 +535,7 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 c_n_open_qr = n_open_qr.copy()
                 Image3.paste(c_n_open_qr, (730, 80)) 
                 #create the imag with text and qr
-                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'_back.png')
+                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'travelpostingCard_back.png')
 
                 #end campaign
 
@@ -552,8 +552,8 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                     to = [self.object.email,]
                 )
                 email_message.content_subtype = 'html'
-                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'_front.png')
-                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'_back.png')
+                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'travelpostingCard_front.png')
+                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'travelpostingCard_back.png')
 
                 email_message.send()
 
