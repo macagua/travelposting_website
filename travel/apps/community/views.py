@@ -536,7 +536,13 @@ class CompleteProfileView(LoginRequiredMixin, UpdateView):
                 Image3.paste(c_n_open_qr, (730, 80)) 
                 #create the imag with text and qr
                 Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'travelpostingCard_back.png')
-
+                
+                #sent message for telegram 
+                from telepot.text import apply_entities_as_markdown, apply_entities_as_html
+                referidos = Referral.objects.filter(referredBy__ref_code='TPCW-20',).exclude(user__first_name=None, user__avatar=None).count()
+                settings.BOT.sendMessage(-448346471,
+                                    '*Hallo, Se ha registrado un nuevo usuario en la Comunidad:* '+str(self.request.user.email)+', *Total inscritos:* '+str(referidos)+'                               *Manda Guarapo Nilo...*',
+                                    parse_mode='Markdown')
                 #end campaign
 
                 # This method is called when valid form data has been POSTed.

@@ -1,5 +1,6 @@
 import os  # isort:skip
 import environ
+import telepot
 from django.utils.translation import gettext_lazy as _
 
 gettext = lambda s: s
@@ -452,3 +453,5 @@ MAP_WIDGETS = {
 
 CAMPAIGN_COUPON_PREFIX = 'TPCW-20'
 CAMPAIGN_COUPON_LIMIT = 10000
+
+BOT = telepot.Bot('806633169:AAFouKIb9-QwJvGnLz6eIjO3rDBLB4HT78M')
