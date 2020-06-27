@@ -141,6 +141,7 @@ pycountry = "==19.8.18"
 django-notify-x = "*"
 pyqrcode = "*"
 pypng = "*"
+telepot = "*"
 
 [dev-packages]
 
