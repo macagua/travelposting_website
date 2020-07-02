@@ -24,7 +24,7 @@ class Recommendation(models.Model):
     recommendation = models.TextField(
         blank=True,
         null=True,
-        help_text=_("Would you recommend this trip again? "),
+        help_text=_("Would you recommend this trip again?"),
     )
 
     recommendation2 = models.TextField(

@@ -4,9 +4,9 @@
         <div class="row justify-content-lg-start mb-7">
             <div class="col-sm-9 col-lg-5 mb-5">
                 <!-- Logo -->
-                <a class="d-inline-flex align-items-center mb-3" href="/" aria-label="Travelposting">
+                <a class="d-inline-flex align-items-center mb-3" href="/" aria-label="{% trans 'Travelposting' %}">
 
-                    <span class="brand brand-light">Travelposting</span>
+                    <span class="brand brand-light">{% trans 'Travelposting' %}</span>
                 </a>
                 <!-- End Logo -->
                 <p class="small text-white-70" style="text-align: justify; text-justify: inter-word;">
@@ -17,7 +17,7 @@
                 </p>
                 <hr>    
                 <p class="small text-white-70" style="text-align: justify; text-justify: inter-word;">
-                    <b>Tourist warning.</b>
+                    <b>{% trans 'Tourist warning.' %}</b>
                     {% blocktrans %}
                     In development of the provisions of article 17 of Law 679 of 2001, the Agency warns the tourist that the exploitation and sexual abuse of minors in the country are criminally and administratively sanctioned, in accordance with current laws.
                     {% endblocktrans %}
@@ -44,7 +44,7 @@
             <!-- End Currency converter -->
 
             <div class="col-6 col-sm-4 col-lg-2 ml-lg-auto mb-2">
-                <h3 class="h6 text-white">Travelaposting</h3>
+                <h3 class="h6 text-white">{% trans 'Travelposting' %}</h3>
                 <!-- List Group -->
                 <ul class="list-group list-group-transparent list-group-white list-group-flush list-group-borderless mb-0">
                     {% show_menu 0 100 100 100 "menu/menu_footer.html" %}
@@ -131,7 +131,7 @@
                         <a class="list-group-item-action font-size-1 text-white-70 " href="/policy/">{% trans 'Use policies' %}</a>
                     </li>
                 </ul> <br>
-                <p class="small text-white-70 mb-0">&copy; Travelposting 2020 All Rights Reserved Site Map Disclaimer.</p>
+                <p class="small text-white-70 mb-0">&copy; {% trans 'Travelposting 2020 All Rights Reserved Site Map Disclaimer.' %}</p>
 
                 <!-- End Copyright -->
             </div>

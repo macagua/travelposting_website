@@ -4,19 +4,19 @@
       action="{% url 'destinations:delete' object.pk %}">{% csrf_token %}
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal"><span
-        aria-hidden="true">×</span><span class="sr-only">{% trans 'Cerrar' %}</span></button>
+        aria-hidden="true">×</span><span class="sr-only">{% trans 'Close' %}</span></button>
     <h4 class="modal-title">{{ object }}</h4>
-    <!-- <small class="font-bold">Eliminar este contrato</small> -->
+    <!-- <small class="font-bold">Delete this contract</small> -->
   </div>
   <div class="modal-body">
     <p>
       {% blocktrans %}
-        ¿Está seguro de elimnar el destino {{ object }}?
+        Are you sure you want to delete the destination {{ object }}?
       {% endblocktrans %}
     </p>
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-danger">{% trans 'Eliminar' %}</button>
-    <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'Cerrar' %}</button>
+    <button type="submit" class="btn btn-danger">{% trans 'Delete' %}</button>
+    <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'Close' %}</button>
   </div>
 </form>

@@ -13,7 +13,7 @@
 {% if request.user.is_authenticated == True %}
 <br><br><br><br>
 
-{% include 'community/dashboard/breadcrumb.html'%}
+{% include 'community/dashboard/breadcrumb.html' %}
 
 {% endif %}
 
@@ -48,10 +48,10 @@
                             <a class="nav-link font-weight-medium active" id="pills-one-example2-tab" data-toggle="pill" href="#pills-one-example2" role="tab" aria-controls="pills-one-example2" aria-selected="true">
                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
                                     <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                                        <img class="js-svg-injector" src="{% static "img/destinies/images-regular.svg"%}" alt="SVG"
+                                        <img class="js-svg-injector" src='{% static "img/destinies/images-regular.svg" %}' alt="{% trans 'SVG' %}"
                                         data-parent="#SVGnavIcons">
                                     </figure>
-                                    {%trans "Photos"%}
+                                    {% trans "Photos" %}
                                 </div>
                             </a>
                         </li>
@@ -59,10 +59,10 @@
                             <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false">
                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
                                     <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                                        <img class="js-svg-injector" src="{% static "img/destinies/readme-brands.svg"%}" alt="SVG"
+                                        <img class="js-svg-injector" src='{% static "img/destinies/readme-brands.svg" %}' alt="{% trans 'SVG' %}"
                                         data-parent="#SVGnavIcons">
                                     </figure>
-                                    {% trans "Detail"%}
+                                    {% trans "Detail" %}
                                 </div>
                             </a>
                         </li>
@@ -70,10 +70,10 @@
                             <a class="nav-link font-weight-medium" id="pills-three-example2-tab" data-toggle="pill" href="#pills-three-example2" role="tab" aria-controls="pills-three-example2" aria-selected="false">
                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
                                     <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                                        <img class="js-svg-injector" src="{% static "img/destinies/map-marked-alt-solid.svg"%}" alt="SVG"
+                                        <img class="js-svg-injector" src='{% static "img/destinies/map-marked-alt-solid.svg" %}' alt="{% trans 'SVG' %}"
                                         data-parent="#SVGnavIcons">
                                     </figure>
-                                    {% trans "Map"%}
+                                    {% trans "Map" %}
                                 </div>
                             </a>
                         </li>
@@ -281,7 +281,7 @@
                         <small class="fas fa-star"></small>
                         <small class="fas fa-star"></small>
                     </div>
-                    <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes"%}</span>
+                    <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes" %}</span>
                 </a>
             </div>
             {% if destino.itinerario2 %}
@@ -340,7 +340,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="BookModalLabel">{% trans "Let us your comment" %}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -354,16 +354,16 @@
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">{%trans "Title"%}</span>
+                            <span class="input-group-text">{% trans "Title" %}</span>
                         </div>
-                        <input type="text" class="form-control" required name="name" placeholder="{% trans 'Title' %}" aria-label="Amount (to the nearest dollar)">
+                        <input type="text" class="form-control" required name="name" placeholder="{% trans 'Title' %}" aria-label="{% trans 'Amount (to the nearest dollar)' %}">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">{% trans "Body" %}</span>
                         </div>
-                        <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message"%}' aria-label="With textarea"></textarea>
+                        <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message" %}' aria-label="With textarea"></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
@@ -380,7 +380,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="BookModalLabel">{% trans 'Book your destination!' %}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -402,7 +402,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required name="name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name'%}">
+                            <input type="text" maxlength="50" class="form-control" required name="name" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name' %}">
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -410,7 +410,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required name="last_name" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
+                            <input type="text" maxlength="50" class="form-control" required name="last_name" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
                         </div>
                     </div>
                 </div>
@@ -420,7 +420,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control"  required name="cellphone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789'%}">
+                            <input type="text" maxlength="50" class="form-control"  required name="cellphone" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789' %}">
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -428,7 +428,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
                             </div>
-                            <input id="mail" type="email" maxlength="100" class="form-control" required name="mail" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
+                            <input id="mail" type="email" maxlength="100" class="form-control" required name="mail" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
                         </div>
                     </div>
                 </div>
@@ -438,7 +438,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
                             </div>
-                            <input type="text" maxlength="2" class="form-control" required name="people_travel" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling'%}">
+                            <input type="text" maxlength="2" class="form-control" required name="people_travel" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling' %}">
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -446,7 +446,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" name="destination"  aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
+                            <input type="text" maxlength="50" class="form-control" name="destination"  aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 {% extends 'destinations/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'Tokens Autorizados' %}{% endblock %}
+{% block title %}{% trans 'Authorized Tokens' %}{% endblock %}
 
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
@@ -20,7 +20,7 @@
                         {{ authorized_token.application }}
                         (<a data-toggle="modal" data-target="#modal"
                             href="{% url 'oauth2-authorized-token-revoke' authorized_token.pk %}">
-                          {% trans 'revocar' %}
+                          {% trans 'revoke' %}
                       </a>)
                       </li>
                       <ul>
@@ -29,7 +29,7 @@
                         {% endfor %}
                       </ul>
                     {% empty %}
-                      <li>{% trans 'No hay ningún token autorizado' %}.</li>
+                      <li>{% trans 'There is no authorized token' %}.</li>
                     {% endfor %}
                   </ul>
                 </div>

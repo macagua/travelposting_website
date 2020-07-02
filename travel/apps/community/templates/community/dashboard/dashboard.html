@@ -2,14 +2,14 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% load mathfilters %}
 {% load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
 <br><br><br><br>
 <main id="content" role="main">
-    {% include 'community/dashboard/breadcrumb.html'%}
+    {% include 'community/dashboard/breadcrumb.html' %}
 
     <!-- Content Section -->
     <div class="bg-light">
@@ -43,7 +43,7 @@
                                 <div class="media-body">
                                     <span class="d-block font-size-2" style="color: black;">{{ destination.count }}
                                         {% trans "Registered" %}</span>
-                                    <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "See destinations"%}
+                                    <h3 class="h6 text-secondary font-weight-normal mb-0">{% trans "See destinations" %}
                                     </h3>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                         <form class="js-validate js-form-message w-lg-85 mx-lg-auto"  action="{% url 'search_results' %}" method="get">
                             <div class="input-group input-group-pill">
                                 <input type="text" class="form-control" name="q"
-                                    placeholder="{% trans 'Search our community members'%}" aria-label="Email address"
+                                    placeholder="{% trans 'Search our community members' %}" aria-label="{% trans 'Email address' %}"
                                     aria-describedby="subscribeButton" required="">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary btn-sm-wide" id="subscribeButton"> <i
@@ -85,7 +85,7 @@
                             </div>
                         </form>
                         <div class="text-center mb-4">
-                            <p>{% trans "You can search by first name, last name or email"%}</p>
+                            <p>{% trans "You can search by first name, last name or email" %}</p>
                         </div>
                         <!-- End Subscribe Form -->
                     </div>
@@ -110,7 +110,7 @@
                 <div class="col-sm-8 col-md-6 text-sm-right">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
-                            <a class="btn btn-sm btn-soft-primary active" href="{% url 'dashboard-community'%}">
+                            <a class="btn btn-sm btn-soft-primary active" href="{% url 'dashboard-community' %}">
                                 <span class="fas fa-th-large"></span>
                             </a>
                         </li>
@@ -132,7 +132,7 @@
                                         {% if user.avatar %}
                                         <img src="/main/media/{{ user.avatar }}" class="rounded-circle" height="125" />
                                         {% else %}
-                                        <img src="{% static 'img/user.png'%}" width="80" class="img-responsive"
+                                        <img src="{% static 'img/user.png' %}" width="80" class="img-responsive"
                                             alt="Actualize su foto de Perfil" />
                                         {% endif %}
                                         <span
@@ -140,7 +140,7 @@
                                     </div>
                                     <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle m-3"
                                         href="javascript:;" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Add to favorites">
+                                        data-original-title="{% trans 'Add to favorites' %}">
                                         <span class="far fa-star btn-icon__inner"></span>
                                     </a>
                                     <h2 class="h6 mb-0">
@@ -194,9 +194,9 @@
                                 <button class="follow btn btn-sm btn-soft-primary transition-3d-hover">
                                     <span class="fa fa-plus mr-2"></span>
                                     {% if request.user not in user.followers.all %}
-                                    Follow
+                                    {% trans "Follow" %}
                                     {% else %}
-                                    Unfollow
+                                    {% trans "Unfollow" %}
                                     {% endif %}
                                 </button>
                             </form>
@@ -215,7 +215,7 @@
                         <a href="?page=1"><span class="page-link">
                                 << </span> </a> </li> <li class="page-item disabled">
                                     <a href="?page={{ posts.previous_page_number }}"><span
-                                            class="page-link">Previous</span></a>
+                                            class="page-link">{% trans "Previous" %}</span></a>
                     </li>
                     {% endif %}
                     {% for num in members.paginator.page_range %}

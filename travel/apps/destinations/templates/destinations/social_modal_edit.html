@@ -5,7 +5,7 @@
     <div class="modal-content animated bounceInRight">
     <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">{% trans "Edit configurations social network" %}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -15,8 +15,8 @@
                 {% csrf_token %}
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label class="font-normal">{% trans "Destiny"%}</label>
-                        <select data-placeholder="{% trans "Choose a Destiny..."%}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
+                        <label class="font-normal">{% trans "Destiny" %}</label>
+                        <select data-placeholder="{% trans 'Choose a Destiny...' %}" class="chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
                             {% for destiny in destinos %}
                                 <option value="{{ destiny.id }}">
                                     {{ destiny.name }}
@@ -36,7 +36,7 @@
                                 <label class="font-normal">
                                     Facebook
                                 </label>
-                                <input type="text" name="facebook" class="form-control" placeholder="https://facebook.com/youruser" maxlength="200" >
+                                <input type="text" name="facebook" class="form-control" placeholder="{% trans 'https://facebook.com/youruser' %}" maxlength="200" >
                             </div>
                     </div>
                     <div class="col-md-12">
@@ -44,7 +44,7 @@
                                 <label class="font-normal">
                                     Instagram
                                 </label>
-                                <input type="text" name="instagram" class="form-control" placeholder="https://instagram.com/youruser" maxlength="200" >
+                                <input type="text" name="instagram" class="form-control" placeholder="{% trans 'https://instagram.com/youruser' %}" maxlength="200" >
                             </div>
                     </div>
                     <div class="col-md-12">
@@ -52,7 +52,7 @@
                                 <label class="font-normal">
                                     Twitter
                                 </label>
-                                <input type="text" name="twitter" class="form-control" placeholder="https://twitter.com/youruser" maxlength="200">
+                                <input type="text" name="twitter" class="form-control" placeholder="{% trans 'https://twitter.com/youruser' %}" maxlength="200">
                             </div>
                     </div>
                     <div class="col-md-12">
@@ -60,11 +60,11 @@
                                 <label class="font-normal">
                                     Linkedin
                                 </label>
-                                <input type="text" name="linkedin" class="form-control" placeholder="https://linkedin.com/youruser" maxlength="200">
+                                <input type="text" name="linkedin" class="form-control" placeholder="{% trans 'https://linkedin.com/youruser' %}" maxlength="200">
                             </div>
                     </div>
                 </div>
-                <button id="create_itinerary" class="btn btn-success pull-right" type="submit">{% trans "create social network configuration"%}</button>
+                <button id="create_itinerary" class="btn btn-success pull-right" type="submit">{% trans "create social network configuration" %}</button>
                 <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
             </form>
@@ -72,4 +72,3 @@
     </div>
   </div>
 </div>
-

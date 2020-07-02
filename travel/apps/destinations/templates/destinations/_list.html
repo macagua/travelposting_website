@@ -2,7 +2,7 @@
 
 {% extends 'destinations/base.html' %}
 {% load static i18n %}
-{% block title %}{% trans 'Lista de Destinos' %}{% endblock %}
+{% block title %}{% trans 'Destination List' %}{% endblock %}
 {% block extracss%}
 <link href="{% static 'dashboard/css/plugins/dataTables/datatables.min.css' %}" rel="stylesheet">
 <style>
@@ -16,13 +16,13 @@
 {% include 'destinations/navbar_top.html' %}
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-10">
-      <h3>{% trans "Destinations List"%}</h3>
+      <h3>{% trans "Destinations List" %}</h3>
       <ol class="breadcrumb">
           <li class="breadcrumb-item">
-              <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home" %}</a>
+              <a href="{% url 'dashboard:dashboard-index' %}">{% trans "Home" %}</a>
           </li>
           <li class="breadcrumb-item active">
-              <strong>{% trans "Destinations List"%}</strong>
+              <strong>{% trans "Destinations List" %}</strong>
           </li>
       </ol>
   </div>
@@ -32,7 +32,7 @@
       <div class="col-lg-12">
           <div class="ibox ">
               <div class="ibox-title">
-                  <a id="create_map" class="btn btn-success" href="{% url 'destinations:create' %}">{% trans 'Registrar destino' %}</a>
+                  <a id="create_map" class="btn btn-success" href="{% url 'destinations:create' %}">{% trans 'Register destination' %}</a>
 
                   <div class="ibox-tools">
                     
@@ -51,10 +51,10 @@
                     <thead>
                         <tr>
                             <th data-filter="false"></th>
-                            <th>{% trans "Destination's name"%}</th>
+                            <th>{% trans "Destination's name" %}</th>
                             <th>SKU</th>
-                            <th>{% trans "Quantity Available"%}</th>
-                            <th data-type="number">{% trans "Sale Price"%}</th>
+                            <th>{% trans "Quantity Available" %}</th>
+                            <th data-type="number">{% trans "Sale Price" %}</th>
                             <th data-filter="false"></th>
                             <th data-filter="false"></th>
                         </tr>
@@ -70,7 +70,7 @@
                         <td>
                           {% if object.details.inventario.quantity %}
                             <p>
-                              <span class="text-navy">{% trans 'Hay existencia' %}</span>
+                              <span class="text-navy">{% trans 'There is existence' %}</span>
                               <span>({{ object.details.inventario.quantity }})</span>
                             </p>
                           {% endif %}
@@ -86,7 +86,7 @@
                         <td>
                             <a class="btn btn-success btn-sm" href="{% url 'destinations:gallery-list' object.pk %}">
                                 <i class="fa fa-photo"></i>
-                                {% trans 'Galería' %}
+                                {% trans 'Gallery' %}
                             </a>
                         </td>
                         <td>
@@ -116,9 +116,9 @@
             var title = $(this).text();
             if ($(this).data('filter') != false ){
                 if ($(this).data('type')=='number'){
-                    $(this).html( '<input class="form-control" type="number" placeholder="Busca '+title+'" />' );
+                    $(this).html( '<input class="form-control" type="number" placeholder="{% trans 'Search' %} '+title+'" />' );
                 }else{
-                    $(this).html( '<input class="form-control" type="text" placeholder="Busca '+title+'" />' );
+                    $(this).html( '<input class="form-control" type="text" placeholder="{% trans 'Search' %} '+title+'" />' );
                 }
             }
 
@@ -160,8 +160,8 @@
     function delete_destination(pk_i){
       const destination_idk = pk_i;
       swal({
-          title: "{% trans "Are you sure?" %}",
-          text: "{% trans "If you delete this itinerary you will not be able to recover it" %}",
+          title: "{% trans 'Are you sure?' %}",
+          text: "{% trans 'If you delete this itinerary you will not be able to recover it' %}",
           type: "warning",
           showCancelButton: true,
           confirmButtonColor: "#DD6B55",
@@ -175,7 +175,7 @@
                   xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
               },
               success: function (request) {
-                swal("Deleted!", "{% trans 'Destination has been deleted.' %}", "success");
+                swal("{% trans 'Deleted!' %}", "{% trans 'Destination has been deleted.' %}", "success");
                 setTimeout(function(){
                     window.location.href = "{% url 'destinations:list' %}";
                 }, 2000);
@@ -186,4 +186,3 @@
 </script>
 <script type="text/javascript" src="{% static 'destinations/js/modal.js' %}"></script>
 {% endblock %}
-

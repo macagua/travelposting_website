@@ -10,7 +10,7 @@ class CommunitySignUpForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationFo
     referal = forms.CharField(
             required=True,
             label=_("Referred by"),
-            help_text=_("Enter the referal code ."),
+            help_text=_("Enter the referal code."),
     )
 
     password1 = forms.CharField(

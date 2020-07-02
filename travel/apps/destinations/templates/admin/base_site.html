@@ -1,16 +1,17 @@
 {% extends 'admin/base.html' %}
+{% load i18n%}
 
-{% block title %}{{ title }} | Travel & Solutions{% endblock %}
+{% block title %}{{ title }} | {% trans "Travel & Solutions" %}{% endblock %}
 
 {% block branding %}
-  <h1 id="site-name">Travel & Solutions</h1>
+  <h1 id="site-name">{% trans "Travel & Solutions" %}</h1>
 {% endblock %}
 
 {% block nav-global %}
   <a class="sidebar-link icon" href="https://travelposting.com">
     <span class="sidebar-link-label">
       <span class="sidebar-link-icon icon-open-external"></span>
-      TravelPosting
+      {% trans "TravelPosting" %}
     </span>
   </a>
 {% endblock %}

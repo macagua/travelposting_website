@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>TRAVELPOSTING</title>
+        <title>{% trans 'TRAVELPOSTING' %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
             .ReadMsgBody {width: 100%; background-color: #ffffff;}
@@ -52,7 +52,7 @@
                                                 <div style="text-align: center; max-width: 150px; width: 100%;">
                                                     <span>&nbsp;</span>
                                                     <a href="https://www.facebook.com/travelposting" target="_blank" border="0" style="border: none; outline: none; text-decoration: none; line-height: 60px; color: #ffffff; font-family: Verdana, Geneva, sans-serif;  -webkit-text-size-adjust:none">
-                                                    <img src="https://github.com/lime7/responsive-html-template/blob/master/index/f.png?raw=true" alt="facebook.com" border="0" width="11" height="23" style="border: none; outline: none; -ms-interpolation-mode: bicubic;">
+                                                    <img src="https://github.com/lime7/responsive-html-template/blob/master/index/f.png?raw=true" alt="{% trans 'facebook.com' %}" border="0" width="11" height="23" style="border: none; outline: none; -ms-interpolation-mode: bicubic;">
                                                     </a>
                                                     <span>&nbsp;</span>
                                                 </div>
@@ -81,31 +81,41 @@
                                 </table>
                                 <!-- End Start Section -->
                                 <div style="width: 90%; line-height: 20px; color: #727272; font-family: Verdana, Geneva, sans-serif; font-size: 16px; text-align: justify; overflow: hidden; margin: 10px 0; mso-table-lspace:0;mso-table-rspace:0;">
-                                    Sabemos que para cambiar el curso de las cosas, se necesitan mas que palabras, por tal motivo estamos orgullosos de poder contar contigo y que juntos comencemos a transformar el mundo de los viajes en algo mucho mas positivo y atractivo para todos.
+                                    {% blocktrans %}
+                                    We know that to change the course of things, more than words are needed, for that reason we are proud to be able to count on you and that together we begin to transform the world of travel into something much more positive and attractive for everyone.
+                                    {% endblocktrans%}
                                     <br><br>
-                                    Ahora que eres miembro oficial de Travelposting y que estas como nosotros dentro de está nueva aventura, te recordamos todo lo que estas por obtener y disfrutar con tu tarjeta TravelpostingCard.
+                                    {% blocktrans %}
+                                    Now that you are an official member of Travelposting and you are like us in this new adventure, we remind you all that you are about to get and enjoy with your TravelpostingCard.
+                                    {% endblocktrans%}
                                     <br><br>
                                     <ul>
-                                        <li>1) Costear el costo de la membresía anual que tiene un valor de <b>99,99 €</b> </li>
-                                        <li> 2) Obtendrás 50,00 € en un cupo de Bienvenida el cual podrás canjear en tu primera compra vacacional en <a href="https://travelposting.com">Travelposting</a> </li>
-                                        <li> 3) Además recibes un código descuento del 20 % durante los primeros 20 meses o los primeros 20 viajes que hagas con cualquiera de nuestras agencias afiliadas a travelposting.com 
-                                            (Por favor toma en cuenta ésta única excepción es el primer viaje, en este puedes decidir si usas los 50 € o el 20% de descuento) 
+                                        <li>{% trans "1) Cost the cost of the annual membership which has a value of <b>€ 99.99</b>." %} </li>
+                                        <li>{% trans "2) You will get € 50.00 in a welcome pack which you can redeem on your first holiday purchase at" %} <a href="https://travelposting.com">{% trans "Travelposting" %}</a>. </li>
+                                        <li>{% trans "3) You also receive a 20% discount code for the first 20 months or the first 20 trips you make with any of our travelposting.com affiliated agencies 
+                                            (Please note this one exception is the first trip, on this one you can decide whether to use the 50 Euro or the 20% discount)." %}
                                         </li>
                                     </ul>
                                     <br><br>
-                                    Al igual te dejamos los datos para que puedas hacer tu aporte económico de tan solo € 25,00 tal como te lo comentamos en nuestra presentación.
+                                    {% blocktrans %}
+                                    We also leave you the data so that you can make your economic contribution of only € 25.00 as we discussed in our presentation.
+                                    {% endblocktrans%}
                                     <br><br>
-                                    Estimado usuario, con la activación de este email, recibirás la TravelpostingCard, es una tarjeta digital que te autorizara a obtener diferentes beneficios entre ellos bonos de descuentos que solo reciben nuestros usuarios, por tal motivo te pedimos coloques tu foto de perfil ya que las cartas que tengan algún otro tipo de graficas como; logos, memes, etc, serán desactivadas y perderás tu descuentos, ya que las cartas se crean una sola vez por nuestro sistema automático.
+                                    {% blocktrans %}
+                                    Dear user, with the activation of this e-mail, you will receive the TravelpostingCard, it is a digital card that will authorize you to obtain different benefits among them discount bonuses that only our users receive, for that reason we ask you to place your profile photo since the cards that have some other type of graphics like; logos, memes, etc, will be deactivated and you will lose your discount, since the cards are created only once by our automatic system.
+                                    {% endblocktrans%}
                                     <br><br>
-                                    Desde ya te deseamos muchos buenos viajes con travelposting y sus agencias afiliadas y te recordamos que como parte de la comunidad estas en todo el derecho de consultarnos cualquier duda que tengas sobre el funcionamiento de la comunidad y de la plataforma.
+                                    {% blocktrans %}
+                                    We wish you many good trips with travelposting and its affiliated agencies and we remind you that as part of the community you have the right to ask us any questions you may have about the operation of the community and the platform.
+                                    {% endblocktrans%}
                                     <br><br>
-                                    Saludos Cordiales de todo el equipo de Travelposting
+                                    {% trans "Best regards from the entire Travelposting team" %}
                                     <br><br>
-                                    <b>Empresa:</b>
+                                    <b>{% trans "Company:" %}</b>
                                     <b>Travelposting UG</b><br>
-                                    <b>IBAN:</b> DE66 2004 0000 0888 8901 00<br>
-                                    <b>BIC:</b> COBADEFFXXX<br>
-                                    <b>Paypal:</b> info@travelposting.com
+                                    <b><abbr title="{% trans 'International Bank Account Number' %}">{% trans "IBAN:" %}</abbr></b> DE66 2004 0000 0888 8901 00<br>
+                                    <b><abbr title="{% trans 'Bank Identifier Code' %}">{% trans "BIC:" %}</abbr></b> COBADEFFXXX<br>
+                                    <b>{% trans "Paypal:" %}</b> info@travelposting.com
                                 </div>
                                 <!-- Icon articles (4 columns) -->
                                 <table id="icon__article" class="device" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center" style="width: 100%; padding: 0; margin: 0; background-color: #ffffff">
@@ -150,7 +160,7 @@
                                                                             <td width="20" style="width:4%;"></td>
                                                                             <td align="left">
                                                                                 <div border="0" style="border: none; line-height: 18px; color: #212121; font-family: Verdana, Geneva, sans-serif; font-size: 20px;">
-                                                                                    ¿Travelposting?
+                                                                                    {% trans "" %}Travelposting?
                                                                                 </div>
                                                                             </td>
                                                                             <td width="20" style="width:4%;"></td>
@@ -196,7 +206,7 @@
                                                         <tr>
                                                             <td align="center">
                                                                 <div border="0" style="border: none; line-height: 14px; color: #727272; font-family: Verdana, Geneva, sans-serif; font-size: 16px;">
-                                                                    2020 © <a href="https://travelposting.com" target="_blank" border="0" style="border: none; outline: none; text-decoration: none; line-height: 14px; font-size: 16px; color: #727272; font-family: Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none;">Travelposting</a>
+                                                                    2020 © <a href="https://travelposting.com" target="_blank" border="0" style="border: none; outline: none; text-decoration: none; line-height: 14px; font-size: 16px; color: #727272; font-family: Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none;">{% trans "Travelposting" %}</a>
                                                                 </div>
                                                             </td>
                                                         </tr>

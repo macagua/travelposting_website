@@ -1,7 +1,7 @@
 {% extends 'destinations/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'Aplicaciones Autorizadas' %}{% endblock %}
+{% block title %}{% trans 'Authorized Applications' %}{% endblock %}
 
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
@@ -13,7 +13,7 @@
             <div class="ibox">
               <div class="ibox-content">
                 <div class="block-center">
-                  <h3 class="block-center-heading">{% trans 'Tus aplicaciones registradas' %}</h3>
+                  <h3 class="block-center-heading">{% trans 'Your registered applications' %}</h3>
                   {% if applications %}
                     <ul>
                       {% for application in applications %}
@@ -21,13 +21,13 @@
                         </li>
                       {% endfor %}
                       <a class="btn btn-primary"
-                         href="{% url 'oauth2-application-create' %}">{% trans 'Registrar aplicación' %}</a>
+                         href="{% url 'oauth2-application-create' %}">{% trans 'Register application' %}</a>
                     </ul>
                   {% else %}
                     <p>
-                      {% trans 'Sin aplicaciones registradas' %}.
-                      <a href="{% url 'oauth2-application-create' %}">{% trans 'Presiona aquí' %}</a>
-                      {% trans 'si quieres registrar una aplicación' %}.
+                      {% trans 'No registered applications' %}.
+                      <a href="{% url 'oauth2-application-create' %}">{% trans 'Click here' %}</a>
+                      {% trans 'if you want to register an application' %}.
                     </p>
                   {% endif %}
                 </div>

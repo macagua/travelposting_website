@@ -32,7 +32,7 @@
 
                     <!-- Helpful -->
                     <div class="font-size-1">
-                        <span>{% trans 'Was this helpful?'%}</span>
+                        <span>{% trans 'Was this helpful?' %}</span>
                         
                         <span class="ml-2">
                             <a class="" href="javascript:;" id="safe_heart"><i class="far fa-heart"></i></a>
@@ -48,7 +48,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="BookModalLabel">{% trans "Let us your comment" %}</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -65,18 +65,18 @@
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text">{%trans "Title"%}</span>
+                                                        <span class="input-group-text">{% trans "Title" %}</span>
                                                     </div>
                                                     <input type="text" readonly class="form-control" required name="name" value="Rw: {{comment.name }}"placeholder="{% trans 'Title' %}"
-                                                        aria-label="Amount (to the nearest dollar)">
+                                                        aria-label="{% trans 'Amount (to the nearest dollar)' %}">
                                                 </div>
 
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">{% trans "Body" %}</span>
                                                     </div>
-                                                    <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message"%}'
-                                                        aria-label="With textarea"></textarea>
+                                                    <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message" %}'
+                                                        aria-label="{% trans 'With textarea' %}"></textarea>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -99,9 +99,9 @@
                 {% endfor %}
 
                 <div class="d-sm-flex justify-content-sm-end">
-                    <a class="btn btn-soft-primary btn-pill transition-3d-hover px-5 mb-2 mr-3" href="#">Read More</a>
-                    <button type="button" class="btn btn-primary btn-pill transition-3d-hover px-5 mb-2">Write a
-                        Review</button>
+                    <a class="btn btn-soft-primary btn-pill transition-3d-hover px-5 mb-2 mr-3" href="#">{% trans "Read More" %}</a>
+                    <button type="button" class="btn btn-primary btn-pill transition-3d-hover px-5 mb-2">{% trans "Write a
+                        Review" %}</button>
                 </div>
             </div>
         </div>

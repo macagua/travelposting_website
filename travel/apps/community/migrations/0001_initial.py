@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             name='Recommendation',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('recommendation', models.TextField(blank=True, help_text='Would you recommend this trip again? ', null=True)),
+                ('recommendation', models.TextField(blank=True, help_text='Would you recommend this trip again?', null=True)),
                 ('recommendation2', models.TextField(blank=True, help_text='Do you think we should get better?', null=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),

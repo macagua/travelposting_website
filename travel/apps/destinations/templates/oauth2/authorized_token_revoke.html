@@ -4,19 +4,20 @@
       action="{% url 'oauth2-authorized-token-revoke' object.pk %}">{% csrf_token %}
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal"><span
-        aria-hidden="true">×</span><span class="sr-only">{% trans 'Cerrar' %}</span></button>
-    <h4 class="modal-title">{% blocktrans %}Token de {{ object.application }}{% endblocktrans %}</h4>
-    {#    <small class="font-bold">Eliminar este contrato</small>#}
+        aria-hidden="true">×</span><span class="sr-only">{% trans 'Close' %}</span></button>
+    <h4 class="modal-title">{% blocktrans %}Token of {{ object.application }}{% endblocktrans %}</h4>
+    {#    <small class="font-bold">Delete this contract</small>#}
   </div>
   <div class="modal-body">
     <p>
       {% blocktrans %}
-        ¿Está seguro de revocar el acceso del token de {{ object.application }}?</p>
+        Are you sure you want to revoke the access of the {{ object.application }} token?
       {% endblocktrans %}
+    </p>
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-danger">{% trans 'Eliminar' %}</button>
-    <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'Cerrar' %}
+    <button type="submit" class="btn btn-danger">{% trans 'Delete' %}</button>
+    <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'Close' %}
     </button>
   </div>
 </form>

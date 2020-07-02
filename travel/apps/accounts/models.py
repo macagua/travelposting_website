@@ -14,13 +14,13 @@ import uuid
 
 
 DEGRE_CHOICES = (
-    ('sra', _('Sra.')),
-    ('sr', _('Sr.')),
+    ('sra', _('Mrs.')),
+    ('sr', _('Mr.')),
     ('divers', _('Divers')),
     ('dr', _('Dr.')),
     ('prof', _('Prof.')),
     ('lic', _('Lic.')),
-    ('agrupacion', _('Agrupación')),
+    ('agrupacion', _('Grouping')),
     ('prof-dr', _('Prof. Dr.'))
 )
 
@@ -92,55 +92,55 @@ class CustomerUser(AbstractUser):
     )
 
     business_name = models.CharField(
-        _("Nombre de la empresa"),
+        _("Company name"),
         max_length=150,
         blank=True,
         null=True,
     )
 
     business_address = models.CharField(
-        _("Dirección comercial"),
+        _("Commercial address"),
         max_length=150,
         blank=True,
         null=True,
     )
 
     postal_code = models.CharField(
-        _("Código postal"),
+        _("Postal code"),
         max_length=50,
         blank=True,
         null=True,
     )
 
     state = models.CharField(
-        _("Ciudad / Estado / Parroquia"),
+        _("City / State / Parish"),
         max_length=50,
         blank=True,
         null=True,
     )
 
     country = models.CharField(
-        _("País"),
+        _("Country"),
         max_length=50,
         blank=True,
         null=True,
     )
 
     language = models.CharField(
-        _("Idiomas en los que le interesa enviar o recibir información"),
+        _("Languages in which you are interested in sending or receiving information"),
         max_length=2,
         choices=settings.LANGUAGES,
         default=settings.LANGUAGE_CODE,
     )
 
     comment = models.TextField(
-        _("¿Tienen algo que decirnos?"),
+        _("Do you have something to tell us?"),
         blank=True,
         null=True,
     )
 
     degree = models.CharField(
-        _("Título (Persona de contacto)"),
+        _("Title (Contact person)"),
         max_length=20,
         choices=DEGRE_CHOICES,
         blank=True,
@@ -148,28 +148,28 @@ class CustomerUser(AbstractUser):
     )
 
     business_position = models.CharField(
-        _("Cargo en la empresa"),
+        _("Position in the company"),
         max_length=100,
         blank=True,
         null=True,
     )
 
     phone = models.CharField(
-        _("Déjenos un número de teléfono donde le podamos contactar"),
+        _("Leave us a phone number where we can contact you"),
         max_length=20,
         blank=True,
         null=True,
     )
 
     mobile = models.CharField(
-        _("Número móvil o WhatsApp"),
+        _("Mobile number or WhatsApp"),
         max_length=20,
         blank=True,
         null=True,
     )
 
     web_site = models.URLField(
-        _("Déjenos su dirección Web"),
+        _("Leave us your web address"),
         blank=True,
         null=True,
     )
@@ -248,8 +248,8 @@ class CustomerUser(AbstractUser):
         super().save(*args, **kwargs)
 
     class Meta(AbstractUser.Meta):
-        verbose_name = _("Usuario")
-        verbose_name_plural = _('Usuarios')
+        verbose_name = _("User")
+        verbose_name_plural = _('Users')
         # swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
@@ -299,8 +299,10 @@ class Contact(models.Model):
         ordering = ('-created',)
 
     def __str__(self):
-        return '{} follows {}'.format(self.user_from,
-                                      self.user_to)
+        return _('%(user_from)s follows %(user_to)s') % {
+            'user_from': self.user_from,
+            'user_to': self.user_to
+        }
 
 
 # Add following field to User dynamically
@@ -330,13 +332,13 @@ class Comment(models.Model):
         null=True,
         blank=True,
         on_delete=models.CASCADE)
-    name = models.CharField('Name', max_length=200, null=False, blank=False)
+    name = models.CharField(_('Name'), max_length=200, null=False, blank=False)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
     parent = models.IntegerField(
-        'Parent',
+        _('Parent'),
         null=True,
         blank=True)
     likes = models.ManyToManyField(
@@ -350,5 +352,4 @@ class Comment(models.Model):
         ordering = ('created',)
 
     def __str__(self):
-        return 'Comment by {}'.format(self.body)
-
+        return _('Comment by %(body)s') % {'body': self.body}

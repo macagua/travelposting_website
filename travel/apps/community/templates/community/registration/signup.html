@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -38,12 +38,12 @@
             <div class="js-form-message mb-5">
                 <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
                     <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox"
-                        required="" data-msg="Please accept our Terms and Conditions." data-error-class="u-has-error"
+                        required="" data-msg="{% trans 'Please accept our Terms and Conditions.' %}" data-error-class="u-has-error"
                         data-success-class="u-has-success">
                     <label class="custom-control-label" for="termsCheckbox">
                         <small>
-                            {% trans 'I agree to the'%}
-                            <a class="link-muted" href="/policy/">{% trans 'Terms and Conditions'%}</a>
+                            {% trans 'I agree to the' %}
+                            <a class="link-muted" href="/policy/">{% trans 'Terms and Conditions' %}</a>
                         </small>
                     </label>
                 </div>
@@ -53,7 +53,7 @@
             <!-- Button -->
             <div class="row align-items-center mb-5">
                 <div class="col-5 col-sm-6">
-                    <span class="small text-muted">{% trans 'Already have an account?'%}</span>
+                    <span class="small text-muted">{% trans 'Already have an account?' %}</span>
                     <a class="small" href="{% url 'accounts:login' %}">{% trans 'Login' %}</a>
                 </div>
 

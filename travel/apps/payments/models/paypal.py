@@ -23,7 +23,7 @@ class Coupon(models.Model):
     )
 
     price = MoneyField(
-        _('Precio'),
+        _('Price'),
         max_digits=8,
         decimal_places=2,
         default_currency='USD',

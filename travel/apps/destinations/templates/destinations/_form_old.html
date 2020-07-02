@@ -1,7 +1,7 @@
 {% extends 'destinations/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'Agregar Destino' %}{% endblock %}
+{% block title %}{% trans 'Add Destination' %}{% endblock %}
 
 {% block css %}
   {{ block.super }}
@@ -28,7 +28,7 @@
                 <li class="active">
                   <a class="{% if form.errors or form.non_field_errors %}danger{% endif %}"
                      data-toggle="tab" href="#product" aria-expanded="true">
-                    {% trans 'Producto' %}</a>
+                    {% trans 'Product' %}</a>
                 </li>
                 <li class="">
                   {% with tour_data=tour_data_inlineformset %}
@@ -50,7 +50,7 @@
                         {% with booking=detail.0.booking_inlineformset %}
                           <a class="{% if detail.total_error_count or general.total_error_count or inventario.total_error_count or booking.total_error_count %}danger{% endif %}"
                              data-toggle="tab" href="#destinationDetail" aria-expanded="false">
-                            {% trans 'Detalles del Producto' %}</a>
+                            {% trans 'Product Details' %}</a>
                         {% endwith %}
                       {% endwith %}
                     {% endwith %}
@@ -62,7 +62,7 @@
                   <div class="panel-body">
                     <div class="ibox float-e-margins">
                       <div class="ibox-content">
-                        <p>{% trans 'Ingrese los datos solicitados' %}:</p>
+                        <p>{% trans 'Enter the requested data' %}:</p>
                         {% for hidden_field in form.hidden_fields %}
                           {{ hidden_field }}
                         {% endfor %}
@@ -85,9 +85,9 @@
                   <div class="panel-body">
                     <div class="ibox float-e-margins">
                       <div id="id_inline_tour_data" class="ibox-content">
-                        <p>{% trans 'Registre los datos del tour' %}:</p>
+                        <p>{% trans 'Register the tour data' %}:</p>
                         <p>
-                          {#                          <a href="#" onclick="addPartner(event)">Agregar otro </a>#}
+                          {#                          <a href="#" onclick="addPartner(event)">Add another </a>#}
                         </p>
                         {{ tour_data_inlineformset.non_form_errors|safe }}
                         {{ tour_data_inlineformset.0.tab_data_inlineformset.non_form_errors|safe }}
@@ -103,7 +103,7 @@
                       {% endfor %}
                     </div>
                     <a class="btn btn-info btn-block full-width" href="#" onclick="addTabData(event)">
-                      {% trans 'Agregar otro tab' %}
+                      {% trans 'Add another tab' %}
                     </a>
                   </div>
                 </div>
@@ -111,7 +111,7 @@
                   <div class="panel-body">
                     <div class="ibox float-e-margins">
                       <div id="id_inline_header" class="ibox-content">
-                        <p>{% trans 'Registre los datos del Header' %}:</p>
+                        <p>{% trans 'Record the Header's data' %}:</p>
                         <p>
                           {# <a href="#" onclick="addPartner(event)">Agregar otro </a>#}
                         </p>
@@ -127,7 +127,7 @@
                   <div class="panel-body">
                     <div class="ibox float-e-margins">
                       <div id="id_inline_destination_detail" class="ibox-content">
-                        <p>{% trans 'Registre los detalles del producto' %}:</p>
+                        <p>{% trans 'Register product details' %}:</p>
                         <p>
                           {# <a href="#" onclick="addPartner(event)">Agregar otro </a>#}
                         </p>
@@ -153,7 +153,7 @@
                               {% with inventario=destination_detail_inlineformset.0.inventario_inlineformset %}
                                 <a class="{% if inventario.total_error_count %}danger{% endif %}" data-toggle="tab"
                                    href="#inventario">
-                                  <i class="fa fa-book"></i> {% trans 'Inventario' %}
+                                  <i class="fa fa-book"></i> {% trans 'Inventory' %}
                                 </a>
                               {% endwith %}
                             </li>

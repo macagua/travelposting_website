@@ -54,7 +54,7 @@
 						<div id="jumpToDropdown"
 							 class="dropdown-menu dropdown-unfold u-unfold--css-animation u-unfold--hidden fadeOut"
 							 aria-labelledby="jumpToDropdownInvoker" style="animation-duration: 300ms;">
-							<a class="dropdown-item" href="/faq/">FAQs</a>
+							<a class="dropdown-item" href="/faq/">{% trans 'FAQs' %}</a>
 							<a class="dropdown-item" href="/#contact">{% trans 'Contacts' %}</a>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
 					<div class="d-none d-sm-inline-block ml-sm-auto">
 						<ul class="list-inline mb-0">
 							<li class="list-inline-item mr-0">
-								<a class="u-header__navbar-link" href="/faq/">FAQs</a>
+								<a class="u-header__navbar-link" href="/faq/">{% trans 'FAQs' %}</a>
 							</li>
 							<li class="list-inline-item mr-0">
 								<a class="u-header__navbar-link" href="/#contact">{% trans 'Contacts' %}</a>
@@ -123,7 +123,7 @@
 				<a href="/{{LANGUAGES}}/">
 					<img src="{% static 'img/travelposting4.png' %}" width="100">
 				</a>
-				<a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
+				<a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="{% trans 'Front' %}">
 				</a>
 				<!-- End White Logo -->
 				<!-- End On Scroll Logo -->
@@ -155,7 +155,7 @@
 			<div class="u-sidebar--account__footer-offset">
 				<!-- Toggle Button -->
 				<div class="d-flex justify-content-between align-items-center pt-4 px-7">
-					<h3 class="h6 mb-0">{% trans 'My Account'%}</h3>
+					<h3 class="h6 mb-0">{% trans 'My Account' %}</h3>
 
 					<button type="button" class="close ml-auto"
 							aria-controls="sidebarContent"
@@ -206,7 +206,7 @@
 							</a>
 
 							<div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
-								<a class="dropdown-item" href="{% url 'change_password'%}">{% trans 'Change Password'%}</a>
+								<a class="dropdown-item" href="{% url 'change_password' %}">{% trans 'Change Password' %}</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="{% url 'accounts:logout' %}?next={% url 'index' %}">{% trans 'Sign Out' %}</a>
 							</div>

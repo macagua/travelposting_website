@@ -1,6 +1,6 @@
 {% extends 'destinations/base.html' %}
 {% load i18n staticfiles %}
-{% block title %}{% trans 'Agregar Destino' %}{% endblock %}
+{% block title %}{% trans 'Add Destination' %}{% endblock %}
 
 {% block extracss %}
   {{ form.media.css }}
@@ -21,7 +21,7 @@
 		 	<div class="col-lg-12">
 				<div class="ibox">
 					<div class="ibox-title">
-						<h5 class="text-center">{% trans "Create a new Tour"%}</h5>
+						<h5 class="text-center">{% trans "Create a new Tour" %}</h5>
 					</div>
 	                <div class="ibox-content">
 	                	<form id="form-tour" method="POST" class="wizard-big">
@@ -36,7 +36,7 @@
                                         <h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
                                         <div class="checkbox checkbox-success pull-right">
                                                     <input type="checkbox" id="setTimeDate" value="">
-                                                    <label for="setTimeDate">{%trans "This tour has departure and arrival time"%} </label>
+                                                    <label for="setTimeDate">{% trans "This tour has departure and arrival time" %} </label>
                                         </div>
                                     </div>
 	                			</div>
@@ -92,7 +92,7 @@
   	<script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
 	<script src="{% static "dashboard/js/plugins/steps/jquery.steps.min.js" %}"></script>
 	<script src="{% static "inspinia/js/plugins/dynamic-form.js" %}"></script>
-	<script src="{% static "dashboard/js/plugins/validate/jquery.validate.min.js"%}"></script>
+	<script src="{% static "dashboard/js/plugins/validate/jquery.validate.min.js" %}"></script>
 	<script type="template/tab_data">
     	{% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
   	</script>

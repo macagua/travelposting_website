@@ -8,7 +8,7 @@
 <!-- Hero Section -->
 {% if request.user.is_authenticated == True %}
 <br><br><br><br>
-{% include 'community/dashboard/breadcrumb.html'%}
+{% include 'community/dashboard/breadcrumb.html' %}
 
 {% endif %}
 
@@ -16,13 +16,13 @@
     <div class="w-lg-80 text-center mx-lg-auto">
         <div class="mb-11">
             <h1 class="display-4 font-weight-semi-bold">{% trans 'About Us' %}</h1>
-            <p class="lead font-weight-normal">{% static_placeholder 'about_01'%}</p>
+            <p class="lead font-weight-normal">{% static_placeholder 'about_01' %}</p>
         </div>
     </div>
     <!-- Gallery Section -->
     <div class="row mx-n2">
         <div class="col-md px-2 mb-3">
-            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3408115.jpg'%});"></div>
+            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3408115.jpg' %});"></div>
         </div>
         <div class="col-md px-2 mb-3">
             <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3468104_640.jpg' %});"></div>

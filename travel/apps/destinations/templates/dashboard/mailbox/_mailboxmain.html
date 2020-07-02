@@ -5,7 +5,7 @@
 {% block title %}{% trans 'Mailbox - Travelposting' %}{% endblock %}
 {% block extracss %}
 <!-- FooTable -->
-<link href="{% static 'dashboard/css/plugins/footable/footable.core.css'%}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
 <link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
 {% endblock extracss%}
 {% block content %}
@@ -22,7 +22,7 @@
                         {% trans "Inbox" %} ({{ conteo }})
                     </h2>
                 </div>
-                {% include "dashboard/mailbox/tablemain.html"%}
+                {% include "dashboard/mailbox/tablemain.html" %}
             </div>
         </div>
     </div>
@@ -40,12 +40,12 @@
     //Delete fuction
     function delete_mail(pk_i){
           swal({
-              title: "{% trans "Are you sure?" %}",
-              text: "{% trans "If you delete this message you will not be able to recover it" %}",
+              title: "{% trans 'Are you sure?' %}",
+              text: "{% trans 'If you delete this message you will not be able to recover it' %}",
               type: "warning",
               showCancelButton: true,
               confirmButtonColor: "#DD6B55",
-              confirmButtonText: "{% trans "Yes, delete it!" %}",
+              confirmButtonText: "{% trans 'Yes, delete it!' %}",
               closeOnConfirm: false
           }, function () {
             $.ajax({
@@ -59,12 +59,12 @@
                   },
                   success: function (request) {
                   if(request.status==true){
-                    swal("Deleted!", "Message has been deleted.", "success");
+                    swal("{% trans 'Deleted!' %}", "{% trans 'Message has been deleted.' %}", "success");
                     setTimeout(function(){
                         window.location.href = "{% url 'destinations:mailbox' %}";
                     }, 2000);
                   }else{
-                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
+                      swal("{% trans 'Error!' %}", "{% trans 'Has been not deleted' %}", "error");
                   }
                   }
               });

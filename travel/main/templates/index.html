@@ -31,7 +31,7 @@
 {% testimonials_list %}
 <!-- END SECTION LIST TESTIMONIAL-->
 <!-- CONTACT -->
-<div id="contact" class="bg-img-hero" style="background-image: url({% static 'assets/img/1920x1080/img8.jpg'%});">
+<div id="contact" class="bg-img-hero" style="background-image: url({% static 'assets/img/1920x1080/img8.jpg' %});">
     <div class="container space-2 space-md-3">
         <div class="row justify-content-end">
             <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5">
@@ -45,7 +45,7 @@
                         <i class="fa fa-map-marker-alt"></i> {% placeholder 'contact_ubication' %}<br><br>
                         <i class="fa fa-phone"></i> {% placeholder 'contact_phone' %}<br><br>
                         <i class="fab fa-whatsapp"></i> {% placeholder 'contact_whatsapp' %}<br><br>
-                        <i class="fa fa-envelope widget-contact-info__item__icon__email"></i> {% placeholder 'contact_email'%}<br><br>
+                        <i class="fa fa-envelope widget-contact-info__item__icon__email"></i> {% placeholder 'contact_email' %}<br><br>
                         <i class="fab fa-skype"></i> {% placeholder 'contact_skype' %}
                         <!-- End Form Group -->
                     </div>
@@ -72,7 +72,7 @@
         {% for message in messages %}
             <div class="alert alert-{{ message.tags }} alert-dismissible fade show w-lg-75 mx-lg-auto" role="alert">
               <strong>{{ message }}</strong>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <button type="button" class="close" data-dismiss="alert" aria-label="{% trans 'Close' %}">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
@@ -83,7 +83,7 @@
         {% csrf_token %}
         <div class="js-form-message form-group">
             <label class="form-label" for="emailAddress">
-                {% trans "E-mail"%}
+                {% trans "E-mail" %}
                 <span class="text-danger">*</span>
             </label>
             <input type="email" class="form-control" 
@@ -218,7 +218,7 @@
 {% if messages %}
     {% for message in messages %}
       {% if 'success_contact_us' in message.extra_tags %}
-      {% include "modal_contact_us/modal.html"%}
+      {% include "modal_contact_us/modal.html" %}
       {% endif %}
     {% endfor %}
 {% endif %}

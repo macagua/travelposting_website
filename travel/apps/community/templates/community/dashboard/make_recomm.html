@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -9,7 +9,7 @@
 <br><br><br><br>
 <main id="content" role="main">
     <!-- Breadcrumb Section -->
-    {% include 'community/dashboard/breadcrumb.html'%}
+    {% include 'community/dashboard/breadcrumb.html' %}
     <!-- Contacts Form -->
     <div class="container space-bottom-2">
         <br>
@@ -25,8 +25,8 @@
                         <span class="text-danger">*</span>
                     </label>
                     <div class="input-group">
-                        <textarea class="form-control" rows="4" name="recomendacion1" placeholder="{% trans 'Hi there, I would like to ...'%}"
-                            aria-label="{% trans 'Hi there, I would like to ...'%}" required data-msg="{% trans 'Please enter a reason.'%}"
+                        <textarea class="form-control" rows="4" name="recomendacion1" placeholder="{% trans 'Hi there, I would like to ...' %}"
+                            aria-label="{% trans 'Hi there, I would like to ...' %}" required data-msg="{% trans 'Please enter a reason.' %}"
                             data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
                     </div>
                 </div>
@@ -36,9 +36,9 @@
                         <span class="text-danger">*</span>
                     </label>
                     <div class="input-group">
-                        <textarea class="form-control" rows="4" name="recomendacion2" placeholder="{% trans 'Hi there, I would like to ...'%}"
-                            aria-label="{% trans 'Hi there, I would like to ...'%}" required
-                            data-msg="{% trans 'Please enter a reason.'%}" data-error-class="u-has-error"
+                        <textarea class="form-control" rows="4" name="recomendacion2" placeholder="{% trans 'Hi there, I would like to ...' %}"
+                            aria-label="{% trans 'Hi there, I would like to ...' %}" required
+                            data-msg="{% trans 'Please enter a reason.' %}" data-error-class="u-has-error"
                             data-success-class="u-has-success"></textarea>
                     </div>
                 </div>

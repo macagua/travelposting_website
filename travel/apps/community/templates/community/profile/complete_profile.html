@@ -2,7 +2,7 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% load mathfilters %}
 {% load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -14,9 +14,9 @@
 	<div class="bg-light">
 		<div class="container space-2">
             <div class="row">
-                Estimado usuario, con la activación de este usuario, recibirás la TravelpostingCard, es una tarjeta digital que te autorizara a obtener diferentes beneficios entre ellos bonos de descuentos que solo reciben nuestros usuarios, por tal motivo te pedimos coloques tu foto de perfil ya que las cartas que tengan algún otro tipo de graficas como; logos, memes, etc, serán desactivadas y perderás tu descuentos, ya que las cartas se crean una sola vez por nuestro sistema automático.
+                {% trans "Dear user, with the activation of this user, you will receive the TravelpostingCard, it is a digital card that will authorize you to obtain different benefits among them discount bonuses that only our users receive, for such reason we ask you to place your profile photo since the cards that have some other type of graphics like; logos, memes, etc, will be deactivated and you will lose your discount, since the cards are created only once by our automatic system."%}
 
-Gracias por tu cooperación.
+{% trans "Thank you for your cooperation."%}
             </div>
 
 			<!-- Personal Info Form -->

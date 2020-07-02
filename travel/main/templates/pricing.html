@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block extracss %} 
 <link href="{% static 'css/mdb.css' %}" rel="stylesheet">
 {% endblock extracss %}
@@ -14,16 +14,16 @@
 {% if request.user.is_authenticated == True %}
 <br><br><br><br>
 
-{% include 'community/dashboard/breadcrumb.html'%}
+{% include 'community/dashboard/breadcrumb.html' %}
 
 {% endif %}
-<div id="SVGwave1BottomSMShape" class="svg-preloader position-relative text-center gradient-overlay-half-info-v1 bg-img-hero overflow-hidden" style="background-image: url({% static 'assets/img/1920x800/img10.jpg'%});">
+<div id="SVGwave1BottomSMShape" class="svg-preloader position-relative text-center gradient-overlay-half-info-v1 bg-img-hero overflow-hidden" style="background-image: url({% static 'assets/img/1920x800/img10.jpg' %});">
     <div class="container space-top-2 space-top-md-4 space-bottom-4">
         <div class="w-md-120 w-lg-100 text-center mx-auto">
             <div class="mb-6">
-                <h1 class="text-white">{% trans 'Special' %} <span class="font-weight-semi-bold">{% trans 'Ofert on'%}</span> Travelposting</h1>
+                <h1 class="text-white">{% trans 'Special' %} <span class="font-weight-semi-bold">{% trans 'Ofert on' %}</span> Travelposting</h1>
                 <h6 class="text-white"> 
-                    {% trans 'We know that there are many companies on the internet that offer the best of blue sky and we may not be the best known in the market, but our experience of almost 10 years in the market allows us to manage a portfolio of experts with whom we can provide the most and best offers in the market. If you get someone cheaper than us and with the same return we will return your investment.'%}
+                    {% trans 'We know that there are many companies on the internet that offer the best of blue sky and we may not be the best known in the market, but our experience of almost 10 years in the market allows us to manage a portfolio of experts with whom we can provide the most and best offers in the market. If you get someone cheaper than us and with the same return we will return your investment.' %}
                 </h6>
             </div>
             <!-- Button Group -->

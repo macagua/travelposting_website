@@ -15,44 +15,44 @@ import datetime
 
 
 
-TEMPLATE_DESCRIPTION = """
-<strong>Quienes somos</strong><br><br>
+TEMPLATE_DESCRIPTION = _("""
+<strong>Who we are</strong><br><br>
 
-<p><b>Por favor ingrese aquí su texto...</b></p><br><br>
+<p><b>Please enter your text here...</b></p><br><br>
 
-<strong>Misión</strong><br><br>
+<strong>Mission</strong><br><br>
 
-<p><b>Por favor ingrese aquí su texto...</b></p><br><br>
+<p><b>Please enter your text here...</b></p><br><br>
 
 <table class="table table-bordered tours-tabs__table" style="width: 100%px;">
 <tbody>
 <tr>
-<td style="width: 213px;"><strong>SALIDA / RETORNO</strong></td>
-<td style="width: 574.233px;"><b>Ingrese aquí la salida...</b></td>
+<td style="width: 213px;"><strong>EXIT / RETURN</strong></td>
+<td style="width: 574.233px;"><b>Enter the exit here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>HORA DE SALIDA</strong></td>
-<td style="width: 574.233px;"><b>Ingrese aquí la hora de salida...</b></td>
+<td style="width: 213px;"><strong>EXIT TIME</strong></td>
+<td style="width: 574.233px;"><b>Enter the time of exit here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>HORA DE LLEGADA</strong></td>
-<td style="width: 574.233px;"><b>Ingrese aquí la hora de llegada...</b></td>
+<td style="width: 213px;"><strong>ARRIVAL TIME</strong></td>
+<td style="width: 574.233px;"><b>Enter the time of arrival here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>NR. DE TOUR PARA RESERVAS</strong></td>
-<td style="width: 574.233px;"><b>Ingrese aquí el nro de tour...</b></td>
+<td style="width: 213px;"><strong>NR. OF TOUR FOR RESERVATIONS</strong></td>
+<td style="width: 574.233px;"><b>Enter the tour number here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>TRASLADO DESDE </strong></td>
-<td style="width: 574.233px;"><strong><b>Ingrese aquí el traslado...</b></strong></td>
+<td style="width: 213px;"><strong>TRANSFER FROM </strong></td>
+<td style="width: 574.233px;"><strong><b>Enter the transfer here...</b></strong></td>
 </tr>
 </tbody>
 </table>
-"""
+""")
 
 class Categorie(models.Model):
     name = models.CharField(
-        _('name'),
+        _('Name'),
         max_length=50,
     )
 
@@ -85,18 +85,18 @@ class Categorie(models.Model):
 class Destination(models.Model):
     categorie = models.ManyToManyField(
         Categorie,
-        verbose_name=_("Categorie"),
+        verbose_name=_("Categories"),
         blank=True,
     )
 
     user = models.ForeignKey(
         CustomerUser,
         on_delete=models.CASCADE,
-        verbose_name=_("Usuario"),
+        verbose_name=_("User"),
     )
 
     name = models.CharField(
-        _('name'),
+        _('Name'),
         max_length=200,
         blank=True,
         null=True,
@@ -109,7 +109,7 @@ class Destination(models.Model):
     )
 
     description = models.TextField(
-        _('description'),
+        _('Description'),
         blank=True,
         null=True,
         default=TEMPLATE_DESCRIPTION,
@@ -154,13 +154,13 @@ class Destination(models.Model):
     )
 
     is_published = models.BooleanField(
-        _('is_published'),
+        _('is published?'),
         default=False,
         editable=False,
     )
 
     is_deleted = models.BooleanField(
-        _('is_deleted'),
+        _('is deleted?'),
         default=False,
         editable=False,
     )
@@ -179,8 +179,8 @@ class Destination(models.Model):
         return f'{self.name}'
 
     class Meta:
-        verbose_name = _("Destino")
-        verbose_name_plural = _("Destinos")
+        verbose_name = _("Destination")
+        verbose_name_plural = _("Destinations")
         ordering = ('user',)
         unique_together = ('user', 'name',)
 
@@ -229,14 +229,14 @@ class Destination(models.Model):
     @property
     def mapa(self):
         mapa = TabData.objects\
-        .filter(option_tab__name="Mapa")\
+        .filter(option_tab__name="Map")\
         .get(tour_data__destination=self.pk)
         return mapa
 
     @property
     def itinerario(self):
         itine = TabData.objects\
-        .filter(option_tab__name="Itinerario")\
+        .filter(option_tab__name="Itinerary")\
         .get(tour_data__destination=self.pk)
         return itine
 
@@ -272,7 +272,7 @@ class DestinationMap(models.Model):
     description_map = models.CharField(
         max_length = 50
     )
-    map_destinie = models.PointField(help_text="To generate the map for your location")
+    map_destinie = models.PointField(help_text=_("To generate the map for your location"))
 
     def __unicode__(self):
         return self.map_destinie
@@ -287,11 +287,11 @@ class Photo(models.Model):
         Destination,
         related_name='gallery',
         on_delete=models.CASCADE,
-        verbose_name=_('Destino'),
+        verbose_name=_('Destination'),
     )
 
     name = models.CharField(
-        _('Nombre'),
+        _('Name'),
         max_length=50,
         blank=True,
         null=True,
@@ -304,10 +304,10 @@ class Photo(models.Model):
     )
 
     description = models.TextField(
-        _('Descripción'),
+        _('Description'),
         blank=True,
         null=True,
-        default=_("Sin comentario"),
+        default=_("No comment"),
     )
 
     thumbnail = ThumbnailerImageField(
@@ -318,7 +318,7 @@ class Photo(models.Model):
     )
 
     image = models.ImageField(
-        _('Imagen'),
+        _('Image'),
         upload_to="gallery/image/",
         blank=True,
         null=True,
@@ -333,8 +333,8 @@ class Photo(models.Model):
 
     class Meta:
         ordering = ('sort', 'name')
-        verbose_name = _('Foto')
-        verbose_name_plural = _('Fotos')
+        verbose_name = _('Photo')
+        verbose_name_plural = _('Photos')
 
 
 class DestinationRating(models.Model):
@@ -373,7 +373,7 @@ class TourData(models.Model):
         Destination,
         related_name='tour',
         on_delete=models.CASCADE,
-        verbose_name=_('Destino'),
+        verbose_name=_('Destination'),
     )
 
     badge = models.CharField(
@@ -382,14 +382,14 @@ class TourData(models.Model):
         blank=True,
         null=True,
         choices=(
-            ('1', _('Ultimo minuto')),
-            ('2', _('Deal del Mes')),
+            ('1', _('Last minute')),
+            ('2', _('Deal of the Month')),
             ('3', _('FamTrip')),
-            ('4', _('Congresos')),
-            ('5', _('Eventos')),
+            ('4', _('Congresses')),
+            ('5', _('Events')),
             ('6', _('Hotel')),
-            ('7', _('Movilidad')),
-            ('8', _('Ocio +')),
+            ('7', _('Mobility')),
+            ('8', _('Leisure +')),
         ),
     )
 
@@ -456,18 +456,18 @@ class TabData(models.Model):
 
 class OptionTabData(models.Model):
     name = models.CharField(
-        _('Nombre'),
+        _('Name'),
         max_length=150,
     )
 
     description = models.TextField(
-        _('Descripción'),
+        _('Description'),
         blank=True,
         null=True,
     )
 
     template = models.TextField(
-        _('Plantilla'),
+        _('Template'),
         blank=True,
         null=True,
     )
@@ -481,8 +481,8 @@ class OptionTabData(models.Model):
 
     class Meta:
         ordering = ('name',)
-        verbose_name_plural = _('Opciones de las tabs')
-        verbose_name = _('Opción de la tab')
+        verbose_name_plural = _('Tab options')
+        verbose_name = _('Tab option')
 
 
 class HeaderSection(models.Model):
@@ -490,7 +490,7 @@ class HeaderSection(models.Model):
         Destination,
         related_name='header',
         on_delete=models.CASCADE,
-        verbose_name=_('Destino'),
+        verbose_name=_('Destination'),
     )
 
     display_mode = models.CharField(
@@ -499,7 +499,7 @@ class HeaderSection(models.Model):
         default='hide',
         choices=(
             ('hide', _('Default')),
-            ('banner', _('Imagen')),
+            ('banner', _('Image')),
             ('slider', _('Slider')),
             ('from_list', _('From list'))
         ),
@@ -513,7 +513,7 @@ class HeaderSection(models.Model):
     )
 
     image = models.ImageField(
-        _('Imagen'),
+        _('Image'),
         upload_to='header/images',
         blank=True,
         null=True,
@@ -525,7 +525,7 @@ class HeaderSection(models.Model):
     )
 
     image_repeat = models.CharField(
-        _('Imagen repeat'),
+        _('Image repeat'),
         max_length=150,
         blank=True,
         null=True,
@@ -551,8 +551,8 @@ class HeaderSection(models.Model):
         return f"{self.subtitle}"
 
     class Meta:
-        verbose_name_plural = _('Secciones del encabezado')
-        verbose_name = _('Sección del encabezado')
+        verbose_name_plural = _('Header sections')
+        verbose_name = _('Header section')
 
 
 class DestinationDetail(models.Model):
@@ -560,7 +560,7 @@ class DestinationDetail(models.Model):
         Destination,
         related_name='details',
         on_delete=models.CASCADE,
-        verbose_name=_('Destino'),
+        verbose_name=_('Destination'),
     )
 
     var = models.BooleanField(
@@ -574,7 +574,7 @@ class DestinationDetail(models.Model):
     )
 
     descargable = models.BooleanField(
-        _('Descargable'),
+        _('Downloadable'),
         default=False,
     )
 
@@ -582,8 +582,8 @@ class DestinationDetail(models.Model):
         return f"{self.destination}-details"
 
     class Meta:
-        verbose_name_plural = _('Detalles del destino')
-        verbose_name = _('Detalle del destino')
+        verbose_name_plural = _('Destination details')
+        verbose_name = _('Destination detail')
 
 
 class GeneralDetail(models.Model):
@@ -591,11 +591,11 @@ class GeneralDetail(models.Model):
         DestinationDetail,
         related_name='general',
         on_delete=models.CASCADE,
-        verbose_name=_('Detalle del destino'),
+        verbose_name=_('Destination detail'),
     )
 
     regular_price = MoneyField(
-        _('Precio normal'),
+        _('Normal price'),
         max_digits=19,
         decimal_places=2,
         default_currency='USD',
@@ -603,7 +603,7 @@ class GeneralDetail(models.Model):
     )
 
     sale_price = MoneyField(
-        _('Precio rebajado'),
+        _('Reduced price'),
         max_digits=19,
         decimal_places=2,
         default_currency='USD',
@@ -611,34 +611,34 @@ class GeneralDetail(models.Model):
     )
 
     date_on_sale_from = models.DateField(
-        _('Fecha de rebaja inicial'),
+        _('Initial discount date'),
         blank=True,
         null=True,
     )
 
     date_on_sale_to = models.DateField(
-        _('Fecha de rebaja final'),
+        _('Final discount date'),
         blank=True,
         null=True,
     )
 
     status_imp = models.CharField(
-        _('Estado del impuesto'),
+        _('Tax status'),
         max_length=50,
         default='imponible',
         choices=(
-            ('imponible', _('Imponible')),
-            ('envio', _('Envio solamente')),
-            ('ninguno', _('Ninguno'))
+            ('imponible', _('Impossible')),
+            ('envio', _('Shipping only')),
+            ('ninguno', _('None'))
         ),
     )
 
     class_imp = models.CharField(
-        _('Clase de impuesto'),
+        _('Tax type'),
         max_length=50,
         default='estandar',
         choices=(
-            ('estandar', _('Estandar')),
+            ('estandar', _('Standard')),
             ('reduced', _('Reduced Rate')),
             ('zero', _('Zero Rate'))
         ),
@@ -648,8 +648,8 @@ class GeneralDetail(models.Model):
         return f"{self.destination_detail}-general"
 
     class Meta:
-        verbose_name_plural = _('Detalles generales')
-        verbose_name = _('Detalle general')
+        verbose_name_plural = _('General details')
+        verbose_name = _('General detail')
 
 
 class InventarioDetail(models.Model):
@@ -657,7 +657,7 @@ class InventarioDetail(models.Model):
         DestinationDetail,
         related_name='inventario',
         on_delete=models.CASCADE,
-        verbose_name=_('Detalle del destino'),
+        verbose_name=_('Destination detail'),
     )
 
     sku = models.CharField(
@@ -666,50 +666,50 @@ class InventarioDetail(models.Model):
     )
 
     manager = models.BooleanField(
-        _('¿Gestión de inventario?'),
+        _('Inventory management?'),
         default=False,
-        help_text=_('Activa la gestión de inventario por cada producto'),
+        help_text=_('Activate inventory management for each product'),
     )
 
     quantity = models.IntegerField(
-        _('Cantidad de inventario'),
+        _('Inventory quantity'),
         blank=True,
         null=True,
         default=0,
     )
 
     reserva = models.CharField(
-        _('¿Permitir reservas?'),
+        _('Allow reservations?'),
         max_length=50,
         default='no',
         choices=(
-            ('no', _('No permitir')),
-            ('notify', _('Permitir, pero se avisara al cliente')),
-            ('yes', _('Permitir'))
+            ('no', _('Do not allow')),
+            ('notify', _('Allow, but the customer will be warned')),
+            ('yes', _('Allow'))
         ),
     )
 
     umb_exist = models.IntegerField(
-        _('Umbral de pocas existencias'),
+        _('Low stock threshold'),
         blank=True,
         null=True,
         default=0,
     )
 
     sold_individually = models.BooleanField(
-        _('Vendido individualmente'),
+        _('Sold individually'),
         default=False,
         help_text=_(
-            'Activa esto para permitir que solo se pueda comprar uno de estos '
-            'artículos en cada pedido'),
+            'Activate this to allow only one of these '
+            'items to be purchased in each order'),
         )
 
     def __str__(self):
         return f"{self.destination_detail}-inventario"
 
     class Meta:
-        verbose_name_plural = _('Detalles de inventario')
-        verbose_name = _('Detalle de inventario')
+        verbose_name_plural = _('Inventory details')
+        verbose_name = _('Inventory detail')
 
 
 class BookingDetail(models.Model):
@@ -717,7 +717,7 @@ class BookingDetail(models.Model):
         DestinationDetail,
         related_name='booking',
         on_delete=models.CASCADE,
-        verbose_name=_("Detalle del destino"),
+        verbose_name=_("Destination detail"),
     )
 
     start_date = models.DateField(
@@ -735,7 +735,7 @@ class BookingDetail(models.Model):
     days = DaysCommaField(
         default=[],
         null=True,
-        verbose_name=_('Días'),
+        verbose_name=_('Days'),
     )
 
     number_ticket = models.IntegerField(

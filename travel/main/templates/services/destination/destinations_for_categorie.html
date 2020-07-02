@@ -14,7 +14,7 @@
 {% if request.user.is_authenticated == True %}
 <br><br><br><br>
 
-{% include 'community/dashboard/breadcrumb.html'%}
+{% include 'community/dashboard/breadcrumb.html' %}
 
 {% endif %}
 
@@ -66,12 +66,12 @@
 <div class="container space-1 space-md-1 space-lg-1 space-bottom-lg-3">
     <div class="row">
         <!-- Sorting -->
-        {%include "services/destination/_parts/filter_destinations.html"%}
+        {%include "services/destination/_parts/filter_destinations.html" %}
 
         <div class="col-lg-12">
             <!--Destinies -->
             <div class="row mx-n2 mb-2">
-                {%include "services/destination/_parts/list_destinies.html"%}  
+                {%include "services/destination/_parts/list_destinies.html" %}  
             </div>
             <!-- End Destinies -->
             <!-- Divider -->
@@ -83,7 +83,7 @@
         <!-- End Sorting -->
         <div class="py-3"></div>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        {%include "services/destination/_parts/pagination_destinies.html"%}  
+        {%include "services/destination/_parts/pagination_destinies.html" %}  
         <input type="hidden" class="column-counter"/>
 
     </div>
