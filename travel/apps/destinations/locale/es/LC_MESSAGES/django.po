@@ -1199,7 +1199,7 @@ msgstr "Detalles del Producto"
 #: apps/destinations/templates/destinations/_form_old.html:65
 #: apps/destinations/templates/oauth2/application_form.html:16
 msgid "Enter the requested data"
-msgstr "Introduzca los datos solicitados"
+msgstr "Ingrese los datos solicitados"
 
 #: apps/destinations/templates/destinations/_form_old.html:88
 msgid "Register the tour data"
