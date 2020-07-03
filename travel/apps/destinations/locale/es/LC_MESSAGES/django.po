@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-03 01:39-0400\n"
+"POT-Creation-Date: 2020-07-03 10:59-0400\n"
 "PO-Revision-Date: 2020-07-01 18:31-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -1058,6 +1058,10 @@ msgstr "Mostrar Destinos"
 msgid "Show Bookings"
 msgstr "Sus reservas"
 
+#: apps/destinations/templates/dashboard/widgets.html:50
+msgid "Today"
+msgstr "Hoy"
+
 #: apps/destinations/templates/dashboard/widgets.html:52
 msgid "User Connected"
 msgstr "Usuario Conectado"
@@ -1065,6 +1069,14 @@ msgstr "Usuario Conectado"
 #: apps/destinations/templates/dashboard/widgets.html:57
 msgid "Number of users connected"
 msgstr "Número de usuarios conectados"
+
+#: apps/destinations/templates/dashboard/widgets.html:65
+msgid "Low value"
+msgstr "Valor bajo"
+
+#: apps/destinations/templates/dashboard/widgets.html:67
+msgid "User activity"
+msgstr "Actividad del usuario"
 
 #: apps/destinations/templates/dashboard/widgets.html:73
 #: apps/destinations/templates/dashboard/widgets.html:97
@@ -1094,6 +1106,10 @@ msgstr "Lugar"
 #: apps/destinations/templates/dashboard/widgets.html:136
 msgid "Total visits from country"
 msgstr "Total de visitas del país"
+
+#: apps/destinations/templates/dashboard/widgets.html:143
+msgid "Unknown"
+msgstr "Desconocido"
 
 #: apps/destinations/templates/destinations/_booking_list.html:4
 msgid "Reservation List"
@@ -1595,7 +1611,7 @@ msgstr "Cambiar contraseña"
 #: apps/destinations/templates/destinations/navbar_left.html:26
 #: apps/destinations/templates/destinations/navbar_top.html:18
 msgid "Close session"
-msgstr "Cerrar la sesión"
+msgstr "Cerrar sesión"
 
 #: apps/destinations/templates/destinations/navbar_left.html:48
 msgid "Mailbox"

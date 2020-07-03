@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-03 01:39-0400\n"
+"POT-Creation-Date: 2020-07-03 10:59-0400\n"
 "PO-Revision-Date: 2020-07-02 08:49-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -546,7 +546,7 @@ msgstr "Don\\"
 #: apps/accounts/templates/accounts/registration/login.html:75
 #: apps/community/templates/community/registration/login.html:41
 msgid "Signup"
-msgstr "Ingreso"
+msgstr "Inscribir"
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:48
 #: apps/community/templates/community/registration/notify_register_admin_body.html:48
@@ -3431,7 +3431,7 @@ msgstr "Mi cuenta"
 
 #: main/templates/menu/navbar_all.html:211
 msgid "Sign Out"
-msgstr "Ingreso"
+msgstr "Desconectar"
 
 #: main/templates/menu/navbar_all.html:224
 msgid "Dashboard"

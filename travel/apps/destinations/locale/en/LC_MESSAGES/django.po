@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-03 01:39-0400\n"
+"POT-Creation-Date: 2020-07-03 10:59-0400\n"
 "PO-Revision-Date: 2019-06-27 13:37-0428\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1016,12 +1016,24 @@ msgstr ""
 msgid "Show Bookings"
 msgstr ""
 
+#: apps/destinations/templates/dashboard/widgets.html:50
+msgid "Today"
+msgstr ""
+
 #: apps/destinations/templates/dashboard/widgets.html:52
 msgid "User Connected"
 msgstr ""
 
 #: apps/destinations/templates/dashboard/widgets.html:57
 msgid "Number of users connected"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/widgets.html:65
+msgid "Low value"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/widgets.html:67
+msgid "User activity"
 msgstr ""
 
 #: apps/destinations/templates/dashboard/widgets.html:73
@@ -1051,6 +1063,10 @@ msgstr ""
 
 #: apps/destinations/templates/dashboard/widgets.html:136
 msgid "Total visits from country"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/widgets.html:143
+msgid "Unknown"
 msgstr ""
 
 #: apps/destinations/templates/destinations/_booking_list.html:4
