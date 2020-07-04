@@ -546,7 +546,7 @@ msgstr "Don\\"
 #: apps/accounts/templates/accounts/registration/login.html:75
 #: apps/community/templates/community/registration/login.html:41
 msgid "Signup"
-msgstr "Inscribir"
+msgstr "Registrar"
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:48
 #: apps/community/templates/community/registration/notify_register_admin_body.html:48
