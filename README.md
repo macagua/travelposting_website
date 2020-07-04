@@ -69,7 +69,7 @@ $ python manage.py migrate
 
 # if you want create a new super user
 
-$ python manage.py createsuperser
+$ python manage.py createsuperuser
 
 # now you can see the page for django cms and visite the [initial page](http://localhost:8000) 
 
