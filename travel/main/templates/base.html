@@ -8,10 +8,10 @@
         <link rel="manifest" href="{% static "manifest.json" %}">
         {% block feed %}
         {% endblock feed %}
-        <title>Travelposting</title>
-        <meta name="description" content="Nuestra visión está orientada a Empresas que desean presentar sus productos y servicios en varios idiomas por medio de una alternativa de promoción digital.">
-        <meta name="author" content="Travelposting">
-        <meta name="keywords" content="Trips, vision, products, services ">
+        <title>{% trans "Travelposting" %}</title>
+        <meta name="description" content="{% trans 'Our vision is oriented to Companies that wish to present their products and services in several languages by means of a digital promotion alternative.' %}">
+        <meta name="author" content="{% trans 'Travelposting' %}">
+        <meta name="keywords" content="{% trans 'Trips, vision, products, services' %}">
         <meta name="theme-color" content="#2F3BA2" />
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -259,7 +259,7 @@
               $(document).ready(function () {
                 $('.js-example-basic-single').select2({
                   theme: 'bootstrap4',
-                  placeholder: "Select a state"
+                  placeholder: "Select a state" // TODO Add i18n support
                 });
               });
             </script>

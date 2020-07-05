@@ -24,27 +24,28 @@ TEMPLATE_DESCRIPTION = _("""
 
 <p><b>Please enter your text here...</b></p><br><br>
 
-<table class="table table-bordered tours-tabs__table" style="width: 100%px;">
+<table class='table table-bordered tours-tabs__table'
+       style='width: 100%px;'>
 <tbody>
 <tr>
-<td style="width: 213px;"><strong>EXIT / RETURN</strong></td>
-<td style="width: 574.233px;"><b>Enter the exit here...</b></td>
+<td style='width: 213px;'><strong>EXIT / RETURN</strong></td>
+<td style='width: 574.233px;'><b>Enter the exit here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>EXIT TIME</strong></td>
-<td style="width: 574.233px;"><b>Enter the time of exit here...</b></td>
+<td style='width: 213px;'><strong>EXIT TIME</strong></td>
+<td style='width: 574.233px;'><b>Enter the time of exit here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>ARRIVAL TIME</strong></td>
-<td style="width: 574.233px;"><b>Enter the time of arrival here...</b></td>
+<td style='width: 213px;'><strong>ARRIVAL TIME</strong></td>
+<td style='width: 574.233px;'><b>Enter the time of arrival here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>NR. OF TOUR FOR RESERVATIONS</strong></td>
-<td style="width: 574.233px;"><b>Enter the tour number here...</b></td>
+<td style='width: 213px;'><strong>NR. OF TOUR FOR RESERVATIONS</strong></td>
+<td style='width: 574.233px;'><b>Enter the tour number here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>TRANSFER FROM </strong></td>
-<td style="width: 574.233px;"><strong><b>Enter the transfer here...</b></strong></td>
+<td style='width: 213px;'><strong>TRANSFER FROM </strong></td>
+<td style='width: 574.233px;'><strong><b>Enter the transfer here...</b></strong></td>
 </tr>
 </tbody>
 </table>

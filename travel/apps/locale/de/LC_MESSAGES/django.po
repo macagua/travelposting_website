@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-03 10:59-0400\n"
+"POT-Creation-Date: 2020-07-05 07:08-0400\n"
 "PO-Revision-Date: 2020-01-30 12:33-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -249,6 +249,7 @@ msgstr "Kommentar von %(body)s"
 #: apps/community/templates/accounts/mail_body.html:200
 #: apps/community/templates/accounts/mail_profile_complete.html:94
 #: apps/community/templates/accounts/mail_profile_complete.html:209
+#: main/templates/base.html:11 main/templates/base.html:13
 #: main/templates/coming-soon.html:4 main/templates/footer.html:7
 #: main/templates/footer.html:9 main/templates/footer.html:47
 #: main/templates/index.html:5 main/templates/menu/navbar.html:14
@@ -776,6 +777,25 @@ msgstr ""
 "Es ist ein Fehler, ein falscher Benutzer oder ein falsches Passwort "
 "aufgetreten."
 
+#: apps/community/apps.py:6
+#: apps/community/templates/accounts/customeruser_list.html:5
+#: apps/community/templates/community/dashboard/dashboard.html:5
+#: apps/community/templates/community/dashboard/mail.html:5
+#: apps/community/templates/community/dashboard/make_recomm.html:4
+#: apps/community/templates/community/dashboard/notifications.html:5
+#: apps/community/templates/community/dashboard/profile_user.html:4
+#: apps/community/templates/community/profile/complete_profile.html:5
+#: apps/community/templates/community/profile/edit_profile.html:5
+#: apps/community/templates/community/profile/my_profile.html:5
+#: apps/community/templates/community/registration/forget_password.html:4
+#: apps/community/templates/community/registration/login.html:4
+#: apps/community/templates/community/registration/signup.html:4
+#: config/settings/base.py:325 main/templates/community.html:4
+#: main/templates/community.html:21 main/templates/hotels.html:108
+#: main/templates/page01.html:39 main/templates/pricing.html:4
+msgid "Community"
+msgstr "Gemeinschaft"
+
 #: apps/community/forms.py:12
 msgid "Referred by"
 msgstr "Verwiesen von"
@@ -882,24 +902,6 @@ msgstr "Passwort speichern"
 #: apps/community/templates/community/profile/edit_profile.html:210
 msgid "Cancel"
 msgstr "Abbrechen"
-
-#: apps/community/templates/accounts/customeruser_list.html:5
-#: apps/community/templates/community/dashboard/dashboard.html:5
-#: apps/community/templates/community/dashboard/mail.html:5
-#: apps/community/templates/community/dashboard/make_recomm.html:4
-#: apps/community/templates/community/dashboard/notifications.html:5
-#: apps/community/templates/community/dashboard/profile_user.html:4
-#: apps/community/templates/community/profile/complete_profile.html:5
-#: apps/community/templates/community/profile/edit_profile.html:5
-#: apps/community/templates/community/profile/my_profile.html:5
-#: apps/community/templates/community/registration/forget_password.html:4
-#: apps/community/templates/community/registration/login.html:4
-#: apps/community/templates/community/registration/signup.html:4
-#: main/templates/community.html:4 main/templates/community.html:21
-#: main/templates/hotels.html:108 main/templates/page01.html:39
-#: main/templates/pricing.html:4
-msgid "Community"
-msgstr "Gemeinschaft"
 
 #: apps/community/templates/accounts/customeruser_list.html:20
 msgid "Search Result"
@@ -1674,6 +1676,10 @@ msgstr "Bitte korrigieren Sie den Fehler unten."
 msgid "Travelposting send a new import message"
 msgstr "Travelposting eine neue Import-Nachricht senden"
 
+#: apps/directmessages/apps.py:5
+msgid "Direct Messages"
+msgstr "Direkte Nachrichten"
+
 #: apps/directmessages/models.py:19
 msgid "sent at"
 msgstr "gesendet an"
@@ -1693,6 +1699,10 @@ msgstr "Ihre Nachricht wurde erfolgreich gesendet."
 #: apps/landing_page/admin.py:81 apps/landing_page/models.py:368
 msgid "Company"
 msgstr "Unternehmen"
+
+#: apps/landing_page/apps.py:6
+msgid "Landing Pages"
+msgstr "Landing-Pages"
 
 #: apps/landing_page/models.py:20
 msgid "Type"
@@ -2054,9 +2064,74 @@ msgstr "de"
 msgid "es"
 msgstr "es"
 
+#: config/settings/base.py:265
+msgid "Travel Dashboard"
+msgstr "Reise-Dashboard"
+
+#: config/settings/base.py:266
+msgid "Support"
+msgstr "Technischer Support"
+
 #: config/settings/base.py:314
 msgid "Feature"
 msgstr "Funktion"
+
+#: config/settings/base.py:320
+msgid "Landing"
+msgstr "Landung"
+
+#: config/settings/base.py:323
+msgid "Tour"
+msgstr "Führung"
+
+#: config/settings/base.py:324 main/templates/magazine.html:34
+msgid "Magazine"
+msgstr "Zeitschrift"
+
+#: config/settings/base.py:326
+msgid "Data protection"
+msgstr "Datenshutz"
+
+#: config/settings/base.py:327
+msgid "Data protection Form"
+msgstr "Datenshutz Form"
+
+#: config/settings/base.py:328
+msgid "Data protection Form Privacity"
+msgstr "Datenshutz Form Privacity"
+
+#: config/settings/base.py:329 main/templates/coming-soon.html:90
+#: main/templates/coming-soon.html:99
+msgid "Coming Soon"
+msgstr "Demnächst"
+
+#: config/settings/base.py:330
+msgid "Hotels template"
+msgstr "Vorlage für Hotels"
+
+#: config/settings/base.py:331
+msgid "Pricing"
+msgstr "Preise"
+
+#: config/settings/base.py:333 main/templates/datenshutz_form_privacity.html:28
+msgid "Terms"
+msgstr "Konditionen"
+
+#: config/settings/base.py:334
+msgid "FAQ"
+msgstr "FAQs"
+
+#: config/settings/base.py:335
+msgid "Page type 01"
+msgstr "Seitentyp 01"
+
+#: config/settings/base.py:336
+msgid "Page type 02"
+msgstr "Seitentyp 02"
+
+#: config/settings/base.py:337
+msgid "Pre-signup"
+msgstr "Voranmeldung"
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
 #: main/templates/datenshutz_form.html:3
@@ -2098,6 +2173,19 @@ msgid "Get special offers on the latest travels add on our platform."
 msgstr ""
 "Holen Sie sich Sonderangebote für die neuesten Reisen auf unserer Plattform "
 "hinzu."
+
+#: main/templates/base.html:12
+msgid ""
+"Our vision is oriented to Companies that wish to present their products and "
+"services in several languages by means of a digital promotion alternative."
+msgstr ""
+"Unsere Vision richtet sich an Unternehmen, die ihre Produkte und "
+"Dienstleistungen mittels einer digitalen Promotion-Alternative in mehreren "
+"Sprachen präsentieren möchten."
+
+#: main/templates/base.html:14
+msgid "Trips, vision, products, services"
+msgstr "Reisen, Vision, Produkte, Dienstleistungen"
 
 #: main/templates/base.html:82
 msgid "Do you like cookies?"
@@ -2146,10 +2234,6 @@ msgstr ""
 #: main/templates/coming-soon.html:85
 msgid "Coming back to our website"
 msgstr "Kommen Sie zurück zu unserer Website"
-
-#: main/templates/coming-soon.html:90 main/templates/coming-soon.html:99
-msgid "Coming Soon"
-msgstr "Demnächst"
 
 #: main/templates/coming-soon.html:122
 msgid "Travelposting 2019 All Rights Reserved Site Map Disclaimer"
@@ -2211,22 +2295,22 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"1 - Mitglieder der Community sind verpflichten Feedback durch unserem "
-"formular an die Reisebüros, Resorts oder Unternehmen zu geben, die uns "
-"anbieten, ihre Reiseziele zu einem sehr niedrigen Preis testen.\n"
+"              1 • Mitglieder der Community sind verpflichten Feedback durch "
+"unserem formular an die Reisebüros, Resorts oder Unternehmen zu geben, die "
+"uns anbieten, ihre Reiseziele zu einem sehr niedrigen Preis testen.\n"
 "\n"
-"2 - Unser Feedback kann nicht nur sein! Alles gut oder NICHTS nein, alles "
-"schlecht, Sie müssen sich verpflichten, den Hotels oder jedem Unternehmen "
-"der Tourismusbranche, das uns einlädt, ein Feedback (echte Empfehlung) aus "
-"Ihrer Sicht zu geben.\n"
+"              2 • Unser Feedback kann nicht nur sein! Alles gut oder NICHTS "
+"nein, alles schlecht, Sie müssen sich verpflichten, den Hotels oder jedem "
+"Unternehmen der Tourismusbranche, das uns einlädt, ein Feedback (echte "
+"Empfehlung) aus Ihrer Sicht zu geben.\n"
 "\n"
-"3 - Sie müssen das Hotel, das Resort oder das Unternehmen, das uns einlädt, "
-"mit mindestens zwei Kommentaren in Ihre sozialen Netzwerke nennen (z.B. "
-"Instagram, Facebook oder Travelposting), um das Unternehmen, das uns "
-"einlädt, so bekannt zu machen.\n"
+"              3 • Sie müssen das Hotel, das Resort oder das Unternehmen, das "
+"uns einlädt, mit mindestens zwei Kommentaren in Ihre sozialen Netzwerke "
+"nennen (z.B. Instagram, Facebook oder Travelposting), um das Unternehmen, "
+"das uns einlädt, so bekannt zu machen.\n"
 "\n"
-"4 - Sie müssen Ihr Feedback/Empfehlungsformular am Ende der Reise ausfüllen, "
-"oder maximal sieben Tage nach Ende der Reise."
+"              4 • Sie müssen Ihr Feedback/Empfehlungsformular am Ende der "
+"Reise ausfüllen, oder maximal sieben Tage nach Ende der Reise."
 
 #: main/templates/community.html:125
 msgid "My benefits"
@@ -2268,34 +2352,37 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"1 - Reisen mit Rabatten von 20%% bis zu 50%% auf das touristische Paket "
-"Ihrer Wahl.\n"
+"            1 • Reisen mit Rabatten von 20%% bis zu 50%% auf das "
+"touristische Paket Ihrer Wahl.\n"
 "\n"
-"2 - Sie können Ihre Freunde einladen, sich auf der travelposting-Seite zu "
-"registrieren damit sparen Ihre freunden  bei jeder reise bis zu 50%%.\n"
+"            2 • Sie können Ihre Freunde einladen, sich auf der travelposting-"
+"Seite zu registrieren damit sparen Ihre freunden  bei jeder reise bis zu "
+"50%%.\n"
 "\n"
-"3 - Kostenlose Teilnahme an allen Verlosungen, die travelposting im "
-"Zusammenhang mit der Tourismusbranche macht.\n"
+"            3 • Kostenlose Teilnahme an allen Verlosungen, die travelposting "
+"im Zusammenhang mit der Tourismusbranche macht.\n"
 "\n"
-"4 - Sie erhalten kostenlose Testprodukte, die Unternehmen vom der "
-"Tourismusbranche an die Community zur Verfügung stellen.\n"
+"            4 • Sie erhalten kostenlose Testprodukte, die Unternehmen vom "
+"der Tourismusbranche an die Community zur Verfügung stellen.\n"
 "\n"
-"5 - Sie können auch auf unsere Zeitschrift ihre reisen tipps geben.\n"
+"            5 • Sie können auch auf unsere Zeitschrift ihre reisen tipps "
+"geben.\n"
 "\n"
-"6 - Gratis besuch von Veranstaltungen, wo Travelposting über organisierten "
-"Tourismusmesse stehe.\n"
+"            6 • Gratis besuch von Veranstaltungen, wo Travelposting über "
+"organisierten Tourismusmesse stehe.\n"
 "\n"
-"7 - Erhalten Sie Rabatte auf Einkäufe mit der Travelposting KreditCard * (in "
-"Bearbeitung)\n"
+"            7 • Erhalten Sie Rabatte auf Einkäufe mit der Travelposting "
+"KreditCard * (in Bearbeitung)\n"
 "\n"
-"* Die Prepaid-Kreditkarte wird nach Abschluss des Mindestbetrages von 1.500 "
-"Mitgliedern freigegeben.\n"
+"            * Die Prepaid-Kreditkarte wird nach Abschluss des "
+"Mindestbetrages von 1.500 Mitgliedern freigegeben.\n"
 "\n"
-"Sie können uns helfen zu wachsen. Je mehr wir sind, desto schneller können "
-"wir unsere Kreditkarte und alle anderen Vergünstigung zu bekommen.\n"
+"            Sie können uns helfen zu wachsen. Je mehr wir sind, desto "
+"schneller können wir unsere Kreditkarte und alle anderen Vergünstigung zu "
+"bekommen.\n"
 "\n"
-"Ab jetzt wünschen wir Ihnen viel Freude auf Ihren Reisen mit uns. Schnell "
-"Koffer packen, Ihr nächstes Ziel wartet auf Sie ."
+"            Ab jetzt wünschen wir Ihnen viel Freude auf Ihren Reisen mit "
+"uns. Schnell Koffer packen, Ihr nächstes Ziel wartet auf Sie ."
 
 #: main/templates/community.html:169
 msgid "WHY CHOOSE US?"
@@ -2452,7 +2539,7 @@ msgid "Sign up for Travelposting and enjoy its benefits"
 msgstr "Melden Sie sich für Travelposting an und genießen Sie die Vorteile"
 
 #: main/templates/datenschutz.html:16
-msgid "Datenschutzerklärung"
+msgid "Privacy policy"
 msgstr "Datenschutzerklärung"
 
 #: main/templates/datenshutz_form.html:16 main/templates/pages/request.html:16
@@ -2495,10 +2582,6 @@ msgstr "Dienstleistung"
 msgid "Reason for use"
 msgstr "Grund für die Verwendung"
 
-#: main/templates/datenshutz_form_privacity.html:28
-msgid "Terms"
-msgstr "Konditionen"
-
 #: main/templates/datenshutz_form_privacity.html:29
 msgid "Enabled"
 msgstr "Aktiviert"
@@ -2509,7 +2592,7 @@ msgid "Cookies"
 msgstr "Cookies"
 
 #: main/templates/datenshutz_form_privacity.html:44
-msgid "Wir benutzen Cookies um das Besucherverhalten zu analysieren."
+msgid "We using Cookies for analyze the behaviors of the visits."
 msgstr "Wir benutzen Cookies um das Besucherverhalten zu analysieren."
 
 #: main/templates/datenshutz_form_privacity.html:64
@@ -2517,7 +2600,7 @@ msgid "Google Analytics"
 msgstr "Google Analytics"
 
 #: main/templates/datenshutz_form_privacity.html:67
-msgid "Google Analytics wird zum Anlayiseren des Websitetraffics verwendet"
+msgid "Google Analytics is using for analyze the Website traffic"
 msgstr "Google Analytics wird zum Anlayiseren des Websitetraffics verwendet"
 
 #: main/templates/datenshutz_form_privacity.html:68
@@ -2527,11 +2610,11 @@ msgid "Term"
 msgstr "Begriff"
 
 #: main/templates/datenshutz_form_privacity.html:91
-msgid "Facebook Pixel wird zum Analysieren des Besucherverhaltens verwendet."
+msgid "Facebook Pixel is using for analyze the behaviors of the visits."
 msgstr "Facebook Pixel wird zum Analysieren des Besucherverhaltens verwendet."
 
 #: main/templates/datenshutz_form_privacity.html:115
-msgid "Twitter wird zum Analysieren des Besucherverhaltens verwendet."
+msgid "Twitter is using for analyze the behaviors of the visits."
 msgstr "Twitter wird zum Analysieren des Besucherverhaltens verwendet."
 
 #: main/templates/datenshutz_form_privacity.html:134
@@ -2539,7 +2622,7 @@ msgid "Pinterest"
 msgstr "Pinterest"
 
 #: main/templates/datenshutz_form_privacity.html:137
-msgid "Pinterest wird zum Analysieren des Besucherverhaltens verwendet."
+msgid "Pinterest is using for analyze the behaviors of the visits."
 msgstr "Pinterest wird zum Analysieren des Besucherverhaltens verwendet."
 
 #: main/templates/datenshutz_form_privacity.html:150
@@ -2847,71 +2930,73 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"We work hand in hand with the company Xposting-Service in Germany, having "
-"its servers in the city of\n"
-"Frankfurt with a 99.9%% guarantee on its hosting, the creation price is "
-"850,- ?.\n"
-"per page and 600 € for annual maintenance, example: www.yourname.com or you "
-"can choose between, .net, .org. travel. in this\n"
-"the price includes the update of all the necessary plugins for the correct "
-"functioning of your website\n"
+"Wir arbeiten Hand in Hand mit der Firma Xposting-Service in Deutschland, die "
+"ihre Server in der Stadt \n"
+"Frankfurt mit einer 99,9%% igen Garantie auf ihr Hosting hat, der "
+"Erstellungspreis beträgt 850,- ?.\n"
+"pro Seite und 600 € für die jährliche Wartung, Beispiel: www.ihrname.comoder "
+"Sie können wählen zwischen, .net, .org. travel. in diesem\n"
+"der Preis beinhaltet die Aktualisierung aller notwendigen Plugins für das "
+"korrekte Funktionieren Ihrer Website.\n"
 "<br>\n"
-"Please note that the prices shown here are without the tax. The tax will be "
-"charged separately and will\n"
-"added at the time of the invoice.\n"
+"Bitte beachten Sie, dass die hier angezeigten Preise ohne Mehrwertsteuer "
+"sind. Die Steuer wird gesondert berechnet und zum\n"
+"Zeitpunkt der Rechnungsstellung hinzugerechnet.\n"
 "<br>\n"
-"To improve your publication we have created a series of modules that may be "
-"of interest to you:\n"
+"Um Ihre Publikation zu verbessern, haben wir eine Reihe von Modulen "
+"erstellt, die für Sie von Interesse sein könnten:\n"
 "<br>\n"
-"M1- Translation: German / English. Prices according to the amount of text to "
-"be translated.\n"
+"M1- Übersetzung: Deutsch / Englisch. Die Preise richten sich nach der Menge "
+"des zu übersetzenden Textes.\n"
 "<br>\n"
-"M2 - Extra photo gallery: up to 5 photos. 60 per year / 10 Photos. 100 € per "
-"year / 25 Photos 200 € per year. The photos owe us\n"
-"to be sent in JPG or PNG format with a resolution of at least 72 dpi for "
-"online presentation and at least 300 dpi\n"
-"for printing and a size of at least 1200 pixels wide by 800 pixels high, the "
-"photos will be used both in their\n"
-"own advertising as well as in our advertising Sliders.\n"
+"M2 - Extra Fotogalerie: bis zu 5 Fotos. 60 pro Jahr / 10 Fotos. 100 € pro "
+"Jahr / 25 Fotos 200 € pro Jahr. Die Fotos sind uns im\n"
+"JPG- oder PNG-Format mit einer Auflösung von mindestens 72 dpi für die "
+"Online-Präsentation und mindestens 300 dpi\n"
+"für den Druck und einer Größe von mindestens 1200 Pixel Breite und 800 Pixel "
+"Höhe zuzusenden. Die Fotos werden sowohl in ihrer eigenen Werbung\n"
+"als auch in unseren Werbesliders verwendet.\n"
 "<br>\n"
-"It is important to note that once you send us the photos you are also "
-"authorizing us to use these\n"
-"photos publicly for the benefit of your advertising as well as for the "
-"advertising of our portal.\n"
+"Es ist wichtig zu beachten, dass Sie uns mit der Zusendung der Fotos auch "
+"die Genehmigung erteilen, diese\n"
+"Fotos öffentlich für Ihre Werbung sowie für die Werbung für unser Portal zu "
+"verwenden.\n"
 "<br>\n"
-"M3 - Extra video gallery: up to 5 videos. 90 per year / 10 videos. 150 € per "
-"year / 25 videos 250 € per year. The videos we\n"
-"can be sent in original format, if not in a portal such as Youtube or Vimeo, "
-"we will take care of\n"
-"place them and present them inside the portal. It is important to note that "
-"once you send us the video\n"
-"you are also authorizing us to use these videos publicly for the benefit of "
-"your own advertising as well as\n"
-"the advertising of our portal.\n"
+"M3 - Zusätzliche Videogalerie: bis zu 5 Videos. 90 pro Jahr / 10 Videos. 150 "
+"€ pro Jahr / 25 Videos 250 € pro Jahr. Die Videos können\n"
+"uns im Originalformat zugeschickt werden, wenn nicht in einem Portal wie "
+"Youtube oder Vimeo, werden wir uns darum\n"
+"kümmern, sie zu platzieren und innerhalb des Portals zu präsentieren. Es ist "
+"wichtig zu beachten, dass Sie uns mit der Zusendung des Videos auch die "
+"Genehmigung erteilen, diese Videos\n"
+"öffentlich für Ihre eigene Werbung sowie für die Werbung unseres\n"
+" Portals zu verwenden.\n"
 "<br>\n"
-"M4 - Your own website: As travelposting.com is a portal of Xposting-Service "
-"Germany, you have the\n"
-"facility to obtain for a quite reasonable price your own web page and your "
-"own domain ( www.yourcompany.com ) on\n"
-"domain will remain yours even if you do not continue with our advertising.\n"
+"M4 - Ihre eigene Website: Da travelposting.com ein Portal des Xposting-"
+"Service Deutschland ist, haben\n"
+"Sie die Möglichkeit, zu einem recht günstigen Preis eine eigene Webseite zu "
+"erhalten und Ihre eigene Domain ( www.ihrunternehmen.com ) auf\n"
+"Domain bleibt auch dann Ihr Eigentum, wenn Sie unsere Werbung nicht "
+"weiterführen.\n"
 "<br>\n"
-"M5 - Subdomain: In case you don't want a website we can give you your own "
-"subdomain which you can use for\n"
-"to publicise your online advertising example: yourcompany.travelposting.com "
-"for a price of 240 € per year, this subdomain\n"
-"allows you to use 3 pages on our website: 1st Home Page, 2nd Information "
-"Page 3rd Your Data Page\n"
-"contact including a digital map.\n"
+"M5 - Unterdomäne: Falls Sie keine Website wünschen, können wir Ihnen eine "
+"eigene Subdomain zur Verfügung\n"
+"stellen, mit der Sie Ihr Online-Werbebeispiel bekannt machen können: "
+"ihrunternehmen.travelposting.com für einen Preis von 240 € pro Jahr, diese "
+"Subdomain\n"
+"ermöglicht Ihnen die Nutzung von 3 Seiten auf unserer Website: 1. "
+"Startseite, 2. Informationsseite, 3. Ihre Datenseite Kontakt \n"
+"einschließlich einer digitalen Karte.\n"
 "<br>\n"
-"M6 - Feedback: For a price of only 300 € per year you will be able to "
-"interact with your customers and know exactly what\n"
-"they think about their company. Take the opportunity to improve your "
-"services through the feedback your\n"
-"clients send you personally, with myfeedback you can ask your clients direct "
-"questions and they will deliver the\n"
-"comment directly in your mailbox, you decide whether or not you want to make "
-"public what the customer downloaded\n"
-"\"Anonymity\" about his service told him.\n"
+"M6 - Rückmeldung: Für einen Preis von nur 300 € pro Jahr können Sie mit "
+"Ihren Kunden interagieren und wissen genau, was sie über ihr\n"
+"Unternehmen denken. Nutzen Sie die Gelegenheit, Ihre Dienstleistungen durch "
+"das Feedback, das Ihre Kunden Ihnen persönlich schicken, zu\n"
+"verbessern. Mit myfeedback können Sie Ihren Kunden direkte Fragen stellen, "
+"und sie werden den Kommentar direkt\n"
+"in Ihrer Mailbox abgeben, Sie entscheiden, ob Sie veröffentlichen möchten, "
+"was der Kunde\n"
+"'Anonymität' über seinen Dienst heruntergeladen hat, oder nicht.\n"
 "            "
 
 #: main/templates/faq.html:332
@@ -3194,10 +3279,6 @@ msgstr "Touren von travelposting"
 msgid "Enjoy and share the best travel magazine."
 msgstr "Genießen und teilen Sie das beste Reisemagazin."
 
-#: main/templates/magazine.html:34
-msgid "Magazine"
-msgstr "Zeitschrift"
-
 #: main/templates/make_page.html:11
 msgid "Make your payments"
 msgstr "Machen Sie Ihre Zahlungen"
@@ -3216,7 +3297,7 @@ msgstr ""
 
 #: main/templates/make_page.html:78
 msgid "Make your payment via Paypal to: info@xposting-service.com"
-msgstr "Machen Sie Ihre Zahlung über Paypal an: info@travelposting.com"
+msgstr "Machen Sie Ihre Zahlung über Paypal an: info@xposting-service.com"
 
 #: main/templates/make_page.html:84
 msgid "GBP Receiving Account (BACS) England"

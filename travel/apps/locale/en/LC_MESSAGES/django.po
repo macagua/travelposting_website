@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-03 10:59-0400\n"
+"POT-Creation-Date: 2020-07-05 07:08-0400\n"
 "PO-Revision-Date: 2020-02-07 07:04-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -243,6 +243,7 @@ msgstr ""
 #: apps/community/templates/accounts/mail_body.html:200
 #: apps/community/templates/accounts/mail_profile_complete.html:94
 #: apps/community/templates/accounts/mail_profile_complete.html:209
+#: main/templates/base.html:11 main/templates/base.html:13
 #: main/templates/coming-soon.html:4 main/templates/footer.html:7
 #: main/templates/footer.html:9 main/templates/footer.html:47
 #: main/templates/index.html:5 main/templates/menu/navbar.html:14
@@ -740,6 +741,25 @@ msgstr ""
 msgid "An error, Incorrect User or Password has occurred."
 msgstr ""
 
+#: apps/community/apps.py:6
+#: apps/community/templates/accounts/customeruser_list.html:5
+#: apps/community/templates/community/dashboard/dashboard.html:5
+#: apps/community/templates/community/dashboard/mail.html:5
+#: apps/community/templates/community/dashboard/make_recomm.html:4
+#: apps/community/templates/community/dashboard/notifications.html:5
+#: apps/community/templates/community/dashboard/profile_user.html:4
+#: apps/community/templates/community/profile/complete_profile.html:5
+#: apps/community/templates/community/profile/edit_profile.html:5
+#: apps/community/templates/community/profile/my_profile.html:5
+#: apps/community/templates/community/registration/forget_password.html:4
+#: apps/community/templates/community/registration/login.html:4
+#: apps/community/templates/community/registration/signup.html:4
+#: config/settings/base.py:325 main/templates/community.html:4
+#: main/templates/community.html:21 main/templates/hotels.html:108
+#: main/templates/page01.html:39 main/templates/pricing.html:4
+msgid "Community"
+msgstr ""
+
 #: apps/community/forms.py:12
 msgid "Referred by"
 msgstr ""
@@ -842,24 +862,6 @@ msgstr ""
 #: apps/community/templates/community/profile/complete_profile.html:81
 #: apps/community/templates/community/profile/edit_profile.html:210
 msgid "Cancel"
-msgstr ""
-
-#: apps/community/templates/accounts/customeruser_list.html:5
-#: apps/community/templates/community/dashboard/dashboard.html:5
-#: apps/community/templates/community/dashboard/mail.html:5
-#: apps/community/templates/community/dashboard/make_recomm.html:4
-#: apps/community/templates/community/dashboard/notifications.html:5
-#: apps/community/templates/community/dashboard/profile_user.html:4
-#: apps/community/templates/community/profile/complete_profile.html:5
-#: apps/community/templates/community/profile/edit_profile.html:5
-#: apps/community/templates/community/profile/my_profile.html:5
-#: apps/community/templates/community/registration/forget_password.html:4
-#: apps/community/templates/community/registration/login.html:4
-#: apps/community/templates/community/registration/signup.html:4
-#: main/templates/community.html:4 main/templates/community.html:21
-#: main/templates/hotels.html:108 main/templates/page01.html:39
-#: main/templates/pricing.html:4
-msgid "Community"
 msgstr ""
 
 #: apps/community/templates/accounts/customeruser_list.html:20
@@ -1560,6 +1562,10 @@ msgstr ""
 msgid "Travelposting send a new import message"
 msgstr ""
 
+#: apps/directmessages/apps.py:5
+msgid "Direct Messages"
+msgstr ""
+
 #: apps/directmessages/models.py:19
 msgid "sent at"
 msgstr ""
@@ -1578,6 +1584,10 @@ msgstr ""
 
 #: apps/landing_page/admin.py:81 apps/landing_page/models.py:368
 msgid "Company"
+msgstr ""
+
+#: apps/landing_page/apps.py:6
+msgid "Landing Pages"
 msgstr ""
 
 #: apps/landing_page/models.py:20
@@ -1929,8 +1939,73 @@ msgstr ""
 msgid "es"
 msgstr ""
 
+#: config/settings/base.py:265
+msgid "Travel Dashboard"
+msgstr ""
+
+#: config/settings/base.py:266
+msgid "Support"
+msgstr ""
+
 #: config/settings/base.py:314
 msgid "Feature"
+msgstr ""
+
+#: config/settings/base.py:320
+msgid "Landing"
+msgstr ""
+
+#: config/settings/base.py:323
+msgid "Tour"
+msgstr ""
+
+#: config/settings/base.py:324 main/templates/magazine.html:34
+msgid "Magazine"
+msgstr ""
+
+#: config/settings/base.py:326
+msgid "Data protection"
+msgstr ""
+
+#: config/settings/base.py:327
+msgid "Data protection Form"
+msgstr ""
+
+#: config/settings/base.py:328
+msgid "Data protection Form Privacity"
+msgstr ""
+
+#: config/settings/base.py:329 main/templates/coming-soon.html:90
+#: main/templates/coming-soon.html:99
+msgid "Coming Soon"
+msgstr ""
+
+#: config/settings/base.py:330
+msgid "Hotels template"
+msgstr ""
+
+#: config/settings/base.py:331
+msgid "Pricing"
+msgstr ""
+
+#: config/settings/base.py:333 main/templates/datenshutz_form_privacity.html:28
+msgid "Terms"
+msgstr ""
+
+#: config/settings/base.py:334
+msgid "FAQ"
+msgstr ""
+
+#: config/settings/base.py:335
+msgid "Page type 01"
+msgstr ""
+
+#: config/settings/base.py:336
+msgid "Page type 02"
+msgstr ""
+
+#: config/settings/base.py:337
+msgid "Pre-signup"
 msgstr ""
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
@@ -1970,6 +2045,16 @@ msgstr ""
 
 #: main/templates/about.html:106 main/templates/page02.html:56
 msgid "Get special offers on the latest travels add on our platform."
+msgstr ""
+
+#: main/templates/base.html:12
+msgid ""
+"Our vision is oriented to Companies that wish to present their products and "
+"services in several languages by means of a digital promotion alternative."
+msgstr ""
+
+#: main/templates/base.html:14
+msgid "Trips, vision, products, services"
 msgstr ""
 
 #: main/templates/base.html:82
@@ -2013,10 +2098,6 @@ msgstr ""
 
 #: main/templates/coming-soon.html:85
 msgid "Coming back to our website"
-msgstr ""
-
-#: main/templates/coming-soon.html:90 main/templates/coming-soon.html:99
-msgid "Coming Soon"
 msgstr ""
 
 #: main/templates/coming-soon.html:122
@@ -2246,7 +2327,7 @@ msgid "Sign up for Travelposting and enjoy its benefits"
 msgstr ""
 
 #: main/templates/datenschutz.html:16
-msgid "Datenschutzerklärung"
+msgid "Privacy policy"
 msgstr ""
 
 #: main/templates/datenshutz_form.html:16 main/templates/pages/request.html:16
@@ -2284,10 +2365,6 @@ msgstr ""
 msgid "Reason for use"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:28
-msgid "Terms"
-msgstr ""
-
 #: main/templates/datenshutz_form_privacity.html:29
 msgid "Enabled"
 msgstr ""
@@ -2298,7 +2375,7 @@ msgid "Cookies"
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:44
-msgid "Wir benutzen Cookies um das Besucherverhalten zu analysieren."
+msgid "We using Cookies for analyze the behaviors of the visits."
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:64
@@ -2306,7 +2383,7 @@ msgid "Google Analytics"
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:67
-msgid "Google Analytics wird zum Anlayiseren des Websitetraffics verwendet"
+msgid "Google Analytics is using for analyze the Website traffic"
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:68
@@ -2316,11 +2393,11 @@ msgid "Term"
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:91
-msgid "Facebook Pixel wird zum Analysieren des Besucherverhaltens verwendet."
+msgid "Facebook Pixel is using for analyze the behaviors of the visits."
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:115
-msgid "Twitter wird zum Analysieren des Besucherverhaltens verwendet."
+msgid "Twitter is using for analyze the behaviors of the visits."
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:134
@@ -2328,7 +2405,7 @@ msgid "Pinterest"
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:137
-msgid "Pinterest wird zum Analysieren des Besucherverhaltens verwendet."
+msgid "Pinterest is using for analyze the behaviors of the visits."
 msgstr ""
 
 #: main/templates/datenshutz_form_privacity.html:150
@@ -2789,10 +2866,6 @@ msgstr ""
 
 #: main/templates/magazine.html:11
 msgid "Enjoy and share the best travel magazine."
-msgstr ""
-
-#: main/templates/magazine.html:34
-msgid "Magazine"
 msgstr ""
 
 #: main/templates/make_page.html:11
