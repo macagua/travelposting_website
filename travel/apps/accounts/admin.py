@@ -83,9 +83,13 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
 
     def password_link(self, obj):
         from django.utils.html import mark_safe
-        return mark_safe(f'<a href="/admin/accounts/customeruser/{obj.id}/password/">Change Password</a>')
+        change_password_link_msg = '''<a href="/admin/accounts/customeruser/{obj_id}/password/"
+                                         title="{change_password_msg}">{change_password_msg}</a>'''.format(
+                                            obj_id=obj.id,
+                                            change_password_msg=_("Change Password"))
+        return mark_safe(change_password_link_msg)
     password_link.allow_tags = True
-    password_link.short_description = 'password'
+    password_link.short_description = _('Password')
 
 
 # ... and, since we're not using Django's built-in permissions,

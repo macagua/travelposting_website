@@ -29,7 +29,7 @@
 							<img class="img-fluid rounded-circle"
 								 src="{%if not request.user.avatar %}
 								 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
-								 alt="Image Description">
+								 alt="{% trans 'Image Description' %}">
 						</div>
 
 						<div class="media-body">

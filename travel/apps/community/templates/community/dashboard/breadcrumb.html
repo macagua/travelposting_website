@@ -11,7 +11,8 @@
                 <!-- Breadcrumb Nav Toggle Button -->
                 <div class="d-lg-none">
                     <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
-                            aria-label="Toggle navigation" aria-expanded="false" aria-controls="breadcrumbNavBar"
+                            aria-label="{% trans 'Toggle navigation' %}" aria-expanded="false"
+                            aria-controls="breadcrumbNavBar"
                             data-toggle="collapse" data-target="#breadcrumbNavBar">
                         <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
                             <span class="u-hamburger__inner"></span>
@@ -28,7 +29,7 @@
                     <img class="img-fluid rounded-circle"
                          src="{%if not request.user.avatar %}
                          {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
-                         alt="Image Description">
+                         alt="{% trans 'Image Description' %}">
                     <span
                             class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">
                             <span class="fas fa-check"></span>
@@ -84,7 +85,7 @@
                 <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover" href="#addMembersModal"
                    data-modal-target="#addMembersModal">
                     <span class="fas fa-plus small mr-2"></span>
-                    Following
+                    {% trans "Following" %}
                 </a>
                 {%endif%}
                 <!-- End Button -->

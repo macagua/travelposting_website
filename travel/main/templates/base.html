@@ -96,7 +96,15 @@
         {% endblock navbar %}
         <main id="content" role="main">
             {% block content %}{% endblock content %}
-            <a class="js-go-to u-go-to animated js-animation-was-fired slideInUp" href="#" data-position="{&quot;bottom&quot;: 15, &quot;right&quot;: 15 }" data-type="fixed" data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown" style="display: inline-block; position: fixed; bottom: 15px; right: 15px;">
+            <a class="js-go-to u-go-to animated js-animation-was-fired slideInUp"
+               href="#" title="{% trans 'Up' %}"
+               data-position="{&quot;bottom&quot;: 15, &quot;right&quot;: 15 }"
+               data-type="fixed"
+               data-offset-top="400"
+               data-compensation="#header"
+               data-show-effect="slideInUp"
+               data-hide-effect="slideOutDown"
+               style="display: inline-block; position: fixed; bottom: 15px; right: 15px;">
             <span class="fas fa-arrow-up u-go-to__inner"></span>
             </a>
         </main>
@@ -209,7 +217,7 @@
             </script>
 
             <script>
-                //Script para el customer user
+                // Script para el customer user
                 (function(w,d,u){
                   var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
                   var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
@@ -259,7 +267,7 @@
               $(document).ready(function () {
                 $('.js-example-basic-single').select2({
                   theme: 'bootstrap4',
-                  placeholder: "Select a state" // TODO Add i18n support
+                  placeholder: "{% trans 'Select a state' %}",
                 });
               });
             </script>
@@ -273,8 +281,6 @@
 
             gtag('config', 'UA-167807449-1');
           </script>
-
-
 
         {% block extrajs %} {% endblock extrajs %}
     </body>

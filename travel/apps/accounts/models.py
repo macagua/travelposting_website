@@ -77,6 +77,7 @@ class CustomerUser(AbstractUser):
     )
 
     subscription_id = models.CharField(
+        _('Subscription ID'),
         max_length=50,
         blank=True,
         null=True,
@@ -181,53 +182,58 @@ class CustomerUser(AbstractUser):
     )
 
     facebook = models.CharField(
+        _("Facebook"),
         max_length=100,
         null=True,
         blank=True,
     )
 
     instagram = models.CharField(
+        _("Instagram"),
         max_length=100,
         null=True,
         blank=True,
     )
 
     twitter = models.CharField(
+        _("Twitter"),
         max_length=100,
         null=True,
         blank=True,
     )
 
     linkedin = models.CharField(
+        _("Linkedin"),
         max_length=100,
         null=True,
         blank=True,
     )
 
     about_me = models.TextField(
-        _('About me'),
+        _("About me"),
         null=True,
         blank=True,
         max_length=2000,
     )
 
     avatar = models.ImageField(
+        _("Avatar"),
         upload_to='avatars/',
         null=True,
         blank=True,
     )
 
-    pinterest = models.URLField(blank=True, null=True)
+    pinterest = models.URLField(_("Pinterest"), blank=True, null=True)
 
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-    is_superuser = models.BooleanField(default=False)
-    is_community = models.BooleanField(default=True)
+    is_active = models.BooleanField(_("is active?"), default=True)
+    is_staff = models.BooleanField(_("is staff?"), default=False)
+    is_superuser = models.BooleanField(_("is superuser?"), default=False)
+    is_community = models.BooleanField(_("is community?"), default=True)
 
-    last_ip = models.GenericIPAddressField(protocol='IPv4', verbose_name="Last Login IP", null=True, blank=True)
-    location = models.CharField(max_length=50, blank=True, null=True)
+    last_ip = models.GenericIPAddressField(protocol='IPv4', verbose_name=_("Last Login IP"), null=True, blank=True)
+    location = models.CharField(_("Location"), max_length=50, blank=True, null=True)
 
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(_("SLUG"), unique=True)
 
 
     USERNAME_FIELD = 'email'
@@ -249,7 +255,7 @@ class CustomerUser(AbstractUser):
 
     class Meta(AbstractUser.Meta):
         verbose_name = _("User")
-        verbose_name_plural = _('Users')
+        verbose_name_plural = _("Users")
         # swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
@@ -260,9 +266,13 @@ class CustomerUser(AbstractUser):
 
 
 class LastVisitIP(models.Model):
-    user = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
-    last_ip_login = models.GenericIPAddressField(protocol='IPv4', verbose_name="Last Login", null=True, blank=True)
-    location = models.CharField(max_length=50, blank=True, null=True)
+    user = models.ForeignKey(CustomerUser, verbose_name=_("User"), on_delete=models.CASCADE)
+    last_ip_login = models.GenericIPAddressField(_("Last Login IP"), protocol='IPv4', null=True, blank=True)
+    location = models.CharField(_("Location"),max_length=50, blank=True, null=True)
+
+    class Meta:
+        verbose_name = _("Last Visit IP")
+        verbose_name_plural = _("Lasts Visits IP")
 
     @classmethod
     def add(self, user):
@@ -272,6 +282,9 @@ class LastVisitIP(models.Model):
                 defaults={
                     'location': user.location 
                     })
+
+    def __str__(self):
+        return self.last_ip_login
 
     def str(self):
         return str(self.user) +" "+ str(self.last_ip_login)
@@ -287,16 +300,21 @@ The preceding code shows the Contact model we will use for user relationships. I
 '''
 class Contact(models.Model):
     user_from = models.ForeignKey('accounts.CustomerUser',
+                                  verbose_name=_('User that creates the relationship'),
                                   related_name='rel_from_set',
                                   on_delete=models.CASCADE)
     user_to = models.ForeignKey('accounts.CustomerUser',
+                                verbose_name=_('User being followed'),
                                 related_name='rel_to_set',
                                 on_delete=models.CASCADE)
-    created = models.DateTimeField(auto_now_add=True,
+    created = models.DateTimeField(_('Created at'),
+                                   auto_now_add=True,
                                    db_index=True)
 
     class Meta:
         ordering = ('-created',)
+        verbose_name = _('Contact')
+        verbose_name_plural = _('Contacts')
 
     def __str__(self):
         return _('%(user_from)s follows %(user_to)s') % {
@@ -317,9 +335,11 @@ from apps.destinations.models import Destination
 
 class Comment(models.Model):
     post = models.ForeignKey(
-        Destination, related_name='comments', on_delete=None)
+        Destination, verbose_name=_('Post'),
+        related_name='comments', on_delete=None)
     user_comment = models.ForeignKey(
         CustomerUser,
+        verbose_name=_('User Comment'),
         max_length=80,
         related_name='user_comment_to',
         null=True,
@@ -327,29 +347,32 @@ class Comment(models.Model):
         on_delete=models.CASCADE)
     user_answer = models.ForeignKey(
         CustomerUser,
+        verbose_name=_('User Answer'),
         max_length=80,
         related_name='user_answer_to',
         null=True,
         blank=True,
         on_delete=models.CASCADE)
     name = models.CharField(_('Name'), max_length=200, null=False, blank=False)
-    body = models.TextField()
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    active = models.BooleanField(default=True)
+    body = models.TextField(_('Body Comment'))
+    created = models.DateTimeField(_('Created at'), auto_now_add=True)
+    updated = models.DateTimeField(_('Updated at'), auto_now=True)
+    active = models.BooleanField(_('Active'), default=True)
     parent = models.IntegerField(
         _('Parent'),
         null=True,
         blank=True)
     likes = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, blank=True, related_name='post_likes')
-    height_field = models.IntegerField(default=0)
-    width_field = models.IntegerField(default=0)
+        settings.AUTH_USER_MODEL, verbose_name=_('Likes'), blank=True, related_name='post_likes')
+    height_field = models.IntegerField(_('Height'), default=0)
+    width_field = models.IntegerField(_('Width'), default=0)
 
 
     class Meta:
         # sort comments in chronological order by default
         ordering = ('created',)
+        verbose_name = _('Comment')
+        verbose_name_plural = _('Comments')
 
     def __str__(self):
         return _('Comment by %(body)s') % {'body': self.body}

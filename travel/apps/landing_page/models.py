@@ -35,6 +35,7 @@ class Price(models.Model):
     type = models.ForeignKey(
         PriceType,
         on_delete=None,
+        verbose_name=_('Price Type'),
     )
 
     value  = MoneyField(
@@ -55,6 +56,7 @@ class Price(models.Model):
 
 class Plan(models.Model):
     paypal_id = models.CharField(
+        _("Paypal ID"),
         max_length=50,
         blank=True,
         null=True,
@@ -90,9 +92,9 @@ class Plan(models.Model):
         default=1,
     )
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(_('Created at'), auto_now_add=True)
 
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -139,9 +141,9 @@ class PlanFeature(models.Model):
         default=False,
     )
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(_('Created at'), auto_now_add=True)
 
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
 
     objects = PlanFeatureManager.from_queryset(PlanFeatureQuerySet)()
 
@@ -203,9 +205,9 @@ class Feature(MPTTModel):
         default=False,
     )
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(_('Created at'), auto_now_add=True)
 
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
 
     objects = FeatureTreeManager.from_queryset(FeatureTreeQuerySet)()
 
@@ -249,9 +251,9 @@ class BaseAbstractExtra(models.Model):
         default=1,
     )
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(_('Created at'), auto_now_add=True)
 
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -320,9 +322,9 @@ class Testimony(models.Model):
         default=1,
     )
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(_('Created at'), auto_now_add=True)
 
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
 
     def __str__(self):
         return f"{self.author}"
@@ -376,9 +378,9 @@ class Slider(models.Model):
         null=True,
     )
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(_('Created at'), auto_now_add=True)
 
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
 
     def __str__(self):
         return f"{self.title}"
@@ -412,6 +414,7 @@ class Magazine(models.Model):
     )
 
     files = FilerImageField(
+        verbose_name=_("Files"),
         null=True,
         blank=True,
         on_delete=False,
@@ -489,7 +492,7 @@ class PrivacySetting(models.Model):
     ganality = models.BooleanField(_('Google Analitys'), default=True)
     facebook = models.BooleanField(_('Facebook Pixel'), default=True)
     twitter = models.BooleanField(_('Twitter'), default=True)
-    pinteres = models.BooleanField(_('Pinteres'), default=True)
+    pinteres = models.BooleanField(_('Pinterest'), default=True)
 
     def __str__(self):
         return f"{self.ip}"
@@ -501,16 +504,22 @@ class PrivacySetting(models.Model):
 
 class ContactUs(models.Model):
     email = models.EmailField(
+        _('Email'),
         blank=False,
         null = False
     )
     message = models.CharField(
+        _('Message'),
         max_length = 300,
         blank = False,
         null = False
     )
     ip_client = models.GenericIPAddressField(
-        _('Address IP'), 
+        _('Address IP'),
         blank=True, 
         null=True
     )
+
+    class Meta:
+        verbose_name_plural = _('Contact Us')
+        verbose_name = _('Contacts')

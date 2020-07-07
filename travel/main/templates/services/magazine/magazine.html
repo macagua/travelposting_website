@@ -4,14 +4,17 @@
 <div class="col-sm-6 col-md-4 mb-5">
         <!-- Card Info -->
         <div class="card border-0 shadow-soft h-100">
-            <img class="card-img-top" src="{{ magazine.files.url }}" alt="Image Description">
+            <img class="card-img-top" src="{{ magazine.files.url }}"
+                 alt="{% trans 'Image Description' %}">
             <div class="card-body p-5">
 
                 <p class="mb-0">{{ magazine.name }}</p>
                 <p>{{ magazine.editor}}</p>
             </div>
         <div class="card-footer bg-light border-0 py-4 px-5">
-            <a href="{{ magazine.magazine.url }}" target="_blank"><i class="fas fa-download"></i> {% trans 'Download' %} </a>
+            <a href="{{ magazine.magazine.url }}" target="_blank" title="{% trans 'Download' %}">
+                <i class="fas fa-download"></i> {% trans 'Download' %}
+            </a>
         </div>
     </div>
     <!-- End Card Info -->

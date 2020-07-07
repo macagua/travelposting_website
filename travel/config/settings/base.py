@@ -242,13 +242,13 @@ THIRD_PARTY = [
 ]
 
 LOCAL_APPS = [
-    'apps.landing_page',
+    'apps.landing_page.apps.LandingPageConfig',
     'apps.utils.apps.UtilsConfig',
     'apps.payments.apps.PaymentsConfig',
-    'apps.destinations',
-    'apps.api',
-    'apps.community',
-    'apps.directmessages',
+    'apps.destinations.apps.DestinationsConfig',
+    'apps.api.apps.ApiConfig',
+    'apps.community.apps.CommunityConfig',
+    'apps.directmessages.apps.DirectmessagesConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS

@@ -152,25 +152,25 @@
                                 <!-- <ul class="list-inline mb-0"> -->
                                 <!--     <li class="list-inline-item"> -->
                                 <!--         <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" -->
-                                <!--             href="{{ user.facebook }}"> -->
+                                <!--             href="{{ user.facebook }}" title="{% trans 'Follow us at Facebook' %}"> -->
                                 <!--             <span class="fab fa-facebook-f btn-icon__inner"></span> -->
                                 <!--         </a> -->
                                 <!--     </li> -->
                                 <!--     <li class="list-inline-item"> -->
                                 <!--         <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" -->
-                                <!--             href="mailto://{{ user.email }}"> -->
+                                <!--             href="mailto://{{ user.email }}" title="{% trans 'Write us via Email' %}"> -->
                                 <!--             <span class="fab fa-google btn-icon__inner"></span> -->
                                 <!--         </a> -->
                                 <!--     </li> -->
                                 <!--     <li class="list-inline-item"> -->
                                 <!--         <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" -->
-                                <!--             href="{{ user.twitter }}"> -->
+                                <!--             href="{{ user.twitter }}" title="{% trans 'Follow us at Twitter' %}"> -->
                                 <!--             <span class="fab fa-twitter btn-icon__inner"></span> -->
                                 <!--         </a> -->
                                 <!--     </li> -->
                                 <!--     <li class="list-inline-item"> -->
                                 <!--         <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" -->
-                                <!--             href="{{ user.instagram }}"> -->
+                                <!--             href="{{ user.instagram }}" title="{% trans 'Follow us at Instagram' %}"> -->
                                 <!--             <span class="fab fa-instagram btn-icon__inner"></span> -->
                                 <!--         </a> -->
                                 <!--     </li> -->
@@ -181,7 +181,7 @@
                         {% with total_followers=user.followers.count %}
                         <span class="count">
                             <span class="total">{{ total_followers }}</span>
-                            follower{{ total_followers|pluralize }}
+                            {% trans 'follower' %}{{ total_followers|pluralize }}
                         </span>
                         <div class="card-footer py-4 px-6">
                             <form action="{% url 'user_follow' %}" method="POST">{% csrf_token %}
@@ -215,7 +215,7 @@
                         <a href="?page=1"><span class="page-link">
                                 << </span> </a> </li> <li class="page-item disabled">
                                     <a href="?page={{ posts.previous_page_number }}"><span
-                                            class="page-link">{% trans "Previous" %}</span></a>
+                                            class="page-link">{% trans 'Previous' %}</span></a>
                     </li>
                     {% endif %}
                     {% for num in members.paginator.page_range %}
