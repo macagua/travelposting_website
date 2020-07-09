@@ -61,6 +61,12 @@
                 <span class="nav-label">{% trans "Admin site" %}</span>
               </a>
             </li>
+            <li class="">
+              <a href="{% url 'dashboard:manager'%}">
+                <i class="fa fa-user fa-lg"></i>
+                <span class="nav-label">{% trans "Managers" %}</span>
+              </a>
+            </li>
             {% endif %}
       <li class="">
         <a href="#">

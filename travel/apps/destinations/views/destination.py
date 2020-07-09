@@ -728,3 +728,31 @@ class MailboxDetail(View):
         mensajes = MessageDashboard.objects.all().order_by('-sent_at')
         conteo = mensajes.filter(read_at=None).count()
         return render(request, self.template_name, {'conteo':conteo, 'msg':msg_pk})
+
+
+class LeaderView(View):
+    template_name = 'dashboard/leaders/_leaders.html'
+
+    def get(self, request, *args, **kwargs):
+        admins = ['Manager']
+        manager = ['manager_country']
+        agencies = ['agency']
+        verify_admins = request.user.groups.get_queryset().filter(name__in=admins).exists()
+        if verify_admins==True:
+            #search all user that group is manager_country and show their country
+
+            users_manager_country = CustomerUser.objects.filter(groups__name='manager_country')
+            users_agencies = CustomerUser.objects.filter(groups__name='agency')
+            conteo = users_manager_country.count()
+            conteo_agency = users_agencies.count()
+
+            return render(request, 
+                            self.template_name, 
+                            {
+                                'users_manager_country':users_manager_country,
+                                'conteo':conteo,
+                                'counteo_agency':conteo_agency,
+                            }
+                    )
+        else:
+            return render(request, self.template_name)

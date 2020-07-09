@@ -64,7 +64,7 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     readonly_fields = ('subscription_id', 'last_ip', 'location')
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'last_ip', 'location', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me', 'avatar')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'last_ip', 'location', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me', 'avatar', 'country')}),
         (_('Business info'), {'fields': ('business_name', 'business_address', 'business_position')}),
         (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'is_community', 'subscription_id', 'groups','ref_code')}),
     )
@@ -101,6 +101,7 @@ class ContactAdmin(admin.ModelAdmin):
         'user_to',
         'created',
     ]
+
 
 
 # Register your models here.

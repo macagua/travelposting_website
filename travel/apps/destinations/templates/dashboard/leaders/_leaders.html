@@ -1,0 +1,140 @@
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Managers - Travelposting' %}{% endblock %}
+{% block extracss %}
+<!-- FooTable -->
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="widget style1 navy-bg">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fa fa-users fa-4x"></i>
+                        </div>
+                        <div class="col-8 text-right">
+                            <span> {% trans "Travelposting Leaders" %} </span>
+                            <h2 class="font-bold">
+                                {{ conteo }}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="widget style1 lazur-bg">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fa fa-users fa-4x"></i>
+                        </div>
+                        <div class="col-8 text-right">
+                            <span> {% trans "Registered Agencies" %} </span>
+                            <h2 class="font-bold">
+                                {{ conteo_agency }}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 animated fadeInRight">
+
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>{% trans "Manager Plataform"%}</h5>
+                        <div class="ibox-tools">
+                            <div class="btn-group">
+                                <button href="" class="btn btn-outline btn-primary" type="button"><i class="fa fa-plus"></i> <b class="color:white;">{% trans "add agency"%}</b></button>
+                                <button href="" class="btn btn-outline btn-info" type="button"> <i class="fa fa-plus"></i> <b>{% trans "add leader"%}</b></button>
+                                <button href="" class="btn btn-outline btn-danger" type="button"> <i class="fa fa-plus"></i> <b>{% trans "add new Manager"%}</b></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
+                            placeholder="{% trans 'Search manager country' %}">
+                        <table class="table table-striped" data-page-size="8" data-filter=#filter>
+                            <thead>
+                                <tr>
+                                    <th>{% trans "Full Name" %}</th>
+                                    <th>{% trans "Email" %}</th>
+                                    <th>{% trans "Country" %}</th>
+                                    <th>{% trans "Phone" %}</th>
+                                    <th>{% trans "Actions "%}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for users in users_manager_country %}
+                                <tr class="gradeA">
+                                    <td>{{users.get_full_name }}</td>
+                                    <td>{{ users.email}}</td>
+
+                                    <td>
+                                        {{ users.get_country_display}}
+                                    </td>
+                                    <td>
+                                        {% if users.phone %}
+                                            {{ users.phone }}    
+                                        {% else %}
+                                            {% trans "It does not have"%}    
+                                        {% endif %}
+                                    </td>
+
+                                    <td>
+                                        <a href="{% url 'dashboard:mailbox-detail' int=users.id %}" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
+                                        </a>
+                                        <span class="btn btn-outline btn-danger  btn-xs" onClick="">{% trans "Delete" %}
+                                        </span>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <ul class="pagination float-right"></ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    {% include 'destinations/footer.html' %}
+</div>
+{% endblock content %}
+
+
+{% block js %}
+{{ block.super }}
+{{ form.media.js }}
+<!-- FooTable -->
+<script src="{% static 'dashboard/js/plugins/footable/footable.all.min.js' %}"></script>
+<!-- iCheck -->
+<script src="{% static 'dashboard/js/plugins/iCheck/icheck.min.js' %}"></script>
+<script>    
+    $(document).ready(function () {
+     $('.i-checks').iCheck({
+         checkboxClass: 'icheckbox_square-green',
+             radioClass: 'iradio_square-green',
+     });
+    });
+    
+    
+    $(document).ready(function () {
+     $('.footable').footable();
+     $('.footable2').footable();
+    });
+</script>
+{% endblock js %}
+

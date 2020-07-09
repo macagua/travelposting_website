@@ -31,6 +31,7 @@ from apps.destinations.views.destination import (
     MailboxDetail,
     MailboxSent,
     messageView,
+    LeaderView,
 )
 
 from apps.destinations.views.booking import (
@@ -70,7 +71,11 @@ urlpatterns = [
         nocommunity_access(DashboardIndex),
         name='dashboard-index',
     ),
-
+    path(
+        'managers',
+        nocommunity_access(LeaderView.as_view()),
+        name='manager',
+    ),    
     path(
         'mailbox',
         nocommunity_access(MailboxView.as_view()),
