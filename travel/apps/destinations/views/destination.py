@@ -740,7 +740,6 @@ class LeaderView(View):
         verify_admins = request.user.groups.get_queryset().filter(name__in=admins).exists()
         if verify_admins==True:
             #search all user that group is manager_country and show their country
-
             users_manager_country = CustomerUser.objects.filter(groups__name='manager_country')
             users_agencies = CustomerUser.objects.filter(groups__name='agency')
             conteo = users_manager_country.count()
