@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 07:22-0400\n"
-"PO-Revision-Date: 2020-07-07 07:04-0428\n"
+"POT-Creation-Date: 2020-07-09 12:21-0400\n"
+"PO-Revision-Date: 2020-07-09 12:24-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1175,7 +1175,7 @@ msgstr ""
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:299
-#: apps/directmessages/models.py:43 apps/landing_page/models.py:512
+#: apps/directmessages/models.py:24 apps/landing_page/models.py:512
 msgid "Message"
 msgstr ""
 
@@ -1856,12 +1856,12 @@ msgstr ""
 msgid "read at"
 msgstr ""
 
-#: apps/directmessages/models.py:34
-msgid "You can't send messages to yourself"
+#: apps/directmessages/models.py:23
+msgid "Messages"
 msgstr ""
 
-#: apps/directmessages/models.py:42
-msgid "Messages"
+#: apps/directmessages/models.py:38
+msgid "You can't send messages to yourself"
 msgstr ""
 
 #: apps/directmessages/views.py:55

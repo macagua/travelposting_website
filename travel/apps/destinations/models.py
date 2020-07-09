@@ -286,7 +286,7 @@ class DestinationMap(models.Model):
     description_map = models.CharField(_('Description Map'),
         max_length = 50
     )
-    map_destinie = models.PointField(_('Destinie Map'),
+    map_destinie = models.PointField(_('Destination Map'),
         help_text=_("To generate the map for your location"))
 
     class Meta:

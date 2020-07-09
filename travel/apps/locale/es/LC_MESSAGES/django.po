@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 07:22-0400\n"
-"PO-Revision-Date: 2020-07-07 08:49-0400\n"
+"POT-Creation-Date: 2020-07-09 12:21-0400\n"
+"PO-Revision-Date: 2020-07-09 17:00-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -312,9 +312,8 @@ msgid "User that creates the relationship"
 msgstr "Usuario que crea la relación"
 
 #: apps/accounts/models.py:307
-#, fuzzy
 msgid "User being followed"
-msgstr "Usuario que ha sido seguido"
+msgstr "Usuario seguido"
 
 #: apps/accounts/models.py:310 apps/accounts/models.py:358
 #: apps/community/models.py:67 apps/landing_page/models.py:95
@@ -1210,7 +1209,7 @@ msgstr "Asunto"
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:299
-#: apps/directmessages/models.py:43 apps/landing_page/models.py:512
+#: apps/directmessages/models.py:24 apps/landing_page/models.py:512
 msgid "Message"
 msgstr "Mensaje"
 
@@ -1348,8 +1347,8 @@ msgid ""
 "1) Cost the cost of the annual membership which has a value of <b>€ 99.99</"
 "b>."
 msgstr ""
-"1) Costear el costo de la membresía anual que tiene un valor de <b>99,99 €</"
-"b>."
+"1) Costear el costo de la membresía anual que tiene un valor de <b>99,99 "
+"€</b>."
 
 #: apps/community/templates/accounts/mail_profile_complete.html:94
 msgid ""
@@ -1598,10 +1597,9 @@ msgstr "No se encontraron miembros."
 
 #: apps/community/templates/community/dashboard/dashboard.html:161
 msgid "Write us via Email"
-msgstr ""
+msgstr "Escríbanos por correo electrónico"
 
 #: apps/community/templates/community/dashboard/dashboard.html:184
-#, fuzzy
 msgid "follower"
 msgstr "seguidor"
 
@@ -1900,10 +1898,9 @@ msgid "password?"
 msgstr "contraseña?"
 
 #: apps/community/templates/community/registration/forget_password.html:19
-#, fuzzy
 msgid "Enter your email address below and we'll get you back on track."
 msgstr ""
-"Introduzca su dirección de correo electrónico a continuación y nosotros"
+"Ingrese su dirección de correo electrónico a continuación y lo recuperaremos."
 
 #: apps/community/templates/community/registration/login.html:18
 msgid " Welcome <span class=\"font-weight-semi-bold\">to Community</span>"
@@ -1978,13 +1975,13 @@ msgstr "enviado a"
 msgid "read at"
 msgstr "Leído el"
 
-#: apps/directmessages/models.py:34
-msgid "You can't send messages to yourself"
-msgstr "No puedes enviarte mensajes a ti mismo"
-
-#: apps/directmessages/models.py:42
+#: apps/directmessages/models.py:23
 msgid "Messages"
 msgstr "Mensajes"
+
+#: apps/directmessages/models.py:38
+msgid "You can't send messages to yourself"
+msgstr "No puedes enviarte mensajes a ti mismo"
 
 #: apps/directmessages/views.py:55
 msgid "Your message has been sent successfully"
@@ -2178,7 +2175,7 @@ msgstr "Editor"
 
 #: apps/landing_page/models.py:417
 msgid "Files"
-msgstr ""
+msgstr "Archivos"
 
 #: apps/landing_page/models.py:442
 msgid "outstanding"
@@ -2271,11 +2268,11 @@ msgid ""
 msgstr ""
 "Una persona ha realizado una nueva búsqueda, revise la solicitud entrante "
 "del Sr. {name}. \n"
-" Busque el país o la ciudad: {country}. \n"
-" Correo electrónico: {email}\n"
+" Busque                     el país o la ciudad: {country}. \n"
+" Correo electrónico:  {email}\n"
 "  Whatsapp: {whatsapp}\n"
-" o si quieres ver el sitio de administración https://travelposting.com/"
-"admin/ "
+" o si quieres ver el sitio de administración https://travelposting.com/admin/"
+" "
 
 #: apps/landing_page/views.py:177
 msgid "New request for delete"
@@ -2699,8 +2696,8 @@ msgstr ""
 "nuestra tarjeta de crédito.\n"
 "\n"
 "            Desde ahora te deseamos mucha diversión en tus viajes con "
-"nosotros y que prepares las maletas que tu próximo destino te está "
-"esperando.\n"
+"nosotros y que prepares las maletas que tu próximo destino te está esperando."
+"\n"
 "          "
 
 #: main/templates/community.html:169
@@ -3608,7 +3605,6 @@ msgid "Payoneer"
 msgstr "Payoneer"
 
 #: main/templates/make_page.html:79
-#, fuzzy
 msgid "Paypal"
 msgstr "Paypal"
 
@@ -3673,7 +3669,6 @@ msgid "EUR Receiving Account (SEPA)"
 msgstr "Cuenta de destino en euros (SEPA)"
 
 #: main/templates/make_page.html:155
-#, fuzzy
 msgid "I have accounts!"
 msgstr "¡Yo lo tengo en cuenta!"
 
@@ -3814,7 +3809,6 @@ msgstr "Español"
 
 #: main/templates/menu/navbar_all.html:45
 #: main/templates/menu/navbar_all.html:52
-#, fuzzy
 msgid "Jump to"
 msgstr "Saltar a"
 

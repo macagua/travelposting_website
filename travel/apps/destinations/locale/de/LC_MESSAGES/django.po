@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 07:22-0400\n"
-"PO-Revision-Date: 2020-07-07 06:19-0400\n"
+"POT-Creation-Date: 2020-07-09 12:21-0400\n"
+"PO-Revision-Date: 2020-07-09 12:22-0400\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -110,14 +110,13 @@ msgstr "Samstag"
 msgid "String for storage days of lists"
 msgstr "Zeichenfolge für die Aufbewahrungstage von Listen"
 
-#: apps/destinations/forms.py:53 apps/destinations/models.py:87
+#: apps/destinations/forms.py:53 apps/destinations/models.py:84
 msgid "Category"
 msgstr "Kategorie"
 
 #: apps/destinations/forms.py:60
-#, fuzzy
 msgid "Tour Name"
-msgstr "Name des Tours"
+msgstr "Name der Tour"
 
 #: apps/destinations/forms.py:197
 msgid "Option"
@@ -203,7 +202,7 @@ msgstr "Bild"
 msgid "Status"
 msgstr "Status"
 
-#: apps/destinations/models.py:86 apps/destinations/models.py:93
+#: apps/destinations/models.py:83 apps/destinations/models.py:93
 msgid "Categories"
 msgstr "Kategorien"
 
@@ -235,23 +234,20 @@ msgid "Arrival Time"
 msgstr ""
 
 #: apps/destinations/models.py:147
-#, fuzzy
 msgid "Number of Reservations"
-msgstr "Ihre Reservierungen"
+msgstr "Anzahl der Reservierungen"
 
 #: apps/destinations/models.py:153
 msgid "Transfer from"
-msgstr ""
+msgstr "Transfer von"
 
 #: apps/destinations/models.py:160
-#, fuzzy
 msgid "Tour include"
-msgstr "Einschließen"
+msgstr "Tour inklusive"
 
 #: apps/destinations/models.py:165
-#, fuzzy
 msgid "Tour not include"
-msgstr "Nicht einschließen"
+msgstr "Tour nicht inklusive"
 
 #: apps/destinations/models.py:170
 msgid "is published?"
@@ -304,24 +300,17 @@ msgstr "Karte Reiseziel"
 msgid "Description Map"
 msgstr "Map Beschreibung"
 
-#: apps/destinations/models.py:289
-#, fuzzy
-msgid "Destinie Map"
-msgstr "Reiseziele"
+#: apps/destinations/models.py:289 apps/destinations/models.py:293
+msgid "Destination Map"
+msgstr "Reiseziel-Karte"
 
 #: apps/destinations/models.py:290
 msgid "To generate the map for your location"
 msgstr "So erzeugen Sie die Karte für Ihren Standort"
 
-#: apps/destinations/models.py:299
-#, fuzzy
-msgid "Destination Map"
-msgstr "Reiseziele"
-
-#: apps/destinations/models.py:300
-#, fuzzy
+#: apps/destinations/models.py:294
 msgid "Destination Maps"
-msgstr "Reisezielen"
+msgstr "Reisezielen-Karte"
 
 #: apps/destinations/models.py:319
 msgid "Sort"
@@ -335,22 +324,21 @@ msgstr "Kein Kommentar"
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: apps/destinations/models.py:354
+#: apps/destinations/models.py:351
 msgid "Photo"
 msgstr "Foto"
 
-#: apps/destinations/models.py:355
+#: apps/destinations/models.py:352
 msgid "Photos"
 msgstr "Fotos"
 
-#: apps/destinations/models.py:362 apps/destinations/models.py:369
+#: apps/destinations/models.py:362 apps/destinations/models.py:366
 msgid "Destination Rating"
 msgstr "Bewertung des Reiseziels"
 
-#: apps/destinations/models.py:370
-#, fuzzy
+#: apps/destinations/models.py:367
 msgid "Destinations Rating"
-msgstr "Bewertung des Reiseziels"
+msgstr "Bewertung von Reisezielen"
 
 #: apps/destinations/models.py:392 apps/destinations/models.py:405
 msgid "Badge"
@@ -411,9 +399,8 @@ msgid "Detail Itinerary"
 msgstr "Detaillierter Reiseplan"
 
 #: apps/destinations/models.py:454
-#, fuzzy
 msgid "Itineraries"
-msgstr "Reiseverlauf"
+msgstr "Reiserouten"
 
 #: apps/destinations/models.py:469
 msgid "Option tab"
@@ -682,14 +669,12 @@ msgid "Booking detail"
 msgstr "Buchungsdetail"
 
 #: apps/destinations/models.py:818
-#, fuzzy
 msgid "Names"
 msgstr "Namen"
 
 #: apps/destinations/models.py:825
-#, fuzzy
 msgid "Countries"
-msgstr "Kategorien"
+msgstr "Länder"
 
 #: apps/destinations/models.py:832 apps/destinations/models.py:890
 #: apps/destinations/templates/destinations/_booking_list.html:41
@@ -807,32 +792,27 @@ msgstr "IP-Adresse"
 
 #: apps/destinations/models.py:987
 msgid "Dma Code"
-msgstr ""
+msgstr "Dma-Code"
 
 #: apps/destinations/models.py:988
-#, fuzzy
 msgid "Country Code"
-msgstr "Kategorien"
+msgstr "Ländercode"
 
 #: apps/destinations/models.py:989
-#, fuzzy
 msgid "Country Name"
-msgstr "Kategorien"
+msgstr "Name des Landes"
 
 #: apps/destinations/models.py:990
-#, fuzzy
 msgid "Date/time"
 msgstr "Datum/Uhrzeit"
 
 #: apps/destinations/models.py:993
-#, fuzzy
 msgid "Destination Visitor"
-msgstr "Reiseziel Liste"
+msgstr "Reiseziel Besucher"
 
 #: apps/destinations/models.py:994
-#, fuzzy
 msgid "Destination Visitors"
-msgstr "Reiseziel Liste"
+msgstr "Reiseziele Besucher"
 
 #: apps/destinations/models.py:1003
 msgid "Up"
@@ -868,9 +848,8 @@ msgid "Image to be displayed in mobile resolution"
 msgstr "Bild soll in mobiler Auflösung angezeigt werden"
 
 #: apps/destinations/models.py:1022
-#, fuzzy
 msgid "Position"
-msgstr "Beschreibung"
+msgstr "Standpunkt"
 
 #: apps/destinations/models.py:1023
 msgid "Start of advertising"
@@ -901,9 +880,8 @@ msgid "Ads"
 msgstr ""
 
 #: apps/destinations/models.py:1034
-#, fuzzy
 msgid "Advertising"
-msgstr "Ende der Werbung"
+msgstr "Werbung"
 
 #: apps/destinations/models.py:1043
 #: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:29
@@ -929,14 +907,12 @@ msgid "read at"
 msgstr "gelesen unter"
 
 #: apps/destinations/models.py:1053
-#, fuzzy
 msgid "Messages Dashboard"
-msgstr "Nachricht gesendet"
+msgstr "Nachrichten-Dashboard"
 
 #: apps/destinations/models.py:1054
-#, fuzzy
 msgid "Message Dashboard"
-msgstr "Nachricht gesendet"
+msgstr "Nachricht-Dashboard"
 
 #: apps/destinations/models.py:1068
 msgid "You can't send messages to yourself"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 07:22-0400\n"
-"PO-Revision-Date: 2020-07-07 06:33-0428\n"
+"POT-Creation-Date: 2020-07-09 12:21-0400\n"
+"PO-Revision-Date: 2020-07-09 12:33-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -144,9 +144,8 @@ msgid "Plan"
 msgstr "Plan"
 
 #: apps/accounts/models.py:80
-#, fuzzy
 msgid "Subscription ID"
-msgstr "Beschreibung"
+msgstr "Abonnement-ID"
 
 #: apps/accounts/models.py:89 apps/payments/models/paypal.py:61
 msgid "Coupon"
@@ -278,14 +277,12 @@ msgid "is superuser?"
 msgstr ""
 
 #: apps/accounts/models.py:231
-#, fuzzy
 msgid "is community?"
-msgstr "gemeinschaft?"
+msgstr "ist Gemeinschaft?"
 
 #: apps/accounts/models.py:233 apps/accounts/models.py:270
-#, fuzzy
 msgid "Last Login IP"
-msgstr "Letzte IP Anmeldung"
+msgstr "Letzte Login-IP"
 
 #: apps/accounts/models.py:234 apps/accounts/models.py:271
 #: apps/community/templates/community/dashboard/profile_user.html:154
@@ -328,19 +325,16 @@ msgstr ""
 #: apps/landing_page/models.py:144 apps/landing_page/models.py:208
 #: apps/landing_page/models.py:254 apps/landing_page/models.py:325
 #: apps/landing_page/models.py:381 apps/payments/models/paypal.py:55
-#, fuzzy
 msgid "Created at"
-msgstr "gelesen unter"
+msgstr "Erstellt bei"
 
 #: apps/accounts/models.py:316
-#, fuzzy
 msgid "Contact"
-msgstr "Kontakte"
+msgstr "Kontakt"
 
 #: apps/accounts/models.py:317 apps/landing_page/models.py:525
 #: main/templates/menu/navbar_all.html:59
 #: main/templates/menu/navbar_all.html:71
-#, fuzzy
 msgid "Contacts"
 msgstr "Kontakten"
 
@@ -351,17 +345,15 @@ msgstr "%(user_from)s folgt %(user_to)s"
 
 #: apps/accounts/models.py:338
 msgid "Post"
-msgstr ""
+msgstr "Post"
 
 #: apps/accounts/models.py:342
-#, fuzzy
 msgid "User Comment"
-msgstr "Empfehlung"
+msgstr "Benutzer-Kommentar"
 
 #: apps/accounts/models.py:350
-#, fuzzy
 msgid "User Answer"
-msgstr "Benutzer"
+msgstr "Benutzer-Antwort"
 
 #: apps/accounts/models.py:356
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:58
@@ -372,20 +364,17 @@ msgid "Name"
 msgstr "Nombre"
 
 #: apps/accounts/models.py:357
-#, fuzzy
 msgid "Body Comment"
-msgstr "Kommentar schreiben"
+msgstr "Commentary on the text"
 
 #: apps/accounts/models.py:359 apps/landing_page/models.py:97
 #: apps/landing_page/models.py:146 apps/landing_page/models.py:210
 #: apps/landing_page/models.py:256 apps/landing_page/models.py:327
 #: apps/landing_page/models.py:383 apps/payments/models/paypal.py:57
-#, fuzzy
 msgid "Updated at"
 msgstr "Aktualisiert unter"
 
 #: apps/accounts/models.py:360 apps/payments/models/paypal.py:53
-#, fuzzy
 msgid "Active"
 msgstr "Aktiv"
 
@@ -406,12 +395,10 @@ msgid "Width"
 msgstr ""
 
 #: apps/accounts/models.py:374
-#, fuzzy
 msgid "Comment"
 msgstr "Kommentar"
 
 #: apps/accounts/models.py:375
-#, fuzzy
 msgid "Comments"
 msgstr "Kommentaren"
 
@@ -727,9 +714,8 @@ msgstr "Travelposting 2019 Alle Rechte vorbehalten Site Map Disclaimer."
 #: apps/community/templates/community/profile/my_profile.html:176
 #: main/templates/coming-soon.html:129 main/templates/footer.html:100
 #: main/templates/hotels.html:71
-#, fuzzy
 msgid "Follow us at Facebook"
-msgstr "Folgen Sie uns"
+msgstr "Folgen Sie uns auf Facebook"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:85
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:86
@@ -740,7 +726,7 @@ msgstr "Folgen Sie uns"
 #: main/templates/coming-soon.html:136 main/templates/footer.html:107
 #: main/templates/hotels.html:81
 msgid "Follow us at Instagram"
-msgstr ""
+msgstr "Folgen Sie uns auf Instagram"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:92
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:93
@@ -750,9 +736,8 @@ msgstr ""
 #: apps/community/templates/community/profile/my_profile.html:188
 #: main/templates/coming-soon.html:143 main/templates/footer.html:114
 #: main/templates/hotels.html:76
-#, fuzzy
 msgid "Follow us at Twitter"
-msgstr "Folgen Sie uns"
+msgstr "Folgen Sie uns auf Twitter"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:99
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:100
@@ -760,9 +745,8 @@ msgstr "Folgen Sie uns"
 #: apps/accounts/templates/accounts/registration/succes_register.html:99
 #: main/templates/coming-soon.html:150 main/templates/footer.html:121
 #: main/templates/hotels.html:86
-#, fuzzy
 msgid "Contact us via WhatsApp"
-msgstr "Handynummer oder WhatsApp"
+msgstr "Kontaktieren Sie uns über WhatsApp"
 
 #: apps/accounts/templates/accounts/registration/login.html:53
 msgid "Welcome"
@@ -783,9 +767,8 @@ msgstr "Haben Sie Ihr Passwort vergessen?"
 
 #: apps/accounts/templates/accounts/registration/login.html:79
 #: apps/community/templates/community/registration/login.html:40
-#, fuzzy
 msgid "Don't have an account?"
-msgstr "Haben Sie Konten?"
+msgstr "Sie haben kein Konto?"
 
 #: apps/accounts/templates/accounts/registration/login.html:80
 #: apps/community/templates/community/registration/login.html:41
@@ -1010,9 +993,8 @@ msgstr ""
 "aufgetreten."
 
 #: apps/accounts/views.py:129 apps/community/views.py:160
-#, fuzzy
 msgid "Registered new user"
-msgstr "Registriert"
+msgstr "Registrierter neuer Benutzer"
 
 #: apps/community/apps.py:7
 #: apps/community/templates/accounts/customeruser_list.html:5
@@ -1060,9 +1042,8 @@ msgid "Destination"
 msgstr "Reiseziel"
 
 #: apps/community/models.py:18
-#, fuzzy
 msgid "User Recommendation"
-msgstr "Empfehlung"
+msgstr "Empfehlung des Benutzers"
 
 #: apps/community/models.py:27 apps/community/models.py:40
 msgid "Recommendation"
@@ -1074,9 +1055,8 @@ msgid "Would you recommend this trip again?"
 msgstr "Würden Sie diese Reise erneut empfehlen?"
 
 #: apps/community/models.py:34
-#, fuzzy
 msgid "Recommendation Others"
-msgstr "Empfehlungen"
+msgstr "Empfehlung Andere"
 
 #: apps/community/models.py:36
 #: apps/community/templates/community/dashboard/make_recomm.html:35
@@ -1088,7 +1068,6 @@ msgid "Recommendations"
 msgstr "Empfehlungen"
 
 #: apps/community/models.py:57
-#, fuzzy
 msgid "Referred By"
 msgstr "Verwiesen von"
 
@@ -1238,7 +1217,7 @@ msgstr "Thema"
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:299
-#: apps/directmessages/models.py:43 apps/landing_page/models.py:512
+#: apps/directmessages/models.py:24 apps/landing_page/models.py:512
 msgid "Message"
 msgstr "Nachricht"
 
@@ -1555,9 +1534,8 @@ msgstr "Navigation umschalten"
 #: main/templates/services/destination/sponsors.html:36
 #: main/templates/services/destination/testimonials.html:41
 #: main/templates/services/magazine/magazine.html:8
-#, fuzzy
 msgid "Image Description"
-msgstr "Beschreibung"
+msgstr "Beschreibung des Bildes"
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:65
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:52
@@ -1577,9 +1555,8 @@ msgid "Edit Profile"
 msgstr "Profil bearbeiten"
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:88
-#, fuzzy
 msgid "Following"
-msgstr "Folgen Sie"
+msgstr "Folgend"
 
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:48
 #: apps/landing_page/models.py:54
@@ -1617,12 +1594,11 @@ msgstr "Keine Mitglieder gefunden."
 
 #: apps/community/templates/community/dashboard/dashboard.html:161
 msgid "Write us via Email"
-msgstr ""
+msgstr "Schreiben Sie uns per E-Mail"
 
 #: apps/community/templates/community/dashboard/dashboard.html:184
-#, fuzzy
 msgid "follower"
-msgstr "Unfollow"
+msgstr "anhängerin"
 
 #: apps/community/templates/community/dashboard/dashboard.html:197
 msgid "Follow"
@@ -1874,9 +1850,8 @@ msgid "Phone number"
 msgstr "Telefonnummer"
 
 #: apps/community/templates/community/profile/my_profile.html:194
-#, fuzzy
 msgid "Follow us at Linkedin"
-msgstr "Folgen Sie uns"
+msgstr "Folgen Sie uns auf Linkedin"
 
 #: apps/community/templates/community/registration/activation_email_body.html:57
 #, python-format
@@ -1921,9 +1896,8 @@ msgid "password?"
 msgstr "Passwort?"
 
 #: apps/community/templates/community/registration/forget_password.html:19
-#, fuzzy
 msgid "Enter your email address below and we'll get you back on track."
-msgstr "Geben Sie Ihre E-Mail-Adresse unten ein und wir\\"
+msgstr "Geben Sie unten Ihre E-Mail-Adresse ein und wir werden Sie wieder auf den richtigen Weg bringen."
 
 #: apps/community/templates/community/registration/login.html:18
 msgid " Welcome <span class=\"font-weight-semi-bold\">to Community</span>"
@@ -1999,14 +1973,13 @@ msgstr "gesendet an"
 msgid "read at"
 msgstr "gelesen unter"
 
-#: apps/directmessages/models.py:34
-msgid "You can't send messages to yourself"
-msgstr "Sie können keine Nachrichten an sich selbst senden"
-
-#: apps/directmessages/models.py:42
-#, fuzzy
+#: apps/directmessages/models.py:23
 msgid "Messages"
 msgstr "Nachrichten"
+
+#: apps/directmessages/models.py:38
+msgid "You can't send messages to yourself"
+msgstr "Sie können keine Nachrichten an sich selbst senden"
 
 #: apps/directmessages/views.py:55
 msgid "Your message has been sent successfully"
@@ -2033,7 +2006,6 @@ msgid "Price types"
 msgstr "Preistypen"
 
 #: apps/landing_page/models.py:38
-#, fuzzy
 msgid "Price Type"
 msgstr "Preis-Typ"
 
@@ -2048,9 +2020,8 @@ msgid "Price"
 msgstr "Preise"
 
 #: apps/landing_page/models.py:59
-#, fuzzy
 msgid "Paypal ID"
-msgstr "Paypal ID"
+msgstr "Paypal-ID"
 
 #: apps/landing_page/models.py:67 apps/landing_page/models.py:177
 #: apps/landing_page/models.py:231 apps/payments/models/paypal.py:9
@@ -2533,9 +2504,8 @@ msgid "Up"
 msgstr ""
 
 #: main/templates/base.html:270
-#, fuzzy
 msgid "Select a state"
-msgstr "Wählen Sie einen Plan"
+msgstr "Wählen Sie einen Bundesland"
 
 #: main/templates/coming-soon.html:19 main/templates/coming-soon.html:24
 #: main/templates/coming-soon.html:29
@@ -2938,9 +2908,8 @@ msgstr "Google Analytics wird zum Anlayiseren des Websitetraffics verwendet"
 #: main/templates/datenshutz_form_privacity.html:66
 #: main/templates/datenshutz_form_privacity.html:90
 #: main/templates/datenshutz_form_privacity.html:136
-#, fuzzy
 msgid "Term Details"
-msgstr "Begriff Details"
+msgstr "Details about the term"
 
 #: main/templates/datenshutz_form_privacity.html:89
 msgid "Facebook Pixel is using for analyze the behaviors of the visits."
@@ -3551,13 +3520,12 @@ msgid "Our Community"
 msgstr "Unsere Gemeinschaft"
 
 #: main/templates/hotels.html:114 main/templates/page01.html:42
-#, fuzzy
 msgid ""
 "Discover new destinations that can seduce you and you will want to return to "
 "them."
 msgstr ""
-"Entdecken Sie neue Reisenziel, die Sie verführen werden und zu denen Sie "
-"zurückkehren möchten."
+"Entdecken Sie neue Reiseziele, die Sie verführen können, und Sie werden zu ihnen "
+"zurückkehren wollen."
 
 #: main/templates/hotels.html:124 main/templates/page01.html:52
 msgid "Register on our community"
@@ -3690,9 +3658,8 @@ msgid "EUR Receiving Account (SEPA)"
 msgstr "EUR-Empfangskonto (SEPA)"
 
 #: main/templates/make_page.html:155
-#, fuzzy
 msgid "I have accounts!"
-msgstr "Haben Sie Konten?"
+msgstr "Ich habe Konten!"
 
 #: main/templates/make_page.html:159
 msgid "Only SEPA transfers (European local bank) can be accepted in EUR"
@@ -4359,7 +4326,6 @@ msgstr "Folgen Sie uns"
 
 #: main/templates/services/destination/detail_destination.html:236
 #: main/templates/services/destination/detail_destination.html:237
-#, fuzzy
 msgid "Website"
 msgstr "Website"
 
@@ -4381,9 +4347,8 @@ msgid "Discover or download our itinerary here"
 msgstr "Entdecken oder downloaden Sie unseren Reiseplan hier"
 
 #: main/templates/services/destination/detail_destination.html:315
-#, fuzzy
 msgid "Download PDF"
-msgstr "Herunterladen PDF"
+msgstr "PDF herunterladen"
 
 #: main/templates/services/destination/detail_destination.html:326
 msgid "Add comment"

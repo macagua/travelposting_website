@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 07:22-0400\n"
-"PO-Revision-Date: 2020-07-07 06:37-0400\n"
+"POT-Creation-Date: 2020-07-09 12:21-0400\n"
+"PO-Revision-Date: 2020-07-09 12:37-0400\n"
 "Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -109,7 +109,7 @@ msgstr "Saturday"
 msgid "String for storage days of lists"
 msgstr "String for storage days of lists "
 
-#: apps/destinations/forms.py:53 apps/destinations/models.py:87
+#: apps/destinations/forms.py:53 apps/destinations/models.py:84
 msgid "Category"
 msgstr ""
 
@@ -201,7 +201,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: apps/destinations/models.py:86 apps/destinations/models.py:93
+#: apps/destinations/models.py:83 apps/destinations/models.py:93
 msgid "Categories"
 msgstr ""
 
@@ -297,19 +297,15 @@ msgstr ""
 msgid "Description Map"
 msgstr ""
 
-#: apps/destinations/models.py:289
-msgid "Destinie Map"
+#: apps/destinations/models.py:289 apps/destinations/models.py:293
+msgid "Destination Map"
 msgstr ""
 
 #: apps/destinations/models.py:290
 msgid "To generate the map for your location"
 msgstr ""
 
-#: apps/destinations/models.py:299
-msgid "Destination Map"
-msgstr ""
-
-#: apps/destinations/models.py:300
+#: apps/destinations/models.py:294
 msgid "Destination Maps"
 msgstr ""
 
@@ -325,19 +321,19 @@ msgstr ""
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: apps/destinations/models.py:354
+#: apps/destinations/models.py:351
 msgid "Photo"
 msgstr ""
 
-#: apps/destinations/models.py:355
+#: apps/destinations/models.py:352
 msgid "Photos"
 msgstr ""
 
-#: apps/destinations/models.py:362 apps/destinations/models.py:369
+#: apps/destinations/models.py:362 apps/destinations/models.py:366
 msgid "Destination Rating"
 msgstr ""
 
-#: apps/destinations/models.py:370
+#: apps/destinations/models.py:367
 msgid "Destinations Rating"
 msgstr ""
 

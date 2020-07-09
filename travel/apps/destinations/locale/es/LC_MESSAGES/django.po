@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 07:22-0400\n"
-"PO-Revision-Date: 2020-07-07 07:31-0400\n"
+"POT-Creation-Date: 2020-07-09 12:21-0400\n"
+"PO-Revision-Date: 2020-07-09 12:31-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -109,7 +109,7 @@ msgstr "Sábado"
 msgid "String for storage days of lists"
 msgstr "Cadena para días de almacenamiento de listas"
 
-#: apps/destinations/forms.py:53 apps/destinations/models.py:87
+#: apps/destinations/forms.py:53 apps/destinations/models.py:84
 msgid "Category"
 msgstr "Categoría"
 
@@ -237,7 +237,7 @@ msgstr "Imagen"
 msgid "Status"
 msgstr "Estatus"
 
-#: apps/destinations/models.py:86 apps/destinations/models.py:93
+#: apps/destinations/models.py:83 apps/destinations/models.py:93
 msgid "Categories"
 msgstr "Categorías"
 
@@ -253,18 +253,16 @@ msgid "Description"
 msgstr "Descripción"
 
 #: apps/destinations/models.py:124
-#, fuzzy
 msgid "Departure Date"
-msgstr "Fecha de "
+msgstr "Fecha de partida"
 
 #: apps/destinations/models.py:129
 msgid "Arrival Date"
 msgstr "Fecha de llegada"
 
 #: apps/destinations/models.py:135
-#, fuzzy
 msgid "Departure Time"
-msgstr "Hora de "
+msgstr "Hora de partida"
 
 #: apps/destinations/models.py:141
 msgid "Arrival Time"
@@ -336,20 +334,15 @@ msgstr "Mapa de destino"
 msgid "Description Map"
 msgstr "Descripción del mapa"
 
-#: apps/destinations/models.py:289
-#, fuzzy
-msgid "Destinie Map"
+#: apps/destinations/models.py:289 apps/destinations/models.py:293
+msgid "Destination Map"
 msgstr "Mapa del Destino"
 
 #: apps/destinations/models.py:290
 msgid "To generate the map for your location"
 msgstr "Para generar el mapa para su ubicación"
 
-#: apps/destinations/models.py:299
-msgid "Destination Map"
-msgstr "Mapa del Destino"
-
-#: apps/destinations/models.py:300
+#: apps/destinations/models.py:294
 msgid "Destination Maps"
 msgstr "Mapa de los Destinos"
 
@@ -365,19 +358,19 @@ msgstr "Sin comentario"
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: apps/destinations/models.py:354
+#: apps/destinations/models.py:351
 msgid "Photo"
 msgstr "Foto"
 
-#: apps/destinations/models.py:355
+#: apps/destinations/models.py:352
 msgid "Photos"
 msgstr "Fotos"
 
-#: apps/destinations/models.py:362 apps/destinations/models.py:369
+#: apps/destinations/models.py:362 apps/destinations/models.py:366
 msgid "Destination Rating"
 msgstr "Clasificación del destino"
 
-#: apps/destinations/models.py:370
+#: apps/destinations/models.py:367
 msgid "Destinations Rating"
 msgstr "Clasificaciones del destino"
 
@@ -848,12 +841,10 @@ msgid "Date/time"
 msgstr "Fecha y hora"
 
 #: apps/destinations/models.py:993
-#, fuzzy
 msgid "Destination Visitor"
 msgstr "Visitante del Destino"
 
 #: apps/destinations/models.py:994
-#, fuzzy
 msgid "Destination Visitors"
 msgstr "Visitantes del Destino"
 
