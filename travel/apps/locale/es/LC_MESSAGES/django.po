@@ -771,7 +771,7 @@ msgstr "¿No tienes una cuenta?"
 #: apps/accounts/templates/accounts/registration/login.html:80
 #: apps/community/templates/community/registration/login.html:41
 msgid "Signup"
-msgstr "Regístrese"
+msgstr "Registrar"
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:48
 #: apps/community/templates/community/registration/notify_register_admin_body.html:48
