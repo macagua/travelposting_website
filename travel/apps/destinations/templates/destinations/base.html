@@ -17,6 +17,7 @@
         <link href="{% static 'dashboard/css/animate.css' %}" rel="stylesheet">
         <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet">
         {% endblock %}
+        <script src="{% static 'dashboard/js/jquery-3.1.1.min.js' %}"></script>
         {% block extracss %} {% endblock extracss%}
     </head>
     <body class="fixed-sidebar pace-done tarvelsolutions-skin">
@@ -26,7 +27,6 @@
             {#  {% include 'destinations/sidebar.html' %}#}
         </div>
         <!-- Mainly scripts -->
-        <script src="{% static 'dashboard/js/jquery-3.1.1.min.js' %}"></script>
         <script src="{% static 'dashboard/js/popper.min.js' %}"></script>
         <script src="{% static 'dashboard/js/bootstrap.js' %}"></script>
         <script src="{% static 'dashboard/js/plugins/metisMenu/jquery.metisMenu.js' %}"></script>
