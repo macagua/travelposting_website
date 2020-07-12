@@ -238,6 +238,7 @@ THIRD_PARTY = [
     'mathfilters',
     'sorl.thumbnail',
     'captcha',
+    'django_admin_logs',
     #'notifications',
 ]
 
@@ -252,6 +253,10 @@ LOCAL_APPS = [
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
+
+
+DJANGO_ADMIN_LOGS_ENABLED = True
+
 
 # Email config
 # https://docs.djangoproject.com/en/2.1/topics/email/#module-django.core.mail
