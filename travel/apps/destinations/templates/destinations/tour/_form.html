@@ -98,21 +98,21 @@
         <div class="col-lg-5">
             <div class="form-group">
                 <label for="select_include">
-                {% trans "Include / Doesn't Include"%}:
+                {% trans "Include / Doesn't Include" %}:
                 </label>
                 <select class="form-control" name="select_include" id="select_include">
-                    <option value="include">{%trans "Include"%}</option>
-                    <option value="no_include">{%trans "Doesn't Include"%}</option>
+                    <option value="include">{% trans "Include" %}</option>
+                    <option value="no_include">{% trans "Doesn't Include" %}</option>
                 </select>
             </div>
         </div>
         <div class="col-lg-7">
             <div class="form-group">
                 <label for="description_include">
-                {% trans "Description Tour Include/ Doesn't Include"%}:
+                {% trans "Description Tour Include/Doesn't Include" %}:
                 </label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="description_include" value="" placeholder="{%trans "Food"%}">
+                    <input class="form-control" type="text" name="description_include" value="" placeholder="{% trans 'Food' %}">
                     <span class="product-input-group-addon">
                     <i class="btn btn-primary fa fa-plus" id="add"></i>
                     <i class="btn btn-danger fa fa-trash"  id="remove"></i>

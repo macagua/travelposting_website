@@ -14,7 +14,7 @@
             <h2>{% trans "Social Network" %}</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home"%}</a>
+                    <a href="{% url 'dashboard:dashboard-index' %}">{% trans "Home" %}</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <a>{% trans "List" %}</a>
@@ -35,7 +35,7 @@
                             <div class="col-sm-4 m-b-xs">
                             </div>
                             <div class="col-sm-3">
-                              <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#socialModal">{% trans "New Social Network configuration"%}</button>
+                              <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#socialModal">{% trans "New Social Network configuration" %}</button>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -44,8 +44,8 @@
                                     <thead>
                                         <tr>
                                             <th data-filter="false">
-                                            <th>{% trans "Destination's name"%}</th>
-                                            <th>{% trans "Status"%}</th>
+                                            <th>{% trans "Destination's name" %}</th>
+                                            <th>{% trans "Status" %}</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -79,7 +79,7 @@
 {% endblock %}
 {% block extrajs %}
 <script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
-<script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js'%}"></script>
+<script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js' %}"></script>
 <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
 <script src="{% static 'dashboard/js/plugins/toastr/toastr.min.js' %}"></script>
 <!-- SUMMERNOTE -->
@@ -88,12 +88,12 @@
     //Delete fuction
     function delete_setting(pk_i){
           swal({
-              title: "{% trans "Are you sure?" %}",
-              text: "{% trans "If you delete this configuration you will not be able to recover it" %}",
+              title: "{% trans 'Are you sure?' %}",
+              text: "{% trans 'If you delete this configuration you will not be able to recover it' %}",
               type: "warning",
               showCancelButton: true,
               confirmButtonColor: "#DD6B55",
-              confirmButtonText: "{% trans "Yes, delete it!" %}",
+              confirmButtonText: "{% trans 'Yes, delete it!' %}",
               closeOnConfirm: false
           }, function () {
             $.ajax({
@@ -107,12 +107,12 @@
                   },
                   success: function (request) {
                   if(request.status==true){
-                    swal("Deleted!", "This configuration has been deleted.", "success");
+                    swal("{% trans 'Deleted!' %}", "{% trans 'This configuration has been deleted.' %}", "success");
                     setTimeout(function(){
                         window.location.href = "{% url 'destinations:social-network' %}";
                     }, 2000);
                   }else{
-                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
+                      swal("{% trans 'Error!' %}", "{% trans 'Has been not deleted' %}", "error");
                   }
                   }
               });
@@ -122,4 +122,3 @@
 
 
 {% endblock %}
-

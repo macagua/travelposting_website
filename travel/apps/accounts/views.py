@@ -11,6 +11,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.urls import reverse_lazy
 from django.shortcuts import (
+    get_object_or_404,
     render,
     redirect,
     reverse,
@@ -24,12 +25,12 @@ from django.views.i18n import set_language
 from django_registration.backends.activation.views import RegistrationView, ActivationView
 from apps.accounts.forms import (
     CompleteProfileForm,
-    CustomPasswordChangeForm,
-    CustomPasswordResetForm,
-    CustomerUserChangeForm,
-    PasswordResetConfirmForm,
-    RegistrationForm,
     SignInForm,
+    RegistrationForm,
+    CustomPasswordResetForm,
+    PasswordResetConfirmForm,
+    CustomPasswordChangeForm,
+    CustomerUserChangeForm,
 )
 from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext as _

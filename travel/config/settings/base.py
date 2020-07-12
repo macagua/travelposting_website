@@ -1,5 +1,6 @@
 import os  # isort:skip
 import environ
+import telepot
 from django.utils.translation import gettext_lazy as _
 
 gettext = lambda s: s
@@ -178,7 +179,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'impersonate.middleware.ImpersonateMiddleware',
-    'apps.community.middleware.CampaignMiddleware',
+    'apps.community.middleware.CampaignMiddleware'
 ]
 
 DJANGO_APPS = [
@@ -449,3 +450,8 @@ MAP_WIDGETS = {
     ),
     "GOOGLE_MAP_API_KEY": GOOGLE_MAPS_API_KEY,
 }
+
+CAMPAIGN_COUPON_PREFIX = 'TPCW-20'
+CAMPAIGN_COUPON_LIMIT = 10000
+
+BOT = telepot.Bot('806633169:AAFouKIb9-QwJvGnLz6eIjO3rDBLB4HT78M')

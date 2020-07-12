@@ -189,7 +189,7 @@ class BaseDestinationView(LoginRequiredMixin, BaseInlineModelFormMixin):
 
 class DestinationCreateView(BaseDestinationView, CreateView):
     extra_context = {
-        'submit': _('Agregar destino')
+        'submit': _('Add Destination')
     }
 
     def post(self, request, *args, **kwargs):
@@ -201,7 +201,7 @@ class DestinationCreateView(BaseDestinationView, CreateView):
 
 class DestinationUpdateView(BaseDestinationView, UpdateView):
     extra_context = {
-        'submit': _('Actualizar destino')
+        'submit': _('Update Destination')
     }
 
     def get_form_inline_kwargs(self):

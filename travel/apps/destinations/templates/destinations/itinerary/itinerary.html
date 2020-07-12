@@ -16,7 +16,7 @@
             <h2>{% trans "Itinerary" %}</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home"%}</a>
+                    <a href="{% url 'dashboard:dashboard-index' %}">{% trans "Home" %}</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <a>{% trans "List Itinerary" %}</a>
@@ -37,7 +37,7 @@
                   <div class="col-sm-4 m-b-xs">
                   </div>
                   <div class="col-sm-3">
-                    <a class="btn btn-primary pull-right" href="{% url 'destinations:itinerary-create' %}">{% trans "Create new itinerary"%}</a>
+                    <a class="btn btn-primary pull-right" href="{% url 'destinations:itinerary-create' %}">{% trans "Create new itinerary" %}</a>
                   </div>
               </div>
                     <div class="table-responsive">
@@ -46,9 +46,9 @@
                             <thead>
                             <tr>
 
-                              <th>{% trans "Destination's name"%}</th>
-                              <th>{% trans "Description"%}</th>
-                              <th>{% trans "Details"%}</th>
+                              <th>{% trans "Destination's name" %}</th>
+                              <th>{% trans "Description" %}</th>
+                              <th>{% trans "Details" %}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -80,7 +80,7 @@
 
 {% block extrajs %}
   <script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
-  <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js'%}"></script>
+  <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js' %}"></script>
   <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
   <script src="{% static 'dashboard/js/plugins/toastr/toastr.min.js' %}"></script>
     <!-- SUMMERNOTE -->
@@ -89,12 +89,12 @@
     //Delete fuction
     function delete_itinerary(pk_i){
           swal({
-              title: "{% trans "Are you sure?" %}",
-              text: "{% trans "If you delete this itinerary you will not be able to recover it" %}",
+              title: "{% trans 'Are you sure?' %}",
+              text: "{% trans 'If you delete this itinerary you will not be able to recover it' %}",
               type: "warning",
               showCancelButton: true,
               confirmButtonColor: "#DD6B55",
-              confirmButtonText: "{% trans "Yes, delete it!" %}",
+              confirmButtonText: "{% trans 'Yes, delete it!' %}",
               closeOnConfirm: false
           }, function () {
             $.ajax({
@@ -108,12 +108,12 @@
                   },
                   success: function (request) {
                   if(request.status==true){
-                    swal("Deleted!", "Itinerary has been deleted.", "success");
+                    swal("{% trans 'Deleted!' %}", "{% trans 'Itinerary has been deleted.' %}", "success");
                     setTimeout(function(){
                         window.location.href = "{% url 'destinations:itinerary-list' %}";
                     }, 2000);
                   }else{
-                      swal("Error!", "{% trans "Has been not deleted"%}", "error");
+                      swal("{% trans 'Error!' %}", "{% trans 'Has been not deleted' %}", "error");
                   }
                   }
               });
@@ -151,7 +151,7 @@
                     $("#content_itinerary").addClass('border-bottom');
                     table_itinerary.ajax.url("{% url 'destinations:get-itinerary' %}?destiny="+$("#select_destiny").val()).load()
                   }else{
-                    swal("Error!", "{% trans "Could not load itinerary data for editing"%}", "error");
+                    swal("{% trans 'Error!' %}", "{% trans 'Could not load itinerary data for editing' %}", "error");
                   }
                   }
     });

@@ -2,7 +2,7 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% load mathfilters %}
 {% load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -16,12 +16,12 @@
 {% block content %}
 <br><br><br><br>
 <main id="content" role="main">
-    {% include 'community/dashboard/breadcrumb.html'%}
+    {% include 'community/dashboard/breadcrumb.html' %}
     <div class="bg-light">
         <div class="container space-2">
             {% if text %}
             <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">{% trans "Well done!"%} </h4>
+                <h4 class="alert-heading">{% trans "Well done!" %} </h4>
                 <p class="alert-text">{{ text }}</p>
                 <hr />
             </div>
@@ -39,7 +39,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" id="pills-one-tab" data-toggle="pill" href="#pills-one"
                                         role="tab" aria-controls="pills-one" aria-selected="true">
-                                        <i class="fas fa-inbox"></i> {% trans "Inbox"%}
+                                        <i class="fas fa-inbox"></i> {% trans "Inbox" %}
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -74,8 +74,8 @@
                                                         </span>
                                                     </div>
                                                     <input id="datatableSearch" type="email" class="form-control"
-                                                        placeholder="{% trans 'Search received messages'%}"
-                                                        aria-label="{% trans 'Search received messages'%}"
+                                                        placeholder="{% trans 'Search received messages' %}"
+                                                        aria-label="{% trans 'Search received messages' %}"
                                                         aria-describedby="searchActivities">
                                                 </div>
                                                 <!-- End Search -->
@@ -160,13 +160,13 @@
                                                     </div>
 
                                                     <div class="col-6">
-                                                    <span class="text-secondary">{% trans "Sender"%}:</span>
+                                                    <span class="text-secondary">{% trans "Sender" %}:</span>
                                                     <span class="font-weight-medium">{{ r.sender.get_full_name }}</span>
                                                     </div>
                                                     </div>
                                                     <div class="row">
                                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                                    <h5 class="text-dark font-size-1 text-uppercase">{% trans "Content"%}:</h5>
+                                                    <h5 class="text-dark font-size-1 text-uppercase">{% trans "Content" %}:</h5>
                                                     <address class="text-secondary">
                                                         <p>{{ r.content }}</p>
                                                     </address>
@@ -217,14 +217,14 @@
                                                                 <input type="hidden" name="sender" value="{{ request.user.id }}">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title">{% trans "Send message to" %}</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <div class="form-group">
                                                                         <input type="text" placeholder='{% trans "to:" %} {{r.sender.get_full_name }}'
-                                                                            class="form-control input-group-pill mb-2" aria-label="Readonly" readonly>
+                                                                            class="form-control input-group-pill mb-2" aria-label="{% trans 'Readonly' %}" readonly>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="message-text" class="col-form-label">{% trans "Subject" %}:</label>
@@ -257,7 +257,7 @@
                                     <!-- End Activity Table -->
                                     <!-- Pagination -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                                        <nav id="datatablePagination" aria-label="{% trans 'Activity pagination' %}"></nav>
                                         <small id="datatableInfo" class="text-secondary"></small>
                                     <!-- End Pagination -->
                                 </div>
@@ -282,8 +282,8 @@
                                                         </span>
                                                     </div>
                                                     <input id="datatableSearchSent" type="email" class="form-control"
-                                                        placeholder="{% trans 'Search sent messages'%}"
-                                                        aria-label="{% trans 'Search sent messages'%}" aria-describedby="searchActivities">
+                                                        placeholder="{% trans 'Search sent messages' %}"
+                                                        aria-label="{% trans 'Search sent messages' %}" aria-describedby="searchActivities">
                                                 </div>
                                                 <!-- End Search -->
                                             </div>
@@ -349,13 +349,13 @@
                                                                                 </div>
                             
                                                                                 <div class="col-6">
-                                                                                <span class="text-secondary">{% trans "Recipient"%}:</span>
+                                                                                <span class="text-secondary">{% trans "Recipient" %}:</span>
                                                                                 <span class="font-weight-medium">{{ e.recipient.get_full_name }}</span>
                                                                                 </div>
                                                                                 </div>
                                                                                 <div class="row">
                                                                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                                                                <h5 class="text-dark font-size-1 text-uppercase">{% trans "Content"%}:</h5>
+                                                                                <h5 class="text-dark font-size-1 text-uppercase">{% trans "Content" %}:</h5>
                                                                                 <address class="text-secondary">
                                                                                     <p>{{ e.content }}</p>
                                                                                 </address>
@@ -391,7 +391,7 @@
                                     <!-- End Activity Table -->
                                     <!-- Pagination -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <nav id="datatablePagination2" aria-label="Activity pagination"></nav>
+                                        <nav id="datatablePagination2" aria-label="{% trans 'Activity pagination' %}"></nav>
                                         <small id="datatableInfo2" class="text-secondary"></small>
                                         <!-- End Pagination -->
                                     </div>
@@ -408,7 +408,7 @@
     </div>
     <div class="container2">
         <hr>
-        <h1 class="h3 font-weight-medium">{% trans "Our destinations"%}</h1>
+        <h1 class="h3 font-weight-medium">{% trans "Our destinations" %}</h1>
 <div class="row">
     {% for destino in destino %}
     <div class="col-md-4">
@@ -453,14 +453,14 @@
                 <input type="hidden" name="sender" value="{{ request.user.id }}">
                 <div class="modal-header">
                     <h5 class="modal-title">{% trans "Send message to" %}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <select name="recipient" class="form-control form-control-sm js-example-basic-single f">
-                            <option>{% trans "Please Select a user" %}</option>
+                            <option>{% trans "Please Select an user" %}</option>
                             {% for u in user %}
                             <option value="{{ u.id }} ">{{ u.get_full_name }}</option>
                             {% endfor %}

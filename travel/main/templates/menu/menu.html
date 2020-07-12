@@ -3,7 +3,7 @@
 <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
     <ul class="navbar-nav u-header__navbar-nav">
         <li class="nav-item u-header__nav-item d-block d-sm-none">
-            <a class="nav-link u-header__nav-link" href="{% url 'accounts:login' %}">{% trans "Ingresa" %}</a>
+            <a class="nav-link u-header__nav-link" href="{% url 'accounts:login' %}">{% trans "Enter" %}</a>
         </li>
         <li class="nav-item u-header__nav-item d-block d-sm-none">
             <a class="nav-link u-header__nav-link" href="/pre-register/">{% trans "Register" %}</a>
@@ -41,7 +41,7 @@
         <!-- Button -->
         <li class="nav-item u-header__nav-item dropdown">
                 {% get_current_language as LANGUAGES %}
-                {% if request.path == '/es/' or request.path == '/en/' or request.path == '/de/'%}
+                {% if request.path == '/es/' or request.path == '/en/' or request.path == '/de/' %}
             <a class="dropdown-toggle nav-link u-header__sub-menu-nav-link" style="color: white;" href="/{{ LANGUAGES }}/" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="flag-icon flag-icon-{% if LANGUAGES == 'en' %}gb{% else %}{{ LANGUAGES }}{% endif%}"> </span>
                 </a>
@@ -49,11 +49,11 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <a class="dropdown-item" href="/de/"><span class="flag-icon flag-icon-de"> </span> {% trans "Deutsch" %}</a>
                     <a class="dropdown-item" href="/en/"><span class="flag-icon flag-icon-gb"> </span> {% trans "English" %}</a>
-                    <a class="dropdown-item" href="/es/"><span class="flag-icon flag-icon-es"> </span> {% trans "Spanish "%}</a>
+                    <a class="dropdown-item" href="/es/"><span class="flag-icon flag-icon-es"> </span> {% trans "Spanish " %}</a>
                 </div>
                 {% endif %}
         </li>
-        {% if request.user.is_authenticated != True and request.path == '/es/community/' or request.path == '/en/community/' or request.path == '/de/community/'%}
+        {% if request.user.is_authenticated != True and request.path == '/es/community/' or request.path == '/en/community/' or request.path == '/de/community/' %}
         <li class="nav-item u-header__nav-last-item">
             <a class="btn btn-sm btn-success transition-3d-hover" style="font-size: 12px;" href="/pre-register/">
                 {% trans 'SignUp' %}

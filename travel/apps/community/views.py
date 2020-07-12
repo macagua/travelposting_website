@@ -1,9 +1,10 @@
 from django.db.models import Q
 from django.core.mail import mail_managers
 from django.contrib.auth import authenticate, login, update_session_auth_hash
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.core.paginator import Paginator  # < Import the Paginator class
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import (
@@ -19,18 +20,26 @@ from django.utils.translation import gettext as _
 from django.views.generic import (
     View,
     ListView,
+    UpdateView
 )
 
 from django_registration.backends.activation.views import RegistrationView
+
 from config.settings import local as settings
 
 from apps.accounts.models import Comment, Contact, CustomerUser
 from apps.accounts.forms import CustomerUserChangeForm
 from apps.community.models import Referral
 from apps.destinations.models import Destination
-from .forms import CommunitySignUpForm, SignInForm
+from .forms import CommunitySignUpForm, CompleteProfileForm, SignInForm
 from .models import Recommendation
 from apps.utils.views import get_referal_code
+from PIL import Image, ImageDraw, ImageFont
+from pyqrcode import QRCode 
+import pyqrcode 
+import png 
+import os
+
 
 
 def ajax_required(f):
@@ -104,8 +113,8 @@ class LoginCommunity(View):
 
 
 class signupCommunity(RegistrationView):
-    email_body_template = 'accounts/registration/activation_email_body.html'
-    html_email_template_name = 'accounts/registration/activation_email_body.html'
+    email_body_template = 'accounts/mail_body.html'
+    html_email_template_name = 'accounts/mail_body.html'
     email_subject_template = 'accounts/registration/activation_email_subject.txt'
     success_url = reverse_lazy('accounts:register-complete')
     template_name = 'community/registration/signup.html'
@@ -200,13 +209,8 @@ class ProfileView(View):
 
 class ProfileEditView(View):
     def get(self, request):
-        exist_user = CustomerUser.objects \
-            .filter(pk=request.user.id) \
-            .filter(is_active=True) \
-            .filter(is_community=True) \
-            .exists()
-        if exist_user:
-            form = CustomerUserChangeForm(instance=CustomerUser.objects.get(pk=request.user.id))
+        if request.user.is_community:
+            form = CustomerUserChangeForm(instance=request.user)
             return render(request, 'community/profile/edit_profile.html', {'form': form})
         else:
             return redirect('dashboard-community')
@@ -460,3 +464,103 @@ def change_password(request):
     return render(request, 'accounts/change_password.html', {
         'form': form
     })
+
+class CompleteProfileView(LoginRequiredMixin, UpdateView):
+    template_name = 'community/profile/complete_profile.html'
+    template_email = 'accounts/mail_profile_complete.html'
+    model = CustomerUser
+    form_class = CompleteProfileForm 
+    success_url = reverse_lazy('dashboard-community')
+
+    def get_object(self, *args, **kwargs):
+        return get_object_or_404(CustomerUser, id=self.request.user.id)
+
+    def form_valid(self, form ):
+        success = super().form_valid(form)
+        self.object.save()
+        campaign_ref_code = settings.CAMPAIGN_REF_CODE if hasattr(settings, 'CAMPAIGN_REF_CODE') else 'TPCW-20'
+
+        if self.request.user.user.referredBy.ref_code == campaign_ref_code and not self.request.user.ref_code.startswith('TPCW-'):
+
+            count = Referral.objects.filter(
+                    referredBy__ref_code=campaign_ref_code).exclude(user__first_name=None, user__avatar=None).count()
+
+            if count <= settings.CAMPAIGN_COUPON_LIMIT:
+                campaign_ref_code += '-'
+                coupon_code = campaign_ref_code + str(count+1).zfill(len(str(settings.CAMPAIGN_COUPON_LIMIT)))
+                counter = count 
+                while CustomerUser.objects.filter(ref_code=coupon_code).exists():
+                    counter =+ 1
+                    coupon_code = campaign_ref_code + str(counter).zfill(len(str(settings.CAMPAIGN_COUPON_LIMIT)))
+                self.object.ref_code = coupon_code
+                self.object.save()
+                
+                # cover for campaign
+                Image1 = Image.open('main/static/img/campaign/front.png') 
+                # make a copy the image so that the  
+                # original image does not get affected 
+                Image1copy = Image1.copy() 
+                #get the image from user
+                Image2 = Image.open(self.request.FILES['avatar']) 
+                new_image2 = Image2.resize((320, 320))
+                Image2copy = new_image2.copy()
+                # paste image giving dimensions 
+                Image1copy.paste(Image2copy, (120, 110)) 
+
+                # save the image  
+                Image1copy.save('main/media/id_campaign/'+str(self.object.id)+'travelpostingCard_front.png')
+                
+                #now we save the back file front
+                Image3 = Image.open('main/static/img/campaign/back.png') 
+
+                draw = ImageDraw.Draw(Image3)
+                #define font for text 
+                font = ImageFont.truetype('main/static/font/roboto/' + 'Roboto-Bold.ttf', size=24)
+                #get ref_code fron user
+                ref_code = coupon_code.split('-')[2]
+                #get name and last name from user
+                nombre = self.object.get_full_name()
+                color = (0, 0, 0)
+                draw.text((240, 367), ref_code, font= font, fill = color)  
+                draw.text((540, 367), nombre, font= font, fill = color)
+                #generate qr 
+                # String which represents the QR code 
+                s = ""+nombre+", Code:"+coupon_code+", Website: https://travelposting.com/community/"
+                # Generate QR code 
+                url = pyqrcode.create(s) 
+                # Create and save the png file 
+                url.png('main/media/id_campaign/'+str(self.request.user.id)+'_qr.png', scale = 8) 
+                open_qr = Image.open('main/media/id_campaign/'+str(self.request.user.id)+'_qr.png')
+                n_open_qr = open_qr.resize((200, 200))
+                c_n_open_qr = n_open_qr.copy()
+                Image3.paste(c_n_open_qr, (730, 80)) 
+                #create the imag with text and qr
+                Image3.save('main/media/id_campaign/'+str(self.request.user.id)+'travelpostingCard_back.png')
+                
+                #sent message for telegram 
+                from telepot.text import apply_entities_as_markdown, apply_entities_as_html
+                referidos = Referral.objects.filter(referredBy__ref_code='TPCW-20',).exclude(user__first_name=None, user__avatar=None).count()
+                settings.BOT.sendMessage(-448346471,
+                                    '*Hallo, Se ha registrado un nuevo usuario en la Comunidad:* '+str(self.request.user.email)+', *Total inscritos:* '+str(referidos)+'                               *Manda Guarapo Nilo...*',
+                                    parse_mode='Markdown')
+                #end campaign
+
+                # This method is called when valid form data has been POSTed.
+                # It should return an HttpResponse.
+                body = render_to_string(
+                    self.template_email, 
+                    request=self.request
+                )
+                email_message = EmailMessage(
+                    subject = _('Travelposting send a new import message'),
+                    body = body,
+                    from_email = settings.DEFAULT_FROM_EMAIL,
+                    to = [self.object.email,]
+                )
+                email_message.content_subtype = 'html'
+                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'travelpostingCard_front.png')
+                email_message.attach_file('main/media/id_campaign/'+str(self.request.user.id)+'travelpostingCard_back.png')
+
+                email_message.send()
+
+        return success 

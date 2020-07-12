@@ -30,9 +30,9 @@
                                     <header class="card-header p-5">
                                         <h4 class="h6 text-success">{{ plan }}</h4>
                                         {% for price in plan.price.all %}
-                                            <div class="{% ifequal price.type.type  'Anual'%}anual{% else %}mensual{% endifequal %}">
+                                            <div class="{% ifequal price.type.type  'Anual' %}anual{% else %}mensual{% endifequal %}">
                                                 {% if not price.value %}
-                                                    {% trans "This plan is only for yearly suscription"%}
+                                                    {% trans "This plan is only for yearly subscription" %}
                                                 {% else %}
                                                     {% if price.type.type == 'Mensual' %}
                                                         <span class="h1 text-dark font-weight-medium">
@@ -50,7 +50,7 @@
                                                         </span>
                                                         <div class="card-body p-5">
                                                             <center>
-                                                                <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}"">{% trans 'See plan details' %}</button>
+                                                                <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}">{% trans 'See plan details' %}</button>
                                                             </center>
                                                             <a type="submit" id="test-with-is" class="btn btn-sm btn-block btn-success transition-3d-hover" href="{% url 'accounts:register2' valor=name int=plan.id %}">{% trans 'Register' %}</a>
                                                         </div>
@@ -76,7 +76,7 @@
                                                             </del>
                                                             <div class="card-body p-5">
                                                                 <center>
-                                                                    <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}"">{% trans 'See plan details' %}</button>
+                                                                    <button type="button" class="btn btn-xs btn-soft-danger btn-pill mb-2 text-center" data-toggle="modal" data-target="#theModal-{{plan.pk}}">{% trans 'See plan details' %}</button>
                                                                 </center>
                                                                 <a type="submit" id="test-with-is" class="btn btn-sm btn-block btn-success transition-3d-hover" href="{% url 'accounts:register2' valor=name int=plan.id %}">{% trans 'Register' %}</a>
                                                             </div>
@@ -197,4 +197,3 @@
 </div>
 <!--Modal: modalPush--> 
 {% endfor%}
-

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% block extracss  %}
-    <link rel="stylesheet" href="{% static 'assets/vendor/dzsparallaxer/dzsparallaxer.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/dzsparallaxer/dzsparallaxer.css' %}">
 {% endblock extracss%}
 {% block navbar %}
     {% include 'menu/navbar_all.html' %}
@@ -14,7 +14,7 @@
     <!-- Content -->
     <div class="container position-relative space-2 space-top-md-5 space-bottom-md-3 z-index-2">
       <div class="w-lg-80 text-center mx-auto">
-        <h1 class="display-3 font-size-md-down-5 text-white font-weight-semi-bold">{% trans 'Thank you'%}</h1>
+        <h1 class="display-3 font-size-md-down-5 text-white font-weight-semi-bold">{% trans 'Thank you' %}</h1>
         <p class="lead text-white">{% trans 'Very soon we will contact you, with all the requirements. Thank you for contacting us, Travelposting team' %}</p>
       </div>
     </div>

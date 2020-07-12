@@ -1,7 +1,7 @@
 {% extends 'destinations/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'Detalles de Aplicación' %}{% endblock %}
+{% block title %}{% trans 'Application Details' %}{% endblock %}
 
 {% block content %}
   <div id="page-wrapper" class="gray-bg">
@@ -31,7 +31,7 @@
                 </li>
 
                 <li>
-                  <p><b>{% trans 'Tipo de autenticación' %}</b></p>
+                  <p><b>{% trans 'Authentication type' %}</b></p>
                   <p>{{ application.authorization_grant_type }}</p>
                 </li>
 
@@ -42,11 +42,11 @@
               </ul>
 
               <div class="btn-toolbar">
-                <a class="btn btn-info" href="{% url "oauth2-application-list" %}">{% trans 'Atrás' %}</a>
+                <a class="btn btn-info" href="{% url "oauth2-application-list" %}">{% trans 'Back to' %}</a>
                 <a class="btn btn-primary"
-                   href="{% url "oauth2-application-update" application.id %}">{% trans 'Editar' %}</a>
+                   href="{% url "oauth2-application-update" application.id %}">{% trans 'Edit' %}</a>
                 <a class="btn btn-danger" data-toggle="modal" data-target="#modal"
-                   href="{% url "oauth2-application-delete" application.id %}">{% trans 'Eliminar' %}</a>
+                   href="{% url "oauth2-application-delete" application.id %}">{% trans 'Delete' %}</a>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 {% extends 'destinations/base.html' %}
 {% load i18n staticfiles %}
-{% block title %}{% trans 'Información de usuario' %}{% endblock %}
+{% block title %}{% trans 'User information' %}{% endblock %}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
@@ -13,7 +13,7 @@
                         <div class="ibox-tools">
                             <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white">
                             <i class="fa fa-edit"></i>
-                            {% trans "Edit"%}
+                            {% trans "Edit" %}
                             </a>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                     <div class="col-md-12">
                         <div class="ibox">
                             <div class="ibox-title">
-                                <h3>{% trans "Sessions"%}</h3>
+                                <h3>{% trans "Sessions" %}</h3>
                                 <div class="ibox-travel-tools">
                                     <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -50,16 +50,16 @@
                             </div>
                             <div class="ibox-content ibox-heading">
                                 <dl class="dl-horizontal">
-                                    <dt>{% trans 'Último inicio de sessión' %}:</dt>
+                                    <dt>{% trans 'Last login' %}:</dt>
                                     <dd>{{ object.last_login }}</dd>
-                                    <dt>{% trans 'Fecha de registro' %}:</dt>
+                                    <dt>{% trans 'Date of registration' %}:</dt>
                                     <dd>{{ object.date_joined }}</dd>
-                                    <dt>{% trans 'Teléfono' %}:</dt>
+                                    <dt>{% trans 'Phone' %}:</dt>
                                     <dd>
                                         {% if object.phone != None %}
                                         {{ object.phone }}
                                         {% else %}
-                                        {% trans "Not registered yet"%}
+                                        {% trans "Not registered yet" %}
                                         {% endif %}
                                     </dd>
                                 </dl>
@@ -69,7 +69,7 @@
                     <div class="col-md-12">
                         <div class="ibox">
                             <div class="ibox-title">
-                                <h3>{% trans "Direction"%}</h3>
+                                <h3>{% trans "Direction" %}</h3>
                                 <div class="ibox-travel-tools">
                                     <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -78,31 +78,31 @@
                             </div>
                             <div class="ibox-content ibox-heading">
                                 <dl class="dl-horizontal">
-                                    <dt>{% trans 'Pais' %}:</dt>
+                                    <dt>{% trans 'Country' %}:</dt>
                                     <dd>
                                         {% if object.country != None %}  
                                         {{ object.country }}
                                         {% else %}
-                                        {% trans "Not registered yet"%}
+                                        {% trans "Not registered yet" %}
                                         {% endif %}
                                     </dd>
-                                    <dt>{% trans 'Estado' %}:</dt>
+                                    <dt>{% trans 'State' %}:</dt>
                                     <dd>
                                         {% if object.state != None %}   
                                         {{ object.state }}
                                         {% else %}
-                                        {% trans "Not registered yet "%}
+                                        {% trans "Not registered yet " %}
                                         {% endif%}
                                     </dd>
-                                    <dt>{% trans 'Codigo postal' %}:</dt>
+                                    <dt>{% trans 'Postal code' %}:</dt>
                                     <dd>
                                         {% if object.postal_code %}  
                                         {{ object.postal_code }}
                                         {% else %}
-                                        {% trans "Not registered yet "%}
+                                        {% trans "Not registered yet " %}
                                         {% endif %}
                                     </dd>
-                                    <dt>{% trans 'Lenguaje' %}:</dt>
+                                    <dt>{% trans 'Language' %}:</dt>
                                     <dd>{{ object.get_language_display }}</dd>
                                 </dl>
                             </div>
@@ -111,7 +111,7 @@
                     <div class="col-md-12">
                         <div class="ibox">
                             <div class="ibox-title">
-                                <h3>{% trans "Plan"%}</h3>
+                                <h3>{% trans "Plan" %}</h3>
                                 <div class="ibox-travel-tools">
                                     <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -125,33 +125,33 @@
                                         {% if object.plan != None%}
                                             {{ object.plan }}
                                         {% else %}
-                                            {% trans "Not registered yet "%}
+                                            {% trans "Not registered yet " %}
                                         {% endif %}
                                     
                                     </dd>
-                                    <dt>{% trans 'Nombre de la empresa' %}:</dt>
+                                    <dt>{% trans 'Company name' %}:</dt>
                                     <dd>
                                         {% if object.business_name != None %}
                                             {{ object.business_name }}
                                         {% else %}
-                                            {% trans "Not registered yet "%}
+                                            {% trans "Not registered yet " %}
                                         {% endif %}
                                     
                                     </dd>
-                                    <dt>{% trans 'Direccion de empresa' %}:</dt>
+                                    <dt>{% trans 'Company address' %}:</dt>
                                     <dd>
                                         {% if object.business_address != None %}
                                             {{ object.business_address }}
                                         {% else %}
-                                            {% trans "Not registered yet "%}
+                                            {% trans "Not registered yet " %}
                                         {% endif %}
                                     </dd>
-                                    <dt>{% trans 'Cargo en la empresa' %}:</dt>
+                                    <dt>{% trans 'Position in the company' %}:</dt>
                                     <dd>
                                         {% if object.business_position != None %}
                                             {{ object.business_position }}
                                         {% else %}
-                                            {% trans "Not registered yet "%}
+                                            {% trans "Not registered yet " %}
                                         {% endif %}
                                     </dd>
                                 </dl>

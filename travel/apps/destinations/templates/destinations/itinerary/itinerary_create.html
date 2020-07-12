@@ -4,9 +4,9 @@
 
 {%block extracss%}
 
-<link href="{% static 'dashboard/css/plugins/summernote/summernote-bs4.css'%}" rel="stylesheet">
-<link href="{% static 'dashboard/css/plugins/select2/select2.min.css'%}" rel="stylesheet">
-<link href="{% static 'dashboard/css/plugins/select2/select2-bootstrap4.min.css'%}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/summernote/summernote-bs4.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/select2/select2.min.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/select2/select2-bootstrap4.min.css' %}" rel="stylesheet">
 <link href="{% static 'dashboard/css/plugins/dataTables/datatables.min.css' %}" rel="stylesheet">
 <link href="{% static 'dashboard/css/plugins/toastr/toastr.min.css' %}" rel="stylesheet">
 {%endblock extracss%}
@@ -19,10 +19,10 @@
             <h2>{% trans "Create Itinerary" %}</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home"%}</a>
+                    <a href="{% url 'dashboard:dashboard-index' %}">{% trans "Home" %}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{% url 'dashboard:itinerary-list'%}">{% trans "List Itinerary" %}</a>
+                    <a href="{% url 'dashboard:itinerary-list' %}">{% trans "List Itinerary" %}</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <strong>{% trans "Add Itinerary" %}</strong>
@@ -48,9 +48,9 @@
                     {% csrf_token %}
                     <input type="hidden" name="pk_i" id="pk_i" readonly />
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">{% trans "Select Destiny"%}</label>
+                        <label class="col-sm-2 col-form-label">{% trans "Select Destiny" %}</label>
                         <div class="col-md-10">
-                            <select data-placeholder="{% trans "Choose a Destiny..."%}" class="select2_demo_2 chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
+                            <select data-placeholder="{% trans 'Choose a Destiny...' %}" class="select2_demo_2 chosen-select" name="destination" id="seleciit_destiny" tabindex="2" style ="width:100%" required="required">
                                 {% for destiny in destination_list %}
                                     <option value="{{ destiny.id }}"
                                         {% if destiny == object.destination %}selected="selected"{% endif %}>
@@ -89,7 +89,7 @@
 
 {% block extrajs %}
 
-  <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js'%}"></script>
+  <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
   <script src="{% static 'dashboard/js/plugins/summernote/summernote-bs4.js' %}"></script>
   <script>initSummernote();</script>
   <script>

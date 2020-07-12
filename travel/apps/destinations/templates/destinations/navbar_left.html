@@ -16,14 +16,14 @@
                       {% if request.user.is_staff %}
                       {% trans 'Admin' %}
                       {% else %}
-                      {% trans 'Empresa' %}
+                      {% trans 'Company' %}
                       {% endif %}
                       <b class="caret"></b></span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                      <li><a href="{% url 'accounts:user-details' request.user.pk %}">{% trans 'Información' %}</a></li>
-                      <li><a href="{% url 'accounts:password-change' %}">{% trans 'Cambiar contraseña' %}</a></li>
-                      <li><a href="{% url 'accounts:logout' %}">{% trans 'Cerrar sesión' %}</a></li>
+                      <li><a href="{% url 'accounts:user-details' request.user.pk %}">{% trans 'Information' %}</a></li>
+                      <li><a href="{% url 'accounts:password-change' %}">{% trans 'Change password' %}</a></li>
+                      <li><a href="{% url 'accounts:logout' %}">{% trans 'Close session' %}</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -43,7 +43,7 @@
               {% else %}
                 <li>
               {% endif %}
-                  <a href="{% url 'dashboard:mailbox'%}">
+                  <a href="{% url 'dashboard:mailbox' %}">
                     <i class="fa fa-envelope-o fa-lg"></i>
                     <span class="nav-label">{% trans "Mailbox" %}</span>
                   </a>
@@ -65,11 +65,11 @@
       <li class="">
         <a href="#">
           <i class="fa fa-globe fa-lg"></i>
-          <span class="nav-label">{% trans 'Destinos' %}</span>
+          <span class="nav-label">{% trans 'Destinations' %}</span>
           <span class="fa arrow"></span>
         </a>
         <ul class="nav nav-second-level">
-          <li class=""><a href="{% url 'dashboard:list' %}">{% trans 'Sus destinos' %}</a></li>
+          <li class=""><a href="{% url 'dashboard:list' %}">{% trans 'Your destinations' %}</a></li>
           <li class=""><a href="{% url 'dashboard:itinerary-list' %}">{% trans 'Itinerary' %}</a></li>
           <li class=""><a href="{% url 'dashboard:destination-map' %}">{% trans 'Maps' %}</a></li>
           <li class=""><a href="{% url 'dashboard:social-network' %}">{% trans 'Social Network' %}</a></li>

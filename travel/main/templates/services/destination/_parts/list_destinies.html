@@ -14,7 +14,7 @@
                             <a class="js-fancybox u-media-viewer" href="javascript:;"
                             data-src="/main/media/{{foto.image}}"
                             data-fancybox="fancyboxGalleryDestiny{{destino.id}}"
-                            data-caption="{%trans "Destination Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
+                            data-caption="{% trans "Destination Gallery" %} - {% trans "image" %} #{{forloop.counter}}"
                             data-speed="700"
                             data-is-infinite="true">
                             <img class="img-thumbnail" style="width: 100%;height: 210px; overflow: hidden;" src="/main/media/{{foto.image}}" alt="{{foto.description}}">
@@ -35,7 +35,7 @@
                         <img class="js-fancybox d-none" alt="{{foto.description}}"
          data-fancybox="fancyboxGalleryDestiny{{destino.id}}"
          data-src="/main/media/{{foto.image}}"
-         data-caption="{%trans "Destination Gallery"%} - {% trans "image" %} #{{forloop.counter}}"
+         data-caption="{% trans "Destination Gallery" %} - {% trans "image" %} #{{forloop.counter}}"
          data-speed="700"
          data-is-infinite="true">
                         {%endif%}
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="card-footer border-0 pt-0 pb-3 px-0 mx-5">
-                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See details"%}</a>
+                            <a href="{% url 'view_detail_destination' destino.id %}" class="btn btn-sm btn-outline-primary btn-sm-wide btn-pill transition-3d-hover">{% trans "See details" %}</a>
                         </div>
                     </article>
                     <!-- End Desrino Card -->

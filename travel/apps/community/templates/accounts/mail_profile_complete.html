@@ -1,0 +1,231 @@
+
+
+{% load static i18n cms_tags menu_tags sekizai_tags staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{% trans 'TRAVELPOSTING' %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .ReadMsgBody {width: 100%; background-color: #ffffff;}
+            .ExternalClass {width: 100%; background-color: #ffffff;}
+            /* Windows Phone Viewport Fix */
+            @-ms-viewport { 
+            width: device-width; 
+            }
+        </style>
+        <!--[if (gte mso 9)|(IE)]>
+        <style type="text/css">
+            table {border-collapse: collapse;}
+            .mso {display:block !important;} 
+        </style>
+        <![endif]-->
+    </head>
+    <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="background: #e7e7e7; width: 100%; height: 100%; margin: 0; padding: 0;">
+        <!-- Mail.ru Wrapper -->
+        <div id="mailsub">
+            <!-- Wrapper -->
+            <center class="wrapper" style="table-layout: fixed; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0 auto; width: 100%; max-width: 960px;">
+                <!-- Old wrap -->
+                <div class="webkit">
+                    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="padding: 0; margin: 0 auto; width: 100%; max-width: 960px;">
+                    <tbody>
+                        <tr>
+                            <td align="center">
+                                <!-- Start Section (1 column) -->
+                                <table id="intro" cellpadding="0" cellspacing="0" border="0" bgcolor="#4F6331" align="center" style="width: 100%; padding: 0; margin: 0; background-image: url(https://github.com/lime7/responsive-html-template/blob/master/index/intro__bg.png?raw=true); background-size: auto 102%; background-position: center center; background-repeat: no-repeat; background-color: #080e02">
+                                    <tbody >
+                                        <tr>
+                                            <td colspan="3" height="20"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="330" style="width: 33%;"></td>
+                                            <!-- Logo -->
+                                            <td width="300" style="width: 30%;" align="center">
+                                                <a href="#" target="_blank" border="0" style="border: none; display: block; outline: none; text-decoration: none; line-height: 60px; height: 60px; color: #ffffff; font-family: Verdana, Geneva, sans-serif;  -webkit-text-size-adjust:none;">
+                                                <img src="https://travelposting.com/static/img/logo-round-0.5x.png" alt="" width="100" height="100" border="0" style="border: none; display: block; -ms-interpolation-mode: bicubic;">
+                                                </a>
+                                            </td>
+                                            <!-- Social Button -->
+                                            <td width="330" style="width: 33%;" align="right">
+                                                <div style="text-align: center; max-width: 150px; width: 100%;">
+                                                    <span>&nbsp;</span>
+                                                    <a href="https://www.facebook.com/travelposting" target="_blank" border="0" style="border: none; outline: none; text-decoration: none; line-height: 60px; color: #ffffff; font-family: Verdana, Geneva, sans-serif;  -webkit-text-size-adjust:none">
+                                                    <img src="https://github.com/lime7/responsive-html-template/blob/master/index/f.png?raw=true" alt="{% trans 'facebook.com' %}" border="0" width="11" height="23" style="border: none; outline: none; -ms-interpolation-mode: bicubic;">
+                                                    </a>
+                                                    <span>&nbsp;</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="100"></td>
+                                        </tr>
+                                        <!-- Main Title -->
+                                        <tr>
+                                            <td colspan="3" height="60" align="center">
+                                                <div border="0" style="border: none; line-height: 60px; color: #ffffff; font-family: Verdana, Geneva, sans-serif; font-size: 24px; font-weight: bolder;">{% trans "Thank you for your trust and registration at Travelposting." %}</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Line 1 -->
+                                        <tr>
+                                            <td colspan="3" height="20" valign="bottom" align="center">
+                                                <img src="https://github.com/lime7/responsive-html-template/blob/master/index/line-1.png?raw=true" alt="line" border="0" width="200" height="5" style="border: none; outline: none; max-width: 464px; width: 100%; -ms-interpolation-mode: bicubic;" >
+                                            </td>
+                                        </tr>
+                                        <!-- Meta title -->
+                                        <tr>
+                                            <td colspan="3" height="85"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- End Start Section -->
+                                <div style="width: 90%; line-height: 20px; color: #727272; font-family: Verdana, Geneva, sans-serif; font-size: 16px; text-align: justify; overflow: hidden; margin: 10px 0; mso-table-lspace:0;mso-table-rspace:0;">
+                                    {% blocktrans %}
+                                    We know that to change the course of things, more than words are needed, for that reason we are proud to be able to count on you and that together we begin to transform the world of travel into something much more positive and attractive for everyone.
+                                    {% endblocktrans%}
+                                    <br><br>
+                                    {% blocktrans %}
+                                    Now that you are an official member of Travelposting and you are like us in this new adventure, we remind you all that you are about to get and enjoy with your TravelpostingCard.
+                                    {% endblocktrans%}
+                                    <br><br>
+                                    <ul>
+                                        <li>{% trans "1) Cost the cost of the annual membership which has a value of <b>€ 99.99</b>." %} </li>
+                                        <li>{% trans "2) You will get € 50.00 in a welcome pack which you can redeem on your first holiday purchase at" %} <a href="https://travelposting.com">{% trans "Travelposting" %}</a>. </li>
+                                        <li>{% trans "3) You also receive a 20% discount code for the first 20 months or the first 20 trips you make with any of our travelposting.com affiliated agencies 
+                                            (Please note this one exception is the first trip, on this one you can decide whether to use the 50 Euro or the 20% discount)." %}
+                                        </li>
+                                    </ul>
+                                    <br><br>
+                                    {% blocktrans %}
+                                    We also leave you the data so that you can make your economic contribution of only € 25.00 as we discussed in our presentation.
+                                    {% endblocktrans%}
+                                    <br><br>
+                                    {% blocktrans %}
+                                    Dear user, with the activation of this e-mail, you will receive the TravelpostingCard, it is a digital card that will authorize you to obtain different benefits among them discount bonuses that only our users receive, for that reason we ask you to place your profile photo since the cards that have some other type of graphics like; logos, memes, etc, will be deactivated and you will lose your discount, since the cards are created only once by our automatic system.
+                                    {% endblocktrans%}
+                                    <br><br>
+                                    {% blocktrans %}
+                                    We wish you many good trips with travelposting and its affiliated agencies and we remind you that as part of the community you have the right to ask us any questions you may have about the operation of the community and the platform.
+                                    {% endblocktrans%}
+                                    <br><br>
+                                    {% trans "Best regards from the entire Travelposting team" %}
+                                    <br><br>
+                                    <b>{% trans "Company:" %}</b>
+                                    <b>Travelposting UG</b><br>
+                                    <b><abbr title="{% trans 'International Bank Account Number' %}">{% trans "IBAN:" %}</abbr></b> DE66 2004 0000 0888 8901 00<br>
+                                    <b><abbr title="{% trans 'Bank Identifier Code' %}">{% trans "BIC:" %}</abbr></b> COBADEFFXXX<br>
+                                    <b>{% trans "Paypal:" %}</b> info@travelposting.com
+                                </div>
+                                <!-- Icon articles (4 columns) -->
+                                <table id="icon__article" class="device" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center" style="width: 100%; padding: 0; margin: 0; background-color: #ffffff">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center">
+                                                <div style="display: inline-block;">
+                                                    <table width="240" align="left" cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; mso-table-lspace:0pt; mso-table-rspace:0pt;"  class="article">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="3" height="40"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="80" style="width: 8%;"></td>
+                                                                <td align="center">
+
+                                                                </td>
+                                                                <td width="80" style="width: 8%;"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3" height="10"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3" height="5" valign="top" align="center">
+                                                                    <img src="https://github.com/lime7/responsive-html-template/blob/master/index/line-2.png?raw=true" alt="line" border="0" width="960" height="5" style="border: none; outline: none; max-width: 960px; width: 100%; -ms-interpolation-mode: bicubic;" >
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- One art (2 columns) -->
+                                                <table id="one__art" class="device" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center" style="width: 100%; padding: 0; margin: 0; background-image: url(https://github.com/lime7/responsive-html-template/blob/master/index/one__bg.png?raw=true); background-size: 100% 100%; background-position: center center; background-repeat: no-repeat; background-color: #ECECED;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table align="right" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="padding: 0; margin: 0; background-image: url(ohttps://github.com/lime7/responsive-html-template/blob/master/index/one__art-mask.png?raw=true); background-size: 100% 100%; background-position: center center; background-repeat: no-repeat; background-color: rgba(255,255,255,.85); max-width: 480px; width:100%;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td colspan="3" height="15"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="20" style="width:4%;"></td>
+                                                                            <td align="left">
+                                                                                <div border="0" style="border: none; line-height: 18px; color: #212121; font-family: Verdana, Geneva, sans-serif; font-size: 20px;">
+                                                                                    {% trans "" %}Travelposting?
+                                                                                </div>
+                                                                            </td>
+                                                                            <td width="20" style="width:4%;"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="20" style="width:4%;"></td>
+                                                                            <td align="left">
+                                                                                <div border="0" style="border: none;">
+                                                                                    <p style="line-height: 22px; color: #727272; font-family: Verdana, Geneva, sans-serif; font-size: 16px; text-align: left; mso-table-lspace:0;mso-table-rspace:0;">
+                                                                                        {% trans "Our potential in its favor is based on the ease we have of capturing new stakeholders for your products thanks to the constant trips we make and the tourism and technology fairs in which we are present, as is the case of the Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin Germany, or the Fitur in Madrid Spain among others." %}
+                                                                                    </p>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td width="20" style="width:4%;"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="20" style="width:4%;"></td>
+                                                                            <td align="left" height="34">
+                                                                                <div style="background-image: url(https://github.com/lime7/responsive-html-template/blob/master/index/one__art-btn.png?raw=true); background-size: 100% 100%; background-position: center center; width: 125px;">
+                                                                                    <a href="#" target="_blank" width="90" height="34" align="center" bgcolor="#9de0dc" border="0" style="border: none; outline: none; display: block; height: 34px; text-decoration: none; font-size: 16px; line-height: 34px; color: #ffffff; font-family: Verdana, Geneva, sans-serif; text-align: center;  -webkit-text-size-adjust:none; background-color:#9de0dc; margin: 0 auto; width: 90px;">
+                                                                                    {% trans "See more" %}
+                                                                                    </a>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td width="20" style="width:4%;"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="3" height="13"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- End One art -->
+                                                <!-- Footer -->
+                                                <table id="news__article" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center" style="width: 100%; padding: 0; margin: 0; background-color: #ffffff">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="3" height="23"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center">
+                                                                <div border="0" style="border: none; line-height: 14px; color: #727272; font-family: Verdana, Geneva, sans-serif; font-size: 16px;">
+                                                                    2020 © <a href="https://travelposting.com" target="_blank" border="0" style="border: none; outline: none; text-decoration: none; line-height: 14px; font-size: 16px; color: #727272; font-family: Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none;">{% trans "Travelposting" %}</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" height="23"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- End Footer -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                </div>
+                <!-- End Old wrap -->
+            </center>
+            <!-- End Wrapper -->
+        </div>
+        <!-- End Mail.ru Wrapper -->
+    </body>
+</html>
+

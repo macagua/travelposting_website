@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% load mathfilters %}
+{% load destinations_tags%}
+{% block title %}{% trans 'Community' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "community/dashboard/breadcrumb_profile.html" with edit_profile=False%}
+
+	<div class="bg-light">
+		<div class="container space-2">
+            <div class="row">
+                {% trans "Dear user, with the activation of this user, you will receive the TravelpostingCard, it is a digital card that will authorize you to obtain different benefits among them discount bonuses that only our users receive, for such reason we ask you to place your profile photo since the cards that have some other type of graphics like; logos, memes, etc, will be deactivated and you will lose your discount, since the cards are created only once by our automatic system."%}
+
+{% trans "Thank you for your cooperation."%}
+            </div>
+
+			<!-- Personal Info Form -->
+			<form class="js-validate" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="row">
+					<!-- Input -->
+					<div class="col-sm-12 col-md-12 media align-items-center mb-6">
+						<div class="u-lg-avatar mr-3">
+							<img class="img-fluid rounded-circle"
+								 src="{%if not request.user.avatar %}
+								 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
+								 alt="Image Description">
+						</div>
+
+						<div class="media-body">
+							<label class="btn btn-sm btn-primary transition-3d-hover file-attachment-btn mb-1 mb-sm-0 mr-1" for="fileAttachmentBtn">
+								{% trans "Upload New Picture" %}
+								<input id="fileAttachmentBtn" name="avatar" type="file" class="file-attachment-btn__label">
+							</label>
+						<!--
+							<button type="submit" class="btn btn-sm btn-soft-secondary transition-3d-hover mb-1 mb-sm-0">Delete</button>
+						-->
+						</div>
+					</div>
+
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.first_name.id_for_label}}" class="form-label">
+								{{form.first_name.label}}
+								<span class="text-danger">*</span>
+							</label>
+
+							<div class="form-group">
+								{{form.first_name}}
+								<small class="form-text text-muted">{{ form.first_name.help_text|safe }}</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
+
+					<!-- Input -->
+					<div class="col-sm-6 mb-6">
+						<div class="js-form-message">
+							<label id="{{form.last_name.id_for_label}}" class="form-label">
+								{{form.last_name.label}}
+								<span class="text-danger">*</span>
+							</label>
+
+							<div class="form-group">
+								{{form.last_name}}
+								<small class="form-text text-muted">{{ form.last_name.help_text|safe }}</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Input -->
+
+				</div>
+				<!-- End Input Group -->
+				<!-- Buttons -->
+				<button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">{% trans "Save Changes" %}</button>
+				<button type="reset" class="btn btn-sm btn-soft-secondary transition-3d-hover">{% trans "Cancel" %}</button>
+				<!-- End Buttons -->
+
+
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock content %}

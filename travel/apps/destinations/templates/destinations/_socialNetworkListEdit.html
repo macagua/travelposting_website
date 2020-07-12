@@ -16,13 +16,13 @@
             <h2>{% trans "Social Network" %}</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home"%}</a>
+                    <a href="{% url 'dashboard:dashboard-index' %}">{% trans "Home" %}</a>
                 </li>
                 <li class="breadcrumb-item">
                     <a>{% trans "List" %}</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <a href="{% url 'dashboard:social-network'%}">{% trans "Edit" %}</a>
+                    <a href="{% url 'dashboard:social-network' %}">{% trans "Edit" %}</a>
                 </li>
             </ol>
         </div>
@@ -41,7 +41,7 @@
                             <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="{% url 'destinations:dashboard-index' %}" class="dropdown-item">{% trans "main page"%}</a>
+                                <li><a href="{% url 'destinations:dashboard-index' %}" class="dropdown-item">{% trans "main page" %}</a>
                                 </li>
                                 <li><a href="{% url 'destinations:social-network' %}" class="dropdown-item">{% trans "See my configurations from social network" %}</a>
                                 </li>
@@ -55,43 +55,43 @@
                         <form method="POST">{% csrf_token %}
                             {% for social in social%}
                             <div class="form-group row"><label class="col-sm-2 col-form-label">{% trans 'Verify' %}</label>
-                                <div class="col-sm-10"><input type="checkbox" value="{% if social.social_network %}on" checked=""{% else %}off"{% endif %} name="check" > <span class="form-text m-b-none">{% trans 'Check for use only social network from user'%}</span>
+                                <div class="col-sm-10"><input type="checkbox" value="{% if social.social_network %}on" checked=""{% else %}off"{% endif %} name="check" > <span class="form-text m-b-none">{% trans 'Check for use only social network from user' %}</span>
                                 </div>
                             </div>
                             <div class="form-group  row">
                                 <label class="col-sm-2 col-form-label">Facebook</label>
-                                <div class="col-sm-10"><input type="text" name="facebook" class="form-control" placeholder="https://facebook.com/youruser" value="{{ social.facebook }}"></div>
+                                <div class="col-sm-10"><input type="text" name="facebook" class="form-control" placeholder="{% trans 'https://facebook.com/youruser' %}" value="{{ social.facebook }}"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Instagram</label>
-                                <div class="col-sm-10"><input type="text" class="form-control" name="instagram" placeholder="https://instagram.com/youruser" value="{{social.instagram}}"> 
+                                <div class="col-sm-10"><input type="text" class="form-control" name="instagram" placeholder="{% trans 'https://instagram.com/youruser' %}" value="{{social.instagram}}"> 
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Twitter</label>
-                                <div class="col-sm-10"><input type="text" class="form-control" name="twitter" placeholder="https://twitter.com/youruser" value="{{ social.twitter }}"></div>
+                                <div class="col-sm-10"><input type="text" class="form-control" name="twitter" placeholder="{% trans 'https://twitter.com/youruser' %}" value="{{ social.twitter }}"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Pinterest</label>
-                                <div class="col-sm-10"><input type="text" placeholder="https://pinterest.com/youruser" class="form-control" name="pinterest" value="{{social.pinterest|default_if_none:''}}"></div>
+                                <div class="col-sm-10"><input type="text" placeholder="{% trans 'https://pinterest.com/youruser' %}" class="form-control" name="pinterest" value="{{social.pinterest|default_if_none:''}}"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Website</label>
-                                <div class="col-sm-10"><input type="text" placeholder="https://website.com/" class="form-control" name="website" value="{{social.website|default_if_none:''}}"></div>
+                                <div class="col-sm-10"><input type="text" placeholder="{% trans 'https://website.com/' %}" class="form-control" name="website" value="{{social.website|default_if_none:''}}"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Linkedin</label>
-                                <div class="col-sm-10"><input type="text" placeholder="https://linkedin.com/youruser" class="form-control" name="linkedin" value="{{social.linkedin}}"></div>
+                                <div class="col-sm-10"><input type="text" placeholder="{% trans 'https://linkedin.com/youruser' %}" class="form-control" name="linkedin" value="{{social.linkedin}}"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <a class="btn btn-white btn-sm" href="{% url 'destinations:social-network'%}">{% trans 'Cancel' %}</a>
+                                    <a class="btn btn-white btn-sm" href="{% url 'destinations:social-network' %}">{% trans 'Cancel' %}</a>
                                     <button class="btn btn-primary btn-sm" type="submit">{% trans 'Save change' %}</button>
                                 </div>
                             </div>
@@ -108,8 +108,7 @@
 {% block extrajs %}
 
 <script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
-<script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js'%}"></script>
+<script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js' %}"></script>
 <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
 <script src="{% static 'dashboard/js/plugins/toastr/toastr.min.js' %}"></script>
 {% endblock extrajs%}
-

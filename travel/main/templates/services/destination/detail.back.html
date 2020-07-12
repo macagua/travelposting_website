@@ -8,7 +8,7 @@
 {% if request.user.is_authenticated == True %}
 <br><br><br><br>
 
-{% include 'community/dashboard/breadcrumb.html'%}
+{% include 'community/dashboard/breadcrumb.html' %}
 
 {% endif %}
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url(/main/media/{{ destino.photos.first.image }});">
@@ -42,10 +42,10 @@
                   <a class="nav-link font-weight-medium active" id="pills-one-example2-tab" data-toggle="pill" href="#pills-one-example2" role="tab" aria-controls="pills-one-example2" aria-selected="true">
                     <div class="d-md-flex justify-content-md-center align-items-md-center">
                       <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                        <img class="js-svg-injector" src="{% static "img/destinies/images-regular.svg"%}" alt="SVG"
+                        <img class="js-svg-injector" src='{% static "img/destinies/images-regular.svg" %}' alt="{% trans 'SVG' %}"
                              data-parent="#SVGnavIcons">
                       </figure>
-                      {%trans "Photos"%}
+                      {% trans "Photos" %}
                     </div>
                   </a>
                 </li>
@@ -53,20 +53,20 @@
                   <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false">
                     <div class="d-md-flex justify-content-md-center align-items-md-center">
                       <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                        <img class="js-svg-injector" src="{% static "img/destinies/readme-brands.svg"%}" alt="SVG"
+                        <img class="js-svg-injector" src='{% static "img/destinies/readme-brands.svg" %}' alt="{% trans 'SVG' %}"
                              data-parent="#SVGnavIcons">
                       </figure>
-                     {% trans "Detail"%}
+                     {% trans "Detail" %}
                     </div>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link font-weight-medium" id="pills-three-example2-tab" data-toggle="pill" href="#pills-three-example2" role="tab" aria-controls="pills-three-example2" aria-selected="false">
                     <div class="d-md-flex justify-content-md-center align-items-md-center">  <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
-                        <img class="js-svg-injector" src="{% static "img/destinies/map-marked-alt-solid.svg"%}" alt="SVG"
+                        <img class="js-svg-injector" src='{% static "img/destinies/map-marked-alt-solid.svg" %}' alt="{% trans 'SVG' %}"
                              data-parent="#SVGnavIcons">
                       </figure>                
-                      {% trans "Map"%}
+                      {% trans "Map" %}
                     </div>
                   </a>
                 </li>
@@ -153,7 +153,7 @@
           </div>
           <!-- End Price -->
            <div class="mb-5">
-            <h2 class="h3 font-weight-medium">{%trans "Itinerary"%}</h2>
+            <h2 class="h3 font-weight-medium">{% trans "Itinerary" %}</h2>
           </div>
           <!-- Accordion -->
           <div id="shopCartAccordion" class="accordion mb-5">
@@ -206,7 +206,7 @@
                           </span>
                           <span class="media-body">
                             <span class="d-block font-size-1 font-weight-medium">
-                              {% trans "We still don't have the intenerario for this destination" %}
+                              {% trans "We still don't have the itinerary for this destination" %}
                             </span>
                           </span>
                         </span>

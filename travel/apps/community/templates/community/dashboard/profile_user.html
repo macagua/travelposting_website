@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -10,7 +10,7 @@
 <br><br><br><br>
 <main id="content" role="main">
     <!-- Breadcrumb Section -->
-    {% include 'community/dashboard/breadcrumb.html'%}
+    {% include 'community/dashboard/breadcrumb.html' %}
 
     <!-- End Breadcrumb Section -->
 
@@ -26,7 +26,7 @@
                                 {% if user.avatar %}
                                 <img src="/main/media/{{ user.avatar }}" class="u-lg-avatar  rounded-circle"/>
                                 {% else %}
-                                <img src="{% static 'img/user.png'%}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
+                                <img src="{% static 'img/user.png' %}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
                                 {% endif %}
                             </div>
 
@@ -63,7 +63,7 @@
                             <!-- Social Profiles -->
                             <a class="media mb-4" href="{{ members.twitter }}">
                                 <div class="u-sm-avatar mr-3">
-                                    <img class="img-fluid" src="{% static 'assets/img/160x160/img19.png'%}"
+                                    <img class="img-fluid" src="{% static 'assets/img/160x160/img19.png' %}"
                                         alt="Image Description">
                                 </div>
                                 <div class="media-body">
@@ -94,7 +94,7 @@
                 <div class="col-lg-9">
                     <!-- User Details -->
                     <div class="mb-4">
-                        <h2 class="h4">{% trans "Hey, I'am "%} {{ members.get_full_name}}</h2>
+                        <h2 class="h4">{% trans "Hey, I'am " %} {{ members.get_full_name}}</h2>
                     </div>
                     <!-- End User Details -->
 
@@ -111,10 +111,10 @@
                     <ul class="list-inline d-flex align-items-center">
                         <li class="list-inline-item mb-3 mb-sm-0 mr-5">
                             <div class="d-flex align-items-center">
-                                <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg'%}"
+                                <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg' %}"
                                     alt="Image Description" style="width: 40px;">
                                 <div class="text-secondary">
-                                    +3 Referrals
+                                    {% trans "+3 Referrals" %}
                                 </div>
                             </div>
                         </li>
@@ -151,7 +151,7 @@
                                     <div class="media">
                                         <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
                                         <div class="media-body text-lh-sm">
-                                            <span class="d-block mb-1">{% trans 'Location'%}:</span>
+                                            <span class="d-block mb-1">{% trans 'Location' %}:</span>
                                             <a href="#">{{ members.country }}</a>
                                         </div>
                                     </div>
@@ -194,7 +194,7 @@
                                 {% if user.avatar %}
                                 <img src="/main/media/{{ user.avatar }}" class="u-avatar rounded-circle mr-3" />
                                 {% else %}
-                                <img src="{% static 'img/user.png'%}" width="80" class="u-avatar rounded-circle mr-3" alt="Actualize su foto de Perfil" />
+                                <img src="{% static 'img/user.png' %}" width="80" class="u-avatar rounded-circle mr-3" alt="Actualize su foto de Perfil" />
                                 {% endif %}
 
 
@@ -223,7 +223,7 @@
                             <li class="list-inline-item ml-auto">
                                 <a class="text-secondary" href="#">
                                     <span class="far fa-comments mr-1"></span>
-                                    {% trans "Reply"%}
+                                    {% trans "Reply" %}
                                 </a>
                             </li>
                         </ul>
@@ -240,7 +240,7 @@
                 <li class="page-item disabled">
                     <a href="?page=1"><span class="page-link">
                             << </span> </a> </li> <li class="page-item disabled">
-                                <a href="?page={{ reviews.previous_page_number }}"><span class="page-link">Previous</span></a>
+                                <a href="?page={{ reviews.previous_page_number }}"><span class="page-link">{% trans 'Previous' %}</span></a>
                 </li>
                 {% endif %}
                 {% for num in reviews.paginator.page_range %}
@@ -284,7 +284,7 @@
                 <input type="hidden" name="sender" value="{{ request.user.id }}">
             <div class="modal-header">
                 <h5 class="modal-title">{% trans "Send message to" %}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

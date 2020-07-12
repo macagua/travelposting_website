@@ -7,14 +7,14 @@
       <div class="col-lg mb-3 mb-lg-3">
         <!-- Search Property Input -->
         <div class="js-focus-state">
-          <label class="sr-only" for="searchPropertySr">{%trans "Search Destinies"%}</label>
+          <label class="sr-only" for="searchPropertySr">{% trans "Search Destinies" %}</label>
           <div class="input-group input-group-sm">
             <div class="input-group-prepend">
               <span class="input-group-text" id="searchProperty">
                 <span class="fas fa-search"></span>
               </span>
             </div>
-            <input type="text" class="form-control" name="nameDestination" id="nameDestination" placeholder="{%trans "Search Destination"%}" aria-label="{%trans "Search Destination"%}" aria-describedby="searchProperty" value="">
+            <input type="text" class="form-control" name="nameDestination" id="nameDestination" placeholder="{% trans 'Search Destination' %}" aria-label="{% trans 'Search Destination' %}" aria-describedby="searchProperty" value="">
           </div>
         </div>
         <!-- End Search Property Input -->
@@ -35,18 +35,18 @@
              data-unfold-animation-in="slidefadeIn"
              data-unfold-animation-out="fadeOut">
             <span class="fas fa-filter dropdown-item-icon"></span>
-            {% trans "Filter by"%}
+            {% trans "Filter by" %}
           </a>
 
           <div id="filter2Dropdown" class="dropdown-menu dropdown-unfold dropdown-menu-lg-right dropdown-menu-size-md p-5" aria-labelledby="filter2DropdownInvoker">
             <div class="row">
               <div class="col-sm-12 u-ver-divider u-ver-divider--none-sm mb-4 mb-sm-0">
-                <label class="form-label mb-2">{% trans "Categories"%}</label>
+                <label class="form-label mb-2">{% trans "Categories" %}</label>
                 <select name="category" class="js-select selectpicker dropdown-select"
                               data-size="10"
                               data-width="100%"
                               data-style="btn-soft-secondary btn-sm">
-                        <option value="all" {% if request.GET.category == 'all' %}selected {%endif%}>{% trans "All"%}</option>
+                        <option value="all" {% if request.GET.category == 'all' %}selected {%endif%}>{% trans "All" %}</option>
                         {% simple_list_categorie as list_categories %}
                         {% for categorie in list_categories%}
                           <option value="{{categorie.alias}}" {% if request.GET.category == categorie.alias %}selected {%endif%}>{{categorie.name}}</option>
@@ -77,7 +77,7 @@
              data-unfold-animation-in="slidefadeIn"
              data-unfold-animation-out="fadeOut">
             <span class="fas fa-money-bill-wave dropdown-item-icon"></span>
-            {%trans "Budget &&"%}
+            {% trans "Budget &&" %}
           </a>
 
           <div id="filter3Dropdown" class="dropdown-menu dropdown-unfold dropdown-menu-sm-right dropdown-menu-size-lg p-5" aria-labelledby="filter3DropdownInvoker">
@@ -225,7 +225,7 @@
                     <div class="custom-control custom-radio mb-2">
                       <input type="radio" class="custom-control-input" id="propertyAddedTimeRadioChechbox3" name="added" value="lastWeek" {% if request.GET.added == "lastWeek" %}checked{%endif%} >
                       <label class="custom-control-label" for="propertyAddedTimeRadioChechbox3">
-                       {%trans "Last week"%}
+                       {% trans "Last week" %}
                       </label>
                     </div>
                     <!-- End Radio Checkbox -->
@@ -242,7 +242,7 @@
       </div>
 
       <div class="col-sm-auto">
-        <button type="submit" class="btn btn-sm btn-primary">{% trans "Filter"%}</button>
+        <button type="submit" class="btn btn-sm btn-primary">{% trans "Filter" %}</button>
       </div>
     </form>
     </div>

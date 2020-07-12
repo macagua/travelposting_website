@@ -2,6 +2,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 from django.forms import model_to_dict
 from django.http import JsonResponse
+from django.utils.translation import gettext_lazy as _
 from django.views.generic.edit import ModelFormMixin
 
 
@@ -70,64 +71,64 @@ class ModelEncoder(DjangoJSONEncoder):
         return super(ModelEncoder, self).default(o)
 
 
-TEMPLATE_DESCRIPTION = """
-<strong>Ingrese su título aquí...</strong><br><br>
+TEMPLATE_DESCRIPTION = _("""
+<strong>Enter your title here...</strong><br><br>
 
-<p> <b>Ingrese aquí su texto...</b></p>
-
-<!--more--><br><br>
-
-<p> <b>Ingrese más información aquí...</b></p>
+<p> <b>Enter your text here...</b></p>
 
 <!--more--><br><br>
 
-<strong>Quienes somos</strong><br><br>
+<p> <b>Enter more information here...</b></p>
 
-<p><b>Por favor ingrese aquí su texto...</b></p><br><br>
+<!--more--><br><br>
 
-<strong>Misión</strong><br><br>
+<strong>Who we are</strong><br><br>
 
-<p><b>Por favor ingrese aquí su texto...</b></p><br><br>
+<p><b>Please enter your text here...</b></p><br><br>
+
+<strong>Mission</strong><br><br>
+
+<p><b>Please enter your text here...</b></p><br><br>
 
 <table class="table table-bordered tours-tabs__table" style="width: 100%px;">
 <tbody>
 <tr>
- <td style="width: 213px;"><strong>SALIDA / RETORNO</strong></td>
- <td style="width: 574.233px;"><b>Ingrese aquí la salida...</b></td>
+ <td style="width: 213px;"><strong>EXIT / RETURN</strong></td>
+ <td style="width: 574.233px;"><b>Enter the exit here...</b></td>
 </tr>
 <tr>
- <td style="width: 213px;"><strong>HORA DE SALIDA</strong></td>
- <td style="width: 574.233px;"><b>Ingrese aquí la hora de salida...</b></td>
+ <td style="width: 213px;"><strong>EXIT TIME</strong></td>
+ <td style="width: 574.233px;"><b>Enter the time of exit here...</b></td>
 </tr>
 <tr>
- <td style="width: 213px;"><strong>HORA DE LLEGADA</strong></td>
- <td style="width: 574.233px;"><b>Ingrese aquí la hora de llegada...</b></td>
+ <td style="width: 213px;"><strong>ARRIVAL TIME</strong></td>
+ <td style="width: 574.233px;"><b>Enter the time of arrival here...</b></td>
 </tr>
 <tr>
- <td style="width: 213px;"><strong>NR. DE TOUR PARA RESERVAS</strong></td>
- <td style="width: 574.233px;"><b>Ingrese aquí el nro de tour...</b></td>
+ <td style="width: 213px;"><strong>NR. OF TOUR FOR RESERVATIONS</strong></td>
+ <td style="width: 574.233px;"><b>Enter the tour number here...</b></td>
 </tr>
 <tr>
- <td style="width: 213px;"><strong>TRASLADO DESDE </strong></td>
- <td style="width: 574.233px;"><strong><b>Ingrese aquí el traslado...</b></strong></td>
+ <td style="width: 213px;"><strong>TRANSFER FROM </strong></td>
+ <td style="width: 574.233px;"><strong><b>Enter the transfer here...</b></strong></td>
 </tr>
 <tr>
- <td style="width: 213px;"><strong>INCLUIDO</strong></td>
+ <td style="width: 213px;"><strong>INCLUDED</strong></td>
  <td style="width: 574.233px;">
-  <b>Ingrese aquí lo que va incluido en el paquete como una lista...</b>
+  <b>Enter here what is included in the package as a list...</b>
   <ul><li><b><br></b></li><li><b><br></b></li><li><b><br></b></li></ul>
  </td>
 </tr>
 <tr>
- <td style="width: 213px;"><strong>NO INCLUIDO</strong></td>
+ <td style="width: 213px;"><strong>NOT INCLUDED</strong></td>
  <td style="width: 574.233px;">
-  <b>Ingrese aquí lo que no va incluido en el paquete como una lista...</b>
+  <b>Enter here what is not included in the package as a list...</b>
   <ul><li><b><br></b></li><li><b><br></b></li><li><b><br></b></li></ul>
  </td>
 </tr>
 </tbody>
 </table>
-"""
+""")
 
 
 def get_client_ip(request):

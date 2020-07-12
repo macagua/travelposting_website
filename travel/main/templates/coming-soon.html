@@ -15,17 +15,17 @@
             <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
                 <!-- White Logo -->
                 <img src="{% static 'img/logo@0.5x.png' %}" width="30">
-                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="Front">
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" aria-label="{% trans 'Front' %}">
                 <span class="u-header__navbar-brand-text" style="color:#2f2f2f; font-size: 20px;">{% trans 'BETA Travelposting' %}</span>
                 </a>
                 <!-- End White Logo -->
                 <!-- Default Logo -->
-                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-collapsed" href="index.html" aria-label="Front">
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-collapsed" href="index.html" aria-label="{% trans 'Front' %}">
                 <span class="u-header__navbar-brand-text">{% trans 'BETA Travelposting' %}</span>
                 </a>
                 <!-- End Default Logo -->
                 <!-- On Scroll Logo -->
-                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-on-scroll" href="index.html" aria-label="Front">
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-on-scroll" href="index.html" aria-label="{% trans 'Front' %}">
                 <span class="u-header__navbar-brand-text">{% trans 'BETA Travelposting' %}</span>
                 </a>
                 <!-- End On Scroll Logo -->
@@ -81,8 +81,8 @@
                             data-seconds-format="%S">
                             <div class="col-12">
                                 <strong class="js-cd-days h3 text-primary font-weight-semi-bold mb-0"></strong>
-                                <span class="h5 font-weight-normal mb-0">{% trans "For this dicember, we'll give good news for you" %}</span><br>
-                                <span class="text-primary font-weight-normal"><a href="/">{%trans "Coming back to our website" %}</a></span><br>
+                                <span class="h5 font-weight-normal mb-0">{% trans "For this December, we'll give good news for you" %}</span><br>
+                                <span class="text-primary font-weight-normal"><a href="/">{% trans "Coming back to our website" %}</a></span><br>
                                 <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2 mr-1">
                                 <span class="media align-items-center">
                                 <span class="fab fa-apple fa-2x mr-3"></span>
@@ -96,7 +96,7 @@
                                 <span class="media align-items-center">
                                 <span class="fab fa-google-play fa-2x mr-3"></span>
                                 <span class="media-body">
-                                <span class="d-block">{% trans "Coming Soon"%}</span>
+                                <span class="d-block">{% trans "Coming Soon" %}</span>
                                 <strong class="font-size-1">Google Play</strong>
                                 </span>
                                 </span>
@@ -119,7 +119,7 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center space-1">
             <!-- Copyright -->
-            <p class="small text-muted mb-0">© Travelposting 2019 All Rights Reserved Site Map Disclaimer.</p>
+            <p class="small text-muted mb-0">© {% trans "Travelposting 2019 All Rights Reserved Site Map Disclaimer"%}.</p>
             <!-- End Copyright -->
             <!-- Social Networks -->
             <ul class="list-inline mb-0">

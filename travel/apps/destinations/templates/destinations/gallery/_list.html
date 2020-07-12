@@ -2,7 +2,7 @@
 
 {% load static i18n %}
 
-{% block title %}{% trans 'Galería' %} - {{ destination }}{% endblock %}
+{% block title %}{% trans 'Gallery' %} - {{ destination }}{% endblock %}
 
 {% block css %}
   {{ block.super }}
@@ -49,7 +49,7 @@
   <script type="text/javascript">
     $(function () {
         $('#gallery').gallery({
-            title: '{% trans 'Galería' %} - {{ destination }}', //titulo que se muestra en el modal para nombre de tour
+            title: '{% trans "Gallery" %} - {{ destination }}', //titulo que se muestra en el modal para nombre de tour
             inputFile: {
                 name: 'image',      // nombre del imput type file para hacer un $_FILES['name'] ver create.php
                 maxFiles: 12,           // maximos archivos permitidos en la galeria
@@ -136,15 +136,15 @@
             },
             // textos que pueden ser traducible
             labels: {
-                addItem: "{% trans 'Agregar imágenes' %}",
-                rmItem: "{% trans 'Eliminar' %}",
-                addComment: "{% trans 'Escribe un comentario' %}...",
-                viewItem: "{% trans 'Mostrar detalles' %}",
+                addItem: "{% trans 'Adding images' %}",
+                rmItem: "{% trans 'Delete' %}",
+                addComment: "{% trans 'Write a comment' %}...",
+                viewItem: "{% trans 'Show details' %}",
                 confirm: {
                     'cancel': "{% trans 'No' %}",
-                    'continue': "{% trans 'Si' %}",
-                    'title': "{% trans 'Confirmar acción' %}",
-                    'msn': "{% trans '¿Está seguro que desea eliminar este registro?' %}",
+                    'continue': "{% trans 'Yes' %}",
+                    'title': "{% trans 'Confirm action' %}",
+                    'msn': "{% trans 'Are you sure you want to delete this record?' %}",
                 },
             }
         });

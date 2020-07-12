@@ -2,7 +2,7 @@
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {% load mathfilters %}
 {% load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -16,7 +16,7 @@
 {% block content %}
 <br><br><br><br>
 <main id="content" role="main">
-    {% include 'community/dashboard/breadcrumb.html'%}<br><br>
+    {% include 'community/dashboard/breadcrumb.html' %}<br><br>
     <div class="container2">
         <!-- Indicator -->
         <div class="card">
@@ -66,7 +66,7 @@
                                     <span class="btn btn-xs btn-icon btn-primary rounded-circle mr-3">
                                         <span class="btn-icon__inner"><i class="fas fa-bell"></i></span>
                                     </span>
-                                    <a href="{% url 'inbox-community'%}">
+                                    <a href="{% url 'inbox-community' %}">
                                     <div class="media-body">
                                         <h5 class="font-size-1 mb-1">{% trans "You have received a new message" %}</h5>
                                         <p class="small mb-1">{% trans "From" %}: <span class="font-weight-medium">{{ r.sender.get_full_name }}</span></p>

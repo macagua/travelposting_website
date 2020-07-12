@@ -69,7 +69,7 @@
                         <!-- Form -->
                         <div id="SearchForm" style="display: none;">
                             <form id="PersonSearch" class="js-validate" action="{% url 'personal-search' %}" method="POST">{% csrf_token %}
-                                <p class="lead text-white" style="font-size: 17px;">{% trans 'Where would you like to travel this time?'%}</p>
+                                <p class="lead text-white" style="font-size: 17px;">{% trans 'Where would you like to travel this time?' %}</p>
                                 <div class="form-row mb-2">
                                     <div class="col-sm-6 col-lg mb-2">
                                         <div class="">
@@ -83,7 +83,7 @@
                                         <div class="js-form-message">
                                             <label class="sr-only" >{% trans 'Country / City' %}</label>
                                             <div class="input-group input-group-borderless">
-                                                <input type="text" class="form-control" name="city"  placeholder="{% trans 'Country / City' %}"  required="" >
+                                                <input type="text" class="form-control" name="city" placeholder="{% trans 'Country / City' %}"  required="" >
                                             </div>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@
                                         <div class="js-form-message">
                                             <label class="sr-only" for="signupSrEmail">{% trans 'E-mail' %}</label>
                                             <div class="input-group input-group-borderless">
-                                                <input id="email" type="email" class="form-control" name="email" id="signupSrEmail" placeholder="{% trans 'E-mail' %}" aria-label="City" required="" data-msg="{% trans 'Please enter a valid email address.' %}'">
+                                                <input id="email" type="email" class="form-control" name="email" id="signupSrEmail" placeholder="{% trans 'E-mail' %}" aria-label="{% trans 'City' %}" required="" data-msg="{% trans 'Please enter a valid email address.' %}'">
                                             </div>
                                         </div>
                                     </div>
@@ -125,8 +125,8 @@
                 <span class="fab fa-apple fa-2x mr-3" style="color: black;"></span>
                 <span class="media-body">
                 <a href="/es/coming-soon/" style="color: black;">
-                <span class="d-block">Download on the</span>
-                <strong class="font-size-1">App Store</strong></a>
+                <span class="d-block">{% trans 'Download on the' %}</span>
+                <strong class="font-size-1">{% trans 'App Store' %}</strong></a>
                 </span>
                 </span>
                 </button>
@@ -137,8 +137,8 @@
                 <span class="fab fa-google-play fa-2x mr-3" style="color: black;"></span>
                 <span class="media-body">
                 <a href="/es/coming-soon/" style="color: black;">
-                <span class="d-block">Get it on</span>
-                <strong class="font-size-1">Google Play</strong>
+                <span class="d-block">{% trans 'Get it on' %}</span>
+                <strong class="font-size-1">{% trans 'Google Play' %}</strong>
                 </a>
                 </span>
                 </span>

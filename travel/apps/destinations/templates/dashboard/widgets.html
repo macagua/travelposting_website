@@ -47,7 +47,7 @@
         <div class="ibox ">
             <div class="ibox-title">
                 <div class="ibox-tools">
-                    <span class="label label-primary float-right">Today</span>
+                    <span class="label label-primary float-right">{% trans "Today" %}</span>
                 </div>
                 <h5>{% trans "User Connected" %}</h5>
             </div>
@@ -62,9 +62,9 @@
         <div class="ibox ">
             <div class="ibox-title">
                 <div class="ibox-tools">
-                    <span class="label label-danger float-right">Low value</span>
+                    <span class="label label-danger float-right">{% trans "Low value" %}</span>
                 </div>
-                <h5>User activity</h5>
+                <h5>{% trans "User activity" %}</h5>
             </div>
             <div class="ibox-content">
                 <h4 class="no-margins">{{ request.user.last_login }}</h4>
@@ -79,7 +79,7 @@
     <div class="col-lg-4">
         <div class="ibox ">
             <div class="ibox-title">
-                <h5>{% trans "Visitor by Destinations"%}</h5>
+                <h5>{% trans "Visitor by Destinations" %}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                     <i class="fa fa-chevron-up"></i>
@@ -93,9 +93,9 @@
                 <table class="table table-hover no-margins">
                     <thead>
                         <tr>
-                            <th>{% trans "Destinations"%}</th>
-                            <th>{% trans "Last Visit"%}</th>
-                            <th>{% trans "Number visits"%}</th>
+                            <th>{% trans "Destinations" %}</th>
+                            <th>{% trans "Last Visit" %}</th>
+                            <th>{% trans "Number visits" %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,7 +115,7 @@
     <div class="col-lg-8">
         <div class="ibox ">
             <div class="ibox-title">
-                <h5>{% trans "Number of visits per country"%}</h5>
+                <h5>{% trans "Number of visits per country" %}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                     <i class="fa fa-chevron-up"></i>
@@ -140,7 +140,7 @@
                                 {% for visits in last_visits %}
                                 <tr>
                                     <td class="text-center">{{ visits.last_ip }}</td>
-                                    <td> {{ visits.location|default:'Unknown' }} </td>
+                                    <td> {{ visits.location|default:_('Unknown') }} </td>
                                     <td class="text-center"> {% total_visits visits.location %}</td>
                                 </tr>
                                 {% endfor %}

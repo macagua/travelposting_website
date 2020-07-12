@@ -1,7 +1,7 @@
 {% extends 'destinations/base.html' %}
 {% load static i18n %}
 
-{% block title %}{% trans 'Lista de Reservas' %}{% endblock %}
+{% block title %}{% trans 'Reservation List' %}{% endblock %}
 {% block extracss%}
 
     <style>
@@ -17,7 +17,7 @@
             <h2>{% trans "Booking" %}</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{% url 'dashboard:dashboard-index'%}">{% trans "Home"%}</a>
+                    <a href="{% url 'dashboard:dashboard-index' %}">{% trans "Home" %}</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <a>{% trans "List Booking" %}</a>
@@ -36,10 +36,10 @@
                     <thead>
                         <tr>
                             <th data-filter="false"></th>
-                            <th>{% trans "Destination's name"%}</th>
-                            <th data-type="number">{% trans "Name"%}</th>
+                            <th>{% trans "Destination's name" %}</th>
+                            <th data-type="number">{% trans "Name" %}</th>
                             <th>{% trans "Email" %}</th>
-                            <th>{% trans "Phone"%}</th>
+                            <th>{% trans "Phone" %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +54,7 @@
                           {% if object.mail != None %}
                           {{ object.mail}}
                           {% else %}
-                            {% trans "Not registered yet"%}
+                            {% trans "Not registered yet" %}
                           {% endif %}
                         
                         </td>
@@ -99,7 +99,7 @@
 {% block extrajs %}
   {{ block.super }}
    <script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
-   <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js'%}"></script>
+   <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js' %}"></script>
 
   <script>
     $(document).ready(function(){
@@ -108,9 +108,9 @@
             var title = $(this).text();
             if ($(this).data('filter') != false ){
                 if ($(this).data('type')=='number'){
-                    $(this).html( '<input class="form-control" type="number" placeholder="Busca '+title+'" />' );
+                    $(this).html( '<input class="form-control" type="number" placeholder="{% trans 'Search' %} '+title+'" />' );
                 }else{
-                    $(this).html( '<input class="form-control" type="text" placeholder="Busca '+title+'" />' );
+                    $(this).html( '<input class="form-control" type="text" placeholder="{% trans 'Search' %} '+title+'" />' );
                 }
             }
 

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
 {%load destinations_tags%}
-{% block title %}{% trans 'Comunity' %}{% endblock title %}
+{% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
@@ -10,7 +10,7 @@
 {% if request.user.is_authenticated == True %}
 <br><br><br><br>
 
-{% include 'community/dashboard/breadcrumb.html'%}
+{% include 'community/dashboard/breadcrumb.html' %}
 
 {% endif %}
 <div class="container space-2">
@@ -18,8 +18,8 @@
         <div class="col-lg-5 mb-9 mb-lg-0">
           <!-- Info -->
           <div class="mb-4">
-            <h1 class="h1"><strong class="text-primary">{% trans "Comunity"%}</strong></h1>
-            <p>{% trans "Our community is not yet open to the general public, for now it is a project that we will be making known on social networks as of 02.10.19"%}</p>
+            <h1 class="h1"><strong class="text-primary">{% trans "Community" %}</strong></h1>
+            <p>{% trans "Our community is not yet open to the general public, for now it is a project that we will be making known on social networks as of 02.10.19" %}</p>
           </div>
           <!-- End Info -->
         </div>
@@ -28,10 +28,10 @@
           <div class="px-lg-5">
             <!-- SVG Illustration -->
             <figure class="ie-non-standard-hero-shape">
-              <img class="js-svg-injector" src="{% static "img/non-standard-hero-shape.svg"%}" alt="Comunity"
+              <img class="js-svg-injector" src='{% static "img/non-standard-hero-shape.svg" %}" alt="Community"
                    data-img-paths='[
-                     {"targetId": "#SVGNonStandardHeroShapeImg1", "newPath": "{% static "img/comunity.jpg"%}"},
-                     {"targetId": "#SVGNonStandardHeroShapeImg2", "newPath": "{% static "img/comunity.jpg"%}"}
+                     {"targetId": "#SVGNonStandardHeroShapeImg1", "newPath": "{% static "img/comunity.jpg" %}"},
+                     {"targetId": "#SVGNonStandardHeroShapeImg2", "newPath": "{% static "img/comunity.jpg" %}"}
                    ]'
                    data-parent="#SVGNonStandardHeroShape">
             </figure>
@@ -46,7 +46,7 @@
   <div class="container space-md-1">
      <!-- Title -->
       <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-        <h2 class="h3 font-weight-medium">{% trans "Discover our benefits"%}</h2>
+        <h2 class="h3 font-weight-medium">{% trans "Discover our benefits" %}</h2>
       </div>
       <!-- End Title -->
        <div id="basicsAccordion">
@@ -59,7 +59,7 @@
                       data-target="#basicsCollapseOne"
                       aria-expanded="true"
                       aria-controls="basicsCollapseOne">
-                {% trans "Welcome to our Travelposting Community."%}
+                {% trans "Welcome to our Travelposting Community." %}
 
                 <span class="card-btn-arrow">
                   <span class="fas fa-arrow-down small"></span>
@@ -86,7 +86,7 @@
                     data-target="#basicsCollapseTwo"
                     aria-expanded="false"
                     aria-controls="basicsCollapseTwo">
-              {% trans "My duties"%}
+              {% trans "My duties" %}
 
               <span class="card-btn-arrow">
                 <span class="fas fa-arrow-down small"></span>
@@ -122,7 +122,7 @@
                     data-target="#basicsCollapseThree"
                     aria-expanded="false"
                     aria-controls="basicsCollapseThree">
-              {% trans "My benefits"%}
+              {% trans "My benefits" %}
 
               <span class="card-btn-arrow">
                 <span class="fas fa-arrow-down small"></span>
@@ -175,7 +175,7 @@
           <!-- Icon Blocks -->
           <div class="media pr-lg-5">
             <figure id="icon9" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/globe-solid.svg"%}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/globe-solid.svg" %}" alt="{% trans 'SVG' %}"
                    data-parent="#icon9">
             </figure>
             <div class="media-body">
@@ -190,12 +190,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="icon3" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/money-bill-wave-solid.svg"%}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/money-bill-wave-solid.svg" %}" alt="{% trans 'SVG' %}"
                    data-parent="#icon3">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Value for money"%}</h3>
-              <p class="mb-1">{% trans "Take advantage of the offers that we will be offering you for your trips."%}</p>
+              <h3 class="h5">{% trans "Value for money" %}</h3>
+              <p class="mb-1">{% trans "Take advantage of the offers that we will be offering you for your trips." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -205,12 +205,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="iconcamera" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/camera-retro-solid.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/camera-retro-solid.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconcamera">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Beautiful places"%}</h3>
-              <p class="mb-1">{% trans "Travel and know beautiful places taken out of a fairy tale."%}</p>
+              <h3 class="h5">{% trans "Beautiful places" %}</h3>
+              <p class="mb-1">{% trans "Travel and know beautiful places taken out of a fairy tale." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -221,12 +221,12 @@
           <!-- Icon Blocks -->
           <div class="media">
             <figure id="iconcalendar" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/calendar-alt-regular.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/calendar-alt-regular.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconcalendar">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Quick bookings"%}</h3>
-              <p class="mb-1">{% trans "Make your reservation directly and without intermediaries that cost your trip."%}</p>
+              <h3 class="h5">{% trans "Quick bookings" %}</h3>
+              <p class="mb-1">{% trans "Make your reservation directly and without intermediaries that cost your trip." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -236,12 +236,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="iconumbrella" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/umbrella-beach-solid.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/umbrella-beach-solid.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconumbrella">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Support team"%}</h3>
-              <p class="mb-1">{% trans "Enjoy your trip 100% without worrying about anything."%}</p>
+              <h3 class="h5">{% trans "Support team" %}</h3>
+              <p class="mb-1">{% trans "Enjoy your trip 100% without worrying about anything." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -251,12 +251,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="icondiscover" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/cc-discover-brands.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/cc-discover-brands.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#icondiscover">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Keep in touch"%}</h3>
-              <p class="mb-1">{% trans "Enjoy the support provided by our affiliates during your trip."%}</p>
+              <h3 class="h5">{% trans "Keep in touch" %}</h3>
+              <p class="mb-1">{% trans "Enjoy the support provided by our affiliates during your trip." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -279,7 +279,7 @@
           <!-- Icon Blocks -->
           <div class="media pr-lg-5">
             <figure id="iconmoney-bill" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/money-bill-solid.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/money-bill-solid.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconmoney-bill">
             </figure>
             <div class="media-body">
@@ -294,12 +294,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="iconbirthday-cake" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/birthday-cake-solid.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/birthday-cake-solid.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconbirthday-cake">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Birthday raffles."%}</h3>
-              <p class="mb-1">{% trans "Do not worry if others do not greet you, we will remember you."%}</p>
+              <h3 class="h5">{% trans "Birthday raffles." %}</h3>
+              <p class="mb-1">{% trans "Do not worry if others do not greet you, we will remember you." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -309,12 +309,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="iconcc-discover" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/cc-discover-brands.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/cc-discover-brands.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconcc-discover">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Tailor-made discounts"%}</h3>
-              <p class="mb-1">{% trans "Enjoy offers from our Travelposting affiliated companies."%}</p>
+              <h3 class="h5">{% trans "Tailor-made discounts" %}</h3>
+              <p class="mb-1">{% trans "Enjoy offers from our Travelposting affiliated companies." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -326,12 +326,12 @@
           <!-- Icon Blocks -->
           <div class="media">
             <figure id="iconbullhorn" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/bullhorn-solid.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/bullhorn-solid.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconbullhorn">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Win travel packages"%}</h3>
-              <p class="mb-1">{% trans "There is always a destination we would like to offer and nothing better than earning it."%}</p>
+              <h3 class="h5">{% trans "Win travel packages" %}</h3>
+              <p class="mb-1">{% trans "There is always a destination we would like to offer and nothing better than earning it." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -341,12 +341,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="iconraffles" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/ticket-alt-solid.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/ticket-alt-solid.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconraffles">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Participate in raffles"%}</h3>
-              <p class="mb-1">{% trans "We want many to be the winners and few remain at home."%}</p>
+              <h3 class="h5">{% trans "Participate in raffles" %}</h3>
+              <p class="mb-1">{% trans "We want many to be the winners and few remain at home." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -356,12 +356,12 @@
           <!-- Icon Blocks -->
           <div class="media pl-lg-5">
             <figure id="iconpresentation" class="svg-preloader blue-travel-posting ie-height-56 w-100 max-width-8 mr-4">
-              <img class="js-svg-injector" src="{% static "img/community/presentation.svg" %}" alt="SVG"
+              <img class="js-svg-injector" src='{% static "img/community/presentation.svg" %}' alt="{% trans 'SVG' %}"
                    data-parent="#iconpresentation">
             </figure>
             <div class="media-body">
-              <h3 class="h5">{% trans "Preparing something else"%}</h3>
-              <p class="mb-1">{% trans "With many benefits, such as the Travelposting card, which will give you discounts."%}</p>
+              <h3 class="h5">{% trans "Preparing something else" %}</h3>
+              <p class="mb-1">{% trans "With many benefits, such as the Travelposting card, which will give you discounts." %}</p>
             </div>
           </div>
           <!-- End Icon Blocks -->
@@ -373,7 +373,7 @@
      <!-- <div class="container space-2 space-md-1"> -->
      <!-- <!-1- Title -1-> -->
      <!--  <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9"> -->
-     <!--    <h2 class="h3 font-weight-medium">{% trans "Sign up for Travelposting and enjoy its benefits"%}</h2> -->
+     <!--    <h2 class="h3 font-weight-medium">{% trans "Sign up for Travelposting and enjoy its benefits" %}</h2> -->
      <!--  </div> -->
      <!--  <iframe width="100%" height="1300" src="https://sibforms.com/serve/MUIEAOYer7ashFrG__qvvIMRxmsAThr97G2dcMZU0ybpRulilOFGd5DIbW-v2D2skw4_tV-P6VF5fRFp8S4TBVCfA1_BcSDZizLAjIU7EChqTyTuS_468d8oLQrprbfCq9uEkcdn_CLOIOX9n5jm-hX75_R4wkmIJnRF2pHzvTCeLhA40nk_FaG39R4rWec8bfYrzaduddnhWnAE" frameborder="0" scrolling="auto" allowfullscreen="" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe> -->
     <!-- </div> -->

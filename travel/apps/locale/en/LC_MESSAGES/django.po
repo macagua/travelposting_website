@@ -3,12 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: apps/community/templates/accounts/mail_body.html:48
+#: apps/community/templates/accounts/mail_profile_complete.html:163
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-10 18:07-0400\n"
+"POT-Creation-Date: 2020-07-03 10:59-0400\n"
 "PO-Revision-Date: 2020-02-07 07:04-0428\n"
 "Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +22,13 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: apps/accounts/admin.py:14 apps/accounts/forms.py:39
-#: apps/accounts/forms.py:67 apps/community/forms.py:16
-#: apps/community/forms.py:70
+#: apps/accounts/forms.py:67 apps/community/forms.py:17
+#: apps/community/forms.py:71
 msgid "Password"
 msgstr ""
 
 #: apps/accounts/admin.py:15 apps/accounts/forms.py:73
-#: apps/community/forms.py:25
+#: apps/community/forms.py:26
 msgid "Password confirmation"
 msgstr ""
 
@@ -56,10 +58,10 @@ msgstr ""
 
 #: apps/accounts/forms.py:30
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:59
-#: apps/community/forms.py:61
+#: apps/community/forms.py:62
 #: apps/community/templates/community/profile/my_profile.html:105
-#: apps/landing_page/models.py:464 main/templates/datenshutz_form.html:34
-#: main/templates/services/destination/detail_destination.html:405
+#: apps/landing_page/models.py:464 main/templates/datenshutz_form.html:32
+#: main/templates/services/destination/detail_destination.html:431
 msgid "Email"
 msgstr ""
 
@@ -73,7 +75,7 @@ msgid ""
 "that is too obvious, such as your pet's name."
 msgstr ""
 
-#: apps/accounts/forms.py:77 apps/community/forms.py:29
+#: apps/accounts/forms.py:77 apps/community/forms.py:30
 msgid "Enter the same password as above, for verification."
 msgstr ""
 
@@ -85,120 +87,167 @@ msgstr ""
 msgid "Invalid coupon"
 msgstr ""
 
-#: apps/accounts/forms.py:150
+#: apps/accounts/forms.py:151
 msgid "Non-Permitted Language"
 msgstr ""
 
-#: apps/accounts/models.py:12
-msgid "Sra."
-msgstr ""
-
-#: apps/accounts/models.py:13
-msgid "Sr."
-msgstr ""
-
-#: apps/accounts/models.py:14
-msgid "Divers"
-msgstr ""
-
-#: apps/accounts/models.py:15
-msgid "Dr."
-msgstr ""
-
-#: apps/accounts/models.py:16
-msgid "Prof."
-msgstr ""
-
 #: apps/accounts/models.py:17
-msgid "Lic."
+msgid "Mrs."
 msgstr ""
 
 #: apps/accounts/models.py:18
-msgid "Agrupación"
+msgid "Mr."
 msgstr ""
 
 #: apps/accounts/models.py:19
+msgid "Divers"
+msgstr ""
+
+#: apps/accounts/models.py:20
+msgid "Dr."
+msgstr ""
+
+#: apps/accounts/models.py:21
+msgid "Prof."
+msgstr ""
+
+#: apps/accounts/models.py:22
+msgid "Lic."
+msgstr ""
+
+#: apps/accounts/models.py:23
+msgid "Grouping"
+msgstr ""
+
+#: apps/accounts/models.py:24
 msgid "Prof. Dr."
 msgstr ""
 
-#: apps/accounts/models.py:62
+#: apps/accounts/models.py:67
 msgid "email address"
 msgstr ""
 
-#: apps/accounts/models.py:69
+#: apps/accounts/models.py:74
 #: apps/accounts/templates/accounts/user/_detail.html:114
 #: apps/accounts/templates/accounts/user/_detail.html:123
 msgid "Plan"
 msgstr ""
 
-#: apps/accounts/models.py:83 apps/payments/models/paypal.py:61
+#: apps/accounts/models.py:88 apps/payments/models/paypal.py:61
 msgid "Coupon"
 msgstr ""
 
-#: apps/accounts/models.py:90
+#: apps/accounts/models.py:95
 #: apps/accounts/templates/accounts/user/_detail.html:132
-msgid "Nombre de la empresa"
+#: apps/community/templates/community/registration/notify_register_admin_body.html:59
+msgid "Company name"
 msgstr ""
 
-#: apps/accounts/models.py:97
-msgid "Dirección comercial"
+#: apps/accounts/models.py:102
+msgid "Commercial address"
 msgstr ""
 
-#: apps/accounts/models.py:104
-msgid "Código postal"
+#: apps/accounts/models.py:109
+#: apps/accounts/templates/accounts/user/_detail.html:97
+msgid "Postal code"
 msgstr ""
 
-#: apps/accounts/models.py:111
-msgid "Ciudad / Estado / Parroquia"
+#: apps/accounts/models.py:116
+msgid "City / State / Parish"
 msgstr ""
 
-#: apps/accounts/models.py:118
-msgid "País"
+#: apps/accounts/models.py:123
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
+#: apps/accounts/templates/accounts/user/_detail.html:81
+#: apps/community/templates/community/registration/notify_register_admin_body.html:60
+msgid "Country"
 msgstr ""
 
-#: apps/accounts/models.py:125
-msgid "Idiomas en los que le interesa enviar o recibir información"
+#: apps/accounts/models.py:130
+msgid ""
+"Languages in which you are interested in sending or receiving information"
 msgstr ""
 
-#: apps/accounts/models.py:132
-msgid "¿Tienen algo que decirnos?"
+#: apps/accounts/models.py:137
+msgid "Do you have something to tell us?"
 msgstr ""
 
-#: apps/accounts/models.py:138
-msgid "Título (Persona de contacto)"
+#: apps/accounts/models.py:143
+msgid "Title (Contact person)"
 msgstr ""
 
-#: apps/accounts/models.py:146
+#: apps/accounts/models.py:151
 #: apps/accounts/templates/accounts/user/_detail.html:149
-msgid "Cargo en la empresa"
+msgid "Position in the company"
 msgstr ""
 
-#: apps/accounts/models.py:153
-msgid "Déjenos un número de teléfono donde le podamos contactar"
+#: apps/accounts/models.py:158
+msgid "Leave us a phone number where we can contact you"
 msgstr ""
 
-#: apps/accounts/models.py:160
-msgid "Número móvil o WhatsApp"
+#: apps/accounts/models.py:165
+msgid "Mobile number or WhatsApp"
 msgstr ""
 
-#: apps/accounts/models.py:167
-msgid "Déjenos su dirección Web"
+#: apps/accounts/models.py:172
+msgid "Leave us your web address"
 msgstr ""
 
-#: apps/accounts/models.py:173
+#: apps/accounts/models.py:178
 msgid "Code Referral"
 msgstr ""
 
-#: apps/accounts/models.py:203
+#: apps/accounts/models.py:208
 msgid "About me"
 msgstr ""
 
-#: apps/accounts/models.py:226
-msgid "Usuario"
+#: apps/accounts/models.py:251
+msgid "User"
 msgstr ""
 
-#: apps/accounts/models.py:227
-msgid "Usuarios"
+#: apps/accounts/models.py:252
+msgid "Users"
+msgstr ""
+
+#: apps/accounts/models.py:302
+#, python-format
+msgid "%(user_from)s follows %(user_to)s"
+msgstr ""
+
+#: apps/accounts/models.py:335
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:58
+#: apps/community/templates/community/registration/notify_register_admin_body.html:58
+#: apps/landing_page/models.py:405
+#: main/templates/services/destination/detail_destination.html:405
+msgid "Name"
+msgstr ""
+
+#: apps/accounts/models.py:341
+msgid "Parent"
+msgstr ""
+
+#: apps/accounts/models.py:355
+#, python-format
+msgid "Comment by %(body)s"
+msgstr ""
+
+#: apps/accounts/templates/accounts/footer.html:5
+#: apps/accounts/templates/accounts/registration/forgot_password.html:14
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:25
+#: apps/accounts/templates/accounts/registration/login.html:14
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:25
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:14
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:25
+#: apps/accounts/templates/accounts/registration/register_form.html:14
+#: apps/accounts/templates/accounts/registration/succes_register.html:25
+#: apps/community/templates/accounts/mail_body.html:200
+#: apps/community/templates/accounts/mail_profile_complete.html:94
+#: apps/community/templates/accounts/mail_profile_complete.html:209
+#: main/templates/coming-soon.html:4 main/templates/footer.html:7
+#: main/templates/footer.html:9 main/templates/footer.html:47
+#: main/templates/index.html:5 main/templates/menu/navbar.html:14
+#: main/templates/menu/navbar.html:19 main/templates/menu/navbar.html:24
+msgid "Travelposting"
 msgstr ""
 
 #: apps/accounts/templates/accounts/footer.html:6
@@ -208,17 +257,52 @@ msgid ""
 "    "
 msgstr ""
 
+#: apps/accounts/templates/accounts/registration/activation_complete.html:24
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:24
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:24
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:24
+#: apps/community/templates/community/registration/activation_complete.html:24
+#: apps/community/templates/community/registration/activation_email_body.html:26
+#: apps/community/templates/community/registration/notify_register_admin_body.html:24
+#: main/templates/pages/booking_email.html:24
+#: main/templates/pages/email_feedback.html:24
+#: main/templates/pages/published_email.html:24
+#: main/templates/pages/published_email_user.html:24
+#: main/templates/pages/request_delete_feedback.html:24
+#: main/templates/pages/request_form_feedback.html:24
+msgid "Remember to talk to yourself of the product."
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/activation_complete.html:37
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:37
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:37
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:37
+#: apps/community/templates/community/dashboard/_email.html:53
+#: apps/community/templates/community/dashboard/_email_inbox.html:53
+#: apps/community/templates/community/dashboard/_recommendation.html:53
+#: apps/community/templates/community/registration/activation_complete.html:37
+#: apps/community/templates/community/registration/activation_email_body.html:39
+#: apps/community/templates/community/registration/notify_register_admin_body.html:37
+#: main/templates/pages/booking_email.html:37
+#: main/templates/pages/email_feedback.html:37
+#: main/templates/pages/published_email.html:37
+#: main/templates/pages/published_email_user.html:37
+#: main/templates/pages/request_delete_feedback.html:37
+#: main/templates/pages/request_form_feedback.html:37
+msgid "Go to Travelposting"
+msgstr ""
+
 #: apps/accounts/templates/accounts/registration/activation_complete.html:48
-#: apps/community/templates/community/registration/activation_complete.html:50
+#: apps/community/templates/community/registration/activation_complete.html:48
 msgid "Accounts Activate"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/activation_complete.html:57
 #: apps/community/templates/community/dashboard/_email.html:94
 #: apps/community/templates/community/dashboard/_recommendation.html:96
-#: apps/community/templates/community/registration/activation_complete.html:59
-#: main/templates/pages/booking_email.html:66
-#: main/templates/pages/email_feedback.html:64
+#: apps/community/templates/community/registration/activation_complete.html:57
+#: main/templates/pages/booking_email.html:64
+#: main/templates/pages/email_feedback.html:62
 #: main/templates/pages/published_email.html:60
 #: main/templates/pages/request_delete_feedback.html:60
 #: main/templates/pages/request_form_feedback.html:59
@@ -227,14 +311,74 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/activation_complete.html:64
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:67
-#: apps/community/templates/community/registration/activation_complete.html:66
-#: apps/community/templates/community/registration/notify_register_admin_body.html:69
+#: apps/community/templates/community/registration/activation_complete.html:64
+#: apps/community/templates/community/registration/notify_register_admin_body.html:67
 msgid "Click here to login"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/activation_complete.html:80
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:86
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:83
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:81
+#: apps/community/templates/community/registration/activation_complete.html:80
+#: apps/community/templates/community/registration/activation_email_body.html:88
+#: apps/community/templates/community/registration/notify_register_admin_body.html:83
+#: main/templates/pages/booking_email.html:87
+#: main/templates/pages/email_feedback.html:85
+#: main/templates/pages/published_email.html:83
+#: main/templates/pages/published_email_user.html:83
+#: main/templates/pages/request_delete_feedback.html:83
+#: main/templates/pages/request_form_feedback.html:82
+msgid "Very Soon our application will be totally free!"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/activation_complete.html:84
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:90
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:87
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:85
+#: apps/community/templates/community/dashboard/_email.html:143
+#: apps/community/templates/community/dashboard/_email.html:148
+#: apps/community/templates/community/dashboard/_email_inbox.html:136
+#: apps/community/templates/community/dashboard/_email_inbox.html:141
+#: apps/community/templates/community/dashboard/_recommendation.html:145
+#: apps/community/templates/community/dashboard/_recommendation.html:150
+#: apps/community/templates/community/registration/activation_complete.html:84
+#: apps/community/templates/community/registration/activation_email_body.html:92
+#: apps/community/templates/community/registration/notify_register_admin_body.html:87
+#: main/templates/pages/booking_email.html:91
+#: main/templates/pages/email_feedback.html:89
+#: main/templates/pages/published_email.html:87
+#: main/templates/pages/published_email_user.html:87
+#: main/templates/pages/request_delete_feedback.html:87
+#: main/templates/pages/request_form_feedback.html:86
+msgid "Download for iOS"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/activation_complete.html:86
+#: apps/accounts/templates/accounts/registration/activation_email_body.html:92
+#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:89
+#: apps/accounts/templates/accounts/registration/password_reset_email.html:87
+#: apps/community/templates/community/dashboard/_email.html:158
+#: apps/community/templates/community/dashboard/_email.html:163
+#: apps/community/templates/community/dashboard/_email_inbox.html:151
+#: apps/community/templates/community/dashboard/_email_inbox.html:156
+#: apps/community/templates/community/dashboard/_recommendation.html:160
+#: apps/community/templates/community/dashboard/_recommendation.html:165
+#: apps/community/templates/community/registration/activation_complete.html:86
+#: apps/community/templates/community/registration/activation_email_body.html:94
+#: apps/community/templates/community/registration/notify_register_admin_body.html:89
+#: main/templates/pages/booking_email.html:93
+#: main/templates/pages/email_feedback.html:91
+#: main/templates/pages/published_email.html:89
+#: main/templates/pages/published_email_user.html:89
+#: main/templates/pages/request_delete_feedback.html:89
+#: main/templates/pages/request_form_feedback.html:88
+msgid "Download for Android"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/activation_email_body.html:48
 #: apps/community/templates/community/registration/activation_email_body.html:50
-msgid "Confirmación del correo"
+msgid "Mail confirmation"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/activation_email_body.html:55
@@ -242,9 +386,9 @@ msgstr ""
 msgid ""
 "\n"
 "                                                                                    %(user.first_name)s "
-"Gracias por registarse en Travelposting.\n"
-"                                                                                    Confirme "
-"su cuenta para finalizar la creación de su cuenta.\n"
+"Thank you for registering for Travelposting.\n"
+"                                                                                    Confirm "
+"your account to finish creating your account.\n"
 "                                                                                  "
 msgstr ""
 
@@ -252,35 +396,34 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                                                                                    Su "
-"clave de activación es: %(activation_key)s,\n"
-"                                                                                    esa "
-"clave será válida por %(expiration_days)s días.\n"
+"                                                                                    Your "
+"activation key is: %(activation_key)s,\n"
+"                                                                                    that "
+"password will be valid for %(expiration_days)s days.\n"
 "                                                                                  "
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/activation_email_body.html:70
 #: apps/community/templates/community/registration/activation_email_body.html:72
-msgid "Confirmar correo electrónico"
+msgid "Confirm e-mail"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/activation_email_subject.txt:3
 #: apps/community/templates/community/registration/activation_email_subject.txt:3
-msgid "TravelPosting: Confirmación de correo"
+msgid "TravelPosting: Mail Confirmation"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:14
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:25
-#: apps/accounts/templates/accounts/registration/login.html:14
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:25
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:14
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:25
-#: apps/accounts/templates/accounts/registration/register_form.html:14
-#: apps/accounts/templates/accounts/registration/succes_register.html:25
-#: main/templates/coming-soon.html:4 main/templates/index.html:5
-#: main/templates/menu/navbar.html:14 main/templates/menu/navbar.html:19
-#: main/templates/menu/navbar.html:24
-msgid "Travelposting"
+#: apps/accounts/templates/accounts/registration/forgot_password.html:13
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:24
+#: apps/accounts/templates/accounts/registration/login.html:13
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:24
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:13
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:24
+#: apps/accounts/templates/accounts/registration/register_form.html:13
+#: apps/accounts/templates/accounts/registration/succes_register.html:24
+#: main/templates/coming-soon.html:18 main/templates/coming-soon.html:23
+#: main/templates/coming-soon.html:28 main/templates/menu/navbar_all.html:126
+msgid "Front"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:20
@@ -299,14 +442,17 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:58
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
+#: apps/community/templates/accounts/customeruser_list.html:26
+#: apps/community/templates/community/dashboard/dashboard.html:79
 #: apps/community/templates/community/registration/forget_password.html:25
 #: apps/community/templates/community/registration/forget_password.html:26
+#: apps/community/templates/community/registration/forget_password.html:27
 msgid "Email address"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:59
 #: apps/community/templates/community/registration/forget_password.html:27
-#: main/templates/index.html:84 main/templates/pages/show_header.html:94
+#: main/templates/index.html:94 main/templates/pages/show_header.html:94
 msgid "Please enter a valid email address."
 msgstr ""
 
@@ -332,7 +478,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
 #: apps/community/templates/community/registration/login.html:45
 #: apps/community/templates/community/registration/signup.html:57
-#: main/templates/index.html:126
+#: main/templates/index.html:136
 msgid "Login"
 msgstr ""
 
@@ -352,6 +498,10 @@ msgstr ""
 msgid "do have accounts?"
 msgstr ""
 
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:68
+msgid "Travelposting 2019 All Rights Reserved Site Map Disclaimer."
+msgstr ""
+
 #: apps/accounts/templates/accounts/registration/login.html:52
 msgid "Welcome"
 msgstr ""
@@ -365,6 +515,10 @@ msgstr ""
 msgid "Login to manage your account."
 msgstr ""
 
+#: apps/accounts/templates/accounts/registration/login.html:69
+msgid "Forgot Password?"
+msgstr ""
+
 #: apps/accounts/templates/accounts/registration/login.html:74
 #: apps/community/templates/community/registration/login.html:40
 msgid "Don\\"
@@ -376,29 +530,17 @@ msgid "Signup"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:48
-#: apps/community/templates/community/registration/notify_register_admin_body.html:50
+#: apps/community/templates/community/registration/notify_register_admin_body.html:48
 msgid "Welcome to Travelposting"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:57
-#: apps/community/templates/community/registration/notify_register_admin_body.html:59
+#: apps/community/templates/community/registration/notify_register_admin_body.html:57
 msgid "User registered"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:58
-#: apps/community/templates/community/registration/notify_register_admin_body.html:60
-#: apps/landing_page/models.py:405
-#: main/templates/services/destination/detail_destination.html:379
-msgid "Name"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
-#: apps/community/templates/community/registration/notify_register_admin_body.html:62
-msgid "Country"
-msgstr ""
-
 #: apps/accounts/templates/accounts/registration/notify_register_admin_subject.html:3
-msgid "Registro de usuario: "
+msgid "User registration: "
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:50
@@ -500,7 +642,7 @@ msgid "Visit our page or see our plans"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:3
-msgid "Información de usuario"
+msgid "User information"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:12
@@ -516,15 +658,15 @@ msgid "Sessions"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:53
-msgid "Último inicio de sessión"
+msgid "Last login"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:55
-msgid "Fecha de registro"
+msgid "Date of registration"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:57
-msgid "Teléfono"
+msgid "Phone"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:62
@@ -536,12 +678,8 @@ msgstr ""
 msgid "Direction"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:81
-msgid "Pais"
-msgstr ""
-
 #: apps/accounts/templates/accounts/user/_detail.html:89
-msgid "Estado"
+msgid "State"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:94
@@ -553,79 +691,76 @@ msgstr ""
 msgid "Not registered yet "
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:97
-msgid "Codigo postal"
-msgstr ""
-
 #: apps/accounts/templates/accounts/user/_detail.html:105
-msgid "Lenguaje"
+#: apps/community/templates/community/dashboard/profile_user.html:170
+#: apps/community/templates/community/profile/my_profile.html:165
+msgid "Language"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:141
-msgid "Direccion de empresa"
+msgid "Company address"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_form.html:4
-msgid "Editar Información"
+msgid "Edit Information"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_form.html:15
-msgid "Editar información"
+msgid "Edit information"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_form.html:36
-msgid "Guardar información"
+msgid "Save information"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/password_change.html:4
-#: apps/accounts/templates/accounts/user/password_change_done.html:4
-msgid "Cambiar Contraseña"
-msgstr ""
-
 #: apps/accounts/templates/accounts/user/password_change.html:14
+#: apps/accounts/templates/accounts/user/password_change_done.html:4
 #: main/templates/menu/navbar_all.html:209
 msgid "Change Password"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/password_change.html:37
-msgid "Cambiar contraseña"
+#: apps/community/templates/accounts/change_password.html:5
+msgid "Change password"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/password_change_done.html:14
-msgid "Cambio de contraseña exitoso"
+msgid "Successful password change"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/password_change_done.html:16
 msgid ""
 "\n"
-"                Su contraseña fue cambiada exitosamente.\n"
+"                His password was successfully changed.\n"
 "              "
 msgstr ""
 
-#: apps/accounts/views.py:63 apps/community/views.py:98
+#: apps/accounts/views.py:86 apps/community/views.py:106
 msgid "An error, Incorrect User or Password has occurred."
 msgstr ""
 
-#: apps/community/forms.py:11
+#: apps/community/forms.py:12
 msgid "Referred by"
 msgstr ""
 
-#: apps/community/forms.py:12
-msgid "Enter the referal code just in case."
+#: apps/community/forms.py:13
+msgid "Enter the referal code."
 msgstr ""
 
-#: apps/community/forms.py:20
+#: apps/community/forms.py:21
 msgid ""
 "Use at least 8 characters. Do not use a password from another site or a term "
 "that is too obvious, such as your pet’s name"
 msgstr ""
 
-#: apps/community/forms.py:43
+#: apps/community/forms.py:44
 msgid "Invalid referal code"
 msgstr ""
 
 #: apps/community/models.py:27
-msgid "Would you recommend this trip again? "
+#: apps/community/templates/community/dashboard/make_recomm.html:24
+msgid "Would you recommend this trip again?"
 msgstr ""
 
 #: apps/community/models.py:32
@@ -641,16 +776,12 @@ msgstr ""
 msgid "Recommendations"
 msgstr ""
 
-#: apps/community/models.py:70
+#: apps/community/models.py:69
 msgid "Referral"
 msgstr ""
 
-#: apps/community/models.py:71
+#: apps/community/models.py:70
 msgid "Referrals"
-msgstr ""
-
-#: apps/community/templates/accounts/change_password.html:5
-msgid "Change password"
 msgstr ""
 
 #: apps/community/templates/accounts/change_password.html:25
@@ -704,10 +835,11 @@ msgid "Save Password"
 msgstr ""
 
 #: apps/community/templates/accounts/change_password.html:100
-#: apps/community/templates/accounts/customeruser_list.html:173
+#: apps/community/templates/accounts/customeruser_list.html:181
 #: apps/community/templates/community/dashboard/mail.html:242
 #: apps/community/templates/community/dashboard/mail.html:483
 #: apps/community/templates/community/dashboard/profile_user.html:304
+#: apps/community/templates/community/profile/complete_profile.html:81
 #: apps/community/templates/community/profile/edit_profile.html:210
 msgid "Cancel"
 msgstr ""
@@ -718,14 +850,16 @@ msgstr ""
 #: apps/community/templates/community/dashboard/make_recomm.html:4
 #: apps/community/templates/community/dashboard/notifications.html:5
 #: apps/community/templates/community/dashboard/profile_user.html:4
+#: apps/community/templates/community/profile/complete_profile.html:5
 #: apps/community/templates/community/profile/edit_profile.html:5
 #: apps/community/templates/community/profile/my_profile.html:5
 #: apps/community/templates/community/registration/forget_password.html:4
 #: apps/community/templates/community/registration/login.html:4
 #: apps/community/templates/community/registration/signup.html:4
 #: main/templates/community.html:4 main/templates/community.html:21
+#: main/templates/hotels.html:108 main/templates/page01.html:39
 #: main/templates/pricing.html:4
-msgid "Comunity"
+msgid "Community"
 msgstr ""
 
 #: apps/community/templates/accounts/customeruser_list.html:20
@@ -743,19 +877,49 @@ msgid "You can search by first name, last name or email"
 msgstr ""
 
 #: apps/community/templates/accounts/customeruser_list.html:49
-#: apps/community/templates/community/dashboard/dashboard.html:101
+#: apps/community/templates/community/dashboard/dashboard.html:102
 msgid "members found"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:154
+#: apps/community/templates/accounts/customeruser_list.html:78
+msgid "Update your profile picture"
+msgstr ""
+
+#: apps/community/templates/accounts/customeruser_list.html:137
+#: apps/community/templates/community/dashboard/profile_user.html:40
+msgid "Send a Message"
+msgstr ""
+
+#: apps/community/templates/accounts/customeruser_list.html:146
+#: apps/community/templates/community/dashboard/dashboard.html:143
+msgid "Add to favorites"
+msgstr ""
+
+#: apps/community/templates/accounts/customeruser_list.html:162
 #: apps/community/templates/community/dashboard/mail.html:219
 #: apps/community/templates/community/dashboard/mail.html:455
 #: apps/community/templates/community/dashboard/profile_user.html:286
 msgid "Send message to"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:161
 #: apps/community/templates/accounts/customeruser_list.html:163
+#: apps/community/templates/community/dashboard/mail.html:220
+#: apps/community/templates/community/dashboard/mail.html:456
+#: apps/community/templates/community/dashboard/profile_user.html:287
+#: main/templates/base.html:84 main/templates/index.html:75
+#: main/templates/modal_contact_us/modal.html:5
+#: main/templates/services/destination/comments.html:51
+#: main/templates/services/destination/comments.html:83
+#: main/templates/services/destination/detail_destination.html:343
+#: main/templates/services/destination/detail_destination.html:369
+#: main/templates/services/destination/detail_destination.html:383
+#: main/templates/services/destination/detail_destination.html:463
+#: main/templates/services/pricing/plans.html:191
+msgid "Close"
+msgstr ""
+
+#: apps/community/templates/accounts/customeruser_list.html:169
+#: apps/community/templates/accounts/customeruser_list.html:171
 #: apps/community/templates/community/dashboard/mail.html:128
 #: apps/community/templates/community/dashboard/mail.html:230
 #: apps/community/templates/community/dashboard/mail.html:232
@@ -767,21 +931,185 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:167
+#: apps/community/templates/accounts/customeruser_list.html:175
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:299
 msgid "Message"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:174
+#: apps/community/templates/accounts/customeruser_list.html:182
 #: apps/community/templates/community/dashboard/mail.html:243
 #: apps/community/templates/community/dashboard/mail.html:484
 #: apps/community/templates/community/dashboard/profile_user.html:305
 #: main/templates/pages/show_header.html:108
 #: main/templates/services/destination/comments.html:84
-#: main/templates/services/destination/detail_destination.html:344
+#: main/templates/services/destination/detail_destination.html:370
 msgid "Send"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:6
+#: apps/community/templates/accounts/mail_body.html:130
+#: apps/community/templates/accounts/mail_profile_complete.html:8
+msgid "TRAVELPOSTING"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:56
+#: apps/community/templates/accounts/mail_profile_complete.html:55
+msgid "facebook.com"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:66
+msgid "Thank you for registering with the travelposting community."
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:72
+#: apps/community/templates/accounts/mail_body.html:140
+msgid "line"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:86
+msgid ""
+"Please click on the link and verify that you agree to belong to the "
+"travelposting community. If our link is not active, copy and paste the "
+"entire link into your browser and click Enter to access the community."
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:104
+msgid "Confirm"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:127
+#: apps/landing_page/models.py:234
+msgid "icon"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:132
+msgid "Share and enjoy from our community."
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:159
+msgid "Travelposting?"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:169
+#: apps/community/templates/accounts/mail_profile_complete.html:173
+#: main/templates/services/destination/destinations.html:12
+msgid ""
+"Our potential in its favor is based on the ease we have of capturing new "
+"stakeholders for your products thanks to the constant trips we make and the "
+"tourism and technology fairs in which we are present, as is the case of the "
+"Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin "
+"Germany, or the Fitur in Madrid Spain among others."
+msgstr ""
+
+#: apps/community/templates/accounts/mail_body.html:180
+#: apps/community/templates/accounts/mail_profile_complete.html:184
+#: main/templates/services/destination/all.html:52
+#: main/templates/services/destination/categories.html:45
+msgid "See more"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:67
+msgid "Thank you for your trust and registration at Travelposting."
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:84
+msgid ""
+"\n"
+"                                    We know that to change the course of "
+"things, more than words are needed, for that reason we are proud to be able "
+"to count on you and that together we begin to transform the world of travel "
+"into something much more positive and attractive for everyone.\n"
+"                                    "
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:88
+msgid ""
+"\n"
+"                                    Now that you are an official member of "
+"Travelposting and you are like us in this new adventure, we remind you all "
+"that you are about to get and enjoy with your TravelpostingCard.\n"
+"                                    "
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:93
+msgid ""
+"1) Cost the cost of the annual membership which has a value of <b>€ 99.99</"
+"b>."
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:94
+msgid ""
+"2) You will get € 50.00 in a welcome pack which you can redeem on your first "
+"holiday purchase at"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:100
+msgid ""
+"\n"
+"                                    We also leave you the data so that you "
+"can make your economic contribution of only € 25.00 as we discussed in our "
+"presentation.\n"
+"                                    "
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:104
+msgid ""
+"\n"
+"                                    Dear user, with the activation of this e-"
+"mail, you will receive the TravelpostingCard, it is a digital card that will "
+"authorize you to obtain different benefits among them discount bonuses that "
+"only our users receive, for that reason we ask you to place your profile "
+"photo since the cards that have some other type of graphics like; logos, "
+"memes, etc, will be deactivated and you will lose your discount, since the "
+"cards are created only once by our automatic system.\n"
+"                                    "
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:108
+msgid ""
+"\n"
+"                                    We wish you many good trips with "
+"travelposting and its affiliated agencies and we remind you that as part of "
+"the community you have the right to ask us any questions you may have about "
+"the operation of the community and the platform.\n"
+"                                    "
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:112
+msgid "Best regards from the entire Travelposting team"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:114
+msgid "Company:"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:116
+msgid "International Bank Account Number"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:116
+msgid "IBAN:"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:117
+msgid "Bank Identifier Code"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:117
+msgid "BIC:"
+msgstr ""
+
+#: apps/community/templates/accounts/mail_profile_complete.html:118
+msgid "Paypal:"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/_email.html:58
+#: apps/community/templates/community/dashboard/_email_inbox.html:58
+#: apps/community/templates/community/dashboard/_recommendation.html:58
+#: apps/community/templates/community/registration/activation_complete.html:38
+msgid "TravelPosting"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/_email.html:72
@@ -802,8 +1130,8 @@ msgstr ""
 
 #: apps/community/templates/community/dashboard/_email.html:109
 #: apps/community/templates/community/dashboard/_recommendation.html:111
-#: main/templates/pages/booking_email.html:73
-#: main/templates/pages/email_feedback.html:71
+#: main/templates/pages/booking_email.html:71
+#: main/templates/pages/email_feedback.html:69
 #: main/templates/pages/published_email.html:67
 #: main/templates/pages/request_delete_feedback.html:67
 #: main/templates/pages/request_form_feedback.html:66
@@ -847,27 +1175,25 @@ msgid "Do you think we should get better?:"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:64
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:48
-#: apps/landing_page/models.py:53
-msgid "Prices"
-msgstr ""
-
-#: apps/community/templates/community/dashboard/breadcrumb.html:67
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:52
-#: main/templates/menu/menu_footer.html:8
 #: main/templates/pages/show_header.html:49
 #: main/templates/services/destination/destinations_for_categorie_backup.html:72
 msgid "Destinations"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:70
+#: apps/community/templates/community/dashboard/breadcrumb.html:67
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:58
 msgid "Logout"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:84
+#: apps/community/templates/community/dashboard/breadcrumb.html:81
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:75
 msgid "Edit Profile"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:48
+#: apps/landing_page/models.py:53
+msgid "Prices"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
@@ -894,8 +1220,28 @@ msgstr ""
 msgid "Copy or share your referral link with friends"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/dashboard.html:226
+#: apps/community/templates/community/dashboard/dashboard.html:104
+msgid "Not members found."
+msgstr ""
+
+#: apps/community/templates/community/dashboard/dashboard.html:197
+msgid "Follow"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/dashboard.html:199
+msgid "Unfollow"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/dashboard.html:218
+#: apps/community/templates/community/dashboard/profile_user.html:243
+#: main/templates/services/destination/_parts/pagination_destinies.html:8
+#: main/templates/services/destination/_parts/pagination_destinies.html:10
+msgid "Previous"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/dashboard.html:230
 #: apps/community/templates/community/dashboard/profile_user.html:259
+#: main/templates/services/destination/_parts/pagination_destinies.html:26
 #: main/templates/services/destination/_parts/pagination_destinies.html:28
 msgid "Next"
 msgstr ""
@@ -944,6 +1290,15 @@ msgstr ""
 msgid "to:"
 msgstr ""
 
+#: apps/community/templates/community/dashboard/mail.html:227
+msgid "Readonly"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/mail.html:260
+#: apps/community/templates/community/dashboard/mail.html:394
+msgid "Activity pagination"
+msgstr ""
+
 #: apps/community/templates/community/dashboard/mail.html:285
 #: apps/community/templates/community/dashboard/mail.html:286
 msgid "Search sent messages"
@@ -963,7 +1318,7 @@ msgid "Our destinations"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:463
-msgid "Please Select a user"
+msgid "Please Select an user"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/make_recomm.html:16
@@ -974,15 +1329,11 @@ msgstr ""
 msgid "Do you want to make a recommendation?"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/make_recomm.html:24
-msgid "Would you recommend this trip again?"
-msgstr ""
-
 #: apps/community/templates/community/dashboard/make_recomm.html:28
 #: apps/community/templates/community/dashboard/make_recomm.html:29
 #: apps/community/templates/community/dashboard/make_recomm.html:39
 #: apps/community/templates/community/dashboard/make_recomm.html:40
-#: main/templates/index.html:97
+#: main/templates/index.html:107
 msgid "Hi there, I would like to ..."
 msgstr ""
 
@@ -1015,10 +1366,6 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/profile_user.html:40
-msgid "Send a Message"
-msgstr ""
-
 #: apps/community/templates/community/dashboard/profile_user.html:45
 msgid "Report this user"
 msgstr ""
@@ -1030,6 +1377,10 @@ msgstr ""
 
 #: apps/community/templates/community/dashboard/profile_user.html:97
 msgid "Hey, I'am "
+msgstr ""
+
+#: apps/community/templates/community/dashboard/profile_user.html:117
+msgid "+3 Referrals"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/profile_user.html:126
@@ -1046,17 +1397,37 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/profile_user.html:170
-#: apps/community/templates/community/profile/my_profile.html:165
-msgid "Language"
-msgstr ""
-
 #: apps/community/templates/community/dashboard/profile_user.html:185
 msgid "Reviews"
 msgstr ""
 
+#: apps/community/templates/community/dashboard/search_results.html:2
+msgid "Search Results"
+msgstr ""
+
+#: apps/community/templates/community/profile/complete_profile.html:17
+msgid ""
+"Dear user, with the activation of this user, you will receive the "
+"TravelpostingCard, it is a digital card that will authorize you to obtain "
+"different benefits among them discount bonuses that only our users receive, "
+"for such reason we ask you to place your profile photo since the cards that "
+"have some other type of graphics like; logos, memes, etc, will be "
+"deactivated and you will lose your discount, since the cards are created "
+"only once by our automatic system."
+msgstr ""
+
+#: apps/community/templates/community/profile/complete_profile.html:19
+msgid "Thank you for your cooperation."
+msgstr ""
+
+#: apps/community/templates/community/profile/complete_profile.html:37
 #: apps/community/templates/community/profile/edit_profile.html:31
 msgid "Upload New Picture"
+msgstr ""
+
+#: apps/community/templates/community/profile/complete_profile.html:80
+#: apps/community/templates/community/profile/edit_profile.html:209
+msgid "Save Changes"
 msgstr ""
 
 #: apps/community/templates/community/profile/edit_profile.html:158
@@ -1083,10 +1454,6 @@ msgstr ""
 msgid "Add your Linkedin username (e.g. nickname)"
 msgstr ""
 
-#: apps/community/templates/community/profile/edit_profile.html:209
-msgid "Save Changes"
-msgstr ""
-
 #: apps/community/templates/community/profile/my_profile.html:39
 msgid "Random"
 msgstr ""
@@ -1107,10 +1474,10 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Gracias por "
-"registarse en Travel&Solutions.\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirme su cuenta para finalizar "
-"la creación de su cuenta.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%(user.first_name)s Thank you for "
+"registering with Travel&Solutions.\n"
+"                                                                                    Please "
+"confirm your account to finalize the creation of your account.\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 
@@ -1118,10 +1485,10 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSu clave de activación es: "
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tYour activation key is: "
 "%(activation_key)s,\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tesa clave será válida por "
-"%(expiration_days)s días.\n"
+"                                                                                    that "
+"key will be valid for %(expiration_days)s days.\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  "
 msgstr ""
 
@@ -1143,10 +1510,6 @@ msgid ""
 "                        class=\"font-weight-semi-bold\">to Community</span>"
 msgstr ""
 
-#: apps/community/templates/community/registration/notify_register_admin_body.html:61
-msgid "Company name"
-msgstr ""
-
 #: apps/community/templates/community/registration/signup.html:17
 msgid ""
 " Welcome to <span class=\"font-weight-semi-bold\">\n"
@@ -1157,6 +1520,10 @@ msgstr ""
 msgid ""
 "Create your account in just three steps to start enjoying our tourist offers "
 "and travel the world without worrying about costs."
+msgstr ""
+
+#: apps/community/templates/community/registration/signup.html:41
+msgid "Please accept our Terms and Conditions."
 msgstr ""
 
 #: apps/community/templates/community/registration/signup.html:45
@@ -1171,22 +1538,26 @@ msgstr ""
 msgid "Start saving"
 msgstr ""
 
-#: apps/community/views.py:271 apps/community/views.py:327
-#: apps/community/views.py:388
+#: apps/community/views.py:278 apps/community/views.py:334
+#: apps/community/views.py:395
 msgid "New comment add"
 msgstr ""
 
-#: apps/community/views.py:286 apps/community/views.py:342
-#: apps/community/views.py:403 apps/directmessages/views.py:68
+#: apps/community/views.py:293 apps/community/views.py:349
+#: apps/community/views.py:410 apps/directmessages/views.py:68
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 
-#: apps/community/views.py:447
+#: apps/community/views.py:454
 msgid "Your password was successfully updated!"
 msgstr ""
 
-#: apps/community/views.py:454
+#: apps/community/views.py:461
 msgid "Please correct the error below."
+msgstr ""
+
+#: apps/community/views.py:555
+msgid "Travelposting send a new import message"
 msgstr ""
 
 #: apps/directmessages/models.py:19
@@ -1225,9 +1596,9 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: apps/landing_page/models.py:52
+#: apps/landing_page/models.py:52 apps/payments/models/paypal.py:26
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:236
+#: main/templates/services/destination/detail_destination.html:262
 msgid "Price"
 msgstr ""
 
@@ -1280,10 +1651,6 @@ msgstr ""
 
 #: apps/landing_page/models.py:193
 msgid "validated to plan"
-msgstr ""
-
-#: apps/landing_page/models.py:234
-msgid "icon"
 msgstr ""
 
 #: apps/landing_page/models.py:238
@@ -1397,13 +1764,13 @@ msgstr ""
 msgid "Megazines"
 msgstr ""
 
-#: apps/landing_page/models.py:454 main/templates/datenshutz_form.html:25
-#: main/templates/datenshutz_form.html:26
+#: apps/landing_page/models.py:454 main/templates/datenshutz_form.html:23
+#: main/templates/datenshutz_form.html:24
 msgid "First Name"
 msgstr ""
 
-#: apps/landing_page/models.py:459 main/templates/datenshutz_form.html:30
-#: main/templates/services/destination/detail_destination.html:387
+#: apps/landing_page/models.py:459 main/templates/datenshutz_form.html:28
+#: main/templates/services/destination/detail_destination.html:413
 msgid "Last Name"
 msgstr ""
 
@@ -1458,15 +1825,15 @@ msgstr ""
 msgid "Privacity Setting"
 msgstr ""
 
-#: apps/landing_page/views.py:102
+#: apps/landing_page/views.py:107
 msgid "Don't have exist map yet!"
 msgstr ""
 
-#: apps/landing_page/views.py:125
+#: apps/landing_page/views.py:130
 msgid "New registered search"
 msgstr ""
 
-#: apps/landing_page/views.py:139
+#: apps/landing_page/views.py:144
 #, python-brace-format
 msgid ""
 "A person has done a new search, please review Mr.'s {name} incoming "
@@ -1478,29 +1845,37 @@ msgid ""
 "com/admin/ "
 msgstr ""
 
-#: apps/landing_page/views.py:172
+#: apps/landing_page/views.py:177
 msgid "New request for delete"
 msgstr ""
 
-#: apps/landing_page/views.py:186 apps/landing_page/views.py:267
+#: apps/landing_page/views.py:191 apps/landing_page/views.py:291
 msgid ""
 "if you want see the                     admin site https://travelposting.com/"
 "admin/ "
 msgstr ""
 
-#: apps/landing_page/views.py:204
+#: apps/landing_page/views.py:208
+msgid "You have a new contact"
+msgstr ""
+
+#: apps/landing_page/views.py:219
+msgid "if you want see the admin site https://travelposting.com/admin/"
+msgstr ""
+
+#: apps/landing_page/views.py:227
 msgid "Thank you very much for contacting us, we will be responding very soon "
 msgstr ""
 
-#: apps/landing_page/views.py:206
+#: apps/landing_page/views.py:230
 msgid "A error has ocurred while processing your message"
 msgstr ""
 
-#: apps/landing_page/views.py:252
+#: apps/landing_page/views.py:276
 msgid "New privacity request."
 msgstr ""
 
-#: apps/landing_page/views.py:288
+#: apps/landing_page/views.py:312
 #: main/templates/services/destination/detail.back.html:156
 msgid "Itinerary"
 msgstr ""
@@ -1511,10 +1886,6 @@ msgstr ""
 
 #: apps/payments/models/paypal.py:14
 msgid "code"
-msgstr ""
-
-#: apps/payments/models/paypal.py:26
-msgid "Precio"
 msgstr ""
 
 #: apps/payments/models/paypal.py:42
@@ -1546,28 +1917,28 @@ msgstr ""
 msgid "The payment could not be processed {sub.error}."
 msgstr ""
 
-#: config/settings/base.py:83
+#: config/settings/base.py:84
 msgid "en"
 msgstr ""
 
-#: config/settings/base.py:84
+#: config/settings/base.py:85
 msgid "de"
 msgstr ""
 
-#: config/settings/base.py:85
+#: config/settings/base.py:86
 msgid "es"
 msgstr ""
 
-#: config/settings/base.py:311
+#: config/settings/base.py:314
 msgid "Feature"
 msgstr ""
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
-#: main/templates/datenshutz_form.html:5
+#: main/templates/datenshutz_form.html:3
 #: main/templates/datenshutz_form_privacity.html:5 main/templates/faq.html:3
-#: main/templates/hotels.html:3 main/templates/make_page.html:5
+#: main/templates/hotels.html:3 main/templates/make_page.html:3
 #: main/templates/page01.html:3 main/templates/page02.html:3
-#: main/templates/pages/request.html:5 main/templates/presignup.html:3
+#: main/templates/pages/request.html:3 main/templates/presignup.html:3
 #: main/templates/template_base_for_text.html:3 main/templates/term.html:3
 #: main/templates/term.html:20
 msgid "About us"
@@ -1601,19 +1972,19 @@ msgstr ""
 msgid "Get special offers on the latest travels add on our platform."
 msgstr ""
 
-#: main/templates/base.html:80
+#: main/templates/base.html:82
 msgid "Do you like cookies?"
 msgstr ""
 
-#: main/templates/base.html:80
+#: main/templates/base.html:82
 msgid "We use cookies to ensure you get the best experience on our website."
 msgstr ""
 
-#: main/templates/base.html:80
+#: main/templates/base.html:82
 msgid "Learn more"
 msgstr ""
 
-#: main/templates/base.html:83
+#: main/templates/base.html:85
 msgid "I agree"
 msgstr ""
 
@@ -1637,7 +2008,7 @@ msgid ""
 msgstr ""
 
 #: main/templates/coming-soon.html:84
-msgid "For this dicember, we'll give good news for you"
+msgid "For this December, we'll give good news for you"
 msgstr ""
 
 #: main/templates/coming-soon.html:85
@@ -1646,6 +2017,10 @@ msgstr ""
 
 #: main/templates/coming-soon.html:90 main/templates/coming-soon.html:99
 msgid "Coming Soon"
+msgstr ""
+
+#: main/templates/coming-soon.html:122
+msgid "Travelposting 2019 All Rights Reserved Site Map Disclaimer"
 msgstr ""
 
 #: main/templates/community.html:22
@@ -1738,6 +2113,21 @@ msgstr ""
 
 #: main/templates/community.html:169
 msgid "WHY CHOOSE US?"
+msgstr ""
+
+#: main/templates/community.html:178 main/templates/community.html:193
+#: main/templates/community.html:208 main/templates/community.html:224
+#: main/templates/community.html:239 main/templates/community.html:254
+#: main/templates/community.html:282 main/templates/community.html:297
+#: main/templates/community.html:312 main/templates/community.html:329
+#: main/templates/community.html:344 main/templates/community.html:359
+#: main/templates/services/destination/detail.back.html:45
+#: main/templates/services/destination/detail.back.html:56
+#: main/templates/services/destination/detail.back.html:66
+#: main/templates/services/destination/detail_destination.html:51
+#: main/templates/services/destination/detail_destination.html:62
+#: main/templates/services/destination/detail_destination.html:73
+msgid "SVG"
 msgstr ""
 
 #: main/templates/community.html:182
@@ -1859,30 +2249,30 @@ msgstr ""
 msgid "Datenschutzerklärung"
 msgstr ""
 
-#: main/templates/datenshutz_form.html:18 main/templates/pages/request.html:18
+#: main/templates/datenshutz_form.html:16 main/templates/pages/request.html:16
 msgid "Delete registration"
 msgstr ""
 
-#: main/templates/datenshutz_form.html:22
+#: main/templates/datenshutz_form.html:20
 msgid ""
 "By completing this form, you will remove all personal information from our "
 "database. (you can always come back if you wish)"
 msgstr ""
 
-#: main/templates/datenshutz_form.html:29
+#: main/templates/datenshutz_form.html:27
 msgid "Last name"
 msgstr ""
 
-#: main/templates/datenshutz_form.html:35
+#: main/templates/datenshutz_form.html:33
 msgid "email@service.com"
 msgstr ""
 
-#: main/templates/datenshutz_form.html:42
+#: main/templates/datenshutz_form.html:40
 msgid ""
 "I agree to the deletion of the data for processing in the sense of the DSGVO."
 msgstr ""
 
-#: main/templates/datenshutz_form.html:46
+#: main/templates/datenshutz_form.html:44
 msgid "Create delete request"
 msgstr ""
 
@@ -1962,7 +2352,7 @@ msgid "pricing"
 msgstr ""
 
 #: main/templates/faq.html:24
-msgid "destinos"
+msgid "destinations"
 msgstr ""
 
 #: main/templates/faq.html:25
@@ -1970,276 +2360,268 @@ msgid "community"
 msgstr ""
 
 #: main/templates/faq.html:54
-msgid "¡Preguntas Frecuentes!"
+msgid "Frequently Asked Questions!"
 msgstr ""
 
 #: main/templates/faq.html:66
-msgid "¿Qué es Travelposting?"
+msgid "What is Travelposting?"
 msgstr ""
 
 #: main/templates/faq.html:76
 msgid ""
 "\n"
-"                                    Travelposting es un portal diseñado en "
-"primera linea para brindar a los Hoteles, agencias de viaje y tour "
-"operadores de\n"
-"                                    cualquier tamaño, una ventana de "
-"publicidad y así poder presentar sus ofertas actuales.\n"
+"                                    Travelposting is a portal designed on "
+"the first line to provide hotels, travel agencies and tour operators with\n"
+"                                    any size, an advertising window so you "
+"can present your current offers.\n"
 "                                    "
 msgstr ""
 
 #: main/templates/faq.html:92
-msgid "¿Cual es el concepto de travelposting?"
+msgid "What is the concept of travelposting?"
 msgstr ""
 
 #: main/templates/faq.html:102
 msgid ""
 "\n"
-"                                    El concepto de travelposting es “En "
-"primer lugar” crear una comunidad de viajeros a nivel mundial que se ayuden "
-"unos con\n"
-"                                    otros y aprovechen las ofertas y "
-"excelencia de calidad en los sitios recomendados por otros viajeros que han "
-"vivido\n"
-"                                    experiencia en estos sitios de "
-"recreación.\"\n"
+"                                    The concept of travelposting is to "
+"\"First of all\" create a worldwide community of travelers who help each "
+"other with\n"
+"                                    others and take advantage of the offers "
+"and quality excellence in the sites recommended by other travelers who have "
+"lived\n"
+"                                    experience in these recreation sites.\n"
 "                                    "
 msgstr ""
 
 #: main/templates/faq.html:119
-msgid "¿Para quien esta diseñada la publicidad de travelposting.com?"
+msgid "Who is travelposting.com advertising designed for?"
 msgstr ""
 
 #: main/templates/faq.html:129
 msgid ""
 "\n"
-"                                    Travelposting esta diseñado para que "
-"Agencias de Viajes, Hoteles, sitios recreacionales, Restaurantes cerca de "
-"Hoteles,\n"
-"                                    Servicios de lavanderías cerca de "
-"Hoteles, Alquiler de Autos, Escuelas de Buceo, Museos, centro de información "
-"o\n"
-"                                    cualquier otro Servicio que sea útil a "
-"el viajero pueda presentarse y ofrecer sus productos directamente desde su "
-"portal\n"
-"                                    web o directamente en su dirección "
-"física.\n"
+"                                    Travelposting is designed for Travel "
+"Agencies, Hotels, Recreational sites, Restaurants near Hotels,\n"
+"                                    Laundry services near Hotels, Car "
+"Rentals, Diving Schools, Museums, information center or\n"
+"                                    any other service that is useful to the "
+"traveller can be presented and offered directly from its portal\n"
+"                                    website or directly at your physical "
+"address.\n"
 "                                    "
 msgstr ""
 
 #: main/templates/faq.html:147 main/templates/faq.html:180
 msgid ""
-"Cual es la ventaja de inscribir mi agencia de viajes o mi sitio recreacional "
-"en travelposting.com?"
+"What is the advantage of registering my travel agency or recreational site "
+"on travelposting.com?"
 msgstr ""
 
 #: main/templates/faq.html:157 main/templates/faq.html:190
 msgid ""
 "\n"
-"                                    La gran ventaja de inscribir ahora su "
-"agencia, Hotel o sitio recreacional es variable, en primer lugar:\n"
-"                                    1 – Entre el 01. Marzo y 30. Agosto del "
-"2017 podrá inscribir su empresa por el precio Básico y disfrutara de tarifa "
-"fija\n"
-"                                    por 36 meses indiscutiblemente si "
-"nuestro precio aumenta o no.\n"
+"                                    The great advantage of registering your "
+"agency, hotel or recreational site now is variable, first of all:\n"
+"                                    1 - Between March 1st and March 30th. "
+"August 2017 you will be able to register your company for the Basic price "
+"and enjoy a fixed rate\n"
+"                                    for 36 months indisputably if our price "
+"increases or not.\n"
 "                                    \n"
-"                                    2 – Su empresa aparecerá señalada en "
-"todas las publicaciones online o impresas que hasta Julio 2018 hagamos.\n"
+"                                    2 - Your company will be featured in all "
+"online and print publications until July 2018.\n"
 "                                    \n"
-"                                    3 – Tendrá un puesto especial en la "
-"publicidad del Evento “ARTURISMOS” que estaremos realizando en Marzo / Julio "
-"del\n"
-"                                    2018, evento que presentara diferentes "
-"regiones de Colombia y Latinoamérica exaltando sus sitios turísticos y de "
-"gran\n"
-"                                    valor.\n"
+"                                    3 - You will have a special place in the "
+"publicity of the Event \"ARTURISMOS\" that we will be making in March / July "
+"of\n"
+"                                    2018, event that will present different "
+"regions of Colombia and Latin America exalting their tourist sites and "
+"great\n"
+"                                    courage.\n"
 "                                    "
 msgstr ""
 
 #: main/templates/faq.html:212
 msgid ""
-"¿Como puedo inscribir mi agencia, hotel o sitio recreacional en "
-"travelposting.com?"
+"How do I register my agency, hotel or recreational site with travelposting."
+"com?"
 msgstr ""
 
 #: main/templates/faq.html:221
 msgid ""
 "\n"
-"            La inscripción puede hacerla a través del email "
-"inscribir@travelposting.com o directamente en nuestro portal a través\n"
-"            del Registro de Empresa\n"
+"            You can register by emailing inscribir@travelposting.com or "
+"directly on our website at\n"
+"            of the Company Registry\n"
 "            "
 msgstr ""
 
 #: main/templates/faq.html:236
 msgid ""
-"¿Cual es el valor del alquiler del espacio publicitario en el portal "
-"travelposting.com?"
+"What is the value of renting advertising space on the travelposting.com "
+"portal?"
 msgstr ""
 
 #: main/templates/faq.html:245
 msgid ""
 "\n"
-"Para facilitar la inscripción y que cada quien pueda registrar su empresa "
-"sin importar el tamaño de la misma, hemos\n"
-"creado un plan Básico: Por pagina principal 3,55- € por día = 1.296,- € que "
-"incluye:\n"
+"To make registration easier and to enable everyone to register their company "
+"regardless of size, we have\n"
+"created a Basic plan: Per homepage 3,55- EUR per day = 1.296,- EUR "
+"included:\n"
 "\n"
-"<br>• Su destino en el idioma Español\n"
+"<br>• Your destination in the English language\n"
 "\n"
-"<br>• Galería con 5 Fotos\n"
+"<br>• Gallery with 5 Photos\n"
 "\n"
-"<br>• Galería con 5 Videos\n"
+"<br>• Gallery with 5 Videos\n"
 "\n"
-"<br>• 1 Pagina principal y 4 Tabs individuales.\n"
+"<br>• 1 Main page and 4 individual tabs.\n"
 "\n"
-"<br>• Subdominio Eplo: suhotel.travelposting.com\n"
+"<br>• Subdomain Eplo: suhotel.travelposting.com\n"
 "            "
 msgstr ""
 
 #: main/templates/faq.html:270
-msgid "Me gustaría tener una pagina web nueva."
+msgid "I'd like to have a new website."
 msgstr ""
 
 #: main/templates/faq.html:279
 #, python-format
 msgid ""
 "\n"
-"Trabajamos de la mano con la empresa Xposting-Service en Alemania, teniendo "
-"esta sus servidores en la ciudad de\n"
-"Frankfurt con una garantía en sus Hosting de un 99,9%% de seguridad y "
-"estabilidad, el precio de creación es de 850,- €\n"
-"por pagina y 600 € por mantenimiento anual, ejemplo: www.sunombre.com o "
-"puede escoger entre, .net, .org. travel. en este\n"
-"precio esta incluido la actualización de todos los plugins necesarios para "
-"el correcto funcionamiento de su pagina web\n"
+"We work hand in hand with the company Xposting-Service in Germany, having "
+"its servers in the city of\n"
+"Frankfurt with a 99.9%% guarantee on its hosting, the creation price is "
+"850,- ?.\n"
+"per page and 600 € for annual maintenance, example: www.yourname.com or you "
+"can choose between, .net, .org. travel. in this\n"
+"the price includes the update of all the necessary plugins for the correct "
+"functioning of your website\n"
 "<br>\n"
-"Por favor tome en cuenta que los precios acá mostrados son sin el impuesto. "
-"el impuesto será cobrado aparte y será\n"
-"sumado al momento de elaborar su factura.\n"
+"Please note that the prices shown here are without the tax. The tax will be "
+"charged separately and will\n"
+"added at the time of the invoice.\n"
 "<br>\n"
-"Para mejorar su publicación hemos creado una serie de módulos que le pueden "
-"ser de interés:\n"
+"To improve your publication we have created a series of modules that may be "
+"of interest to you:\n"
 "<br>\n"
-"M1– Traducción: Alemán / Ingles. Precios de acorde a la cantidad del texto "
-"que desee traducir.\n"
+"M1- Translation: German / English. Prices according to the amount of text to "
+"be translated.\n"
 "<br>\n"
-"M2 – Foto galería extra: hasta 5 Fotos. 60 € anual / 10 Fotos. 100 € anual / "
-"25 Fotos 200 € anual. Las fotos nos deben\n"
-"de ser enviadas en formato JPG o PNG con una resolución de mínimo 72 dpi "
-"para ser presentadas online y mínimo 300 dpi\n"
-"para impresión y un tamaño de mínimo 1200 pixel de ancho por 800 pixel de "
-"alto, las fotos serán utilizadas tanto en su\n"
-"propia publicidad así como en nuestros Slider publicitarios.\n"
+"M2 - Extra photo gallery: up to 5 photos. 60 per year / 10 Photos. 100 € per "
+"year / 25 Photos 200 € per year. The photos owe us\n"
+"to be sent in JPG or PNG format with a resolution of at least 72 dpi for "
+"online presentation and at least 300 dpi\n"
+"for printing and a size of at least 1200 pixels wide by 800 pixels high, the "
+"photos will be used both in their\n"
+"own advertising as well as in our advertising Sliders.\n"
 "<br>\n"
-"Es importante que tenga en cuenta que una vez que nos envíe las fotos "
-"también nos esta autorizando a utilizar estas\n"
-"fotos públicamente para beneficio de su publicidad así como para la "
-"publicidad de nuestro portal.\n"
+"It is important to note that once you send us the photos you are also "
+"authorizing us to use these\n"
+"photos publicly for the benefit of your advertising as well as for the "
+"advertising of our portal.\n"
 "<br>\n"
-"M3 – Video galería extra: hasta 5 videos. 90 € anual / 10 videos. 150 € "
-"anual / 25 videos 250 € anual. Los videos nos\n"
-"pueden ser enviados en formato original, de no estar en algún portal como "
-"Youtube o Vimeo, nosotros nos encargaremos de\n"
-"colocarlos y presentarlos dentro del portal. Es importante que tenga en "
-"cuenta que una vez que nos envíe el video\n"
-"también nos esta autorizando a utilizar estos videos públicamente para "
-"beneficio de su propia publicidad así como para\n"
-"la publicidad de nuestro portal.\n"
+"M3 - Extra video gallery: up to 5 videos. 90 per year / 10 videos. 150 € per "
+"year / 25 videos 250 € per year. The videos we\n"
+"can be sent in original format, if not in a portal such as Youtube or Vimeo, "
+"we will take care of\n"
+"place them and present them inside the portal. It is important to note that "
+"once you send us the video\n"
+"you are also authorizing us to use these videos publicly for the benefit of "
+"your own advertising as well as\n"
+"the advertising of our portal.\n"
 "<br>\n"
-"M4 – Su propia pagina web: Al ser travelposting.com un portal de Xposting-"
-"Service Alemania, usted cuenta con la\n"
-"facilidad de obtener por un precio bastante razonable su propia pagina web y "
-"su propio dominio ( www.suempresa.com) el\n"
-"dominio seguirá siendo suyo aunque no siga con nuestra publicidad.\n"
+"M4 - Your own website: As travelposting.com is a portal of Xposting-Service "
+"Germany, you have the\n"
+"facility to obtain for a quite reasonable price your own web page and your "
+"own domain ( www.yourcompany.com ) on\n"
+"domain will remain yours even if you do not continue with our advertising.\n"
 "<br>\n"
-"M5 – Subdominio: En caso de que no desee una pagina web podemos darles un "
-"subdominio propio el cual podrá utilizar para\n"
-"dar a conocer su publicidad online ejemplo: suempresa.travelposting.com por "
-"un precio de 240 € anuales, este subdominio\n"
-"le permite usar 3 paginas en nuestro portal: 1ra. Pagina principal, 2da. "
-"Pagina de información 3ra. Pagina sus datos de\n"
-"contacto inclusive un mapa digital.\n"
+"M5 - Subdomain: In case you don't want a website we can give you your own "
+"subdomain which you can use for\n"
+"to publicise your online advertising example: yourcompany.travelposting.com "
+"for a price of 240 € per year, this subdomain\n"
+"allows you to use 3 pages on our website: 1st Home Page, 2nd Information "
+"Page 3rd Your Data Page\n"
+"contact including a digital map.\n"
 "<br>\n"
-"M6 – Feedback: Por un precio de tan solo 300 € anuales podrá interactuar con "
-"sus clientes y saber exactamente lo que\n"
-"ellos piensas sobre su empresa. Aproveche la oportunidad de mejorar sus "
-"servicios a través de los comentarios que sus\n"
-"clientes le envían personalmente, con myfeedback podrá hacerles preguntas "
-"directas a sus clientes y estos entregaran el\n"
-"comentario directamente en su bandeja de correos, usted decide si quiere "
-"hacer publico o no lo que el cliente bajo\n"
-"“Anonimato” sobre su servicio le comento.\n"
+"M6 - Feedback: For a price of only 300 € per year you will be able to "
+"interact with your customers and know exactly what\n"
+"they think about their company. Take the opportunity to improve your "
+"services through the feedback your\n"
+"clients send you personally, with myfeedback you can ask your clients direct "
+"questions and they will deliver the\n"
+"comment directly in your mailbox, you decide whether or not you want to make "
+"public what the customer downloaded\n"
+"\"Anonymity\" about his service told him.\n"
 "            "
 msgstr ""
 
 #: main/templates/faq.html:332
 msgid ""
-"¿Puedo cambiar de módulo publicitario cuando necesite mas, o menos "
-"publicidad?"
+"Can I change the advertising module when I need more, or less, advertising?"
 msgstr ""
 
 #: main/templates/faq.html:341
 msgid ""
 "\n"
-"Nuestra finalidad no es amarrar a nadie en nuestro portal, sin embargo y por "
-"motivos de organización todos los módulos\n"
-"contratados serán de mínimo un año, la publicación de sus módulos podrá ser "
-"modificada durante ese año de modo que sus\n"
-"campañas puedan crecer según sus necesidades.\n"
+"Our purpose is not to bind anyone in our portal, however and for "
+"organizational reasons all modules contracted will be a minimum of one year, "
+"the publication of its modules may be modified during that year so that "
+"their campaigns can grow according to their needs.\n"
 "            "
 msgstr ""
 
-#: main/templates/faq.html:357
-msgid "¿Como hago el pago de mi suscripción o de los módulos?"
+#: main/templates/faq.html:355
+msgid "How do I pay for my subscription or modules?"
 msgstr ""
 
-#: main/templates/faq.html:366
+#: main/templates/faq.html:364
 msgid ""
 "\n"
-"El pago de su suscripción o módulos puede hacerla vía Paypal o con tarjeta "
-"de crédito. Por el momento solo tenemos\n"
-"cuenta en Alemania, pronto tendremos cuenta en Colombia.\n"
+"The payment of your subscription or modules can be made via Paypal or by "
+"credit card. At the moment we only have\n"
+"account in Germany, we will soon have an account in Colombia.\n"
 "            "
 msgstr ""
 
-#: main/templates/faq.html:381
+#: main/templates/faq.html:379
 msgid ""
-"¿Por cuanto tiempo debo hacer la suscripción Básica de mi espació "
-"publicitario y o de los módulos?"
+"How long do I have to subscribe to the Basic subscription for my ad space "
+"and/or modules?"
 msgstr ""
 
-#: main/templates/faq.html:390
+#: main/templates/faq.html:388
 msgid ""
 "\n"
-"La suscripción Básica de los espacios publicitarios será de mínimo 24 meses "
-"y se renovara automáticamente por 12 meses\n"
-"en caso de que no haga una renuncia con mínimo tres meses de anticipación.\n"
+"The Basic subscription to the advertising spaces will be for a minimum of 24 "
+"months and will be automatically renewed for 12 months if you do not make a "
+"waiver at least three months in advance.\n"
 "            "
 msgstr ""
 
-#: main/templates/faq.html:405
+#: main/templates/faq.html:402
 msgid ""
-"¿Si tengo problemas con mi suscripción, pago, o Update en la publicidad a "
-"quien debo dirigirme?"
+"If I have problems with my subscription, payment, or advertising update, who "
+"should I contact?"
 msgstr ""
 
-#: main/templates/faq.html:414
+#: main/templates/faq.html:411
 msgid ""
 "\n"
-"Para cualquier pregunta adicional o referente a lo arriba expuesto le "
-"rogamos enviarnos un email a\n"
-"pregunta@travelposting.com déjenos saber su pregunta o su inquietud y con "
-"gusto le responderemos a la brevedad posible.\n"
+"For any additional questions or concerning the above please send an email to "
+"pregunta@travelposting.com let us know your question or concern and we will "
+"gladly respond as soon as possible.\n"
 "            "
 msgstr ""
 
-#: main/templates/faq.html:549
+#: main/templates/faq.html:545
 msgid "Can't find your answer?"
 msgstr ""
 
-#: main/templates/faq.html:551
+#: main/templates/faq.html:547
 msgid ""
 "\n"
 "                            We want to answer all of your queries. Get in "
@@ -2248,15 +2630,15 @@ msgid ""
 "                            "
 msgstr ""
 
-#: main/templates/faq.html:556
+#: main/templates/faq.html:552
 msgid "Email us"
 msgstr ""
 
-#: main/templates/faq.html:632
+#: main/templates/faq.html:628
 msgid "Technical questions"
 msgstr ""
 
-#: main/templates/faq.html:633
+#: main/templates/faq.html:629
 msgid ""
 "Have some technical questions? Hit us on community page or just say hello."
 msgstr ""
@@ -2269,6 +2651,10 @@ msgid ""
 "                        opened on March 1, 2009 with its headquarters in the "
 "city of Hamburg, Germany.\n"
 "                    "
+msgstr ""
+
+#: main/templates/footer.html:20
+msgid "Tourist warning."
 msgstr ""
 
 #: main/templates/footer.html:21
@@ -2313,7 +2699,8 @@ msgstr ""
 msgid "MAKE YOUR PAY"
 msgstr ""
 
-#: main/templates/footer.html:128
+#: main/templates/footer.html:128 main/templates/menu/navbar_all.html:57
+#: main/templates/menu/navbar_all.html:67
 msgid "FAQs"
 msgstr ""
 
@@ -2321,8 +2708,18 @@ msgstr ""
 msgid "Use policies"
 msgstr ""
 
+#: main/templates/footer.html:134
+msgid "Travelposting 2020 All Rights Reserved Site Map Disclaimer."
+msgstr ""
+
 #: main/templates/hotels.html:17
 msgid "Live the adventure"
+msgstr ""
+
+#: main/templates/hotels.html:18
+msgid ""
+"Do you want to know more (<a class=\"text-light\" href=\"/about-us/\">about "
+"us?</a>)"
 msgstr ""
 
 #: main/templates/hotels.html:67
@@ -2333,8 +2730,15 @@ msgstr ""
 msgid "What Happened to"
 msgstr ""
 
-#: main/templates/hotels.html:108 main/templates/page01.html:39
-msgid "Community"
+#: main/templates/hotels.html:109 main/templates/page01.html:40
+#: main/templates/presignup.html:54
+msgid "Our Community"
+msgstr ""
+
+#: main/templates/hotels.html:109
+msgid ""
+"Discover new destinations that can seduce you and you will want to return to "
+"them."
 msgstr ""
 
 #: main/templates/hotels.html:118 main/templates/page01.html:50
@@ -2353,29 +2757,29 @@ msgstr ""
 msgid "professional"
 msgstr ""
 
-#: main/templates/index.html:32 main/templates/index.html:56
-#: main/templates/index.html:108
+#: main/templates/index.html:42 main/templates/index.html:66
+#: main/templates/index.html:118
 msgid "Contact us"
 msgstr ""
 
-#: main/templates/index.html:76 main/templates/pages/show_header.html:92
+#: main/templates/index.html:86 main/templates/pages/show_header.html:92
 #: main/templates/pages/show_header.html:94
 msgid "E-mail"
 msgstr ""
 
-#: main/templates/index.html:90
+#: main/templates/index.html:100
 msgid "Tell us more"
 msgstr ""
 
-#: main/templates/index.html:99
+#: main/templates/index.html:109
 msgid "Please enter your message. "
 msgstr ""
 
-#: main/templates/index.html:122
+#: main/templates/index.html:132
 msgid "Ready to get started?"
 msgstr ""
 
-#: main/templates/index.html:124
+#: main/templates/index.html:134
 msgid "Visit all our tour and travel available."
 msgstr ""
 
@@ -2391,146 +2795,146 @@ msgstr ""
 msgid "Magazine"
 msgstr ""
 
-#: main/templates/make_page.html:13
+#: main/templates/make_page.html:11
 msgid "Make your payments"
 msgstr ""
 
-#: main/templates/make_page.html:67
+#: main/templates/make_page.html:65
 msgid "Pay on Payoneer or Paypal"
 msgstr ""
 
-#: main/templates/make_page.html:68
+#: main/templates/make_page.html:66
 msgid ""
 "Make your payments directly in the currency that best suits you with our "
 "collection service with: "
 msgstr ""
 
-#: main/templates/make_page.html:80
+#: main/templates/make_page.html:78
 msgid "Make your payment via Paypal to: info@xposting-service.com"
 msgstr ""
 
-#: main/templates/make_page.html:86
+#: main/templates/make_page.html:84
 msgid "GBP Receiving Account (BACS) England"
 msgstr ""
 
-#: main/templates/make_page.html:90 main/templates/make_page.html:129
-#: main/templates/make_page.html:168 main/templates/make_page.html:207
+#: main/templates/make_page.html:88 main/templates/make_page.html:127
+#: main/templates/make_page.html:166 main/templates/make_page.html:205
 msgid "Name of the bank"
 msgstr ""
 
-#: main/templates/make_page.html:94
+#: main/templates/make_page.html:92
 msgid "Branch Code"
 msgstr ""
 
-#: main/templates/make_page.html:98 main/templates/make_page.html:176
+#: main/templates/make_page.html:96 main/templates/make_page.html:174
 msgid "Account number"
 msgstr ""
 
-#: main/templates/make_page.html:102 main/templates/make_page.html:141
-#: main/templates/make_page.html:223
+#: main/templates/make_page.html:100 main/templates/make_page.html:139
+#: main/templates/make_page.html:221
 msgid "Beneficiary Name"
 msgstr ""
 
-#: main/templates/make_page.html:107 main/templates/make_page.html:189
+#: main/templates/make_page.html:105 main/templates/make_page.html:187
 msgid "Keep in mind!"
 msgstr ""
 
-#: main/templates/make_page.html:108
+#: main/templates/make_page.html:106
 msgid ""
 "Only BACS and Faster Payments Service (UK local bank) transfers can be "
 "accepted in GBP"
 msgstr ""
 
-#: main/templates/make_page.html:109
+#: main/templates/make_page.html:107
 msgid "Transfers must be made from a corporate bank account"
 msgstr ""
 
-#: main/templates/make_page.html:110
+#: main/templates/make_page.html:108
 msgid "Transfers in USD will be rejected automatically"
 msgstr ""
 
-#: main/templates/make_page.html:111 main/templates/make_page.html:149
+#: main/templates/make_page.html:109 main/templates/make_page.html:147
 msgid "Wire transfers are not supported"
 msgstr ""
 
-#: main/templates/make_page.html:125
+#: main/templates/make_page.html:123
 msgid "EUR Receiving Account (SEPA)"
 msgstr ""
 
-#: main/templates/make_page.html:147
+#: main/templates/make_page.html:145
 msgid "Only SEPA transfers (European local bank) can be accepted in EUR"
 msgstr ""
 
-#: main/templates/make_page.html:148
+#: main/templates/make_page.html:146
 msgid ""
 "Transfers in USD will be made automatically and may result in the suspension "
 "of this service"
 msgstr ""
 
-#: main/templates/make_page.html:164
+#: main/templates/make_page.html:162
 msgid "Receiving Account USD (ACH) / US Local Bank UU"
 msgstr ""
 
-#: main/templates/make_page.html:172
+#: main/templates/make_page.html:170
 msgid "Way (ABA)"
 msgstr ""
 
-#: main/templates/make_page.html:181
+#: main/templates/make_page.html:179
 msgid "CHECKING"
 msgstr ""
 
-#: main/templates/make_page.html:184
+#: main/templates/make_page.html:182
 msgid "Beneficiary Name:"
 msgstr ""
 
-#: main/templates/make_page.html:190
+#: main/templates/make_page.html:188
 msgid "Only ACH (US local bank) transfers can be accepted in USD"
 msgstr ""
 
-#: main/templates/make_page.html:191
+#: main/templates/make_page.html:189
 msgid "Transfers must be made from a business account"
 msgstr ""
 
-#: main/templates/make_page.html:192
+#: main/templates/make_page.html:190
 msgid "Transfers from individuals will be made automatically"
 msgstr ""
 
-#: main/templates/make_page.html:193
+#: main/templates/make_page.html:191
 msgid "Electronic transfer is not supported"
 msgstr ""
 
-#: main/templates/make_page.html:203
+#: main/templates/make_page.html:201
 msgid "Receiving AUD account (direct deposit) / Bank of Australia..."
 msgstr ""
 
-#: main/templates/make_page.html:211
+#: main/templates/make_page.html:209
 msgid "Headquarters code"
 msgstr ""
 
-#: main/templates/make_page.html:219
+#: main/templates/make_page.html:217
 msgid "Account type"
 msgstr ""
 
-#: main/templates/make_page.html:230
+#: main/templates/make_page.html:228
 msgid "Please keep that in mind!"
 msgstr ""
 
-#: main/templates/make_page.html:231
+#: main/templates/make_page.html:229
 msgid "Only direct entry payments (BECS) are accepted in AUD"
 msgstr ""
 
-#: main/templates/make_page.html:232
+#: main/templates/make_page.html:230
 msgid "Transfers can only be made from companies"
 msgstr ""
 
-#: main/templates/make_page.html:233
+#: main/templates/make_page.html:231
 msgid ""
 "Be sure to select Australia in the bank location drop-down when adding a "
 "deposit method at Amazon Seller Central!"
 msgstr ""
 
 #: main/templates/menu/menu.html:6
-msgid "Ingresa"
+msgid "Enter"
 msgstr ""
 
 #: main/templates/menu/menu.html:9
@@ -2562,7 +2966,7 @@ msgstr ""
 msgid "SignIn"
 msgstr ""
 
-#: main/templates/menu/menu_footer.html:11
+#: main/templates/menu/menu_footer.html:9
 #: main/templates/pages/show_header.html:37
 #: main/templates/services/destination/_parts/filter_destinations.html:44
 #: main/templates/services/destination/categories.html:6
@@ -2573,9 +2977,13 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: main/templates/menu/menu_footer.html:14
+#: main/templates/menu/menu_footer.html:12
 #: main/templates/pages/show_header.html:60
 msgid "Request"
+msgstr ""
+
+#: main/templates/menu/navbar.html:29
+msgid "Toggle navigation"
 msgstr ""
 
 #: main/templates/menu/navbar_all.html:28
@@ -2636,50 +3044,50 @@ msgstr ""
 msgid "Get to know our destinations"
 msgstr ""
 
-#: main/templates/pages/booking_email.html:50
+#: main/templates/pages/booking_email.html:48
 msgid "A person has done a new booking:"
 msgstr ""
 
-#: main/templates/pages/booking_email.html:58
-#: main/templates/pages/email_feedback.html:58
+#: main/templates/pages/booking_email.html:56
+#: main/templates/pages/email_feedback.html:56
 #: main/templates/pages/request_delete_feedback.html:56
 msgid "Name / Last Name: "
 msgstr ""
 
-#: main/templates/pages/booking_email.html:59
+#: main/templates/pages/booking_email.html:57
 msgid "Cellphone:"
 msgstr ""
 
-#: main/templates/pages/booking_email.html:60
-#: main/templates/pages/email_feedback.html:60
+#: main/templates/pages/booking_email.html:58
+#: main/templates/pages/email_feedback.html:58
 #: main/templates/pages/request_delete_feedback.html:57
 msgid "Email:"
 msgstr ""
 
-#: main/templates/pages/booking_email.html:61
+#: main/templates/pages/booking_email.html:59
 msgid "Travel number: "
 msgstr ""
 
-#: main/templates/pages/booking_email.html:62
+#: main/templates/pages/booking_email.html:60
 #: main/templates/pages/published_email.html:56
 #: main/templates/pages/published_email_user.html:56
 #: main/templates/pdf/itinerary.html:75
 msgid "Destination:"
 msgstr ""
 
-#: main/templates/pages/booking_email.html:63
+#: main/templates/pages/booking_email.html:61
 msgid "Comment: "
 msgstr ""
 
-#: main/templates/pages/email_feedback.html:50
+#: main/templates/pages/email_feedback.html:48
 msgid "A person has done a new search:"
 msgstr ""
 
-#: main/templates/pages/email_feedback.html:59
+#: main/templates/pages/email_feedback.html:57
 msgid "Country:"
 msgstr ""
 
-#: main/templates/pages/email_feedback.html:61
+#: main/templates/pages/email_feedback.html:59
 #: main/templates/pages/show_header.html:100
 #: main/templates/pages/show_header.html:102
 msgid "Whatsapp"
@@ -2704,6 +3112,10 @@ msgstr ""
 
 #: main/templates/pages/published_email_user.html:67
 msgid "See it now"
+msgstr ""
+
+#: main/templates/pages/request.html:19
+msgid "We have sent your request. We will contact you soon"
 msgstr ""
 
 #: main/templates/pages/request_delete_feedback.html:48
@@ -2757,11 +3169,31 @@ msgstr ""
 msgid "Country / City"
 msgstr ""
 
+#: main/templates/pages/show_header.html:94
+msgid "City"
+msgstr ""
+
 #: main/templates/pages/show_header.html:111
 msgid ""
 "Leave us your personal data if you want us to send you information regarding "
 "the destinations of your interest. Do you agree that we send you information "
 "to your email of the destinations you are looking for?"
+msgstr ""
+
+#: main/templates/pages/show_header.html:128
+msgid "Download on the"
+msgstr ""
+
+#: main/templates/pages/show_header.html:129
+msgid "App Store"
+msgstr ""
+
+#: main/templates/pages/show_header.html:140
+msgid "Get it on"
+msgstr ""
+
+#: main/templates/pages/show_header.html:141
+msgid "Google Play"
 msgstr ""
 
 #: main/templates/pdf/itinerary.html:77
@@ -2794,10 +3226,6 @@ msgstr ""
 
 #: main/templates/presignup.html:15
 msgid "Please select a registration type."
-msgstr ""
-
-#: main/templates/presignup.html:54
-msgid "Our Community"
 msgstr ""
 
 #: main/templates/presignup.html:56 main/templates/presignup.html:74
@@ -2903,10 +3331,6 @@ msgstr ""
 msgid "See details"
 msgstr ""
 
-#: main/templates/services/destination/_parts/pagination_destinies.html:10
-msgid "Previous"
-msgstr ""
-
 #: main/templates/services/destination/_parts/pagination_destinies.html:32
 msgid "Showing page"
 msgstr ""
@@ -2945,11 +3369,6 @@ msgstr ""
 msgid "Sort by price: High to Low"
 msgstr ""
 
-#: main/templates/services/destination/all.html:52
-#: main/templates/services/destination/categories.html:45
-msgid "See more"
-msgstr ""
-
 #: main/templates/services/destination/categories.html:6
 msgid "Our"
 msgstr ""
@@ -2967,45 +3386,42 @@ msgid "Was this helpful?"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:50
-#: main/templates/services/destination/detail_destination.html:316
+#: main/templates/services/destination/detail_destination.html:342
 msgid "Let us your comment"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:68
 #: main/templates/services/destination/comments.html:70
-#: main/templates/services/destination/detail_destination.html:331
-#: main/templates/services/destination/detail_destination.html:333
+#: main/templates/services/destination/detail_destination.html:357
+#: main/templates/services/destination/detail_destination.html:359
 msgid "Title"
 msgstr ""
 
+#: main/templates/services/destination/comments.html:71
+#: main/templates/services/destination/detail_destination.html:359
+msgid "Amount (to the nearest dollar)"
+msgstr ""
+
 #: main/templates/services/destination/comments.html:76
-#: main/templates/services/destination/detail_destination.html:338
+#: main/templates/services/destination/detail_destination.html:364
 msgid "Body"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:78
-#: main/templates/services/destination/detail_destination.html:340
+#: main/templates/services/destination/detail_destination.html:366
 msgid "Please let us your message"
 msgstr ""
 
-#: main/templates/services/destination/comments.html:83
-#: main/templates/services/destination/detail_destination.html:343
-#: main/templates/services/destination/detail_destination.html:437
-#: main/templates/services/pricing/plans.html:191
-msgid "Close"
+#: main/templates/services/destination/comments.html:79
+msgid "With textarea"
+msgstr ""
+
+#: main/templates/services/destination/comments.html:102
+msgid "Read More"
 msgstr ""
 
 #: main/templates/services/destination/destinations.html:9
 msgid "About"
-msgstr ""
-
-#: main/templates/services/destination/destinations.html:12
-msgid ""
-"Our potential in its favor is based on the ease we have of capturing new "
-"stakeholders for your products thanks to the constant trips we make and the "
-"tourism and technology fairs in which we are present, as is the case of the "
-"Anato Tourist Showcase in Bogotá Colombia, The ITB Tourism Fair in Berlin "
-"Germany, or the Fitur in Madrid Spain among others."
 msgstr ""
 
 #: main/templates/services/destination/destinations.html:16
@@ -3066,11 +3482,11 @@ msgid "Day"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:209
-msgid "We still don't have the intenerario for this destination"
+msgid "We still don't have the itinerary for this destination"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:227
-#: main/templates/services/destination/detail_destination.html:303
+#: main/templates/services/destination/detail_destination.html:329
 msgid "Reserve"
 msgstr ""
 
@@ -3079,55 +3495,64 @@ msgid "back to list"
 msgstr ""
 
 #: main/templates/services/destination/detail_destination.html:154
-#: main/templates/services/destination/detail_destination.html:188
+#: main/templates/services/destination/detail_destination.html:195
 msgid "Follow us or recommend us through"
 msgstr "Follow us"
 
-#: main/templates/services/destination/detail_destination.html:242
+#: main/templates/services/destination/detail_destination.html:268
 msgid "Fecha"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:258
+#: main/templates/services/destination/detail_destination.html:284
 msgid "Califications"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:258
+#: main/templates/services/destination/detail_destination.html:284
 msgid "Votes"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:273
+#: main/templates/services/destination/detail_destination.html:299
 msgid "Discover or download our itinerary here"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:297
+#: main/templates/services/destination/detail_destination.html:323
 msgid "Add comment"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:299
+#: main/templates/services/destination/detail_destination.html:325
 msgid "Make a recommendation"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:356
+#: main/templates/services/destination/detail_destination.html:382
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:397
-msgid "+49 123 456 789"
-msgstr ""
-
-#: main/templates/services/destination/detail_destination.html:415
-msgid "Number of people travelling"
+#: main/templates/services/destination/detail_destination.html:405
+#: main/templates/services/destination/detail_destination.html:413
+#: main/templates/services/destination/detail_destination.html:423
+#: main/templates/services/destination/detail_destination.html:431
+#: main/templates/services/destination/detail_destination.html:441
+#: main/templates/services/destination/detail_destination.html:449
+msgid "Small"
 msgstr ""
 
 #: main/templates/services/destination/detail_destination.html:423
+msgid "+49 123 456 789"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:441
+msgid "Number of people travelling"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:449
 msgid "Do you have a plan you want to book?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:428
+#: main/templates/services/destination/detail_destination.html:454
 msgid "Do you may have some comments or remarks about your booking?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:432
+#: main/templates/services/destination/detail_destination.html:458
 msgid ""
 "By clicking 'Book' you agree that Travelposting use your data for "
 "advertising and marketing purposes between Travelposting, its alliance "
@@ -3135,7 +3560,7 @@ msgid ""
 "and request the cancellation of your data."
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:438
+#: main/templates/services/destination/detail_destination.html:464
 msgid "Book"
 msgstr ""
 
@@ -3152,7 +3577,7 @@ msgid "Testimonials"
 msgstr ""
 
 #: main/templates/services/destination/testimonials.html:8
-msgid "Know our audiencie"
+msgid "Know our audience"
 msgstr ""
 
 #: main/templates/services/magazine/magazine.html:14
@@ -3160,7 +3585,7 @@ msgid "Download"
 msgstr ""
 
 #: main/templates/services/pricing/plans.html:35
-msgid "This plan is only for yearly suscription"
+msgid "This plan is only for yearly subscription"
 msgstr ""
 
 #: main/templates/services/pricing/plans.html:44
