@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from mapwidgets.widgets import GooglePointFieldWidget
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
+from django_registration.forms import RegistrationForm as BaseRegistrationForm
 from apps.accounts.forms import BaseBootstrapForm
 from apps.destinations.widgets import BootstrapMoneyWidget
 from apps.destinations.models import (
@@ -19,6 +20,8 @@ from apps.destinations.models import (
     Itinerary,
     DestinationMap,
 )
+from apps.accounts.models import CustomerUser
+
 
 
 class DestinationForm(forms.ModelForm):
@@ -462,3 +465,48 @@ class DestinationMapForm(forms.ModelForm):
                 },
             )
         }
+
+class AgencyAddForm(BaseRegistrationForm, forms.ModelForm):
+    password1 = forms.CharField(label=_("Password"),
+        widget=forms.PasswordInput(attrs={
+            'class':'form-control first',
+        }),
+        help_text = _('Use at least 8 characters. Do not use a password from another site or a term that is too obvious, such as your pet\'s name.'))
+
+    password2 = forms.CharField(label=_("Password confirmation"),
+        widget=forms.PasswordInput(attrs={
+            'class':'form-control last',
+        }),
+        help_text = _("Enter the same password as above, for verification."))
+    first_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('First Name'),
+                'class': 'form-control',
+            },
+        ),
+    )
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Last Name'),
+                'class': 'form-control',
+            },
+        ),
+    )
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email Address'),
+                'class': 'form-control',
+            },
+        ),
+    )
+
+    class Meta(BaseRegistrationForm.Meta):
+        BASE_REGISTRATION_FIELDS = BaseRegistrationForm.Meta.fields
+        model = CustomerUser
+        fields = [
+            'first_name',
+            'last_name',
+        ]+ BASE_REGISTRATION_FIELDS

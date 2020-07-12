@@ -37,7 +37,7 @@ from apps.destinations.forms import (
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
-
+    AgencyAddForm
 )
 from apps.destinations.models import (
     Destination,
@@ -750,8 +750,40 @@ class LeaderView(View):
                             {
                                 'users_manager_country':users_manager_country,
                                 'conteo':conteo,
-                                'counteo_agency':conteo_agency,
+                                'conteo_agency':conteo_agency,
                             }
                     )
         else:
             return render(request, self.template_name)
+
+
+class AgencyView(View):
+    template_name = 'dashboard/leaders/_agencies.html'
+
+    def get(self, request, *args, **kwargs):
+        admins = ['Manager']
+        manager = ['manager_country']
+        agencies = ['agency']
+        verify_admins = request.user.groups.get_queryset().filter(name__in=admins).exists()
+        if verify_admins==True:
+            #search all user that group is manager_country and show their country
+            users_manager_country = CustomerUser.objects.filter(groups__name='manager_country')
+            users_agency = CustomerUser.objects.filter(groups__name='agency')
+            conteo = users_manager_country.count()
+            conteo_agency = users_agency.count()
+
+            return render(request, 
+                            self.template_name, 
+                            {
+                                'users_agency':users_agency,
+                                'conteo':conteo,
+                                'conteo_agency':conteo_agency,
+                            }
+                    )
+        else:
+            return render(request, self.template_name)
+
+class AddAgencyView(CreateView):
+    template_name = 'dashboard/leaders/_agencies_add.html'
+    form_class = AgencyAddForm
+

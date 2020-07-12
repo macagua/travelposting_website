@@ -1,6 +1,6 @@
 {% extends 'destinations/base.html' %}
 {% load static i18n destinations_tags static %}
-{% block title %}{% trans 'Managers - Travelposting' %}{% endblock %}
+{% block title %}{% trans 'Agencies - Travelposting' %}{% endblock %}
 {% block extracss %}
 <!-- FooTable -->
 <link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
@@ -11,18 +11,21 @@
     {% include 'destinations/navbar_top.html' %}
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h3>{% trans "Managers List"%}</h3>
+            <h3>{% trans "Agencies List"%}</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="/es/dashboard/">Inicio</a>
                 </li>
-                <li class="breadcrumb-item active">
-                    <a href="#">{% trans "Managers"%}</a>
+                <li class="breadcrumb-item">
+                    <a href="{% url "dashboard:manager" %}">{% trans "Managers"%}</a>
                 </li>
-
+                <li class="breadcrumb-item active">
+                    <strong>{% trans "Agencies"%}</strong>
+                </li>
             </ol>
         </div>
     </div>
+    <!-- Vista interna-->
     <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-lg-6">
@@ -64,40 +67,8 @@
                         <h5>{% trans "Manager Plataform"%}</h5>
                         <div class="ibox-tools">
                             <div class="btn-group">
-                                <button onclick="window.location.href='{% url "dashboard:agencies" %}'" class="btn btn-outline btn-primary" type="button"><i class="fa fa-see"></i> <b class="color:white;">{% trans "See agencies"%}</b></button>
-                                <button class="btn btn-outline btn-primary" type="button"  data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> <b class="color:white;">{% trans "add agency"%}</b></button>
-                                <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content animated bounceInRight">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title">{% trans "Choose an option" %}</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="text-center">
-                                                            <a href="{% url 'dashboard:agency-add' %}" class="text-info">
-                                                                <i class="fa fa-plus fa-5x"></i>
-                                                                <p class="font-bold"> 
-                                                                    {% trans "Add new Agency" %}
-                                                                </p>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="text-center">
-                                                            <a href="" class="text-info">
-                                                                <i class="fa fa-address-card fa-5x"></i>
-                                                                <p class="font-bold">{% trans "Edit user" %}</p>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button onclick="window.location.href='{% url "dashboard:manager" %}'"   class="btn btn-outline btn-primary" type="button"><i class="fa fa-see"></i> <b class="color:white;">{% trans "See manager"%}</b></a>
+                                <button class="btn btn-outline btn-primary" type="button"><i class="fa fa-plus"></i> <b class="color:white;">{% trans "add agency"%}</b></button>
                                 <button class="btn btn-outline btn-danger" type="button"> <i class="fa fa-plus"></i> <b>{% trans "add new Manager"%}</b></button>
                             </div>
                         </div>
@@ -116,7 +87,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for users in users_manager_country %}
+                                {% for users in users_agency %}
                                 <tr class="gradeA">
                                     <td>{{users.get_full_name }}</td>
                                     <td>{{ users.email}}</td>
@@ -155,32 +126,7 @@
             </div>
         </div>
     </div>
-
+    <!-- Fin vista interna-->
     {% include 'destinations/footer.html' %}
 </div>
-{% endblock content %}
-
-
-{% block js %}
-{{ block.super }}
-{{ form.media.js }}
-<!-- FooTable -->
-<script src="{% static 'dashboard/js/plugins/footable/footable.all.min.js' %}"></script>
-<!-- iCheck -->
-<script src="{% static 'dashboard/js/plugins/iCheck/icheck.min.js' %}"></script>
-<script>    
-    $(document).ready(function () {
-     $('.i-checks').iCheck({
-         checkboxClass: 'icheckbox_square-green',
-             radioClass: 'iradio_square-green',
-     });
-    });
-    
-    
-    $(document).ready(function () {
-     $('.footable').footable();
-     $('.footable2').footable();
-    });
-</script>
-{% endblock js %}
-
+{% endblock %}

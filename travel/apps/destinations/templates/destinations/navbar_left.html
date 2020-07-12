@@ -62,10 +62,17 @@
               </a>
             </li>
             <li class="">
-              <a href="{% url 'dashboard:manager'%}">
+              <a href="#">
                 <i class="fa fa-user fa-lg"></i>
                 <span class="nav-label">{% trans "Managers" %}</span>
+                <span class="fa arrow"></span>
               </a>
+              <ul class="nav nav-second-level">
+                <li class=""><a href="{% url 'dashboard:manager'%}">{% trans "List Managers"%}</a></li>
+                <li class=""><a href="{% url 'dashboard:manager'%}">{% trans "Add Manager"%}</a></li>
+                <li class=""><a href="{% url 'dashboard:agencies'%}">{% trans "List Agencies"%}</a></li>
+                <li class=""><a href="{% url 'dashboard:agency-add'%}">{% trans "Add agency"%}</a></li>
+              </ul>
             </li>
             {% endif %}
       <li class="">
