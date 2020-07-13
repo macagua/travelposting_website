@@ -131,7 +131,6 @@
   <script src="{% static "inspinia/js/notifications.js" %}"></script>
 
   <script>
-(function(){
     function delete_map(id){
           swal({
               title: "{% trans 'Are you sure?' %}",
@@ -142,7 +141,7 @@
               confirmButtonText: "{% trans "Yes, delete it!" %}",
               closeOnConfirm: false
           }, function () {
-            $.ajax({
+            jQuery.ajax({
                   method:'DELETE',
                   url:'{% url 'destinations:delete-map' %}',
                   data:{
@@ -229,6 +228,6 @@
           .fail(function() {
             console.log("error");
           });
-    })})(jQuery);
+    });
   </script>
 {%endblock%}
