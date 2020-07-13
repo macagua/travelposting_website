@@ -5,6 +5,8 @@ from django.core.mail import mail_managers
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 from django_summernote.admin import SummernoteModelAdminMixin
+
+from .forms import DestinationMapForm
 from .models import (
     OptionTabData,
     Destination,
@@ -186,13 +188,16 @@ class MessageAdmin(admin.ModelAdmin):
     list_display = ('id', 'sender', 'subject', 'content', )
 
 
+@admin.register(DestinationMap)
+class DestinationMapAdmin(admin.ModelAdmin):
+    form = DestinationMapForm
+
 admin.site.register(MessageDashboard, MessageAdmin)
 
 
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)
 admin.site.register(SearchLanding)
-admin.site.register(DestinationMap)
 admin.site.register(Itinerary)
 admin.site.register(BookingStats)
 admin.site.register(SocialNetwork)
