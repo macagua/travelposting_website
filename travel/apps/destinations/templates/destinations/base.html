@@ -17,7 +17,7 @@
         <link href="{% static 'dashboard/css/animate.css' %}" rel="stylesheet">
         <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet">
         {% endblock %}
-        <script src="{% static 'dashboard/js/jquery-3.1.1.min.js' %}" type="application/javascript"></script>
+        <script src="{% static 'dashboard/js/jquery-3.1.1.min.js' %}"></script>
         {% block extracss %} {% endblock extracss%}
     </head>
     <body class="fixed-sidebar pace-done tarvelsolutions-skin">
@@ -42,6 +42,7 @@
         <!-- Peity -->
         <script src="{% static 'dashboard/js/plugins/peity/jquery.peity.min.js' %}"></script>
         <!-- Custom and plugin javascript -->
+        <script src="{% static 'dashboard/js/inspinia.js' %}"></script>
         <script src="{% static 'dashboard/js/plugins/pace/pace.min.js' %}"></script>
         <!-- jQuery UI -->
         <script src="{% static 'dashboard/js/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
@@ -102,7 +103,6 @@
             });
         </script>
         {% endif %}
-        <script src="{% static 'dashboard/js/inspinia.js' %}"></script>
         {% endblock %}
     </body>
 </html>

@@ -11,10 +11,10 @@ from django.http import HttpResponse
 from django.template import loader
 from django.urls import reverse_lazy
 from django.shortcuts import (
-        get_object_or_404,
-        render,
-        redirect,
-        reverse,
+    get_object_or_404,
+    render,
+    redirect,
+    reverse,
 )
 from django.views.generic import (
     DetailView,
@@ -24,6 +24,7 @@ from django.views.generic import (
 from django.views.i18n import set_language
 from django_registration.backends.activation.views import RegistrationView, ActivationView
 from apps.accounts.forms import (
+    CompleteProfileForm,
     SignInForm,
     RegistrationForm,
     CustomPasswordResetForm,
@@ -134,7 +135,7 @@ def isuccess(request):
 
 
 class ActivateAccountView(ActivationView):
-    success_url = reverse_lazy('accounts:login')
+    success_url = reverse_lazy('accounts:activate-complete')
     template_name = 'accounts/registration/activation_failed.html'
 
 
@@ -184,5 +185,8 @@ class PasswordChangeView(LoginRequiredMixin, auth_views.PasswordChangeView):
 class PasswordChangeDoneView(LoginRequiredMixin, auth_views.PasswordChangeDoneView):
     template_name = 'accounts/user/password_change_done.html'
 
-
+class CompleteProfileView(LoginRequiredMixin, UpdateView):
+    template_name = 'accounts/user/_form.html'
+    model = CustomerUser
+    form_class = CompleteProfileForm
 

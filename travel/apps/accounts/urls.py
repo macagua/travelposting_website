@@ -93,6 +93,11 @@ urlpatterns = [
     ),
 
     path(
+        'user/<int:pk>/complete/',
+        views.CompleteProfileView.as_view(),
+        name='user-complete-profile',
+    ),
+    path(
         'user/<int:pk>/update/',
         views.CustomUserUpdateView.as_view(),
         name='user-update',
