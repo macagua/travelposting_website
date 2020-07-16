@@ -62,7 +62,7 @@
                         {% endif %}
                         {% for field in form %}
                         <div class="js-form-message form-group">
-                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label> <!-- TODO: Add i18n support -->
                             {{ field }}
                             {{ field.help_text }}
                             {{ field.errors }}

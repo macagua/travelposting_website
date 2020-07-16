@@ -53,7 +53,8 @@
                         <div class="mb-3">
                             <h2 class="h6 mb-0">{% trans "Our Community" %}</h2><br>
                         </div>
-                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'signup-community' %}">{% trans "Go it" %}</a>
+                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'signup-community' %}"
+                           title="{% trans 'Go it' %}">{% trans 'Go it' %}</a>
                     </div>
                 </article>
                 <!-- End Icon Block -->
@@ -71,7 +72,8 @@
                         <div class="mb-3">
                             <h2 class="h6 mb-0">{% trans "Suppliers or companies" %}</h2>
                         </div>
-                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'accounts:register' %}">{% trans "Go it" %}</a>
+                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'accounts:register' %}"
+                           title="{% trans 'Go it' %}">{% trans 'Go it' %}</a>
                     </div>
                 </article>
                 <!-- End Icon Block -->

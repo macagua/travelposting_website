@@ -28,7 +28,8 @@
 
           <!-- Button -->
           <div class="ml-auto">
-            <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'accounts:login' %}">
+            <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'accounts:login' %}"
+               title="{% trans 'Login' %}">
               {% trans 'Login' %}
             </a>
           </div>
@@ -51,7 +52,8 @@
             <p class="text-white-70">{% trans 'Please see your inbox and validate your accounts ' %}</p>
           </div>
 
-          <a class="btn btn-white btn-wide text-primary transition-3d-hover" href="/">{% trans 'Visit our page or see our plans' %}</a>
+          <a class="btn btn-white btn-wide text-primary transition-3d-hover" href="/"
+             title="{% trans 'Visit our page or see our plans' %}">{% trans 'Visit our page or see our plans' %}</a>
         </div>
       </div>
     </div>

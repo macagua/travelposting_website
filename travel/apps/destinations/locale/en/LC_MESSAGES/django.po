@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-09 12:21-0400\n"
-"PO-Revision-Date: 2020-07-09 12:37-0400\n"
-"Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-07-16 08:53-0400\n"
+"PO-Revision-Date: 2020-07-13 00:39-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: apps/destinations/__OLD_VIEW.py:192
@@ -79,35 +78,35 @@ msgstr ""
 
 #: apps/destinations/fields.py:27
 msgid "Sunday"
-msgstr "Sunday"
+msgstr ""
 
 #: apps/destinations/fields.py:27
 msgid "Monday"
-msgstr "Monday"
+msgstr ""
 
 #: apps/destinations/fields.py:27
 msgid "Tuesday"
-msgstr "Tuesday"
+msgstr ""
 
 #: apps/destinations/fields.py:27
 msgid "Wednesday"
-msgstr "Wednesday"
+msgstr ""
 
 #: apps/destinations/fields.py:28
 msgid "Thursday"
-msgstr "Thursday"
+msgstr ""
 
 #: apps/destinations/fields.py:28
 msgid "Friday"
-msgstr "Friday"
+msgstr ""
 
 #: apps/destinations/fields.py:28
 msgid "Saturday"
-msgstr "Saturday"
+msgstr ""
 
 #: apps/destinations/fields.py:36
 msgid "String for storage days of lists"
-msgstr "String for storage days of lists "
+msgstr ""
 
 #: apps/destinations/forms.py:53 apps/destinations/models.py:84
 msgid "Category"
@@ -180,7 +179,7 @@ msgstr ""
 #: apps/destinations/templates/destinations/_booking_list.html:40
 #: apps/destinations/templates/destinations/booking_modal.html:21
 msgid "Name"
-msgstr "Surname"
+msgstr ""
 
 #: apps/destinations/models.py:61
 msgid "Alias"
@@ -214,7 +213,7 @@ msgstr ""
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:50
 #: apps/destinations/templates/destinations/map/maps.html:31
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 #: apps/destinations/models.py:124
 msgid "Departure Date"
@@ -286,7 +285,7 @@ msgstr ""
 
 #: apps/destinations/models.py:203 apps/destinations/models.py:694
 msgid "SKU"
-msgstr "SKU"
+msgstr ""
 
 #: apps/destinations/models.py:284
 msgid "Map Destination"
@@ -311,7 +310,7 @@ msgstr ""
 
 #: apps/destinations/models.py:319
 msgid "Sort"
-msgstr "Sort"
+msgstr ""
 
 #: apps/destinations/models.py:328
 msgid "No comment"
@@ -319,7 +318,7 @@ msgstr ""
 
 #: apps/destinations/models.py:332
 msgid "Thumbnail"
-msgstr "Thumbnail"
+msgstr ""
 
 #: apps/destinations/models.py:351
 msgid "Photo"
@@ -339,11 +338,11 @@ msgstr ""
 
 #: apps/destinations/models.py:392 apps/destinations/models.py:405
 msgid "Badge"
-msgstr "Badge"
+msgstr ""
 
 #: apps/destinations/models.py:393
 msgid "Badges"
-msgstr "Badges"
+msgstr ""
 
 #: apps/destinations/models.py:410
 msgid "Last minute"
@@ -355,7 +354,7 @@ msgstr ""
 
 #: apps/destinations/models.py:412
 msgid "FamTrip"
-msgstr "Famtrip"
+msgstr ""
 
 #: apps/destinations/models.py:413
 msgid "Congresses"
@@ -367,7 +366,7 @@ msgstr ""
 
 #: apps/destinations/models.py:415
 msgid "Hotel"
-msgstr "Hotel"
+msgstr ""
 
 #: apps/destinations/models.py:416
 msgid "Mobility"
@@ -379,11 +378,11 @@ msgstr ""
 
 #: apps/destinations/models.py:425 apps/destinations/models.py:462
 msgid "Tour"
-msgstr "Tour"
+msgstr ""
 
 #: apps/destinations/models.py:426
 msgid "Tours"
-msgstr "Tours"
+msgstr ""
 
 #: apps/destinations/models.py:436 apps/destinations/models.py:453
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:16
@@ -401,19 +400,19 @@ msgstr ""
 
 #: apps/destinations/models.py:469
 msgid "Option tab"
-msgstr "Option tab"
+msgstr ""
 
 #: apps/destinations/models.py:473 apps/destinations/models.py:1044
 msgid "Content"
-msgstr "Content"
+msgstr ""
 
 #: apps/destinations/models.py:483
 msgid "Tabs"
-msgstr "Tabs"
+msgstr ""
 
 #: apps/destinations/models.py:484
 msgid "Tab"
-msgstr "Tab"
+msgstr ""
 
 #: apps/destinations/models.py:500
 msgid "Template"
@@ -429,27 +428,27 @@ msgstr ""
 
 #: apps/destinations/models.py:527
 msgid "Display mode"
-msgstr "Display mode"
+msgstr ""
 
 #: apps/destinations/models.py:531 apps/destinations/models.py:576
 msgid "Default"
-msgstr "Default"
+msgstr ""
 
 #: apps/destinations/models.py:533
 msgid "Slider"
-msgstr "Slider"
+msgstr ""
 
 #: apps/destinations/models.py:534
 msgid "From list"
-msgstr "From list"
+msgstr ""
 
 #: apps/destinations/models.py:539
 msgid "Subtitle"
-msgstr "Subtitle"
+msgstr ""
 
 #: apps/destinations/models.py:553
 msgid "Parallax"
-msgstr "Parallax"
+msgstr ""
 
 #: apps/destinations/models.py:558
 msgid "Image repeat"
@@ -457,23 +456,23 @@ msgstr ""
 
 #: apps/destinations/models.py:563
 msgid "Repeat"
-msgstr "Repeat"
+msgstr ""
 
 #: apps/destinations/models.py:564
 msgid "No repeat"
-msgstr "No repeat"
+msgstr ""
 
 #: apps/destinations/models.py:565
 msgid "Repeat horizontally"
-msgstr "Repeat horizontally"
+msgstr ""
 
 #: apps/destinations/models.py:566
 msgid "Repeat vertically"
-msgstr "Repeat vertically"
+msgstr ""
 
 #: apps/destinations/models.py:571
 msgid "Mask"
-msgstr "Mask"
+msgstr ""
 
 #: apps/destinations/models.py:581
 msgid "Header sections"
@@ -485,11 +484,11 @@ msgstr ""
 
 #: apps/destinations/models.py:597
 msgid "Variable tour"
-msgstr "Variable tour"
+msgstr ""
 
 #: apps/destinations/models.py:602
 msgid "Virtual"
-msgstr "Virtual"
+msgstr ""
 
 #: apps/destinations/models.py:607
 msgid "Downloadable"
@@ -546,11 +545,11 @@ msgstr ""
 
 #: apps/destinations/models.py:672
 msgid "Reduced Rate"
-msgstr "Reduced Rate"
+msgstr ""
 
 #: apps/destinations/models.py:673
 msgid "Zero Rate"
-msgstr "Zero Rate"
+msgstr ""
 
 #: apps/destinations/models.py:678
 msgid "General details"
@@ -611,11 +610,11 @@ msgstr ""
 
 #: apps/destinations/models.py:754
 msgid "Start date"
-msgstr "Start date"
+msgstr ""
 
 #: apps/destinations/models.py:760
 msgid "End date"
-msgstr "End date"
+msgstr ""
 
 #: apps/destinations/models.py:768
 msgid "Days"
@@ -623,45 +622,45 @@ msgstr ""
 
 #: apps/destinations/models.py:772
 msgid "Number of tickets per tour"
-msgstr "Number of tickets per tour"
+msgstr ""
 
 #: apps/destinations/models.py:778
 msgid "Special price"
-msgstr "Special price"
+msgstr ""
 
 #: apps/destinations/models.py:788
 msgid "Mode"
-msgstr "Mode"
+msgstr ""
 
 #: apps/destinations/models.py:792
 msgid "Week days"
-msgstr "Week days"
+msgstr ""
 
 #: apps/destinations/models.py:793
 msgid "Exact dates"
-msgstr "Exact dates"
+msgstr ""
 
 #: apps/destinations/models.py:798
 msgid "Is active"
-msgstr "Is active"
+msgstr ""
 
 #: apps/destinations/models.py:802
 #: apps/destinations/templates/destinations/gallery/_list.html:144
 msgid "No"
-msgstr "No"
+msgstr ""
 
 #: apps/destinations/models.py:803
 #: apps/destinations/templates/destinations/gallery/_list.html:145
 msgid "Yes"
-msgstr "Yes"
+msgstr ""
 
 #: apps/destinations/models.py:809
 msgid "Booking details"
-msgstr "Booking details"
+msgstr ""
 
 #: apps/destinations/models.py:810
 msgid "Booking detail"
-msgstr "Booking detail"
+msgstr ""
 
 #: apps/destinations/models.py:818
 msgid "Names"
@@ -1263,8 +1262,6 @@ msgid ""
 "        Are you sure you want to delete the destination %(object)s?\n"
 "      "
 msgstr ""
-"\n"
-"Are you sure to delete the destination %(object)s?"
 
 #: apps/destinations/templates/destinations/_form.html:24
 msgid "Create a new Tour"
@@ -1295,15 +1292,15 @@ msgstr ""
 #: apps/destinations/templates/destinations/_form.html:66
 #: apps/destinations/templates/destinations/_form_old.html:164
 msgid "Tour Booking"
-msgstr "Tour Booking"
+msgstr ""
 
 #: apps/destinations/templates/destinations/_form_old.html:37
 msgid "Tour Data"
-msgstr "Tour Data"
+msgstr ""
 
 #: apps/destinations/templates/destinations/_form_old.html:44
 msgid "Header Section"
-msgstr "Header Section"
+msgstr ""
 
 #: apps/destinations/templates/destinations/_form_old.html:53
 msgid "Product Details"
@@ -1332,15 +1329,15 @@ msgstr ""
 
 #: apps/destinations/templates/destinations/_form_old.html:148
 msgid "General"
-msgstr "general"
+msgstr ""
 
 #: apps/destinations/templates/destinations/_form_old.html:197
 msgid "Add period"
-msgstr "Add period"
+msgstr ""
 
 #: apps/destinations/templates/destinations/_form_old.html:216
 msgid "Cancelar"
-msgstr "Cancel"
+msgstr ""
 
 #: apps/destinations/templates/destinations/_list.html:5
 msgid "Destination List"
@@ -1499,8 +1496,6 @@ msgid ""
 "Travelposting Solutions.\n"
 "            Enter your worldwide destinations"
 msgstr ""
-"Travelposting Solutions.\n"
-"Enter your tourist destinations worldwide"
 
 #: apps/destinations/templates/destinations/base.html:10
 msgid "Dashboard - Travelposting"
@@ -1683,7 +1678,7 @@ msgstr ""
 
 #: apps/destinations/templates/destinations/navbar_left.html:17
 msgid "Admin"
-msgstr "Admin"
+msgstr ""
 
 #: apps/destinations/templates/destinations/navbar_left.html:24
 msgid "Information"
@@ -1728,15 +1723,15 @@ msgstr ""
 
 #: apps/destinations/templates/destinations/navbar_top.html:9
 msgid "Search for something"
-msgstr "Search for something"
+msgstr ""
 
 #: apps/destinations/templates/destinations/sidebar.html:6
 msgid "OAuth2"
-msgstr "OAuth2"
+msgstr ""
 
 #: apps/destinations/templates/destinations/sidebar.html:13
 msgid "Applications"
-msgstr "Applications"
+msgstr ""
 
 #: apps/destinations/templates/destinations/social_modal.html:7
 msgid "Configurations social network"
@@ -1756,8 +1751,8 @@ msgid "Edit configurations social network"
 msgstr ""
 
 #: apps/destinations/templates/destinations/tab_data/_form.html:9
-msgid "Adicional tab"
-msgstr "Additional tab"
+msgid "Additional tab"
+msgstr ""
 
 #: apps/destinations/templates/destinations/tour/_form.html:101
 msgid "Include / Doesn't Include"
@@ -1849,7 +1844,7 @@ msgstr ""
 
 #: apps/destinations/templates/oauth2/authorized_token_list.html:16
 msgid "Tokens"
-msgstr "Tokens"
+msgstr ""
 
 #: apps/destinations/templates/oauth2/authorized_token_list.html:23
 msgid "revoke"

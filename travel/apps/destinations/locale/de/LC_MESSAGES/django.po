@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-09 12:21-0400\n"
-"PO-Revision-Date: 2020-07-09 12:22-0400\n"
-"Last-Translator: b'Nilo Escolar <info@xposting-service.com>'\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-07-16 08:53-0400\n"
+"PO-Revision-Date: 2020-07-13 00:33-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: apps/destinations/__OLD_VIEW.py:192
@@ -174,6 +173,45 @@ msgid ""
 "</tbody>\n"
 "</table>\n"
 msgstr ""
+"\n"
+"<strong>Wer wir sind</strong><br><br>\n"
+"\n"
+"<p><b>Bitte geben Sie hier Ihren Text ein...</b></p><br><br>\n"
+"\n"
+"<strong>Mission</strong><br><br>\n"
+"\n"
+"<p><b>Bitte geben Sie hier Ihren Text ein...</b></p><br><br>\n"
+"\n"
+"<table class='table table-bordered tours-tabs__table'\n"
+"       style='width: 100%px;'>\n"
+"<tbody>\n"
+"<tr>\n"
+"<td style='width: 213px;'><strong>BEENDEN / RÜCKKEHREN</strong></td>\n"
+"<td style='width: 574.233px;'><b>Geben Sie hier den Ausgang ein...</b></td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style='width: 213px;'><strong>EXITZEIT</strong></td>\n"
+"<td style='width: 574.233px;'><b>Geben Sie hier den Zeitpunkt des Austritts "
+"ein...</b></td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style='width: 213px;'><strong>ANKUNFTZEIT</strong></td>\n"
+"<td style='width: 574.233px;'><b>Geben Sie hier die Ankunftszeit ein...</b></"
+"td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style='width: 213px;'><strong>NUMMER DER TOUR FÜR RESERVIERUNGEN</"
+"strong></td>\n"
+"<td style='width: 574.233px;'><b>Geben Sie hier die Tournummer ein...</b></"
+"td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style='width: 213px;'><strong>ÜBERWEISUNG VON </strong></td>\n"
+"<td style='width: 574.233px;'><strong><b>Geben Sie hier die Überweisung "
+"ein...</b></strong></td>\n"
+"</tr>\n"
+"</tbody>\n"
+"</table>\n"
 
 #: apps/destinations/models.py:56 apps/destinations/models.py:104
 #: apps/destinations/models.py:312 apps/destinations/models.py:375
@@ -219,19 +257,19 @@ msgstr "Beschreibung"
 
 #: apps/destinations/models.py:124
 msgid "Departure Date"
-msgstr ""
+msgstr "Abreise-Datum"
 
 #: apps/destinations/models.py:129
 msgid "Arrival Date"
-msgstr ""
+msgstr "Anreise-Datum"
 
 #: apps/destinations/models.py:135
 msgid "Departure Time"
-msgstr ""
+msgstr "Abfahrtszeit"
 
 #: apps/destinations/models.py:141
 msgid "Arrival Time"
-msgstr ""
+msgstr "Ankunftszeit"
 
 #: apps/destinations/models.py:147
 msgid "Number of Reservations"
@@ -683,7 +721,7 @@ msgstr "E-Mail"
 
 #: apps/destinations/models.py:839
 msgid "Whatsapp"
-msgstr ""
+msgstr "Whatsapp"
 
 #: apps/destinations/models.py:847 apps/destinations/models.py:848
 msgid "Search Landing"
@@ -758,23 +796,23 @@ msgstr "Überprüfen Sie, ob das Netzwerk vom Benutzer verwendet wird."
 
 #: apps/destinations/models.py:967
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: apps/destinations/models.py:968
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: apps/destinations/models.py:969
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: apps/destinations/models.py:970
 msgid "Linkedin"
-msgstr ""
+msgstr "Linkedin"
 
 #: apps/destinations/models.py:971
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: apps/destinations/models.py:972
 #: apps/destinations/templates/destinations/social_modal.html:77
@@ -869,7 +907,7 @@ msgstr "Anzeigen des Werbestatus anzeigen"
 
 #: apps/destinations/models.py:1028
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: apps/destinations/models.py:1029
 msgid "Created"
@@ -877,7 +915,7 @@ msgstr "Erstellt"
 
 #: apps/destinations/models.py:1033
 msgid "Ads"
-msgstr ""
+msgstr "Werbungen"
 
 #: apps/destinations/models.py:1034
 msgid "Advertising"
@@ -1774,7 +1812,7 @@ msgid "Edit configurations social network"
 msgstr "Konfigurationen bearbeiten soziales Netzwerk"
 
 #: apps/destinations/templates/destinations/tab_data/_form.html:9
-msgid "Adicional tab"
+msgid "Additional tab"
 msgstr "Weitere Registerkarte"
 
 #: apps/destinations/templates/destinations/tour/_form.html:101
@@ -1962,6 +2000,70 @@ msgid ""
 "</tbody>\n"
 "</table>\n"
 msgstr ""
+"\n"
+"<strong>Geben Sie hier Ihren Titel ein...</strong><br><br>\n"
+"\n"
+"<p> <b>Bitte geben Sie hier Ihren Text ein...</b></p>\n"
+"\n"
+"¡<!--more--><br><br>\n"
+"\n"
+"<p> <b>Geben Sie hier weitere Informationen ein...</b></p>\n"
+"\n"
+"¡<!--more--><br><br>\n"
+"\n"
+"<strong>Wer wir sind</strong><br><br>\n"
+"\n"
+"<p><b>Please enter your text here...</b></p><br><br>\n"
+"\n"
+"<strong>Mission</strong><br><br>\n"
+"\n"
+"<p><b>Bitte geben Sie hier Ihren Text ein...</b></p><br><br>\n"
+"\n"
+"<table class='table table-bordered tours-tabs__table'\n"
+"       style='width: 100%px;'>\n"
+"<tbody>\n"
+"<tr>\n"
+" <td style='width: 213px;'><strong>BEENDEN / RÜCKKEHREN</strong></td>\n"
+" <td style='width: 574.233px;'><b>Geben Sie hier den Ausgang ein...</b></"
+"td>\n"
+"</tr>\n"
+"<tr>\n"
+" <td style='width: 213px;'><strong>EXITZEIT</strong></td>\n"
+" <td style='width: 574.233px;'><b>Geben Sie hier den Zeitpunkt des Austritts "
+"ein...</b></td>\n"
+"</tr>\n"
+"<tr>\n"
+" <td style='width: 213px;'><strong>ANKUNFTZEIT</strong></td>\n"
+" <td style='width: 574.233px;'><b>Geben Sie hier die Ankunftszeit ein...</"
+"b></td>\n"
+"</tr>\n"
+"<tr>\n"
+" <td style='width: 213px;'><strong>NUMMER DER TOUR FÜR RESERVIERUNGEN</"
+"strong></td>\n"
+" <td style='width: 574.233px;'><b>Geben Sie hier die Tournummer ein...</b></"
+"td>\n"
+"</tr>\n"
+"<tr>\n"
+" <td style='width: 213px;'><strong>ÜBERWEISUNG VON </strong></td>\n"
+" <td style='width: 574.233px;'><strong><b>Geben Sie hier die Überweisung "
+"ein...</b></strong></td>\n"
+"</tr>\n"
+"<tr>\n"
+" <td style='width: 213px;'><strong>EINSCHLIESSLICH</strong></td>\n"
+" <td style='width: 574.233px;'>\n"
+"  <b>Geben Sie hier ein, was im Paket als Liste enthalten ist...</b>\n"
+"  <ul><li><b><br></b></li><li><b><br></b></li><li><b><br></b></li></ul>\n"
+" </td>\n"
+"</tr>\n"
+"<tr>\n"
+" <td style='width: 213px;'><strong>NICHT EINGESCHLOSSEN</strong></td>\n"
+" <td style='width: 574.233px;'>\n"
+"  <b>Tragen Sie hier ein, was nicht im Paket als Liste enthalten ist...</b>\n"
+"  <ul><li><b><br></b></li><li><b><br></b></li><li><b><br></b></li></ul>\n"
+" </td>\n"
+"</tr>\n"
+"</tbody>\n"
+"</table>\n"
 
 #: apps/destinations/views/booking.py:133
 msgid "a new map has been added to your destination"

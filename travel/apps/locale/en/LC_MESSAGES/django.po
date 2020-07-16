@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-09 12:21-0400\n"
-"PO-Revision-Date: 2020-07-09 12:24-0428\n"
-"Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-07-16 08:53-0400\n"
+"PO-Revision-Date: 2020-07-13 14:43-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: apps/accounts/admin.py:14 apps/accounts/admin.py:92
@@ -135,8 +134,8 @@ msgid "email address"
 msgstr ""
 
 #: apps/accounts/models.py:74
-#: apps/accounts/templates/accounts/user/_detail.html:114
-#: apps/accounts/templates/accounts/user/_detail.html:123
+#: apps/accounts/templates/accounts/user/_detail.html:115
+#: apps/accounts/templates/accounts/user/_detail.html:124
 msgid "Plan"
 msgstr ""
 
@@ -149,7 +148,7 @@ msgid "Coupon"
 msgstr ""
 
 #: apps/accounts/models.py:96
-#: apps/accounts/templates/accounts/user/_detail.html:132
+#: apps/accounts/templates/accounts/user/_detail.html:133
 #: apps/community/templates/community/registration/notify_register_admin_body.html:59
 msgid "Company name"
 msgstr ""
@@ -159,7 +158,7 @@ msgid "Commercial address"
 msgstr ""
 
 #: apps/accounts/models.py:110
-#: apps/accounts/templates/accounts/user/_detail.html:97
+#: apps/accounts/templates/accounts/user/_detail.html:98
 msgid "Postal code"
 msgstr ""
 
@@ -169,7 +168,7 @@ msgstr ""
 
 #: apps/accounts/models.py:124
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
-#: apps/accounts/templates/accounts/user/_detail.html:81
+#: apps/accounts/templates/accounts/user/_detail.html:82
 #: apps/community/templates/community/registration/notify_register_admin_body.html:60
 msgid "Country"
 msgstr ""
@@ -188,7 +187,7 @@ msgid "Title (Contact person)"
 msgstr ""
 
 #: apps/accounts/models.py:152
-#: apps/accounts/templates/accounts/user/_detail.html:149
+#: apps/accounts/templates/accounts/user/_detail.html:150
 msgid "Position in the company"
 msgstr ""
 
@@ -401,8 +400,10 @@ msgstr ""
 msgid "Comment by %(body)s"
 msgstr ""
 
+#: apps/accounts/templates/accounts/base.html:7
 #: apps/accounts/templates/accounts/footer.html:5
 #: apps/accounts/templates/accounts/registration/forgot_password.html:14
+#: apps/accounts/templates/accounts/registration/forgot_password.html:15
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:25
 #: apps/accounts/templates/accounts/registration/login.html:14
 #: apps/accounts/templates/accounts/registration/login.html:15
@@ -599,14 +600,16 @@ msgstr ""
 msgid "Front"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:20
+#: apps/accounts/templates/accounts/registration/forgot_password.html:21
+#: apps/accounts/templates/accounts/registration/forgot_password.html:22
 #: apps/accounts/templates/accounts/registration/login.html:20
 #: apps/accounts/templates/accounts/registration/login.html:21
+#: apps/accounts/templates/accounts/registration/register_form.html:19
 #: apps/accounts/templates/accounts/registration/register_form.html:20
 msgid "Go back"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:53
+#: apps/accounts/templates/accounts/registration/forgot_password.html:55
 msgid ""
 "\n"
 "                                    Forgot your <span class='font-weight-"
@@ -614,12 +617,12 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:57
+#: apps/accounts/templates/accounts/registration/forgot_password.html:59
 msgid "Enter your email address below."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:62
-#: apps/accounts/templates/accounts/registration/forgot_password.html:63
+#: apps/accounts/templates/accounts/registration/forgot_password.html:64
+#: apps/accounts/templates/accounts/registration/forgot_password.html:65
 #: apps/community/templates/accounts/customeruser_list.html:26
 #: apps/community/templates/community/dashboard/dashboard.html:79
 #: apps/community/templates/community/registration/forget_password.html:25
@@ -628,62 +631,62 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:63
+#: apps/accounts/templates/accounts/registration/forgot_password.html:65
 #: apps/community/templates/community/registration/forget_password.html:27
 #: main/templates/index.html:94 main/templates/pages/show_header.html:94
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:69
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:70
+#: apps/accounts/templates/accounts/registration/forgot_password.html:72
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:72
 #: apps/community/templates/community/registration/forget_password.html:35
 msgid "Back to sign in"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:72
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:73
+#: apps/accounts/templates/accounts/registration/forgot_password.html:75
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:75
 #: apps/community/templates/community/registration/forget_password.html:39
 msgid "Request Reset Link"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:32
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:33
 #: apps/accounts/templates/accounts/registration/login.html:83
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:33
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:55
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:34
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:57
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-#: apps/accounts/templates/accounts/registration/register_form.html:106
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:21
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:55
+#: apps/accounts/templates/accounts/registration/register_form.html:107
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
+#: apps/accounts/templates/accounts/registration/succes_register.html:33
 #: apps/community/templates/community/registration/login.html:45
 #: apps/community/templates/community/registration/signup.html:57
 #: main/templates/index.html:136
 msgid "Login"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:50
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
 msgid "We need to verify your identity"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:52
 msgid "Please check your email, and follow the next intructions"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
-msgid "accounts:register"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:56
 msgid "do have accounts?"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:68
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:70
 msgid "Travelposting 2019 All Rights Reserved Site Map Disclaimer."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:78
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:79
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:78
-#: apps/accounts/templates/accounts/registration/succes_register.html:78
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:80
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:81
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:79
+#: apps/accounts/templates/accounts/registration/succes_register.html:80
 #: apps/community/templates/community/dashboard/dashboard.html:155
 #: apps/community/templates/community/profile/my_profile.html:176
 #: main/templates/coming-soon.html:129 main/templates/footer.html:100
@@ -691,10 +694,10 @@ msgstr ""
 msgid "Follow us at Facebook"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:85
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:86
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:85
-#: apps/accounts/templates/accounts/registration/succes_register.html:85
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:87
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:88
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:86
+#: apps/accounts/templates/accounts/registration/succes_register.html:87
 #: apps/community/templates/community/dashboard/dashboard.html:173
 #: apps/community/templates/community/profile/my_profile.html:182
 #: main/templates/coming-soon.html:136 main/templates/footer.html:107
@@ -702,10 +705,10 @@ msgstr ""
 msgid "Follow us at Instagram"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:92
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:93
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:92
-#: apps/accounts/templates/accounts/registration/succes_register.html:92
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:94
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:95
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:93
+#: apps/accounts/templates/accounts/registration/succes_register.html:94
 #: apps/community/templates/community/dashboard/dashboard.html:167
 #: apps/community/templates/community/profile/my_profile.html:188
 #: main/templates/coming-soon.html:143 main/templates/footer.html:114
@@ -713,10 +716,10 @@ msgstr ""
 msgid "Follow us at Twitter"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:99
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:100
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:99
-#: apps/accounts/templates/accounts/registration/succes_register.html:99
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:101
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:102
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:100
+#: apps/accounts/templates/accounts/registration/succes_register.html:101
 #: main/templates/coming-soon.html:150 main/templates/footer.html:121
 #: main/templates/hotels.html:86
 msgid "Contact us via WhatsApp"
@@ -763,25 +766,27 @@ msgstr ""
 msgid "User registration: "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:51
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:52
 msgid "Your password has been changed successfully!"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:52
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:53
 msgid "Come back to our website and enjoy all our new plans."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:52
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:53
 msgid " Travelposting"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:53
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:54
 msgid "Enter the new password and confirm the new password."
 msgstr ""
 
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:31
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:32
-#: apps/community/templates/community/dashboard/breadcrumb.html:57
+#: apps/community/templates/community/dashboard/breadcrumb.html:58
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:39
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:40
 msgid "Home"
 msgstr ""
 
@@ -793,10 +798,6 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:51
 msgid "Welcome back our website and enjoy all our new plans."
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-msgid "accounts:login"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/password_reset_email.html:48
@@ -845,19 +846,19 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/register_form.html:109
+#: apps/accounts/templates/accounts/registration/register_form.html:110
 msgid "Create account"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:50
+#: apps/accounts/templates/accounts/registration/succes_register.html:51
 msgid "Thank you for your register"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:51
+#: apps/accounts/templates/accounts/registration/succes_register.html:52
 msgid "Please see your inbox and validate your accounts "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:54
+#: apps/accounts/templates/accounts/registration/succes_register.html:56
 msgid "Visit our page or see our plans"
 msgstr ""
 
@@ -869,55 +870,56 @@ msgstr ""
 msgid "Profile Detail"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:16
+#: apps/accounts/templates/accounts/user/_detail.html:15
+#: apps/accounts/templates/accounts/user/_detail.html:17
 msgid "Edit"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:44
+#: apps/accounts/templates/accounts/user/_detail.html:45
 msgid "Sessions"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:53
+#: apps/accounts/templates/accounts/user/_detail.html:54
 msgid "Last login"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:55
+#: apps/accounts/templates/accounts/user/_detail.html:56
 msgid "Date of registration"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:57
+#: apps/accounts/templates/accounts/user/_detail.html:58
 msgid "Phone"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:62
-#: apps/accounts/templates/accounts/user/_detail.html:86
+#: apps/accounts/templates/accounts/user/_detail.html:63
+#: apps/accounts/templates/accounts/user/_detail.html:87
 msgid "Not registered yet"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:72
+#: apps/accounts/templates/accounts/user/_detail.html:73
 msgid "Direction"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:89
+#: apps/accounts/templates/accounts/user/_detail.html:90
 msgid "State"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:94
-#: apps/accounts/templates/accounts/user/_detail.html:102
-#: apps/accounts/templates/accounts/user/_detail.html:128
-#: apps/accounts/templates/accounts/user/_detail.html:137
-#: apps/accounts/templates/accounts/user/_detail.html:146
-#: apps/accounts/templates/accounts/user/_detail.html:154
+#: apps/accounts/templates/accounts/user/_detail.html:95
+#: apps/accounts/templates/accounts/user/_detail.html:103
+#: apps/accounts/templates/accounts/user/_detail.html:129
+#: apps/accounts/templates/accounts/user/_detail.html:138
+#: apps/accounts/templates/accounts/user/_detail.html:147
+#: apps/accounts/templates/accounts/user/_detail.html:155
 msgid "Not registered yet "
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:105
+#: apps/accounts/templates/accounts/user/_detail.html:106
 #: apps/community/templates/community/dashboard/profile_user.html:170
 #: apps/community/templates/community/profile/my_profile.html:165
 msgid "Language"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:141
+#: apps/accounts/templates/accounts/user/_detail.html:142
 msgid "Company address"
 msgstr ""
 
@@ -1091,8 +1093,8 @@ msgstr ""
 msgid "Save Password"
 msgstr ""
 
-#: apps/community/templates/accounts/change_password.html:100
-#: apps/community/templates/accounts/customeruser_list.html:185
+#: apps/community/templates/accounts/change_password.html:101
+#: apps/community/templates/accounts/customeruser_list.html:186
 #: apps/community/templates/community/dashboard/mail.html:242
 #: apps/community/templates/community/dashboard/mail.html:483
 #: apps/community/templates/community/dashboard/profile_user.html:304
@@ -1103,7 +1105,7 @@ msgstr ""
 
 #: apps/community/templates/accounts/customeruser_list.html:20
 msgid "Search Result"
-msgstr "Search Result"
+msgstr ""
 
 #: apps/community/templates/accounts/customeruser_list.html:26
 #: apps/community/templates/community/dashboard/dashboard.html:79
@@ -1124,24 +1126,25 @@ msgstr ""
 msgid "Update your profile picture"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:141
+#: apps/community/templates/accounts/customeruser_list.html:140
+#: apps/community/templates/accounts/customeruser_list.html:142
 #: apps/community/templates/community/dashboard/profile_user.html:40
 msgid "Send a Message"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:150
+#: apps/community/templates/accounts/customeruser_list.html:151
 #: apps/community/templates/community/dashboard/dashboard.html:143
 msgid "Add to favorites"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:166
+#: apps/community/templates/accounts/customeruser_list.html:167
 #: apps/community/templates/community/dashboard/mail.html:219
 #: apps/community/templates/community/dashboard/mail.html:455
 #: apps/community/templates/community/dashboard/profile_user.html:286
 msgid "Send message to"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:167
+#: apps/community/templates/accounts/customeruser_list.html:168
 #: apps/community/templates/community/dashboard/mail.html:220
 #: apps/community/templates/community/dashboard/mail.html:456
 #: apps/community/templates/community/dashboard/profile_user.html:287
@@ -1157,8 +1160,8 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:173
-#: apps/community/templates/accounts/customeruser_list.html:175
+#: apps/community/templates/accounts/customeruser_list.html:174
+#: apps/community/templates/accounts/customeruser_list.html:176
 #: apps/community/templates/community/dashboard/mail.html:128
 #: apps/community/templates/community/dashboard/mail.html:230
 #: apps/community/templates/community/dashboard/mail.html:232
@@ -1171,7 +1174,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:179
+#: apps/community/templates/accounts/customeruser_list.html:180
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:299
@@ -1179,7 +1182,7 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:186
+#: apps/community/templates/accounts/customeruser_list.html:187
 #: apps/community/templates/community/dashboard/mail.html:243
 #: apps/community/templates/community/dashboard/mail.html:484
 #: apps/community/templates/community/dashboard/profile_user.html:305
@@ -1394,8 +1397,10 @@ msgid "has sent you a new message"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/_email_inbox.html:102
-#: apps/community/templates/community/dashboard/breadcrumb.html:61
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:44
+#: apps/community/templates/community/dashboard/breadcrumb.html:62
+#: apps/community/templates/community/dashboard/breadcrumb.html:63
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:45
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:46
 #: apps/community/templates/community/dashboard/mail.html:42
 msgid "Inbox"
 msgstr ""
@@ -1441,7 +1446,7 @@ msgstr ""
 #: main/templates/menu/navbar_all.html:275
 #: main/templates/modal_contact_us/modal.html:22
 #: main/templates/modal_contact_us/modal.html:31
-#: main/templates/presignup.html:90 main/templates/presignup.html:97
+#: main/templates/presignup.html:92 main/templates/presignup.html:99
 #: main/templates/services/destination/all.html:47
 #: main/templates/services/destination/sponsors.html:36
 #: main/templates/services/destination/testimonials.html:41
@@ -1449,33 +1454,38 @@ msgstr ""
 msgid "Image Description"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:65
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:52
+#: apps/community/templates/community/dashboard/breadcrumb.html:68
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:55
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:56
 #: main/templates/pages/show_header.html:49
 #: main/templates/services/destination/destinations_for_categorie_backup.html:72
 msgid "Destinations"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:68
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:58
+#: apps/community/templates/community/dashboard/breadcrumb.html:72
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:62
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:63
 msgid "Logout"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:82
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:75
+#: apps/community/templates/community/dashboard/breadcrumb.html:85
+#: apps/community/templates/community/dashboard/breadcrumb.html:87
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:78
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
 msgid "Edit Profile"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:88
+#: apps/community/templates/community/dashboard/breadcrumb.html:93
 msgid "Following"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:48
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:51
 #: apps/landing_page/models.py:54
 msgid "Prices"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:84
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:85
 msgid "See my profile"
 msgstr ""
 
@@ -3343,7 +3353,8 @@ msgstr ""
 msgid "SignUp"
 msgstr ""
 
-#: main/templates/menu/menu.html:64 main/templates/menu/menu.html:78
+#: main/templates/menu/menu.html:64 main/templates/menu/menu.html:77
+#: main/templates/menu/menu.html:78
 msgid "SignIn"
 msgstr ""
 
@@ -3526,7 +3537,7 @@ msgstr ""
 #: main/templates/pages/show_header.html:36
 #: main/templates/pages/show_header.html:48
 msgid "Search by"
-msgstr "Search by"
+msgstr ""
 
 #: main/templates/pages/show_header.html:59
 msgid "We seek for you?"
@@ -3613,11 +3624,11 @@ msgstr ""
 msgid "Please select a registration type."
 msgstr ""
 
-#: main/templates/presignup.html:56 main/templates/presignup.html:74
+#: main/templates/presignup.html:57 main/templates/presignup.html:76
 msgid "Go it"
 msgstr ""
 
-#: main/templates/presignup.html:72
+#: main/templates/presignup.html:73
 msgid "Suppliers or companies"
 msgstr ""
 
@@ -3627,7 +3638,7 @@ msgstr ""
 
 #: main/templates/pricing.html:24
 msgid "Ofert on"
-msgstr "Ofert en"
+msgstr ""
 
 #: main/templates/pricing.html:26
 msgid ""

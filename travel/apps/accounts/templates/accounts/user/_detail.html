@@ -11,7 +11,8 @@
                     <div class="ibox-title">
                         <h5>{% trans "Profile Detail" %}</h5>
                         <div class="ibox-tools">
-                            <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white">
+                            <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white"
+                               title="{% trans 'Edit' %}">
                             <i class="fa fa-edit"></i>
                             {% trans "Edit" %}
                             </a>

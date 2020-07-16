@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-09 12:21-0400\n"
-"PO-Revision-Date: 2020-07-09 12:33-0428\n"
-"Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-07-16 08:53-0400\n"
+"PO-Revision-Date: 2020-07-13 14:41-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: apps/accounts/admin.py:14 apps/accounts/admin.py:92
@@ -138,8 +137,8 @@ msgid "email address"
 msgstr "E-Mail-Adresse"
 
 #: apps/accounts/models.py:74
-#: apps/accounts/templates/accounts/user/_detail.html:114
-#: apps/accounts/templates/accounts/user/_detail.html:123
+#: apps/accounts/templates/accounts/user/_detail.html:115
+#: apps/accounts/templates/accounts/user/_detail.html:124
 msgid "Plan"
 msgstr "Plan"
 
@@ -152,7 +151,7 @@ msgid "Coupon"
 msgstr "Gutschein"
 
 #: apps/accounts/models.py:96
-#: apps/accounts/templates/accounts/user/_detail.html:132
+#: apps/accounts/templates/accounts/user/_detail.html:133
 #: apps/community/templates/community/registration/notify_register_admin_body.html:59
 msgid "Company name"
 msgstr "Name des Unternehmens"
@@ -162,7 +161,7 @@ msgid "Commercial address"
 msgstr "Kommerzielle Adresse"
 
 #: apps/accounts/models.py:110
-#: apps/accounts/templates/accounts/user/_detail.html:97
+#: apps/accounts/templates/accounts/user/_detail.html:98
 msgid "Postal code"
 msgstr "Postleitzahl"
 
@@ -172,7 +171,7 @@ msgstr "Stadt / Bundesland / Gemeinde"
 
 #: apps/accounts/models.py:124
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
-#: apps/accounts/templates/accounts/user/_detail.html:81
+#: apps/accounts/templates/accounts/user/_detail.html:82
 #: apps/community/templates/community/registration/notify_register_admin_body.html:60
 msgid "Country"
 msgstr "Land"
@@ -193,7 +192,7 @@ msgid "Title (Contact person)"
 msgstr "Titel (Ansprechpartner)"
 
 #: apps/accounts/models.py:152
-#: apps/accounts/templates/accounts/user/_detail.html:149
+#: apps/accounts/templates/accounts/user/_detail.html:150
 msgid "Position in the company"
 msgstr "Position im Unternehmen"
 
@@ -253,7 +252,7 @@ msgstr "Über mich"
 
 #: apps/accounts/models.py:220
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: apps/accounts/models.py:226 apps/landing_page/models.py:495
 #: main/templates/datenshutz_form_privacity.html:132
@@ -270,11 +269,11 @@ msgstr "ist aktiv?"
 
 #: apps/accounts/models.py:229
 msgid "is staff?"
-msgstr ""
+msgstr "ist Personal?"
 
 #: apps/accounts/models.py:230
 msgid "is superuser?"
-msgstr ""
+msgstr "ist Superuser?"
 
 #: apps/accounts/models.py:231
 msgid "is community?"
@@ -306,19 +305,19 @@ msgstr "Benutzer"
 
 #: apps/accounts/models.py:274
 msgid "Last Visit IP"
-msgstr ""
+msgstr "Letzter Besuch IP"
 
 #: apps/accounts/models.py:275
 msgid "Lasts Visits IP"
-msgstr ""
+msgstr "Letzte Besuche IP"
 
 #: apps/accounts/models.py:303
 msgid "User that creates the relationship"
-msgstr ""
+msgstr "Benutzer, der die Beziehung erstellt"
 
 #: apps/accounts/models.py:307
 msgid "User being followed"
-msgstr ""
+msgstr "Benutzer wird verfolgt"
 
 #: apps/accounts/models.py:310 apps/accounts/models.py:358
 #: apps/community/models.py:67 apps/landing_page/models.py:95
@@ -384,15 +383,15 @@ msgstr "Eltern"
 
 #: apps/accounts/models.py:366
 msgid "Likes"
-msgstr ""
+msgstr "Mag"
 
 #: apps/accounts/models.py:367
 msgid "Height"
-msgstr ""
+msgstr "Höhe"
 
 #: apps/accounts/models.py:368
 msgid "Width"
-msgstr ""
+msgstr "Breite"
 
 #: apps/accounts/models.py:374
 msgid "Comment"
@@ -407,8 +406,10 @@ msgstr "Kommentaren"
 msgid "Comment by %(body)s"
 msgstr "Kommentar von %(body)s"
 
+#: apps/accounts/templates/accounts/base.html:7
 #: apps/accounts/templates/accounts/footer.html:5
 #: apps/accounts/templates/accounts/registration/forgot_password.html:14
+#: apps/accounts/templates/accounts/registration/forgot_password.html:15
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:25
 #: apps/accounts/templates/accounts/registration/login.html:14
 #: apps/accounts/templates/accounts/registration/login.html:15
@@ -620,14 +621,16 @@ msgstr "Travelposting: Mail-Bestätigung"
 msgid "Front"
 msgstr "Vorderseite"
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:20
+#: apps/accounts/templates/accounts/registration/forgot_password.html:21
+#: apps/accounts/templates/accounts/registration/forgot_password.html:22
 #: apps/accounts/templates/accounts/registration/login.html:20
 #: apps/accounts/templates/accounts/registration/login.html:21
+#: apps/accounts/templates/accounts/registration/register_form.html:19
 #: apps/accounts/templates/accounts/registration/register_form.html:20
 msgid "Go back"
 msgstr "Gehen Sie zurück."
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:53
+#: apps/accounts/templates/accounts/registration/forgot_password.html:55
 msgid ""
 "\n"
 "                                    Forgot your <span class='font-weight-"
@@ -639,12 +642,12 @@ msgstr ""
 "semi-bold'>Passwort vergessen?</span>\n"
 "                                    "
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:57
+#: apps/accounts/templates/accounts/registration/forgot_password.html:59
 msgid "Enter your email address below."
 msgstr "Geben Sie unten Ihre E-Mail-Adresse ein."
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:62
-#: apps/accounts/templates/accounts/registration/forgot_password.html:63
+#: apps/accounts/templates/accounts/registration/forgot_password.html:64
+#: apps/accounts/templates/accounts/registration/forgot_password.html:65
 #: apps/community/templates/accounts/customeruser_list.html:26
 #: apps/community/templates/community/dashboard/dashboard.html:79
 #: apps/community/templates/community/registration/forget_password.html:25
@@ -653,63 +656,63 @@ msgstr "Geben Sie unten Ihre E-Mail-Adresse ein."
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:63
+#: apps/accounts/templates/accounts/registration/forgot_password.html:65
 #: apps/community/templates/community/registration/forget_password.html:27
 #: main/templates/index.html:94 main/templates/pages/show_header.html:94
 msgid "Please enter a valid email address."
 msgstr "Bitte geben Sie eine gültige E-Mail Adresse ein."
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:69
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:70
+#: apps/accounts/templates/accounts/registration/forgot_password.html:72
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:72
 #: apps/community/templates/community/registration/forget_password.html:35
 msgid "Back to sign in"
 msgstr "Zurück zur Anmeldung."
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:72
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:73
+#: apps/accounts/templates/accounts/registration/forgot_password.html:75
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:75
 #: apps/community/templates/community/registration/forget_password.html:39
 msgid "Request Reset Link"
 msgstr "Reset-Link anfordern"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:32
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:33
 #: apps/accounts/templates/accounts/registration/login.html:83
 #: apps/accounts/templates/accounts/registration/password_reset_complete.html:33
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:55
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:34
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:57
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-#: apps/accounts/templates/accounts/registration/register_form.html:106
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:21
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:55
+#: apps/accounts/templates/accounts/registration/register_form.html:107
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
+#: apps/accounts/templates/accounts/registration/succes_register.html:33
 #: apps/community/templates/community/registration/login.html:45
 #: apps/community/templates/community/registration/signup.html:57
 #: main/templates/index.html:136
 msgid "Login"
 msgstr "Anmeldung"
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:50
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
 msgid "We need to verify your identity"
 msgstr "Wir müssen Ihre Identität überprüfen."
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:52
 msgid "Please check your email, and follow the next intructions"
 msgstr ""
 "Bitte überprüfen Sie Ihre E-Mail, und folgen Sie den nächsten Instruktionen."
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
-msgid "accounts:register"
-msgstr "accounts:Register"
-
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:56
 msgid "do have accounts?"
 msgstr "Haben Sie Konten?"
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:68
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:70
 msgid "Travelposting 2019 All Rights Reserved Site Map Disclaimer."
 msgstr "Travelposting 2019 Alle Rechte vorbehalten Site Map Disclaimer."
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:78
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:79
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:78
-#: apps/accounts/templates/accounts/registration/succes_register.html:78
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:80
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:81
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:79
+#: apps/accounts/templates/accounts/registration/succes_register.html:80
 #: apps/community/templates/community/dashboard/dashboard.html:155
 #: apps/community/templates/community/profile/my_profile.html:176
 #: main/templates/coming-soon.html:129 main/templates/footer.html:100
@@ -717,10 +720,10 @@ msgstr "Travelposting 2019 Alle Rechte vorbehalten Site Map Disclaimer."
 msgid "Follow us at Facebook"
 msgstr "Folgen Sie uns auf Facebook"
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:85
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:86
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:85
-#: apps/accounts/templates/accounts/registration/succes_register.html:85
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:87
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:88
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:86
+#: apps/accounts/templates/accounts/registration/succes_register.html:87
 #: apps/community/templates/community/dashboard/dashboard.html:173
 #: apps/community/templates/community/profile/my_profile.html:182
 #: main/templates/coming-soon.html:136 main/templates/footer.html:107
@@ -728,10 +731,10 @@ msgstr "Folgen Sie uns auf Facebook"
 msgid "Follow us at Instagram"
 msgstr "Folgen Sie uns auf Instagram"
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:92
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:93
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:92
-#: apps/accounts/templates/accounts/registration/succes_register.html:92
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:94
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:95
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:93
+#: apps/accounts/templates/accounts/registration/succes_register.html:94
 #: apps/community/templates/community/dashboard/dashboard.html:167
 #: apps/community/templates/community/profile/my_profile.html:188
 #: main/templates/coming-soon.html:143 main/templates/footer.html:114
@@ -739,10 +742,10 @@ msgstr "Folgen Sie uns auf Instagram"
 msgid "Follow us at Twitter"
 msgstr "Folgen Sie uns auf Twitter"
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:99
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:100
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:99
-#: apps/accounts/templates/accounts/registration/succes_register.html:99
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:101
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:102
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:100
+#: apps/accounts/templates/accounts/registration/succes_register.html:101
 #: main/templates/coming-soon.html:150 main/templates/footer.html:121
 #: main/templates/hotels.html:86
 msgid "Contact us via WhatsApp"
@@ -789,26 +792,28 @@ msgstr "Benutzer registriert"
 msgid "User registration: "
 msgstr "Benutzer-Registrierung: "
 
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:51
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:52
 msgid "Your password has been changed successfully!"
 msgstr "Ihr Passwort wurde erfolgreich geändert!"
 
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:52
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:53
 msgid "Come back to our website and enjoy all our new plans."
 msgstr ""
 "Kommen Sie zurück auf unsere Website und genießen Sie all unsere neuen Pläne."
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:52
-msgid " Travelposting"
-msgstr "Travelposting"
-
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:53
+msgid " Travelposting"
+msgstr " Travelposting"
+
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:54
 msgid "Enter the new password and confirm the new password."
 msgstr "Geben Sie das neue Passwort ein und bestätigen Sie das neue Passwort."
 
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:31
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:32
-#: apps/community/templates/community/dashboard/breadcrumb.html:57
+#: apps/community/templates/community/dashboard/breadcrumb.html:58
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:39
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:40
 msgid "Home"
 msgstr "Startseite"
 
@@ -826,10 +831,6 @@ msgid "Welcome back our website and enjoy all our new plans."
 msgstr ""
 "Willkommen zurück auf unserer Website und genießen Sie alle unsere neuen "
 "Pläne."
-
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-msgid "accounts:login"
-msgstr "accounts:login"
 
 #: apps/accounts/templates/accounts/registration/password_reset_email.html:48
 #: apps/accounts/templates/accounts/registration/password_reset_email.html:65
@@ -879,19 +880,19 @@ msgstr "Nein"
 msgid "Already have an account?"
 msgstr "Haben Sie bereits ein Konto?"
 
-#: apps/accounts/templates/accounts/registration/register_form.html:109
+#: apps/accounts/templates/accounts/registration/register_form.html:110
 msgid "Create account"
 msgstr "Benutzerkonto erstellen"
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:50
+#: apps/accounts/templates/accounts/registration/succes_register.html:51
 msgid "Thank you for your register"
 msgstr "Vielen Dank für Ihre Anmeldung"
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:51
+#: apps/accounts/templates/accounts/registration/succes_register.html:52
 msgid "Please see your inbox and validate your accounts "
 msgstr "Bitte sehen Sie Ihren Posteingang und validieren Sie Ihre Konto."
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:54
+#: apps/accounts/templates/accounts/registration/succes_register.html:56
 msgid "Visit our page or see our plans"
 msgstr "Besuchen Sie unsere Seite oder sehen Sie unsere Pläne."
 
@@ -903,55 +904,56 @@ msgstr "Informationen für Benutzer"
 msgid "Profile Detail"
 msgstr "Profil Detail"
 
-#: apps/accounts/templates/accounts/user/_detail.html:16
+#: apps/accounts/templates/accounts/user/_detail.html:15
+#: apps/accounts/templates/accounts/user/_detail.html:17
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: apps/accounts/templates/accounts/user/_detail.html:44
+#: apps/accounts/templates/accounts/user/_detail.html:45
 msgid "Sessions"
 msgstr "Sitzungen"
 
-#: apps/accounts/templates/accounts/user/_detail.html:53
+#: apps/accounts/templates/accounts/user/_detail.html:54
 msgid "Last login"
 msgstr "Letzte Anmeldung"
 
-#: apps/accounts/templates/accounts/user/_detail.html:55
+#: apps/accounts/templates/accounts/user/_detail.html:56
 msgid "Date of registration"
 msgstr "Datum der Anmeldung"
 
-#: apps/accounts/templates/accounts/user/_detail.html:57
+#: apps/accounts/templates/accounts/user/_detail.html:58
 msgid "Phone"
 msgstr "Telefon"
 
-#: apps/accounts/templates/accounts/user/_detail.html:62
-#: apps/accounts/templates/accounts/user/_detail.html:86
+#: apps/accounts/templates/accounts/user/_detail.html:63
+#: apps/accounts/templates/accounts/user/_detail.html:87
 msgid "Not registered yet"
 msgstr "Noch nicht registriert"
 
-#: apps/accounts/templates/accounts/user/_detail.html:72
+#: apps/accounts/templates/accounts/user/_detail.html:73
 msgid "Direction"
 msgstr "Wegbeschreibung"
 
-#: apps/accounts/templates/accounts/user/_detail.html:89
+#: apps/accounts/templates/accounts/user/_detail.html:90
 msgid "State"
 msgstr "Stadt"
 
-#: apps/accounts/templates/accounts/user/_detail.html:94
-#: apps/accounts/templates/accounts/user/_detail.html:102
-#: apps/accounts/templates/accounts/user/_detail.html:128
-#: apps/accounts/templates/accounts/user/_detail.html:137
-#: apps/accounts/templates/accounts/user/_detail.html:146
-#: apps/accounts/templates/accounts/user/_detail.html:154
+#: apps/accounts/templates/accounts/user/_detail.html:95
+#: apps/accounts/templates/accounts/user/_detail.html:103
+#: apps/accounts/templates/accounts/user/_detail.html:129
+#: apps/accounts/templates/accounts/user/_detail.html:138
+#: apps/accounts/templates/accounts/user/_detail.html:147
+#: apps/accounts/templates/accounts/user/_detail.html:155
 msgid "Not registered yet "
-msgstr "Noch nicht registriert"
+msgstr "Noch nicht registriert "
 
-#: apps/accounts/templates/accounts/user/_detail.html:105
+#: apps/accounts/templates/accounts/user/_detail.html:106
 #: apps/community/templates/community/dashboard/profile_user.html:170
 #: apps/community/templates/community/profile/my_profile.html:165
 msgid "Language"
 msgstr "Sprache"
 
-#: apps/accounts/templates/accounts/user/_detail.html:141
+#: apps/accounts/templates/accounts/user/_detail.html:142
 msgid "Company address"
 msgstr "Firmenanschrift"
 
@@ -1073,7 +1075,7 @@ msgstr "Verwiesen von"
 
 #: apps/community/models.py:63
 msgid "Code"
-msgstr ""
+msgstr "Kode"
 
 #: apps/community/models.py:70
 msgid "Referral"
@@ -1133,8 +1135,8 @@ msgstr "Passwort stimmt nicht mit dem Bestätigungspasswort überein."
 msgid "Save Password"
 msgstr "Passwort speichern"
 
-#: apps/community/templates/accounts/change_password.html:100
-#: apps/community/templates/accounts/customeruser_list.html:185
+#: apps/community/templates/accounts/change_password.html:101
+#: apps/community/templates/accounts/customeruser_list.html:186
 #: apps/community/templates/community/dashboard/mail.html:242
 #: apps/community/templates/community/dashboard/mail.html:483
 #: apps/community/templates/community/dashboard/profile_user.html:304
@@ -1166,24 +1168,25 @@ msgstr "gefundene Mitglieder"
 msgid "Update your profile picture"
 msgstr "Aktualisieren Sie Ihr Profilbild"
 
-#: apps/community/templates/accounts/customeruser_list.html:141
+#: apps/community/templates/accounts/customeruser_list.html:140
+#: apps/community/templates/accounts/customeruser_list.html:142
 #: apps/community/templates/community/dashboard/profile_user.html:40
 msgid "Send a Message"
 msgstr "Eine Nachricht senden"
 
-#: apps/community/templates/accounts/customeruser_list.html:150
+#: apps/community/templates/accounts/customeruser_list.html:151
 #: apps/community/templates/community/dashboard/dashboard.html:143
 msgid "Add to favorites"
 msgstr "Zu Favoriten hinzufügen"
 
-#: apps/community/templates/accounts/customeruser_list.html:166
+#: apps/community/templates/accounts/customeruser_list.html:167
 #: apps/community/templates/community/dashboard/mail.html:219
 #: apps/community/templates/community/dashboard/mail.html:455
 #: apps/community/templates/community/dashboard/profile_user.html:286
 msgid "Send message to"
 msgstr "Nachricht senden an"
 
-#: apps/community/templates/accounts/customeruser_list.html:167
+#: apps/community/templates/accounts/customeruser_list.html:168
 #: apps/community/templates/community/dashboard/mail.html:220
 #: apps/community/templates/community/dashboard/mail.html:456
 #: apps/community/templates/community/dashboard/profile_user.html:287
@@ -1199,8 +1202,8 @@ msgstr "Nachricht senden an"
 msgid "Close"
 msgstr "schließen"
 
-#: apps/community/templates/accounts/customeruser_list.html:173
-#: apps/community/templates/accounts/customeruser_list.html:175
+#: apps/community/templates/accounts/customeruser_list.html:174
+#: apps/community/templates/accounts/customeruser_list.html:176
 #: apps/community/templates/community/dashboard/mail.html:128
 #: apps/community/templates/community/dashboard/mail.html:230
 #: apps/community/templates/community/dashboard/mail.html:232
@@ -1213,7 +1216,7 @@ msgstr "schließen"
 msgid "Subject"
 msgstr "Thema"
 
-#: apps/community/templates/accounts/customeruser_list.html:179
+#: apps/community/templates/accounts/customeruser_list.html:180
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:299
@@ -1221,7 +1224,7 @@ msgstr "Thema"
 msgid "Message"
 msgstr "Nachricht"
 
-#: apps/community/templates/accounts/customeruser_list.html:186
+#: apps/community/templates/accounts/customeruser_list.html:187
 #: apps/community/templates/community/dashboard/mail.html:243
 #: apps/community/templates/community/dashboard/mail.html:484
 #: apps/community/templates/community/dashboard/profile_user.html:305
@@ -1351,7 +1354,7 @@ msgid ""
 "2) You will get € 50.00 in a welcome pack which you can redeem on your first "
 "holiday purchase at"
 msgstr ""
-"2) Sie erhalten 50,00 € in einem Willkommenspaket, das Sie bei Ihrem ersten  "
+"2) Sie erhalten 50,00 € in einem Willkommenspaket, das Sie bei Ihrem ersten "
 "Urlaubskauf einlösen können bei"
 
 #: apps/community/templates/accounts/mail_profile_complete.html:100
@@ -1456,7 +1459,7 @@ msgstr "Titel: "
 
 #: apps/community/templates/community/dashboard/_email.html:87
 msgid "Body:"
-msgstr "Körper: "
+msgstr "Körper:"
 
 #: apps/community/templates/community/dashboard/_email.html:90
 msgid "Person:"
@@ -1482,8 +1485,10 @@ msgid "has sent you a new message"
 msgstr "hat Ihnen eine neue Nachricht geschickt"
 
 #: apps/community/templates/community/dashboard/_email_inbox.html:102
-#: apps/community/templates/community/dashboard/breadcrumb.html:61
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:44
+#: apps/community/templates/community/dashboard/breadcrumb.html:62
+#: apps/community/templates/community/dashboard/breadcrumb.html:63
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:45
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:46
 #: apps/community/templates/community/dashboard/mail.html:42
 msgid "Inbox"
 msgstr "Posteingang"
@@ -1529,7 +1534,7 @@ msgstr "Navigation umschalten"
 #: main/templates/menu/navbar_all.html:275
 #: main/templates/modal_contact_us/modal.html:22
 #: main/templates/modal_contact_us/modal.html:31
-#: main/templates/presignup.html:90 main/templates/presignup.html:97
+#: main/templates/presignup.html:92 main/templates/presignup.html:99
 #: main/templates/services/destination/all.html:47
 #: main/templates/services/destination/sponsors.html:36
 #: main/templates/services/destination/testimonials.html:41
@@ -1537,33 +1542,38 @@ msgstr "Navigation umschalten"
 msgid "Image Description"
 msgstr "Beschreibung des Bildes"
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:65
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:52
+#: apps/community/templates/community/dashboard/breadcrumb.html:68
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:55
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:56
 #: main/templates/pages/show_header.html:49
 #: main/templates/services/destination/destinations_for_categorie_backup.html:72
 msgid "Destinations"
 msgstr "Reiseziele"
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:68
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:58
+#: apps/community/templates/community/dashboard/breadcrumb.html:72
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:62
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:63
 msgid "Logout"
 msgstr "Abmeldung"
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:82
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:75
+#: apps/community/templates/community/dashboard/breadcrumb.html:85
+#: apps/community/templates/community/dashboard/breadcrumb.html:87
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:78
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
 msgid "Edit Profile"
 msgstr "Profil bearbeiten"
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:88
+#: apps/community/templates/community/dashboard/breadcrumb.html:93
 msgid "Following"
 msgstr "Folgend"
 
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:48
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:51
 #: apps/landing_page/models.py:54
 msgid "Prices"
 msgstr "Preise"
 
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:84
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:85
 msgid "See my profile"
 msgstr "Siehe mein Profil"
 
@@ -1754,7 +1764,7 @@ msgstr "Soziale Profile"
 
 #: apps/community/templates/community/dashboard/profile_user.html:97
 msgid "Hey, I'am "
-msgstr "Hey, ich bin"
+msgstr "Hey, ich bin "
 
 #: apps/community/templates/community/dashboard/profile_user.html:117
 msgid "+3 Referrals"
@@ -1786,14 +1796,13 @@ msgid ""
 "deactivated and you will lose your discount, since the cards are created "
 "only once by our automatic system."
 msgstr ""
-"                                    Sehr geehrter Benutzer, mit der "
-"Aktivierung dieses Benutzers erhalten Sie die TravelpostingCard, es ist eine "
-"digitale Karte, die Sie dazu berechtigt, verschiedene Vorteile zu erhalten, "
-"darunter Rabattboni, die nur unsere Benutzer erhalten. Aus diesem Grund "
-"bitten wir Sie, Ihr Profilfoto zu platzieren, da die Karten, die eine andere "
-"Art von Grafiken wie Logos, Meme, etc. haben, deaktiviert werden und Sie "
-"Ihren Rabatt verlieren, da die Karten nur einmal von unserem automatischen "
-"System erstellt werden."
+"Sehr geehrter Benutzer, mit der Aktivierung dieses Benutzers erhalten Sie "
+"die TravelpostingCard, es ist eine digitale Karte, die Sie dazu berechtigt, "
+"verschiedene Vorteile zu erhalten, darunter Rabattboni, die nur unsere "
+"Benutzer erhalten. Aus diesem Grund bitten wir Sie, Ihr Profilfoto zu "
+"platzieren, da die Karten, die eine andere Art von Grafiken wie Logos, Meme, "
+"etc. haben, deaktiviert werden und Sie Ihren Rabatt verlieren, da die Karten "
+"nur einmal von unserem automatischen System erstellt werden."
 
 #: apps/community/templates/community/profile/complete_profile.html:19
 msgid "Thank you for your cooperation."
@@ -1897,13 +1906,13 @@ msgstr "Passwort?"
 
 #: apps/community/templates/community/registration/forget_password.html:19
 msgid "Enter your email address below and we'll get you back on track."
-msgstr "Geben Sie unten Ihre E-Mail-Adresse ein und wir werden Sie wieder auf den richtigen Weg bringen."
+msgstr ""
+"Geben Sie unten Ihre E-Mail-Adresse ein und wir werden Sie wieder auf den "
+"richtigen Weg bringen."
 
 #: apps/community/templates/community/registration/login.html:18
 msgid " Welcome <span class=\"font-weight-semi-bold\">to Community</span>"
-msgstr ""
-" Willkommen <span\n"
-"                        class=\"font-weight-semi-bold\">zur Community</span>"
+msgstr " Willkommen <span class=\"font-weight-semi-bold\">zur Community</span>"
 
 #: apps/community/templates/community/registration/signup.html:17
 msgid ""
@@ -1947,7 +1956,7 @@ msgstr "Neuer Kommentar hinzufügen"
 #: apps/community/views.py:410 apps/directmessages/views.py:68
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
-"wenn Sie die Admin-Seite https://travelposting.com/admin/ sehen wollen."
+"wenn Sie die Admin-Seite https://travelposting.com/admin/ sehen wollen "
 
 #: apps/community/views.py:454
 msgid "Your password was successfully updated!"
@@ -2173,7 +2182,7 @@ msgstr "Herausgeber"
 
 #: apps/landing_page/models.py:417
 msgid "Files"
-msgstr ""
+msgstr "Dateien"
 
 #: apps/landing_page/models.py:442
 msgid "outstanding"
@@ -2266,10 +2275,11 @@ msgid ""
 msgstr ""
 "Eine Person hat eine neue Suche durchgeführt, bitte prüfen Sie den "
 "eingehenden Antrag von Herrn {name}. \n"
-"Durchsuchen Sie das Land oder die Stadt: {country} \n"
-"E-mail: {email} \n"
-"Whatsapp: {whatsapp} \n"
-"oder wenn Sie die Admin-Seite https://travelposting.com/admin/ sehen wollen."
+" Durchsuchen Sie das Land oder die Stadt: {country} \n"
+" E-mail: {email} \n"
+"  Whatsapp: {whatsapp} \n"
+" oder wenn Sie die Admin-Seite https://travelposting.com/admin/ sehen "
+"wollen. "
 
 #: apps/landing_page/views.py:177
 msgid "New request for delete"
@@ -2280,7 +2290,7 @@ msgid ""
 "if you want see the                     admin site https://travelposting.com/"
 "admin/ "
 msgstr ""
-"wenn Sie die Admin-Seite https://travelposting.com/admin/ sehen wollen."
+"wenn Sie die Admin-Seite https://travelposting.com/admin/ sehen wollen. "
 
 #: apps/landing_page/views.py:208
 msgid "You have a new contact"
@@ -2294,7 +2304,7 @@ msgstr ""
 #: apps/landing_page/views.py:227
 msgid "Thank you very much for contacting us, we will be responding very soon "
 msgstr ""
-"Vielen Dank für Ihre Kontaktaufnahme, wir werden Ihnen sehr bald antworten"
+"Vielen Dank für Ihre Kontaktaufnahme, wir werden Ihnen sehr bald antworten "
 
 #: apps/landing_page/views.py:230
 msgid "A error has ocurred while processing your message"
@@ -2501,7 +2511,7 @@ msgstr "Ich stimme zu"
 
 #: main/templates/base.html:100
 msgid "Up"
-msgstr ""
+msgstr "Nach oben"
 
 #: main/templates/base.html:270
 msgid "Select a state"
@@ -2612,7 +2622,8 @@ msgstr ""
 "das uns einlädt, so bekannt zu machen.\n"
 "\n"
 "              4 • Sie müssen Ihr Feedback/Empfehlungsformular am Ende der "
-"Reise ausfüllen, oder maximal sieben Tage nach Ende der Reise."
+"Reise ausfüllen, oder maximal sieben Tage nach Ende der Reise.\n"
+"            "
 
 #: main/templates/community.html:125
 msgid "My benefits"
@@ -2683,8 +2694,9 @@ msgstr ""
 "schneller können wir unsere Kreditkarte und alle anderen Vergünstigung zu "
 "bekommen.\n"
 "\n"
-"            Ab jetzt wünschen wir Ihnen viel Freude auf Ihren Reisen mit "
-"uns. Schnell Koffer packen, Ihr nächstes Ziel wartet auf Sie ."
+"            Ab jetzt wünschen wir Ihnen viel Freude auf Ihren Reisen mit uns "
+"Schnell Koffer pac.ken, Ihr nächstes Ziel wartet auf Sie.\n"
+"          "
 
 #: main/templates/community.html:169
 msgid "WHY CHOOSE US?"
@@ -3395,9 +3407,11 @@ msgid ""
 "                            "
 msgstr ""
 "\n"
-"wenn Ihnen nicht gefällt  was Sie sehen , weil Sie lieber einen auf Ihre "
-"Bedürfnisse zugeschnittenen Plan erstellen wollen, kontaktieren Sie uns, und "
-"wir werden gemeinsam mit Ihnen das ausarbeiten."
+"                            wenn Ihnen nicht gefällt  was Sie sehen , weil "
+"Sie lieber einen auf Ihre Bedürfnisse zugeschnittenen Plan erstellen wollen, "
+"kontaktieren Sie uns, und wir werden gemeinsam\n"
+"                            mit Ihnen das ausarbeiten.\n"
+"                            "
 
 #: main/templates/faq.html:552 main/templates/faq.html:630
 msgid "Email us"
@@ -3424,10 +3438,11 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"Wir sind Travelposting.com, einer internationalen Marketing- und Digital "
-"Werbe/-Promotion Agentur. Wir \n"
-"wurde am 1. März 2009 in Hamburg eröffnet und sind auf der Tourismus Branche "
-"Spezialisiert."
+"                        Wir sind Travelposting.com, einer internationalen "
+"Marketing- und Digital Werbe/-Promotion Agentur. Wir\n"
+"                        wurde am 1. März 2009 in Hamburg eröffnet und sind "
+"auf der Tourismus Branche Spezialisiert.\n"
+"                    "
 
 #: main/templates/footer.html:20
 msgid "Tourist warning."
@@ -3443,11 +3458,12 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"In Weiterentwicklung der Bestimmungen des Artikels 17 des Gesetzes 679 von "
-"2001 warnt die Agentur den Touristen, dass die Ausbeutung und der sexuelle "
-"Missbrauch von Minderjährigen im Land strafrechtlich und "
-"verwaltungstechnisch in Übereinstimmung mit den geltenden Gesetzen geahndet "
-"werden."
+"                    In Weiterentwicklung der Bestimmungen des Artikels 17 "
+"des Gesetzes 679 von 2001 warnt die Agentur den Touristen, dass die "
+"Ausbeutung und der sexuelle Missbrauch von Minderjährigen im Land "
+"strafrechtlich und verwaltungstechnisch in Übereinstimmung mit den geltenden "
+"Gesetzen geahndet werden.\n"
+"                    "
 
 #: main/templates/footer.html:40
 msgid "Currency Converter"
@@ -3524,8 +3540,8 @@ msgid ""
 "Discover new destinations that can seduce you and you will want to return to "
 "them."
 msgstr ""
-"Entdecken Sie neue Reiseziele, die Sie verführen können, und Sie werden zu ihnen "
-"zurückkehren wollen."
+"Entdecken Sie neue Reiseziele, die Sie verführen können, und Sie werden zu "
+"ihnen zurückkehren wollen."
 
 #: main/templates/hotels.html:124 main/templates/page01.html:52
 msgid "Register on our community"
@@ -3559,7 +3575,7 @@ msgstr "Erzählen Sie uns mehr"
 
 #: main/templates/index.html:109
 msgid "Please enter your message. "
-msgstr "Bitte geben Sie Ihre Nachricht ein."
+msgstr "Bitte geben Sie Ihre Nachricht ein. "
 
 #: main/templates/index.html:132
 msgid "Ready to get started?"
@@ -3591,7 +3607,7 @@ msgid ""
 "collection service with: "
 msgstr ""
 "Tätigen Sie Ihre Zahlungen direkt in der Währung, die Ihnen mit unserem "
-"service am besten entspricht:"
+"service am besten entspricht: "
 
 #: main/templates/make_page.html:73
 msgid "Payoneer"
@@ -3763,13 +3779,14 @@ msgstr "Englisch"
 
 #: main/templates/menu/menu.html:52
 msgid "Spanish "
-msgstr "Spanisch"
+msgstr "Spanisch "
 
 #: main/templates/menu/menu.html:59 main/templates/menu/menu.html:73
 msgid "SignUp"
 msgstr "Anmeldung"
 
-#: main/templates/menu/menu.html:64 main/templates/menu/menu.html:78
+#: main/templates/menu/menu.html:64 main/templates/menu/menu.html:77
+#: main/templates/menu/menu.html:78
 msgid "SignIn"
 msgstr "Eintragen"
 
@@ -3797,7 +3814,7 @@ msgstr "Spanisch"
 #: main/templates/menu/navbar_all.html:45
 #: main/templates/menu/navbar_all.html:52
 msgid "Jump to"
-msgstr ""
+msgstr "Springen Sie zu"
 
 #: main/templates/menu/navbar_all.html:163
 msgid "My Account"
@@ -3869,7 +3886,7 @@ msgstr "Email:"
 
 #: main/templates/pages/booking_email.html:59
 msgid "Travel number: "
-msgstr "Reisenummer"
+msgstr "Reisenummer: "
 
 #: main/templates/pages/booking_email.html:60
 #: main/templates/pages/published_email.html:56
@@ -3931,7 +3948,7 @@ msgstr "Neue Privatsphäre bei IP-Anfragen"
 
 #: main/templates/pages/request_form_feedback.html:56
 msgid "Address IP: "
-msgstr "IP-Adresse:"
+msgstr "IP-Adresse: "
 
 #: main/templates/pages/safeSearch.html:17
 #: main/templates/pages/saveBooking.html:17
@@ -4045,11 +4062,11 @@ msgstr "Zurück zur Startseite"
 msgid "Please select a registration type."
 msgstr "Bitte wählen Sie eine Registrierungsart aus."
 
-#: main/templates/presignup.html:56 main/templates/presignup.html:74
+#: main/templates/presignup.html:57 main/templates/presignup.html:76
 msgid "Go it"
 msgstr "Los geht's"
 
-#: main/templates/presignup.html:72
+#: main/templates/presignup.html:73
 msgid "Suppliers or companies"
 msgstr "Lieferanten oder Unternehmen"
 
@@ -4247,7 +4264,7 @@ msgstr "Lesen Sie mehr"
 
 #: main/templates/services/destination/comments.html:104
 msgid "Write a Review"
-msgstr ""
+msgstr "Eine Rezension schreiben"
 
 #: main/templates/services/destination/destinations.html:9
 msgid "About"
@@ -4468,6 +4485,7 @@ msgid ""
 "                        "
 msgstr ""
 "\n"
-"wenn Ihnen nicht gefällt  was Sie sehen , weil Sie lieber einen auf Ihre "
-"Bedürfnisse zugeschnittenen Plan erstellen wollen, kontaktieren Sie uns, und "
-"wir werden gemeinsam mit Ihnen das ausarbeiten."
+"                        wenn Ihnen nicht gefällt was Sie sehen, weil Sie "
+"lieber einen auf Ihre Bedürfnisse zugeschnittenen Plan erstellen wollen, "
+"kontaktieren Sie uns, und wir werden gemeinsam mit Ihnen das ausarbeiten.\n"
+"                        "

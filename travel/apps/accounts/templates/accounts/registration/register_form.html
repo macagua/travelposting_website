@@ -16,7 +16,7 @@
                 <!-- End White Logo -->
                 <!-- Button -->
                 <div class="ml-auto">
-                    <a class="btn btn-sm btn-primary transition-3d-hover" href="/">
+                    <a class="btn btn-sm btn-primary transition-3d-hover" href="/" title="{% trans 'Go back' %}">
                     {% trans 'Go back' %}
                     </a>
                 </div>
@@ -79,7 +79,7 @@
                             <li class="list-inline-item"> 
                             <!-- Checkbox Switch -->
                                 <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="customSwitch3" >
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
                                     <label class="custom-control-label" for="customSwitch3">
                                     </label>
                                 </div>
@@ -103,7 +103,8 @@
                         <div class="row align-items-center mb-5">
                             <div class="col-5 col-md-5 col-sm-6">
                                 <span class="small text-muted">{% trans 'Already have an account?' %}</span>
-                                <a class="small" href="{% url 'accounts:login' %}">{% trans 'Login' %}</a>
+                                <a class="small" href="{% url 'accounts:login' %}"
+                                   title="{% trans 'Login' %}">{% trans 'Login' %}</a>
                             </div>
                             <div class="col-7 col-sm-6 text-right">
                                 <button type="submit" class="btn btn-primary transition-3d-hover">{% trans "Create account" %}</button>

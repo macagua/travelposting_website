@@ -54,18 +54,22 @@
                                 <!-- Home-->
                                 <!-- Others -->
                                 <li class="nav-item u-header__nav-item">
-                                    <a class="nav-link u-header__nav-link" href="{% url 'dashboard-community' %}">{% trans 'Home' %}</a>
+                                    <a class="nav-link u-header__nav-link" href="{% url 'dashboard-community' %}"
+                                       title="{% trans 'Home' %}">{% trans 'Home' %}</a>
                                 </li>
                                 <li class="nav-item u-header__nav-item">
-                                    <a class="nav-link u-header__nav-link" href="{% url 'inbox-community' %}">
-                                        {% trans "Inbox" %} {% notifications_inbox %}
+                                    <a class="nav-link u-header__nav-link" href="{% url 'inbox-community' %}"
+                                       title="{% trans 'Inbox' %}">
+                                        {% trans 'Inbox' %}{% notifications_inbox %}
                                     </a>
                                 </li>
                                 <li class="nav-item u-header__nav-item">
-                                    <a class="nav-link u-header__nav-link" href="/category/all">{% trans 'Destinations' %}</a>
+                                    <a class="nav-link u-header__nav-link" href="/category/all"
+                                       title="{% trans 'Destinations' %}">{% trans 'Destinations' %}</a>
                                 </li>
                                 <li class="nav-item u-header__nav-item">
-                                    <a class="nav-link u-header__nav-link" href="{% url 'accounts:logout' %}?next={% url 'index' %}">{% trans 'Logout' %}</a>
+                                    <a class="nav-link u-header__nav-link" href="{% url 'accounts:logout' %}?next={% url 'index' %}"
+                                       title="{% trans 'Logout' %}">{% trans 'Logout' %}</a>
                                 </li>
                                 <!-- Others -->
                             </ul>
@@ -77,9 +81,10 @@
 
                 <!-- Button -->
                 {%if profile %}
-                <a class="btn btn-sm btn-soft-white transition-3d-hover" href="{% url 'my-profile' %}">
+                <a class="btn btn-sm btn-soft-white transition-3d-hover" href="{% url 'my-profile' %}"
+                   title="{% trans 'Edit Profile' %}">
                     <span class="fas fa-user-cog small mr-2"></span>
-                    {% trans "Edit Profile" %}
+                    {% trans 'Edit Profile' %}
                 </a>
                 {%else%}
                 <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover" href="#addMembersModal"

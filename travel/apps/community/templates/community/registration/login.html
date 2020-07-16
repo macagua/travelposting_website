@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
-{%load destinations_tags%}
+{% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
+{% load destinations_tags %}
 {% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
@@ -12,7 +12,7 @@
     <!-- Login Form -->
     <div class="container space-2">
         <!-- Form -->
-        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate" method="POST" >{% csrf_token %}
+        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate" method="POST">{% csrf_token %}
             <!-- Title -->
             <div class="mb-7">
                 <h2 class="h3 text-primary font-weight-normal mb-0">{% blocktrans %} Welcome <span class="font-weight-semi-bold">to Community</span>{% endblocktrans %}</h2>
