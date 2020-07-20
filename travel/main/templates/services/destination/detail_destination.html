@@ -143,15 +143,26 @@
                     <!--END TABS DETAIL-->
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
-                    <a href="{{request.META.HTTP_REFERER}}"><small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
+                    <a href="{{request.META.HTTP_REFERER}}" title="{% trans 'back to list' %}">
+                        <small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
                 </div>
                 <br>
                 <div class="d-flex float-right">
+                    <a class="d-inline-flex small" href="#">
+                        <div class="text-warning mr-2">
+                            <small class="fas fa-star"></small>
+                            <small class="fas fa-star"></small>
+                            <small class="fas fa-star"></small>
+                            <small class="fas fa-star"></small>
+                            <small class="fas fa-star"></small>
+                        </div>
+                        <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes" %}</span>
+                    </a>&nbsp;
                     <ul class="list-inline mb-0">
                         {% if destino.social.social_network == True %}
                             {% if destino.user.facebook or destino.user.instagram or destino.user.twitter or destino.user.linkedin %}
                             <li class="list-inline-item">
-                                <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
+                                <b><strong>{% trans "Follow us" %}</strong></b>
                             </li>
                             {% endif %}
                             {% if destino.user.facebook %}
@@ -192,7 +203,7 @@
                         {% else %}
                             {% if destino.social.facebook or destino.social.instagram or destino.social.twitter or destino.social.linkedin %}
                             <li class="list-inline-item">
-                                <b><strong>{% trans "Follow us or recommend us through" %}</strong></b>
+                                <b><strong>{% trans "Follow us" %}</strong></b>
                             </li>
                             {% endif %}
                             {% if destino.social.facebook %}
@@ -251,8 +262,8 @@
         <div class="col-lg-5">
             <!-- Title -->
             <div class="mb-5">
-                <h1 class="h3 font-weight-medium">{{destino.name}}</h1>
-                <p style="color: #000000;">{{destino.short_description|striptags}}</p>
+                <h1 class="h3 font-weight-medium">{{ destino.name }}</h1>
+                <p style="color: #000000;">{{ destino.short_description|striptags }}</p>
             </div>
             <!-- End Title -->
             <!-- Price -->
@@ -261,27 +272,113 @@
                     <li class="list-inline-item">
                         <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Price" %}:</h2>
                         <span class="font-size-2 font-weight-medium">{{destino.list_prices.sale_price}}</span>
-                        <span class="text-secondary ml-2"><del>{{destino.list_prices.regular_price}}</del></span>
                     </li>
                     {% if destino.departure_date %}
                     <li class="list-inline-item">
-                        <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Fecha" %}:</h2>
+                        <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Offer until" %}:</h2>
                         <span class="font-size-2 font-weight-medium">{{ destino.departure_date|date:'d/m/Y' }}</span>
+                        <span class="text-secondary ml-2"><del>{{ destino.list_prices.regular_price }}</del></span>
                     </li>
                     {% endif %}
+                </ul>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Departure date" %}:</h2>
+                        <span class="font-size-2 font-weight-medium">{{ destino.departure_date|date:'d/m/Y' }}</span>
+                    </li>
+                    <li class="list-inline-item">
+                        <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Arrival date" %}:</h2>
+                        <span class="font-size-2 font-weight-medium">{{ destino.arrival_date|date:'d/m/Y' }}</span>
+                    </li>
                 </ul>
             </div>
             <!-- End Price -->
             <div class="mb-3">
                 <a class="d-inline-flex small" href="#">
-                    <div class="text-warning mr-2">
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                    </div>
-                    <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes" %}</span>
+                    <i class="fas fa-wifi"
+                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                        {% trans "Free Wifi" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-check"
+                       style="color:green !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:green !important;">
+                        {% trans "Breakfast incluided" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-dumbbell"
+                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                        {% trans "Gym" %}
+                    </h2>
+                </a>
+            </div>
+            <div class="mb-3">
+                <a class="d-inline-flex small" href="#">
+                    <i class="fas fa-snowflake"
+                       style="color:green !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:green !important;">
+                        {% trans "Air Conditioning" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-utensils"
+                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                        {% trans "Restaurant" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-glass-martini-alt"
+                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                        {% trans "Bar" %}
+                    </h2>
+                </a>
+            </div>
+            <div class="mb-3">
+                <a class="d-inline-flex small" href="#">
+                    <i class="fas fa-check"
+                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                       {% trans "Housekeeping" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-concierge-bell"
+                        style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                        {% trans "Room Service" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-business-time"
+                       style="color:green !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:green !important;">
+                        {% trans "Business Services" %}
+                    </h2>
+                </a>
+            </div>
+            <div class="mb-3">
+                <a class="d-inline-flex small" href="#">
+                    <i class="fas fa-hot-tub"
+                       style="color:green !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:green !important;">
+                        {% trans "Hob Tub" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-hotel"
+                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                        {% trans "25/7 Front Desk" %}
+                    </h2>&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-tshirt"
+                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                    <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
+                        style="color:gray !important;">
+                        {% trans "Laundry" %}
+                    </h2>
                 </a>
             </div>
             {% if destino.itinerario2 %}
@@ -296,7 +393,7 @@
                                 data-target="#basicsCollapseTwo"
                                 aria-expanded="false"
                                 aria-controls="basicsCollapseTwo">
-                            {% trans "Discover or download our itinerary here" %}
+                            {% trans "Our itinerary here" %}
                             <span class="card-btn-arrow">
                             <span class="fas fa-arrow-down small"></span>
                             </span>
@@ -307,10 +404,10 @@
                         aria-labelledby="basicsHeadingTwo"
                         data-parent="#basicsAccordion">
                         <div class="card-body">
-                            {{destino.itinerario2.short_description |safe }}<br><br>
+                            {{ destino.itinerario2.short_description |safe }}<br><br>
                             {{ destino.itinerario2.detail_itinerary |safe }}<br><br>
 
-                            <a href="{% url 'get_itinerary' destino.id %}" target="_new">Descargar PDF</a>
+                            <a href="{% url 'get_itinerary' destino.id %}" target="_new">Download PDF</a>
                         </div>
                     </div>
                 </div>
@@ -319,15 +416,19 @@
             {% endif %}
             <div class="mb-4">
                 {% if request.user.is_authenticated == True %}
-                <button type="button" class="btn btn-block btn-secondary btn-pill transition-3d-hover reserve" data-toggle="modal" data-target=".bd-example-modal-lg">
+                <button type="button" class="btn btn-block btn-secondary btn-pill transition-3d-hover reserve"
+                        data-toggle="modal" data-target=".bd-example-modal-lg">
                     {% trans "Add comment" %}
                 </button>
-                <a type="button" href="{% url 'make-recomm' destino.id %}" class="btn btn-block btn-success btn-pill transition-3d-hover">{% trans "Make a recommendation" %}</a>
-
+                <a type="button" href="{% url 'make-recomm' destino.id %}"
+                   class="btn btn-block btn-success btn-pill transition-3d-hover"
+                   title="{% trans 'Make a recommendation' %}">{% trans "Make a recommendation" %}</a>
                 {% endif %}
 
-                <button type="button"  data-toggle="modal" data-target="#BookModal" class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">{% trans "Reserve" %}</button>
-
+                <button type="button" data-toggle="modal" data-target="#BookModal"
+                        class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">
+                    {% trans "Reserve" %}
+                </button>
             </div>
         </div>
         <!-- End Product Description -->
