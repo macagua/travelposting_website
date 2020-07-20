@@ -298,21 +298,21 @@
             <div class="mb-3">
                 <a class="d-inline-flex small" href="#">
                     <i class="fas fa-wifi"
-                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_wifi %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_wifi %}green{% else %}gray{% endif %} !important;">
                         {% trans "Free Wifi" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-check"
-                       style="color:green !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if not destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:green !important;">
+                        style="color:{% if not destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;">
                         {% trans "Breakfast incluided" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-dumbbell"
-                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_gym %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_gym %}green{% else %}gray{% endif %} !important;">
                         {% trans "Gym" %}
                     </h2>
                 </a>
@@ -320,21 +320,21 @@
             <div class="mb-3">
                 <a class="d-inline-flex small" href="#">
                     <i class="fas fa-snowflake"
-                       style="color:green !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_air_conditioning %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:green !important;">
+                        style="color:{% if destino.has_air_conditioning %}green{% else %}gray{% endif %} !important;">
                         {% trans "Air Conditioning" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-utensils"
-                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_restaurant %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_restaurant %}green{% else %}gray{% endif %} !important;">
                         {% trans "Restaurant" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-glass-martini-alt"
-                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_bar %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_bar %}green{% else %}gray{% endif %} !important;">
                         {% trans "Bar" %}
                     </h2>
                 </a>
@@ -342,21 +342,21 @@
             <div class="mb-3">
                 <a class="d-inline-flex small" href="#">
                     <i class="fas fa-check"
-                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_housekeeping %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_housekeeping %}green{% else %}gray{% endif %} !important;">
                        {% trans "Housekeeping" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-concierge-bell"
-                        style="color:gray !important;"></i>&nbsp;&nbsp;
+                        style="color:{% if destino.has_room_service %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_room_service %}green{% else %}gray{% endif %} !important;">
                         {% trans "Room Service" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-business-time"
-                       style="color:green !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if not destino.has_business_services %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:green !important;">
+                        style="color:{% if not destino.has_business_services %}green{% else %}gray{% endif %} !important;">
                         {% trans "Business Services" %}
                     </h2>
                 </a>
@@ -364,21 +364,21 @@
             <div class="mb-3">
                 <a class="d-inline-flex small" href="#">
                     <i class="fas fa-hot-tub"
-                       style="color:green !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_hob_tub %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:green !important;">
+                        style="color:{% if destino.has_hob_tub %}green{% else %}gray{% endif %} !important;">
                         {% trans "Hob Tub" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-hotel"
-                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_front_desk %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_front_desk %}green{% else %}gray{% endif %} !important;">
                         {% trans "25/7 Front Desk" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-tshirt"
-                       style="color:gray !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_laundry %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:gray !important;">
+                        style="color:{% if destino.has_laundry %}green{% else %}gray{% endif %} !important;">
                         {% trans "Laundry" %}
                     </h2>
                 </a>
