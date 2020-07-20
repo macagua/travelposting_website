@@ -284,14 +284,18 @@
                     {% endif %}
                 </ul>
                 <ul class="list-inline mb-0">
+                    {% if destino.departure_date %}
                     <li class="list-inline-item">
                         <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Departure date" %}:</h2>
                         <span class="font-size-2 font-weight-medium">{{ destino.departure_date|date:'d/m/Y' }}</span>
                     </li>
+                    {% endif %}
+                    {% if destino.arrival_date %}
                     <li class="list-inline-item">
                         <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Arrival date" %}:</h2>
                         <span class="font-size-2 font-weight-medium">{{ destino.arrival_date|date:'d/m/Y' }}</span>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- End Price -->
