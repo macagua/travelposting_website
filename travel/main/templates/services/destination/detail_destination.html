@@ -277,7 +277,9 @@
                     <li class="list-inline-item">
                         <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Offer until" %}:</h2>
                         <span class="font-size-2 font-weight-medium">{{ destino.departure_date|date:'d/m/Y' }}</span>
+                        {% if destino.list_prices.regular_price %}
                         <span class="text-secondary ml-2"><del>{{ destino.list_prices.regular_price }}</del></span>
+                        {% endif %}
                     </li>
                     {% endif %}
                 </ul>
