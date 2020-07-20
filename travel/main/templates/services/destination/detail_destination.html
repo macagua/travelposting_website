@@ -263,7 +263,7 @@
             <!-- Title -->
             <div class="mb-5">
                 <h1 class="h3 font-weight-medium">{{ destino.name|truncatechars:36 }}</h1>
-                <p style="color: #000000;">{{ destino.short_description|striptags }}</p>
+                <p style="color: #000000;">{{ destino.short_description|truncatechars:150|striptags }}</p>
             </div>
             <!-- End Title -->
             <!-- Price -->
