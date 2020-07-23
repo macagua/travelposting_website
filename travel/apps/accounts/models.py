@@ -428,6 +428,7 @@ class CustomerUser(AbstractUser):
     ref_code = models.CharField(
         _("Code Referral"),
         max_length=20,
+        blank=False,
         default=get_referal_code,
     )
 

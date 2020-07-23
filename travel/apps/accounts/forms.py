@@ -150,3 +150,12 @@ class CustomerUserChangeForm(BaseBootstrapForm, forms.ModelForm):
         if not (lang and check_for_language(lang)):
             forms.ValidationError(_("Non-Permitted Language"))
         return lang
+
+
+class CompleteProfileForm(BaseBootstrapForm, forms.ModelForm):
+    class Meta:
+        model = CustomerUser
+        fields = (
+            'avatar',
+            'first_name',
+            'last_name',)

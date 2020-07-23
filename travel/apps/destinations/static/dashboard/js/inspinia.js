@@ -6,7 +6,8 @@
  */
 
 
-$(document).ready(function () {
+(function($){
+    $(document).ready(function () {
 
     // Fast fix bor position issue with Propper.js
     // Will be fixed in Bootstrap 4.1 - https://github.com/twbs/bootstrap/pull/24092
@@ -273,3 +274,4 @@ function WinMove() {
 }
 
 
+})(jQuery);

@@ -114,11 +114,15 @@
 </div>
 
 {%endblock%}
+{% block extracss %}
+  {{ block.super }}
+
+  {{form_map.media.js}}
+  {% endblock %}
 {% block extrajs %}
   {{ block.super }}
   {{ form.media.js }}
 
-  {{form_map.media.js}}
   <script src="{% static "dashboard/js/plugins/dataTables/datatables.min.js" %}"></script>
   <script src="{% static "dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js" %}"></script>
   <script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
@@ -127,7 +131,6 @@
   <script src="{% static "inspinia/js/notifications.js" %}"></script>
 
   <script>
-(function(){
     function delete_map(id){
           swal({
               title: "{% trans 'Are you sure?' %}",
@@ -138,7 +141,7 @@
               confirmButtonText: "{% trans "Yes, delete it!" %}",
               closeOnConfirm: false
           }, function () {
-            $.ajax({
+            jQuery.ajax({
                   method:'DELETE',
                   url:'{% url 'destinations:delete-map' %}',
                   data:{
@@ -225,6 +228,6 @@
           .fail(function() {
             console.log("error");
           });
-    })})(jQuery);
+    });
   </script>
 {%endblock%}
