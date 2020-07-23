@@ -9,6 +9,8 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
+from django.contrib.auth import password_validation
+from django.core import exceptions
 from apps.accounts.models import CustomerUser
 from django.views.generic import (
     CreateView,
@@ -783,7 +785,31 @@ class AgencyView(View):
         else:
             return render(request, self.template_name)
 
+
 class AddAgencyView(CreateView):
     template_name = 'dashboard/leaders/_agencies_add.html'
     form_class = AgencyAddForm
 
+    def post(self, request, *args, **kwargs):
+        import ipdb; ipdb.set_trace()
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        mobile = request.POST['mobile']
+        country = request.POST['country']
+
+        errors = dict()
+        create_user = CustomerUser(email=email)
+        try:
+            password_validation.validate_password(password=password1, user=create_user)
+        except exceptions.ValidationError as e:
+            errors['password'] = list(e.messages)
+            return super(AddAgencyView, self).post(
+            request, {'errors':errors}, *args, **kwargs)            
+
+
+        return super(
+            AddAgencyView, self).post(
+            request, *args, **kwargs)

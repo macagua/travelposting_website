@@ -2,6 +2,7 @@ from django import forms
 
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.forms import UserCreationForm
 from mapwidgets.widgets import GooglePointFieldWidget
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
@@ -466,7 +467,7 @@ class DestinationMapForm(forms.ModelForm):
             )
         }
 
-class AgencyAddForm(BaseRegistrationForm, forms.ModelForm):
+class AgencyAddForm(BaseRegistrationForm, UserCreationForm):
     password1 = forms.CharField(label=_("Password"),
         widget=forms.PasswordInput(attrs={
             'class':'form-control first',
@@ -483,6 +484,7 @@ class AgencyAddForm(BaseRegistrationForm, forms.ModelForm):
             attrs={
                 'placeholder': _('First Name'),
                 'class': 'form-control',
+                'required': 'required',
             },
         ),
     )
@@ -491,14 +493,26 @@ class AgencyAddForm(BaseRegistrationForm, forms.ModelForm):
             attrs={
                 'placeholder': _('Last Name'),
                 'class': 'form-control',
+                'required': 'required',
             },
         ),
     )
+    mobile = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Phone or Whatsapp'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+
     email = forms.CharField(
         widget=forms.EmailInput(
             attrs={
                 'placeholder': _('Email Address'),
                 'class': 'form-control',
+                'required': 'required',
             },
         ),
     )
@@ -509,4 +523,6 @@ class AgencyAddForm(BaseRegistrationForm, forms.ModelForm):
         fields = [
             'first_name',
             'last_name',
+            'country',
+            'mobile',
         ]+ BASE_REGISTRATION_FIELDS
