@@ -1,6 +1,7 @@
 import logging
 import datetime as dt
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import Group
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
@@ -790,26 +791,10 @@ class AddAgencyView(CreateView):
     template_name = 'dashboard/leaders/_agencies_add.html'
     form_class = AgencyAddForm
 
-    def post(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()
-        email = request.POST['email']
-        password1 = request.POST['password1']
-        password2 = request.POST['password2']
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        mobile = request.POST['mobile']
-        country = request.POST['country']
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='agency')
+        form.instance.save()
+        form.instance.groups.add(group)
 
-        errors = dict()
-        create_user = CustomerUser(email=email)
-        try:
-            password_validation.validate_password(password=password1, user=create_user)
-        except exceptions.ValidationError as e:
-            errors['password'] = list(e.messages)
-            return super(AddAgencyView, self).post(
-            request, {'errors':errors}, *args, **kwargs)            
-
-
-        return super(
-            AddAgencyView, self).post(
-            request, *args, **kwargs)
+        return super().form_valid(form)
+        

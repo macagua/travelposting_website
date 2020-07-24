@@ -68,8 +68,40 @@
                         <div class="ibox-tools">
                             <div class="btn-group">
                                 <button onclick="window.location.href='{% url "dashboard:manager" %}'"   class="btn btn-outline btn-primary" type="button"><i class="fa fa-see"></i> <b class="color:white;">{% trans "See manager"%}</b></a>
-                                <button class="btn btn-outline btn-primary" type="button"><i class="fa fa-plus"></i> <b class="color:white;">{% trans "add agency"%}</b></button>
+                                <button class="btn btn-outline btn-primary" type="button"  data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> <b class="color:white;">{% trans "add agency"%}</b></button>
                                 <button class="btn btn-outline btn-danger" type="button"> <i class="fa fa-plus"></i> <b>{% trans "add new Manager"%}</b></button>
+                                <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                <h4 class="modal-title">{% trans "Choose an option" %}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="text-center">
+                                                            <a href="{% url 'dashboard:agency-add' %}" class="text-info">
+                                                                <i class="fa fa-plus fa-5x"></i>
+                                                                <p class="font-bold"> 
+                                                                    {% trans "Add new Agency" %}
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="text-center">
+                                                            <a href="" class="text-info">
+                                                                <i class="fa fa-address-card fa-5x"></i>
+                                                                <p class="font-bold">{% trans "Edit user" %}</p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,11 +128,8 @@
                                         {{ users.get_country_display}}
                                     </td>
                                     <td>
-                                        {% if users.phone %}
-                                            {{ users.phone }}    
-                                        {% else %}
-                                            {% trans "It does not have"%}    
-                                        {% endif %}
+                                        {% trans "It does not have" as nophone %}    
+                                        {{ users.mobile|default_if_none:nophone }}    
                                     </td>
 
                                     <td>
