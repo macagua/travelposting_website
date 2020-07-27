@@ -2,7 +2,7 @@ from django import forms
 
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from mapwidgets.widgets import GooglePointFieldWidget
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
@@ -526,3 +526,72 @@ class AgencyAddForm(BaseRegistrationForm, UserCreationForm):
             'country',
             'mobile',
         ]+ BASE_REGISTRATION_FIELDS
+
+
+class AgencyEditForm(UserChangeForm):
+    first_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('First Name'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Last Name'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    mobile = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Phone or Whatsapp'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email Address'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+
+    class Meta(BaseRegistrationForm.Meta):
+        model = CustomerUser
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'country',
+            'mobile',
+        ]
+
+
+class AgencyAddExistingUserForm(BaseBootstrapForm, UserChangeForm):
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email Address'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    class Meta:
+        model = CustomerUser
+        fields = [
+            'email',
+            'country',
+        ]
+

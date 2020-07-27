@@ -2,6 +2,7 @@ from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import path
 
+from apps.accounts.models import CustomerUser
 from apps.destinations.charts import (
     BookingCharts,
     DashboardIndex,
@@ -13,6 +14,11 @@ from apps.destinations.views.visitor import (
 )
 
 from apps.destinations.views.destination import (
+    AgencyAddView,
+    AgencyDeleteView,
+    AgencyAddExistingUserView,
+    AgencyUpdateView,
+    AgencyView,
     DestinationListView,
     DestinationCreateView,
     DestinationDetailView,
@@ -32,8 +38,6 @@ from apps.destinations.views.destination import (
     MailboxSent,
     messageView,
     LeaderView,
-    AgencyView,
-    AddAgencyView,
 )
 
 from apps.destinations.views.booking import (
@@ -84,9 +88,25 @@ urlpatterns = [
         name='agencies',
     ),
     path(
+        'agencies/add/existing',
+        nocommunity_access(AgencyAddExistingUserView.as_view()),
+        name='agency-add-existing'
+    ),
+    path(
         'agencies/add',
-        nocommunity_access(AddAgencyView.as_view()),
+        nocommunity_access(AgencyAddView.as_view()),
         name='agency-add'
+    ),
+    path(
+        'agencies/<int:pk>/delete',
+        nocommunity_access(AgencyDeleteView.as_view()),
+        name='agency-delete'
+    ),
+
+    path(
+        'agencies/<int:pk>/',
+        nocommunity_access(AgencyUpdateView.as_view()),
+        name='agency-edit'
     ),
     path(
         'mailbox',

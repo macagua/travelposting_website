@@ -16,11 +16,12 @@ from apps.accounts.models import CustomerUser
 from django.views.generic import (
     CreateView,
     DetailView,
-    UpdateView,
     DeleteView,
     ListView,
+    UpdateView,
     View,
 )
+from django.views.generic.edit import ModelFormMixin
 from django.shortcuts import (
     render,
     get_object_or_404,
@@ -35,12 +36,14 @@ from django.utils import timezone
 
 
 from apps.destinations.forms import (
+    AgencyAddForm,
+    AgencyEditForm,
+    AgencyAddExistingUserForm,
     DestinationForm,
     TourDataForm,
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
-    AgencyAddForm
 )
 from apps.destinations.models import (
     Destination,
@@ -760,7 +763,7 @@ class LeaderView(View):
             return render(request, self.template_name)
 
 
-class AgencyView(View):
+class AgencyView(ListView):
     template_name = 'dashboard/leaders/_agencies.html'
 
     def get(self, request, *args, **kwargs):
@@ -787,7 +790,13 @@ class AgencyView(View):
             return render(request, self.template_name)
 
 
-class AddAgencyView(CreateView):
+class AgencyUpdateView(UpdateView):
+    model = CustomerUser 
+    template_name = 'dashboard/leaders/_agencies_edit.html'
+    form_class = AgencyEditForm
+
+
+class AgencyAddView(CreateView):
     template_name = 'dashboard/leaders/_agencies_add.html'
     form_class = AgencyAddForm
 
@@ -797,4 +806,31 @@ class AddAgencyView(CreateView):
         form.instance.groups.add(group)
 
         return super().form_valid(form)
-        
+       
+
+class AgencyDeleteView(DeleteView):
+    model = CustomerUser
+    success_url = reverse_lazy('destinations:agencies')
+    template_name = 'destinations/_delete.html'
+
+
+class AgencyAddExistingUserView(UpdateView):
+    form_class = AgencyAddExistingUserForm
+    model = CustomerUser
+    template_name = 'dashboard/leaders/_agencies_add_existing.html'
+
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='agency')
+        form.instance.save()
+        form.instance.groups.add(group)
+
+        return super().form_valid(form)
+
+    def get_object(self):
+        return get_object_or_404(CustomerUser, email=self.request.POST.get('email'))
+                
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().post(request, *args, **kwargs)
+
