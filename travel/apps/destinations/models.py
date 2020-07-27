@@ -215,6 +215,14 @@ class Destination(models.Model):
         return list_photos
 
     @property
+    def videos(self):
+        try:
+            list_videos = Video.objects.filter(destination=self)
+        except BaseException:
+            return None
+        return list_videos
+
+    @property
     def published_date(self):
         try:
             destination_details = GeneralDetail.objects.get(destination_detail__destination=self.pk)
@@ -335,6 +343,62 @@ class Photo(models.Model):
         ordering = ('sort', 'name')
         verbose_name = _('Photo')
         verbose_name_plural = _('Photos')
+
+
+class Video(models.Model):
+    destination = models.ForeignKey(
+        Destination,
+        related_name='media',
+        on_delete=models.CASCADE,
+        verbose_name=_('Destination'),
+    )
+
+    name = models.CharField(
+        _('Name'),
+        max_length=50,
+        blank=True,
+        null=True,
+    )
+
+    sort = models.IntegerField(
+        _('Sort'),
+        blank=True,
+        null=True,
+    )
+
+    description = models.TextField(
+        _('Description'),
+        blank=True,
+        null=True,
+        default=_("No comment"),
+    )
+
+    thumbnail_preview = ThumbnailerImageField(
+        _('Thumbnail'),
+        blank=True,
+        null=True,
+        upload_to="gallery/thumbnail/",
+    )
+
+    video = models.FileField(
+        _("Video"),
+        blank=True,
+        null=True,
+        upload_to="gallery/video/",
+        # validators=[valid_extension]
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    class Meta:
+        ordering = ('sort', 'name')
+        verbose_name = _('Video')
+        verbose_name_plural = _('Videos')
 
 
 class DestinationRating(models.Model):

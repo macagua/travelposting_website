@@ -51,7 +51,7 @@
                                         <img class="js-svg-injector" src='{% static "img/destinies/images-regular.svg" %}' alt="{% trans 'SVG' %}"
                                         data-parent="#SVGnavIcons">
                                     </figure>
-                                    {% trans "Photos" %}
+                                    {% trans "Graphics" %}
                                 </div>
                             </a>
                         </li>
@@ -82,7 +82,7 @@
                     <!-- Tab Content -->
                     <div class="tab-content">
                         <div class="tab-pane fade pt-6 show active" id="pills-one-example2" role="tabpanel" aria-labelledby="pills-one-example2-tab">
-                            <!--START GALLERY-->
+                            <!-- START GALLERY-->
                             <div class="overflow-hidden">
                                 <div class="js-slick-carousel u-slick u-slick--gutters-2"
                                     data-adaptive-height="true"
@@ -113,20 +113,39 @@
                                     "centerPadding": "50px"
                                     }
                                     }]' >
-                                    {% for gallery in destino.photos%}
+                                    {% for gallery in destino.photos %}
                                     <!-- Gallery -->
                                     <a class="js-fancybox u-media-viewer" href="javascript:;"
                                         data-src="/main/media/{{gallery.image}}"
                                         data-fancybox="fancyboxGallery6"
                                         data-caption="{{gallery.name}} - {{gallery.description}}"
                                         data-speed="700"
-                                        data-is-infinite="true">
-                                        <div class="js-slide rounded bg-img-hero min-height-300" style="background-image: url(/main/media/{{gallery.image}});"></div>
+                                        data-is-infinite="true" title="{{gallery.name}} - {{gallery.description}}">
+                                        <div class="js-slide rounded bg-img-hero min-height-300"
+                                             style="background-image: url(/main/media/{{gallery.image}});"></div>
                                     </a>
                                     <!-- End Gallery -->
                                     {% endfor%}
+                                    {% for galleries in destino.videos %}
+                                    <!-- Videos Gallery -->
+                                    <a class="js-fancybox u-media-viewer" href="javascript:;"
+                                        data-src="/main/media/{{galleries.video}}"
+                                        data-fancybox="fancyboxGallery6"
+                                        data-caption="{{galleries.name}} - {{galleries.description}}"
+                                        data-speed="700"
+                                        data-is-infinite="true">
+                                        <div class="js-slide rounded bg-img-hero min-height-300">
+                                            <video width="212px" height="300px" controls>
+                                                <source src="/main/media/{{galleries.video}}" type="video/mp4">
+                                                {% trans "Your browser does not support the video tag." %}
+                                            </video>
+                                        </div>
+                                    </a>
+                                    <!-- End Videos Gallery -->
+                                    {% endfor%}
                                 </div>
                             </div>
+                            <!-- END GALLERY-->
                         </div>
                         <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
                             {{ destino.description|safe }}

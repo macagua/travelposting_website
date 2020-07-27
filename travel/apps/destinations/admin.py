@@ -11,6 +11,7 @@ from .models import (
     OptionTabData,
     Destination,
     Photo,
+    Video,
     TourData,
     HeaderSection,
     DestinationDetail,
@@ -38,6 +39,13 @@ class OptionTabDataAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
 
 class PhotoInline(admin.TabularInline):
     model = Photo
+    max_num = 12
+    min_num = 0
+    extra = 1
+
+
+class VideoInline(admin.TabularInline):
+    model = Video
     max_num = 12
     min_num = 0
     extra = 1
@@ -133,7 +141,7 @@ class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
     search_fields = ('user__email', 'user__first_name', 'name', 'description')
     list_select_related = ('user',)
     autocomplete_fields = ('user',)
-    inlines = [PhotoInline, TourDataInline, HeaderSectionInline, DestinationDetailInline]
+    inlines = [PhotoInline, VideoInline, TourDataInline, HeaderSectionInline, DestinationDetailInline]
     actions = [make_published, make_unpublished]
 
     def delete_model(self, request, obj):
