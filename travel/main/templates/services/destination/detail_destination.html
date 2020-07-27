@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
-                            {{destino.description|safe }}
+                            {{ destino.description|safe }}
                         </div>
                         <div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab">
                             {% if map %}
@@ -234,14 +234,14 @@
                                 </a>
                             </li>
                             {% endif %}
-                            {% if destino.social.pinterest%}
+                            {% if destino.social.pinterest %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new"href="{{ destino.social.pinterest }}">
                                 <img src="{% static 'img/pinterest.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
-                            {% if destino.social.website%}
+                            {% if destino.social.website %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new"href="{{ destino.social.website}}">
                                 <img src="{% static 'img/website.png' %}" >
@@ -271,7 +271,7 @@
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item">
                         <h2 class="font-size-1 text-secondary font-weight-medium mb-0">{% trans "Price" %}:</h2>
-                        <span class="font-size-2 font-weight-medium">{{destino.list_prices.sale_price}}</span>
+                        <span class="font-size-2 font-weight-medium">{{ destino.list_prices.sale_price}}</span>
                     </li>
                     {% if destino.departure_date %}
                     <li class="list-inline-item">
@@ -311,7 +311,7 @@
                        style="color:{% if not destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
                         style="color:{% if not destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;">
-                        {% trans "Breakfast incluided" %}
+                        {% trans "Breakfast included" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-dumbbell"
                        style="color:{% if destino.has_gym %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
@@ -492,7 +492,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="destinationsform" action="{% url "make-booking" %}" method="POST">{% csrf_token %}
+                <form name="destinationsform" action="{% url 'make-booking' %}" method="POST">{% csrf_token %}
                 <div class="form-row">
                     <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
                 </div>
@@ -583,7 +583,7 @@
 {% block extrajs %}
 <script>
     $( document ).ready(function() {
-       $.get('/destinations/visitor',{"destination":{{destino.id}} })
+       $.get('/destinations/visitor',{"destination":{{ destino.id }} })
     });
     function myMap() {
         let LG = parseFloat({{ map.map_destinie.x }});
