@@ -608,6 +608,9 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <!-- start reCAPTCHA input -->
+                <div id="g-recaptcha"></div>
+                <!-- end reCAPTCHA input -->
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
                 <button type="submit" class="btn btn-primary">{% trans 'Book' %}</button>
             </div>
@@ -650,5 +653,17 @@
         infowindow.open(map, marker);
     }
 </script>
+<!-- start reCAPTCHA assets -->
+<script type="text/javascript">
+  var onloadCallback = function() {
+    grecaptcha.render('g-recaptcha', {
+      'sitekey' : '6Ld03sgUAAAAAFj2SbpktazIW-C8bWL2ILCrq-KP',
+      'theme' : 'dark'
+    });
+  };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer></script>
+<!-- end reCAPTCHA assets -->
 <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=myMap&language={{ LANGUAGE_CODE }}"></script>
 {% endblock extrajs %}
