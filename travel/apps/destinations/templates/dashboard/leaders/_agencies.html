@@ -102,7 +102,39 @@
                                     </div>
                                 </div>
                             </div>
-                                <a class="btn  btn-danger" href=""><i class="fa fa-plus"></i><b class="color:white;"> {% trans "add new Manager"%}</b></a>
+                                <button class="btn btn-outline btn-danger" type="button"  data-toggle="modal" data-target="#myManagerModal"> <i class="fa fa-plus"></i> <b>{% trans "add new Manager"%}</b></button>
+                                <div class="modal inmodal" id="myManagerModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                <h4 class="modal-title">{% trans "Choose an option" %}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="text-center">
+                                                            <a href="{% url 'destinations:manager-add' %}" class="text-info">
+                                                                <i class="fa fa-plus fa-5x"></i>
+                                                                <p class="font-bold"> 
+                                                                    {% trans "Add new Manager" %}
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="text-center">
+                                                            <a href="{% url 'destinations:manager-add-existing' %}" class="text-info">
+                                                                <i class="fa fa-address-card fa-5x"></i>
+                                                                <p class="font-bold">{% trans "Add existing user" %}</p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -153,7 +185,7 @@
                                                   {% endblocktrans %}
                                                 </p>
                                             </div>
-                                        <div class="modal-footer">
+                                            <div class="modal-footer">
                                                     <form method="post"
                                                           action="{% url 'dashboard:agency-delete' users.pk %}">{% csrf_token %}
                                                             <button type="submit"  class="btn btn-danger ">
@@ -163,7 +195,12 @@
                                                                 {% trans "No" %}
                                                             </button>
                                                 </form>
+                                            </div>
+
                                         </div>
+                                    </div>
+                                </div>
+
                                         </span>
                                     </td>
                                 </tr>

@@ -16,8 +16,11 @@
                 <li class="breadcrumb-item">
                     <a href="/es/dashboard/">Inicio</a>
                 </li>
+                <li class="breadcrumb-item">
+                    <a href="{% url "dashboard:manager" %}">{% trans "Managers"%}</a>
+                </li>
                 <li class="breadcrumb-item active">
-                    <a href="#">{% trans "Managers"%}</a>
+                    <a href="#">{% trans "Manager"%}</a>
                 </li>
 
             </ol>
@@ -87,9 +90,9 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="text-center">
-                                                            <a href="" class="text-info">
+                                                            <a href="{% url 'dashboard:agency-add-existing' %}" class="text-info">
                                                                 <i class="fa fa-address-card fa-5x"></i>
-                                                                <p class="font-bold">{% trans "Edit user" %}</p>
+                                                                <p class="font-bold">{% trans "Add existing user" %}</p>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -98,7 +101,39 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline btn-danger" type="button"> <i class="fa fa-plus"></i> <b>{% trans "add new Manager"%}</b></button>
+                                <button class="btn btn-outline btn-danger" type="button"  data-toggle="modal" data-target="#myManagerModal"> <i class="fa fa-plus"></i> <b>{% trans "add new Manager"%}</b></button>
+                                <div class="modal inmodal" id="myManagerModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                <h4 class="modal-title">{% trans "Choose an option" %}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="text-center">
+                                                            <a href="{% url 'destinations:manager-add' %}" class="text-info">
+                                                                <i class="fa fa-plus fa-5x"></i>
+                                                                <p class="font-bold"> 
+                                                                    {% trans "Add new Manager" %}
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="text-center">
+                                                            <a href="{% url 'destinations:manager-add-existing' %}" class="text-info">
+                                                                <i class="fa fa-address-card fa-5x"></i>
+                                                                <p class="font-bold">{% trans "Add existing user" %}</p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,10 +168,38 @@
                                     </td>
 
                                     <td>
-                                        <a href="{% url 'dashboard:mailbox-detail' int=users.id %}" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
+                                        <a href="{% url 'accounts:user-details' users.id %}" class="btn btn-outline btn-primary  btn-xs"> {% trans "See" %}
                                         </a>
-                                        <span class="btn btn-outline btn-danger  btn-xs" onClick="">{% trans "Delete" %}
-                                        </span>
+                                        <button class="btn btn-outline btn-danger btn-xs" type="button"  data-toggle="modal" data-target="#myModalDelete"><i class="fa fa-minus"></i> <b class="color:white;">{% trans "Delete" %}</b></button>
+                                <div class="modal inmodal" id="myModalDelete" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                <h4 class="modal-title">{{ users }}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>
+                                                  {% blocktrans %}
+                                                    Are you sure you want to delete the Manager {{ users}}?
+                                                  {% endblocktrans %}
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                    <form method="post"
+                                                          action="{% url 'dashboard:manager-delete' users.pk %}">{% csrf_token %}
+                                                            <button type="submit"  class="btn btn-danger ">
+                                                                    {% trans "Yes" %}
+                                                            </button>
+                                                            <button  data-dismiss="modal" class="btn">
+                                                                {% trans "No" %}
+                                                            </button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                     </td>
                                 </tr>
                                 {% endfor %}

@@ -763,6 +763,51 @@ class LeaderView(View):
             return render(request, self.template_name)
 
 
+class LeaderAddView(CreateView):
+    template_name = 'dashboard/leaders/_leaders_add.html'
+    form_class = AgencyAddForm
+
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='manager_country')
+        form.instance.save()
+        form.instance.groups.add(group)
+
+        return super().form_valid(form)
+       
+
+
+class LeaderAddExistingUserView(UpdateView):
+    form_class = AgencyAddExistingUserForm
+    model = CustomerUser
+    template_name = 'dashboard/leaders/_leaders_add_existing.html'
+
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='manager_country')
+        form.instance.save()
+        form.instance.groups.add(group)
+
+        return super().form_valid(form)
+
+    def get_object(self):
+        return get_object_or_404(CustomerUser, email=self.request.POST.get('email'))
+                
+
+    def get(self, request, *args, **kwargs):
+        self.object = None
+        context = self.get_context_data()
+        return self.render_to_response(context)
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().post(request, *args, **kwargs)
+
+
+class LeaderDeleteView(DeleteView):
+    model = CustomerUser
+    success_url = reverse_lazy('destinations:manager')
+    template_name = 'destinations/_delete.html'
+
+
 class AgencyView(ListView):
     template_name = 'dashboard/leaders/_agencies.html'
 

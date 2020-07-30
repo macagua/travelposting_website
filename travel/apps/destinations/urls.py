@@ -38,6 +38,9 @@ from apps.destinations.views.destination import (
     MailboxSent,
     messageView,
     LeaderView,
+    LeaderAddView,
+    LeaderAddExistingUserView,
+    LeaderDeleteView,
 )
 
 from apps.destinations.views.booking import (
@@ -81,6 +84,21 @@ urlpatterns = [
         'managers',
         nocommunity_access(LeaderView.as_view()),
         name='manager',
+    ),
+    path(
+        'managers/add/existing',
+        nocommunity_access(LeaderAddExistingUserView.as_view()),
+        name='manager-add-existing'
+    ),
+    path(
+        'managers/add/',
+        nocommunity_access(LeaderAddView.as_view()),
+        name='manager-add',
+    ),
+    path(
+        'managers/<int:pk>/delete',
+        nocommunity_access(LeaderDeleteView.as_view()),
+        name='manager-delete'
     ),
     path(
         'agencies/list',
