@@ -17,13 +17,13 @@
 
 {% endif %}
 
-
+<!-- Start SVG Hero Image -->
 <div id="SVGHero" class="position-relative bg-img-hero" style="background-image: url(/main/media/{{ destino.photos.first.image }});">
     <div class="container space-top-2 space-bottom-3 space-md-3 space-bottom-lg-4">
         <div class="w-md-65 w-lg-50">
         </div>
     </div>
-    <!-- SVG Background -->
+    <!-- Start SVG Background -->
     <figure class="position-absolute right-0 bottom-0 left-0">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="100%" height="85px" viewBox="0 0 1920 107.7" style="margin-bottom: -8px; enable-background:new 0 0 1920 107.7;" xml:space="preserve" class="injected-svg js-svg-injector" data-parent="#SVGHero">
             <style type="text/css">
@@ -36,16 +36,22 @@
     </figure>
     <!-- End SVG Background -->
 </div>
+<!-- End SVG Hero Image -->
+
+<!-- Start Container with Ads Section -->
 <div class="container space-top-1 space-md-3 space-top-sm-2">
-    <div class="row">
-        <div class="col-lg-7 mb-7 mb-lg-0">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <!-- Tabs section -->
+        <div class="col col-lg-6 mb-6 mb-lg-0">
             <div class="pr-lg-4">
+                <!--START TABS DETAIL-->
                 <div class="position-relative">
-                    <!--START TABS DETAIL-->
+
                     <!-- Nav Classic -->
                     <ul id="SVGnavIcons" class="svg-preloader nav nav-classic nav-rounded nav-shadow nav-justified border" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link font-weight-medium active" id="pills-one-example2-tab" data-toggle="pill" href="#pills-one-example2" role="tab" aria-controls="pills-one-example2" aria-selected="true">
+                            <a class="nav-link font-weight-medium active" id="pills-graphics-tab" data-toggle="pill"
+                               href="#pills-graphics" role="tab" aria-controls="pills-graphics" aria-selected="true">
                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
                                     <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
                                         <img class="js-svg-injector" src='{% static "img/destinies/images-regular.svg" %}' alt="{% trans 'SVG' %}"
@@ -56,7 +62,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link font-weight-medium" id="pills-two-example2-tab" data-toggle="pill" href="#pills-two-example2" role="tab" aria-controls="pills-two-example2" aria-selected="false">
+                            <a class="nav-link font-weight-medium" id="pills-detail-tab" data-toggle="pill" href="#pills-detail"
+                               role="tab" aria-controls="pills-detail" aria-selected="false">
                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
                                     <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
                                         <img class="js-svg-injector" src='{% static "img/destinies/readme-brands.svg" %}' alt="{% trans 'SVG' %}"
@@ -67,7 +74,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link font-weight-medium" id="pills-three-example2-tab" data-toggle="pill" href="#pills-three-example2" role="tab" aria-controls="pills-three-example2" aria-selected="false">
+                            <a class="nav-link font-weight-medium" id="pills-map-tab" data-toggle="pill" href="#pills-map"
+                               role="tab" aria-controls="pills-map" aria-selected="false">
                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
                                     <figure class="ie-height-20 d-none d-md-block w-100 max-width-6 mr-3">
                                         <img class="js-svg-injector" src='{% static "img/destinies/map-marked-alt-solid.svg" %}' alt="{% trans 'SVG' %}"
@@ -79,9 +87,11 @@
                         </li>
                     </ul>
                     <!-- End Nav Classic -->
+
                     <!-- Tab Content -->
                     <div class="tab-content">
-                        <div class="tab-pane fade pt-6 show active" id="pills-one-example2" role="tabpanel" aria-labelledby="pills-one-example2-tab">
+                        <div class="tab-pane fade pt-6 show active" id="pills-graphics" role="tabpanel"
+                             aria-labelledby="pills-graphics-tab">
                             <!-- START GALLERY-->
                             <div class="overflow-hidden">
                                 <div class="js-slick-carousel u-slick u-slick--gutters-2"
@@ -116,27 +126,28 @@
                                     {% for gallery in destino.photos %}
                                     <!-- Gallery -->
                                     <a class="js-fancybox u-media-viewer" href="javascript:;"
-                                        data-src="/main/media/{{gallery.image}}"
-                                        data-fancybox="fancyboxGallery6"
-                                        data-caption="{{gallery.name}} - {{gallery.description}}"
-                                        data-speed="700"
-                                        data-is-infinite="true" title="{{gallery.name}} - {{gallery.description}}">
-                                        <div class="js-slide rounded bg-img-hero min-height-300"
-                                             style="background-image: url(/main/media/{{gallery.image}});"></div>
+                                       data-src="/main/media/{{gallery.image}}"
+                                       data-fancybox="fancyboxGraphics"
+                                       data-caption="{{gallery.name}} - {{gallery.description}}"
+                                       data-speed="700"
+                                       data-is-infinite="true" title="{{gallery.name}} - {{gallery.description}}">
+                                       <div class="js-slide rounded bg-img-hero min-height-300"
+                                            style="background-image: url(/main/media/{{gallery.image}});"></div>
                                     </a>
                                     <!-- End Gallery -->
                                     {% endfor%}
-                                    {% for galleries in destino.videos %}
+                                    {% for item in destino.videos %}
                                     <!-- Videos Gallery -->
                                     <a class="js-fancybox u-media-viewer" href="javascript:;"
-                                        data-src="/main/media/{{galleries.video}}"
-                                        data-fancybox="fancyboxGallery6"
-                                        data-caption="{{galleries.name}} - {{galleries.description}}"
-                                        data-speed="700"
-                                        data-is-infinite="true">
-                                        <div class="js-slide rounded bg-img-hero min-height-300">
-                                            <video width="212px" height="300px" controls>
-                                                <source src="/main/media/{{galleries.video}}" type="video/mp4">
+                                       data-src="/main/media/{{item.video}}"
+                                       data-fancybox="fancyboxGraphics"
+                                       data-caption="{{item.name}} - {{item.description}}"
+                                       data-speed="700"
+                                       data-is-infinite="true" title="{{item.name}} - {{item.description}}">
+                                       <div class="js-slide rounded bg-img-hero min-height-300">
+                                            <video width="212px" height="300px" controls
+                                                   poster="{{ item.thumbnail_preview.url }}">
+                                                <source src="/main/media/{{item.video}}" type="video/mp4">
                                                 {% trans "Your browser does not support the video tag." %}
                                             </video>
                                         </div>
@@ -147,10 +158,10 @@
                             </div>
                             <!-- END GALLERY-->
                         </div>
-                        <div class="tab-pane fade pt-6" id="pills-two-example2" role="tabpanel" aria-labelledby="pills-two-example2-tab">
+                        <div class="tab-pane fade pt-6" id="pills-detail" role="tabpanel" aria-labelledby="pills-detail-tab">
                             {{ destino.description|safe }}
                         </div>
-                        <div class="tab-pane fade pt-6" id="pills-three-example2" role="tabpanel" aria-labelledby="pills-three-example2-tab">
+                        <div class="tab-pane fade pt-6" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
                             {% if map %}
                             <div id="googleMap" style="width:100%;height:400px;"></div>
                             {% else %}
@@ -159,8 +170,9 @@
                         </div>
                     </div>
                     <!-- End Tab Content -->
-                    <!--END TABS DETAIL-->
+
                 </div>
+                <!--END TABS DETAIL-->
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="{{request.META.HTTP_REFERER}}" title="{% trans 'back to list' %}">
                         <small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
@@ -277,14 +289,17 @@
                 </div>
             </div>
         </div>
+        <!-- End Tabs section -->
+
         <!-- Destination Description -->
-        <div class="col-lg-5">
+        <div class="col col-lg-5">
             <!-- Title -->
             <div class="mb-5">
                 <h1 class="h3 font-weight-medium">{{ destino.name|truncatechars:36 }}</h1>
                 <p style="color: #000000;">{{ destino.short_description|truncatechars:150|striptags }}</p>
             </div>
             <!-- End Title -->
+
             <!-- Price -->
             <div class="mb-5">
                 <ul class="list-inline mb-0">
@@ -318,6 +333,7 @@
                 </ul>
             </div>
             <!-- End Price -->
+
             <div class="mb-3">
                 <a class="d-inline-flex small" href="#">
                     <i class="fas fa-wifi"
@@ -456,9 +472,10 @@
                 </button>
             </div>
         </div>
-        <!-- End Product Description -->
-        <!-- Start Ads Slot -->
-        <div class="col-lg-7 mb-7 mb-lg-0">
+        <!-- End Destination Description -->
+
+        <!-- Ads Sidebar section -->
+        <div class="col col-lg-1">
             <a class="" target="_blank" href="https://ads.website.com/" title="Main Banner Ads">
                 <!-- <img src="https://via.placeholder.com/120x340?text=Vertical+Banner" alt="Placeholder Banner Ads" /> -->
                 <img width="120" height="340" src="{% static 'img/ads/ads_1.jpg' %}" alt="Main Banner Ads" />
@@ -478,10 +495,12 @@
                 <img width="120" height="110" src="{% static 'img/ads/call_center.jpg' %}" alt="Contact with us Call Center" />
             </a>
         </div>
-        <!-- End Ads Slot -->
+        <!-- End Ads Sidebar section -->
     </div>
 </div>
-<!--modal 01-->
+<!-- End Container with Ads Section -->
+
+<!-- Start Comment Modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -522,7 +541,9 @@
         </div>
     </div>
 </div>
-<!-- Modal -->
+<!-- End Comment Modal -->
+
+<!-- Start Booking Modal -->
 <div class="modal fade bd-example-modal-lg" id="BookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -618,14 +639,15 @@
         </div>
     </div>
 </div>
+<!-- End Booking Modal -->
 
-<!-- Comentarios --> 
+<!-- Start Comments Section -->
 {% include 'services/destination/comments.html' %}
-<!-- Final de comentarios-->
+<!-- End Comments Section -->
 
 {% endblock content %}
 {% block extrajs %}
-<script>
+<script type="text/javascript">
     $( document ).ready(function() {
        $.get('/destinations/visitor',{"destination":{{ destino.id }} })
     });
@@ -666,4 +688,5 @@
         async defer></script>
 <!-- end reCAPTCHA assets -->
 <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=myMap&language={{ LANGUAGE_CODE }}"></script>
+
 {% endblock extrajs %}
