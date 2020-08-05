@@ -10,13 +10,14 @@
             <nav class="navbar navbar-expand u-header__navbar">
                 <!-- White Logo -->
                 <img src="{% static 'img/logo-round-0.5x.png' %}" width="30">
-                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white" href="/" aria-label="{% trans 'Front' %}">
-                <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
+                <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white"
+                   href="/" aria-label="{% trans 'Front' %}" title="{% trans 'Travelposting' %}">
+                    <span class="u-header__navbar-brand-text">{% trans 'Travelposting' %}</span>
                 </a>
                 <!-- End White Logo -->
                 <!-- Button -->
                 <div class="ml-auto">
-                    <a class="btn btn-sm btn-primary transition-3d-hover" href="/">
+                    <a class="btn btn-sm btn-primary transition-3d-hover" href="/" title="{% trans 'Go back' %}">
                     {% trans 'Go back' %}
                     </a>
                 </div>
@@ -44,7 +45,7 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
-                    <!-- Form -->
+                    <!-- Login Form -->
                     <form class="js-validate mt-5" method="POST" role="form">
                         {% csrf_token %}
                         <!-- Title -->
@@ -53,6 +54,7 @@
                             <p>{% trans 'Login to manage your account.' %}</p>
                         </div>
                         <!-- End Title -->
+
                         {% if errors %}
                         <div class="alert alert-danger" role="alert">
                             {{ errors }}
@@ -60,19 +62,22 @@
                         {% endif %}
                         {% for field in form %}
                         <div class="js-form-message form-group">
-                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label> <!-- TODO: Add i18n support -->
                             {{ field }}
                             {{ field.help_text }}
                             {{ field.errors }}
                         </div>
                         {% endfor %}
-                        <a class="link-muted text-capitalize font-weight-normal small" href="{% url 'accounts:password-reset' %}">{% trans "Forgot Password?" %}</a>
+
+                        <a class="link-muted text-capitalize font-weight-normal small"
+                           href="{% url 'accounts:password-reset' %}"
+                           title="{% trans 'Forgot Password?' %}">{% trans 'Forgot Password?' %}</a>
 
                         <!-- Button -->
                         <div class="row align-items-center mb-5">
                             <div class="col-6">
-                                <span class="small text-muted">{% trans 'Don\'t have an account?' %}</span>
-                                <a class="small" href="/pre-register/">{% trans 'Signup' %}</a>
+                                <span class="small text-muted">{% trans "Don't have an account?" %}</span>
+                                <a class="small" href="/pre-register/" title="{% trans 'Signup' %}">{% trans 'Signup' %}</a>
                             </div>
                             <div class="col-6 text-right">
                                 <button type="submit" class="btn btn-primary transition-3d-hover">{% trans 'Login' %}</button>
@@ -85,7 +90,7 @@
             </div>
         </div>
     </div>
-    <!-- End Form -->
+    <!-- End Login Form -->
 </main>
 <!-- ========== END MAIN ========== -->
 {% endblock %}

@@ -2,7 +2,7 @@ from django import forms
 from django_registration.forms import RegistrationForm as BaseRegistrationForm
 from apps.accounts.models import CustomerUser
 from apps.utils.forms import BaseBootstrapForm, FieldKwargsMeta
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 
 # For the class based is for user login

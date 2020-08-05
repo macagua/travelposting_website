@@ -24,27 +24,28 @@ TEMPLATE_DESCRIPTION = _("""
 
 <p><b>Please enter your text here...</b></p><br><br>
 
-<table class="table table-bordered tours-tabs__table" style="width: 100%px;">
+<table class='table table-bordered tours-tabs__table'
+       style='width: 100%px;'>
 <tbody>
 <tr>
-<td style="width: 213px;"><strong>EXIT / RETURN</strong></td>
-<td style="width: 574.233px;"><b>Enter the exit here...</b></td>
+<td style='width: 213px;'><strong>EXIT / RETURN</strong></td>
+<td style='width: 574.233px;'><b>Enter the exit here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>EXIT TIME</strong></td>
-<td style="width: 574.233px;"><b>Enter the time of exit here...</b></td>
+<td style='width: 213px;'><strong>EXIT TIME</strong></td>
+<td style='width: 574.233px;'><b>Enter the time of exit here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>ARRIVAL TIME</strong></td>
-<td style="width: 574.233px;"><b>Enter the time of arrival here...</b></td>
+<td style='width: 213px;'><strong>ARRIVAL TIME</strong></td>
+<td style='width: 574.233px;'><b>Enter the time of arrival here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>NR. OF TOUR FOR RESERVATIONS</strong></td>
-<td style="width: 574.233px;"><b>Enter the tour number here...</b></td>
+<td style='width: 213px;'><strong>NR. OF TOUR FOR RESERVATIONS</strong></td>
+<td style='width: 574.233px;'><b>Enter the tour number here...</b></td>
 </tr>
 <tr>
-<td style="width: 213px;"><strong>TRANSFER FROM </strong></td>
-<td style="width: 574.233px;"><strong><b>Enter the transfer here...</b></strong></td>
+<td style='width: 213px;'><strong>TRANSFER FROM </strong></td>
+<td style='width: 574.233px;'><strong><b>Enter the transfer here...</b></strong></td>
 </tr>
 </tbody>
 </table>
@@ -77,6 +78,10 @@ class Categorie(models.Model):
         _('Status'),
         default=True
     )
+
+    class Meta:
+        verbose_name_plural = _('Categories')
+        verbose_name = _('Category')
 
     def __str__(self):
         return f'{self.name}'
@@ -116,40 +121,48 @@ class Destination(models.Model):
     )
 
     departure_date = models.DateField(
+        _('Departure Date'),
         blank=True,
         null=True,
     )
     arrival_date = models.DateField(
+        _('Arrival Date'),
         blank=True,
         null=True,
     )
 
     departure_time = models.TimeField(
+        _('Departure Time'),
         blank = True,
         null = True,
     )
 
     arrival_time = models.TimeField(
+        _('Arrival Time'),
         blank = True,
         null = True,
     )
 
     number_of_reservations = models.IntegerField(
+        _('Number of Reservations'),
         blank = True,
         null = True,
     )
 
     transfer_from = models.TextField(
+        _('Transfer from'),
         max_length = 120,
         blank = True,
         null = True,
     )
 
     tour_include = models.TextField(
+        _('Tour include'),
         blank = True,
     )
 
     tour_not_include = models.TextField(
+        _('Tour not include'),
         blank = True,
     )
 
@@ -175,14 +188,14 @@ class Destination(models.Model):
 
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f'{self.name}'
-
     class Meta:
         verbose_name = _("Destination")
         verbose_name_plural = _("Destinations")
         ordering = ('user',)
         unique_together = ('user', 'name',)
+
+    def __str__(self):
+        return f'{self.name}'
 
     def get_sku(self):
         return f"{self.details.inventario.sku}".upper()
@@ -262,6 +275,7 @@ class Destination(models.Model):
             return None
         return list_prices
 
+
 class DestinationMap(models.Model):
     destination = models.OneToOneField(
         Destination,
@@ -269,14 +283,18 @@ class DestinationMap(models.Model):
         on_delete=models.CASCADE,
         verbose_name=_('Map Destination'),
     )
-    description_map = models.CharField(
+    description_map = models.CharField(_('Description Map'),
         max_length = 50
     )
-    map_destinie = models.PointField(help_text=_("To generate the map for your location"))
+    map_destinie = models.PointField(_('Destination Map'),
+        help_text=_("To generate the map for your location"))
+
+    class Meta:
+        verbose_name = _('Destination Map')
+        verbose_name_plural = _('Destination Maps')
 
     def __unicode__(self):
         return self.map_destinie
-
 
     def __str__(self):
         return f'{self.destination} {self.description_map}'
@@ -328,13 +346,13 @@ class Photo(models.Model):
 
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f"{self.name}"
-
     class Meta:
         ordering = ('sort', 'name')
         verbose_name = _('Photo')
         verbose_name_plural = _('Photos')
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class DestinationRating(models.Model):
@@ -343,6 +361,13 @@ class DestinationRating(models.Model):
         on_delete=models.CASCADE,
         verbose_name=_('Destination Rating'),
     )
+
+    class Meta:
+        verbose_name = _('Destination Rating')
+        verbose_name_plural = _('Destinations Rating')
+
+    def __str__(self):
+        return f"{self.destination}"
 
 
 class Badge(models.Model):
@@ -423,6 +448,11 @@ class Itinerary(models.Model):
 
     def __str__(self):
         return f'{self.destination}-{self.short_description}'
+
+    class Meta:
+        verbose_name = _('Itinerary')
+        verbose_name_plural = _('Itineraries')
+
 
 class TabData(models.Model):
     tour_data = models.ForeignKey(
@@ -547,12 +577,12 @@ class HeaderSection(models.Model):
         ),
     )
 
-    def __str__(self):
-        return f"{self.subtitle}"
-
     class Meta:
         verbose_name_plural = _('Header sections')
         verbose_name = _('Header section')
+
+    def __str__(self):
+        return f"{self.subtitle}"
 
 
 class DestinationDetail(models.Model):
@@ -578,12 +608,12 @@ class DestinationDetail(models.Model):
         default=False,
     )
 
-    def __str__(self):
-        return f"{self.destination}-details"
-
     class Meta:
         verbose_name_plural = _('Destination details')
         verbose_name = _('Destination detail')
+
+    def __str__(self):
+        return f"{self.destination}-details"
 
 
 class GeneralDetail(models.Model):
@@ -644,12 +674,12 @@ class GeneralDetail(models.Model):
         ),
     )
 
-    def __str__(self):
-        return f"{self.destination_detail}-general"
-
     class Meta:
         verbose_name_plural = _('General details')
         verbose_name = _('General detail')
+
+    def __str__(self):
+        return f"{self.destination_detail}-general"
 
 
 class InventarioDetail(models.Model):
@@ -704,12 +734,12 @@ class InventarioDetail(models.Model):
             'items to be purchased in each order'),
         )
 
-    def __str__(self):
-        return f"{self.destination_detail}-inventario"
-
     class Meta:
         verbose_name_plural = _('Inventory details')
         verbose_name = _('Inventory detail')
+
+    def __str__(self):
+        return f"{self.destination_detail}-inventario"
 
 
 class BookingDetail(models.Model):
@@ -774,56 +804,57 @@ class BookingDetail(models.Model):
         ),
     )
 
-    def __str__(self):
-        return f"{self.destination_detail}-booking-{self.pk}"
-
     class Meta:
         ordering = ('start_date', 'end_date')
         verbose_name_plural = _('Booking details')
         verbose_name = _('Booking detail')
 
+    def __str__(self):
+        return f"{self.destination_detail}-booking-{self.pk}"
+
 
 class SearchLanding(models.Model):
     names = models.CharField(
-        'Names',
+        _('Names'),
         null=True,
         blank=True,
         max_length=40
     )
 
     country = models.CharField(
-        'Countries',
+        _('Countries'),
         null=True,
         blank=True,
         max_length=30
     )
 
     email = models.EmailField(
-        'Email',
+        _('Email'),
         null=True,
         blank=True,
         max_length=50
     )
 
     whatsapp = models.CharField(
-        'Whatsapp',
+        _('Whatsapp'),
         null=True,
         blank=True,
         max_length=30
     )
-
-    def __str__(self):
-        return f"{self.email}-{self.country}"
 
     class Meta:
         ordering = ('email', 'country')
         verbose_name_plural = _('Search Landing')
         verbose_name = _('Search Landing')
 
+    def __str__(self):
+        return f"{self.email}-{self.country}"
+
 
 class Booking(models.Model):
     destination = models.ForeignKey(
         Destination,
+        verbose_name = _("Destination"),
         on_delete=False,
     )
 
@@ -893,12 +924,12 @@ class Booking(models.Model):
         help_text=_('Means if receive following or not.'),
     )
 
-    def __str__(self):
-        return f"{self.firts_name}-{self.last_name}"
-
     class Meta:
         verbose_name_plural = _("Booking's")
         verbose_name = _('Booking')
+
+    def __str__(self):
+        return f"{self.firts_name}-{self.last_name}"
 
 
 class BookingStats(models.Model):
@@ -916,44 +947,54 @@ class BookingStats(models.Model):
 
     date = models.DateTimeField(_("Datetime"),auto_now=True)
 
-    def __str__(self):
-        return f"{self.booking}-{self.user}-{self.date}"
-
     class Meta:
         verbose_name_plural = _("Booking Stats")
         verbose_name = _("Booking Stast")
 
+    def __str__(self):
+        return f"{self.booking}-{self.user}-{self.date}"
+
 
 
 class SocialNetwork(models.Model):
-    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+    destination = models.ForeignKey(Destination,
+        verbose_name = _("Destination"), on_delete=models.CASCADE)
     social_network = models.BooleanField(
         _('Social Network'),
         default=False,
         help_text = _("Check for use the network from user"),
     )
-    facebook = models.CharField(max_length=100, null=True, blank=True)
-    instagram = models.CharField(max_length=100, null=True, blank=True)
-    twitter = models.CharField(max_length=100, null=True, blank=True)
-    linkedin = models.CharField(max_length=100, null=True, blank=True)
-    pinterest = models.URLField(max_length=100, null=True, blank=True)
-    website = models.URLField(max_length=100, null=True, blank=True)
-
-    def __str__(self):
-        return f"{self.destination}"
+    facebook = models.CharField(_("Facebook"), max_length=100, null=True, blank=True)
+    instagram = models.CharField(_("Instagram"), max_length=100, null=True, blank=True)
+    twitter = models.CharField(_("Twitter"), max_length=100, null=True, blank=True)
+    linkedin = models.CharField(_("Linkedin"), max_length=100, null=True, blank=True)
+    pinterest = models.URLField(_("Pinterest"), max_length=100, null=True, blank=True)
+    website = models.URLField(_("Website"), max_length=100, null=True, blank=True)
 
     class Meta:
         verbose_name_plural = _("Social Networks")
         verbose_name = _("Social Network")
 
+    def __str__(self):
+        return f"{self.destination}"
+
 
 class DestinationVisitor(models.Model):
-    destination = models.ForeignKey(Destination,related_name='visitor', on_delete = models.CASCADE)
-    ip_address = models.CharField(max_length = 100)
-    dma_code = models.IntegerField(blank= True, null= True)
-    country_code = models.CharField(max_length = 5)
-    country_name = models.CharField(max_length= 100)
-    date_time = models.DateTimeField(auto_now_add=True)
+    destination = models.ForeignKey(Destination,
+        verbose_name = _("Destination"), related_name='visitor',
+        on_delete = models.CASCADE)
+    ip_address = models.CharField(_("IP Address"), max_length = 100)
+    dma_code = models.IntegerField(_("Dma Code"), blank = True, null = True)
+    country_code = models.CharField(_("Country Code"), max_length = 5)
+    country_name = models.CharField(_("Country Name"), max_length = 100)
+    date_time = models.DateTimeField(_("Date/time"), auto_now_add = True)
+
+    class Meta:
+        verbose_name = _('Destination Visitor')
+        verbose_name_plural = _('Destination Visitors')
+
+    def __str__(self):
+        return f"{self.destination}-{self.country_code}-{self.country_code}"
 
 
 class Advertising(models.Model):
@@ -966,37 +1007,40 @@ class Advertising(models.Model):
 
     name = models.CharField(_('Name'), max_length=30, blank=True)
     company = models.CharField(_('Company'), max_length=30, blank=True)
-    imagen_desktop = FilerImageField(related_name=_('Desktop'),
+    imagen_desktop = FilerImageField(related_name='desktop',
                                     null=True,
                                     blank=True,
                                     on_delete=False,
+                                    verbose_name=_("Desktop Image"),
                                     help_text=_('Image to be displayed in desktop resolutions'))
-    imagen_mobile = FilerImageField(related_name=_('mobile'),
+    imagen_mobile = FilerImageField(related_name='mobile',
                                     null=True,
                                     blank=True,
                                     on_delete=False,
+                                    verbose_name=_("Mobile Image"),
                                     help_text=_('Image to be displayed in mobile resolution'))
-    position = models.IntegerField(choices=POSITION, default=1)
+    position = models.IntegerField(_('Position'), choices=POSITION, default=1)
     from_date = models.DateField(_('Start of advertising'),
                              default=datetime.date.today)
     to_date = models.DateField(_('End of advertising'), default=datetime.date.today)
     status = models.BooleanField(_('Active'), default=False, help_text=(
         _('Indicate Advertising Status')))
-    url = models.URLField(max_length=200, blank=False)
+    url = models.URLField(_('URL'), max_length=200, blank=False)
     created_on = models.DateTimeField(_('Created'), auto_now_add=True)
-
-    def __str__(self):
-        return self.nombre
 
     class Meta:
         db_table='Advertising'
-        verbose_name_plural = 'Ads'
+        verbose_name_plural = _('Ads')
+        verbose_name = _('Advertising')
+
+    def __str__(self):
+        return self.name
 
 
-#A private directmessage on the dashboard
+# A private directmessage on the dashboard
 class MessageDashboard(models.Model):
     subject = models.CharField(
-        'Subject', blank=False, null=False, max_length=1000)
+        _('Subject'), blank=False, null=False, max_length=1000)
     content = models.TextField(_('Content'))
     sender = models.ForeignKey(
         CustomerUser, related_name='dash_sender', verbose_name=_("Sender"), on_delete=models.CASCADE)
@@ -1004,6 +1048,10 @@ class MessageDashboard(models.Model):
     recipient = models.ForeignKey(CustomerUser, related_name='dash_recipient', verbose_name=_("Recipient"), on_delete=models.CASCADE)
     sent_at = models.DateTimeField(_("sent at"), null=True, blank=True)
     read_at = models.DateTimeField(_("read at"), null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = _('Messages Dashboard')
+        verbose_name = _('Message Dashboard')
 
     @property
     def unread(self):

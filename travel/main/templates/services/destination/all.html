@@ -42,7 +42,9 @@
                 >
                 <!-- Card Info -->
                 <div class="card border-0 shadow-soft h-100 gallery-item press">
-                  <img class="card-img-top" src="{% static 'img/blank.gif' %}" data-original="{% static 'assets/img/1920x1080/img20.jpg' %}" alt="Image Description">
+                  <img class="card-img-top" src="{% static 'img/blank.gif' %}"
+                       data-original="{% static 'assets/img/1920x1080/img20.jpg' %}"
+                       alt="{% trans 'Image Description' %}">
                   <div class="card-body p-5">
                     <h4 class="text-primary" class="mb-0">
                       <span class="font-weight-semi-bold">{{destination.name}}</span>

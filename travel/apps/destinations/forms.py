@@ -61,7 +61,7 @@ class DestinationForm(forms.ModelForm):
 
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Nombre del tour'),
+                'placeholder': _('Tour Name'),
                 'required':True,
 
             }),
@@ -223,7 +223,7 @@ class TabDataInlineFormSet(forms.BaseInlineFormSet):
 
             if option_tab in options_tab:
                 raise forms.ValidationError(_(
-                    "El tab '%(tab)s' se encuentra duplicado, debe estar una sola vez."), code="duplicated",
+                    "The tab '%(tab)s' it is duplicated, it must be only once."), code="duplicated",
                     params={'tab': option_tab})
             options_tab.append(option_tab)
 

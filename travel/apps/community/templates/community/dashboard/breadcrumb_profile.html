@@ -35,26 +35,31 @@
 						<div id="breadcrumbNavBar" class="collapse navbar-collapse u-header__navbar-collapse">
 							<ul class="navbar-nav u-header__navbar-nav">
 								<li class="nav-item u-header__nav-item">
-									<a class="nav-link u-header__nav-link" href="{% url 'dashboard-community' %}">
+									<a class="nav-link u-header__nav-link" href="{% url 'dashboard-community' %}"
+									   title="{% trans 'Home' %}">
 										{% trans 'Home' %}
 									</a>
 								</li>
 								<li class="nav-item u-header__nav-item">
-									<a class="nav-link u-header__nav-link" href="{% url 'inbox-community' %}">
-										{% trans "Inbox" %} 
+									<a class="nav-link u-header__nav-link" href="{% url 'inbox-community' %}"
+									   title="{% trans 'Inbox' %} ">
+										{% trans 'Inbox' %}
 									</a>
 								</li>
 								<li class="nav-item u-header__nav-item">
-									<a class="nav-link u-header__nav-link" href="/pricing/">{% trans 'Prices' %}</a>
+									<a class="nav-link u-header__nav-link" href="/pricing/"
+									   title="{% trans 'Prices' %}">{% trans 'Prices' %}</a>
 								</li>
 								<li class="nav-item u-header__nav-item">
-									<a class="nav-link u-header__nav-link" href="/category/all">
+									<a class="nav-link u-header__nav-link" href="/category/all"
+									   title="{% trans 'Destinations' %}">
 										{% trans 'Destinations' %}
 									</a>
 								</li>
 								<li class="nav-item u-header__nav-item">
 									<a class="nav-link u-header__nav-link"
-									   href="{% url 'logout-community' %}?next={% url 'index' %}">
+									   href="{% url 'logout-community' %}?next={% url 'index' %}"
+									   title="{% trans 'Logout' %}">
 										{% trans 'Logout' %}
 									</a>
 								</li>
@@ -70,14 +75,14 @@
 				<!-- Button -->
 				{%if edit_profile%}
 				<a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover"
-				   href="{% url 'edit-profile' %}">
+				   href="{% url 'edit-profile' %}" title="{% trans 'Edit Profile' %}">
 					<span class="fas fa-user-cog small mr-2"></span>
-					{% trans "Edit Profile" %}
+					{% trans 'Edit Profile' %}
 				</a>
 				{%else%}
 				<a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover"
-				   href="{% url 'my-profile' %}">
-					{% trans "See my profile" %}
+				   href="{% url 'my-profile' %}" title="{% trans 'See my profile' %}">
+					{% trans 'See my profile' %}
 				</a>
 				{%endif%}
 

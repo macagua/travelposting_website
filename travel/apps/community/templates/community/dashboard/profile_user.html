@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="mb-2">
-                                <button class="btn btn-sm btn-soft-primary transition-3d-hover" data-toggle="modal" data-target=".bd-example-modal-lg" >
+                                <button class="btn btn-sm btn-soft-primary transition-3d-hover" data-toggle="modal" data-target=".bd-example-modal-lg">
                                     <span class="far fa-envelope mr-2"></span>
                                     {% trans "Send a Message" %}
                                 </button>
@@ -64,7 +64,7 @@
                             <a class="media mb-4" href="{{ members.twitter }}">
                                 <div class="u-sm-avatar mr-3">
                                     <img class="img-fluid" src="{% static 'assets/img/160x160/img19.png' %}"
-                                        alt="Image Description">
+                                         alt="{% trans 'Image Description' %}">
                                 </div>
                                 <div class="media-body">
                                     <span class="d-block text-dark">Twitter</span>
@@ -77,7 +77,7 @@
                             <a class="media" href="{{ members.facebook }}">
                                 <div class="u-sm-avatar mr-3">
                                     <img class="img-fluid" src="{% static 'assets/img/160x160/img20.png' %}"
-                                        alt="Image Description">
+                                         alt="{% trans 'Image Description' %}">
                                 </div>
                                 <div class="media-body">
                                     <span class="d-block text-dark">Facebook</span>
@@ -112,7 +112,7 @@
                         <li class="list-inline-item mb-3 mb-sm-0 mr-5">
                             <div class="d-flex align-items-center">
                                 <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg' %}"
-                                    alt="Image Description" style="width: 40px;">
+                                     alt="{% trans 'Image Description' %}" style="width: 40px;">
                                 <div class="text-secondary">
                                     {% trans "+3 Referrals" %}
                                 </div>
@@ -121,7 +121,7 @@
                         <li class="list-inline-item mb-3 mb-sm-0">
                             <div class="d-flex align-items-center">
                                 <img class="mr-2" src="{% static 'assets/svg/illustrations/verified-user.svg' %}"
-                                    alt="Image Description" style="width: 40px;">
+                                     alt="{% trans 'Image Description' %}" style="width: 40px;">
                                 <div class="text-secondary">
                                     {% trans "Verified" %}
                                 </div>

@@ -243,13 +243,13 @@ THIRD_PARTY = [
 ]
 
 LOCAL_APPS = [
-    'apps.landing_page',
+    'apps.landing_page.apps.LandingPageConfig',
     'apps.utils.apps.UtilsConfig',
     'apps.payments.apps.PaymentsConfig',
-    'apps.destinations',
-    'apps.api',
-    'apps.community',
-    'apps.directmessages',
+    'apps.destinations.apps.DestinationsConfig',
+    'apps.api.apps.ApiConfig',
+    'apps.community.apps.CommunityConfig',
+    'apps.directmessages.apps.DirectmessagesConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
@@ -267,8 +267,8 @@ ADMINS = [
 
 MANAGERS = [
     ('Eliezer Romero', 'eliezerfot123@gmail.com'),
-    ('Tablero travel', 'tablero@travelpostig.com'),
-    ('Soporte', 'support@travelpostig.com'),
+    (_('Travel Dashboard'), 'tablero@travelpostig.com'),
+    (_('Support'), 'support@travelpostig.com'),
 ]
 
 # Authentication options
@@ -322,24 +322,24 @@ DJANGOCMS_STYLE_TEMPLATES = [
 
 CMS_TEMPLATES = (
     ## Customize this
-    ('index.html', 'Landing'),
+    ('index.html', _('Landing')),
     ('about.html', 'About us'),
     ('template_base_for_text.html', 'Template base'),
-    ('tours.html', 'Tour'),
-    ('magazine.html', 'Magazine'),
-    ('community.html', 'Community'),
-    ('datenschutz.html', 'Datenshutz'),
-    ('datenshutz_form.html', 'Datenshutz Form'),
-    ('datenshutz_form_privacity.html', 'Datenshutz Form Privacity'),
-    ('coming-soon.html', 'Coming Soon'),
-    ('hotels.html', 'Hotels template'),
-    ('pricing.html', 'Pricing'),
+    ('tours.html', _('Tour')),
+    ('magazine.html', _('Magazine')),
+    ('community.html', _('Community')),
+    ('datenschutz.html', _('Data protection')),
+    ('datenshutz_form.html', _('Data protection Form')),
+    ('datenshutz_form_privacity.html', _('Data protection Form Privacity')),
+    ('coming-soon.html', _('Coming Soon')),
+    ('hotels.html', _('Hotels template')),
+    ('pricing.html', _('Pricing')),
     ('make_page.html', 'Make page'),
-    ('term.html', 'Terms'),
-    ('faq.html','FAQ'),
-    ('page01.html', 'Page type 01'),
-    ('page02.html', 'Page type 02'),
-    ('presignup.html', 'Pre-signup'),
+    ('term.html', _('Terms')),
+    ('faq.html',_('FAQ')),
+    ('page01.html', _('Page type 01')),
+    ('page02.html', _('Page type 02')),
+    ('presignup.html', _('Pre-signup')),
 
 )
 

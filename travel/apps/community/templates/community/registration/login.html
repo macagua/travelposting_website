@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
-{%load destinations_tags%}
+{% load i18n cms_tags menu_tags sekizai_tags staticfiles %}
+{% load destinations_tags %}
 {% block title %}{% trans 'Community' %}{% endblock title %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
@@ -11,34 +11,34 @@
 <main id="content" role="main">
     <!-- Login Form -->
     <div class="container space-2">
-        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate" method="POST" >{% csrf_token %}
+        <!-- Form -->
+        <form class="js-validate w-md-75 w-lg-50 mx-md-auto" novalidate="novalidate" method="POST">{% csrf_token %}
             <!-- Title -->
             <div class="mb-7">
-                <h2 class="h3 text-primary font-weight-normal mb-0">{% blocktrans %} Welcome <span
-                        class="font-weight-semi-bold">to Community</span>{% endblocktrans %}</h2>
+                <h2 class="h3 text-primary font-weight-normal mb-0">{% blocktrans %} Welcome <span class="font-weight-semi-bold">to Community</span>{% endblocktrans %}</h2>
                 <p>{% trans 'Login to manage your account.' %}</p>
             </div>
             <!-- End Title -->
 
-                        {% if errors %}
-                        <div class="alert alert-danger" role="alert">
-                            {{ errors }}
-                        </div>
-                        {% endif %}
-                        {% for field in form %}
-                        <div class="js-form-message form-group">
-                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                            {{ field }}
-                            {{ field.help_text }}
-                            {{ field.errors }}
-                        </div>
-                        {% endfor %}
+            {% if errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ errors }}
+            </div>
+            {% endif %}
+            {% for field in form %}
+            <div class="js-form-message form-group">
+                <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {{ field.help_text }}
+                {{ field.errors }}
+            </div>
+            {% endfor %}
 
             <!-- Button -->
             <div class="row align-items-center mb-5">
                 <div class="col-6">
-                    <span class="small text-muted">{% trans 'Don\'t have an account?' %}</span>
-                    <a class="small" href="/pre-register/">{% trans 'Signup' %}</a>
+                    <span class="small text-muted">{% trans "Don't have an account?" %}</span>
+                    <a class="small" href="/pre-register/" title="{% trans 'Signup' %}">{% trans 'Signup' %}</a>
                 </div>
 
                 <div class="col-6 text-right">
@@ -47,6 +47,7 @@
             </div>
             <!-- End Button -->
         </form>
+        <!-- End Form -->
     </div>
     <!-- End Login Form -->
 </main>

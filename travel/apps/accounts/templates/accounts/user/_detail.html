@@ -11,7 +11,8 @@
                     <div class="ibox-title">
                         <h5>{% trans "Profile Detail" %}</h5>
                         <div class="ibox-tools">
-                            <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white">
+                            <a href="{% url 'accounts:user-update' object.pk %}" class="btn btn-success color-white"
+                               title="{% trans 'Edit' %}">
                             <i class="fa fa-edit"></i>
                             {% trans "Edit" %}
                             </a>
@@ -19,7 +20,7 @@
                     </div>
                     <div class="ibox-content no-padding border-left-right">
                         <center>
-                            <img alt="image" class="img-fluid" src="{% if object.avatar %}{{object.avatar.url}}{% else %}{% static "img/user.png" %}{% endif %}" width="80">
+                            <img alt="image" class="img-fluid" src="{% if object.avatar %}{{object.avatar.url}}{% else %}{% static 'img/user.png' %}{% endif %}" width="80">
                         </center>
                     </div>
                     <div class="ibox-content profile-content">
