@@ -50,6 +50,7 @@ TEMPLATE_DESCRIPTION = _("""
 </table>
 """)
 
+
 class Categorie(models.Model):
     name = models.CharField(
         _('Name'),
@@ -270,6 +271,7 @@ class Destination(models.Model):
             return None
         return list_prices
 
+
 class DestinationMap(models.Model):
     destination = models.OneToOneField(
         Destination,
@@ -487,6 +489,7 @@ class Itinerary(models.Model):
 
     def __str__(self):
         return f'{self.destination}-{self.short_description}'
+
 
 class TabData(models.Model):
     tour_data = models.ForeignKey(
@@ -1086,3 +1089,31 @@ class MessageDashboard(models.Model):
         if not self.id:
             self.sent_at = timezone.now()
         super(MessageDashboard, self).save(**kwargs)
+
+
+class BookingQuestion(models.Model):
+    question_text = models.CharField(_("Question text"), max_length=200)
+    pub_date = models.DateTimeField(_("date published"))
+
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+    def __str__(self):
+            return self.question_text
+
+    class Meta:
+        verbose_name = _("Booking Question")
+        verbose_name_plural = _("Booking Questions")
+
+
+class BookingChoice(models.Model):
+    question = models.ForeignKey(BookingQuestion, verbose_name=_("Question"), on_delete=models.CASCADE)
+    choice_text = models.CharField(_("Choice text"), max_length=200)
+    votes = models.IntegerField(_("Votes"), default=0)
+
+    def __str__(self):
+        return self.choice_text
+
+    class Meta:
+        verbose_name = _("Booking Choice")
+        verbose_name_plural = _("Booking Choices")

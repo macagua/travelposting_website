@@ -28,7 +28,9 @@ from .models import (
     SocialNetwork,
     DestinationVisitor,
     Advertising,
-    MessageDashboard
+    MessageDashboard,
+    BookingQuestion,
+    BookingChoice
 )
 
 @admin.register(OptionTabData)
@@ -130,9 +132,11 @@ def make_published(modeladmin, request, queryset):
         )
 make_published.short_description = _("publish destinations")
 
+
 def make_unpublished(modeladmin, request, queryset):
     queryset.update(is_published=False)
 make_unpublished.short_description = _("unpublish destinations")
+
 
 @admin.register(Destination)
 class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
@@ -200,12 +204,27 @@ class MessageAdmin(admin.ModelAdmin):
 class DestinationMapAdmin(admin.ModelAdmin):
     form = DestinationMapForm
 
+
+class BookingChoiceInline(admin.TabularInline):
+    model = BookingChoice
+    max_num = 12
+    min_num = 0
+    extra = 1
+
+
+class BookingQuestionAdmin(admin.ModelAdmin):
+    model = BookingQuestion
+    inlines = [BookingChoiceInline]
+    search_fields = ('question_text',)
+    list_filter = ['question_text', 'pub_date']
+    list_display = ('question_text', 'pub_date', )
+
+
 admin.site.register(MessageDashboard, MessageAdmin)
-
-
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)
 admin.site.register(SearchLanding)
 admin.site.register(Itinerary)
 admin.site.register(BookingStats)
 admin.site.register(SocialNetwork)
+admin.site.register(BookingQuestion, BookingQuestionAdmin)
