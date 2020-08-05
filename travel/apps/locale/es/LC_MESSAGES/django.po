@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-16 08:53-0400\n"
-"PO-Revision-Date: 2020-07-13 14:44-0400\n"
+"POT-Creation-Date: 2020-08-05 10:27-0400\n"
+"PO-Revision-Date: 2020-08-05 11:04-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -131,85 +131,1081 @@ msgstr "Agrupación"
 msgid "Prof. Dr."
 msgstr "Prof. Dr."
 
+#: apps/accounts/models.py:28
+msgid "Afghanistan"
+msgstr "Afganistán"
+
+#: apps/accounts/models.py:29
+msgid "Åland Islands"
+msgstr "Islas Åland"
+
+#: apps/accounts/models.py:30
+msgid "Albania"
+msgstr "Albania"
+
+#: apps/accounts/models.py:31
+msgid "Algeria"
+msgstr "Argelia"
+
+#: apps/accounts/models.py:32
+msgid "American Samoa"
+msgstr ""
+
+#: apps/accounts/models.py:33
+msgid "Andorra"
+msgstr "Andorra"
+
+#: apps/accounts/models.py:34
+msgid "Angola"
+msgstr "Angola"
+
+#: apps/accounts/models.py:35
+msgid "Anguilla"
+msgstr ""
+
+#: apps/accounts/models.py:36
+msgid "Antarctica"
+msgstr "Antártida"
+
+#: apps/accounts/models.py:37
+msgid "Antigua and Barbuda"
+msgstr "Antigua y Barbuda"
+
+#: apps/accounts/models.py:38
+msgid "Argentina"
+msgstr "Argentina"
+
+#: apps/accounts/models.py:39
+msgid "Armenia"
+msgstr "Armenia"
+
+#: apps/accounts/models.py:40
+msgid "Aruba"
+msgstr "Aruba"
+
+#: apps/accounts/models.py:41
+msgid "Australia"
+msgstr "Australia"
+
+#: apps/accounts/models.py:42
+msgid "Austria"
+msgstr "Austria"
+
+#: apps/accounts/models.py:43
+msgid "Azerbaijan"
+msgstr "Azerbaiyán"
+
+#: apps/accounts/models.py:44
+msgid "Bahamas"
+msgstr ""
+
+#: apps/accounts/models.py:45
+msgid "Bahrain"
+msgstr ""
+
+#: apps/accounts/models.py:46
+msgid "Bangladesh"
+msgstr ""
+
+#: apps/accounts/models.py:47
+msgid "Barbados"
+msgstr "Barbados"
+
+#: apps/accounts/models.py:48
+msgid "Belarus"
+msgstr ""
+
+#: apps/accounts/models.py:49
+msgid "Belgium"
+msgstr "Bélgica"
+
+#: apps/accounts/models.py:50
+msgid "Belize"
+msgstr ""
+
+#: apps/accounts/models.py:51
+msgid "Benin"
+msgstr ""
+
+#: apps/accounts/models.py:52
+msgid "Bermuda"
+msgstr ""
+
+#: apps/accounts/models.py:53
+msgid "Bhutan"
+msgstr ""
+
+#: apps/accounts/models.py:54
+msgid "Bolivia (Plurinational State of)"
+msgstr "Bolivia, Estado plurinacional de"
+
+#: apps/accounts/models.py:55
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr ""
+
+#: apps/accounts/models.py:56
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: apps/accounts/models.py:57
+msgid "Botswana"
+msgstr ""
+
+#: apps/accounts/models.py:58
+msgid "Bouvet Island"
+msgstr ""
+
+#: apps/accounts/models.py:59
+msgid "Brazil"
+msgstr "Brasil"
+
+#: apps/accounts/models.py:60
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: apps/accounts/models.py:61
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: apps/accounts/models.py:62
+msgid "Bulgaria"
+msgstr ""
+
+#: apps/accounts/models.py:63
+msgid "Burkina Faso"
+msgstr ""
+
+#: apps/accounts/models.py:64
+msgid "Burundi"
+msgstr ""
+
+#: apps/accounts/models.py:65
+msgid "Cabo Verde"
+msgstr "Cabo Verde"
+
+#: apps/accounts/models.py:66
+msgid "Cambodia"
+msgstr "Camboya"
+
 #: apps/accounts/models.py:67
+msgid "Cameroon"
+msgstr "Camerún"
+
+#: apps/accounts/models.py:68
+msgid "Canada"
+msgstr "Canadá"
+
+#: apps/accounts/models.py:69
+msgid "Cayman Islands"
+msgstr ""
+
+#: apps/accounts/models.py:70
+msgid "Central African Republic"
+msgstr "República Centroafricana"
+
+#: apps/accounts/models.py:71
+msgid "Chad"
+msgstr ""
+
+#: apps/accounts/models.py:72
+msgid "Chile"
+msgstr "Chile"
+
+#: apps/accounts/models.py:73
+msgid "China"
+msgstr ""
+
+#: apps/accounts/models.py:74
+msgid "Christmas Island"
+msgstr ""
+
+#: apps/accounts/models.py:75
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: apps/accounts/models.py:76
+msgid "Colombia"
+msgstr "Colombia"
+
+#: apps/accounts/models.py:77
+msgid "Comoros"
+msgstr ""
+
+#: apps/accounts/models.py:78
+msgid "Congo"
+msgstr "Congo"
+
+#: apps/accounts/models.py:79
+msgid "Congo (the Democratic Republic of the)"
+msgstr "Congo, (República Democrática del)"
+
+#: apps/accounts/models.py:80
+msgid "Cook Islands"
+msgstr "Islas Cook"
+
+#: apps/accounts/models.py:81
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: apps/accounts/models.py:82
+msgid "Côte d'Ivoire"
+msgstr ""
+
+#: apps/accounts/models.py:83
+msgid "Croatia"
+msgstr "Croacia"
+
+#: apps/accounts/models.py:84
+msgid "Cuba"
+msgstr "Cuba"
+
+#: apps/accounts/models.py:85
+msgid "Curaçao"
+msgstr "Curasao"
+
+#: apps/accounts/models.py:86
+msgid "Cyprus"
+msgstr ""
+
+#: apps/accounts/models.py:87
+msgid "Czechia"
+msgstr "República Checa"
+
+#: apps/accounts/models.py:88
+msgid "Denmark"
+msgstr "Dinamarca"
+
+#: apps/accounts/models.py:89
+msgid "Djibouti"
+msgstr ""
+
+#: apps/accounts/models.py:90
+msgid "Dominica"
+msgstr "Dominica"
+
+#: apps/accounts/models.py:91
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+#: apps/accounts/models.py:92
+msgid "Ecuador"
+msgstr "Ecuador"
+
+#: apps/accounts/models.py:93
+msgid "Egypt"
+msgstr "Egipto"
+
+#: apps/accounts/models.py:94
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: apps/accounts/models.py:95
+msgid "Equatorial Guinea"
+msgstr "Guinea Ecuatorial"
+
+#: apps/accounts/models.py:96
+msgid "Eritrea"
+msgstr ""
+
+#: apps/accounts/models.py:97
+msgid "Estonia"
+msgstr "Estonia"
+
+#: apps/accounts/models.py:98
+msgid "Eswatini"
+msgstr ""
+
+#: apps/accounts/models.py:99
+msgid "Ethiopia"
+msgstr ""
+
+#: apps/accounts/models.py:100
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: apps/accounts/models.py:101
+msgid "Faroe Islands"
+msgstr ""
+
+#: apps/accounts/models.py:102
+msgid "Fiji"
+msgstr ""
+
+#: apps/accounts/models.py:103
+msgid "Finland"
+msgstr ""
+
+#: apps/accounts/models.py:104
+msgid "France"
+msgstr "Francia"
+
+#: apps/accounts/models.py:105
+msgid "French Guiana"
+msgstr ""
+
+#: apps/accounts/models.py:106
+msgid "French Polynesia"
+msgstr ""
+
+#: apps/accounts/models.py:107
+msgid "French Southern Territories"
+msgstr ""
+
+#: apps/accounts/models.py:108
+msgid "Gabon"
+msgstr ""
+
+#: apps/accounts/models.py:109
+msgid "Gambia"
+msgstr ""
+
+#: apps/accounts/models.py:110
+msgid "Georgia"
+msgstr ""
+
+#: apps/accounts/models.py:111
+msgid "Germany"
+msgstr ""
+
+#: apps/accounts/models.py:112
+msgid "Ghana"
+msgstr ""
+
+#: apps/accounts/models.py:113
+msgid "Gibraltar"
+msgstr ""
+
+#: apps/accounts/models.py:114
+msgid "Greece"
+msgstr ""
+
+#: apps/accounts/models.py:115
+msgid "Greenland"
+msgstr ""
+
+#: apps/accounts/models.py:116
+msgid "Grenada"
+msgstr ""
+
+#: apps/accounts/models.py:117
+msgid "Guadeloupe"
+msgstr ""
+
+#: apps/accounts/models.py:118
+msgid "Guam"
+msgstr ""
+
+#: apps/accounts/models.py:119
+msgid "Guatemala"
+msgstr ""
+
+#: apps/accounts/models.py:120
+msgid "Guernsey"
+msgstr ""
+
+#: apps/accounts/models.py:121
+msgid "Guinea"
+msgstr ""
+
+#: apps/accounts/models.py:122
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: apps/accounts/models.py:123
+msgid "Guyana"
+msgstr ""
+
+#: apps/accounts/models.py:124
+msgid "Haiti"
+msgstr ""
+
+#: apps/accounts/models.py:125
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: apps/accounts/models.py:126
+msgid "Holy See"
+msgstr ""
+
+#: apps/accounts/models.py:127
+msgid "Honduras"
+msgstr ""
+
+#: apps/accounts/models.py:128
+msgid "Hong Kong"
+msgstr ""
+
+#: apps/accounts/models.py:129
+msgid "Hungary"
+msgstr ""
+
+#: apps/accounts/models.py:130
+msgid "Iceland"
+msgstr ""
+
+#: apps/accounts/models.py:131
+msgid "India"
+msgstr ""
+
+#: apps/accounts/models.py:132
+msgid "Indonesia"
+msgstr ""
+
+#: apps/accounts/models.py:133
+msgid "Iran (Islamic Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:134
+msgid "Iraq"
+msgstr ""
+
+#: apps/accounts/models.py:135
+msgid "Ireland"
+msgstr ""
+
+#: apps/accounts/models.py:136
+msgid "Isle of Man"
+msgstr ""
+
+#: apps/accounts/models.py:137
+msgid "Israel"
+msgstr ""
+
+#: apps/accounts/models.py:138
+msgid "Italy"
+msgstr ""
+
+#: apps/accounts/models.py:139
+msgid "Jamaica"
+msgstr ""
+
+#: apps/accounts/models.py:140
+msgid "Japan"
+msgstr ""
+
+#: apps/accounts/models.py:141
+msgid "Jersey"
+msgstr ""
+
+#: apps/accounts/models.py:142
+msgid "Jordan"
+msgstr ""
+
+#: apps/accounts/models.py:143
+msgid "Kazakhstan"
+msgstr ""
+
+#: apps/accounts/models.py:144
+msgid "Kenya"
+msgstr ""
+
+#: apps/accounts/models.py:145
+msgid "Kiribati"
+msgstr ""
+
+#: apps/accounts/models.py:146
+msgid "Korea (the Democratic People's Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:147
+msgid "Korea (the Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:148
+msgid "Kuwait"
+msgstr ""
+
+#: apps/accounts/models.py:149
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: apps/accounts/models.py:150
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: apps/accounts/models.py:151
+msgid "Latvia"
+msgstr ""
+
+#: apps/accounts/models.py:152
+msgid "Lebanon"
+msgstr ""
+
+#: apps/accounts/models.py:153
+msgid "Lesotho"
+msgstr ""
+
+#: apps/accounts/models.py:154
+msgid "Liberia"
+msgstr ""
+
+#: apps/accounts/models.py:155
+msgid "Libya"
+msgstr ""
+
+#: apps/accounts/models.py:156
+msgid "Liechtenstein"
+msgstr ""
+
+#: apps/accounts/models.py:157
+msgid "Lithuania"
+msgstr ""
+
+#: apps/accounts/models.py:158
+msgid "Luxembourg"
+msgstr ""
+
+#: apps/accounts/models.py:159
+msgid "Macao"
+msgstr ""
+
+#: apps/accounts/models.py:160
+msgid "Madagascar"
+msgstr ""
+
+#: apps/accounts/models.py:161
+msgid "Malawi"
+msgstr ""
+
+#: apps/accounts/models.py:162
+msgid "Malaysia"
+msgstr ""
+
+#: apps/accounts/models.py:163
+msgid "Maldives"
+msgstr ""
+
+#: apps/accounts/models.py:164
+msgid "Mali"
+msgstr ""
+
+#: apps/accounts/models.py:165
+msgid "Malta"
+msgstr ""
+
+#: apps/accounts/models.py:166
+msgid "Marshall Islands"
+msgstr ""
+
+#: apps/accounts/models.py:167
+msgid "Martinique"
+msgstr ""
+
+#: apps/accounts/models.py:168
+msgid "Mauritania"
+msgstr ""
+
+#: apps/accounts/models.py:169
+msgid "Mauritius"
+msgstr ""
+
+#: apps/accounts/models.py:170
+msgid "Mayotte"
+msgstr ""
+
+#: apps/accounts/models.py:171
+msgid "Mexico"
+msgstr ""
+
+#: apps/accounts/models.py:172
+msgid "Micronesia (Federated States of)"
+msgstr ""
+
+#: apps/accounts/models.py:173
+msgid "Moldova (the Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:174
+msgid "Monaco"
+msgstr ""
+
+#: apps/accounts/models.py:175
+msgid "Mongolia"
+msgstr ""
+
+#: apps/accounts/models.py:176
+msgid "Montenegro"
+msgstr ""
+
+#: apps/accounts/models.py:177
+msgid "Montserrat"
+msgstr ""
+
+#: apps/accounts/models.py:178
+msgid "Morocco"
+msgstr ""
+
+#: apps/accounts/models.py:179
+msgid "Mozambique"
+msgstr ""
+
+#: apps/accounts/models.py:180
+msgid "Myanmar"
+msgstr ""
+
+#: apps/accounts/models.py:181
+msgid "Namibia"
+msgstr ""
+
+#: apps/accounts/models.py:182
+msgid "Nauru"
+msgstr ""
+
+#: apps/accounts/models.py:183
+msgid "Nepal"
+msgstr ""
+
+#: apps/accounts/models.py:184
+msgid "Netherlands"
+msgstr ""
+
+#: apps/accounts/models.py:185
+msgid "New Caledonia"
+msgstr ""
+
+#: apps/accounts/models.py:186
+msgid "New Zealand"
+msgstr ""
+
+#: apps/accounts/models.py:187
+msgid "Nicaragua"
+msgstr ""
+
+#: apps/accounts/models.py:188
+msgid "Niger"
+msgstr ""
+
+#: apps/accounts/models.py:189
+msgid "Nigeria"
+msgstr ""
+
+#: apps/accounts/models.py:190
+msgid "Niue"
+msgstr ""
+
+#: apps/accounts/models.py:191
+msgid "Norfolk Island"
+msgstr ""
+
+#: apps/accounts/models.py:192
+msgid "North Macedonia"
+msgstr ""
+
+#: apps/accounts/models.py:193
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: apps/accounts/models.py:194
+msgid "Norway"
+msgstr ""
+
+#: apps/accounts/models.py:195
+msgid "Oman"
+msgstr ""
+
+#: apps/accounts/models.py:196
+msgid "Pakistan"
+msgstr ""
+
+#: apps/accounts/models.py:197
+msgid "Palau"
+msgstr ""
+
+#: apps/accounts/models.py:198
+msgid "Palestine, State of"
+msgstr ""
+
+#: apps/accounts/models.py:199
+msgid "Panama"
+msgstr ""
+
+#: apps/accounts/models.py:200
+msgid "Papua New Guinea"
+msgstr ""
+
+#: apps/accounts/models.py:201
+msgid "Paraguay"
+msgstr ""
+
+#: apps/accounts/models.py:202
+msgid "Peru"
+msgstr ""
+
+#: apps/accounts/models.py:203
+msgid "Philippines"
+msgstr ""
+
+#: apps/accounts/models.py:204
+msgid "Pitcairn"
+msgstr ""
+
+#: apps/accounts/models.py:205
+msgid "Poland"
+msgstr ""
+
+#: apps/accounts/models.py:206
+msgid "Portugal"
+msgstr ""
+
+#: apps/accounts/models.py:207
+msgid "Puerto Rico"
+msgstr ""
+
+#: apps/accounts/models.py:208
+msgid "Qatar"
+msgstr "Katar"
+
+#: apps/accounts/models.py:209
+msgid "Réunion"
+msgstr ""
+
+#: apps/accounts/models.py:210
+msgid "Romania"
+msgstr ""
+
+#: apps/accounts/models.py:211
+msgid "Russian Federation"
+msgstr ""
+
+#: apps/accounts/models.py:212
+msgid "Rwanda"
+msgstr ""
+
+#: apps/accounts/models.py:213
+msgid "Saint Barthélemy"
+msgstr ""
+
+#: apps/accounts/models.py:214
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr ""
+
+#: apps/accounts/models.py:215
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: apps/accounts/models.py:216
+msgid "Saint Lucia"
+msgstr ""
+
+#: apps/accounts/models.py:217
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: apps/accounts/models.py:218
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: apps/accounts/models.py:219
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: apps/accounts/models.py:220
+msgid "Samoa"
+msgstr ""
+
+#: apps/accounts/models.py:221
+msgid "San Marino"
+msgstr ""
+
+#: apps/accounts/models.py:222
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: apps/accounts/models.py:223
+msgid "Saudi Arabia"
+msgstr ""
+
+#: apps/accounts/models.py:224
+msgid "Senegal"
+msgstr ""
+
+#: apps/accounts/models.py:225
+msgid "Serbia"
+msgstr ""
+
+#: apps/accounts/models.py:226
+msgid "Seychelles"
+msgstr ""
+
+#: apps/accounts/models.py:227
+msgid "Sierra Leone"
+msgstr ""
+
+#: apps/accounts/models.py:228
+msgid "Singapore"
+msgstr ""
+
+#: apps/accounts/models.py:229
+msgid "Sint Maarten (Dutch part)"
+msgstr ""
+
+#: apps/accounts/models.py:230
+msgid "Slovakia"
+msgstr ""
+
+#: apps/accounts/models.py:231
+msgid "Slovenia"
+msgstr ""
+
+#: apps/accounts/models.py:232
+msgid "Solomon Islands"
+msgstr ""
+
+#: apps/accounts/models.py:233
+msgid "Somalia"
+msgstr ""
+
+#: apps/accounts/models.py:234
+msgid "South Africa"
+msgstr ""
+
+#: apps/accounts/models.py:235
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: apps/accounts/models.py:236
+msgid "South Sudan"
+msgstr ""
+
+#: apps/accounts/models.py:237
+msgid "Spain"
+msgstr ""
+
+#: apps/accounts/models.py:238
+msgid "Sri Lanka"
+msgstr ""
+
+#: apps/accounts/models.py:239
+msgid "Sudan"
+msgstr ""
+
+#: apps/accounts/models.py:240
+msgid "Suriname"
+msgstr "Surinám"
+
+#: apps/accounts/models.py:241
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: apps/accounts/models.py:242
+msgid "Sweden"
+msgstr ""
+
+#: apps/accounts/models.py:243
+msgid "Switzerland"
+msgstr ""
+
+#: apps/accounts/models.py:244
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: apps/accounts/models.py:245
+msgid "Taiwan (Province of China)"
+msgstr ""
+
+#: apps/accounts/models.py:246
+msgid "Tajikistan"
+msgstr ""
+
+#: apps/accounts/models.py:247
+msgid "Tanzania, the United Republic of"
+msgstr ""
+
+#: apps/accounts/models.py:248
+msgid "Thailand"
+msgstr ""
+
+#: apps/accounts/models.py:249
+msgid "Timor-Leste"
+msgstr ""
+
+#: apps/accounts/models.py:250
+msgid "Togo"
+msgstr ""
+
+#: apps/accounts/models.py:251
+msgid "Tokelau"
+msgstr ""
+
+#: apps/accounts/models.py:252
+msgid "Tonga"
+msgstr ""
+
+#: apps/accounts/models.py:253
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: apps/accounts/models.py:254
+msgid "Tunisia"
+msgstr ""
+
+#: apps/accounts/models.py:255
+msgid "Turkey"
+msgstr ""
+
+#: apps/accounts/models.py:256
+msgid "Turkmenistan"
+msgstr ""
+
+#: apps/accounts/models.py:257
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: apps/accounts/models.py:258
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: apps/accounts/models.py:259
+msgid "Uganda"
+msgstr ""
+
+#: apps/accounts/models.py:260
+msgid "Ukraine"
+msgstr ""
+
+#: apps/accounts/models.py:261
+msgid "United Arab Emirates"
+msgstr ""
+
+#: apps/accounts/models.py:262
+msgid "United Kingdom of Great Britain and Northern Ireland"
+msgstr ""
+
+#: apps/accounts/models.py:263
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: apps/accounts/models.py:264
+msgid "United States of America"
+msgstr ""
+
+#: apps/accounts/models.py:265
+msgid "Uruguay"
+msgstr ""
+
+#: apps/accounts/models.py:266
+msgid "Uzbekistan"
+msgstr ""
+
+#: apps/accounts/models.py:267
+msgid "Vanuatu"
+msgstr ""
+
+#: apps/accounts/models.py:268
+msgid "Venezuela (Bolivarian Republic of)"
+msgstr "Venezuela, República Bolivariana de"
+
+#: apps/accounts/models.py:269
+msgid "Viet Nam"
+msgstr "Vietnam"
+
+#: apps/accounts/models.py:270
+msgid "Virgin Islands (British)"
+msgstr ""
+
+#: apps/accounts/models.py:271
+msgid "Virgin Islands (U.S.)"
+msgstr ""
+
+#: apps/accounts/models.py:272
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: apps/accounts/models.py:273
+msgid "Western Sahara"
+msgstr ""
+
+#: apps/accounts/models.py:274
+msgid "Yemen"
+msgstr ""
+
+#: apps/accounts/models.py:275
+msgid "Zambia"
+msgstr ""
+
+#: apps/accounts/models.py:276
+msgid "Zimbabwe"
+msgstr ""
+
+#: apps/accounts/models.py:317
 msgid "email address"
 msgstr "dirección de correo electrónico"
 
-#: apps/accounts/models.py:74
+#: apps/accounts/models.py:324
 #: apps/accounts/templates/accounts/user/_detail.html:115
 #: apps/accounts/templates/accounts/user/_detail.html:124
 msgid "Plan"
 msgstr "Plan"
 
-#: apps/accounts/models.py:80
+#: apps/accounts/models.py:330
 msgid "Subscription ID"
 msgstr "ID de Suscripción"
 
-#: apps/accounts/models.py:89 apps/payments/models/paypal.py:61
+#: apps/accounts/models.py:339 apps/payments/models/paypal.py:61
 msgid "Coupon"
 msgstr "Cupón"
 
-#: apps/accounts/models.py:96
+#: apps/accounts/models.py:346
 #: apps/accounts/templates/accounts/user/_detail.html:133
 #: apps/community/templates/community/registration/notify_register_admin_body.html:59
 msgid "Company name"
 msgstr "Compañía"
 
-#: apps/accounts/models.py:103
+#: apps/accounts/models.py:353
 msgid "Commercial address"
 msgstr "Dirección comercial"
 
-#: apps/accounts/models.py:110
+#: apps/accounts/models.py:360
 #: apps/accounts/templates/accounts/user/_detail.html:98
 msgid "Postal code"
 msgstr "Código postal"
 
-#: apps/accounts/models.py:117
+#: apps/accounts/models.py:367
 msgid "City / State / Parish"
 msgstr "Ciudad / Estado / Parroquia"
 
-#: apps/accounts/models.py:124
+#: apps/accounts/models.py:374
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
 #: apps/accounts/templates/accounts/user/_detail.html:82
 #: apps/community/templates/community/registration/notify_register_admin_body.html:60
 msgid "Country"
 msgstr "País"
 
-#: apps/accounts/models.py:131
+#: apps/accounts/models.py:382
 msgid ""
 "Languages in which you are interested in sending or receiving information"
 msgstr "Idiomas en los que le interesa enviar o recibir información"
 
-#: apps/accounts/models.py:138
+#: apps/accounts/models.py:389
 msgid "Do you have something to tell us?"
 msgstr "¿Tienen algo que decirnos?"
 
-#: apps/accounts/models.py:144
+#: apps/accounts/models.py:395
 msgid "Title (Contact person)"
 msgstr "Título (Persona de contacto)"
 
-#: apps/accounts/models.py:152
+#: apps/accounts/models.py:403
 #: apps/accounts/templates/accounts/user/_detail.html:150
 msgid "Position in the company"
 msgstr "Cargo en la compañía"
 
-#: apps/accounts/models.py:159
+#: apps/accounts/models.py:410
 msgid "Leave us a phone number where we can contact you"
 msgstr "Déjenos un número de teléfono donde le podamos contactar"
 
-#: apps/accounts/models.py:166
+#: apps/accounts/models.py:417
 msgid "Mobile number or WhatsApp"
 msgstr "Número móvil o WhatsApp"
 
-#: apps/accounts/models.py:173
+#: apps/accounts/models.py:424
 msgid "Leave us your web address"
 msgstr "Déjenos su dirección Web"
 
-#: apps/accounts/models.py:179
+#: apps/accounts/models.py:430
 msgid "Code Referral"
 msgstr "Código de referido"
 
-#: apps/accounts/models.py:185
+#: apps/accounts/models.py:437
 #: main/templates/services/destination/detail_destination.html:160
 #: main/templates/services/destination/detail_destination.html:161
 #: main/templates/services/destination/detail_destination.html:201
@@ -217,7 +1213,7 @@ msgstr "Código de referido"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: apps/accounts/models.py:192
+#: apps/accounts/models.py:444
 #: main/templates/services/destination/detail_destination.html:167
 #: main/templates/services/destination/detail_destination.html:168
 #: main/templates/services/destination/detail_destination.html:208
@@ -225,7 +1221,7 @@ msgstr "Facebook"
 msgid "Instagram"
 msgstr "Instagram"
 
-#: apps/accounts/models.py:199 apps/landing_page/models.py:494
+#: apps/accounts/models.py:451 apps/landing_page/models.py:494
 #: main/templates/datenshutz_form_privacity.html:110
 #: main/templates/services/destination/detail_destination.html:174
 #: main/templates/services/destination/detail_destination.html:175
@@ -234,7 +1230,7 @@ msgstr "Instagram"
 msgid "Twitter"
 msgstr "Twitter"
 
-#: apps/accounts/models.py:206
+#: apps/accounts/models.py:458
 #: main/templates/services/destination/detail_destination.html:181
 #: main/templates/services/destination/detail_destination.html:182
 #: main/templates/services/destination/detail_destination.html:222
@@ -242,15 +1238,15 @@ msgstr "Twitter"
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: apps/accounts/models.py:213
+#: apps/accounts/models.py:465
 msgid "About me"
 msgstr "Acerca de"
 
-#: apps/accounts/models.py:220
+#: apps/accounts/models.py:472
 msgid "Avatar"
 msgstr "Avatar"
 
-#: apps/accounts/models.py:226 apps/landing_page/models.py:495
+#: apps/accounts/models.py:478 apps/landing_page/models.py:495
 #: main/templates/datenshutz_form_privacity.html:132
 #: main/templates/services/destination/detail_destination.html:188
 #: main/templates/services/destination/detail_destination.html:189
@@ -259,63 +1255,63 @@ msgstr "Avatar"
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: apps/accounts/models.py:228 apps/landing_page/models.py:432
+#: apps/accounts/models.py:480 apps/landing_page/models.py:432
 msgid "is active?"
 msgstr "¿esta activo?"
 
-#: apps/accounts/models.py:229
+#: apps/accounts/models.py:481
 msgid "is staff?"
 msgstr "¿es personal?"
 
-#: apps/accounts/models.py:230
+#: apps/accounts/models.py:482
 msgid "is superuser?"
 msgstr "¿es súper usuario?"
 
-#: apps/accounts/models.py:231
+#: apps/accounts/models.py:483
 msgid "is community?"
 msgstr "¿es comunidad?"
 
-#: apps/accounts/models.py:233 apps/accounts/models.py:270
+#: apps/accounts/models.py:485 apps/accounts/models.py:522
 msgid "Last Login IP"
 msgstr "IP de última sesión"
 
-#: apps/accounts/models.py:234 apps/accounts/models.py:271
+#: apps/accounts/models.py:486 apps/accounts/models.py:523
 #: apps/community/templates/community/dashboard/profile_user.html:154
 #: apps/community/templates/community/profile/edit_profile.html:77
 #: apps/community/templates/community/profile/my_profile.html:131
 msgid "Location"
 msgstr "Localización"
 
-#: apps/accounts/models.py:236
+#: apps/accounts/models.py:488
 msgid "SLUG"
 msgstr "SLUG"
 
-#: apps/accounts/models.py:257 apps/accounts/models.py:269
+#: apps/accounts/models.py:509 apps/accounts/models.py:521
 #: apps/community/models.py:50
 msgid "User"
 msgstr "Usuario"
 
-#: apps/accounts/models.py:258
+#: apps/accounts/models.py:510
 msgid "Users"
 msgstr "Usuarios"
 
-#: apps/accounts/models.py:274
+#: apps/accounts/models.py:526
 msgid "Last Visit IP"
 msgstr "IP de última visita"
 
-#: apps/accounts/models.py:275
+#: apps/accounts/models.py:527
 msgid "Lasts Visits IP"
 msgstr "IP de últimas visitas"
 
-#: apps/accounts/models.py:303
+#: apps/accounts/models.py:555
 msgid "User that creates the relationship"
 msgstr "Usuario que crea la relación"
 
-#: apps/accounts/models.py:307
+#: apps/accounts/models.py:559
 msgid "User being followed"
 msgstr "Usuario seguido"
 
-#: apps/accounts/models.py:310 apps/accounts/models.py:358
+#: apps/accounts/models.py:562 apps/accounts/models.py:610
 #: apps/community/models.py:67 apps/landing_page/models.py:95
 #: apps/landing_page/models.py:144 apps/landing_page/models.py:208
 #: apps/landing_page/models.py:254 apps/landing_page/models.py:325
@@ -323,34 +1319,34 @@ msgstr "Usuario seguido"
 msgid "Created at"
 msgstr "Creado el"
 
-#: apps/accounts/models.py:316
+#: apps/accounts/models.py:568
 msgid "Contact"
 msgstr "Contacto"
 
-#: apps/accounts/models.py:317 apps/landing_page/models.py:525
+#: apps/accounts/models.py:569 apps/landing_page/models.py:525
 #: main/templates/menu/navbar_all.html:59
 #: main/templates/menu/navbar_all.html:71
 msgid "Contacts"
 msgstr "Contactos"
 
-#: apps/accounts/models.py:320
+#: apps/accounts/models.py:572
 #, python-format
 msgid "%(user_from)s follows %(user_to)s"
 msgstr "%(user_from)s sigue a %(user_to)s"
 
-#: apps/accounts/models.py:338
+#: apps/accounts/models.py:590
 msgid "Post"
 msgstr "Publicación"
 
-#: apps/accounts/models.py:342
+#: apps/accounts/models.py:594
 msgid "User Comment"
 msgstr "Comentario de usuario"
 
-#: apps/accounts/models.py:350
+#: apps/accounts/models.py:602
 msgid "User Answer"
 msgstr "Repuesta de Usuario"
 
-#: apps/accounts/models.py:356
+#: apps/accounts/models.py:608
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:58
 #: apps/community/templates/community/registration/notify_register_admin_body.html:58
 #: apps/landing_page/models.py:407
@@ -358,46 +1354,46 @@ msgstr "Repuesta de Usuario"
 msgid "Name"
 msgstr "Nombre"
 
-#: apps/accounts/models.py:357
+#: apps/accounts/models.py:609
 msgid "Body Comment"
 msgstr "Cuerpo de comentario"
 
-#: apps/accounts/models.py:359 apps/landing_page/models.py:97
+#: apps/accounts/models.py:611 apps/landing_page/models.py:97
 #: apps/landing_page/models.py:146 apps/landing_page/models.py:210
 #: apps/landing_page/models.py:256 apps/landing_page/models.py:327
 #: apps/landing_page/models.py:383 apps/payments/models/paypal.py:57
 msgid "Updated at"
 msgstr "Actualizado el"
 
-#: apps/accounts/models.py:360 apps/payments/models/paypal.py:53
+#: apps/accounts/models.py:612 apps/payments/models/paypal.py:53
 msgid "Active"
 msgstr "Activo"
 
-#: apps/accounts/models.py:362
+#: apps/accounts/models.py:614
 msgid "Parent"
 msgstr "Padre"
 
-#: apps/accounts/models.py:366
+#: apps/accounts/models.py:618
 msgid "Likes"
 msgstr "Usuarios que le gusta el comentario"
 
-#: apps/accounts/models.py:367
+#: apps/accounts/models.py:619
 msgid "Height"
 msgstr "Altura"
 
-#: apps/accounts/models.py:368
+#: apps/accounts/models.py:620
 msgid "Width"
 msgstr "Anchura"
 
-#: apps/accounts/models.py:374
+#: apps/accounts/models.py:626
 msgid "Comment"
 msgstr "Comentario"
 
-#: apps/accounts/models.py:375
+#: apps/accounts/models.py:627
 msgid "Comments"
 msgstr "Comentarios"
 
-#: apps/accounts/models.py:378
+#: apps/accounts/models.py:630
 #, python-format
 msgid "Comment by %(body)s"
 msgstr "Comentario por %(body)s"
@@ -984,11 +1980,11 @@ msgstr ""
 "                Su contraseña fue cambiada exitosamente.\n"
 "              "
 
-#: apps/accounts/views.py:86 apps/community/views.py:106
+#: apps/accounts/views.py:87 apps/community/views.py:106
 msgid "An error, Incorrect User or Password has occurred."
 msgstr "Se produjo un error, usuario o contraseña incorrectos."
 
-#: apps/accounts/views.py:129 apps/community/views.py:160
+#: apps/accounts/views.py:130 apps/community/views.py:160
 msgid "Registered new user"
 msgstr "Nuevo usuario registrado"
 
@@ -1005,7 +2001,7 @@ msgstr "Nuevo usuario registrado"
 #: apps/community/templates/community/registration/forget_password.html:4
 #: apps/community/templates/community/registration/login.html:4
 #: apps/community/templates/community/registration/signup.html:4
-#: config/settings/base.py:325 main/templates/community.html:4
+#: config/settings/base.py:330 main/templates/community.html:4
 #: main/templates/community.html:21 main/templates/hotels.html:112
 #: main/templates/page01.html:39 main/templates/pricing.html:4
 msgid "Community"
@@ -2370,72 +3366,72 @@ msgstr "de"
 msgid "es"
 msgstr "es"
 
-#: config/settings/base.py:265
+#: config/settings/base.py:270
 msgid "Travel Dashboard"
 msgstr "Tablero travel"
 
-#: config/settings/base.py:266
+#: config/settings/base.py:271
 msgid "Support"
 msgstr "Soporte"
 
-#: config/settings/base.py:314
+#: config/settings/base.py:319
 msgid "Feature"
 msgstr "funcionalidad"
 
-#: config/settings/base.py:320
+#: config/settings/base.py:325
 msgid "Landing"
 msgstr "Destinos"
 
-#: config/settings/base.py:323
+#: config/settings/base.py:328
 msgid "Tour"
 msgstr "Tour"
 
-#: config/settings/base.py:324 main/templates/magazine.html:34
+#: config/settings/base.py:329 main/templates/magazine.html:34
 msgid "Magazine"
 msgstr "Revista"
 
-#: config/settings/base.py:326
+#: config/settings/base.py:331
 msgid "Data protection"
 msgstr "Protección de datos"
 
-#: config/settings/base.py:327
+#: config/settings/base.py:332
 msgid "Data protection Form"
 msgstr "Formulario de protección de datos"
 
-#: config/settings/base.py:328
+#: config/settings/base.py:333
 msgid "Data protection Form Privacity"
 msgstr "Formulario de protección de datos y Privacidad"
 
-#: config/settings/base.py:329 main/templates/coming-soon.html:90
+#: config/settings/base.py:334 main/templates/coming-soon.html:90
 #: main/templates/coming-soon.html:99
 msgid "Coming Soon"
 msgstr "Próximamente"
 
-#: config/settings/base.py:330
+#: config/settings/base.py:335
 msgid "Hotels template"
 msgstr "Plantilla de Hoteles"
 
-#: config/settings/base.py:331
+#: config/settings/base.py:336
 msgid "Pricing"
 msgstr "Precios"
 
-#: config/settings/base.py:333 main/templates/datenshutz_form_privacity.html:26
+#: config/settings/base.py:338 main/templates/datenshutz_form_privacity.html:26
 msgid "Terms"
 msgstr "Términos"
 
-#: config/settings/base.py:334
+#: config/settings/base.py:339
 msgid "FAQ"
 msgstr "FAQs"
 
-#: config/settings/base.py:335
+#: config/settings/base.py:340
 msgid "Page type 01"
 msgstr "Tipo de página 01"
 
-#: config/settings/base.py:336
+#: config/settings/base.py:341
 msgid "Page type 02"
 msgstr "Tipo de página 02"
 
-#: config/settings/base.py:337
+#: config/settings/base.py:342
 msgid "Pre-signup"
 msgstr "Preinscripción"
 
@@ -2515,7 +3511,7 @@ msgstr "Estoy de acuerdo"
 msgid "Up"
 msgstr "Arriba"
 
-#: main/templates/base.html:270
+#: main/templates/base.html:278
 msgid "Select a state"
 msgstr "Seleccione un estado"
 
@@ -4504,3 +5500,22 @@ msgstr ""
 "adaptado a sus necesidades,\n"
 "                        contáctenos y con gusto creamos uno juntos.\n"
 "                        "
+
+#~| msgid "start date"
+#~ msgid "Departure date"
+#~ msgstr "Fecha de salida"
+
+#, fuzzy
+#~| msgid "Grouping"
+#~ msgid "Housekeeping"
+#~ msgstr "Agrupación"
+
+#, fuzzy
+#~| msgid "Service"
+#~ msgid "Room Service"
+#~ msgstr "Servicio"
+
+#, fuzzy
+#~| msgid "Business info"
+#~ msgid "Business Services"
+#~ msgstr "Información comercial"
