@@ -141,7 +141,20 @@ make_unpublished.short_description = _("unpublish destinations")
 @admin.register(Destination)
 class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
     list_display = ('name', 'is_published', 'user', 'get_sku', 'is_deleted')
-    list_filter = (('user', admin.RelatedFieldListFilter), ('is_deleted', admin.BooleanFieldListFilter))
+    list_filter = (('user', admin.RelatedFieldListFilter), ('is_deleted', admin.BooleanFieldListFilter),
+        'has_wifi',
+        'has_breakfast_incluided',
+        'has_gym',
+        'has_air_conditioning',
+        'has_restaurant',
+        'has_bar',
+        'has_housekeeping',
+        'has_room_service',
+        'has_business_services',
+        'has_hob_tub',
+        'has_front_desk',
+        'has_laundry'
+    )
     search_fields = ('user__email', 'user__first_name', 'name', 'description')
     list_select_related = ('user',)
     autocomplete_fields = ('user',)

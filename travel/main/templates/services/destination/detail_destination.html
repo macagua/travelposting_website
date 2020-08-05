@@ -343,9 +343,9 @@
                         {% trans "Free Wifi" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-check"
-                       style="color:{% if not destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:{% if not destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;">
+                        style="color:{% if destino.has_breakfast_incluided %}green{% else %}gray{% endif %} !important;">
                         {% trans "Breakfast included" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-dumbbell"
@@ -393,9 +393,9 @@
                         {% trans "Room Service" %}
                     </h2>&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-business-time"
-                       style="color:{% if not destino.has_business_services %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
+                       style="color:{% if destino.has_business_services %}green{% else %}gray{% endif %} !important;"></i>&nbsp;&nbsp;
                     <h2 class="font-size-1 text-secondary font-weight-medium mb-0"
-                        style="color:{% if not destino.has_business_services %}green{% else %}gray{% endif %} !important;">
+                        style="color:{% if destino.has_business_services %}green{% else %}gray{% endif %} !important;">
                         {% trans "Business Services" %}
                     </h2>
                 </a>

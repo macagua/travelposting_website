@@ -166,6 +166,66 @@ class Destination(models.Model):
         editable=False,
     )
 
+    has_wifi = models.BooleanField(
+        _("Destination has Wifi?"),
+        default=False,
+    )
+
+    has_breakfast_incluided = models.BooleanField(
+        _("Destination has Breakfast included?"),
+        default=False,
+    )
+
+    has_gym = models.BooleanField(
+        _("Destination has Gym?"),
+        default=False,
+    )
+
+    has_air_conditioning = models.BooleanField(
+        _("Destination has Air conditioning?"),
+        default=False,
+    )
+
+    has_restaurant = models.BooleanField(
+        _("Destination has Restaurant?"),
+        default=False,
+    )
+
+    has_bar = models.BooleanField(
+        _("Destination has Bar?"),
+        default=False,
+    )
+
+    has_housekeeping = models.BooleanField(
+        _("Destination has Housekeeping service?"),
+        default=False,
+    )
+
+    has_room_service = models.BooleanField(
+        _("Destination has Room service?"),
+        default=False,
+    )
+
+    has_business_services = models.BooleanField(
+        _("Destination has Business services?"),
+        default=False,
+    )
+
+    has_hob_tub = models.BooleanField(
+        _("Destination has Hob Tub?"),
+        default=False,
+    )
+
+    has_front_desk = models.BooleanField(
+        _("Destination has 25/7 Front Desk?"),
+        default=False,
+    )
+
+    has_laundry = models.BooleanField(
+        _("Destination has Laundry service?"),
+        default=False,
+    )
+
     social_network = models.BooleanField(
         _('Social Network'),
         default=False,
