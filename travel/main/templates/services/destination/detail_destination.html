@@ -147,7 +147,7 @@
                                        <div class="js-slide rounded bg-img-hero min-height-300">
                                             <video width="212px" height="300px" controls
                                                    poster="{{ item.thumbnail_preview.url }}">
-                                                <source src="/main/media/{{item.video}}" type="video/mp4">
+                                                <source src="{{ item.video.url }}" type="video/mp4">
                                                 {% trans "Your browser does not support the video tag." %}
                                             </video>
                                         </div>
