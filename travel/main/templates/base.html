@@ -118,8 +118,16 @@
 
         <script src="{% static 'assets/vendor/popper.js/popper.min.js' %}"></script>
         <script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+        {% get_current_language as LANGUAGES %}
+        {% if LANGUAGES == 'es' %}
         <!-- JS Implementing Plugins -->
         <script src="{% static 'assets/vendor/fancybox/jquery.fancybox.min.js' %}"></script>
+        <!-- fancyBox Spanish JS asset -->
+        <script type="text/javascript" src="{% static 'js/i18n/fancybox/es.js' %}"></script>
+        {% else %}
+        <!-- JS Implementing Plugins -->
+        <script src="{% static 'assets/vendor/fancybox/jquery.fancybox.min.js' %}"></script>
+        {% endif %}
         <script src="{% static 'assets/vendor/hs-bg-video/hs-bg-video.js' %}"></script>
         <script src="{% static 'assets/vendor/hs-bg-video/vendor/player.min.js' %}"></script>
         <script src="{% static 'assets/vendor/hs-megamenu/src/hs.megamenu.js' %}"></script>
