@@ -239,6 +239,7 @@ THIRD_PARTY = [
     'sorl.thumbnail',
     'captcha',
     #'notifications',
+    'ads.apps.AdsConfig',
 ]
 
 LOCAL_APPS = [
