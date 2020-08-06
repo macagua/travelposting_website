@@ -98,7 +98,7 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
 # Register your models here.
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    search_fields = ('user_from',)
+    search_fields = ('user_from__email', 'user_to__email', 'user_from__business_name', 'user_to__business_name')
     list_filter = ['user_from', ]
     list_display = [
         'user_from',
