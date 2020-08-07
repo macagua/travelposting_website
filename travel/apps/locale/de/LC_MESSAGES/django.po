@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-05 10:27-0400\n"
-"PO-Revision-Date: 2020-08-05 11:06-0400\n"
+"PO-Revision-Date: 2020-08-06 20:01-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language-Team: ES <LL@li.org>\n"
-"Language: es\n"
+"Language-Team: German <DE@li.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +73,7 @@ msgstr "E-Mail"
 
 #: apps/accounts/forms.py:51
 msgid "Your account is blocked due to non-payment"
-msgstr "Dein Konto ist wegen Nichtzahlung gesperrt."
+msgstr "Dein Konto ist wegen Nichtzahlung gesperrt"
 
 #: apps/accounts/forms.py:71
 msgid ""
@@ -134,1006 +134,1006 @@ msgstr "Prof. Dr."
 
 #: apps/accounts/models.py:28
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afghanistan"
 
 #: apps/accounts/models.py:29
 msgid "Åland Islands"
-msgstr ""
+msgstr "Åland-Inseln"
 
 #: apps/accounts/models.py:30
 msgid "Albania"
-msgstr ""
+msgstr "Albanien"
 
 #: apps/accounts/models.py:31
 msgid "Algeria"
-msgstr ""
+msgstr "Algerien"
 
 #: apps/accounts/models.py:32
 msgid "American Samoa"
-msgstr ""
+msgstr "Amerikanisch-Samoa"
 
 #: apps/accounts/models.py:33
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 #: apps/accounts/models.py:34
 msgid "Angola"
-msgstr ""
+msgstr "Angola"
 
 #: apps/accounts/models.py:35
 msgid "Anguilla"
-msgstr ""
+msgstr "Anguilla"
 
 #: apps/accounts/models.py:36
 msgid "Antarctica"
-msgstr ""
+msgstr "Antarktis"
 
 #: apps/accounts/models.py:37
 msgid "Antigua and Barbuda"
-msgstr ""
+msgstr "Antigua und Barbuda"
 
 #: apps/accounts/models.py:38
 msgid "Argentina"
-msgstr ""
+msgstr "Argentinien"
 
 #: apps/accounts/models.py:39
 msgid "Armenia"
-msgstr ""
+msgstr "Armenien"
 
 #: apps/accounts/models.py:40
 msgid "Aruba"
-msgstr ""
+msgstr "Aruba"
 
 #: apps/accounts/models.py:41
 msgid "Australia"
-msgstr ""
+msgstr "Australien"
 
 #: apps/accounts/models.py:42
 msgid "Austria"
-msgstr ""
+msgstr "Österreich"
 
 #: apps/accounts/models.py:43
 msgid "Azerbaijan"
-msgstr ""
+msgstr "Aserbaidschan"
 
 #: apps/accounts/models.py:44
 msgid "Bahamas"
-msgstr ""
+msgstr "Bahamas"
 
 #: apps/accounts/models.py:45
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrain"
 
 #: apps/accounts/models.py:46
 msgid "Bangladesh"
-msgstr ""
+msgstr "Bangladesch"
 
 #: apps/accounts/models.py:47
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
 #: apps/accounts/models.py:48
 msgid "Belarus"
-msgstr ""
+msgstr "Weißrussland"
 
 #: apps/accounts/models.py:49
 msgid "Belgium"
-msgstr ""
+msgstr "Belgien"
 
 #: apps/accounts/models.py:50
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
 #: apps/accounts/models.py:51
 msgid "Benin"
-msgstr ""
+msgstr "Benin"
 
 #: apps/accounts/models.py:52
 msgid "Bermuda"
-msgstr ""
+msgstr "Bermuda"
 
 #: apps/accounts/models.py:53
 msgid "Bhutan"
-msgstr ""
+msgstr "Bhutan"
 
 #: apps/accounts/models.py:54
 msgid "Bolivia (Plurinational State of)"
-msgstr ""
+msgstr "Bolivien (Plurinationaler Staat)"
 
 #: apps/accounts/models.py:55
 msgid "Bonaire, Sint Eustatius and Saba"
-msgstr ""
+msgstr "Bonaire, Sint Eustatius und Saba"
 
 #: apps/accounts/models.py:56
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "Bosnien und Herzegowina"
 
 #: apps/accounts/models.py:57
 msgid "Botswana"
-msgstr ""
+msgstr "Botswana"
 
 #: apps/accounts/models.py:58
 msgid "Bouvet Island"
-msgstr ""
+msgstr "Bouvet-Insel"
 
 #: apps/accounts/models.py:59
 msgid "Brazil"
-msgstr ""
+msgstr "Brasilien"
 
 #: apps/accounts/models.py:60
 msgid "British Indian Ocean Territory"
-msgstr ""
+msgstr "Britisches Territorium im Indischen Ozean"
 
 #: apps/accounts/models.py:61
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "Brunei Darussalam"
 
 #: apps/accounts/models.py:62
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgarien"
 
 #: apps/accounts/models.py:63
 msgid "Burkina Faso"
-msgstr ""
+msgstr "Burkina Faso"
 
 #: apps/accounts/models.py:64
 msgid "Burundi"
-msgstr ""
+msgstr "Burundi"
 
 #: apps/accounts/models.py:65
 msgid "Cabo Verde"
-msgstr ""
+msgstr "Kap Verde"
 
 #: apps/accounts/models.py:66
 msgid "Cambodia"
-msgstr ""
+msgstr "Kambodscha"
 
 #: apps/accounts/models.py:67
 msgid "Cameroon"
-msgstr ""
+msgstr "Kamerun"
 
 #: apps/accounts/models.py:68
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 #: apps/accounts/models.py:69
 msgid "Cayman Islands"
-msgstr ""
+msgstr "Kaimaninseln"
 
 #: apps/accounts/models.py:70
 msgid "Central African Republic"
-msgstr ""
+msgstr "Zentralafrikanische Republik"
 
 #: apps/accounts/models.py:71
 msgid "Chad"
-msgstr ""
+msgstr "Tschad"
 
 #: apps/accounts/models.py:72
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 #: apps/accounts/models.py:73
 msgid "China"
-msgstr ""
+msgstr "China"
 
 #: apps/accounts/models.py:74
 msgid "Christmas Island"
-msgstr ""
+msgstr "Weihnachtsinsel"
 
 #: apps/accounts/models.py:75
 msgid "Cocos (Keeling) Islands"
-msgstr ""
+msgstr "Kokosinseln (Keeling)"
 
 #: apps/accounts/models.py:76
 msgid "Colombia"
-msgstr ""
+msgstr "Kolumbien"
 
 #: apps/accounts/models.py:77
 msgid "Comoros"
-msgstr ""
+msgstr "Komoren"
 
 #: apps/accounts/models.py:78
 msgid "Congo"
-msgstr ""
+msgstr "Congo"
 
 #: apps/accounts/models.py:79
 msgid "Congo (the Democratic Republic of the)"
-msgstr ""
+msgstr "Kongo (der Demokratischen Republik)"
 
 #: apps/accounts/models.py:80
 msgid "Cook Islands"
-msgstr ""
+msgstr "Cook-Inseln"
 
 #: apps/accounts/models.py:81
 msgid "Costa Rica"
-msgstr ""
+msgstr "Costa Rica"
 
 #: apps/accounts/models.py:82
 msgid "Côte d'Ivoire"
-msgstr ""
+msgstr "Elfenbeinküste"
 
 #: apps/accounts/models.py:83
 msgid "Croatia"
-msgstr ""
+msgstr "Kroatien"
 
 #: apps/accounts/models.py:84
 msgid "Cuba"
-msgstr ""
+msgstr "Kuba"
 
 #: apps/accounts/models.py:85
 msgid "Curaçao"
-msgstr ""
+msgstr "Curaçao"
 
 #: apps/accounts/models.py:86
 msgid "Cyprus"
-msgstr ""
+msgstr "Zypern"
 
 #: apps/accounts/models.py:87
 msgid "Czechia"
-msgstr ""
+msgstr "Tschechien"
 
 #: apps/accounts/models.py:88
 msgid "Denmark"
-msgstr ""
+msgstr "Dänemark"
 
 #: apps/accounts/models.py:89
 #| msgid "About"
 msgid "Djibouti"
-msgstr ""
+msgstr "Dschibuti"
 
 #: apps/accounts/models.py:90
 msgid "Dominica"
-msgstr ""
+msgstr "Dominica"
 
 #: apps/accounts/models.py:91
 msgid "Dominican Republic"
-msgstr ""
+msgstr "Dominikanische Republik"
 
 #: apps/accounts/models.py:92
 msgid "Ecuador"
-msgstr ""
+msgstr "Ecuador"
 
 #: apps/accounts/models.py:93
 msgid "Egypt"
-msgstr ""
+msgstr "Ägypten"
 
 #: apps/accounts/models.py:94
 msgid "El Salvador"
-msgstr ""
+msgstr "El Salvador"
 
 #: apps/accounts/models.py:95
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "Äquatorialguinea"
 
 #: apps/accounts/models.py:96
 msgid "Eritrea"
-msgstr ""
+msgstr "Eritrea"
 
 #: apps/accounts/models.py:97
 #| msgid "Testimonials"
 msgid "Estonia"
-msgstr ""
+msgstr "Estland"
 
 #: apps/accounts/models.py:98
 msgid "Eswatini"
-msgstr ""
+msgstr "Eswatini"
 
 #: apps/accounts/models.py:99
 msgid "Ethiopia"
-msgstr ""
+msgstr "Äthiopien"
 
 #: apps/accounts/models.py:100
 msgid "Falkland Islands (Malvinas)"
-msgstr ""
+msgstr "Falkland-Inseln (Malwinen)"
 
 #: apps/accounts/models.py:101
 msgid "Faroe Islands"
-msgstr ""
+msgstr "Färöer-Inseln"
 
 #: apps/accounts/models.py:102
 msgid "Fiji"
-msgstr ""
+msgstr "Fidschi"
 
 #: apps/accounts/models.py:103
 msgid "Finland"
-msgstr ""
+msgstr "Finnland"
 
 #: apps/accounts/models.py:104
 #| msgid "Cancel"
 msgid "France"
-msgstr ""
+msgstr "Frankreich"
 
 #: apps/accounts/models.py:105
 msgid "French Guiana"
-msgstr ""
+msgstr "Französisch-Guayana"
 
 #: apps/accounts/models.py:106
 msgid "French Polynesia"
-msgstr ""
+msgstr "Französisch-Polynesien"
 
 #: apps/accounts/models.py:107
 msgid "French Southern Territories"
-msgstr ""
+msgstr "Französische Süd-Territorien"
 
 #: apps/accounts/models.py:108
 msgid "Gabon"
-msgstr ""
+msgstr "Gabun"
 
 #: apps/accounts/models.py:109
 msgid "Gambia"
-msgstr ""
+msgstr "Gambia"
 
 #: apps/accounts/models.py:110
 msgid "Georgia"
-msgstr ""
+msgstr "Georgien"
 
 #: apps/accounts/models.py:111
 msgid "Germany"
-msgstr ""
+msgstr "Deutschland"
 
 #: apps/accounts/models.py:112
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
 #: apps/accounts/models.py:113
 msgid "Gibraltar"
-msgstr ""
+msgstr "Gibraltar"
 
 #: apps/accounts/models.py:114
 msgid "Greece"
-msgstr ""
+msgstr "Griechenland"
 
 #: apps/accounts/models.py:115
 msgid "Greenland"
-msgstr ""
+msgstr "Grönland"
 
 #: apps/accounts/models.py:116
 msgid "Grenada"
-msgstr ""
+msgstr "Grenada"
 
 #: apps/accounts/models.py:117
 msgid "Guadeloupe"
-msgstr ""
+msgstr "Guadeloupe"
 
 #: apps/accounts/models.py:118
 msgid "Guam"
-msgstr ""
+msgstr "Guam"
 
 #: apps/accounts/models.py:119
 msgid "Guatemala"
-msgstr ""
+msgstr "Guatemala"
 
 #: apps/accounts/models.py:120
 msgid "Guernsey"
-msgstr ""
+msgstr "Guernsey"
 
 #: apps/accounts/models.py:121
 msgid "Guinea"
-msgstr ""
+msgstr "Guinea"
 
 #: apps/accounts/models.py:122
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "Guinea-Bissau"
 
 #: apps/accounts/models.py:123
 msgid "Guyana"
-msgstr ""
+msgstr "Guyana"
 
 #: apps/accounts/models.py:124
 msgid "Haiti"
-msgstr ""
+msgstr "Haiti"
 
 #: apps/accounts/models.py:125
 msgid "Heard Island and McDonald Islands"
-msgstr ""
+msgstr "Heard Island und McDonaldinseln"
 
 #: apps/accounts/models.py:126
 msgid "Holy See"
-msgstr ""
+msgstr "Heiliger Stuhl"
 
 #: apps/accounts/models.py:127
 msgid "Honduras"
-msgstr ""
+msgstr "Honduras"
 
 #: apps/accounts/models.py:128
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hongkong"
 
 #: apps/accounts/models.py:129
 msgid "Hungary"
-msgstr ""
+msgstr "Ungarn"
 
 #: apps/accounts/models.py:130
 msgid "Iceland"
-msgstr ""
+msgstr "Island"
 
 #: apps/accounts/models.py:131
 msgid "India"
-msgstr ""
+msgstr "Indien"
 
 #: apps/accounts/models.py:132
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonesien"
 
 #: apps/accounts/models.py:133
 msgid "Iran (Islamic Republic of)"
-msgstr ""
+msgstr "Iran (Islamische Republik)"
 
 #: apps/accounts/models.py:134
 msgid "Iraq"
-msgstr ""
+msgstr "Irak"
 
 #: apps/accounts/models.py:135
 msgid "Ireland"
-msgstr ""
+msgstr "Irland"
 
 #: apps/accounts/models.py:136
 msgid "Isle of Man"
-msgstr ""
+msgstr "Insel Man"
 
 #: apps/accounts/models.py:137
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 #: apps/accounts/models.py:138
 msgid "Italy"
-msgstr ""
+msgstr "Italien"
 
 #: apps/accounts/models.py:139
 msgid "Jamaica"
-msgstr ""
+msgstr "Jamaika"
 
 #: apps/accounts/models.py:140
 msgid "Japan"
-msgstr ""
+msgstr "Japan"
 
 #: apps/accounts/models.py:141
 msgid "Jersey"
-msgstr ""
+msgstr "Jersey"
 
 #: apps/accounts/models.py:142
 msgid "Jordan"
-msgstr ""
+msgstr "Jordanien"
 
 #: apps/accounts/models.py:143
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Kasachstan"
 
 #: apps/accounts/models.py:144
 msgid "Kenya"
-msgstr ""
+msgstr "Kenia"
 
 #: apps/accounts/models.py:145
 msgid "Kiribati"
-msgstr ""
+msgstr "Kiribati"
 
 #: apps/accounts/models.py:146
 msgid "Korea (the Democratic People's Republic of)"
-msgstr ""
+msgstr "Korea (Demokratische Volksrepublik)"
 
 #: apps/accounts/models.py:147
 msgid "Korea (the Republic of)"
-msgstr ""
+msgstr "Korea (die Republik)"
 
 #: apps/accounts/models.py:148
 msgid "Kuwait"
-msgstr ""
+msgstr "Kuwait"
 
 #: apps/accounts/models.py:149
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "Kyrgyzstan"
 
 #: apps/accounts/models.py:150
 msgid "Lao People's Democratic Republic"
-msgstr ""
+msgstr "Demokratische Volksrepublik Laos"
 
 #: apps/accounts/models.py:151
 msgid "Latvia"
-msgstr ""
+msgstr "Lettland"
 
 #: apps/accounts/models.py:152
 msgid "Lebanon"
-msgstr ""
+msgstr "Libanon"
 
 #: apps/accounts/models.py:153
 msgid "Lesotho"
-msgstr ""
+msgstr "Lesotho"
 
 #: apps/accounts/models.py:154
 msgid "Liberia"
-msgstr ""
+msgstr "Liberia"
 
 #: apps/accounts/models.py:155
 msgid "Libya"
-msgstr ""
+msgstr "Libyen"
 
 #: apps/accounts/models.py:156
 msgid "Liechtenstein"
-msgstr ""
+msgstr "Liechtenstein"
 
 #: apps/accounts/models.py:157
 msgid "Lithuania"
-msgstr ""
+msgstr "Litauen"
 
 #: apps/accounts/models.py:158
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxemburg"
 
 #: apps/accounts/models.py:159
 msgid "Macao"
-msgstr ""
+msgstr "Macao"
 
 #: apps/accounts/models.py:160
 msgid "Madagascar"
-msgstr ""
+msgstr "Madagaskar"
 
 #: apps/accounts/models.py:161
 msgid "Malawi"
-msgstr ""
+msgstr "Malawi"
 
 #: apps/accounts/models.py:162
 msgid "Malaysia"
-msgstr ""
+msgstr "Malaysia"
 
 #: apps/accounts/models.py:163
 msgid "Maldives"
-msgstr ""
+msgstr "Malediven"
 
 #: apps/accounts/models.py:164
 msgid "Mali"
-msgstr ""
+msgstr "Mali"
 
 #: apps/accounts/models.py:165
 msgid "Malta"
-msgstr ""
+msgstr "Malta"
 
 #: apps/accounts/models.py:166
 msgid "Marshall Islands"
-msgstr ""
+msgstr "Marshall-Inseln"
 
 #: apps/accounts/models.py:167
 msgid "Martinique"
-msgstr ""
+msgstr "Martinique"
 
 #: apps/accounts/models.py:168
 msgid "Mauritania"
-msgstr ""
+msgstr "Mauretanien"
 
 #: apps/accounts/models.py:169
 msgid "Mauritius"
-msgstr ""
+msgstr "Mauritius"
 
 #: apps/accounts/models.py:170
 msgid "Mayotte"
-msgstr ""
+msgstr "Mayotte"
 
 #: apps/accounts/models.py:171
 msgid "Mexico"
-msgstr ""
+msgstr "Mexiko"
 
 #: apps/accounts/models.py:172
 msgid "Micronesia (Federated States of)"
-msgstr ""
+msgstr "Mikronesien (Föderierte Staaten von)"
 
 #: apps/accounts/models.py:173
 msgid "Moldova (the Republic of)"
-msgstr ""
+msgstr "Moldawien (die Republik von)"
 
 #: apps/accounts/models.py:174
 msgid "Monaco"
-msgstr ""
+msgstr "Monaco"
 
 #: apps/accounts/models.py:175
 msgid "Mongolia"
-msgstr ""
+msgstr "Mongolei"
 
 #: apps/accounts/models.py:176
 msgid "Montenegro"
-msgstr ""
+msgstr "Montenegro"
 
 #: apps/accounts/models.py:177
 msgid "Montserrat"
-msgstr ""
+msgstr "Montserrat"
 
 #: apps/accounts/models.py:178
 msgid "Morocco"
-msgstr ""
+msgstr "Marokko"
 
 #: apps/accounts/models.py:179
 msgid "Mozambique"
-msgstr ""
+msgstr "Mosambik"
 
 #: apps/accounts/models.py:180
 msgid "Myanmar"
-msgstr ""
+msgstr "Myanmar"
 
 #: apps/accounts/models.py:181
 msgid "Namibia"
-msgstr ""
+msgstr "Namibia"
 
 #: apps/accounts/models.py:182
 msgid "Nauru"
-msgstr ""
+msgstr "Nauru"
 
 #: apps/accounts/models.py:183
 msgid "Nepal"
-msgstr ""
+msgstr "Nepal"
 
 #: apps/accounts/models.py:184
 msgid "Netherlands"
-msgstr ""
+msgstr "Niederlande"
 
 #: apps/accounts/models.py:185
 msgid "New Caledonia"
-msgstr ""
+msgstr "Neukaledonien"
 
 #: apps/accounts/models.py:186
 msgid "New Zealand"
-msgstr ""
+msgstr "Neuseeland"
 
 #: apps/accounts/models.py:187
 msgid "Nicaragua"
-msgstr ""
+msgstr "Nicaragua"
 
 #: apps/accounts/models.py:188
 msgid "Niger"
-msgstr ""
+msgstr "Niger"
 
 #: apps/accounts/models.py:189
 msgid "Nigeria"
-msgstr ""
+msgstr "Nigeria"
 
 #: apps/accounts/models.py:190
 msgid "Niue"
-msgstr ""
+msgstr "Niue"
 
 #: apps/accounts/models.py:191
 msgid "Norfolk Island"
-msgstr ""
+msgstr "Norfolkinsel"
 
 #: apps/accounts/models.py:192
 msgid "North Macedonia"
-msgstr ""
+msgstr "Nordmazedonien"
 
 #: apps/accounts/models.py:193
 msgid "Northern Mariana Islands"
-msgstr ""
+msgstr "Nördliche Marianen-Inseln"
 
 #: apps/accounts/models.py:194
 msgid "Norway"
-msgstr ""
+msgstr "Norwegen"
 
 #: apps/accounts/models.py:195
 msgid "Oman"
-msgstr ""
+msgstr "Oman"
 
 #: apps/accounts/models.py:196
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistan"
 
 #: apps/accounts/models.py:197
 msgid "Palau"
-msgstr ""
+msgstr "Palau"
 
 #: apps/accounts/models.py:198
 msgid "Palestine, State of"
-msgstr ""
+msgstr "Palästina, Staat von"
 
 #: apps/accounts/models.py:199
 msgid "Panama"
-msgstr ""
+msgstr "Panama"
 
 #: apps/accounts/models.py:200
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "Papua-Neuguinea"
 
 #: apps/accounts/models.py:201
 msgid "Paraguay"
-msgstr ""
+msgstr "Paraguay"
 
 #: apps/accounts/models.py:202
 msgid "Peru"
-msgstr ""
+msgstr "Peru"
 
 #: apps/accounts/models.py:203
 msgid "Philippines"
-msgstr ""
+msgstr "Philippinen"
 
 #: apps/accounts/models.py:204
 msgid "Pitcairn"
-msgstr ""
+msgstr "Pitcairn"
 
 #: apps/accounts/models.py:205
 msgid "Poland"
-msgstr ""
+msgstr "Poland"
 
 #: apps/accounts/models.py:206
 msgid "Portugal"
-msgstr ""
+msgstr "Portugal"
 
 #: apps/accounts/models.py:207
 msgid "Puerto Rico"
-msgstr ""
+msgstr "Puerto Rico"
 
 #: apps/accounts/models.py:208
 #| msgid "Avatar"
 msgid "Qatar"
-msgstr ""
+msgstr "Qatar"
 
 #: apps/accounts/models.py:209
 msgid "Réunion"
-msgstr ""
+msgstr "Insel Reunion"
 
 #: apps/accounts/models.py:210
 msgid "Romania"
-msgstr ""
+msgstr "Rumänien"
 
 #: apps/accounts/models.py:211
 msgid "Russian Federation"
-msgstr ""
+msgstr "Russische Föderation"
 
 #: apps/accounts/models.py:212
 msgid "Rwanda"
-msgstr ""
+msgstr "Ruanda"
 
 #: apps/accounts/models.py:213
 msgid "Saint Barthélemy"
-msgstr ""
+msgstr "Heiliger Barthelemy"
 
 #: apps/accounts/models.py:214
 msgid "Saint Helena, Ascension and Tristan da Cunha"
-msgstr ""
+msgstr "Heilige Helena, Himmelfahrt und Tristan da Cunha"
 
 #: apps/accounts/models.py:215
 msgid "Saint Kitts and Nevis"
-msgstr ""
+msgstr "Saint Kitts und Nevis"
 
 #: apps/accounts/models.py:216
 msgid "Saint Lucia"
-msgstr ""
+msgstr "Saint Lucia"
 
 #: apps/accounts/models.py:217
 msgid "Saint Martin (French part)"
-msgstr ""
+msgstr "Saint Martin (französischer Teil)"
 
 #: apps/accounts/models.py:218
 msgid "Saint Pierre and Miquelon"
-msgstr ""
+msgstr "Saint Pierre und Miquelon"
 
 #: apps/accounts/models.py:219
 msgid "Saint Vincent and the Grenadines"
-msgstr ""
+msgstr "St. Vincent und die Grenadinen"
 
 #: apps/accounts/models.py:220
 msgid "Samoa"
-msgstr ""
+msgstr "Samoa"
 
 #: apps/accounts/models.py:221
 msgid "San Marino"
-msgstr ""
+msgstr "San Marino"
 
 #: apps/accounts/models.py:222
 msgid "Sao Tome and Principe"
-msgstr ""
+msgstr "São Tomé und Príncipe"
 
 #: apps/accounts/models.py:223
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Saudi-Arabien"
 
 #: apps/accounts/models.py:224
 msgid "Senegal"
-msgstr ""
+msgstr "Senegal"
 
 #: apps/accounts/models.py:225
 msgid "Serbia"
-msgstr ""
+msgstr "Serbien"
 
 #: apps/accounts/models.py:226
 msgid "Seychelles"
-msgstr ""
+msgstr "Seychellen"
 
 #: apps/accounts/models.py:227
 msgid "Sierra Leone"
-msgstr ""
+msgstr "Sierra Leone"
 
 #: apps/accounts/models.py:228
 msgid "Singapore"
-msgstr ""
+msgstr "Singapur"
 
 #: apps/accounts/models.py:229
 msgid "Sint Maarten (Dutch part)"
-msgstr ""
+msgstr "Sint Maarten (niederländischer Teil)"
 
 #: apps/accounts/models.py:230
 msgid "Slovakia"
-msgstr ""
+msgstr "Slowakei"
 
 #: apps/accounts/models.py:231
 msgid "Slovenia"
-msgstr ""
+msgstr "Slowenien"
 
 #: apps/accounts/models.py:232
 msgid "Solomon Islands"
-msgstr ""
+msgstr "Salomon-Inseln"
 
 #: apps/accounts/models.py:233
 msgid "Somalia"
-msgstr ""
+msgstr "Somalia"
 
 #: apps/accounts/models.py:234
 msgid "South Africa"
-msgstr ""
+msgstr "Südafrika"
 
 #: apps/accounts/models.py:235
 msgid "South Georgia and the South Sandwich Islands"
-msgstr ""
+msgstr "Südgeorgien und die Südlichen Sandwichinseln"
 
 #: apps/accounts/models.py:236
 msgid "South Sudan"
-msgstr ""
+msgstr "Südsudan"
 
 #: apps/accounts/models.py:237
 msgid "Spain"
-msgstr ""
+msgstr "Spanien"
 
 #: apps/accounts/models.py:238
 msgid "Sri Lanka"
-msgstr ""
+msgstr "Sri Lanka"
 
 #: apps/accounts/models.py:239
 msgid "Sudan"
-msgstr ""
+msgstr "Sudan"
 
 #: apps/accounts/models.py:240
 #| msgid "name"
 msgid "Suriname"
-msgstr ""
+msgstr "Surinam"
 
 #: apps/accounts/models.py:241
 msgid "Svalbard and Jan Mayen"
-msgstr ""
+msgstr "Svalbard und Jan Mayen"
 
 #: apps/accounts/models.py:242
 msgid "Sweden"
-msgstr ""
+msgstr "Schweden"
 
 #: apps/accounts/models.py:243
 msgid "Switzerland"
-msgstr ""
+msgstr "Schweiz"
 
 #: apps/accounts/models.py:244
 msgid "Syrian Arab Republic"
-msgstr ""
+msgstr "Arabische Republik Syrien"
 
 #: apps/accounts/models.py:245
 msgid "Taiwan (Province of China)"
-msgstr ""
+msgstr "Taiwan (Provinz China)"
 
 #: apps/accounts/models.py:246
 msgid "Tajikistan"
-msgstr ""
+msgstr "Tadschikistan"
 
 #: apps/accounts/models.py:247
 msgid "Tanzania, the United Republic of"
-msgstr ""
+msgstr "Tansania, die Vereinigte Republik von"
 
 #: apps/accounts/models.py:248
 msgid "Thailand"
-msgstr ""
+msgstr "Thailand"
 
 #: apps/accounts/models.py:249
 msgid "Timor-Leste"
-msgstr ""
+msgstr "Timor-Leste"
 
 #: apps/accounts/models.py:250
 msgid "Togo"
-msgstr ""
+msgstr "Togo"
 
 #: apps/accounts/models.py:251
 msgid "Tokelau"
-msgstr ""
+msgstr "Tokelau"
 
 #: apps/accounts/models.py:252
 msgid "Tonga"
-msgstr ""
+msgstr "Tonga"
 
 #: apps/accounts/models.py:253
 msgid "Trinidad and Tobago"
-msgstr ""
+msgstr "Trinidad und Tobago"
 
 #: apps/accounts/models.py:254
 msgid "Tunisia"
-msgstr ""
+msgstr "Tunesien"
 
 #: apps/accounts/models.py:255
 msgid "Turkey"
-msgstr ""
+msgstr "Türkei"
 
 #: apps/accounts/models.py:256
 msgid "Turkmenistan"
-msgstr ""
+msgstr "Turkmenistan"
 
 #: apps/accounts/models.py:257
 msgid "Turks and Caicos Islands"
-msgstr ""
+msgstr "Turks- und Caicosinseln"
 
 #: apps/accounts/models.py:258
 #| msgid "value"
 msgid "Tuvalu"
-msgstr ""
+msgstr "Tuvalu"
 
 #: apps/accounts/models.py:259
 msgid "Uganda"
-msgstr ""
+msgstr "Uganda"
 
 #: apps/accounts/models.py:260
 msgid "Ukraine"
-msgstr ""
+msgstr "Ukraine"
 
 #: apps/accounts/models.py:261
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "Vereinigte Arabische Emirate"
 
 #: apps/accounts/models.py:262
 msgid "United Kingdom of Great Britain and Northern Ireland"
-msgstr ""
+msgstr "Vereinigtes Königreich von Großbritannien und Nordirland"
 
 #: apps/accounts/models.py:263
 msgid "United States Minor Outlying Islands"
-msgstr ""
+msgstr "U.S.-Minderjährige abgelegene Inseln"
 
 #: apps/accounts/models.py:264
 msgid "United States of America"
-msgstr ""
+msgstr "Vereinigte Staaten von Amerika"
 
 #: apps/accounts/models.py:265
 msgid "Uruguay"
-msgstr ""
+msgstr "Uruguay"
 
 #: apps/accounts/models.py:266
 msgid "Uzbekistan"
-msgstr ""
+msgstr "Usbekistan"
 
 #: apps/accounts/models.py:267
 msgid "Vanuatu"
-msgstr ""
+msgstr "Vanuatu"
 
 #: apps/accounts/models.py:268
 msgid "Venezuela (Bolivarian Republic of)"
-msgstr ""
+msgstr "Venezuela (Bolivarische Republik von)"
 
 #: apps/accounts/models.py:269
 #| msgid "First Name"
 msgid "Viet Nam"
-msgstr ""
+msgstr "Vietnam"
 
 #: apps/accounts/models.py:270
 msgid "Virgin Islands (British)"
-msgstr ""
+msgstr "Jungferninseln (Britisch)"
 
 #: apps/accounts/models.py:271
 msgid "Virgin Islands (U.S.)"
-msgstr ""
+msgstr "Jungferninseln (Vereinigte Staaten)"
 
 #: apps/accounts/models.py:272
 msgid "Wallis and Futuna"
-msgstr ""
+msgstr "Wallis und Futuna"
 
 #: apps/accounts/models.py:273
 msgid "Western Sahara"
-msgstr ""
+msgstr "Westsahara"
 
 #: apps/accounts/models.py:274
 msgid "Yemen"
-msgstr ""
+msgstr "Jemen"
 
 #: apps/accounts/models.py:275
 msgid "Zambia"
-msgstr ""
+msgstr "Sambia"
 
 #: apps/accounts/models.py:276
 msgid "Zimbabwe"
-msgstr ""
+msgstr "Simbabwe"
 
 #: apps/accounts/models.py:317
 msgid "email address"
@@ -1578,11 +1578,14 @@ msgid ""
 "                                                                                  "
 msgstr ""
 "\n"
-"                                                                                    %(user.first_name)s "
-"Vielen Dank, dass Sie sich für Travelposting angemeldet haben.\n"
-"                                                                                    Bestätigen "
-"Sie Ihr Konto, um die Erstellung Ihres Kontos abzuschließen\n"
-"                                                                                  "
+"                                                                             "
+"       %(user.first_name)s Vielen Dank, dass Sie sich für Travelposting "
+"angemeldet haben.\n"
+"                                                                             "
+"       Bestätigen Sie Ihr Konto, um die Erstellung Ihres Kontos "
+"abzuschließen\n"
+"                                                                             "
+"     "
 
 #: apps/accounts/templates/accounts/registration/activation_email_body.html:61
 #, python-format
@@ -1631,7 +1634,7 @@ msgstr "Vorderseite"
 #: apps/accounts/templates/accounts/registration/register_form.html:19
 #: apps/accounts/templates/accounts/registration/register_form.html:20
 msgid "Go back"
-msgstr "Gehen Sie zurück."
+msgstr "Gehen Sie zurück"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:55
 msgid ""
@@ -1669,7 +1672,7 @@ msgstr "Bitte geben Sie eine gültige E-Mail Adresse ein."
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:72
 #: apps/community/templates/community/registration/forget_password.html:35
 msgid "Back to sign in"
-msgstr "Zurück zur Anmeldung."
+msgstr "Zurück zur Anmeldung"
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:75
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:75
@@ -1697,12 +1700,12 @@ msgstr "Anmeldung"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
 msgid "We need to verify your identity"
-msgstr "Wir müssen Ihre Identität überprüfen."
+msgstr "Wir müssen Ihre Identität überprüfen"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:52
 msgid "Please check your email, and follow the next intructions"
 msgstr ""
-"Bitte überprüfen Sie Ihre E-Mail, und folgen Sie den nächsten Instruktionen."
+"Bitte überprüfen Sie Ihre E-Mail, und folgen Sie den nächsten Instruktionen"
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:56
 msgid "do have accounts?"
@@ -1893,11 +1896,11 @@ msgstr "Vielen Dank für Ihre Anmeldung"
 
 #: apps/accounts/templates/accounts/registration/succes_register.html:52
 msgid "Please see your inbox and validate your accounts "
-msgstr "Bitte sehen Sie Ihren Posteingang und validieren Sie Ihre Konto."
+msgstr "Bitte sehen Sie Ihren Posteingang und validieren Sie Ihre Konto "
 
 #: apps/accounts/templates/accounts/registration/succes_register.html:56
 msgid "Visit our page or see our plans"
-msgstr "Besuchen Sie unsere Seite oder sehen Sie unsere Pläne."
+msgstr "Besuchen Sie unsere Seite oder sehen Sie unsere Pläne"
 
 #: apps/accounts/templates/accounts/user/_detail.html:3
 msgid "User information"
@@ -2035,7 +2038,7 @@ msgid ""
 msgstr ""
 "Verwenden Sie mindestens 8 Zeichen. Verwenden Sie kein Passwort von einer "
 "anderen Website oder einen zu naheliegenden Begriff, wie z.B. den Namen "
-"Ihres Haustieres."
+"Ihres Haustieres"
 
 #: apps/community/forms.py:44
 msgid "Invalid referal code"
@@ -2107,7 +2110,7 @@ msgstr "Geben Sie Ihr aktuelles Passwort ein"
 
 #: apps/community/templates/accounts/change_password.html:52
 msgid "Password does not match."
-msgstr "Passwörter stimmen nicht überein"
+msgstr "Passwörter stimmen nicht überein."
 
 #: apps/community/templates/accounts/change_password.html:62
 msgid "New password"
@@ -2510,11 +2513,11 @@ msgstr "Benutzer:"
 
 #: apps/community/templates/community/dashboard/_recommendation.html:90
 msgid "Would you recommend this trip again?:"
-msgstr "Würden Sie diese Reise noch einmal empfehlen?"
+msgstr "Würden Sie diese Reise noch einmal empfehlen?:"
 
 #: apps/community/templates/community/dashboard/_recommendation.html:92
 msgid "Do you think we should get better?:"
-msgstr "Meinen Sie, wir sollten besser werden?"
+msgstr "Meinen Sie, wir sollten besser werden?:"
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:14
 #: main/templates/menu/navbar.html:29
@@ -2995,7 +2998,7 @@ msgstr "Sie können keine Nachrichten an sich selbst senden"
 
 #: apps/directmessages/views.py:55
 msgid "Your message has been sent successfully"
-msgstr "Ihre Nachricht wurde erfolgreich gesendet."
+msgstr "Ihre Nachricht wurde erfolgreich gesendet"
 
 #: apps/landing_page/admin.py:81 apps/landing_page/models.py:370
 msgid "Company"
@@ -3302,7 +3305,7 @@ msgstr "Sie haben einen neuen Kontakt"
 #: apps/landing_page/views.py:219
 msgid "if you want see the admin site https://travelposting.com/admin/"
 msgstr ""
-"wenn Sie die Admin-Website https://travelposting.com/admin/ sehen möchten."
+"wenn Sie die Admin-Website https://travelposting.com/admin/ sehen möchten"
 
 #: apps/landing_page/views.py:227
 msgid "Thank you very much for contacting us, we will be responding very soon "
@@ -3473,7 +3476,7 @@ msgstr "Entdecken Sie unsere Büros sehr bald in:"
 
 #: main/templates/about.html:105 main/templates/page02.html:55
 msgid "Stay in the know"
-msgstr "Bleiben Sie auf dem Laufenden."
+msgstr "Bleiben Sie auf dem Laufenden"
 
 #: main/templates/about.html:106 main/templates/page02.html:56
 msgid "Get special offers on the latest travels add on our platform."
@@ -3527,7 +3530,7 @@ msgstr "BETA Travelposting"
 
 #: main/templates/coming-soon.html:70
 msgid "We're coming"
-msgstr "Wir kommen."
+msgstr "Wir kommen"
 
 #: main/templates/coming-soon.html:70
 msgid "soon"
@@ -3539,7 +3542,7 @@ msgid ""
 "for your device"
 msgstr ""
 "Unsere Apps ist im Aufbau. Wir werden bald hier sein mit unseren neuen "
-"tollen Apps für Ihr Gerät."
+"tollen Apps für Ihr Gerät"
 
 #: main/templates/coming-soon.html:84
 msgid "For this December, we'll give good news for you"
@@ -3561,7 +3564,7 @@ msgid ""
 msgstr ""
 "Unsere Community ist noch nicht für die Öffentlichkeit zugänglich, denn es "
 "ist ein Projekt, das wir ab dem 02.02.2020 in sozialen Netzwerken bekannt "
-"machen werden."
+"machen werden"
 
 #: main/templates/community.html:49
 msgid "Discover our benefits"
@@ -3582,7 +3585,7 @@ msgstr ""
 "sehr guten Preis anbieten zu können, da wir durch eine gute Anzahl von "
 "Mitgliedern in unserer Gemeinschaft viel bessere Preise aushandeln können, "
 "so dass jeder von Ihnen die Möglichkeit hat viel reissen zu können, ohne das "
-"Sie viel Geld auszugeben müssen."
+"Sie viel Geld auszugeben müssen"
 
 #: main/templates/community.html:89
 msgid "My duties"
@@ -3827,7 +3830,7 @@ msgid ""
 "earning it."
 msgstr ""
 "Es gibt immer ein Ziel, das wir gerne anbieten würden und nichts besseres, "
-"als Sie und und das zu entdecken."
+"als Sie und das zu entdecken."
 
 #: main/templates/community.html:348
 msgid "Participate in raffles"
@@ -4657,7 +4660,7 @@ msgid ""
 "accepted in GBP"
 msgstr ""
 "Nur BACS- und Faster Payments Service (UK lokale Bank) Überweisungen können "
-"in GBP akzeptiert werden."
+"in GBP akzeptiert werden"
 
 #: main/templates/make_page.html:114
 msgid "Transfers must be made from a corporate bank account"
@@ -4666,7 +4669,7 @@ msgstr ""
 
 #: main/templates/make_page.html:117
 msgid "Transfers in USD will be rejected automatically"
-msgstr "Überweisungen in USD werden automatisch abgelehnt."
+msgstr "Überweisungen in USD werden automatisch abgelehnt"
 
 #: main/templates/make_page.html:120 main/templates/make_page.html:165
 msgid "Wire transfers are not supported"
@@ -4684,7 +4687,7 @@ msgstr "Ich habe Konten!"
 msgid "Only SEPA transfers (European local bank) can be accepted in EUR"
 msgstr ""
 "Es können nur SEPA-Überweisungen (europäische Lokalbank) in EUR akzeptiert "
-"werden."
+"werden"
 
 #: main/templates/make_page.html:162
 msgid ""
@@ -4692,7 +4695,7 @@ msgid ""
 "of this service"
 msgstr ""
 "Überweisungen in USD werden automatisch durchgeführt und können zur "
-"Aussetzung dieses Dienstes führen."
+"Aussetzung dieses Dienstes führen"
 
 #: main/templates/make_page.html:179
 msgid "Receiving Account USD (ACH) / US Local Bank UU"
@@ -4712,7 +4715,7 @@ msgstr "Name des Begünstigten:"
 
 #: main/templates/make_page.html:208
 msgid "Only ACH (US local bank) transfers can be accepted in USD"
-msgstr "Nur ACH (US-Lokalbank) Überweisungen können in USD akzeptiert werden."
+msgstr "Nur ACH (US-Lokalbank) Überweisungen können in USD akzeptiert werden"
 
 #: main/templates/make_page.html:211
 msgid "Transfers must be made from a business account"
@@ -4744,7 +4747,7 @@ msgstr "Bitte bedenken Sie das!"
 
 #: main/templates/make_page.html:258
 msgid "Only direct entry payments (BECS) are accepted in AUD"
-msgstr "Nur Direkteingangszahlungen (BECS) werden in AUD akzeptiert."
+msgstr "Nur Direkteingangszahlungen (BECS) werden in AUD akzeptiert"
 
 #: main/templates/make_page.html:261
 msgid "Transfers can only be made from companies"
@@ -4869,7 +4872,7 @@ msgstr "Lernen Sie unsere Reiseziele kennen"
 
 #: main/templates/pages/booking_email.html:48
 msgid "A person has done a new booking:"
-msgstr "Eine Person hat eine neue Buchung vorgenommen"
+msgstr "Eine Person hat eine neue Buchung vorgenommen:"
 
 #: main/templates/pages/booking_email.html:56
 #: main/templates/pages/email_feedback.html:56
@@ -4927,7 +4930,7 @@ msgstr "Besitzer:"
 
 #: main/templates/pages/published_email_user.html:48
 msgid "Congratulations your destination was activated"
-msgstr "Herzlichen Glückwunsch, Ihr Ziel wurde aktiviert."
+msgstr "Herzlichen Glückwunsch, Ihr Ziel wurde aktiviert"
 
 #: main/templates/pages/published_email_user.html:60
 msgid "Now you can see your destination on our system"
@@ -4935,7 +4938,7 @@ msgstr "Jetzt können Sie Ihr Ziel auf unserem System sehen"
 
 #: main/templates/pages/published_email_user.html:67
 msgid "See it now"
-msgstr "Jetzt sehen Sie es."
+msgstr "Jetzt sehen Sie es"
 
 #: main/templates/pages/request.html:19
 msgid "We have sent your request. We will contact you soon"
@@ -4956,7 +4959,7 @@ msgstr "IP-Adresse: "
 #: main/templates/pages/safeSearch.html:17
 #: main/templates/pages/saveBooking.html:17
 msgid "Thank you"
-msgstr "Vielen Dank."
+msgstr "Vielen Dank"
 
 #: main/templates/pages/safeSearch.html:18
 #: main/templates/pages/saveBooking.html:18
@@ -4965,7 +4968,7 @@ msgid ""
 "contacting us, Travelposting team"
 msgstr ""
 "Bald werden wir Sie kontaktieren. Vielen Dank für Ihre Kontaktaufnahme beim "
-"Travelposting Team."
+"Travelposting Team"
 
 #: main/templates/pages/show_header.html:22
 msgid "Travel and share your adventure"
@@ -5051,7 +5054,7 @@ msgstr "Details:"
 
 #: main/templates/pdf/itinerary.html:93
 msgid "This Destination has no itinerary"
-msgstr "Dieses Ziel hat keine Reiseroute."
+msgstr "Dieses Ziel hat keine Reiseroute"
 
 #: main/templates/pdf/itinerary.html:102
 msgid "There is no itenerary"
@@ -5431,7 +5434,7 @@ msgstr "Partners"
 
 #: main/templates/services/destination/sponsors.html:8
 msgid "Know some of our partners"
-msgstr "Einige unserer Partner kennen."
+msgstr "Einige unserer Partner kennen"
 
 #: main/templates/services/destination/testimonials.html:7
 msgid "Testimonials"
