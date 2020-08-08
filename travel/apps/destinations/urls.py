@@ -29,6 +29,7 @@ from apps.destinations.views.destination import (
     ItineraryCreateView,
     ItineraryUpdateView,
     ItineraryView,
+    RequestView,
     SocialNetworkListView,
     SocialNetworkUpdateView,
     MailboxView,
@@ -317,6 +318,13 @@ urlpatterns = [
         nocommunity_access(messageView.as_view()),
         name='send_message',
     ),
+
+    path(
+        'requests/',
+        nocommunity_access(RequestView.as_view()),
+        name='requests',
+    ),
+
 
     path(
         'visitor/',

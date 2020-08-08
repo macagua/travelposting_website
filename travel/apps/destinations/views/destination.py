@@ -57,6 +57,7 @@ from apps.destinations.models import (
     BookingDetail,
     SocialNetwork,
     MessageDashboard,
+    Request,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -719,7 +720,6 @@ class MailboxReply(View):
 '''
 end function to reply message
 '''
-
 class MailboxDetail(View):
     template_name = 'dashboard/mailbox/_mailboxdetail.html'
 
@@ -775,7 +775,6 @@ class LeaderAddView(CreateView):
         return super().form_valid(form)
        
 
-
 class LeaderAddExistingUserView(UpdateView):
     form_class = AgencyAddExistingUserForm
     model = CustomerUser
@@ -815,7 +814,9 @@ class AgencyView(ListView):
         admins = ['Manager']
         manager = ['manager_country']
         agencies = ['agency']
+
         verify_admins = request.user.groups.get_queryset().filter(name__in=admins).exists()
+
         if verify_admins==True:
             #search all user that group is manager_country and show their country
             users_manager_country = CustomerUser.objects.filter(groups__name='manager_country')
@@ -823,14 +824,14 @@ class AgencyView(ListView):
             conteo = users_manager_country.count()
             conteo_agency = users_agency.count()
 
-            return render(request, 
-                            self.template_name, 
-                            {
-                                'users_agency':users_agency,
-                                'conteo':conteo,
-                                'conteo_agency':conteo_agency,
-                            }
-                    )
+            return render(
+                    request, 
+                    self.template_name, 
+                    {
+                        'users_agency':users_agency,
+                        'conteo':conteo,
+                        'conteo_agency':conteo_agency,
+                    })
         else:
             return render(request, self.template_name)
 
@@ -884,3 +885,23 @@ class AgencyAddExistingUserView(UpdateView):
         self.object = self.get_object()
         return super().post(request, *args, **kwargs)
 
+
+class RequestView(CreateView):
+    model = Request
+    template_name = 'dashboard/leaders/_requests.html'
+
+    fields = ['country', 'type']
+    success_url = reverse_lazy('destinations:requests')
+
+    def form_valid(self, form):
+
+        instance = form.save(commit=False)
+        instance.user = self.request.user
+        instance.save()
+        return super().form_valid(form)  
+
+
+    def get_context_data(self, *args, **kwargs):
+        ctx = super().get_context_data(*args, **kwargs)
+        ctx['requests'] = Request.objects.filter(user=self.request.user)
+        return ctx 

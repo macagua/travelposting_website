@@ -98,6 +98,14 @@
           <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
         </ul>
       </li>
+      {% if not request.user.is_superuser and  not perms.accounts.manager_country  %}
+      <li class="">
+          <a href="{% url 'destinations:requests' %}">
+          <i class="fa fa-book fa-lg"></i>
+          <span class="nav-label">{% trans 'Solicitudes' %}</span>
+        </a>
+      </li>
+      {% endif %}
         </ul>
     </div>
 </nav>

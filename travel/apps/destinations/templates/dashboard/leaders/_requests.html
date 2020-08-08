@@ -1,0 +1,107 @@
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Send Request - Travelposting' %}{% endblock %}
+{% block extracss %}
+<!-- FooTable -->
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h3>{% trans "Request List"%}</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/es/dashboard/">Inicio</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a href="{% url 'destinations:requests' %}">{% trans "Requests"%}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">{% trans "Add Request" %}</a>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+        {% if requests %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>{% trans "Current petitions" %}</h5>
+                    </div>
+                    <div {class="ibox-content">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <th>{% trans "Country" %}</th><th>{% trans "Request Type" %}</th><th>{% trans "Status" %}</th>
+                            </thead>
+                            <tbody>
+                                {% for requested in requests %}
+                                <tr>
+                                    <td>{{requested.get_country_display}}</td><td>{{requested.get_type_display}}</td><td>{{requested.get_status_display}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>{% trans 'Send new requests' %}</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                      {% if form.errors %}
+                      <p class="alert alert-danger">
+                      {{ form.errors }}
+                      </p>
+                      {% endif %}
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form group row">    
+                                <label class="col-sm-2 col-form-label">
+                                    {{ form.type.label}}
+                                </label>
+                                <div class="col-sm-10">
+                                    {{ form.type}}
+                                    <span class="form-text m-b-none">
+                                        {{ form.type.help_text }}
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="hr-line-dashed">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">
+                                    {{ form.country.label}}
+                                </label>
+                                <div class="col-sm-10">
+                                    {{form.country}} 
+                                    <span class="form-text m-b-none">
+                                        {{ form.country.help_text }}
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="hr-line-dashed">
+                            <button type="submit" class="btn btn-block btn-outline btn-primary">{% trans 'Send Request' %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
