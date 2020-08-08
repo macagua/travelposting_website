@@ -272,7 +272,7 @@
                                 </a>
                             </li>
                             {% endif %}
-                            {% if destino.social.website %}
+                            {% if destino.social.website and destino.customer.plan_id == 1 %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new"href="{{ destino.social.website}}">
                                 <img src="{% static 'img/website.png' %}" >

@@ -320,6 +320,11 @@ class Destination(models.Model):
         return sn
 
     @property
+    def customer(self):
+        user = CustomerUser.objects.get(destination=self.pk)
+        return user
+
+    @property
     def list_prices(self):
         try:
             destination_details = GeneralDetail.objects.get(destination_detail__destination=self.pk)
