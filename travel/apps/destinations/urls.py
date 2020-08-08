@@ -63,7 +63,7 @@ def nocommunity_access(function=None, redirect_field_name=REDIRECT_FIELD_NAME, l
         redirect_field_name=redirect_field_name
     )
     nocom_decorator = user_passes_test(
-        lambda u: not u.is_community,
+        lambda u: u.is_authenticated and not u.is_community,
         login_url=login_url,
         redirect_field_name=redirect_field_name
     )
