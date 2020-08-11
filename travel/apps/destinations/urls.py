@@ -29,6 +29,9 @@ from apps.destinations.views.destination import (
     ItineraryCreateView,
     ItineraryUpdateView,
     ItineraryView,
+    RequestDeleteView,
+    RequestManagerView,
+    RequestProcessView,
     RequestView,
     SocialNetworkListView,
     SocialNetworkUpdateView,
@@ -320,11 +323,34 @@ urlpatterns = [
     ),
 
     path(
+        'requests/manager',
+        nocommunity_access(RequestManagerView.as_view()),
+        name='requests_manager',
+    ),
+
+    path(
         'requests/',
         nocommunity_access(RequestView.as_view()),
         name='requests',
     ),
 
+    path(
+        'requests/<int:pk>/approve/',
+        nocommunity_access(RequestProcessView.as_view(action='approve')),
+        name='requests_approve',
+    ),
+
+    path(
+        'requests/<int:pk>/reject/',
+        nocommunity_access(RequestProcessView.as_view(action='reject')),
+        name='requests_reject',
+    ),
+
+    path(
+        'requests/<int:pk>/delete/',
+        nocommunity_access(RequestDeleteView.as_view()),
+        name='requests_delete',
+    ),
 
     path(
         'visitor/',

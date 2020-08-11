@@ -18,6 +18,7 @@ from apps.destinations.models import (
     InventarioDetail,
     BookingDetail,
     Photo,
+    Request,
     Itinerary,
     DestinationMap,
 )
@@ -595,3 +596,23 @@ class AgencyAddExistingUserForm(BaseBootstrapForm, UserChangeForm):
             'country',
         ]
 
+
+class RequestForm(BaseBootstrapForm, forms.ModelForm):
+    
+    def __init__(self, user, *args, **kwargs):
+        self.user = user
+        super().__init__(*args, **kwargs)
+
+    def clean(self):
+        if Request.objects.filter(
+                user=self.user,
+                country=self.cleaned_data.get('country')
+                ).exists():
+            raise forms.ValidationError(_('Request already created'))
+
+    class Meta:
+        model = Request
+        fields = [
+                'country',
+                'type'
+                ]

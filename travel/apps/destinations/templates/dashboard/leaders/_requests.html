@@ -1,5 +1,5 @@
 {% extends 'destinations/base.html' %}
-{% load static i18n destinations_tags static %}
+{% load static i18n destinations_tags permission_tags static %}
 {% block title %}{% trans 'Send Request - Travelposting' %}{% endblock %}
 {% block extracss %}
 <!-- FooTable -->
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="wrapper wrapper-content">
-        {% if requests %}
+        {% if object_list %}
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox">
@@ -40,9 +40,20 @@
                                 <th>{% trans "Country" %}</th><th>{% trans "Request Type" %}</th><th>{% trans "Status" %}</th>
                             </thead>
                             <tbody>
-                                {% for requested in requests %}
+                                {% for requested in object_list %}
                                 <tr>
                                     <td>{{requested.get_country_display}}</td><td>{{requested.get_type_display}}</td><td>{{requested.get_status_display}}</td>
+                                        <td>
+                                            {% if  requested.status == requested.PENDING  %}
+                                                {% if not request.user|has_group:'Manager' %}
+                                                    <a href="{% url 'dashboard:requests_delete' requested.pk %}" class="btn btn-danger">Cancel</a>
+                                                {% else %}
+                                                    <a class="btn btn-primary" href="{% url 'dashboard:requests_approve' requested.pk %}">{% trans 'Approve' %}</a>
+                                                    <a class="btn btn-danger" href="{% url 'dashboard:requests_reject' requested.pk %}">{% trans 'Reject' %}</a>
+                                                {% endif %}
+                                            {% endif %}
+                                        </td>
+
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -52,6 +63,7 @@
             </div>
         </div>
         {% endif %}
+        {% if form %}
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox">
@@ -101,6 +113,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

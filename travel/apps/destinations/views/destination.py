@@ -44,6 +44,7 @@ from apps.destinations.forms import (
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
+    RequestForm
 )
 from apps.destinations.models import (
     Destination,
@@ -884,14 +885,45 @@ class AgencyAddExistingUserView(UpdateView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().post(request, *args, **kwargs)
+       
+
+class RequestDeleteView(DeleteView):
+    model = Request 
+    success_url = reverse_lazy('destinations:requests')
+    template_name = 'dashboard/leaders/_requests_delete.html'
+
+
+class RequestManagerView(ListView):
+    model = Request
+    template_name = 'dashboard/leaders/_requests.html'
+    fields = ['user', 'country', 'type']
+
+
+class RequestProcessView(View):
+    http_method_names = ['get']
+    action = None
+
+    def get(self, request, pk, *args, **kwargs):
+        if self.action in ['approve', 'reject']:
+            obj = get_object_or_404(Request, pk=pk)
+            obj.status=Request.APPROVED if self.action == 'approve' else Request.REJECTED
+            obj.save()
+            return HttpResponseRedirect(reverse('dashboard:requests_manager'))
+        else:
+            raise Http404
 
 
 class RequestView(CreateView):
     model = Request
     template_name = 'dashboard/leaders/_requests.html'
-
-    fields = ['country', 'type']
+    form_class = RequestForm
     success_url = reverse_lazy('destinations:requests')
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+
+        kwargs.update({'user': self.request.user })
+        return kwargs
 
     def form_valid(self, form):
 
@@ -903,5 +935,6 @@ class RequestView(CreateView):
 
     def get_context_data(self, *args, **kwargs):
         ctx = super().get_context_data(*args, **kwargs)
-        ctx['requests'] = Request.objects.filter(user=self.request.user)
-        return ctx 
+        ctx['object_list'] = Request.objects.filter(user=self.request.user)
+        return ctx
+        

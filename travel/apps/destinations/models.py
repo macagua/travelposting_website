@@ -1090,7 +1090,6 @@ class Request(models.Model):
             )
     user = models.ForeignKey(
             CustomerUser,
-            unique=True,
             on_delete=models.CASCADE,
             verbose_name=_("User"),
     )
@@ -1110,3 +1109,10 @@ class Request(models.Model):
             default=PENDING,
             max_length=4,
             choices=STATUS)
+
+    class Meta:
+        unique_together = ('user', 'country')
+
+
+    def __str__(self):
+        return '%s %s' % (self.country, self.get_type_display())
