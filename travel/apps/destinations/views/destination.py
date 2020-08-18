@@ -10,6 +10,8 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
+from django.views.generic.edit import BaseCreateView
+from django.views.generic.list import MultipleObjectMixin
 from django.contrib.auth import password_validation
 from django.core import exceptions
 from apps.accounts.models import CustomerUser
@@ -919,22 +921,24 @@ class RequestView(CreateView):
     form_class = RequestForm
     success_url = reverse_lazy('destinations:requests')
 
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.save()
+        return self.render_to_response(self.get_context_data())
+
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-
         kwargs.update({'user': self.request.user })
         return kwargs
 
-    def form_valid(self, form):
+    def get_context_data(self, **kwargs):
+        kwargs['object_list'] =self.get_queryset() 
+        return super().get_context_data(**kwargs)
 
-        instance = form.save(commit=False)
-        instance.user = self.request.user
-        instance.save()
-        return super().form_valid(form)  
+    def get_queryset(self):
+        return Request.objects.filter(user=self.request.user)
 
-
-    def get_context_data(self, *args, **kwargs):
-        ctx = super().get_context_data(*args, **kwargs)
-        ctx['object_list'] = Request.objects.filter(user=self.request.user)
-        return ctx
         
+
+

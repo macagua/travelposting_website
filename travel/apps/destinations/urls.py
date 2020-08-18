@@ -327,13 +327,6 @@ urlpatterns = [
         nocommunity_access(RequestManagerView.as_view()),
         name='requests_manager',
     ),
-
-    path(
-        'requests/',
-        nocommunity_access(RequestView.as_view()),
-        name='requests',
-    ),
-
     path(
         'requests/<int:pk>/approve/',
         nocommunity_access(RequestProcessView.as_view(action='approve')),
@@ -350,6 +343,12 @@ urlpatterns = [
         'requests/<int:pk>/delete/',
         nocommunity_access(RequestDeleteView.as_view()),
         name='requests_delete',
+    ),
+
+    path(
+        'requests/',
+        nocommunity_access(RequestView.as_view()),
+        name='requests',
     ),
 
     path(

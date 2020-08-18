@@ -603,12 +603,6 @@ class RequestForm(BaseBootstrapForm, forms.ModelForm):
         self.user = user
         super().__init__(*args, **kwargs)
 
-    def clean(self):
-        if Request.objects.filter(
-                user=self.user,
-                country=self.cleaned_data.get('country')
-                ).exists():
-            raise forms.ValidationError(_('Request already created'))
 
     class Meta:
         model = Request
