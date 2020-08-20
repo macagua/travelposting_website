@@ -262,11 +262,10 @@ DJANGO_ADMIN_LOGS_ENABLED = True
 # https://docs.djangoproject.com/en/2.1/topics/email/#module-django.core.mail
 # python -m smtpd -n -c DebuggingServer localhost:1025
 ADMINS = [
-    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
+    ('Travelposting Info', 'info@travelpostig.com'),
 ]
 
 MANAGERS = [
-    ('Eliezer Romero', 'eliezerfot123@gmail.com'),
     (_('Travel Dashboard'), 'tablero@travelpostig.com'),
     (_('Support'), 'support@travelpostig.com'),
 ]
