@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-05 10:27-0400\n"
+"POT-Creation-Date: 2020-08-21 03:09-0400\n"
 "PO-Revision-Date: 2020-07-13 14:43-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -67,7 +67,8 @@ msgstr ""
 #: apps/community/templates/community/profile/my_profile.html:105
 #: apps/landing_page/models.py:467 apps/landing_page/models.py:507
 #: main/templates/datenshutz_form.html:32
-#: main/templates/services/destination/detail_destination.html:457
+#: main/templates/services/destination/detail_destination.html:621
+#: main/templates/services/destination/detail_destination_new.html:639
 msgid "Email"
 msgstr ""
 
@@ -1204,35 +1205,50 @@ msgid "Code Referral"
 msgstr ""
 
 #: apps/accounts/models.py:437
-#: main/templates/services/destination/detail_destination.html:160
-#: main/templates/services/destination/detail_destination.html:161
+#: apps/community/templates/community/dashboard/profile_user.html:77
+#: apps/community/templates/community/dashboard/profile_user.html:80
+#: apps/community/templates/community/dashboard/profile_user.html:83
 #: main/templates/services/destination/detail_destination.html:201
 #: main/templates/services/destination/detail_destination.html:202
+#: main/templates/services/destination/detail_destination.html:242
+#: main/templates/services/destination/detail_destination.html:243
+#: main/templates/services/destination/detail_destination_new.html:213
+#: main/templates/services/destination/detail_destination_new.html:254
 msgid "Facebook"
 msgstr ""
 
 #: apps/accounts/models.py:444
-#: main/templates/services/destination/detail_destination.html:167
-#: main/templates/services/destination/detail_destination.html:168
 #: main/templates/services/destination/detail_destination.html:208
 #: main/templates/services/destination/detail_destination.html:209
+#: main/templates/services/destination/detail_destination.html:249
+#: main/templates/services/destination/detail_destination.html:250
+#: main/templates/services/destination/detail_destination_new.html:220
+#: main/templates/services/destination/detail_destination_new.html:261
 msgid "Instagram"
 msgstr ""
 
-#: apps/accounts/models.py:451 apps/landing_page/models.py:494
+#: apps/accounts/models.py:451
+#: apps/community/templates/community/dashboard/profile_user.html:64
+#: apps/community/templates/community/dashboard/profile_user.html:67
+#: apps/community/templates/community/dashboard/profile_user.html:70
+#: apps/landing_page/models.py:494
 #: main/templates/datenshutz_form_privacity.html:110
-#: main/templates/services/destination/detail_destination.html:174
-#: main/templates/services/destination/detail_destination.html:175
 #: main/templates/services/destination/detail_destination.html:215
 #: main/templates/services/destination/detail_destination.html:216
+#: main/templates/services/destination/detail_destination.html:256
+#: main/templates/services/destination/detail_destination.html:257
+#: main/templates/services/destination/detail_destination_new.html:227
+#: main/templates/services/destination/detail_destination_new.html:268
 msgid "Twitter"
 msgstr ""
 
 #: apps/accounts/models.py:458
-#: main/templates/services/destination/detail_destination.html:181
-#: main/templates/services/destination/detail_destination.html:182
 #: main/templates/services/destination/detail_destination.html:222
 #: main/templates/services/destination/detail_destination.html:223
+#: main/templates/services/destination/detail_destination.html:263
+#: main/templates/services/destination/detail_destination.html:264
+#: main/templates/services/destination/detail_destination_new.html:234
+#: main/templates/services/destination/detail_destination_new.html:275
 msgid "Linkedin"
 msgstr ""
 
@@ -1246,10 +1262,12 @@ msgstr ""
 
 #: apps/accounts/models.py:478 apps/landing_page/models.py:495
 #: main/templates/datenshutz_form_privacity.html:132
-#: main/templates/services/destination/detail_destination.html:188
-#: main/templates/services/destination/detail_destination.html:189
 #: main/templates/services/destination/detail_destination.html:229
 #: main/templates/services/destination/detail_destination.html:230
+#: main/templates/services/destination/detail_destination.html:270
+#: main/templates/services/destination/detail_destination.html:271
+#: main/templates/services/destination/detail_destination_new.html:241
+#: main/templates/services/destination/detail_destination_new.html:282
 msgid "Pinterest"
 msgstr ""
 
@@ -1274,9 +1292,10 @@ msgid "Last Login IP"
 msgstr ""
 
 #: apps/accounts/models.py:486 apps/accounts/models.py:523
-#: apps/community/templates/community/dashboard/profile_user.html:154
+#: apps/community/templates/community/dashboard/profile_user.html:158
+#: apps/community/templates/community/dashboard/profile_user.html:162
 #: apps/community/templates/community/profile/edit_profile.html:77
-#: apps/community/templates/community/profile/my_profile.html:131
+#: apps/community/templates/community/profile/my_profile.html:135
 msgid "Location"
 msgstr ""
 
@@ -1348,7 +1367,8 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:58
 #: apps/community/templates/community/registration/notify_register_admin_body.html:58
 #: apps/landing_page/models.py:407
-#: main/templates/services/destination/detail_destination.html:422
+#: main/templates/services/destination/detail_destination.html:586
+#: main/templates/services/destination/detail_destination_new.html:613
 msgid "Name"
 msgstr ""
 
@@ -1684,7 +1704,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:79
 #: apps/accounts/templates/accounts/registration/succes_register.html:80
 #: apps/community/templates/community/dashboard/dashboard.html:155
-#: apps/community/templates/community/profile/my_profile.html:176
+#: apps/community/templates/community/profile/my_profile.html:200
 #: main/templates/coming-soon.html:129 main/templates/footer.html:100
 #: main/templates/hotels.html:71
 msgid "Follow us at Facebook"
@@ -1695,7 +1715,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:86
 #: apps/accounts/templates/accounts/registration/succes_register.html:87
 #: apps/community/templates/community/dashboard/dashboard.html:173
-#: apps/community/templates/community/profile/my_profile.html:182
+#: apps/community/templates/community/profile/my_profile.html:209
 #: main/templates/coming-soon.html:136 main/templates/footer.html:107
 #: main/templates/hotels.html:81
 msgid "Follow us at Instagram"
@@ -1706,7 +1726,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:93
 #: apps/accounts/templates/accounts/registration/succes_register.html:94
 #: apps/community/templates/community/dashboard/dashboard.html:167
-#: apps/community/templates/community/profile/my_profile.html:188
+#: apps/community/templates/community/profile/my_profile.html:218
 #: main/templates/coming-soon.html:143 main/templates/footer.html:114
 #: main/templates/hotels.html:76
 msgid "Follow us at Twitter"
@@ -1889,6 +1909,12 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:63
 #: apps/accounts/templates/accounts/user/_detail.html:87
+#: apps/community/templates/community/dashboard/profile_user.html:147
+#: apps/community/templates/community/dashboard/profile_user.html:160
+#: apps/community/templates/community/profile/my_profile.html:116
+#: apps/community/templates/community/profile/my_profile.html:137
+#: apps/community/templates/community/profile/my_profile.html:150
+#: apps/community/templates/community/profile/my_profile.html:163
 msgid "Not registered yet"
 msgstr ""
 
@@ -1910,8 +1936,8 @@ msgid "Not registered yet "
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/_detail.html:106
-#: apps/community/templates/community/dashboard/profile_user.html:170
-#: apps/community/templates/community/profile/my_profile.html:165
+#: apps/community/templates/community/dashboard/profile_user.html:178
+#: apps/community/templates/community/profile/my_profile.html:181
 msgid "Language"
 msgstr ""
 
@@ -1968,7 +1994,7 @@ msgstr ""
 #: apps/community/templates/community/registration/forget_password.html:4
 #: apps/community/templates/community/registration/login.html:4
 #: apps/community/templates/community/registration/signup.html:4
-#: config/settings/base.py:330 main/templates/community.html:4
+#: config/settings/base.py:332 main/templates/community.html:4
 #: main/templates/community.html:21 main/templates/hotels.html:112
 #: main/templates/page01.html:39 main/templates/pricing.html:4
 msgid "Community"
@@ -2090,10 +2116,10 @@ msgid "Save Password"
 msgstr ""
 
 #: apps/community/templates/accounts/change_password.html:101
-#: apps/community/templates/accounts/customeruser_list.html:186
+#: apps/community/templates/accounts/customeruser_list.html:184
 #: apps/community/templates/community/dashboard/mail.html:242
 #: apps/community/templates/community/dashboard/mail.html:483
-#: apps/community/templates/community/dashboard/profile_user.html:304
+#: apps/community/templates/community/dashboard/profile_user.html:318
 #: apps/community/templates/community/profile/complete_profile.html:81
 #: apps/community/templates/community/profile/edit_profile.html:210
 msgid "Cancel"
@@ -2122,69 +2148,76 @@ msgstr ""
 msgid "Update your profile picture"
 msgstr ""
 
+#: apps/community/templates/accounts/customeruser_list.html:138
 #: apps/community/templates/accounts/customeruser_list.html:140
-#: apps/community/templates/accounts/customeruser_list.html:142
 #: apps/community/templates/community/dashboard/profile_user.html:40
 msgid "Send a Message"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:151
+#: apps/community/templates/accounts/customeruser_list.html:149
 #: apps/community/templates/community/dashboard/dashboard.html:143
 msgid "Add to favorites"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:167
+#: apps/community/templates/accounts/customeruser_list.html:165
 #: apps/community/templates/community/dashboard/mail.html:219
 #: apps/community/templates/community/dashboard/mail.html:455
-#: apps/community/templates/community/dashboard/profile_user.html:286
+#: apps/community/templates/community/dashboard/profile_user.html:300
 msgid "Send message to"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:168
+#: apps/community/templates/accounts/customeruser_list.html:166
 #: apps/community/templates/community/dashboard/mail.html:220
 #: apps/community/templates/community/dashboard/mail.html:456
-#: apps/community/templates/community/dashboard/profile_user.html:287
+#: apps/community/templates/community/dashboard/profile_user.html:301
 #: main/templates/base.html:84 main/templates/index.html:75
 #: main/templates/modal_contact_us/modal.html:5
+#: main/templates/pages/pollBooking.html:43
 #: main/templates/services/destination/comments.html:51
 #: main/templates/services/destination/comments.html:83
-#: main/templates/services/destination/detail_destination.html:353
-#: main/templates/services/destination/detail_destination.html:383
-#: main/templates/services/destination/detail_destination.html:397
-#: main/templates/services/destination/detail_destination.html:495
+#: main/templates/services/destination/detail_destination.html:515
+#: main/templates/services/destination/detail_destination.html:545
+#: main/templates/services/destination/detail_destination.html:561
+#: main/templates/services/destination/detail_destination.html:662
+#: main/templates/services/destination/detail_destination_new.html:549
+#: main/templates/services/destination/detail_destination_new.html:575
+#: main/templates/services/destination/detail_destination_new.html:591
+#: main/templates/services/destination/detail_destination_new.html:674
 #: main/templates/services/pricing/plans.html:193
 msgid "Close"
 msgstr ""
 
+#: apps/community/templates/accounts/customeruser_list.html:172
 #: apps/community/templates/accounts/customeruser_list.html:174
-#: apps/community/templates/accounts/customeruser_list.html:176
 #: apps/community/templates/community/dashboard/mail.html:128
 #: apps/community/templates/community/dashboard/mail.html:230
 #: apps/community/templates/community/dashboard/mail.html:232
 #: apps/community/templates/community/dashboard/mail.html:321
 #: apps/community/templates/community/dashboard/mail.html:471
 #: apps/community/templates/community/dashboard/mail.html:473
-#: apps/community/templates/community/dashboard/profile_user.html:293
-#: apps/community/templates/community/dashboard/profile_user.html:295
+#: apps/community/templates/community/dashboard/profile_user.html:307
+#: apps/community/templates/community/dashboard/profile_user.html:309
 #: apps/directmessages/models.py:13
 msgid "Subject"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:180
+#: apps/community/templates/accounts/customeruser_list.html:178
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
-#: apps/community/templates/community/dashboard/profile_user.html:299
+#: apps/community/templates/community/dashboard/profile_user.html:313
 #: apps/directmessages/models.py:24 apps/landing_page/models.py:512
 msgid "Message"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:187
+#: apps/community/templates/accounts/customeruser_list.html:185
 #: apps/community/templates/community/dashboard/mail.html:243
 #: apps/community/templates/community/dashboard/mail.html:484
-#: apps/community/templates/community/dashboard/profile_user.html:305
+#: apps/community/templates/community/dashboard/profile_user.html:319
+#: main/templates/pages/pollBooking.html:44
 #: main/templates/pages/show_header.html:108
 #: main/templates/services/destination/comments.html:84
-#: main/templates/services/destination/detail_destination.html:384
+#: main/templates/services/destination/detail_destination.html:546
+#: main/templates/services/destination/detail_destination_new.html:576
 msgid "Send"
 msgstr ""
 
@@ -2422,32 +2455,9 @@ msgid "Do you think we should get better?:"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:14
-#: main/templates/menu/navbar.html:29
+#: main/templates/coming-soon.html:34 main/templates/menu/navbar.html:29
+#: main/templates/menu/navbar_all.html:137
 msgid "Toggle navigation"
-msgstr ""
-
-#: apps/community/templates/community/dashboard/breadcrumb.html:32
-#: apps/community/templates/community/dashboard/profile_user.html:67
-#: apps/community/templates/community/dashboard/profile_user.html:80
-#: apps/community/templates/community/dashboard/profile_user.html:115
-#: apps/community/templates/community/dashboard/profile_user.html:124
-#: apps/community/templates/community/profile/complete_profile.html:32
-#: apps/community/templates/community/profile/edit_profile.html:26
-#: apps/community/templates/community/profile/my_profile.html:26
-#: apps/community/templates/community/profile/my_profile.html:76
-#: apps/community/templates/community/profile/my_profile.html:85
-#: main/templates/coming-soon.html:61 main/templates/make_page.html:277
-#: main/templates/menu/navbar_all.html:98
-#: main/templates/menu/navbar_all.html:189
-#: main/templates/menu/navbar_all.html:275
-#: main/templates/modal_contact_us/modal.html:22
-#: main/templates/modal_contact_us/modal.html:31
-#: main/templates/presignup.html:92 main/templates/presignup.html:99
-#: main/templates/services/destination/all.html:47
-#: main/templates/services/destination/sponsors.html:36
-#: main/templates/services/destination/testimonials.html:41
-#: main/templates/services/magazine/magazine.html:8
-msgid "Image Description"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/breadcrumb.html:68
@@ -2471,6 +2481,7 @@ msgstr ""
 msgid "Edit Profile"
 msgstr ""
 
+#: apps/community/templates/community/dashboard/breadcrumb.html:91
 #: apps/community/templates/community/dashboard/breadcrumb.html:93
 msgid "Following"
 msgstr ""
@@ -2509,6 +2520,12 @@ msgstr ""
 msgid "Not members found."
 msgstr ""
 
+#: apps/community/templates/community/dashboard/dashboard.html:136
+#: apps/community/templates/community/dashboard/profile_user.html:29
+#: apps/community/templates/community/dashboard/profile_user.html:211
+msgid "Update your Profile picture"
+msgstr ""
+
 #: apps/community/templates/community/dashboard/dashboard.html:161
 msgid "Write us via Email"
 msgstr ""
@@ -2526,14 +2543,14 @@ msgid "Unfollow"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/dashboard.html:218
-#: apps/community/templates/community/dashboard/profile_user.html:243
+#: apps/community/templates/community/dashboard/profile_user.html:257
 #: main/templates/services/destination/_parts/pagination_destinies.html:8
 #: main/templates/services/destination/_parts/pagination_destinies.html:10
 msgid "Previous"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/dashboard.html:230
-#: apps/community/templates/community/dashboard/profile_user.html:259
+#: apps/community/templates/community/dashboard/profile_user.html:273
 #: main/templates/services/destination/_parts/pagination_destinies.html:26
 #: main/templates/services/destination/_parts/pagination_destinies.html:28
 msgid "Next"
@@ -2560,7 +2577,6 @@ msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:139
 #: apps/community/templates/community/dashboard/mail.html:330
-#: main/templates/services/destination/detail_destination.html:269
 msgid "Date"
 msgstr ""
 
@@ -2571,12 +2587,12 @@ msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:169
 #: apps/community/templates/community/dashboard/mail.html:358
-#: apps/directmessages/models.py:14
+#: apps/directmessages/models.py:14 config/settings/local.py:47
 msgid "Content"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:181
-#: apps/community/templates/community/dashboard/profile_user.html:226
+#: apps/community/templates/community/dashboard/profile_user.html:240
 msgid "Reply"
 msgstr ""
 
@@ -2665,7 +2681,7 @@ msgid "Report this user"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/profile_user.html:57
-#: apps/community/templates/community/profile/my_profile.html:174
+#: apps/community/templates/community/profile/my_profile.html:196
 msgid "Social Profiles"
 msgstr ""
 
@@ -2673,8 +2689,18 @@ msgstr ""
 msgid "Hey, I'am "
 msgstr ""
 
+#: apps/community/templates/community/dashboard/profile_user.html:115
+#: apps/community/templates/community/profile/my_profile.html:76
+msgid "Referred User"
+msgstr ""
+
 #: apps/community/templates/community/dashboard/profile_user.html:117
 msgid "+3 Referrals"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/profile_user.html:124
+#: apps/community/templates/community/profile/my_profile.html:85
+msgid "Verified User"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/profile_user.html:126
@@ -2685,7 +2711,32 @@ msgstr ""
 msgid "Web page:"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/profile_user.html:185
+#: apps/community/templates/community/dashboard/profile_user.html:149
+#: apps/community/templates/community/profile/my_profile.html:114
+#: apps/community/templates/community/profile/my_profile.html:118
+msgid "Web page"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/profile_user.html:180
+#: apps/community/templates/community/profile/my_profile.html:183
+#: main/templates/menu/menu.html:51 main/templates/menu/navbar_all.html:24
+#: main/templates/menu/navbar_all.html:35
+msgid "English"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/profile_user.html:182
+#: apps/community/templates/community/profile/my_profile.html:185
+#: main/templates/menu/navbar_all.html:28
+#: main/templates/menu/navbar_all.html:37
+msgid "Spanish"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/profile_user.html:184
+#: apps/community/templates/community/profile/my_profile.html:187
+msgid "German"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/profile_user.html:199
 msgid "Reviews"
 msgstr ""
 
@@ -2706,6 +2757,20 @@ msgstr ""
 
 #: apps/community/templates/community/profile/complete_profile.html:19
 msgid "Thank you for your cooperation."
+msgstr ""
+
+#: apps/community/templates/community/profile/complete_profile.html:32
+#: apps/community/templates/community/profile/edit_profile.html:26
+#: main/templates/coming-soon.html:61 main/templates/make_page.html:277
+#: main/templates/menu/navbar_all.html:275
+#: main/templates/modal_contact_us/modal.html:22
+#: main/templates/modal_contact_us/modal.html:31
+#: main/templates/presignup.html:92 main/templates/presignup.html:99
+#: main/templates/services/destination/all.html:47
+#: main/templates/services/destination/sponsors.html:36
+#: main/templates/services/destination/testimonials.html:41
+#: main/templates/services/magazine/magazine.html:8
+msgid "Image Description"
 msgstr ""
 
 #: apps/community/templates/community/profile/complete_profile.html:37
@@ -2746,19 +2811,16 @@ msgstr ""
 msgid "Random"
 msgstr ""
 
-#: apps/community/templates/community/profile/my_profile.html:114
-msgid "Web page"
-msgstr ""
-
-#: apps/community/templates/community/profile/my_profile.html:140
+#: apps/community/templates/community/profile/my_profile.html:148
 msgid "Postal Code"
 msgstr ""
 
-#: apps/community/templates/community/profile/my_profile.html:149
+#: apps/community/templates/community/profile/my_profile.html:161
+#: apps/community/templates/community/profile/my_profile.html:165
 msgid "Phone number"
 msgstr ""
 
-#: apps/community/templates/community/profile/my_profile.html:194
+#: apps/community/templates/community/profile/my_profile.html:227
 msgid "Follow us at Linkedin"
 msgstr ""
 
@@ -2904,7 +2966,8 @@ msgstr ""
 
 #: apps/landing_page/models.py:53 apps/payments/models/paypal.py:26
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:263
+#: main/templates/services/destination/detail_destination.html:308
+#: main/templates/services/destination/detail_destination_new.html:320
 msgid "Price"
 msgstr ""
 
@@ -3038,7 +3101,7 @@ msgstr ""
 msgid "type"
 msgstr ""
 
-#: apps/landing_page/models.py:369
+#: apps/landing_page/models.py:369 config/settings/local.py:35
 msgid "Header"
 msgstr ""
 
@@ -3080,7 +3143,8 @@ msgid "First Name"
 msgstr ""
 
 #: apps/landing_page/models.py:462 main/templates/datenshutz_form.html:28
-#: main/templates/services/destination/detail_destination.html:433
+#: main/templates/services/destination/detail_destination.html:597
+#: main/templates/services/destination/detail_destination_new.html:621
 msgid "Last Name"
 msgstr ""
 
@@ -3236,73 +3300,97 @@ msgstr ""
 msgid "es"
 msgstr ""
 
-#: config/settings/base.py:270
+#: config/settings/base.py:272
 msgid "Travel Dashboard"
 msgstr ""
 
-#: config/settings/base.py:271
+#: config/settings/base.py:273
 msgid "Support"
 msgstr ""
 
-#: config/settings/base.py:319
+#: config/settings/base.py:321
 msgid "Feature"
 msgstr ""
 
-#: config/settings/base.py:325
+#: config/settings/base.py:327
 msgid "Landing"
 msgstr ""
 
-#: config/settings/base.py:328
+#: config/settings/base.py:330
 msgid "Tour"
 msgstr ""
 
-#: config/settings/base.py:329 main/templates/magazine.html:34
+#: config/settings/base.py:331 main/templates/magazine.html:34
 msgid "Magazine"
 msgstr ""
 
-#: config/settings/base.py:331
+#: config/settings/base.py:333
 msgid "Data protection"
 msgstr ""
 
-#: config/settings/base.py:332
+#: config/settings/base.py:334
 msgid "Data protection Form"
 msgstr ""
 
-#: config/settings/base.py:333
+#: config/settings/base.py:335
 msgid "Data protection Form Privacity"
 msgstr ""
 
-#: config/settings/base.py:334 main/templates/coming-soon.html:90
+#: config/settings/base.py:336 main/templates/coming-soon.html:90
 #: main/templates/coming-soon.html:99
 msgid "Coming Soon"
 msgstr ""
 
-#: config/settings/base.py:335
+#: config/settings/base.py:337
 msgid "Hotels template"
 msgstr ""
 
-#: config/settings/base.py:336
+#: config/settings/base.py:338
 msgid "Pricing"
 msgstr ""
 
-#: config/settings/base.py:338 main/templates/datenshutz_form_privacity.html:26
+#: config/settings/base.py:340 main/templates/datenshutz_form_privacity.html:26
 msgid "Terms"
 msgstr ""
 
-#: config/settings/base.py:339
+#: config/settings/base.py:341
 msgid "FAQ"
 msgstr ""
 
-#: config/settings/base.py:340
+#: config/settings/base.py:342
 msgid "Page type 01"
 msgstr ""
 
-#: config/settings/base.py:341
+#: config/settings/base.py:343
 msgid "Page type 02"
 msgstr ""
 
-#: config/settings/base.py:342
+#: config/settings/base.py:344
 msgid "Pre-signup"
+msgstr ""
+
+#: config/settings/local.py:59
+msgid "Sidebar"
+msgstr ""
+
+#: config/settings/local.py:73
+msgid "Extra small devices"
+msgstr ""
+
+#: config/settings/local.py:74
+msgid "Small devices"
+msgstr ""
+
+#: config/settings/local.py:75
+msgid "Medium devices (Tablets)"
+msgstr ""
+
+#: config/settings/local.py:76
+msgid "Large devices (Desktops)"
+msgstr ""
+
+#: config/settings/local.py:77
+msgid "Extra large devices (Large Desktops)"
 msgstr ""
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
@@ -3510,9 +3598,12 @@ msgstr ""
 #: main/templates/services/destination/detail.back.html:45
 #: main/templates/services/destination/detail.back.html:56
 #: main/templates/services/destination/detail.back.html:66
-#: main/templates/services/destination/detail_destination.html:51
-#: main/templates/services/destination/detail_destination.html:62
-#: main/templates/services/destination/detail_destination.html:73
+#: main/templates/services/destination/detail_destination.html:59
+#: main/templates/services/destination/detail_destination.html:71
+#: main/templates/services/destination/detail_destination.html:83
+#: main/templates/services/destination/detail_destination_new.html:59
+#: main/templates/services/destination/detail_destination_new.html:71
+#: main/templates/services/destination/detail_destination_new.html:83
 msgid "SVG"
 msgstr ""
 
@@ -4101,6 +4192,10 @@ msgid ""
 msgstr ""
 
 #: main/templates/hotels.html:67
+#: main/templates/services/destination/detail_destination.html:196
+#: main/templates/services/destination/detail_destination.html:237
+#: main/templates/services/destination/detail_destination_new.html:208
+#: main/templates/services/destination/detail_destination_new.html:249
 msgid "Follow us"
 msgstr ""
 
@@ -4336,11 +4431,6 @@ msgstr ""
 msgid "Deutsch"
 msgstr ""
 
-#: main/templates/menu/menu.html:51 main/templates/menu/navbar_all.html:24
-#: main/templates/menu/navbar_all.html:35
-msgid "English"
-msgstr ""
-
 #: main/templates/menu/menu.html:52
 msgid "Spanish "
 msgstr ""
@@ -4361,18 +4451,14 @@ msgstr ""
 #: main/templates/services/destination/destinations_for_categorie.html:5
 #: main/templates/services/destination/destinations_for_categorie_backup.html:5
 #: main/templates/services/destination/detail.back.html:3
-#: main/templates/services/destination/detail_destination.html:5
+#: main/templates/services/destination/detail_destination.html:6
+#: main/templates/services/destination/detail_destination_new.html:6
 msgid "Categories"
 msgstr ""
 
 #: main/templates/menu/menu_footer.html:12
 #: main/templates/pages/show_header.html:60
 msgid "Request"
-msgstr ""
-
-#: main/templates/menu/navbar_all.html:28
-#: main/templates/menu/navbar_all.html:37
-msgid "Spanish"
 msgstr ""
 
 #: main/templates/menu/navbar_all.html:45
@@ -4475,6 +4561,56 @@ msgstr ""
 #: main/templates/pages/show_header.html:100
 #: main/templates/pages/show_header.html:102
 msgid "Whatsapp"
+msgstr ""
+
+#: main/templates/pages/pollBooking.html:17
+msgid "Processing Booking..."
+msgstr ""
+
+#: main/templates/pages/pollBooking.html:18
+msgid ""
+"We are processing your Booking, while it is done, complete the following "
+"poll about the process of Booking. Thank for your feedback us, Travelposting "
+"team"
+msgstr ""
+
+#: main/templates/pages/pollBooking.html:31
+#: main/templates/pages/pollBooking.html:33
+#: main/templates/services/destination/comments.html:68
+#: main/templates/services/destination/comments.html:70
+#: main/templates/services/destination/detail_destination.html:529
+#: main/templates/services/destination/detail_destination.html:532
+#: main/templates/services/destination/detail_destination_new.html:563
+#: main/templates/services/destination/detail_destination_new.html:565
+msgid "Title"
+msgstr ""
+
+#: main/templates/pages/pollBooking.html:33
+#: main/templates/services/destination/comments.html:71
+#: main/templates/services/destination/detail_destination.html:533
+#: main/templates/services/destination/detail_destination_new.html:565
+msgid "Amount (to the nearest dollar)"
+msgstr ""
+
+#: main/templates/pages/pollBooking.html:38
+#: main/templates/services/destination/comments.html:76
+#: main/templates/services/destination/detail_destination.html:538
+#: main/templates/services/destination/detail_destination_new.html:570
+msgid "Body"
+msgstr ""
+
+#: main/templates/pages/pollBooking.html:40
+#: main/templates/services/destination/comments.html:78
+#: main/templates/services/destination/detail_destination.html:541
+#: main/templates/services/destination/detail_destination_new.html:572
+msgid "Please let us your message"
+msgstr ""
+
+#: main/templates/pages/pollBooking.html:40
+#: main/templates/services/destination/comments.html:79
+#: main/templates/services/destination/detail_destination.html:542
+#: main/templates/services/destination/detail_destination_new.html:572
+msgid "With textarea"
 msgstr ""
 
 #: main/templates/pages/published_email.html:48
@@ -4723,6 +4859,10 @@ msgstr ""
 msgid "See details"
 msgstr ""
 
+#: main/templates/services/destination/_parts/pagination_destinies.html:5
+msgid "Page navigation example"
+msgstr ""
+
 #: main/templates/services/destination/_parts/pagination_destinies.html:32
 msgid "Showing page"
 msgstr ""
@@ -4778,35 +4918,9 @@ msgid "Was this helpful?"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:50
-#: main/templates/services/destination/detail_destination.html:352
+#: main/templates/services/destination/detail_destination.html:514
+#: main/templates/services/destination/detail_destination_new.html:548
 msgid "Let us your comment"
-msgstr ""
-
-#: main/templates/services/destination/comments.html:68
-#: main/templates/services/destination/comments.html:70
-#: main/templates/services/destination/detail_destination.html:367
-#: main/templates/services/destination/detail_destination.html:370
-msgid "Title"
-msgstr ""
-
-#: main/templates/services/destination/comments.html:71
-#: main/templates/services/destination/detail_destination.html:371
-msgid "Amount (to the nearest dollar)"
-msgstr ""
-
-#: main/templates/services/destination/comments.html:76
-#: main/templates/services/destination/detail_destination.html:376
-msgid "Body"
-msgstr ""
-
-#: main/templates/services/destination/comments.html:78
-#: main/templates/services/destination/detail_destination.html:379
-msgid "Please let us your message"
-msgstr ""
-
-#: main/templates/services/destination/comments.html:79
-#: main/templates/services/destination/detail_destination.html:380
-msgid "With textarea"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:102
@@ -4852,17 +4966,18 @@ msgid "Category"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:48
-#: main/templates/services/destination/detail_destination.html:54
 msgid "Photos"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:59
-#: main/templates/services/destination/detail_destination.html:65
+#: main/templates/services/destination/detail_destination.html:74
+#: main/templates/services/destination/detail_destination_new.html:74
 msgid "Detail"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:69
-#: main/templates/services/destination/detail_destination.html:76
+#: main/templates/services/destination/detail_destination.html:86
+#: main/templates/services/destination/detail_destination_new.html:86
 msgid "Map"
 msgstr ""
 
@@ -4879,84 +4994,180 @@ msgid "We still don't have the itinerary for this destination"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:227
-#: main/templates/services/destination/detail_destination.html:338
+#: main/templates/services/destination/detail_destination.html:475
+#: main/templates/services/destination/detail_destination_new.html:510
 msgid "Reserve"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:147
+#: main/templates/services/destination/detail_destination.html:62
+#: main/templates/services/destination/detail_destination_new.html:62
+msgid "Graphics"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:153
+#: main/templates/services/destination/detail_destination_new.html:153
+msgid "Your browser does not support the video tag."
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:180
+#: main/templates/services/destination/detail_destination.html:181
+#: main/templates/services/destination/detail_destination_new.html:180
+#: main/templates/services/destination/detail_destination_new.html:181
 msgid "back to list"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:155
-#: main/templates/services/destination/detail_destination.html:196
-msgid "Follow us or recommend us through"
-msgstr ""
-
-#: main/templates/services/destination/detail_destination.html:236
-#: main/templates/services/destination/detail_destination.html:237
+#: main/templates/services/destination/detail_destination.html:277
+#: main/templates/services/destination/detail_destination.html:278
+#: main/templates/services/destination/detail_destination_new.html:289
 msgid "Website"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:243
-#: main/templates/services/destination/detail_destination.html:244
+#: main/templates/services/destination/detail_destination.html:284
+#: main/templates/services/destination/detail_destination.html:285
+#: main/templates/services/destination/detail_destination_new.html:296
 msgid "Telegram"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:285
-msgid "Califications"
+#: main/templates/services/destination/detail_destination.html:313
+#: main/templates/services/destination/detail_destination_new.html:325
+msgid "Offer until"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:285
-msgid "Votes"
-msgstr ""
-
-#: main/templates/services/destination/detail_destination.html:300
-msgid "Discover or download our itinerary here"
-msgstr ""
-
-#: main/templates/services/destination/detail_destination.html:315
-msgid "Download PDF"
-msgstr ""
-
-#: main/templates/services/destination/detail_destination.html:326
-msgid "Add comment"
+#: main/templates/services/destination/detail_destination.html:324
+#: main/templates/services/destination/detail_destination_new.html:336
+msgid "Departure date"
 msgstr ""
 
 #: main/templates/services/destination/detail_destination.html:330
-#: main/templates/services/destination/detail_destination.html:331
+#: main/templates/services/destination/detail_destination_new.html:342
+msgid "Arrival date"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:344
+#: main/templates/services/destination/detail_destination_new.html:356
+#: main/templates/services/destination/detail_destination_new.html:377
+msgid "Free Wifi"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:350
+#: main/templates/services/destination/detail_destination_new.html:362
+#: main/templates/services/destination/detail_destination_new.html:385
+msgid "Breakfast included"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:356
+#: main/templates/services/destination/detail_destination_new.html:368
+#: main/templates/services/destination/detail_destination_new.html:393
+msgid "Gym"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:366
+#: main/templates/services/destination/detail_destination_new.html:404
+msgid "Air Conditioning"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:372
+#: main/templates/services/destination/detail_destination_new.html:410
+msgid "Restaurant"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:378
+#: main/templates/services/destination/detail_destination_new.html:416
+msgid "Bar"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:388
+#: main/templates/services/destination/detail_destination_new.html:426
+msgid "Housekeeping"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:394
+#: main/templates/services/destination/detail_destination_new.html:432
+msgid "Room Service"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:400
+#: main/templates/services/destination/detail_destination_new.html:438
+msgid "Business Services"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:410
+#: main/templates/services/destination/detail_destination_new.html:448
+msgid "Hob Tub"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:416
+#: main/templates/services/destination/detail_destination_new.html:454
+msgid "25/7 Front Desk"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:422
+#: main/templates/services/destination/detail_destination_new.html:460
+msgid "Laundry"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:438
+#: main/templates/services/destination/detail_destination_new.html:476
+msgid "Our itinerary here"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:453
+msgid "Download PDF"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:464
+#: main/templates/services/destination/detail_destination_new.html:501
+msgid "Add comment"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:468
+#: main/templates/services/destination/detail_destination.html:469
+#: main/templates/services/destination/detail_destination_new.html:505
 msgid "Make a recommendation"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:396
+#: main/templates/services/destination/detail_destination.html:560
+#: main/templates/services/destination/detail_destination_new.html:590
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:420
-#: main/templates/services/destination/detail_destination.html:431
-#: main/templates/services/destination/detail_destination.html:444
-#: main/templates/services/destination/detail_destination.html:455
-#: main/templates/services/destination/detail_destination.html:468
-#: main/templates/services/destination/detail_destination.html:479
+#: main/templates/services/destination/detail_destination.html:584
+#: main/templates/services/destination/detail_destination.html:595
+#: main/templates/services/destination/detail_destination.html:608
+#: main/templates/services/destination/detail_destination.html:619
+#: main/templates/services/destination/detail_destination.html:632
+#: main/templates/services/destination/detail_destination.html:643
+#: main/templates/services/destination/detail_destination_new.html:613
+#: main/templates/services/destination/detail_destination_new.html:621
+#: main/templates/services/destination/detail_destination_new.html:631
+#: main/templates/services/destination/detail_destination_new.html:639
+#: main/templates/services/destination/detail_destination_new.html:649
+#: main/templates/services/destination/detail_destination_new.html:657
 msgid "Small"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:446
+#: main/templates/services/destination/detail_destination.html:610
+#: main/templates/services/destination/detail_destination_new.html:631
 msgid "+49 123 456 789"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:470
+#: main/templates/services/destination/detail_destination.html:634
+#: main/templates/services/destination/detail_destination_new.html:649
 msgid "Number of people travelling"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:480
+#: main/templates/services/destination/detail_destination.html:644
+#: main/templates/services/destination/detail_destination_new.html:657
 msgid "Do you have a plan you want to book?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:486
+#: main/templates/services/destination/detail_destination.html:650
+#: main/templates/services/destination/detail_destination_new.html:662
 msgid "Do you may have some comments or remarks about your booking?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:490
+#: main/templates/services/destination/detail_destination.html:654
+#: main/templates/services/destination/detail_destination_new.html:666
 msgid ""
 "By clicking 'Book' you agree that Travelposting use your data for "
 "advertising and marketing purposes between Travelposting, its alliance "
@@ -4964,8 +5175,17 @@ msgid ""
 "and request the cancellation of your data."
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:496
+#: main/templates/services/destination/detail_destination.html:663
+#: main/templates/services/destination/detail_destination_new.html:675
 msgid "Book"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination_new.html:197
+msgid "Califications"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination_new.html:197
+msgid "Votes"
 msgstr ""
 
 #: main/templates/services/destination/sponsors.html:7
