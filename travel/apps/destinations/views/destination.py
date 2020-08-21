@@ -893,6 +893,11 @@ class RequestDeleteView(DeleteView):
     model = Request 
     success_url = reverse_lazy('destinations:requests')
     template_name = 'dashboard/leaders/_requests_delete.html'
+    def get_context_data(self, **kwargs):
+        qs = self.get_queryset()
+        kwargs['object_list'] = qs 
+        kwargs['allow_new'] = qs.filter(status__in=[Request.PENDING, Request.APPROVED]).count() < 3
+        return super().get_context_data(**kwargs)
 
 
 class RequestManagerView(ListView):
@@ -933,7 +938,9 @@ class RequestView(CreateView):
         return kwargs
 
     def get_context_data(self, **kwargs):
-        kwargs['object_list'] =self.get_queryset() 
+        qs = self.get_queryset()
+        kwargs['object_list'] = qs 
+        kwargs['allow_new'] = qs.filter(status__in=[Request.PENDING, Request.APPROVED]).count() < 3
         return super().get_context_data(**kwargs)
 
     def get_queryset(self):

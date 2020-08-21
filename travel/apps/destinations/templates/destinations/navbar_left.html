@@ -102,7 +102,7 @@
       {% if not request.user.is_superuser %}
        
       <li class="">
-        {% if not perms.accounts.manager_country  %}
+        {% if not perms.accounts.manager_country and not perms.accounts.manager  %}
           <a href="{% url 'destinations:requests' %}">
         {% else %}
           <a href="{% url 'destinations:requests_manager' %}">
