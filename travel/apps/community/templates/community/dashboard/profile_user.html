@@ -26,7 +26,7 @@
                                 {% if user.avatar %}
                                 <img src="/main/media/{{ user.avatar }}" class="u-lg-avatar  rounded-circle"/>
                                 {% else %}
-                                <img src="{% static 'img/user.png' %}" width="80" class="img-responsive" alt="Actualize su foto de Perfil" />
+                                <img src="{% static 'img/user.png' %}" width="80" class="img-responsive" alt="{% trans 'Update your Profile picture' %}" />
                                 {% endif %}
                             </div>
 
@@ -61,26 +61,26 @@
                             <!-- Social Profiles -->
                             {% if members.twitter %}
                             <!-- Social Profiles -->
-                            <a class="media mb-4" href="{{ members.twitter }}">
+                            <a class="media mb-4" href="{{ members.twitter }}" title="{% trans 'Twitter' %}">
                                 <div class="u-sm-avatar mr-3">
                                     <img class="img-fluid" src="{% static 'assets/img/160x160/img19.png' %}"
-                                        alt="Image Description">
+                                         alt="{% trans 'Twitter' %}">
                                 </div>
                                 <div class="media-body">
-                                    <span class="d-block text-dark">Twitter</span>
+                                    <span class="d-block text-dark">{% trans 'Twitter' %}</span>
                                 </div>
                             </a>
                             {% endif %}
                             <!-- End Social Profiles -->
                             {% if members.facebook %}
                             <!-- Social Profiles -->
-                            <a class="media" href="{{ members.facebook }}">
+                            <a class="media" href="{{ members.facebook }}" title="{% trans 'Facebook' %}">
                                 <div class="u-sm-avatar mr-3">
                                     <img class="img-fluid" src="{% static 'assets/img/160x160/img20.png' %}"
-                                        alt="Image Description">
+                                         alt="{% trans 'Facebook' %}">
                                 </div>
                                 <div class="media-body">
-                                    <span class="d-block text-dark">Facebook</span>
+                                    <span class="d-block text-dark">{% trans 'Facebook' %}</span>
                                 </div>
                             </a>
                             <!-- End Social Profiles -->
@@ -100,7 +100,7 @@
 
                     <!-- Info -->
                     <div class="mb-4">
-                        {% if members.about_me == 'None' %}
+                        {% if members.about_me == None %}
                         {% else%}
                         <p>{{ members.about_me }}</p>
                         {% endif %}
@@ -112,7 +112,7 @@
                         <li class="list-inline-item mb-3 mb-sm-0 mr-5">
                             <div class="d-flex align-items-center">
                                 <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg' %}"
-                                    alt="Image Description" style="width: 40px;">
+                                     alt="Image Description" style="width: 40px;">
                                 <div class="text-secondary">
                                     {% trans "+3 Referrals" %}
                                 </div>
@@ -121,7 +121,7 @@
                         <li class="list-inline-item mb-3 mb-sm-0">
                             <div class="d-flex align-items-center">
                                 <img class="mr-2" src="{% static 'assets/svg/illustrations/verified-user.svg' %}"
-                                    alt="Image Description" style="width: 40px;">
+                                     alt="Image Description" style="width: 40px;">
                                 <div class="text-secondary">
                                     {% trans "Verified" %}
                                 </div>
@@ -143,7 +143,11 @@
                                         <span class="fas fa-link list-group-icon mr-3"></span>
                                         <div class="media-body text-lh-sm">
                                             <span class="d-block mb-1">{% trans 'Web page:' %}</span>
-                                            <a href="#">{% if members.web_site == None %}{% else%}{{members.web_site }}{% endif %}</a>
+                                            {% if members.web_site == None %}
+                                              <p>{% trans 'Not registered yet' %}</p>
+                                            {% else %}
+                                            <a href="#" title="{% trans 'Web page' %}">{{members.web_site}}</a>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </li>
@@ -152,7 +156,11 @@
                                         <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
                                         <div class="media-body text-lh-sm">
                                             <span class="d-block mb-1">{% trans 'Location' %}:</span>
-                                            <a href="#">{{ members.country }}</a>
+                                            {% if members.country == None %}
+                                              <p>{% trans 'Not registered yet' %}</p>
+                                            {% else %}
+                                            <a href="#" title="{% trans 'Location' %}">{{members.country}}</a>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </li>
@@ -168,7 +176,13 @@
                                         <span class="fas fa-globe list-group-icon mr-3"></span>
                                         <div class="media-body text-lh-sm">
                                             <span class="d-block mb-1">{% trans 'Language' %}:</span>
-                                            <span class="d-block text-muted">{% if members.language == 'None' %}{%else%}{{ members.language}}{% endif%}</span>
+                                            {% if members.language == 'en' %}
+                                            <span class="d-block text-muted">{% trans "English" %}</span>
+                                            {% elif members.language == 'es' %}
+                                            <span class="d-block text-muted">{% trans "Spanish" %}</span>
+                                            {% else %}
+                                            <span class="d-block text-muted">{% trans "German" %}</span>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </li>
@@ -194,7 +208,7 @@
                                 {% if user.avatar %}
                                 <img src="/main/media/{{ user.avatar }}" class="u-avatar rounded-circle mr-3" />
                                 {% else %}
-                                <img src="{% static 'img/user.png' %}" width="80" class="u-avatar rounded-circle mr-3" alt="Actualize su foto de Perfil" />
+                                <img src="{% static 'img/user.png' %}" width="80" class="u-avatar rounded-circle mr-3" alt="{% trans 'Update your Profile picture' %}" />
                                 {% endif %}
 
 

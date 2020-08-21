@@ -72,11 +72,11 @@
                             <div class="d-flex">
                                 <!-- Avatar -->
                                 <div class="position-relative u-lg-avatar mr-3">
-                                        {% if u.avatar %}
-                                        <img src="/main/media/{{ u.avatar }}" class="img-fluid  rounded-circle"/>
-                                        {% else %}
-                                        <img src="{% static 'img/user.png' %}" width="80" class="img-responsive" alt="{% trans 'Update your profile picture' %}" />
-                                        {% endif %}
+                                    {% if u.avatar %}
+                                    <img src="/main/media/{{ u.avatar }}" class="img-fluid  rounded-circle" alt="{{ u.get_full_name }}" />
+                                    {% else %}
+                                    <img src="{% static 'img/user.png' %}" width="80" class="img-responsive" alt="{% trans 'Update your profile picture' %}" />
+                                    {% endif %}
 
                                     <span
                                         class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
@@ -95,28 +95,32 @@
                                     {% comment %}
                                     <!-- Social Networks -->
                                     <ul class="list-inline mb-0">
+                                        <li class="list-inline-item mr-0">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ u.email }}"
+                                               title="{% trans 'Email' %}">
+                                                <span class="fab fa-at btn-icon__inner"></span>
+                                            </a>
+                                        </li>
                                         {% if u.facebook %}
                                         <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.facebook }}">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.facebook }}"
+                                               title="{% trans 'Facebook' %}">
                                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
                                             </a>
                                         </li>
                                         {% endif %}
-                 		        <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ u.email }}">
-                                                <span class="fab fa-google btn-icon__inner"></span>
-                                            </a>
-                                        </li>
                                         {% if u.twitter%}
                                         <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.twitter }}">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.twitter }}"
+                                               title="{% trans 'Twitter' %}">
                                                 <span class="fab fa-twitter btn-icon__inner"></span>
                                             </a>
                                         </li>
                                         {% endif %}
                                         {% if u.instagram %}
                                         <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.instagram }}">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.instagram }}"
+                                               title="{% trans 'Instagram' %}">
                                                 <span class="fab fa-instagram btn-icon__inner"></span>
                                             </a>
                                         </li>
@@ -142,7 +146,7 @@
 
                     <!-- Add to Favorites -->
                     <a class="btn btn-sm btn-icon btn-soft-warning btn-bg-transparent position-absolute top-0 right-0 rounded-circle mt-3 mr-3"
-                        href="javascript:;" data-toggle="tooltip" data-placement="top" title="{% trans 'Add to favorites' %}">
+                       href="javascript:;" data-toggle="tooltip" data-placement="top" title="{% trans 'Add to favorites' %}">
                         <span class="far fa-star btn-icon__inner"></span>
                     </a>
                     <!-- End Add to Favorites -->
@@ -151,7 +155,7 @@
 
             <!-- the modal-->
             <div class="modal fade bd-example-modal-lg{{u.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">
+                 aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <form method="POST" action="{% url 'send-messages' %}">{% csrf_token %}

@@ -133,7 +133,7 @@
                                         <img src="/main/media/{{ user.avatar }}" class="rounded-circle" height="125" />
                                         {% else %}
                                         <img src="{% static 'img/user.png' %}" width="80" class="img-responsive"
-                                            alt="Actualize su foto de Perfil" />
+                                            alt="{% trans 'Update your Profile picture' %}" />
                                         {% endif %}
                                         <span
                                             class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>

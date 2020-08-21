@@ -220,10 +220,10 @@ class CustomerUser(AbstractUser):
 
     pinterest = models.URLField(blank=True, null=True)
 
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-    is_superuser = models.BooleanField(default=False)
-    is_community = models.BooleanField(default=True)
+    is_active = models.BooleanField(_("Is active?"), default=True)
+    is_staff = models.BooleanField(_("Is staff?"), default=False)
+    is_superuser = models.BooleanField(_("Is superuser?"), default=False)
+    is_community = models.BooleanField(_("Is community?"), default=True)
 
     last_ip = models.GenericIPAddressField(protocol='IPv4', verbose_name="Last Login IP", null=True, blank=True)
     location = models.CharField(max_length=50, blank=True, null=True)
