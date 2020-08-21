@@ -16,53 +16,14 @@
     <div class="w-lg-80 text-center mx-lg-auto">
         <div class="mb-11">
             <h1 class="display-4 font-weight-semi-bold">{% trans 'About Us' %}</h1>
-            <p class="lead font-weight-normal">{% static_placeholder 'about_01' %}</p>
         </div>
-    </div>
-    <!-- Gallery Section -->
-    <div class="row mx-n2">
-        <div class="col-md px-2 mb-3">
-            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3408115.jpg' %});"></div>
-        </div>
-        <div class="col-md px-2 mb-3">
-            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3468104_640.jpg' %});"></div>
-        </div>
-        <div class="col-md px-2 mb-3">
-            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/achievement-3797955_1280.jpg' %});"></div>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-md px-2 mb-3 mb-md-0">
-            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/african-3402716_1280.jpg' %});"></div>
-        </div>
-        <div class="col-md-4 px-2 mb-3 mb-md-0">
-            <div class="height-250 bg-img-hero" style="background-image: url({% static 'img/about/agreement-3546008_1280.jpg' %});"></div>
-        </div>
-        <div class="col-md px-2">
-            <div class="height-250 bg-img-hero" style="background-image: url({% static 'assets/img/480x320/img36.jpg' %});"></div>
-        </div>
-    </div>
-    <!-- End Gallery Section -->
-</div>
-<!-- End Hero Section -->
-<!-- Divider -->
-<div class="container">
-    <div class="w-lg-65 mx-lg-auto">
-        <hr class="my-0">
-    </div>
-</div>
-<!-- End Divider -->
-<!-- About Section -->
-<div class="container space-lg-2">
-    <div class="col-lg-12 ">
-        <h2 class="font-weight-semi-bold">{% static_placeholder 'text_about_02' %}</h2>
-    </div>
-    <div class="row justify-content-lg-between">
         <div class="col-lg-12">
             {% static_placeholder 'about 02' %}
         </div>
     </div>
 </div>
-<!-- End About Section -->
+<!-- End Hero Section -->
+
 <!-- Divider -->
 <div class="container">
     <div class="w-lg-65 mx-lg-auto">
@@ -70,6 +31,99 @@
     </div>
 </div>
 <!-- End Divider -->
+<!-- Team travelposting -->
+<!-- Team Section --><br><br>
+<div class="container">
+<div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <span class="d-block small font-weight-bold text-cap mb-2">Our Team</span>
+        <h2>Trust the professionals</h2>
+      </div>
+  <!-- Team Carousel -->
+  <div class="js-slick-carousel u-slick u-slick--gutters-3"
+       data-slides-show="4"
+       data-slides-scroll="1"
+       data-pagi-classes="d-lg-none text-center u-slick__pagination mb-7"
+       data-responsive='[{
+         "breakpoint": 992,
+         "settings": {
+           "slidesToShow": 3
+         }
+       }, {
+         "breakpoint": 768,
+         "settings": {
+           "slidesToShow": 2
+         }
+       }, {
+         "breakpoint": 554,
+         "settings": {
+           "slidesToShow": 1
+         }
+       }]'>
+    <div class="js-slide pb-4">
+      <!-- Team -->
+      <img class="img-fluid w-100 rounded" src="{% static_placeholder "photo_01"%}">
+      <div class="card border-0 shadow-sm mt-n6 mx-3">
+        <div class="card-body text-center p-4">
+          <h3 class="h6 mb-1">{% static_placeholder "name_01"%}</h3>
+          <p class="font-size-1 mb-0">{% static_placeholder "cargo_01"%}</p>
+        </div>
+      </div>
+      <!-- End Team -->
+    </div>
+
+    <div class="js-slide pb-4">
+      <!-- Team -->
+    <img class="img-fluid w-100 rounded" src="{% static_placeholder "photo_02"%}">
+      <div class="card border-0 shadow-sm mt-n6 mx-3">
+        <div class="card-body text-center p-4">
+          <h3 class="h6 mb-1">{% static_placeholder "name_02"%}</h3>
+          <p class="font-size-1 mb-0">{% static_placeholder "cargo_02"%}</p>
+        </div>
+      </div>
+      <!-- End Team -->
+    </div>
+
+    <div class="js-slide pb-4">
+      <!-- Team -->
+    <img class="img-fluid w-87 rounded" src="{% static_placeholder "photo_03"%}">
+      <div class="card border-0 shadow-sm mt-n6 mx-3">
+        <div class="card-body text-center p-4">
+          <h3 class="h6 mb-1">{% static_placeholder "name_03"%}</h3>
+          <p class="font-size-1 mb-0">{% static_placeholder "cargo_03"%}</p>
+        </div>
+      </div>
+      <!-- End Team -->
+    </div>
+
+    <div class="js-slide pb-4">
+      <!-- Team -->
+    <img class="img-fluid w-100 rounded" src="{% static_placeholder "photo_04"%}">
+      <div class="card border-0 shadow-sm mt-n6 mx-3">
+        <div class="card-body text-center p-4">
+          <h3 class="h6 mb-1">{% static_placeholder "name_04"%}</h3>
+          <p class="font-size-1 mb-0">{% static_placeholder "cargo_04"%}</p>
+        </div>
+      </div>
+      <!-- End Team -->
+    </div>
+  </div>
+  <!-- End Team Carousel -->
+
+  <!-- Hire Us -->
+  <div class="text-center">
+    <div class="d-sm-inline-flex align-items-center shadow-sm rounded-pill p-2 pr-3">
+      <span class="btn btn-xs btn-soft-primary btn-pill mb-2 mb-sm-0 mr-2">New</span>
+      <span class="d-block d-sm-inline-block">
+        We are hiring.
+        <a href="../pages/hire-us.html">Send your application.</a>
+      </span>
+    </div>
+  </div>
+  <!-- End Hire Us -->
+</div>
+<!-- End Team Section -->
+
+<!--End team travelposting.com-->
 <br>
 <!-- Hire Us -->
 <div class="text-center">
