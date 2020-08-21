@@ -131,7 +131,8 @@
                         contact us and we'll work that out together.
                         {% endblocktrans %}
                     </p>
-                    <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover" href="mailto:hamburgo@travelposting.com"tabindex="0">Contact Us</a>
+                    <a type="button" class="btn btn-sm btn-block btn-success transition-3d-hover"
+                       href="mailto:hamburgo@travelposting.com" tabindex="0">{% trans 'Contact Us' %}</a>
                 </div>
                 <!-- End Content -->
                 <!-- End Pricing -->
@@ -188,8 +189,11 @@
 
       <!--Footer-->
       <div class="modal-footer flex-center">
-        <a type="button" class="btn btn-sm btn-danger transition-3d-hover" data-dismiss="modal">{% trans "Close" %}</a>
-        <a href="/es/accounts/register/{{ plan.id }}" class="btn btn-sm btn-primary transition-3d-hover">{% trans "Register" %}</a>
+        <a type="button" class="btn btn-sm btn-danger transition-3d-hover"
+           data-dismiss="modal" title="{% trans 'Close' %}">{% trans 'Close' %}</a>
+        <a href="/es/accounts/register/{{ plan.id }}"
+           class="btn btn-sm btn-primary transition-3d-hover"
+           title="{% trans 'Register' %}">{% trans 'Register' %}</a>
       </div>
     </div>
     <!--/.Content-->

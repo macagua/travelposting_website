@@ -50,11 +50,11 @@ class Coupon(models.Model):
         _('quantity'),
     )
 
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(_('Active'), default=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(_('Created at'), auto_now_add=True)
 
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
 
     class Meta:
         ordering = ('end_date', 'start_date')

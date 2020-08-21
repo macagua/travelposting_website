@@ -1,6 +1,7 @@
 import logging
 import datetime as dt
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import Group
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
@@ -9,15 +10,18 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
+from django.contrib.auth import password_validation
+from django.core import exceptions
 from apps.accounts.models import CustomerUser
 from django.views.generic import (
     CreateView,
     DetailView,
-    UpdateView,
     DeleteView,
     ListView,
+    UpdateView,
     View,
 )
+from django.views.generic.edit import ModelFormMixin
 from django.shortcuts import (
     render,
     get_object_or_404,
@@ -32,12 +36,14 @@ from django.utils import timezone
 
 
 from apps.destinations.forms import (
+    AgencyAddForm,
+    AgencyEditForm,
+    AgencyAddExistingUserForm,
     DestinationForm,
     TourDataForm,
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
-
 )
 from apps.destinations.models import (
     Destination,
@@ -728,3 +734,153 @@ class MailboxDetail(View):
         mensajes = MessageDashboard.objects.all().order_by('-sent_at')
         conteo = mensajes.filter(read_at=None).count()
         return render(request, self.template_name, {'conteo':conteo, 'msg':msg_pk})
+
+
+class LeaderView(View):
+    template_name = 'dashboard/leaders/_leaders.html'
+
+    def get(self, request, *args, **kwargs):
+        admins = ['Manager']
+        manager = ['manager_country']
+        agencies = ['agency']
+        verify_admins = request.user.groups.get_queryset().filter(name__in=admins).exists()
+        if verify_admins==True:
+            #search all user that group is manager_country and show their country
+            users_manager_country = CustomerUser.objects.filter(groups__name='manager_country')
+            users_agencies = CustomerUser.objects.filter(groups__name='agency')
+            conteo = users_manager_country.count()
+            conteo_agency = users_agencies.count()
+
+            return render(request, 
+                            self.template_name, 
+                            {
+                                'users_manager_country':users_manager_country,
+                                'conteo':conteo,
+                                'conteo_agency':conteo_agency,
+                            }
+                    )
+        else:
+            return render(request, self.template_name)
+
+
+class LeaderAddView(CreateView):
+    template_name = 'dashboard/leaders/_leaders_add.html'
+    form_class = AgencyAddForm
+
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='manager_country')
+        form.instance.save()
+        form.instance.groups.add(group)
+
+        return super().form_valid(form)
+       
+
+
+class LeaderAddExistingUserView(UpdateView):
+    form_class = AgencyAddExistingUserForm
+    model = CustomerUser
+    template_name = 'dashboard/leaders/_leaders_add_existing.html'
+
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='manager_country')
+        form.instance.save()
+        form.instance.groups.add(group)
+
+        return super().form_valid(form)
+
+    def get_object(self):
+        return get_object_or_404(CustomerUser, email=self.request.POST.get('email'))
+                
+
+    def get(self, request, *args, **kwargs):
+        self.object = None
+        context = self.get_context_data()
+        return self.render_to_response(context)
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().post(request, *args, **kwargs)
+
+
+class LeaderDeleteView(DeleteView):
+    model = CustomerUser
+    success_url = reverse_lazy('destinations:manager')
+    template_name = 'destinations/_delete.html'
+
+
+class AgencyView(ListView):
+    template_name = 'dashboard/leaders/_agencies.html'
+
+    def get(self, request, *args, **kwargs):
+        admins = ['Manager']
+        manager = ['manager_country']
+        agencies = ['agency']
+        verify_admins = request.user.groups.get_queryset().filter(name__in=admins).exists()
+        if verify_admins==True:
+            #search all user that group is manager_country and show their country
+            users_manager_country = CustomerUser.objects.filter(groups__name='manager_country')
+            users_agency = CustomerUser.objects.filter(groups__name='agency')
+            conteo = users_manager_country.count()
+            conteo_agency = users_agency.count()
+
+            return render(request, 
+                            self.template_name, 
+                            {
+                                'users_agency':users_agency,
+                                'conteo':conteo,
+                                'conteo_agency':conteo_agency,
+                            }
+                    )
+        else:
+            return render(request, self.template_name)
+
+
+class AgencyUpdateView(UpdateView):
+    model = CustomerUser 
+    template_name = 'dashboard/leaders/_agencies_edit.html'
+    form_class = AgencyEditForm
+
+
+class AgencyAddView(CreateView):
+    template_name = 'dashboard/leaders/_agencies_add.html'
+    form_class = AgencyAddForm
+
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='agency')
+        form.instance.save()
+        form.instance.groups.add(group)
+
+        return super().form_valid(form)
+       
+
+class AgencyDeleteView(DeleteView):
+    model = CustomerUser
+    success_url = reverse_lazy('destinations:agencies')
+    template_name = 'destinations/_delete.html'
+
+
+class AgencyAddExistingUserView(UpdateView):
+    form_class = AgencyAddExistingUserForm
+    model = CustomerUser
+    template_name = 'dashboard/leaders/_agencies_add_existing.html'
+
+    def form_valid(self, form):
+        group, created = Group.objects.get_or_create(name='agency')
+        form.instance.save()
+        form.instance.groups.add(group)
+
+        return super().form_valid(form)
+
+    def get_object(self):
+        return get_object_or_404(CustomerUser, email=self.request.POST.get('email'))
+                
+
+    def get(self, request, *args, **kwargs):
+        self.object = None
+        context = self.get_context_data()
+        return self.render_to_response(context)
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().post(request, *args, **kwargs)
+

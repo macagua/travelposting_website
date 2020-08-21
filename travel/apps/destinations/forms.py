@@ -2,9 +2,11 @@ from django import forms
 
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from mapwidgets.widgets import GooglePointFieldWidget
 from django_summernote.widgets import SummernoteInplaceWidget
 from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
+from django_registration.forms import RegistrationForm as BaseRegistrationForm
 from apps.accounts.forms import BaseBootstrapForm
 from apps.destinations.widgets import BootstrapMoneyWidget
 from apps.destinations.models import (
@@ -19,6 +21,8 @@ from apps.destinations.models import (
     Itinerary,
     DestinationMap,
 )
+from apps.accounts.models import CustomerUser
+
 
 
 class DestinationForm(forms.ModelForm):
@@ -57,7 +61,7 @@ class DestinationForm(forms.ModelForm):
 
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Nombre del tour'),
+                'placeholder': _('Tour Name'),
                 'required':True,
 
             }),
@@ -219,7 +223,7 @@ class TabDataInlineFormSet(forms.BaseInlineFormSet):
 
             if option_tab in options_tab:
                 raise forms.ValidationError(_(
-                    "El tab '%(tab)s' se encuentra duplicado, debe estar una sola vez."), code="duplicated",
+                    "The tab '%(tab)s' it is duplicated, it must be only once."), code="duplicated",
                     params={'tab': option_tab})
             options_tab.append(option_tab)
 
@@ -462,3 +466,132 @@ class DestinationMapForm(forms.ModelForm):
                 },
             )
         }
+
+class AgencyAddForm(BaseRegistrationForm, UserCreationForm):
+    password1 = forms.CharField(label=_("Password"),
+        widget=forms.PasswordInput(attrs={
+            'class':'form-control first',
+        }),
+        help_text = _('Use at least 8 characters. Do not use a password from another site or a term that is too obvious, such as your pet\'s name.'))
+
+    password2 = forms.CharField(label=_("Password confirmation"),
+        widget=forms.PasswordInput(attrs={
+            'class':'form-control last',
+        }),
+        help_text = _("Enter the same password as above, for verification."))
+    first_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('First Name'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Last Name'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    mobile = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Phone or Whatsapp'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email Address'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+
+    class Meta(BaseRegistrationForm.Meta):
+        BASE_REGISTRATION_FIELDS = BaseRegistrationForm.Meta.fields
+        model = CustomerUser
+        fields = [
+            'first_name',
+            'last_name',
+            'country',
+            'mobile',
+        ]+ BASE_REGISTRATION_FIELDS
+
+
+class AgencyEditForm(UserChangeForm):
+    first_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('First Name'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Last Name'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    mobile = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Phone or Whatsapp'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email Address'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+
+    class Meta(BaseRegistrationForm.Meta):
+        model = CustomerUser
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'country',
+            'mobile',
+        ]
+
+
+class AgencyAddExistingUserForm(BaseBootstrapForm, UserChangeForm):
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email Address'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    class Meta:
+        model = CustomerUser
+        fields = [
+            'email',
+            'country',
+        ]
+

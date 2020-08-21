@@ -199,35 +199,35 @@
                             {% if destino.user.facebook %}
                             <li class="list-inline-item">
                                 <a class="" href="{{ destino.user.facebook }}" title="{% trans 'Facebook' %}">
-                                <img src="{% static 'img/facebook.png' %}" >
+                                <img src="{% static 'img/facebook.png' %}" alt="{% trans 'Facebook' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.instagram %}
                             <li class="list-inline-item">
                                 <a class="" href="{{ destino.user.instagram }}" title="{% trans 'Instagram' %}">
-                                <img src="{% static 'img/instagram.png' %}" >
+                                <img src="{% static 'img/instagram.png' %}" alt="{% trans 'Instagram' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.twitter %}
                             <li class="list-inline-item">
                                 <a class="" href="{{ destino.user.twitter }}" title="{% trans 'Twitter' %}">
-                                <img src="{% static 'img/twitter.png' %}" >
+                                <img src="{% static 'img/twitter.png' %}" alt="{% trans 'Twitter' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.linkedin %}
                             <li class="list-inline-item">
                                 <a class="" href="{{ destino.user.linkedin }}" title="{% trans 'Linkedin' %}">
-                                <img src="{% static 'img/linkedin.png' %}">
+                                <img src="{% static 'img/linkedin.png' %}" alt="{% trans 'Linkedin' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.pinterest %}
                             <li class="list-inline-item">
                                 <a class="" href="{{ destino.user.pinterest }}" title="{% trans 'Pinterest' %}">
-                                <img src="{% static 'img/pinterest.png' %}" >
+                                <img src="{% static 'img/pinterest.png' %}" alt="{% trans 'Pinterest' %}">
                                 </a>
                             </li>
                             {% endif %}
@@ -240,49 +240,49 @@
                             {% if destino.social.facebook %}
                             <li class="list-inline-item">
                                 <a class="" target="_new" href="{{ destino.social.facebook }}" title="{% trans 'Facebook' %}">
-                                <img src="{% static 'img/facebook.png' %}" >
+                                <img src="{% static 'img/facebook.png' %}" alt="{% trans 'Facebook' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.instagram %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new" href="{{ destino.social.instagram }}" title="{% trans 'Instagram' %}">
-                                <img src="{% static 'img/instagram.png' %}" >
+                                <img src="{% static 'img/instagram.png' %}" alt="{% trans 'Instagram' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.twitter %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new" href="{{ destino.social.twitter }}" title="{% trans 'Twitter' %}">
-                                <img src="{% static 'img/twitter.png' %}" >
+                                <img src="{% static 'img/twitter.png' %}" alt="{% trans 'Twitter' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.linkedin %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new"href="{{ destino.social.linkedin }}" title="{% trans 'Linkedin' %}">
-                                <img src="{% static 'img/linkedin.png' %}">
+                                <img src="{% static 'img/linkedin.png' %}" alt="{% trans 'Linkedin' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.pinterest %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new"href="{{ destino.social.pinterest }}" title="{% trans 'Pinterest' %}">
-                                <img src="{% static 'img/pinterest.png' %}" >
+                                <img src="{% static 'img/pinterest.png' %}" alt="{% trans 'Pinterest' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.website and destino.customer.plan_id == 1 %}
                             <li class="list-inline-item">
                                 <a class=""  target="_new"href="{{ destino.social.website}}" title="{% trans 'Website' %}">
-                                <img src="{% static 'img/website.png' %}" >
+                                <img src="{% static 'img/website.png' %}" alt="{% trans 'Website' %}">
                                 </a>
                             </li>
                             {% endif %}
                         {% endif %}
                             <li class="list-inline-item">
                                 <a class="" target="_new" href="https://t.me/travelposting_travelnews" title="{% trans 'Telegram' %}">
-                                <img src="{% static 'img/telegram.jpeg' %}" >
+                                <img src="{% static 'img/telegram.jpeg' %}" alt="{% trans 'Telegram' %}">
                                 </a>
                             </li>
                     </ul>
@@ -449,7 +449,8 @@
                             {{ destino.itinerario2.short_description |safe }}<br><br>
                             {{ destino.itinerario2.detail_itinerary |safe }}<br><br>
 
-                            <a href="{% url 'get_itinerary' destino.id %}" target="_new">Download PDF</a>
+                            <a href="{% url 'get_itinerary' destino.id %}"
+                               target="_new" title="{% trans 'Download PDF' %}">{% trans 'Download PDF' %}</a>
                         </div>
                     </div>
                 </div>
@@ -464,13 +465,16 @@
                 </button>
                 <a type="button" href="{% url 'make-recomm' destino.id %}"
                    class="btn btn-block btn-success btn-pill transition-3d-hover"
-                   title="{% trans 'Make a recommendation' %}">{% trans "Make a recommendation" %}</a>
+                   title="{% trans 'Make a recommendation' %}">
+                    {% trans "Make a recommendation" %}
+                </a>
                 {% endif %}
 
                 <button type="button" data-toggle="modal" data-target="#BookModal"
                         class="btn btn-block btn-primary btn-pill transition-3d-hover reserve">
                     {% trans "Reserve" %}
                 </button>
+
             </div>
         </div>
         <!-- End Destination Description -->
@@ -524,14 +528,18 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">{% trans "Title" %}</span>
                         </div>
-                        <input type="text" class="form-control" required name="name" placeholder="{% trans 'Title' %}" aria-label="{% trans 'Amount (to the nearest dollar)' %}">
+                        <input type="text" class="form-control" required name="name"
+                               placeholder="{% trans 'Title' %}"
+                               aria-label="{% trans 'Amount (to the nearest dollar)' %}">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">{% trans "Body" %}</span>
                         </div>
-                        <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message" %}' aria-label="{% trans 'With textarea' %}"></textarea>
+                        <textarea class="form-control" name="body"
+                                  placeholder='{% trans "Please let us your message" %}'
+                                  aria-label="{% trans 'With textarea' %}"></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
@@ -572,7 +580,10 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required name="name" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Name' %}">
+                            <input type="text" maxlength="50" class="form-control" required
+                                   name="name" aria-label="{% trans 'Small' %}"
+                                   aria-describedby="inputGroup-sizing-sm"
+                                   placeholder="{% trans 'Name' %}">
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -580,7 +591,10 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required name="last_name" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Last Name' %}">
+                            <input type="text" maxlength="50" class="form-control" required
+                                   name="last_name" aria-label="{% trans 'Small' %}"
+                                   aria-describedby="inputGroup-sizing-sm"
+                                   placeholder="{% trans 'Last Name' %}">
                         </div>
                     </div>
                 </div>
@@ -590,7 +604,10 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control"  required name="cellphone" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans '+49 123 456 789' %}">
+                            <input type="text" maxlength="50" class="form-control" required
+                                   name="cellphone" aria-label="{% trans 'Small' %}"
+                                   aria-describedby="inputGroup-sizing-sm"
+                                   placeholder="{% trans '+49 123 456 789' %}">
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -598,7 +615,10 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
                             </div>
-                            <input id="mail" type="email" maxlength="100" class="form-control" required name="mail" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Email' %}">
+                            <input id="mail" type="email" maxlength="100" class="form-control" required
+                                   name="mail" aria-label="{% trans 'Small' %}"
+                                   aria-describedby="inputGroup-sizing-sm"
+                                   placeholder="{% trans 'Email' %}">
                         </div>
                     </div>
                 </div>
@@ -608,7 +628,10 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
                             </div>
-                            <input type="text" maxlength="2" class="form-control" required name="people_travel" aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Number of people travelling' %}">
+                            <input type="text" maxlength="2" class="form-control" required
+                                   name="people_travel" aria-label="{% trans 'Small' %}"
+                                   aria-describedby="inputGroup-sizing-sm"
+                                   placeholder="{% trans 'Number of people travelling' %}">
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -616,12 +639,15 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" name="destination"  aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm" placeholder="{% trans 'Do you have a plan you want to book?' %}">
+                            <input type="text" maxlength="50" class="form-control" name="destination"
+                                   aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm"
+                                   placeholder="{% trans 'Do you have a plan you want to book?' %}">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3" placeholder="{% trans 'Do you may have some comments or remarks about your booking?' %}"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"
+                              placeholder="{% trans 'Do you may have some comments or remarks about your booking?' %}"></textarea>
                 </div>
                 <div class="form-group">
                     <p style="font-size: 10px;">

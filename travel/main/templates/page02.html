@@ -12,16 +12,16 @@
         <div class="w-md-80 w-lg-60 text-center mx-auto">
             <!-- Title -->
             <div class="mb-5">
-                <h1 class="display-4 font-size-md-down-5 text-white mb-0">How can we <span
-                        class="font-weight-semi-bold">help?</span></h1>
+                <h1 class="display-4 font-size-md-down-5 text-white mb-0">{% trans "How can we" %} <span
+                        class="font-weight-semi-bold">{% trans "help?" %}</span></h1>
             </div>
             <!-- End Title -->
             <!-- Text/Links -->
             <p class="text-white-70">
-                Popular help topics:
-                <a class="link-light" href="/pricing/">pricing,</a>
-                <a class="link-light ml-1" href="/category/all">destinos,</a>
-                <a class="link-light ml-1" href="{% url 'accounts:login' %}">community</a>
+                {% trans "Popular help topics:" %}
+                <a class="link-light" href="/pricing/">{% trans "pricing" %},</a>
+                <a class="link-light ml-1" href="/category/all">{% trans "destinations" %},</a>
+                <a class="link-light ml-1" href="{% url 'accounts:login' %}">{% trans "community" %}</a>
             </p>
             <!-- End Text/Links -->
         </div>

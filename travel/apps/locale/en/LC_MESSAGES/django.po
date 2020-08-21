@@ -1,29 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#: apps/community/templates/accounts/mail_body.html:48
-#: apps/community/templates/accounts/mail_profile_complete.html:163
-#, fuzzy
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-03 10:59-0400\n"
-"PO-Revision-Date: 2020-02-07 07:04-0428\n"
-"Last-Translator: b'Dehivis Perez <dehivis.oliver@gmail.com>'\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-08-05 10:27-0400\n"
+"PO-Revision-Date: 2020-07-13 14:43-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: apps/accounts/admin.py:14 apps/accounts/forms.py:39
-#: apps/accounts/forms.py:67 apps/community/forms.py:17
-#: apps/community/forms.py:71
+#: apps/accounts/admin.py:14 apps/accounts/admin.py:92
+#: apps/accounts/forms.py:39 apps/accounts/forms.py:67
+#: apps/community/forms.py:17 apps/community/forms.py:71
 msgid "Password"
 msgstr ""
 
@@ -52,6 +49,14 @@ msgstr ""
 msgid "Permissions"
 msgstr ""
 
+#: apps/accounts/admin.py:89
+#: apps/accounts/templates/accounts/user/password_change.html:4
+#: apps/accounts/templates/accounts/user/password_change.html:14
+#: apps/accounts/templates/accounts/user/password_change_done.html:4
+#: main/templates/menu/navbar_all.html:214
+msgid "Change Password"
+msgstr ""
+
 #: apps/accounts/apps.py:7
 msgid "Accounts"
 msgstr ""
@@ -60,8 +65,9 @@ msgstr ""
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:59
 #: apps/community/forms.py:62
 #: apps/community/templates/community/profile/my_profile.html:105
-#: apps/landing_page/models.py:464 main/templates/datenshutz_form.html:32
-#: main/templates/services/destination/detail_destination.html:431
+#: apps/landing_page/models.py:467 apps/landing_page/models.py:507
+#: main/templates/datenshutz_form.html:32
+#: main/templates/services/destination/detail_destination.html:457
 msgid "Email"
 msgstr ""
 
@@ -123,126 +129,1290 @@ msgstr ""
 msgid "Prof. Dr."
 msgstr ""
 
+#: apps/accounts/models.py:28
+msgid "Afghanistan"
+msgstr ""
+
+#: apps/accounts/models.py:29
+msgid "Åland Islands"
+msgstr ""
+
+#: apps/accounts/models.py:30
+msgid "Albania"
+msgstr ""
+
+#: apps/accounts/models.py:31
+msgid "Algeria"
+msgstr ""
+
+#: apps/accounts/models.py:32
+msgid "American Samoa"
+msgstr ""
+
+#: apps/accounts/models.py:33
+msgid "Andorra"
+msgstr ""
+
+#: apps/accounts/models.py:34
+msgid "Angola"
+msgstr ""
+
+#: apps/accounts/models.py:35
+msgid "Anguilla"
+msgstr ""
+
+#: apps/accounts/models.py:36
+msgid "Antarctica"
+msgstr ""
+
+#: apps/accounts/models.py:37
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: apps/accounts/models.py:38
+msgid "Argentina"
+msgstr ""
+
+#: apps/accounts/models.py:39
+msgid "Armenia"
+msgstr ""
+
+#: apps/accounts/models.py:40
+msgid "Aruba"
+msgstr ""
+
+#: apps/accounts/models.py:41
+msgid "Australia"
+msgstr ""
+
+#: apps/accounts/models.py:42
+msgid "Austria"
+msgstr ""
+
+#: apps/accounts/models.py:43
+msgid "Azerbaijan"
+msgstr ""
+
+#: apps/accounts/models.py:44
+msgid "Bahamas"
+msgstr ""
+
+#: apps/accounts/models.py:45
+msgid "Bahrain"
+msgstr ""
+
+#: apps/accounts/models.py:46
+msgid "Bangladesh"
+msgstr ""
+
+#: apps/accounts/models.py:47
+msgid "Barbados"
+msgstr ""
+
+#: apps/accounts/models.py:48
+msgid "Belarus"
+msgstr ""
+
+#: apps/accounts/models.py:49
+msgid "Belgium"
+msgstr ""
+
+#: apps/accounts/models.py:50
+msgid "Belize"
+msgstr ""
+
+#: apps/accounts/models.py:51
+msgid "Benin"
+msgstr ""
+
+#: apps/accounts/models.py:52
+msgid "Bermuda"
+msgstr ""
+
+#: apps/accounts/models.py:53
+msgid "Bhutan"
+msgstr ""
+
+#: apps/accounts/models.py:54
+msgid "Bolivia (Plurinational State of)"
+msgstr ""
+
+#: apps/accounts/models.py:55
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr ""
+
+#: apps/accounts/models.py:56
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: apps/accounts/models.py:57
+msgid "Botswana"
+msgstr ""
+
+#: apps/accounts/models.py:58
+msgid "Bouvet Island"
+msgstr ""
+
+#: apps/accounts/models.py:59
+msgid "Brazil"
+msgstr ""
+
+#: apps/accounts/models.py:60
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: apps/accounts/models.py:61
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: apps/accounts/models.py:62
+msgid "Bulgaria"
+msgstr ""
+
+#: apps/accounts/models.py:63
+msgid "Burkina Faso"
+msgstr ""
+
+#: apps/accounts/models.py:64
+msgid "Burundi"
+msgstr ""
+
+#: apps/accounts/models.py:65
+msgid "Cabo Verde"
+msgstr ""
+
+#: apps/accounts/models.py:66
+msgid "Cambodia"
+msgstr ""
+
 #: apps/accounts/models.py:67
-msgid "email address"
+msgid "Cameroon"
+msgstr ""
+
+#: apps/accounts/models.py:68
+msgid "Canada"
+msgstr ""
+
+#: apps/accounts/models.py:69
+msgid "Cayman Islands"
+msgstr ""
+
+#: apps/accounts/models.py:70
+msgid "Central African Republic"
+msgstr ""
+
+#: apps/accounts/models.py:71
+msgid "Chad"
+msgstr ""
+
+#: apps/accounts/models.py:72
+msgid "Chile"
+msgstr ""
+
+#: apps/accounts/models.py:73
+msgid "China"
 msgstr ""
 
 #: apps/accounts/models.py:74
-#: apps/accounts/templates/accounts/user/_detail.html:114
-#: apps/accounts/templates/accounts/user/_detail.html:123
-msgid "Plan"
+msgid "Christmas Island"
 msgstr ""
 
-#: apps/accounts/models.py:88 apps/payments/models/paypal.py:61
-msgid "Coupon"
+#: apps/accounts/models.py:75
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: apps/accounts/models.py:76
+msgid "Colombia"
+msgstr ""
+
+#: apps/accounts/models.py:77
+msgid "Comoros"
+msgstr ""
+
+#: apps/accounts/models.py:78
+msgid "Congo"
+msgstr ""
+
+#: apps/accounts/models.py:79
+msgid "Congo (the Democratic Republic of the)"
+msgstr ""
+
+#: apps/accounts/models.py:80
+msgid "Cook Islands"
+msgstr ""
+
+#: apps/accounts/models.py:81
+msgid "Costa Rica"
+msgstr ""
+
+#: apps/accounts/models.py:82
+msgid "Côte d'Ivoire"
+msgstr ""
+
+#: apps/accounts/models.py:83
+msgid "Croatia"
+msgstr ""
+
+#: apps/accounts/models.py:84
+msgid "Cuba"
+msgstr ""
+
+#: apps/accounts/models.py:85
+msgid "Curaçao"
+msgstr ""
+
+#: apps/accounts/models.py:86
+msgid "Cyprus"
+msgstr ""
+
+#: apps/accounts/models.py:87
+msgid "Czechia"
+msgstr ""
+
+#: apps/accounts/models.py:88
+msgid "Denmark"
+msgstr ""
+
+#: apps/accounts/models.py:89
+msgid "Djibouti"
+msgstr ""
+
+#: apps/accounts/models.py:90
+msgid "Dominica"
+msgstr ""
+
+#: apps/accounts/models.py:91
+msgid "Dominican Republic"
+msgstr ""
+
+#: apps/accounts/models.py:92
+msgid "Ecuador"
+msgstr ""
+
+#: apps/accounts/models.py:93
+msgid "Egypt"
+msgstr ""
+
+#: apps/accounts/models.py:94
+msgid "El Salvador"
 msgstr ""
 
 #: apps/accounts/models.py:95
-#: apps/accounts/templates/accounts/user/_detail.html:132
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: apps/accounts/models.py:96
+msgid "Eritrea"
+msgstr ""
+
+#: apps/accounts/models.py:97
+msgid "Estonia"
+msgstr ""
+
+#: apps/accounts/models.py:98
+msgid "Eswatini"
+msgstr ""
+
+#: apps/accounts/models.py:99
+msgid "Ethiopia"
+msgstr ""
+
+#: apps/accounts/models.py:100
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: apps/accounts/models.py:101
+msgid "Faroe Islands"
+msgstr ""
+
+#: apps/accounts/models.py:102
+msgid "Fiji"
+msgstr ""
+
+#: apps/accounts/models.py:103
+msgid "Finland"
+msgstr ""
+
+#: apps/accounts/models.py:104
+msgid "France"
+msgstr ""
+
+#: apps/accounts/models.py:105
+msgid "French Guiana"
+msgstr ""
+
+#: apps/accounts/models.py:106
+msgid "French Polynesia"
+msgstr ""
+
+#: apps/accounts/models.py:107
+msgid "French Southern Territories"
+msgstr ""
+
+#: apps/accounts/models.py:108
+msgid "Gabon"
+msgstr ""
+
+#: apps/accounts/models.py:109
+msgid "Gambia"
+msgstr ""
+
+#: apps/accounts/models.py:110
+msgid "Georgia"
+msgstr ""
+
+#: apps/accounts/models.py:111
+msgid "Germany"
+msgstr ""
+
+#: apps/accounts/models.py:112
+msgid "Ghana"
+msgstr ""
+
+#: apps/accounts/models.py:113
+msgid "Gibraltar"
+msgstr ""
+
+#: apps/accounts/models.py:114
+msgid "Greece"
+msgstr ""
+
+#: apps/accounts/models.py:115
+msgid "Greenland"
+msgstr ""
+
+#: apps/accounts/models.py:116
+msgid "Grenada"
+msgstr ""
+
+#: apps/accounts/models.py:117
+msgid "Guadeloupe"
+msgstr ""
+
+#: apps/accounts/models.py:118
+msgid "Guam"
+msgstr ""
+
+#: apps/accounts/models.py:119
+msgid "Guatemala"
+msgstr ""
+
+#: apps/accounts/models.py:120
+msgid "Guernsey"
+msgstr ""
+
+#: apps/accounts/models.py:121
+msgid "Guinea"
+msgstr ""
+
+#: apps/accounts/models.py:122
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: apps/accounts/models.py:123
+msgid "Guyana"
+msgstr ""
+
+#: apps/accounts/models.py:124
+msgid "Haiti"
+msgstr ""
+
+#: apps/accounts/models.py:125
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: apps/accounts/models.py:126
+msgid "Holy See"
+msgstr ""
+
+#: apps/accounts/models.py:127
+msgid "Honduras"
+msgstr ""
+
+#: apps/accounts/models.py:128
+msgid "Hong Kong"
+msgstr ""
+
+#: apps/accounts/models.py:129
+msgid "Hungary"
+msgstr ""
+
+#: apps/accounts/models.py:130
+msgid "Iceland"
+msgstr ""
+
+#: apps/accounts/models.py:131
+msgid "India"
+msgstr ""
+
+#: apps/accounts/models.py:132
+msgid "Indonesia"
+msgstr ""
+
+#: apps/accounts/models.py:133
+msgid "Iran (Islamic Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:134
+msgid "Iraq"
+msgstr ""
+
+#: apps/accounts/models.py:135
+msgid "Ireland"
+msgstr ""
+
+#: apps/accounts/models.py:136
+msgid "Isle of Man"
+msgstr ""
+
+#: apps/accounts/models.py:137
+msgid "Israel"
+msgstr ""
+
+#: apps/accounts/models.py:138
+msgid "Italy"
+msgstr ""
+
+#: apps/accounts/models.py:139
+msgid "Jamaica"
+msgstr ""
+
+#: apps/accounts/models.py:140
+msgid "Japan"
+msgstr ""
+
+#: apps/accounts/models.py:141
+msgid "Jersey"
+msgstr ""
+
+#: apps/accounts/models.py:142
+msgid "Jordan"
+msgstr ""
+
+#: apps/accounts/models.py:143
+msgid "Kazakhstan"
+msgstr ""
+
+#: apps/accounts/models.py:144
+msgid "Kenya"
+msgstr ""
+
+#: apps/accounts/models.py:145
+msgid "Kiribati"
+msgstr ""
+
+#: apps/accounts/models.py:146
+msgid "Korea (the Democratic People's Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:147
+msgid "Korea (the Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:148
+msgid "Kuwait"
+msgstr ""
+
+#: apps/accounts/models.py:149
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: apps/accounts/models.py:150
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: apps/accounts/models.py:151
+msgid "Latvia"
+msgstr ""
+
+#: apps/accounts/models.py:152
+msgid "Lebanon"
+msgstr ""
+
+#: apps/accounts/models.py:153
+msgid "Lesotho"
+msgstr ""
+
+#: apps/accounts/models.py:154
+msgid "Liberia"
+msgstr ""
+
+#: apps/accounts/models.py:155
+msgid "Libya"
+msgstr ""
+
+#: apps/accounts/models.py:156
+msgid "Liechtenstein"
+msgstr ""
+
+#: apps/accounts/models.py:157
+msgid "Lithuania"
+msgstr ""
+
+#: apps/accounts/models.py:158
+msgid "Luxembourg"
+msgstr ""
+
+#: apps/accounts/models.py:159
+msgid "Macao"
+msgstr ""
+
+#: apps/accounts/models.py:160
+msgid "Madagascar"
+msgstr ""
+
+#: apps/accounts/models.py:161
+msgid "Malawi"
+msgstr ""
+
+#: apps/accounts/models.py:162
+msgid "Malaysia"
+msgstr ""
+
+#: apps/accounts/models.py:163
+msgid "Maldives"
+msgstr ""
+
+#: apps/accounts/models.py:164
+msgid "Mali"
+msgstr ""
+
+#: apps/accounts/models.py:165
+msgid "Malta"
+msgstr ""
+
+#: apps/accounts/models.py:166
+msgid "Marshall Islands"
+msgstr ""
+
+#: apps/accounts/models.py:167
+msgid "Martinique"
+msgstr ""
+
+#: apps/accounts/models.py:168
+msgid "Mauritania"
+msgstr ""
+
+#: apps/accounts/models.py:169
+msgid "Mauritius"
+msgstr ""
+
+#: apps/accounts/models.py:170
+msgid "Mayotte"
+msgstr ""
+
+#: apps/accounts/models.py:171
+msgid "Mexico"
+msgstr ""
+
+#: apps/accounts/models.py:172
+msgid "Micronesia (Federated States of)"
+msgstr ""
+
+#: apps/accounts/models.py:173
+msgid "Moldova (the Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:174
+msgid "Monaco"
+msgstr ""
+
+#: apps/accounts/models.py:175
+msgid "Mongolia"
+msgstr ""
+
+#: apps/accounts/models.py:176
+msgid "Montenegro"
+msgstr ""
+
+#: apps/accounts/models.py:177
+msgid "Montserrat"
+msgstr ""
+
+#: apps/accounts/models.py:178
+msgid "Morocco"
+msgstr ""
+
+#: apps/accounts/models.py:179
+msgid "Mozambique"
+msgstr ""
+
+#: apps/accounts/models.py:180
+msgid "Myanmar"
+msgstr ""
+
+#: apps/accounts/models.py:181
+msgid "Namibia"
+msgstr ""
+
+#: apps/accounts/models.py:182
+msgid "Nauru"
+msgstr ""
+
+#: apps/accounts/models.py:183
+msgid "Nepal"
+msgstr ""
+
+#: apps/accounts/models.py:184
+msgid "Netherlands"
+msgstr ""
+
+#: apps/accounts/models.py:185
+msgid "New Caledonia"
+msgstr ""
+
+#: apps/accounts/models.py:186
+msgid "New Zealand"
+msgstr ""
+
+#: apps/accounts/models.py:187
+msgid "Nicaragua"
+msgstr ""
+
+#: apps/accounts/models.py:188
+msgid "Niger"
+msgstr ""
+
+#: apps/accounts/models.py:189
+msgid "Nigeria"
+msgstr ""
+
+#: apps/accounts/models.py:190
+msgid "Niue"
+msgstr ""
+
+#: apps/accounts/models.py:191
+msgid "Norfolk Island"
+msgstr ""
+
+#: apps/accounts/models.py:192
+msgid "North Macedonia"
+msgstr ""
+
+#: apps/accounts/models.py:193
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: apps/accounts/models.py:194
+msgid "Norway"
+msgstr ""
+
+#: apps/accounts/models.py:195
+msgid "Oman"
+msgstr ""
+
+#: apps/accounts/models.py:196
+msgid "Pakistan"
+msgstr ""
+
+#: apps/accounts/models.py:197
+msgid "Palau"
+msgstr ""
+
+#: apps/accounts/models.py:198
+msgid "Palestine, State of"
+msgstr ""
+
+#: apps/accounts/models.py:199
+msgid "Panama"
+msgstr ""
+
+#: apps/accounts/models.py:200
+msgid "Papua New Guinea"
+msgstr ""
+
+#: apps/accounts/models.py:201
+msgid "Paraguay"
+msgstr ""
+
+#: apps/accounts/models.py:202
+msgid "Peru"
+msgstr ""
+
+#: apps/accounts/models.py:203
+msgid "Philippines"
+msgstr ""
+
+#: apps/accounts/models.py:204
+msgid "Pitcairn"
+msgstr ""
+
+#: apps/accounts/models.py:205
+msgid "Poland"
+msgstr ""
+
+#: apps/accounts/models.py:206
+msgid "Portugal"
+msgstr ""
+
+#: apps/accounts/models.py:207
+msgid "Puerto Rico"
+msgstr ""
+
+#: apps/accounts/models.py:208
+msgid "Qatar"
+msgstr ""
+
+#: apps/accounts/models.py:209
+msgid "Réunion"
+msgstr ""
+
+#: apps/accounts/models.py:210
+msgid "Romania"
+msgstr ""
+
+#: apps/accounts/models.py:211
+msgid "Russian Federation"
+msgstr ""
+
+#: apps/accounts/models.py:212
+msgid "Rwanda"
+msgstr ""
+
+#: apps/accounts/models.py:213
+msgid "Saint Barthélemy"
+msgstr ""
+
+#: apps/accounts/models.py:214
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr ""
+
+#: apps/accounts/models.py:215
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: apps/accounts/models.py:216
+msgid "Saint Lucia"
+msgstr ""
+
+#: apps/accounts/models.py:217
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: apps/accounts/models.py:218
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: apps/accounts/models.py:219
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: apps/accounts/models.py:220
+msgid "Samoa"
+msgstr ""
+
+#: apps/accounts/models.py:221
+msgid "San Marino"
+msgstr ""
+
+#: apps/accounts/models.py:222
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: apps/accounts/models.py:223
+msgid "Saudi Arabia"
+msgstr ""
+
+#: apps/accounts/models.py:224
+msgid "Senegal"
+msgstr ""
+
+#: apps/accounts/models.py:225
+msgid "Serbia"
+msgstr ""
+
+#: apps/accounts/models.py:226
+msgid "Seychelles"
+msgstr ""
+
+#: apps/accounts/models.py:227
+msgid "Sierra Leone"
+msgstr ""
+
+#: apps/accounts/models.py:228
+msgid "Singapore"
+msgstr ""
+
+#: apps/accounts/models.py:229
+msgid "Sint Maarten (Dutch part)"
+msgstr ""
+
+#: apps/accounts/models.py:230
+msgid "Slovakia"
+msgstr ""
+
+#: apps/accounts/models.py:231
+msgid "Slovenia"
+msgstr ""
+
+#: apps/accounts/models.py:232
+msgid "Solomon Islands"
+msgstr ""
+
+#: apps/accounts/models.py:233
+msgid "Somalia"
+msgstr ""
+
+#: apps/accounts/models.py:234
+msgid "South Africa"
+msgstr ""
+
+#: apps/accounts/models.py:235
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: apps/accounts/models.py:236
+msgid "South Sudan"
+msgstr ""
+
+#: apps/accounts/models.py:237
+msgid "Spain"
+msgstr ""
+
+#: apps/accounts/models.py:238
+msgid "Sri Lanka"
+msgstr ""
+
+#: apps/accounts/models.py:239
+msgid "Sudan"
+msgstr ""
+
+#: apps/accounts/models.py:240
+msgid "Suriname"
+msgstr ""
+
+#: apps/accounts/models.py:241
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: apps/accounts/models.py:242
+msgid "Sweden"
+msgstr ""
+
+#: apps/accounts/models.py:243
+msgid "Switzerland"
+msgstr ""
+
+#: apps/accounts/models.py:244
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: apps/accounts/models.py:245
+msgid "Taiwan (Province of China)"
+msgstr ""
+
+#: apps/accounts/models.py:246
+msgid "Tajikistan"
+msgstr ""
+
+#: apps/accounts/models.py:247
+msgid "Tanzania, the United Republic of"
+msgstr ""
+
+#: apps/accounts/models.py:248
+msgid "Thailand"
+msgstr ""
+
+#: apps/accounts/models.py:249
+msgid "Timor-Leste"
+msgstr ""
+
+#: apps/accounts/models.py:250
+msgid "Togo"
+msgstr ""
+
+#: apps/accounts/models.py:251
+msgid "Tokelau"
+msgstr ""
+
+#: apps/accounts/models.py:252
+msgid "Tonga"
+msgstr ""
+
+#: apps/accounts/models.py:253
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: apps/accounts/models.py:254
+msgid "Tunisia"
+msgstr ""
+
+#: apps/accounts/models.py:255
+msgid "Turkey"
+msgstr ""
+
+#: apps/accounts/models.py:256
+msgid "Turkmenistan"
+msgstr ""
+
+#: apps/accounts/models.py:257
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: apps/accounts/models.py:258
+msgid "Tuvalu"
+msgstr ""
+
+#: apps/accounts/models.py:259
+msgid "Uganda"
+msgstr ""
+
+#: apps/accounts/models.py:260
+msgid "Ukraine"
+msgstr ""
+
+#: apps/accounts/models.py:261
+msgid "United Arab Emirates"
+msgstr ""
+
+#: apps/accounts/models.py:262
+msgid "United Kingdom of Great Britain and Northern Ireland"
+msgstr ""
+
+#: apps/accounts/models.py:263
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: apps/accounts/models.py:264
+msgid "United States of America"
+msgstr ""
+
+#: apps/accounts/models.py:265
+msgid "Uruguay"
+msgstr ""
+
+#: apps/accounts/models.py:266
+msgid "Uzbekistan"
+msgstr ""
+
+#: apps/accounts/models.py:267
+msgid "Vanuatu"
+msgstr ""
+
+#: apps/accounts/models.py:268
+msgid "Venezuela (Bolivarian Republic of)"
+msgstr ""
+
+#: apps/accounts/models.py:269
+msgid "Viet Nam"
+msgstr ""
+
+#: apps/accounts/models.py:270
+msgid "Virgin Islands (British)"
+msgstr ""
+
+#: apps/accounts/models.py:271
+msgid "Virgin Islands (U.S.)"
+msgstr ""
+
+#: apps/accounts/models.py:272
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: apps/accounts/models.py:273
+msgid "Western Sahara"
+msgstr ""
+
+#: apps/accounts/models.py:274
+msgid "Yemen"
+msgstr ""
+
+#: apps/accounts/models.py:275
+msgid "Zambia"
+msgstr ""
+
+#: apps/accounts/models.py:276
+msgid "Zimbabwe"
+msgstr ""
+
+#: apps/accounts/models.py:317
+msgid "email address"
+msgstr ""
+
+#: apps/accounts/models.py:324
+#: apps/accounts/templates/accounts/user/_detail.html:115
+#: apps/accounts/templates/accounts/user/_detail.html:124
+msgid "Plan"
+msgstr ""
+
+#: apps/accounts/models.py:330
+msgid "Subscription ID"
+msgstr ""
+
+#: apps/accounts/models.py:339 apps/payments/models/paypal.py:61
+msgid "Coupon"
+msgstr ""
+
+#: apps/accounts/models.py:346
+#: apps/accounts/templates/accounts/user/_detail.html:133
 #: apps/community/templates/community/registration/notify_register_admin_body.html:59
 msgid "Company name"
 msgstr ""
 
-#: apps/accounts/models.py:102
+#: apps/accounts/models.py:353
 msgid "Commercial address"
 msgstr ""
 
-#: apps/accounts/models.py:109
-#: apps/accounts/templates/accounts/user/_detail.html:97
+#: apps/accounts/models.py:360
+#: apps/accounts/templates/accounts/user/_detail.html:98
 msgid "Postal code"
 msgstr ""
 
-#: apps/accounts/models.py:116
+#: apps/accounts/models.py:367
 msgid "City / State / Parish"
 msgstr ""
 
-#: apps/accounts/models.py:123
+#: apps/accounts/models.py:374
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:60
-#: apps/accounts/templates/accounts/user/_detail.html:81
+#: apps/accounts/templates/accounts/user/_detail.html:82
 #: apps/community/templates/community/registration/notify_register_admin_body.html:60
 msgid "Country"
 msgstr ""
 
-#: apps/accounts/models.py:130
+#: apps/accounts/models.py:382
 msgid ""
 "Languages in which you are interested in sending or receiving information"
 msgstr ""
 
-#: apps/accounts/models.py:137
+#: apps/accounts/models.py:389
 msgid "Do you have something to tell us?"
 msgstr ""
 
-#: apps/accounts/models.py:143
+#: apps/accounts/models.py:395
 msgid "Title (Contact person)"
 msgstr ""
 
-#: apps/accounts/models.py:151
-#: apps/accounts/templates/accounts/user/_detail.html:149
+#: apps/accounts/models.py:403
+#: apps/accounts/templates/accounts/user/_detail.html:150
 msgid "Position in the company"
 msgstr ""
 
-#: apps/accounts/models.py:158
+#: apps/accounts/models.py:410
 msgid "Leave us a phone number where we can contact you"
 msgstr ""
 
-#: apps/accounts/models.py:165
+#: apps/accounts/models.py:417
 msgid "Mobile number or WhatsApp"
 msgstr ""
 
-#: apps/accounts/models.py:172
+#: apps/accounts/models.py:424
 msgid "Leave us your web address"
 msgstr ""
 
-#: apps/accounts/models.py:178
+#: apps/accounts/models.py:430
 msgid "Code Referral"
 msgstr ""
 
-#: apps/accounts/models.py:208
+#: apps/accounts/models.py:437
+#: main/templates/services/destination/detail_destination.html:160
+#: main/templates/services/destination/detail_destination.html:161
+#: main/templates/services/destination/detail_destination.html:201
+#: main/templates/services/destination/detail_destination.html:202
+msgid "Facebook"
+msgstr ""
+
+#: apps/accounts/models.py:444
+#: main/templates/services/destination/detail_destination.html:167
+#: main/templates/services/destination/detail_destination.html:168
+#: main/templates/services/destination/detail_destination.html:208
+#: main/templates/services/destination/detail_destination.html:209
+msgid "Instagram"
+msgstr ""
+
+#: apps/accounts/models.py:451 apps/landing_page/models.py:494
+#: main/templates/datenshutz_form_privacity.html:110
+#: main/templates/services/destination/detail_destination.html:174
+#: main/templates/services/destination/detail_destination.html:175
+#: main/templates/services/destination/detail_destination.html:215
+#: main/templates/services/destination/detail_destination.html:216
+msgid "Twitter"
+msgstr ""
+
+#: apps/accounts/models.py:458
+#: main/templates/services/destination/detail_destination.html:181
+#: main/templates/services/destination/detail_destination.html:182
+#: main/templates/services/destination/detail_destination.html:222
+#: main/templates/services/destination/detail_destination.html:223
+msgid "Linkedin"
+msgstr ""
+
+#: apps/accounts/models.py:465
 msgid "About me"
 msgstr ""
 
-#: apps/accounts/models.py:251
+#: apps/accounts/models.py:472
+msgid "Avatar"
+msgstr ""
+
+#: apps/accounts/models.py:478 apps/landing_page/models.py:495
+#: main/templates/datenshutz_form_privacity.html:132
+#: main/templates/services/destination/detail_destination.html:188
+#: main/templates/services/destination/detail_destination.html:189
+#: main/templates/services/destination/detail_destination.html:229
+#: main/templates/services/destination/detail_destination.html:230
+msgid "Pinterest"
+msgstr ""
+
+#: apps/accounts/models.py:480 apps/landing_page/models.py:432
+msgid "is active?"
+msgstr ""
+
+#: apps/accounts/models.py:481
+msgid "is staff?"
+msgstr ""
+
+#: apps/accounts/models.py:482
+msgid "is superuser?"
+msgstr ""
+
+#: apps/accounts/models.py:483
+msgid "is community?"
+msgstr ""
+
+#: apps/accounts/models.py:485 apps/accounts/models.py:522
+msgid "Last Login IP"
+msgstr ""
+
+#: apps/accounts/models.py:486 apps/accounts/models.py:523
+#: apps/community/templates/community/dashboard/profile_user.html:154
+#: apps/community/templates/community/profile/edit_profile.html:77
+#: apps/community/templates/community/profile/my_profile.html:131
+msgid "Location"
+msgstr ""
+
+#: apps/accounts/models.py:488
+msgid "SLUG"
+msgstr ""
+
+#: apps/accounts/models.py:509 apps/accounts/models.py:521
+#: apps/community/models.py:50
 msgid "User"
 msgstr ""
 
-#: apps/accounts/models.py:252
+#: apps/accounts/models.py:510
 msgid "Users"
 msgstr ""
 
-#: apps/accounts/models.py:302
+#: apps/accounts/models.py:526
+msgid "Last Visit IP"
+msgstr ""
+
+#: apps/accounts/models.py:527
+msgid "Lasts Visits IP"
+msgstr ""
+
+#: apps/accounts/models.py:555
+msgid "User that creates the relationship"
+msgstr ""
+
+#: apps/accounts/models.py:559
+msgid "User being followed"
+msgstr ""
+
+#: apps/accounts/models.py:562 apps/accounts/models.py:610
+#: apps/community/models.py:67 apps/landing_page/models.py:95
+#: apps/landing_page/models.py:144 apps/landing_page/models.py:208
+#: apps/landing_page/models.py:254 apps/landing_page/models.py:325
+#: apps/landing_page/models.py:381 apps/payments/models/paypal.py:55
+msgid "Created at"
+msgstr ""
+
+#: apps/accounts/models.py:568
+msgid "Contact"
+msgstr ""
+
+#: apps/accounts/models.py:569 apps/landing_page/models.py:525
+#: main/templates/menu/navbar_all.html:59
+#: main/templates/menu/navbar_all.html:71
+msgid "Contacts"
+msgstr ""
+
+#: apps/accounts/models.py:572
 #, python-format
 msgid "%(user_from)s follows %(user_to)s"
 msgstr ""
 
-#: apps/accounts/models.py:335
+#: apps/accounts/models.py:590
+msgid "Post"
+msgstr ""
+
+#: apps/accounts/models.py:594
+msgid "User Comment"
+msgstr ""
+
+#: apps/accounts/models.py:602
+msgid "User Answer"
+msgstr ""
+
+#: apps/accounts/models.py:608
 #: apps/accounts/templates/accounts/registration/notify_register_admin_body.html:58
 #: apps/community/templates/community/registration/notify_register_admin_body.html:58
-#: apps/landing_page/models.py:405
-#: main/templates/services/destination/detail_destination.html:405
+#: apps/landing_page/models.py:407
+#: main/templates/services/destination/detail_destination.html:422
 msgid "Name"
 msgstr ""
 
-#: apps/accounts/models.py:341
+#: apps/accounts/models.py:609
+msgid "Body Comment"
+msgstr ""
+
+#: apps/accounts/models.py:611 apps/landing_page/models.py:97
+#: apps/landing_page/models.py:146 apps/landing_page/models.py:210
+#: apps/landing_page/models.py:256 apps/landing_page/models.py:327
+#: apps/landing_page/models.py:383 apps/payments/models/paypal.py:57
+msgid "Updated at"
+msgstr ""
+
+#: apps/accounts/models.py:612 apps/payments/models/paypal.py:53
+msgid "Active"
+msgstr ""
+
+#: apps/accounts/models.py:614
 msgid "Parent"
 msgstr ""
 
-#: apps/accounts/models.py:355
+#: apps/accounts/models.py:618
+msgid "Likes"
+msgstr ""
+
+#: apps/accounts/models.py:619
+msgid "Height"
+msgstr ""
+
+#: apps/accounts/models.py:620
+msgid "Width"
+msgstr ""
+
+#: apps/accounts/models.py:626
+msgid "Comment"
+msgstr ""
+
+#: apps/accounts/models.py:627
+msgid "Comments"
+msgstr ""
+
+#: apps/accounts/models.py:630
 #, python-format
 msgid "Comment by %(body)s"
 msgstr ""
 
+#: apps/accounts/templates/accounts/base.html:7
 #: apps/accounts/templates/accounts/footer.html:5
 #: apps/accounts/templates/accounts/registration/forgot_password.html:14
+#: apps/accounts/templates/accounts/registration/forgot_password.html:15
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:25
 #: apps/accounts/templates/accounts/registration/login.html:14
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:25
+#: apps/accounts/templates/accounts/registration/login.html:15
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:26
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:14
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:25
 #: apps/accounts/templates/accounts/registration/register_form.html:14
 #: apps/accounts/templates/accounts/registration/succes_register.html:25
+#: apps/community/templates/accounts/mail_body.html:48
 #: apps/community/templates/accounts/mail_body.html:200
 #: apps/community/templates/accounts/mail_profile_complete.html:94
 #: apps/community/templates/accounts/mail_profile_complete.html:209
+#: main/templates/base.html:11 main/templates/base.html:13
 #: main/templates/coming-soon.html:4 main/templates/footer.html:7
 #: main/templates/footer.html:9 main/templates/footer.html:47
 #: main/templates/index.html:5 main/templates/menu/navbar.html:14
@@ -415,33 +1585,40 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password.html:13
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:24
-#: apps/accounts/templates/accounts/registration/login.html:13
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:24
+#: apps/accounts/templates/accounts/registration/login.html:14
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:25
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:13
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:24
 #: apps/accounts/templates/accounts/registration/register_form.html:13
 #: apps/accounts/templates/accounts/registration/succes_register.html:24
 #: main/templates/coming-soon.html:18 main/templates/coming-soon.html:23
-#: main/templates/coming-soon.html:28 main/templates/menu/navbar_all.html:126
+#: main/templates/coming-soon.html:28 main/templates/menu/navbar_all.html:131
 msgid "Front"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:20
+#: apps/accounts/templates/accounts/registration/forgot_password.html:21
+#: apps/accounts/templates/accounts/registration/forgot_password.html:22
 #: apps/accounts/templates/accounts/registration/login.html:20
+#: apps/accounts/templates/accounts/registration/login.html:21
+#: apps/accounts/templates/accounts/registration/register_form.html:19
 #: apps/accounts/templates/accounts/registration/register_form.html:20
 msgid "Go back"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:52
-msgid " Forgot your <span class=\"font-weight-semi-bold\">password? "
+#: apps/accounts/templates/accounts/registration/forgot_password.html:55
+msgid ""
+"\n"
+"                                    Forgot your <span class='font-weight-"
+"semi-bold'>password?</span>\n"
+"                                    "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:53
+#: apps/accounts/templates/accounts/registration/forgot_password.html:59
 msgid "Enter your email address below."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:58
-#: apps/accounts/templates/accounts/registration/forgot_password.html:59
+#: apps/accounts/templates/accounts/registration/forgot_password.html:64
+#: apps/accounts/templates/accounts/registration/forgot_password.html:65
 #: apps/community/templates/accounts/customeruser_list.html:26
 #: apps/community/templates/community/dashboard/dashboard.html:79
 #: apps/community/templates/community/registration/forget_password.html:25
@@ -450,81 +1627,123 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:59
+#: apps/accounts/templates/accounts/registration/forgot_password.html:65
 #: apps/community/templates/community/registration/forget_password.html:27
 #: main/templates/index.html:94 main/templates/pages/show_header.html:94
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:65
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:70
+#: apps/accounts/templates/accounts/registration/forgot_password.html:72
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:72
 #: apps/community/templates/community/registration/forget_password.html:35
 msgid "Back to sign in"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password.html:68
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:73
+#: apps/accounts/templates/accounts/registration/forgot_password.html:75
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:75
 #: apps/community/templates/community/registration/forget_password.html:39
 msgid "Request Reset Link"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/forgot_password_success.html:32
-#: apps/accounts/templates/accounts/registration/login.html:78
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:32
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:54
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:33
+#: apps/accounts/templates/accounts/registration/login.html:83
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:33
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:34
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:57
 #: apps/accounts/templates/accounts/registration/password_reset_confirm.html:20
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-#: apps/accounts/templates/accounts/registration/register_form.html:106
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:21
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:55
+#: apps/accounts/templates/accounts/registration/register_form.html:107
 #: apps/accounts/templates/accounts/registration/succes_register.html:32
+#: apps/accounts/templates/accounts/registration/succes_register.html:33
 #: apps/community/templates/community/registration/login.html:45
 #: apps/community/templates/community/registration/signup.html:57
 #: main/templates/index.html:136
 msgid "Login"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:50
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
 msgid "We need to verify your identity"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:51
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:52
 msgid "Please check your email, and follow the next intructions"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
-msgid "accounts:register"
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:54
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:56
 msgid "do have accounts?"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/forgot_password_success.html:68
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:70
 msgid "Travelposting 2019 All Rights Reserved Site Map Disclaimer."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/login.html:52
-msgid "Welcome"
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:80
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:81
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:79
+#: apps/accounts/templates/accounts/registration/succes_register.html:80
+#: apps/community/templates/community/dashboard/dashboard.html:155
+#: apps/community/templates/community/profile/my_profile.html:176
+#: main/templates/coming-soon.html:129 main/templates/footer.html:100
+#: main/templates/hotels.html:71
+msgid "Follow us at Facebook"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/login.html:52
-msgid "to Travelposting"
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:87
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:88
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:86
+#: apps/accounts/templates/accounts/registration/succes_register.html:87
+#: apps/community/templates/community/dashboard/dashboard.html:173
+#: apps/community/templates/community/profile/my_profile.html:182
+#: main/templates/coming-soon.html:136 main/templates/footer.html:107
+#: main/templates/hotels.html:81
+msgid "Follow us at Instagram"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:94
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:95
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:93
+#: apps/accounts/templates/accounts/registration/succes_register.html:94
+#: apps/community/templates/community/dashboard/dashboard.html:167
+#: apps/community/templates/community/profile/my_profile.html:188
+#: main/templates/coming-soon.html:143 main/templates/footer.html:114
+#: main/templates/hotels.html:76
+msgid "Follow us at Twitter"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/forgot_password_success.html:101
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:102
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:100
+#: apps/accounts/templates/accounts/registration/succes_register.html:101
+#: main/templates/coming-soon.html:150 main/templates/footer.html:121
+#: main/templates/hotels.html:86
+msgid "Contact us via WhatsApp"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/login.html:53
+msgid "Welcome"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/login.html:53
+msgid "to Travelposting"
+msgstr ""
+
+#: apps/accounts/templates/accounts/registration/login.html:54
 #: apps/community/templates/community/registration/login.html:19
 msgid "Login to manage your account."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/login.html:69
+#: apps/accounts/templates/accounts/registration/login.html:74
 msgid "Forgot Password?"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/login.html:74
+#: apps/accounts/templates/accounts/registration/login.html:79
 #: apps/community/templates/community/registration/login.html:40
-msgid "Don\\"
+msgid "Don't have an account?"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/login.html:75
+#: apps/accounts/templates/accounts/registration/login.html:80
 #: apps/community/templates/community/registration/login.html:41
 msgid "Signup"
 msgstr ""
@@ -543,25 +1762,27 @@ msgstr ""
 msgid "User registration: "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:50
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:52
 msgid "Your password has been changed successfully!"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_complete.html:51
+#: apps/accounts/templates/accounts/registration/password_reset_complete.html:53
 msgid "Come back to our website and enjoy all our new plans."
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:52
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:53
 msgid " Travelposting"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:53
+#: apps/accounts/templates/accounts/registration/password_reset_confirm.html:54
 msgid "Enter the new password and confirm the new password."
 msgstr ""
 
+#: apps/accounts/templates/accounts/registration/password_reset_done.html:31
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:32
-#: apps/community/templates/community/dashboard/breadcrumb.html:56
+#: apps/community/templates/community/dashboard/breadcrumb.html:58
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:39
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:40
 msgid "Home"
 msgstr ""
 
@@ -573,10 +1794,6 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/registration/password_reset_done.html:51
 msgid "Welcome back our website and enjoy all our new plans."
-msgstr ""
-
-#: apps/accounts/templates/accounts/registration/password_reset_done.html:54
-msgid "accounts:login"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/password_reset_email.html:48
@@ -603,20 +1820,20 @@ msgid "Do you have a Coupon?"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/register_form.html:76
-#: main/templates/datenshutz_form_privacity.html:49
-#: main/templates/datenshutz_form_privacity.html:72
-#: main/templates/datenshutz_form_privacity.html:96
-#: main/templates/datenshutz_form_privacity.html:120
-#: main/templates/datenshutz_form_privacity.html:142
+#: main/templates/datenshutz_form_privacity.html:47
+#: main/templates/datenshutz_form_privacity.html:70
+#: main/templates/datenshutz_form_privacity.html:94
+#: main/templates/datenshutz_form_privacity.html:118
+#: main/templates/datenshutz_form_privacity.html:140
 msgid "Yes"
 msgstr ""
 
 #: apps/accounts/templates/accounts/registration/register_form.html:89
-#: main/templates/datenshutz_form_privacity.html:50
-#: main/templates/datenshutz_form_privacity.html:73
-#: main/templates/datenshutz_form_privacity.html:97
-#: main/templates/datenshutz_form_privacity.html:121
-#: main/templates/datenshutz_form_privacity.html:143
+#: main/templates/datenshutz_form_privacity.html:48
+#: main/templates/datenshutz_form_privacity.html:71
+#: main/templates/datenshutz_form_privacity.html:95
+#: main/templates/datenshutz_form_privacity.html:119
+#: main/templates/datenshutz_form_privacity.html:141
 msgid "No"
 msgstr ""
 
@@ -625,19 +1842,19 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/register_form.html:109
+#: apps/accounts/templates/accounts/registration/register_form.html:110
 msgid "Create account"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:50
+#: apps/accounts/templates/accounts/registration/succes_register.html:51
 msgid "Thank you for your register"
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:51
+#: apps/accounts/templates/accounts/registration/succes_register.html:52
 msgid "Please see your inbox and validate your accounts "
 msgstr ""
 
-#: apps/accounts/templates/accounts/registration/succes_register.html:54
+#: apps/accounts/templates/accounts/registration/succes_register.html:56
 msgid "Visit our page or see our plans"
 msgstr ""
 
@@ -649,55 +1866,56 @@ msgstr ""
 msgid "Profile Detail"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:16
+#: apps/accounts/templates/accounts/user/_detail.html:15
+#: apps/accounts/templates/accounts/user/_detail.html:17
 msgid "Edit"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:44
+#: apps/accounts/templates/accounts/user/_detail.html:45
 msgid "Sessions"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:53
+#: apps/accounts/templates/accounts/user/_detail.html:54
 msgid "Last login"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:55
+#: apps/accounts/templates/accounts/user/_detail.html:56
 msgid "Date of registration"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:57
+#: apps/accounts/templates/accounts/user/_detail.html:58
 msgid "Phone"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:62
-#: apps/accounts/templates/accounts/user/_detail.html:86
+#: apps/accounts/templates/accounts/user/_detail.html:63
+#: apps/accounts/templates/accounts/user/_detail.html:87
 msgid "Not registered yet"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:72
+#: apps/accounts/templates/accounts/user/_detail.html:73
 msgid "Direction"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:89
+#: apps/accounts/templates/accounts/user/_detail.html:90
 msgid "State"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:94
-#: apps/accounts/templates/accounts/user/_detail.html:102
-#: apps/accounts/templates/accounts/user/_detail.html:128
-#: apps/accounts/templates/accounts/user/_detail.html:137
-#: apps/accounts/templates/accounts/user/_detail.html:146
-#: apps/accounts/templates/accounts/user/_detail.html:154
+#: apps/accounts/templates/accounts/user/_detail.html:95
+#: apps/accounts/templates/accounts/user/_detail.html:103
+#: apps/accounts/templates/accounts/user/_detail.html:129
+#: apps/accounts/templates/accounts/user/_detail.html:138
+#: apps/accounts/templates/accounts/user/_detail.html:147
+#: apps/accounts/templates/accounts/user/_detail.html:155
 msgid "Not registered yet "
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:105
+#: apps/accounts/templates/accounts/user/_detail.html:106
 #: apps/community/templates/community/dashboard/profile_user.html:170
 #: apps/community/templates/community/profile/my_profile.html:165
 msgid "Language"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user/_detail.html:141
+#: apps/accounts/templates/accounts/user/_detail.html:142
 msgid "Company address"
 msgstr ""
 
@@ -711,13 +1929,6 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/user/_form.html:36
 msgid "Save information"
-msgstr ""
-
-#: apps/accounts/templates/accounts/user/password_change.html:4
-#: apps/accounts/templates/accounts/user/password_change.html:14
-#: apps/accounts/templates/accounts/user/password_change_done.html:4
-#: main/templates/menu/navbar_all.html:209
-msgid "Change Password"
 msgstr ""
 
 #: apps/accounts/templates/accounts/user/password_change.html:37
@@ -736,8 +1947,31 @@ msgid ""
 "              "
 msgstr ""
 
-#: apps/accounts/views.py:86 apps/community/views.py:106
+#: apps/accounts/views.py:87 apps/community/views.py:106
 msgid "An error, Incorrect User or Password has occurred."
+msgstr ""
+
+#: apps/accounts/views.py:130 apps/community/views.py:160
+msgid "Registered new user"
+msgstr ""
+
+#: apps/community/apps.py:7
+#: apps/community/templates/accounts/customeruser_list.html:5
+#: apps/community/templates/community/dashboard/dashboard.html:5
+#: apps/community/templates/community/dashboard/mail.html:5
+#: apps/community/templates/community/dashboard/make_recomm.html:4
+#: apps/community/templates/community/dashboard/notifications.html:5
+#: apps/community/templates/community/dashboard/profile_user.html:4
+#: apps/community/templates/community/profile/complete_profile.html:5
+#: apps/community/templates/community/profile/edit_profile.html:5
+#: apps/community/templates/community/profile/my_profile.html:5
+#: apps/community/templates/community/registration/forget_password.html:4
+#: apps/community/templates/community/registration/login.html:4
+#: apps/community/templates/community/registration/signup.html:4
+#: config/settings/base.py:330 main/templates/community.html:4
+#: main/templates/community.html:21 main/templates/hotels.html:112
+#: main/templates/page01.html:39 main/templates/pricing.html:4
+msgid "Community"
 msgstr ""
 
 #: apps/community/forms.py:12
@@ -758,29 +1992,50 @@ msgstr ""
 msgid "Invalid referal code"
 msgstr ""
 
-#: apps/community/models.py:27
+#: apps/community/models.py:11
+#: main/templates/services/destination/destinations.html:44
+msgid "Destination"
+msgstr ""
+
+#: apps/community/models.py:18
+msgid "User Recommendation"
+msgstr ""
+
+#: apps/community/models.py:27 apps/community/models.py:40
+msgid "Recommendation"
+msgstr ""
+
+#: apps/community/models.py:30
 #: apps/community/templates/community/dashboard/make_recomm.html:24
 msgid "Would you recommend this trip again?"
 msgstr ""
 
-#: apps/community/models.py:32
+#: apps/community/models.py:34
+msgid "Recommendation Others"
+msgstr ""
+
+#: apps/community/models.py:36
 #: apps/community/templates/community/dashboard/make_recomm.html:35
 msgid "Do you think we should get better?"
 msgstr ""
 
-#: apps/community/models.py:36
-msgid "Recommendation"
-msgstr ""
-
-#: apps/community/models.py:37
+#: apps/community/models.py:41
 msgid "Recommendations"
 msgstr ""
 
-#: apps/community/models.py:69
-msgid "Referral"
+#: apps/community/models.py:57
+msgid "Referred By"
+msgstr ""
+
+#: apps/community/models.py:63
+msgid "Code"
 msgstr ""
 
 #: apps/community/models.py:70
+msgid "Referral"
+msgstr ""
+
+#: apps/community/models.py:71
 msgid "Referrals"
 msgstr ""
 
@@ -834,8 +2089,8 @@ msgstr ""
 msgid "Save Password"
 msgstr ""
 
-#: apps/community/templates/accounts/change_password.html:100
-#: apps/community/templates/accounts/customeruser_list.html:181
+#: apps/community/templates/accounts/change_password.html:101
+#: apps/community/templates/accounts/customeruser_list.html:186
 #: apps/community/templates/community/dashboard/mail.html:242
 #: apps/community/templates/community/dashboard/mail.html:483
 #: apps/community/templates/community/dashboard/profile_user.html:304
@@ -844,27 +2099,9 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:5
-#: apps/community/templates/community/dashboard/dashboard.html:5
-#: apps/community/templates/community/dashboard/mail.html:5
-#: apps/community/templates/community/dashboard/make_recomm.html:4
-#: apps/community/templates/community/dashboard/notifications.html:5
-#: apps/community/templates/community/dashboard/profile_user.html:4
-#: apps/community/templates/community/profile/complete_profile.html:5
-#: apps/community/templates/community/profile/edit_profile.html:5
-#: apps/community/templates/community/profile/my_profile.html:5
-#: apps/community/templates/community/registration/forget_password.html:4
-#: apps/community/templates/community/registration/login.html:4
-#: apps/community/templates/community/registration/signup.html:4
-#: main/templates/community.html:4 main/templates/community.html:21
-#: main/templates/hotels.html:108 main/templates/page01.html:39
-#: main/templates/pricing.html:4
-msgid "Community"
-msgstr ""
-
 #: apps/community/templates/accounts/customeruser_list.html:20
 msgid "Search Result"
-msgstr "Search Result"
+msgstr ""
 
 #: apps/community/templates/accounts/customeruser_list.html:26
 #: apps/community/templates/community/dashboard/dashboard.html:79
@@ -885,24 +2122,25 @@ msgstr ""
 msgid "Update your profile picture"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:137
+#: apps/community/templates/accounts/customeruser_list.html:140
+#: apps/community/templates/accounts/customeruser_list.html:142
 #: apps/community/templates/community/dashboard/profile_user.html:40
 msgid "Send a Message"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:146
+#: apps/community/templates/accounts/customeruser_list.html:151
 #: apps/community/templates/community/dashboard/dashboard.html:143
 msgid "Add to favorites"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:162
+#: apps/community/templates/accounts/customeruser_list.html:167
 #: apps/community/templates/community/dashboard/mail.html:219
 #: apps/community/templates/community/dashboard/mail.html:455
 #: apps/community/templates/community/dashboard/profile_user.html:286
 msgid "Send message to"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:163
+#: apps/community/templates/accounts/customeruser_list.html:168
 #: apps/community/templates/community/dashboard/mail.html:220
 #: apps/community/templates/community/dashboard/mail.html:456
 #: apps/community/templates/community/dashboard/profile_user.html:287
@@ -910,16 +2148,16 @@ msgstr ""
 #: main/templates/modal_contact_us/modal.html:5
 #: main/templates/services/destination/comments.html:51
 #: main/templates/services/destination/comments.html:83
-#: main/templates/services/destination/detail_destination.html:343
-#: main/templates/services/destination/detail_destination.html:369
+#: main/templates/services/destination/detail_destination.html:353
 #: main/templates/services/destination/detail_destination.html:383
-#: main/templates/services/destination/detail_destination.html:463
-#: main/templates/services/pricing/plans.html:191
+#: main/templates/services/destination/detail_destination.html:397
+#: main/templates/services/destination/detail_destination.html:495
+#: main/templates/services/pricing/plans.html:193
 msgid "Close"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:169
-#: apps/community/templates/accounts/customeruser_list.html:171
+#: apps/community/templates/accounts/customeruser_list.html:174
+#: apps/community/templates/accounts/customeruser_list.html:176
 #: apps/community/templates/community/dashboard/mail.html:128
 #: apps/community/templates/community/dashboard/mail.html:230
 #: apps/community/templates/community/dashboard/mail.html:232
@@ -928,23 +2166,25 @@ msgstr ""
 #: apps/community/templates/community/dashboard/mail.html:473
 #: apps/community/templates/community/dashboard/profile_user.html:293
 #: apps/community/templates/community/dashboard/profile_user.html:295
+#: apps/directmessages/models.py:13
 msgid "Subject"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:175
+#: apps/community/templates/accounts/customeruser_list.html:180
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:299
+#: apps/directmessages/models.py:24 apps/landing_page/models.py:512
 msgid "Message"
 msgstr ""
 
-#: apps/community/templates/accounts/customeruser_list.html:182
+#: apps/community/templates/accounts/customeruser_list.html:187
 #: apps/community/templates/community/dashboard/mail.html:243
 #: apps/community/templates/community/dashboard/mail.html:484
 #: apps/community/templates/community/dashboard/profile_user.html:305
 #: main/templates/pages/show_header.html:108
 #: main/templates/services/destination/comments.html:84
-#: main/templates/services/destination/detail_destination.html:370
+#: main/templates/services/destination/detail_destination.html:384
 msgid "Send"
 msgstr ""
 
@@ -980,7 +2220,7 @@ msgid "Confirm"
 msgstr ""
 
 #: apps/community/templates/accounts/mail_body.html:127
-#: apps/landing_page/models.py:234
+#: apps/landing_page/models.py:236
 msgid "icon"
 msgstr ""
 
@@ -989,6 +2229,7 @@ msgid "Share and enjoy from our community."
 msgstr ""
 
 #: apps/community/templates/accounts/mail_body.html:159
+#: apps/community/templates/accounts/mail_profile_complete.html:163
 msgid "Travelposting?"
 msgstr ""
 
@@ -1005,7 +2246,7 @@ msgstr ""
 
 #: apps/community/templates/accounts/mail_body.html:180
 #: apps/community/templates/accounts/mail_profile_complete.html:184
-#: main/templates/services/destination/all.html:52
+#: main/templates/services/destination/all.html:54
 #: main/templates/services/destination/categories.html:45
 msgid "See more"
 msgstr ""
@@ -1086,18 +2327,22 @@ msgid "Company:"
 msgstr ""
 
 #: apps/community/templates/accounts/mail_profile_complete.html:116
+#: main/templates/make_page.html:142
 msgid "International Bank Account Number"
 msgstr ""
 
 #: apps/community/templates/accounts/mail_profile_complete.html:116
+#: main/templates/make_page.html:142
 msgid "IBAN:"
 msgstr ""
 
 #: apps/community/templates/accounts/mail_profile_complete.html:117
+#: main/templates/make_page.html:146
 msgid "Bank Identifier Code"
 msgstr ""
 
 #: apps/community/templates/accounts/mail_profile_complete.html:117
+#: main/templates/make_page.html:146
 msgid "BIC:"
 msgstr ""
 
@@ -1148,8 +2393,10 @@ msgid "has sent you a new message"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/_email_inbox.html:102
-#: apps/community/templates/community/dashboard/breadcrumb.html:60
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:44
+#: apps/community/templates/community/dashboard/breadcrumb.html:62
+#: apps/community/templates/community/dashboard/breadcrumb.html:63
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:45
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:46
 #: apps/community/templates/community/dashboard/mail.html:42
 msgid "Inbox"
 msgstr ""
@@ -1174,29 +2421,67 @@ msgstr ""
 msgid "Do you think we should get better?:"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:64
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:52
+#: apps/community/templates/community/dashboard/breadcrumb.html:14
+#: main/templates/menu/navbar.html:29
+msgid "Toggle navigation"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/breadcrumb.html:32
+#: apps/community/templates/community/dashboard/profile_user.html:67
+#: apps/community/templates/community/dashboard/profile_user.html:80
+#: apps/community/templates/community/dashboard/profile_user.html:115
+#: apps/community/templates/community/dashboard/profile_user.html:124
+#: apps/community/templates/community/profile/complete_profile.html:32
+#: apps/community/templates/community/profile/edit_profile.html:26
+#: apps/community/templates/community/profile/my_profile.html:26
+#: apps/community/templates/community/profile/my_profile.html:76
+#: apps/community/templates/community/profile/my_profile.html:85
+#: main/templates/coming-soon.html:61 main/templates/make_page.html:277
+#: main/templates/menu/navbar_all.html:98
+#: main/templates/menu/navbar_all.html:189
+#: main/templates/menu/navbar_all.html:275
+#: main/templates/modal_contact_us/modal.html:22
+#: main/templates/modal_contact_us/modal.html:31
+#: main/templates/presignup.html:92 main/templates/presignup.html:99
+#: main/templates/services/destination/all.html:47
+#: main/templates/services/destination/sponsors.html:36
+#: main/templates/services/destination/testimonials.html:41
+#: main/templates/services/magazine/magazine.html:8
+msgid "Image Description"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/breadcrumb.html:68
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:55
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:56
 #: main/templates/pages/show_header.html:49
 #: main/templates/services/destination/destinations_for_categorie_backup.html:72
 msgid "Destinations"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:67
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:58
+#: apps/community/templates/community/dashboard/breadcrumb.html:72
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:62
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:63
 msgid "Logout"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb.html:81
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:75
+#: apps/community/templates/community/dashboard/breadcrumb.html:85
+#: apps/community/templates/community/dashboard/breadcrumb.html:87
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:78
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
 msgid "Edit Profile"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:48
-#: apps/landing_page/models.py:53
+#: apps/community/templates/community/dashboard/breadcrumb.html:93
+msgid "Following"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:51
+#: apps/landing_page/models.py:54
 msgid "Prices"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/breadcrumb_profile.html:80
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:84
+#: apps/community/templates/community/dashboard/breadcrumb_profile.html:85
 msgid "See my profile"
 msgstr ""
 
@@ -1222,6 +2507,14 @@ msgstr ""
 
 #: apps/community/templates/community/dashboard/dashboard.html:104
 msgid "Not members found."
+msgstr ""
+
+#: apps/community/templates/community/dashboard/dashboard.html:161
+msgid "Write us via Email"
+msgstr ""
+
+#: apps/community/templates/community/dashboard/dashboard.html:184
+msgid "follower"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/dashboard.html:197
@@ -1267,6 +2560,7 @@ msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:139
 #: apps/community/templates/community/dashboard/mail.html:330
+#: main/templates/services/destination/detail_destination.html:269
 msgid "Date"
 msgstr ""
 
@@ -1391,12 +2685,6 @@ msgstr ""
 msgid "Web page:"
 msgstr ""
 
-#: apps/community/templates/community/dashboard/profile_user.html:154
-#: apps/community/templates/community/profile/edit_profile.html:77
-#: apps/community/templates/community/profile/my_profile.html:131
-msgid "Location"
-msgstr ""
-
 #: apps/community/templates/community/dashboard/profile_user.html:185
 msgid "Reviews"
 msgstr ""
@@ -1470,6 +2758,10 @@ msgstr ""
 msgid "Phone number"
 msgstr ""
 
+#: apps/community/templates/community/profile/my_profile.html:194
+msgid "Follow us at Linkedin"
+msgstr ""
+
 #: apps/community/templates/community/registration/activation_email_body.html:57
 #, python-format
 msgid ""
@@ -1501,13 +2793,11 @@ msgid "password?"
 msgstr ""
 
 #: apps/community/templates/community/registration/forget_password.html:19
-msgid "Enter your email address below and we\\"
+msgid "Enter your email address below and we'll get you back on track."
 msgstr ""
 
-#: apps/community/templates/community/registration/login.html:17
-msgid ""
-" Welcome <span\n"
-"                        class=\"font-weight-semi-bold\">to Community</span>"
+#: apps/community/templates/community/registration/login.html:18
+msgid " Welcome <span class=\"font-weight-semi-bold\">to Community</span>"
 msgstr ""
 
 #: apps/community/templates/community/registration/signup.html:17
@@ -1560,6 +2850,10 @@ msgstr ""
 msgid "Travelposting send a new import message"
 msgstr ""
 
+#: apps/directmessages/apps.py:7
+msgid "Direct Messages"
+msgstr ""
+
 #: apps/directmessages/models.py:19
 msgid "sent at"
 msgstr ""
@@ -1568,7 +2862,11 @@ msgstr ""
 msgid "read at"
 msgstr ""
 
-#: apps/directmessages/models.py:34
+#: apps/directmessages/models.py:23
+msgid "Messages"
+msgstr ""
+
+#: apps/directmessages/models.py:38
 msgid "You can't send messages to yourself"
 msgstr ""
 
@@ -1576,8 +2874,12 @@ msgstr ""
 msgid "Your message has been sent successfully"
 msgstr ""
 
-#: apps/landing_page/admin.py:81 apps/landing_page/models.py:368
+#: apps/landing_page/admin.py:81 apps/landing_page/models.py:370
 msgid "Company"
+msgstr ""
+
+#: apps/landing_page/apps.py:7
+msgid "Landing Pages"
 msgstr ""
 
 #: apps/landing_page/models.py:20
@@ -1592,130 +2894,138 @@ msgstr ""
 msgid "Price types"
 msgstr ""
 
-#: apps/landing_page/models.py:41
+#: apps/landing_page/models.py:38
+msgid "Price Type"
+msgstr ""
+
+#: apps/landing_page/models.py:42
 msgid "Value"
 msgstr ""
 
-#: apps/landing_page/models.py:52 apps/payments/models/paypal.py:26
+#: apps/landing_page/models.py:53 apps/payments/models/paypal.py:26
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:262
+#: main/templates/services/destination/detail_destination.html:263
 msgid "Price"
 msgstr ""
 
-#: apps/landing_page/models.py:65 apps/landing_page/models.py:175
-#: apps/landing_page/models.py:229 apps/payments/models/paypal.py:9
+#: apps/landing_page/models.py:59
+msgid "Paypal ID"
+msgstr ""
+
+#: apps/landing_page/models.py:67 apps/landing_page/models.py:177
+#: apps/landing_page/models.py:231 apps/payments/models/paypal.py:9
 msgid "name"
 msgstr ""
 
-#: apps/landing_page/models.py:80 apps/landing_page/models.py:221
+#: apps/landing_page/models.py:82 apps/landing_page/models.py:223
 msgid "features"
 msgstr ""
 
-#: apps/landing_page/models.py:84 apps/landing_page/models.py:138
-#: apps/landing_page/models.py:202 apps/landing_page/models.py:243
-#: apps/landing_page/models.py:314 apps/landing_page/models.py:354
+#: apps/landing_page/models.py:86 apps/landing_page/models.py:140
+#: apps/landing_page/models.py:204 apps/landing_page/models.py:245
+#: apps/landing_page/models.py:316 apps/landing_page/models.py:356
 msgid "active"
 msgstr ""
 
-#: apps/landing_page/models.py:89 apps/landing_page/models.py:133
-#: apps/landing_page/models.py:197 apps/landing_page/models.py:248
-#: apps/landing_page/models.py:319 apps/landing_page/models.py:359
-#: apps/landing_page/models.py:434
+#: apps/landing_page/models.py:91 apps/landing_page/models.py:135
+#: apps/landing_page/models.py:199 apps/landing_page/models.py:250
+#: apps/landing_page/models.py:321 apps/landing_page/models.py:361
+#: apps/landing_page/models.py:437
 msgid "order"
 msgstr ""
 
-#: apps/landing_page/models.py:102
+#: apps/landing_page/models.py:104
 msgid "plans"
 msgstr ""
 
-#: apps/landing_page/models.py:103 apps/landing_page/models.py:123
+#: apps/landing_page/models.py:105 apps/landing_page/models.py:125
 #: apps/payments/models/paypal.py:22
 msgid "plan"
 msgstr ""
 
-#: apps/landing_page/models.py:129 apps/landing_page/models.py:220
+#: apps/landing_page/models.py:131 apps/landing_page/models.py:222
 msgid "feature"
 msgstr ""
 
-#: apps/landing_page/models.py:153
+#: apps/landing_page/models.py:155
 msgid "plan-features"
 msgstr ""
 
-#: apps/landing_page/models.py:154
+#: apps/landing_page/models.py:156
 msgid "plan-feature"
 msgstr ""
 
-#: apps/landing_page/models.py:185
+#: apps/landing_page/models.py:187
 msgid "parent"
 msgstr ""
 
-#: apps/landing_page/models.py:193
+#: apps/landing_page/models.py:195
 msgid "validated to plan"
 msgstr ""
 
-#: apps/landing_page/models.py:238
+#: apps/landing_page/models.py:240
 msgid ""
 "Icons use of Font Awesome 4.7.0, info: https://fontawesome.com/v4.7.0/icons/"
 msgstr ""
 
-#: apps/landing_page/models.py:266 apps/landing_page/models.py:345
+#: apps/landing_page/models.py:268 apps/landing_page/models.py:347
 #: apps/payments/models/paypal.py:36
 msgid "description"
 msgstr ""
 
-#: apps/landing_page/models.py:271
+#: apps/landing_page/models.py:273
 msgid "services"
 msgstr ""
 
-#: apps/landing_page/models.py:272
+#: apps/landing_page/models.py:274
 msgid "service"
 msgstr ""
 
-#: apps/landing_page/models.py:277
+#: apps/landing_page/models.py:279
 msgid "value"
 msgstr ""
 
-#: apps/landing_page/models.py:282
+#: apps/landing_page/models.py:284
 msgid "counter"
 msgstr ""
 
-#: apps/landing_page/models.py:287
+#: apps/landing_page/models.py:289
 msgid "statistics"
 msgstr ""
 
-#: apps/landing_page/models.py:288
+#: apps/landing_page/models.py:290
 msgid "statistic"
 msgstr ""
 
-#: apps/landing_page/models.py:293
+#: apps/landing_page/models.py:295
 msgid "author"
 msgstr ""
 
-#: apps/landing_page/models.py:298
+#: apps/landing_page/models.py:300
 msgid "comment"
 msgstr ""
 
-#: apps/landing_page/models.py:302
+#: apps/landing_page/models.py:304
 msgid "place"
 msgstr ""
 
-#: apps/landing_page/models.py:307
+#: apps/landing_page/models.py:309
 msgid "photo"
 msgstr ""
 
-#: apps/landing_page/models.py:332
+#: apps/landing_page/models.py:334
 msgid "Testimonies"
 msgstr ""
 
-#: apps/landing_page/models.py:333
+#: apps/landing_page/models.py:335
 msgid "Testimony"
 msgstr ""
 
-#: apps/landing_page/models.py:338
+#: apps/landing_page/models.py:340
 msgid "title"
 msgstr ""
 
-#: apps/landing_page/models.py:349
+#: apps/landing_page/models.py:351
 #: main/templates/services/destination/_parts/list_destinies.html:17
 #: main/templates/services/destination/_parts/list_destinies.html:38
 #: main/templates/services/destination/destinations.html:44
@@ -1724,105 +3034,102 @@ msgstr ""
 msgid "image"
 msgstr ""
 
-#: apps/landing_page/models.py:364
+#: apps/landing_page/models.py:366
 msgid "type"
 msgstr ""
 
-#: apps/landing_page/models.py:367
+#: apps/landing_page/models.py:369
 msgid "Header"
 msgstr ""
 
-#: apps/landing_page/models.py:374
+#: apps/landing_page/models.py:376
 msgid "site"
 msgstr ""
 
-#: apps/landing_page/models.py:388
+#: apps/landing_page/models.py:390
 msgid "sliders"
 msgstr ""
 
-#: apps/landing_page/models.py:389
+#: apps/landing_page/models.py:391
 msgid "slider"
 msgstr ""
 
-#: apps/landing_page/models.py:410
+#: apps/landing_page/models.py:412
 msgid "Editor"
 msgstr ""
 
-#: apps/landing_page/models.py:429
-msgid "is active?"
+#: apps/landing_page/models.py:417
+msgid "Files"
 msgstr ""
 
-#: apps/landing_page/models.py:439
+#: apps/landing_page/models.py:442
 msgid "outstanding"
 msgstr ""
 
-#: apps/landing_page/models.py:445
+#: apps/landing_page/models.py:448
 msgid "Megazine"
 msgstr ""
 
-#: apps/landing_page/models.py:446
+#: apps/landing_page/models.py:449
 msgid "Megazines"
 msgstr ""
 
-#: apps/landing_page/models.py:454 main/templates/datenshutz_form.html:23
+#: apps/landing_page/models.py:457 main/templates/datenshutz_form.html:23
 #: main/templates/datenshutz_form.html:24
 msgid "First Name"
 msgstr ""
 
-#: apps/landing_page/models.py:459 main/templates/datenshutz_form.html:28
-#: main/templates/services/destination/detail_destination.html:413
+#: apps/landing_page/models.py:462 main/templates/datenshutz_form.html:28
+#: main/templates/services/destination/detail_destination.html:433
 msgid "Last Name"
 msgstr ""
 
-#: apps/landing_page/models.py:470
+#: apps/landing_page/models.py:473
 msgid "Agree?"
 msgstr ""
 
-#: apps/landing_page/models.py:474
+#: apps/landing_page/models.py:477
 msgid "Status?"
 msgstr ""
 
-#: apps/landing_page/models.py:482
+#: apps/landing_page/models.py:485
 msgid "Delete Registers"
 msgstr ""
 
-#: apps/landing_page/models.py:483
+#: apps/landing_page/models.py:486
 msgid "Delete Register"
 msgstr ""
 
-#: apps/landing_page/models.py:487 apps/landing_page/models.py:513
+#: apps/landing_page/models.py:490 apps/landing_page/models.py:518
 msgid "Address IP"
 msgstr ""
 
-#: apps/landing_page/models.py:488
+#: apps/landing_page/models.py:491
 msgid "cookies"
 msgstr ""
 
-#: apps/landing_page/models.py:489
+#: apps/landing_page/models.py:492
 msgid "Google Analitys"
 msgstr ""
 
-#: apps/landing_page/models.py:490
-#: main/templates/datenshutz_form_privacity.html:88
+#: apps/landing_page/models.py:493
+#: main/templates/datenshutz_form_privacity.html:86
 msgid "Facebook Pixel"
 msgstr ""
 
-#: apps/landing_page/models.py:491
-#: main/templates/datenshutz_form_privacity.html:112
-msgid "Twitter"
-msgstr ""
-
-#: apps/landing_page/models.py:492
-msgid "Pinteres"
-msgstr ""
-
-#: apps/landing_page/models.py:498
-#: main/templates/datenshutz_form_privacity.html:18
+#: apps/landing_page/models.py:501
+#: main/templates/datenshutz_form_privacity.html:16
 msgid "Privacity Settings"
 msgstr ""
 
-#: apps/landing_page/models.py:499
+#: apps/landing_page/models.py:502
 msgid "Privacity Setting"
+msgstr ""
+
+#: apps/landing_page/models.py:524
+#: main/templates/services/pricing/plans.html:112
+#: main/templates/services/pricing/plans.html:135
+msgid "Contact Us"
 msgstr ""
 
 #: apps/landing_page/views.py:107
@@ -1929,13 +3236,78 @@ msgstr ""
 msgid "es"
 msgstr ""
 
-#: config/settings/base.py:314
+#: config/settings/base.py:270
+msgid "Travel Dashboard"
+msgstr ""
+
+#: config/settings/base.py:271
+msgid "Support"
+msgstr ""
+
+#: config/settings/base.py:319
 msgid "Feature"
+msgstr ""
+
+#: config/settings/base.py:325
+msgid "Landing"
+msgstr ""
+
+#: config/settings/base.py:328
+msgid "Tour"
+msgstr ""
+
+#: config/settings/base.py:329 main/templates/magazine.html:34
+msgid "Magazine"
+msgstr ""
+
+#: config/settings/base.py:331
+msgid "Data protection"
+msgstr ""
+
+#: config/settings/base.py:332
+msgid "Data protection Form"
+msgstr ""
+
+#: config/settings/base.py:333
+msgid "Data protection Form Privacity"
+msgstr ""
+
+#: config/settings/base.py:334 main/templates/coming-soon.html:90
+#: main/templates/coming-soon.html:99
+msgid "Coming Soon"
+msgstr ""
+
+#: config/settings/base.py:335
+msgid "Hotels template"
+msgstr ""
+
+#: config/settings/base.py:336
+msgid "Pricing"
+msgstr ""
+
+#: config/settings/base.py:338 main/templates/datenshutz_form_privacity.html:26
+msgid "Terms"
+msgstr ""
+
+#: config/settings/base.py:339
+msgid "FAQ"
+msgstr ""
+
+#: config/settings/base.py:340
+msgid "Page type 01"
+msgstr ""
+
+#: config/settings/base.py:341
+msgid "Page type 02"
+msgstr ""
+
+#: config/settings/base.py:342
+msgid "Pre-signup"
 msgstr ""
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
 #: main/templates/datenshutz_form.html:3
-#: main/templates/datenshutz_form_privacity.html:5 main/templates/faq.html:3
+#: main/templates/datenshutz_form_privacity.html:3 main/templates/faq.html:3
 #: main/templates/hotels.html:3 main/templates/make_page.html:3
 #: main/templates/page01.html:3 main/templates/page02.html:3
 #: main/templates/pages/request.html:3 main/templates/presignup.html:3
@@ -1972,6 +3344,16 @@ msgstr ""
 msgid "Get special offers on the latest travels add on our platform."
 msgstr ""
 
+#: main/templates/base.html:12
+msgid ""
+"Our vision is oriented to Companies that wish to present their products and "
+"services in several languages by means of a digital promotion alternative."
+msgstr ""
+
+#: main/templates/base.html:14
+msgid "Trips, vision, products, services"
+msgstr ""
+
 #: main/templates/base.html:82
 msgid "Do you like cookies?"
 msgstr ""
@@ -1986,6 +3368,14 @@ msgstr ""
 
 #: main/templates/base.html:85
 msgid "I agree"
+msgstr ""
+
+#: main/templates/base.html:100
+msgid "Up"
+msgstr ""
+
+#: main/templates/base.html:278
+msgid "Select a state"
 msgstr ""
 
 #: main/templates/coming-soon.html:19 main/templates/coming-soon.html:24
@@ -2013,10 +3403,6 @@ msgstr ""
 
 #: main/templates/coming-soon.html:85
 msgid "Coming back to our website"
-msgstr ""
-
-#: main/templates/coming-soon.html:90 main/templates/coming-soon.html:99
-msgid "Coming Soon"
 msgstr ""
 
 #: main/templates/coming-soon.html:122
@@ -2246,7 +3632,7 @@ msgid "Sign up for Travelposting and enjoy its benefits"
 msgstr ""
 
 #: main/templates/datenschutz.html:16
-msgid "Datenschutzerklärung"
+msgid "Privacy policy"
 msgstr ""
 
 #: main/templates/datenshutz_form.html:16 main/templates/pages/request.html:16
@@ -2276,86 +3662,78 @@ msgstr ""
 msgid "Create delete request"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:26
+#: main/templates/datenshutz_form_privacity.html:24
 msgid "Service"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:27
+#: main/templates/datenshutz_form_privacity.html:25
 msgid "Reason for use"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:28
-msgid "Terms"
-msgstr ""
-
-#: main/templates/datenshutz_form_privacity.html:29
+#: main/templates/datenshutz_form_privacity.html:27
 msgid "Enabled"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:41
-#: main/templates/footer.html:125 main/templates/menu/navbar_all.html:262
+#: main/templates/datenshutz_form_privacity.html:39
+#: main/templates/footer.html:133 main/templates/menu/navbar_all.html:267
 msgid "Cookies"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:44
-msgid "Wir benutzen Cookies um das Besucherverhalten zu analysieren."
+#: main/templates/datenshutz_form_privacity.html:42
+msgid "We using Cookies for analyze the behaviors of the visits."
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:64
+#: main/templates/datenshutz_form_privacity.html:62
 msgid "Google Analytics"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:67
-msgid "Google Analytics wird zum Anlayiseren des Websitetraffics verwendet"
+#: main/templates/datenshutz_form_privacity.html:65
+msgid "Google Analytics is using for analyze the Website traffic"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:68
-#: main/templates/datenshutz_form_privacity.html:92
-#: main/templates/datenshutz_form_privacity.html:138
-msgid "Term"
+#: main/templates/datenshutz_form_privacity.html:66
+#: main/templates/datenshutz_form_privacity.html:90
+#: main/templates/datenshutz_form_privacity.html:136
+msgid "Term Details"
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:91
-msgid "Facebook Pixel wird zum Analysieren des Besucherverhaltens verwendet."
+#: main/templates/datenshutz_form_privacity.html:89
+msgid "Facebook Pixel is using for analyze the behaviors of the visits."
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:115
-msgid "Twitter wird zum Analysieren des Besucherverhaltens verwendet."
+#: main/templates/datenshutz_form_privacity.html:113
+msgid "Twitter is using for analyze the behaviors of the visits."
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:134
-msgid "Pinterest"
+#: main/templates/datenshutz_form_privacity.html:135
+msgid "Pinterest is using for analyze the behaviors of the visits."
 msgstr ""
 
-#: main/templates/datenshutz_form_privacity.html:137
-msgid "Pinterest wird zum Analysieren des Besucherverhaltens verwendet."
-msgstr ""
-
-#: main/templates/datenshutz_form_privacity.html:150
+#: main/templates/datenshutz_form_privacity.html:148
 msgid "Save"
 msgstr ""
 
-#: main/templates/faq.html:16
+#: main/templates/faq.html:16 main/templates/page02.html:15
 msgid "How can we"
 msgstr ""
 
-#: main/templates/faq.html:17
+#: main/templates/faq.html:17 main/templates/page02.html:16
 msgid "help?"
 msgstr ""
 
-#: main/templates/faq.html:22
+#: main/templates/faq.html:22 main/templates/page02.html:21
 msgid "Popular help topics:"
 msgstr ""
 
-#: main/templates/faq.html:23
+#: main/templates/faq.html:23 main/templates/page02.html:22
 msgid "pricing"
 msgstr ""
 
-#: main/templates/faq.html:24
+#: main/templates/faq.html:24 main/templates/page02.html:23
 msgid "destinations"
 msgstr ""
 
-#: main/templates/faq.html:25
+#: main/templates/faq.html:25 main/templates/page02.html:24
 msgid "community"
 msgstr ""
 
@@ -2630,7 +4008,7 @@ msgid ""
 "                            "
 msgstr ""
 
-#: main/templates/faq.html:552
+#: main/templates/faq.html:552 main/templates/faq.html:630
 msgid "Email us"
 msgstr ""
 
@@ -2699,16 +4077,16 @@ msgstr ""
 msgid "MAKE YOUR PAY"
 msgstr ""
 
-#: main/templates/footer.html:128 main/templates/menu/navbar_all.html:57
-#: main/templates/menu/navbar_all.html:67
+#: main/templates/footer.html:136 main/templates/menu/navbar_all.html:58
+#: main/templates/menu/navbar_all.html:68
 msgid "FAQs"
 msgstr ""
 
-#: main/templates/footer.html:131
+#: main/templates/footer.html:139
 msgid "Use policies"
 msgstr ""
 
-#: main/templates/footer.html:134
+#: main/templates/footer.html:142
 msgid "Travelposting 2020 All Rights Reserved Site Map Disclaimer."
 msgstr ""
 
@@ -2726,34 +4104,34 @@ msgstr ""
 msgid "Follow us"
 msgstr ""
 
-#: main/templates/hotels.html:107 main/templates/page01.html:38
+#: main/templates/hotels.html:111 main/templates/page01.html:39
 msgid "What Happened to"
 msgstr ""
 
-#: main/templates/hotels.html:109 main/templates/page01.html:40
+#: main/templates/hotels.html:114 main/templates/page01.html:42
 #: main/templates/presignup.html:54
 msgid "Our Community"
 msgstr ""
 
-#: main/templates/hotels.html:109
+#: main/templates/hotels.html:114 main/templates/page01.html:42
 msgid ""
 "Discover new destinations that can seduce you and you will want to return to "
 "them."
 msgstr ""
 
-#: main/templates/hotels.html:118 main/templates/page01.html:50
+#: main/templates/hotels.html:124 main/templates/page01.html:52
 msgid "Register on our community"
 msgstr ""
 
-#: main/templates/hotels.html:135
+#: main/templates/hotels.html:141
 msgid "modern"
 msgstr ""
 
-#: main/templates/hotels.html:135
+#: main/templates/hotels.html:141
 msgid "creative"
 msgstr ""
 
-#: main/templates/hotels.html:135
+#: main/templates/hotels.html:141
 msgid "professional"
 msgstr ""
 
@@ -2791,10 +4169,6 @@ msgstr ""
 msgid "Enjoy and share the best travel magazine."
 msgstr ""
 
-#: main/templates/magazine.html:34
-msgid "Magazine"
-msgstr ""
-
 #: main/templates/make_page.html:11
 msgid "Make your payments"
 msgstr ""
@@ -2809,125 +4183,138 @@ msgid ""
 "collection service with: "
 msgstr ""
 
-#: main/templates/make_page.html:78
+#: main/templates/make_page.html:73
+msgid "Payoneer"
+msgstr ""
+
+#: main/templates/make_page.html:79
+msgid "Paypal"
+msgstr ""
+
+#: main/templates/make_page.html:80
 msgid "Make your payment via Paypal to: info@xposting-service.com"
 msgstr ""
 
-#: main/templates/make_page.html:84
+#: main/templates/make_page.html:86
 msgid "GBP Receiving Account (BACS) England"
 msgstr ""
 
-#: main/templates/make_page.html:88 main/templates/make_page.html:127
-#: main/templates/make_page.html:166 main/templates/make_page.html:205
+#: main/templates/make_page.html:90 main/templates/make_page.html:138
+#: main/templates/make_page.html:183 main/templates/make_page.html:231
 msgid "Name of the bank"
 msgstr ""
 
-#: main/templates/make_page.html:92
+#: main/templates/make_page.html:94
 msgid "Branch Code"
 msgstr ""
 
-#: main/templates/make_page.html:96 main/templates/make_page.html:174
+#: main/templates/make_page.html:98 main/templates/make_page.html:191
+#: main/templates/make_page.html:239
 msgid "Account number"
 msgstr ""
 
-#: main/templates/make_page.html:100 main/templates/make_page.html:139
-#: main/templates/make_page.html:221
+#: main/templates/make_page.html:102 main/templates/make_page.html:150
+#: main/templates/make_page.html:247
 msgid "Beneficiary Name"
 msgstr ""
 
-#: main/templates/make_page.html:105 main/templates/make_page.html:187
+#: main/templates/make_page.html:107 main/templates/make_page.html:204
 msgid "Keep in mind!"
 msgstr ""
 
-#: main/templates/make_page.html:106
+#: main/templates/make_page.html:111
 msgid ""
 "Only BACS and Faster Payments Service (UK local bank) transfers can be "
 "accepted in GBP"
 msgstr ""
 
-#: main/templates/make_page.html:107
+#: main/templates/make_page.html:114
 msgid "Transfers must be made from a corporate bank account"
 msgstr ""
 
-#: main/templates/make_page.html:108
+#: main/templates/make_page.html:117
 msgid "Transfers in USD will be rejected automatically"
 msgstr ""
 
-#: main/templates/make_page.html:109 main/templates/make_page.html:147
+#: main/templates/make_page.html:120 main/templates/make_page.html:165
 msgid "Wire transfers are not supported"
 msgstr ""
 
-#: main/templates/make_page.html:123
+#: main/templates/make_page.html:134
 msgid "EUR Receiving Account (SEPA)"
 msgstr ""
 
-#: main/templates/make_page.html:145
+#: main/templates/make_page.html:155
+msgid "I have accounts!"
+msgstr ""
+
+#: main/templates/make_page.html:159
 msgid "Only SEPA transfers (European local bank) can be accepted in EUR"
 msgstr ""
 
-#: main/templates/make_page.html:146
+#: main/templates/make_page.html:162
 msgid ""
 "Transfers in USD will be made automatically and may result in the suspension "
 "of this service"
 msgstr ""
 
-#: main/templates/make_page.html:162
+#: main/templates/make_page.html:179
 msgid "Receiving Account USD (ACH) / US Local Bank UU"
 msgstr ""
 
-#: main/templates/make_page.html:170
+#: main/templates/make_page.html:187
 msgid "Way (ABA)"
 msgstr ""
 
-#: main/templates/make_page.html:179
+#: main/templates/make_page.html:196
 msgid "CHECKING"
 msgstr ""
 
-#: main/templates/make_page.html:182
+#: main/templates/make_page.html:199
 msgid "Beneficiary Name:"
 msgstr ""
 
-#: main/templates/make_page.html:188
+#: main/templates/make_page.html:208
 msgid "Only ACH (US local bank) transfers can be accepted in USD"
 msgstr ""
 
-#: main/templates/make_page.html:189
+#: main/templates/make_page.html:211
 msgid "Transfers must be made from a business account"
 msgstr ""
 
-#: main/templates/make_page.html:190
+#: main/templates/make_page.html:214
 msgid "Transfers from individuals will be made automatically"
 msgstr ""
 
-#: main/templates/make_page.html:191
+#: main/templates/make_page.html:217
 msgid "Electronic transfer is not supported"
 msgstr ""
 
-#: main/templates/make_page.html:201
+#: main/templates/make_page.html:227
 msgid "Receiving AUD account (direct deposit) / Bank of Australia..."
 msgstr ""
 
-#: main/templates/make_page.html:209
+#: main/templates/make_page.html:235
 msgid "Headquarters code"
 msgstr ""
 
-#: main/templates/make_page.html:217
+#: main/templates/make_page.html:243
 msgid "Account type"
 msgstr ""
 
-#: main/templates/make_page.html:228
+#: main/templates/make_page.html:254
 msgid "Please keep that in mind!"
 msgstr ""
 
-#: main/templates/make_page.html:229
+#: main/templates/make_page.html:258
 msgid "Only direct entry payments (BECS) are accepted in AUD"
 msgstr ""
 
-#: main/templates/make_page.html:230
+#: main/templates/make_page.html:261
 msgid "Transfers can only be made from companies"
 msgstr ""
 
-#: main/templates/make_page.html:231
+#: main/templates/make_page.html:264
 msgid ""
 "Be sure to select Australia in the bank location drop-down when adding a "
 "deposit method at Amazon Seller Central!"
@@ -2940,7 +4327,7 @@ msgstr ""
 #: main/templates/menu/menu.html:9
 #: main/templates/services/pricing/plans.html:55
 #: main/templates/services/pricing/plans.html:81
-#: main/templates/services/pricing/plans.html:192
+#: main/templates/services/pricing/plans.html:196
 msgid "Register"
 msgstr ""
 
@@ -2962,7 +4349,8 @@ msgstr ""
 msgid "SignUp"
 msgstr ""
 
-#: main/templates/menu/menu.html:64 main/templates/menu/menu.html:78
+#: main/templates/menu/menu.html:64 main/templates/menu/menu.html:77
+#: main/templates/menu/menu.html:78
 msgid "SignIn"
 msgstr ""
 
@@ -2982,45 +4370,41 @@ msgstr ""
 msgid "Request"
 msgstr ""
 
-#: main/templates/menu/navbar.html:29
-msgid "Toggle navigation"
-msgstr ""
-
 #: main/templates/menu/navbar_all.html:28
 #: main/templates/menu/navbar_all.html:37
 msgid "Spanish"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:58
-#: main/templates/menu/navbar_all.html:70
-msgid "Contacts"
+#: main/templates/menu/navbar_all.html:45
+#: main/templates/menu/navbar_all.html:52
+msgid "Jump to"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:158
+#: main/templates/menu/navbar_all.html:163
 msgid "My Account"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:211
+#: main/templates/menu/navbar_all.html:216
 msgid "Sign Out"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:224
+#: main/templates/menu/navbar_all.html:229
 msgid "Dashboard"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:230
+#: main/templates/menu/navbar_all.html:235
 msgid "My Profile"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:236
+#: main/templates/menu/navbar_all.html:241
 msgid "Members"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:242
+#: main/templates/menu/navbar_all.html:247
 msgid "Plans"
 msgstr ""
 
-#: main/templates/menu/navbar_all.html:259
+#: main/templates/menu/navbar_all.html:264
 msgid "Privacy"
 msgstr ""
 
@@ -3149,7 +4533,7 @@ msgstr ""
 #: main/templates/pages/show_header.html:36
 #: main/templates/pages/show_header.html:48
 msgid "Search by"
-msgstr "Search by"
+msgstr ""
 
 #: main/templates/pages/show_header.html:59
 msgid "We seek for you?"
@@ -3180,6 +4564,10 @@ msgid ""
 "to your email of the destinations you are looking for?"
 msgstr ""
 
+#: main/templates/pages/show_header.html:127
+msgid "Download on the App Store"
+msgstr ""
+
 #: main/templates/pages/show_header.html:128
 msgid "Download on the"
 msgstr ""
@@ -3189,10 +4577,14 @@ msgid "App Store"
 msgstr ""
 
 #: main/templates/pages/show_header.html:140
-msgid "Get it on"
+msgid "Get it on Google Play"
 msgstr ""
 
 #: main/templates/pages/show_header.html:141
+msgid "Get it on"
+msgstr ""
+
+#: main/templates/pages/show_header.html:142
 msgid "Google Play"
 msgstr ""
 
@@ -3228,11 +4620,11 @@ msgstr ""
 msgid "Please select a registration type."
 msgstr ""
 
-#: main/templates/presignup.html:56 main/templates/presignup.html:74
+#: main/templates/presignup.html:57 main/templates/presignup.html:76
 msgid "Go it"
 msgstr ""
 
-#: main/templates/presignup.html:72
+#: main/templates/presignup.html:73
 msgid "Suppliers or companies"
 msgstr ""
 
@@ -3242,7 +4634,7 @@ msgstr ""
 
 #: main/templates/pricing.html:24
 msgid "Ofert on"
-msgstr "Ofert en"
+msgstr ""
 
 #: main/templates/pricing.html:26
 msgid ""
@@ -3386,38 +4778,43 @@ msgid "Was this helpful?"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:50
-#: main/templates/services/destination/detail_destination.html:342
+#: main/templates/services/destination/detail_destination.html:352
 msgid "Let us your comment"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:68
 #: main/templates/services/destination/comments.html:70
-#: main/templates/services/destination/detail_destination.html:357
-#: main/templates/services/destination/detail_destination.html:359
+#: main/templates/services/destination/detail_destination.html:367
+#: main/templates/services/destination/detail_destination.html:370
 msgid "Title"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:71
-#: main/templates/services/destination/detail_destination.html:359
+#: main/templates/services/destination/detail_destination.html:371
 msgid "Amount (to the nearest dollar)"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:76
-#: main/templates/services/destination/detail_destination.html:364
+#: main/templates/services/destination/detail_destination.html:376
 msgid "Body"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:78
-#: main/templates/services/destination/detail_destination.html:366
+#: main/templates/services/destination/detail_destination.html:379
 msgid "Please let us your message"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:79
+#: main/templates/services/destination/detail_destination.html:380
 msgid "With textarea"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:102
 msgid "Read More"
+msgstr ""
+
+#: main/templates/services/destination/comments.html:104
+msgid "Write a Review"
 msgstr ""
 
 #: main/templates/services/destination/destinations.html:9
@@ -3426,10 +4823,6 @@ msgstr ""
 
 #: main/templates/services/destination/destinations.html:16
 msgid "Find out More"
-msgstr ""
-
-#: main/templates/services/destination/destinations.html:44
-msgid "Destination"
 msgstr ""
 
 #: main/templates/services/destination/destinations.html:48
@@ -3486,73 +4879,84 @@ msgid "We still don't have the itinerary for this destination"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:227
-#: main/templates/services/destination/detail_destination.html:329
+#: main/templates/services/destination/detail_destination.html:338
 msgid "Reserve"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:146
+#: main/templates/services/destination/detail_destination.html:147
 msgid "back to list"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:154
-#: main/templates/services/destination/detail_destination.html:195
+#: main/templates/services/destination/detail_destination.html:155
+#: main/templates/services/destination/detail_destination.html:196
 msgid "Follow us or recommend us through"
-msgstr "Follow us"
-
-#: main/templates/services/destination/detail_destination.html:268
-msgid "Fecha"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:284
+#: main/templates/services/destination/detail_destination.html:236
+#: main/templates/services/destination/detail_destination.html:237
+msgid "Website"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:243
+#: main/templates/services/destination/detail_destination.html:244
+msgid "Telegram"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:285
 msgid "Califications"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:284
+#: main/templates/services/destination/detail_destination.html:285
 msgid "Votes"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:299
+#: main/templates/services/destination/detail_destination.html:300
 msgid "Discover or download our itinerary here"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:323
+#: main/templates/services/destination/detail_destination.html:315
+msgid "Download PDF"
+msgstr ""
+
+#: main/templates/services/destination/detail_destination.html:326
 msgid "Add comment"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:325
+#: main/templates/services/destination/detail_destination.html:330
+#: main/templates/services/destination/detail_destination.html:331
 msgid "Make a recommendation"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:382
+#: main/templates/services/destination/detail_destination.html:396
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:405
-#: main/templates/services/destination/detail_destination.html:413
-#: main/templates/services/destination/detail_destination.html:423
+#: main/templates/services/destination/detail_destination.html:420
 #: main/templates/services/destination/detail_destination.html:431
-#: main/templates/services/destination/detail_destination.html:441
-#: main/templates/services/destination/detail_destination.html:449
+#: main/templates/services/destination/detail_destination.html:444
+#: main/templates/services/destination/detail_destination.html:455
+#: main/templates/services/destination/detail_destination.html:468
+#: main/templates/services/destination/detail_destination.html:479
 msgid "Small"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:423
+#: main/templates/services/destination/detail_destination.html:446
 msgid "+49 123 456 789"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:441
+#: main/templates/services/destination/detail_destination.html:470
 msgid "Number of people travelling"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:449
+#: main/templates/services/destination/detail_destination.html:480
 msgid "Do you have a plan you want to book?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:454
+#: main/templates/services/destination/detail_destination.html:486
 msgid "Do you may have some comments or remarks about your booking?"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:458
+#: main/templates/services/destination/detail_destination.html:490
 msgid ""
 "By clicking 'Book' you agree that Travelposting use your data for "
 "advertising and marketing purposes between Travelposting, its alliance "
@@ -3560,7 +4964,7 @@ msgid ""
 "and request the cancellation of your data."
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:464
+#: main/templates/services/destination/detail_destination.html:496
 msgid "Book"
 msgstr ""
 
@@ -3580,7 +4984,8 @@ msgstr ""
 msgid "Know our audience"
 msgstr ""
 
-#: main/templates/services/magazine/magazine.html:14
+#: main/templates/services/magazine/magazine.html:15
+#: main/templates/services/magazine/magazine.html:16
 msgid "Download"
 msgstr ""
 
@@ -3611,10 +5016,6 @@ msgstr ""
 
 #: main/templates/services/pricing/plans.html:72
 msgid "You save:"
-msgstr ""
-
-#: main/templates/services/pricing/plans.html:112
-msgid "Contact Us"
 msgstr ""
 
 #: main/templates/services/pricing/plans.html:114

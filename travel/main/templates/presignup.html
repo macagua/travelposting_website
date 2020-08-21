@@ -53,7 +53,8 @@
                         <div class="mb-3">
                             <h2 class="h6 mb-0">{% trans "Our Community" %}</h2><br>
                         </div>
-                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'signup-community' %}">{% trans "Go it" %}</a>
+                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'signup-community' %}"
+                           title="{% trans 'Go it' %}">{% trans 'Go it' %}</a>
                     </div>
                 </article>
                 <!-- End Icon Block -->
@@ -71,7 +72,8 @@
                         <div class="mb-3">
                             <h2 class="h6 mb-0">{% trans "Suppliers or companies" %}</h2>
                         </div>
-                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'accounts:register' %}">{% trans "Go it" %}</a>
+                        <a class="btn btn-sm btn-block btn-primary" href="{% url 'accounts:register' %}"
+                           title="{% trans 'Go it' %}">{% trans 'Go it' %}</a>
                     </div>
                 </article>
                 <!-- End Icon Block -->
@@ -87,14 +89,14 @@
     <!-- SVG Bottom Shape -->
     <figure class="position-absolute right-0 bottom-0 left-0">
         <img class="js-svg-injector" src="{% static 'assets/svg/components/irregular-shape-1-bottom.svg' %}"
-            alt="Image Description" data-parent="#SVGheroBottomShape">
+             alt="{% trans 'Image Description' %}" data-parent="#SVGheroBottomShape">
     </figure>
     <!-- End SVG Bottom Shape -->
 
     <!-- SVG Background Element -->
     <figure class="position-absolute top-0 right-0 left-0 z-index-n1">
-        <img class="js-svg-injector" src="{% static 'assets/svg/components/bg-elements-9.svg' %}" alt="Image Description"
-            data-parent="#SVGheroBottomShape">
+        <img class="js-svg-injector" src="{% static 'assets/svg/components/bg-elements-9.svg' %}"
+             alt="{% trans 'Image Description' %}" data-parent="#SVGheroBottomShape">
     </figure>
     <!-- End SVG Background Element -->
 </div>

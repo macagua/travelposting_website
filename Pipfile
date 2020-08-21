@@ -25,6 +25,7 @@ confusable-homoglyphs = "==3.2.0"
 cryptography = "==2.7"
 decorator = "==4.4.0"
 django = "==2.1.11"
+django-admin-logs "==1.0.0"
 django-ads = {git = "https://github.com/django-ve/django-ads.git", editable=true}
 django-appconf = "==1.0.3"
 django-appdata = "==0.2.1"

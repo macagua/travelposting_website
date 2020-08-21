@@ -2,6 +2,7 @@ from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import path
 
+from apps.accounts.models import CustomerUser
 from apps.destinations.charts import (
     BookingCharts,
     DashboardIndex,
@@ -13,6 +14,11 @@ from apps.destinations.views.visitor import (
 )
 
 from apps.destinations.views.destination import (
+    AgencyAddView,
+    AgencyDeleteView,
+    AgencyAddExistingUserView,
+    AgencyUpdateView,
+    AgencyView,
     DestinationListView,
     DestinationCreateView,
     DestinationDetailView,
@@ -31,6 +37,10 @@ from apps.destinations.views.destination import (
     MailboxDetail,
     MailboxSent,
     messageView,
+    LeaderView,
+    LeaderAddView,
+    LeaderAddExistingUserView,
+    LeaderDeleteView,
 )
 
 from apps.destinations.views.booking import (
@@ -70,7 +80,52 @@ urlpatterns = [
         nocommunity_access(DashboardIndex),
         name='dashboard-index',
     ),
+    path(
+        'managers',
+        nocommunity_access(LeaderView.as_view()),
+        name='manager',
+    ),
+    path(
+        'managers/add/existing',
+        nocommunity_access(LeaderAddExistingUserView.as_view()),
+        name='manager-add-existing'
+    ),
+    path(
+        'managers/add/',
+        nocommunity_access(LeaderAddView.as_view()),
+        name='manager-add',
+    ),
+    path(
+        'managers/<int:pk>/delete',
+        nocommunity_access(LeaderDeleteView.as_view()),
+        name='manager-delete'
+    ),
+    path(
+        'agencies/list',
+        nocommunity_access(AgencyView.as_view()),
+        name='agencies',
+    ),
+    path(
+        'agencies/add/existing',
+        nocommunity_access(AgencyAddExistingUserView.as_view()),
+        name='agency-add-existing'
+    ),
+    path(
+        'agencies/add',
+        nocommunity_access(AgencyAddView.as_view()),
+        name='agency-add'
+    ),
+    path(
+        'agencies/<int:pk>/delete',
+        nocommunity_access(AgencyDeleteView.as_view()),
+        name='agency-delete'
+    ),
 
+    path(
+        'agencies/<int:pk>/',
+        nocommunity_access(AgencyUpdateView.as_view()),
+        name='agency-edit'
+    ),
     path(
         'mailbox',
         nocommunity_access(MailboxView.as_view()),

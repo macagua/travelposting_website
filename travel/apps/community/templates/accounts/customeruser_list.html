@@ -96,31 +96,29 @@
                                     <!-- Social Networks -->
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="mailto://{{ u.email }}"
-                                               title="{% trans 'Email' %}">
-                                                <span class="fab fa-at btn-icon__inner"></span>
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                               href="mailto://{{ u.email }}" title="{% trans 'Write us via Email' %}">
+                                                <span class="fab fa-google btn-icon__inner"></span>
                                             </a>
                                         </li>
                                         {% if u.facebook %}
                                         <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.facebook }}"
-                                               title="{% trans 'Facebook' %}">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                               href="{{ u.facebook }}" title="{% trans 'Follow us at Facebook' %}">
                                                 <span class="fab fa-facebook-f btn-icon__inner"></span>
                                             </a>
                                         </li>
                                         {% endif %}
                                         {% if u.twitter%}
                                         <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.twitter }}"
-                                               title="{% trans 'Twitter' %}">
-                                                <span class="fab fa-twitter btn-icon__inner"></span>
-                                            </a>
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                               href="{{ u.twitter }}" title="{% trans 'Follow us at Twitter' %}">
                                         </li>
                                         {% endif %}
                                         {% if u.instagram %}
                                         <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle" href="{{ u.instagram }}"
-                                               title="{% trans 'Instagram' %}">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                               href="{{ u.instagram }}" title="{% trans 'Follow us at Instagram' %}">
                                                 <span class="fab fa-instagram btn-icon__inner"></span>
                                             </a>
                                         </li>
@@ -135,7 +133,8 @@
                         <div class="col-sm-5 align-self-sm-end">
                             <!-- Button -->
                             <div class="text-sm-right">
-                                <a class="btn btn-sm btn-soft-primary transition-3d-hover" data-toggle="modal" data-target=".bd-example-modal-lg{{u.id}}">
+                                <a class="btn btn-sm btn-soft-primary transition-3d-hover" data-toggle="modal"
+                                   data-target=".bd-example-modal-lg{{u.id}}" title="{% trans 'Send a Message' %}">
                                     <span class="far fa-envelope mr-2"></span>
                                     {% trans 'Send a Message' %}
                                 </a>

@@ -68,7 +68,7 @@ class RegistrationForm(FieldKwargsMeta, BaseBootstrapForm, BaseRegistrationForm)
         widget=forms.PasswordInput(attrs={
             'class':'form-control first',
         }),
-        help_text = _('Use at least 8 characters. Do not use a password from another site or a term that is too obvious, such as your pet\'s name.'))
+        help_text = _("Use at least 8 characters. Do not use a password from another site or a term that is too obvious, such as your pet's name."))
 
     password2 = forms.CharField(label=_("Password confirmation"),
         widget=forms.PasswordInput(attrs={

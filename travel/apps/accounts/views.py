@@ -127,7 +127,7 @@ class RegisterView(RegistrationView):
         subject = loader.render_to_string('accounts/registration/notify_register_admin_subject.html', context)
         subject = ''.join(subject.splitlines())
         html_body = loader.render_to_string('accounts/registration/notify_register_admin_body.html', context)
-        mail_managers(subject, 'Nuevo usuario registrado', html_message=html_body)
+        mail_managers(subject, _('Registered new user'), html_message=html_body)
 
 
 def isuccess(request):

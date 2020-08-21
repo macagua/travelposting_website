@@ -64,7 +64,7 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
     readonly_fields = ('subscription_id', 'last_ip', 'location')
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'last_ip', 'location', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me', 'avatar')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'degree', 'last_ip', 'location', 'phone', 'mobile', 'language', 'facebook','instagram','twitter','linkedin', 'about_me', 'avatar', 'country')}),
         (_('Business info'), {'fields': ('business_name', 'business_address', 'business_position')}),
         (_('Permissions'), {'fields': ('is_staff', 'is_active', 'is_superuser', 'is_community', 'subscription_id', 'groups','ref_code')}),
     )
@@ -83,9 +83,13 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
 
     def password_link(self, obj):
         from django.utils.html import mark_safe
-        return mark_safe(f'<a href="/admin/accounts/customeruser/{obj.id}/password/">Change Password</a>')
+        change_password_link_msg = '''<a href="/admin/accounts/customeruser/{obj_id}/password/"
+                                         title="{change_password_msg}">{change_password_msg}</a>'''.format(
+                                            obj_id=obj.id,
+                                            change_password_msg=_("Change Password"))
+        return mark_safe(change_password_link_msg)
     password_link.allow_tags = True
-    password_link.short_description = 'password'
+    password_link.short_description = _('Password')
 
 
 # ... and, since we're not using Django's built-in permissions,
@@ -94,13 +98,14 @@ class UserAdmin(UserAdminImpersonateMixin, BaseUserAdmin):
 # Register your models here.
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    search_fields = ('user_from',)
+    search_fields = ('user_from__email', 'user_to__email', 'user_from__business_name', 'user_to__business_name')
     list_filter = ['user_from', ]
     list_display = [
         'user_from',
         'user_to',
         'created',
     ]
+
 
 
 # Register your models here.

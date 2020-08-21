@@ -42,13 +42,14 @@
 				<div class="ml-auto">
 					<!-- Jump To -->
 					<div class="d-inline-block d-sm-none position-relative mr-2">
-						<a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center"
+						<a id="jumpToDropdownInvoker" title="{% trans 'Jump to' %}"
+						   class="dropdown-nav-link dropdown-toggle d-flex align-items-center"
 						   href="javascript:;" role="button" aria-controls="jumpToDropdown" aria-haspopup="true"
 						   aria-expanded="false" data-unfold-event="hover" data-unfold-target="#jumpToDropdown"
 						   data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
 						   data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
 						   data-unfold-animation-out="fadeOut">
-							Jump to
+							{% trans 'Jump to' %}
 						</a>
 
 						<div id="jumpToDropdown"
@@ -82,11 +83,13 @@
 					<!-- Account Login -->
 					<li class="list-inline-item">
 						<!-- Account Sidebar Toggle Button -->
-						<a id="sidebarNavToggler" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1"
-						   href="javascript:;" role="button" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false"
-						   data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
-						   data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
-						   data-unfold-duration="500">
+						<a id="sidebarNavToggler"
+						   class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1"
+						   href="javascript:;" role="button" aria-controls="sidebarContent"
+						   aria-haspopup="true" aria-expanded="false" data-unfold-event="click"
+						   data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
+						   data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight"
+						   data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
                             <span class="position-relative">
                                 <span class="u-sidebar--account__toggle-text">{{ user.email }}</span>
 								<img class="u-sidebar--account__toggle-img"
@@ -102,11 +105,13 @@
 					{% else %}
 					<li class="list-inline-item">
 						<!-- Account Sidebar Toggle Button -->
-						<a id="sidebarNavToggler" class="btn btn-xs btn-icon btn-text-secondary target-of-invoker-has-unfolds"
-						   href="javascript:;" role="button" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false"
-						   data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
-						   data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight"
-						   data-unfold-duration="500">
+						<a id="sidebarNavToggler"
+						   class="btn btn-xs btn-icon btn-text-secondary target-of-invoker-has-unfolds"
+						   href="javascript:;" role="button" aria-controls="sidebarContent"
+						   aria-haspopup="true" aria-expanded="false" data-unfold-event="click"
+						   data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent"
+						   data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight"
+						   data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
 							<span class="fas fa-user-circle btn-icon__inner font-size-1"></span>
 						</a>
 						<!-- End Account Sidebar Toggle Button -->
@@ -266,8 +271,8 @@
 
 				<!-- SVG Background Shape -->
 				<div class="position-absolute right-0 bottom-0 left-0">
-					<img class="js-svg-injector" src="{% static 'assets/svg/components/wave-bottom-with-dots.svg' %}" alt="Image Description"
-						 data-parent="#SVGwaveWithDots">
+					<img class="js-svg-injector" src="{% static 'assets/svg/components/wave-bottom-with-dots.svg' %}"
+					     alt="{% trans 'Image Description' %}" data-parent="#SVGwaveWithDots">
 				</div>
 				<!-- End SVG Background Shape -->
 			</footer>

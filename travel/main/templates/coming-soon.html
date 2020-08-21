@@ -58,7 +58,7 @@
                 <!-- SVG Icon -->
                 <div class="col-lg-6 mb-7 mb-lg-0">
                     <figure id="SVGvirtualReality" class="svg-preloader ie-virtual-reality">
-                        <img class="js-svg-injector" src="{% static 'assets/svg/illustrations/virtual-reality.svg' %}" alt="Image Description"
+                        <img class="js-svg-injector" src="{% static 'assets/svg/illustrations/virtual-reality.svg' %}" alt="{% trans 'Image Description' %}"
                             data-parent="#SVGvirtualReality">
                     </figure>
                 </div>
@@ -124,22 +124,30 @@
             <!-- Social Networks -->
             <ul class="list-inline mb-0">
                 <li class="list-inline-item">
-                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.facebook.com/travelposting">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                       href="https://www.facebook.com/travelposting"
+                       title="{% trans 'Follow us at Facebook' %}">
                     <span class="fab fa-facebook-f btn-icon__inner"></span>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://instagram.com/travelposting24">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                       href="https://instagram.com/travelposting24"
+                       title="{% trans 'Follow us at Instagram' %}">
                     <span class="fab fa-instagram btn-icon__inner"></span>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://twitter.com/travelposting">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                       href="https://twitter.com/travelposting"
+                       title="{% trans 'Follow us at Twitter' %}">
                     <span class="fab fa-twitter btn-icon__inner"></span>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://wa.me/494018203370">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                       href="https://wa.me/494018203370"
+                       title="{% trans 'Contact us via WhatsApp' %}">
                     <span class="fab fa-whatsapp btn-icon__inner"></span>
                     </a>
                 </li>

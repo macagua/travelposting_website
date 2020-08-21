@@ -10,7 +10,7 @@ from apps.accounts.models import CustomerUser
 
 #A private directmessage
 class Message(models.Model):
-    subject = models.CharField('Subject', blank=False, null=False, max_length=1000)
+    subject = models.CharField(_('Subject'), blank=False, null=False, max_length=1000)
     content = models.TextField(_('Content'))
     sender = models.ForeignKey(
         CustomerUser, related_name='sent_dm', verbose_name=_("Sender"), on_delete=models.CASCADE)
@@ -18,6 +18,10 @@ class Message(models.Model):
         CustomerUser, related_name='received_dm', verbose_name=_("Recipient"), on_delete=models.CASCADE)
     sent_at = models.DateTimeField(_("sent at"), null=True, blank=True)
     read_at = models.DateTimeField(_("read at"), null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = _('Messages')
+        verbose_name = _('Message')
 
     @property
     def unread(self):
