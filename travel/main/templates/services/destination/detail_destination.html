@@ -2,8 +2,10 @@
 
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
+{% load ratings %}
 {% block title %}{% trans 'Categories' %}{% endblock title %}
 {% block extracss %}
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 {% endblock extracss %}
 {% block navbar %}
 {% include 'menu/navbar_all.html' %}
@@ -173,22 +175,20 @@
 
                 </div>
                 <!--END TABS DETAIL-->
+
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="{{request.META.HTTP_REFERER}}" title="{% trans 'back to list' %}">
                         <small class="fas fa-arrow-left mr-2"></small>{% trans "back to list" %}</a>
                 </div>
                 <br>
+
                 <div class="d-flex float-right">
-                    <a class="d-inline-flex small" href="#">
-                        <div class="text-warning mr-2">
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                        </div>
-                        <span class="text-secondary">{% trans "Califications" %} 5-5 / 500 {% trans "Votes" %}</span>
-                    </a>&nbsp;
+                    <!-- Start of Star Ratings System -->
+                    {% ratings destino %}
+                    <!-- End of Star Ratings System -->
+                    &nbsp;
+
+                    <!-- Start of Social networks -->
                     <ul class="list-inline mb-0">
                         {% if destino.social.social_network == True %}
                             {% if destino.user.facebook or destino.user.instagram or destino.user.twitter or destino.user.linkedin %}
@@ -198,35 +198,35 @@
                             {% endif %}
                             {% if destino.user.facebook %}
                             <li class="list-inline-item">
-                                <a class="" href="{{ destino.user.facebook }}">
+                                <a class="" href="{{ destino.user.facebook }}" title="{% trans 'Facebook' %}">
                                 <img src="{% static 'img/facebook.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.instagram %}
                             <li class="list-inline-item">
-                                <a class="" href="{{ destino.user.instagram }}">
+                                <a class="" href="{{ destino.user.instagram }}" title="{% trans 'Instagram' %}">
                                 <img src="{% static 'img/instagram.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.twitter %}
                             <li class="list-inline-item">
-                                <a class="" href="{{ destino.user.twitter }}">
+                                <a class="" href="{{ destino.user.twitter }}" title="{% trans 'Twitter' %}">
                                 <img src="{% static 'img/twitter.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.linkedin %}
                             <li class="list-inline-item">
-                                <a class="" href="{{ destino.user.linkedin }}">
+                                <a class="" href="{{ destino.user.linkedin }}" title="{% trans 'Linkedin' %}">
                                 <img src="{% static 'img/linkedin.png' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.user.pinterest %}
                             <li class="list-inline-item">
-                                <a class="" href="{{ destino.user.pinterest }}">
+                                <a class="" href="{{ destino.user.pinterest }}" title="{% trans 'Pinterest' %}">
                                 <img src="{% static 'img/pinterest.png' %}" >
                                 </a>
                             </li>
@@ -239,53 +239,54 @@
                             {% endif %}
                             {% if destino.social.facebook %}
                             <li class="list-inline-item">
-                                <a class="" target="_new" href="{{ destino.social.facebook }}">
+                                <a class="" target="_new" href="{{ destino.social.facebook }}" title="{% trans 'Facebook' %}">
                                 <img src="{% static 'img/facebook.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.instagram %}
                             <li class="list-inline-item">
-                                <a class=""  target="_new" href="{{ destino.social.instagram }}">
+                                <a class=""  target="_new" href="{{ destino.social.instagram }}" title="{% trans 'Instagram' %}">
                                 <img src="{% static 'img/instagram.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.twitter %}
                             <li class="list-inline-item">
-                                <a class=""  target="_new" href="{{ destino.social.twitter }}">
+                                <a class=""  target="_new" href="{{ destino.social.twitter }}" title="{% trans 'Twitter' %}">
                                 <img src="{% static 'img/twitter.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.linkedin %}
                             <li class="list-inline-item">
-                                <a class=""  target="_new"href="{{ destino.social.linkedin }}">
+                                <a class=""  target="_new"href="{{ destino.social.linkedin }}" title="{% trans 'Linkedin' %}">
                                 <img src="{% static 'img/linkedin.png' %}">
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.pinterest %}
                             <li class="list-inline-item">
-                                <a class=""  target="_new"href="{{ destino.social.pinterest }}">
+                                <a class=""  target="_new"href="{{ destino.social.pinterest }}" title="{% trans 'Pinterest' %}">
                                 <img src="{% static 'img/pinterest.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                             {% if destino.social.website and destino.customer.plan_id == 1 %}
                             <li class="list-inline-item">
-                                <a class=""  target="_new"href="{{ destino.social.website}}">
+                                <a class=""  target="_new"href="{{ destino.social.website}}" title="{% trans 'Website' %}">
                                 <img src="{% static 'img/website.png' %}" >
                                 </a>
                             </li>
                             {% endif %}
                         {% endif %}
                             <li class="list-inline-item">
-                                <a class="" target="_new" href="https://t.me/travelposting_travelnews">
+                                <a class="" target="_new" href="https://t.me/travelposting_travelnews" title="{% trans 'Telegram' %}">
                                 <img src="{% static 'img/telegram.jpeg' %}" >
                                 </a>
                             </li>
                     </ul>
+                    <!-- End of Social networks -->
                 </div>
             </div>
         </div>
@@ -530,7 +531,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">{% trans "Body" %}</span>
                         </div>
-                        <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message" %}' aria-label="With textarea"></textarea>
+                        <textarea class="form-control" name="body" placeholder='{% trans "Please let us your message" %}' aria-label="{% trans 'With textarea' %}"></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
@@ -647,6 +648,7 @@
 
 {% endblock content %}
 {% block extrajs %}
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 <script type="text/javascript">
     $( document ).ready(function() {
        $.get('/destinations/visitor',{"destination":{{ destino.id }} })

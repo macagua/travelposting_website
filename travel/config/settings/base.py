@@ -240,6 +240,7 @@ THIRD_PARTY = [
     'captcha',
     #'notifications',
     'ads.apps.AdsConfig',
+    'star_ratings'
 ]
 
 LOCAL_APPS = [
@@ -456,3 +457,10 @@ CAMPAIGN_COUPON_PREFIX = 'TPCW-20'
 CAMPAIGN_COUPON_LIMIT = 10000
 
 BOT = telepot.Bot('806633169:AAFouKIb9-QwJvGnLz6eIjO3rDBLB4HT78M')
+
+
+# Django Star Ratings System
+# https://django-star-ratings.readthedocs.io/
+
+# To change the star icon height, defaults to 32
+STAR_RATINGS_STAR_HEIGHT = 12

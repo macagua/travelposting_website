@@ -58,6 +58,7 @@ django-rosetta==0.9.3
 django-sekizai==1.0.0
 django-smtp-ssl==1.0
 django-sortedm2m==2.0.0
+-e git+https://github.com/django-ve/django-star-ratings.git@master#egg=django-star-ratings
 django-summernote==0.8.11.4
 django-taggit==1.1.0
 django-tellme==0.6.5
