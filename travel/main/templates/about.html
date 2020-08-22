@@ -35,8 +35,8 @@
 <!-- Team Section --><br><br>
 <div class="container">
 <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-        <span class="d-block small font-weight-bold text-cap mb-2">Our Team</span>
-        <h2>Trust the professionals</h2>
+        <span class="d-block small font-weight-bold text-cap mb-2">{% trans "Our Team" %}</span>
+        <h2>{% trans "Trust the professionals" %}</h2>
       </div>
   <!-- Team Carousel -->
   <div class="js-slick-carousel u-slick u-slick--gutters-3"
@@ -59,7 +59,7 @@
            "slidesToShow": 1
          }
        }]'>
-    <div class="js-slide pb-4">
+    <div class="js-slide pb-3">
       <!-- Team -->
       <img class="img-fluid w-100 rounded" src="{% static_placeholder "photo_01"%}">
       <div class="card border-0 shadow-sm mt-n6 mx-3">
@@ -71,7 +71,7 @@
       <!-- End Team -->
     </div>
 
-    <div class="js-slide pb-4">
+    <div class="js-slide pb-3">
       <!-- Team -->
     <img class="img-fluid w-100 rounded" src="{% static_placeholder "photo_02"%}">
       <div class="card border-0 shadow-sm mt-n6 mx-3">
@@ -83,7 +83,7 @@
       <!-- End Team -->
     </div>
 
-    <div class="js-slide pb-4">
+    <div class="js-slide pb-3">
       <!-- Team -->
     <img class="img-fluid w-87 rounded" src="{% static_placeholder "photo_03"%}">
       <div class="card border-0 shadow-sm mt-n6 mx-3">
@@ -95,7 +95,7 @@
       <!-- End Team -->
     </div>
 
-    <div class="js-slide pb-4">
+    <div class="js-slide pb-3">
       <!-- Team -->
     <img class="img-fluid w-100 rounded" src="{% static_placeholder "photo_04"%}">
       <div class="card border-0 shadow-sm mt-n6 mx-3">
@@ -112,10 +112,10 @@
   <!-- Hire Us -->
   <div class="text-center">
     <div class="d-sm-inline-flex align-items-center shadow-sm rounded-pill p-2 pr-3">
-      <span class="btn btn-xs btn-soft-primary btn-pill mb-2 mb-sm-0 mr-2">New</span>
+      <span class="btn btn-xs btn-soft-primary btn-pill mb-2 mb-sm-0 mr-2">{% trans "New" %}</span>
       <span class="d-block d-sm-inline-block">
-        We are hiring.
-        <a href="../pages/hire-us.html">Send your application.</a>
+        {% trans "We are hiring" %}
+        <a href="#">{% trans "Send your application" %}.</a>
       </span>
     </div>
   </div>
