@@ -14,12 +14,12 @@
           margin: 0;
         }
 
-        #servererror {
+        #notfound {
           position: relative;
           height: 100vh;
         }
 
-        #servererror .servererror {
+        #notfound .notfound {
           position: absolute;
           left: 50%;
           top: 50%;
@@ -28,21 +28,21 @@
                   transform: translate(-50%, -50%);
         }
 
-        .servererror {
+        .notfound {
           max-width: 620px;
           width: 100%;
           line-height: 1.4;
           text-align: center;
         }
 
-        .servererror .servererror-500 {
+        .notfound .notfound-404 {
           position: relative;
           height: 200px;
           margin: 0px auto 20px;
           z-index: -1;
         }
 
-        .servererror .servererror-500 h1 {
+        .notfound .notfound-404 h1 {
           font-family: 'Montserrat', sans-serif;
           font-size: 236px;
           font-weight: 200;
@@ -57,7 +57,7 @@
                   transform: translate(-50%, -50%);
         }
 
-        .servererror .servererror-500 h2 {
+        .notfound .notfound-404 h2 {
           font-family: 'Montserrat', sans-serif;
           font-size: 28px;
           font-weight: 400;
@@ -73,7 +73,7 @@
           right: 0;
         }
 
-        .servererror a {
+        .notfound a {
           font-family: 'Montserrat', sans-serif;
           display: inline-block;
           font-weight: 700;
@@ -87,29 +87,29 @@
           transition: 0.2s all;
         }
 
-        .servererror a:hover {
+        .notfound a:hover {
           color: #ff6300;
           background: #211b19;
         }
 
         @media only screen and (max-width: 767px) {
-          .servererror .servererror-500 h1 {
+          .notfound .notfound-404 h1 {
             font-size: 148px;
           }
         }
 
         @media only screen and (max-width: 480px) {
-          .servererror .servererror-500 {
+          .notfound .notfound-404 {
             height: 148px;
             margin: 0px auto 10px;
           }
-          .servererror .servererror-500 h1 {
+          .notfound .notfound-404 h1 {
             font-size: 86px;
           }
-          .servererror .servererror-500 h2 {
+          .notfound .notfound-404 h2 {
             font-size: 16px;
           }
-          .servererror a {
+          .notfound a {
             padding: 7px 15px;
             font-size: 14px;
           }
@@ -121,19 +121,18 @@
 {% include 'menu/navbar_all.html' %}
 {% endblock navbar %}
 {% block content %}
-<main id="content" role="main">
     <!-- Start Server Error Message -->
     <div id="notfound">
         <div class="notfound">
             <div class="notfound-404">
-                <h1>Oops!</h1>
-                <h2>404 - The Page can't be found</h2>
+                <h1>{% trans 'Oops!' %}</h1>
+                <h2>{% trans "404 - The Page can't be found" %}</h2>
             </div>
-            <a href="#">Back to Homepage</a>
+            <a href="javascript:history.back()"
+               title="{% trans 'Back to previous page' %}">{% trans 'Back to previous page' %}</a>
         </div>
     </div>
     <!-- End Server Error Message -->
-</main>
 {% endblock %}
 
 {% block extrajs %}

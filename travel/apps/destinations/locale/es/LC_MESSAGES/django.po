@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 03:09-0400\n"
+"POT-Creation-Date: 2020-08-21 22:55-0400\n"
 "PO-Revision-Date: 2020-08-05 10:58-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -1084,8 +1084,8 @@ msgid "Booking Choice"
 msgstr "Elección de reserva"
 
 #: apps/destinations/models.py:1230
-msgid "Elecciones de reserva"
-msgstr "Detalles de la reserva"
+msgid "Booking Choices"
+msgstr "Elecciones de reserva"
 
 #: apps/destinations/templates/admin/base_site.html:4
 #: apps/destinations/templates/admin/base_site.html:7

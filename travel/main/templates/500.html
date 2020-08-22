@@ -126,10 +126,11 @@
     <div id="servererror">
         <div class="servererror">
             <div class="servererror-500">
-                <h1>Error!</h1>
-                <h2>It's broken, but it's not your fault.</h2>
+                <h1>{% trans 'Error!' %}</h1>
+                <h2>{% trans "It's broken, but it's not your fault." %}</h2>
             </div>
-            <a href="#">Back to previous page</a>
+            <a href="javascript:history.back()"
+               title="{% trans 'Back to previous page' %}">{% trans 'Back to previous page' %}</a>
         </div>
     </div>
     <!-- End Server Error Message -->

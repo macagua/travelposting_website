@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 03:09-0400\n"
+"POT-Creation-Date: 2020-08-21 22:55-0400\n"
 "PO-Revision-Date: 2020-08-06 04:25-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -2101,6 +2101,7 @@ msgid "Referrals"
 msgstr "Referidos"
 
 #: apps/community/templates/accounts/change_password.html:25
+#: main/templates/400.html:128 main/templates/500.html:129
 msgid "Error!"
 msgstr "¡Error!"
 
@@ -3317,15 +3318,15 @@ msgstr "Configuración de privacidad"
 msgid "Contact Us"
 msgstr "Contáctenos"
 
-#: apps/landing_page/views.py:107
+#: apps/landing_page/views.py:136
 msgid "Don't have exist map yet!"
 msgstr "¡Aún no existe mapa para este destino!"
 
-#: apps/landing_page/views.py:130
+#: apps/landing_page/views.py:160
 msgid "New registered search"
 msgstr "Nueva búsqueda registrada"
 
-#: apps/landing_page/views.py:144
+#: apps/landing_page/views.py:174
 #, python-brace-format
 msgid ""
 "A person has done a new search, please review Mr.'s {name} incoming "
@@ -3344,39 +3345,39 @@ msgstr ""
 " o si quieres ver el sitio de administración https://travelposting.com/"
 "admin/ "
 
-#: apps/landing_page/views.py:177
+#: apps/landing_page/views.py:207
 msgid "New request for delete"
 msgstr "Nueva petición de borrado"
 
-#: apps/landing_page/views.py:191 apps/landing_page/views.py:291
+#: apps/landing_page/views.py:221 apps/landing_page/views.py:323
 msgid ""
 "if you want see the                     admin site https://travelposting.com/"
 "admin/ "
 msgstr ""
 "si deseas ver el sitio de administración https://travelposting.com/admin/ "
 
-#: apps/landing_page/views.py:208
+#: apps/landing_page/views.py:239
 msgid "You have a new contact"
 msgstr "Tienes un nuevo contacto"
 
-#: apps/landing_page/views.py:219
+#: apps/landing_page/views.py:250
 msgid "if you want see the admin site https://travelposting.com/admin/"
 msgstr ""
 "si quieres ver el sitio de administración https://travelposting.com/admin/"
 
-#: apps/landing_page/views.py:227
+#: apps/landing_page/views.py:258
 msgid "Thank you very much for contacting us, we will be responding very soon "
 msgstr "Muchas gracias por contactarnos, responderemos muy pronto "
 
-#: apps/landing_page/views.py:230
+#: apps/landing_page/views.py:261
 msgid "A error has ocurred while processing your message"
 msgstr "Se ha producido un error al procesar su mensaje"
 
-#: apps/landing_page/views.py:276
+#: apps/landing_page/views.py:308
 msgid "New privacity request."
 msgstr "Nueva solicitud de privacidad."
 
-#: apps/landing_page/views.py:312
+#: apps/landing_page/views.py:344
 #: main/templates/services/destination/detail.back.html:156
 msgid "Itinerary"
 msgstr "Itinerario"
@@ -3501,14 +3502,13 @@ msgstr "Preinscripción"
 
 #: config/settings/local.py:59
 msgid "Sidebar"
-msgstr ""
+msgstr "Barra lateral"
 
 #: config/settings/local.py:73
 msgid "Extra small devices"
-msgstr ""
+msgstr "Dispositivos extra pequeños"
 
 #: config/settings/local.py:74
-#, fuzzy
 msgid "Small devices"
 msgstr "Pequeños dispositivos"
 
@@ -3523,6 +3523,47 @@ msgstr "Dispositivos grandes (computadoras de escritorio)"
 #: config/settings/local.py:77
 msgid "Extra large devices (Large Desktops)"
 msgstr "Dispositivos extra grandes (escritorios grandes)"
+
+#: main/templates/400.html:3
+msgid "400 Bad Request Error"
+msgstr "400 Error de solicitud incorrecta"
+
+#: main/templates/400.html:129
+msgid "400 Bad Request, server cannot response!"
+msgstr "400 Solicitud incorrecta, servidor no responde."
+
+#: main/templates/400.html:132 main/templates/403.html:132
+#: main/templates/404.html:132 main/templates/500.html:133
+msgid "Back to previous page"
+msgstr "Volver a la página anterior"
+
+#: main/templates/403.html:3
+msgid "403 Permission Denied Error"
+msgstr "403 Error de permiso denegado"
+
+#: main/templates/403.html:128 main/templates/404.html:128
+msgid "Oops!"
+msgstr "¡Chanfles!"
+
+#: main/templates/403.html:129
+msgid "403 - Permission Denied!"
+msgstr "403 - ¡Permiso denegado!"
+
+#: main/templates/404.html:3
+msgid "404 Page not found Error"
+msgstr "Error 404 - La pagina no fue encontrada"
+
+#: main/templates/404.html:129
+msgid "404 - The Page can't be found"
+msgstr "404 - La pagina no fue encontrada"
+
+#: main/templates/500.html:3
+msgid "500 Internal Server Error"
+msgstr "Error interno de servidor 500"
+
+#: main/templates/500.html:130
+msgid "It's broken, but it's not your fault."
+msgstr "Ha sucedido una falla, pero no es culpa tuya."
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
 #: main/templates/datenshutz_form.html:3

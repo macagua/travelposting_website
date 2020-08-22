@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 03:09-0400\n"
+"POT-Creation-Date: 2020-08-21 22:55-0400\n"
 "PO-Revision-Date: 2020-07-13 14:43-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -2066,6 +2066,7 @@ msgid "Referrals"
 msgstr ""
 
 #: apps/community/templates/accounts/change_password.html:25
+#: main/templates/400.html:128 main/templates/500.html:129
 msgid "Error!"
 msgstr ""
 
@@ -3196,15 +3197,15 @@ msgstr ""
 msgid "Contact Us"
 msgstr ""
 
-#: apps/landing_page/views.py:107
+#: apps/landing_page/views.py:136
 msgid "Don't have exist map yet!"
 msgstr ""
 
-#: apps/landing_page/views.py:130
+#: apps/landing_page/views.py:160
 msgid "New registered search"
 msgstr ""
 
-#: apps/landing_page/views.py:144
+#: apps/landing_page/views.py:174
 #, python-brace-format
 msgid ""
 "A person has done a new search, please review Mr.'s {name} incoming "
@@ -3216,37 +3217,37 @@ msgid ""
 "com/admin/ "
 msgstr ""
 
-#: apps/landing_page/views.py:177
+#: apps/landing_page/views.py:207
 msgid "New request for delete"
 msgstr ""
 
-#: apps/landing_page/views.py:191 apps/landing_page/views.py:291
+#: apps/landing_page/views.py:221 apps/landing_page/views.py:323
 msgid ""
 "if you want see the                     admin site https://travelposting.com/"
 "admin/ "
 msgstr ""
 
-#: apps/landing_page/views.py:208
+#: apps/landing_page/views.py:239
 msgid "You have a new contact"
 msgstr ""
 
-#: apps/landing_page/views.py:219
+#: apps/landing_page/views.py:250
 msgid "if you want see the admin site https://travelposting.com/admin/"
 msgstr ""
 
-#: apps/landing_page/views.py:227
+#: apps/landing_page/views.py:258
 msgid "Thank you very much for contacting us, we will be responding very soon "
 msgstr ""
 
-#: apps/landing_page/views.py:230
+#: apps/landing_page/views.py:261
 msgid "A error has ocurred while processing your message"
 msgstr ""
 
-#: apps/landing_page/views.py:276
+#: apps/landing_page/views.py:308
 msgid "New privacity request."
 msgstr ""
 
-#: apps/landing_page/views.py:312
+#: apps/landing_page/views.py:344
 #: main/templates/services/destination/detail.back.html:156
 msgid "Itinerary"
 msgstr ""
@@ -3391,6 +3392,47 @@ msgstr ""
 
 #: config/settings/local.py:77
 msgid "Extra large devices (Large Desktops)"
+msgstr ""
+
+#: main/templates/400.html:3
+msgid "400 Bad Request Error"
+msgstr ""
+
+#: main/templates/400.html:129
+msgid "400 Bad Request, server cannot response!"
+msgstr ""
+
+#: main/templates/400.html:132 main/templates/403.html:132
+#: main/templates/404.html:132 main/templates/500.html:133
+msgid "Back to previous page"
+msgstr ""
+
+#: main/templates/403.html:3
+msgid "403 Permission Denied Error"
+msgstr ""
+
+#: main/templates/403.html:128 main/templates/404.html:128
+msgid "Oops!"
+msgstr ""
+
+#: main/templates/403.html:129
+msgid "403 - Permission Denied!"
+msgstr ""
+
+#: main/templates/404.html:3
+msgid "404 Page not found Error"
+msgstr ""
+
+#: main/templates/404.html:129
+msgid "404 - The Page can't be found"
+msgstr ""
+
+#: main/templates/500.html:3
+msgid "500 Internal Server Error"
+msgstr ""
+
+#: main/templates/500.html:130
+msgid "It's broken, but it's not your fault."
 msgstr ""
 
 #: main/templates/about.html:3 main/templates/datenschutz.html:3
