@@ -127,7 +127,6 @@ class BookingListView(LoginRequiredMixin, ListView):
 
 class BookingSaveStat(View):
     def post(self,request):
-        import ipdb; ipdb.set_trace()
         if form_map.is_valid():
             if form_map.save() :
                 return JsonResponse({'msg':_('a new map has been added to your destination'),'status':True},
