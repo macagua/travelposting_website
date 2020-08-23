@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-21 22:55-0400\n"
-"PO-Revision-Date: 2020-08-05 10:58-0400\n"
+"PO-Revision-Date: 2020-08-23 03:00-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -2149,19 +2149,19 @@ msgstr "Carta de registro adicional"
 
 #: apps/destinations/templates/destinations/tour/_form.html:101
 msgid "Include / Doesn't Include"
-msgstr "Incluir / No incluir"
+msgstr "Incluye / No incluye"
 
 #: apps/destinations/templates/destinations/tour/_form.html:104
 msgid "Include"
-msgstr "Incluir"
+msgstr "Incluye"
 
 #: apps/destinations/templates/destinations/tour/_form.html:105
 msgid "Doesn't Include"
-msgstr "No incluir"
+msgstr "No incluye"
 
 #: apps/destinations/templates/destinations/tour/_form.html:112
 msgid "Description Tour Include/Doesn't Include"
-msgstr "Descripción Tour Incluir/No Incluir"
+msgstr "Incluye/No Incluye la Descripción del Tour"
 
 #: apps/destinations/templates/destinations/tour/_form.html:115
 msgid "Food"
