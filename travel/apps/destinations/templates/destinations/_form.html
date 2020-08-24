@@ -180,6 +180,36 @@
 
     <script>
         $("#form-tour").steps({
+                // Locale: ES (Spanish, Espanol)
+                labels: {
+                    cancel:"Cancelar",
+                    current:"actual paso:",
+                    pagination:"Paginación",
+                    finish:"Finalizar",
+                    next:"Próximo",
+                    previous:"Anterior",
+                    loading:"Cargando ..."
+                },
+                // Locale: DE (German, Deutsch)
+                // labels: {
+                //     cancel:"Stornieren",
+                //     current:"aktueller Schritt",
+                //     pagination:"Paginierung",
+                //     finish:"Fertig",
+                //     next:"Nächste",
+                //     previous:"Vorherige",
+                //     loading:"Wird geladen ..."
+                // },
+                // Locale: EN (English)
+                // labels: {
+                //     cancel:"Cancel",
+                //     current:"current step:",
+                //     pagination:"Pagination",
+                //     finish:"Finish",
+                //     next:"Next",
+                //     previous:"Previous",
+                //     loading:"Loading ..."
+                // },
                 bodyTag: "fieldset",
                 onStepChanging: function (event, currentIndex, newIndex)
                 {
