@@ -2061,7 +2061,7 @@ msgstr "Sitio de administración"
 
 #: apps/destinations/templates/destinations/navbar_left.html:71
 msgid "Pending Requests"
-msgstr ""
+msgstr "Soliciutdes pendientes"
 
 #: apps/destinations/templates/destinations/navbar_left.html:72
 msgid "List Managers"
