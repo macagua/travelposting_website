@@ -75,29 +75,29 @@
               </ul>
             </li>
             {% endif %}
-      <li class="">
-        <a href="#">
-          <i class="fa fa-globe fa-lg"></i>
-          <span class="nav-label">{% trans 'Destinations' %}</span>
-          <span class="fa arrow"></span>
-        </a>
-        <ul class="nav nav-second-level">
-          <li class=""><a href="{% url 'dashboard:list' %}" title="{% trans 'Your destinations' %}">{% trans 'Your destinations' %}</a></li>
-          <li class=""><a href="{% url 'dashboard:itinerary-list' %}" title="{% trans 'Itinerary' %}">{% trans 'Itinerary' %}</a></li>
-          <li class=""><a href="{% url 'dashboard:destination-map' %}" title="{% trans 'Maps' %}">{% trans 'Maps' %}</a></li>
-          <li class=""><a href="{% url 'dashboard:social-network' %}" title="{% trans 'Social Network' %}">{% trans 'Social Network' %}</a></li>
-        </ul>
-      </li>
-      <li class="">
-        <a href="#">
-          <i class="fa fa-book fa-lg"></i>
-          <span class="nav-label">{% trans 'Reservations' %}</span>
-          <span class="fa arrow"></span>
-        </a>
-        <ul class="nav nav-second-level">
-          <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
-        </ul>
-      </li>
+            <li class="">
+              <a href="#">
+                <i class="fa fa-globe fa-lg"></i>
+                <span class="nav-label">{% trans 'Destinations' %}</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level">
+                <li class=""><a href="{% url 'dashboard:list' %}" title="{% trans 'Your destinations' %}">{% trans 'Your destinations' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:itinerary-list' %}" title="{% trans 'Itinerary' %}">{% trans 'Itinerary' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:destination-map' %}" title="{% trans 'Maps' %}">{% trans 'Maps' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:social-network' %}" title="{% trans 'Social Network' %}">{% trans 'Social Network' %}</a></li>
+              </ul>
+            </li>
+            <li class="">
+              <a href="#">
+                <i class="fa fa-book fa-lg"></i>
+                <span class="nav-label">{% trans 'Reservations' %}</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level">
+                <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
+              </ul>
+            </li>
         </ul>
     </div>
 </nav>

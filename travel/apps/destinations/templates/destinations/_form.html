@@ -15,22 +15,22 @@
 
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
-	{% include 'destinations/navbar_top.html' %}
-	<div class="wrapper wrapper-content animated fadeInRight">
-		<div class="row">
-		 	<div class="col-lg-12">
-				<div class="ibox">
-					<div class="ibox-title">
-						<h5 class="text-center">{% trans "Create a new Tour" %}</h5>
-					</div>
-	                <div class="ibox-content">
-	                	<form id="form-tour" method="POST" class="wizard-big">
-							{% csrf_token %}
-					        {{ tour_data_inlineformset.management_form }}
-					        {{ header_inlineformset.management_form }}
-					        {{ destination_detail_inlineformset.management_form }}
-	                		<h1>{% trans 'Product' %}</h1>
-	                		<fieldset>
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5 class="text-center">{% trans "Create a new Tour" %}</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form id="form-tour" method="POST" class="wizard-big">
+                            {% csrf_token %}
+                            {{ tour_data_inlineformset.management_form }}
+                            {{ header_inlineformset.management_form }}
+                            {{ destination_detail_inlineformset.management_form }}
+                            <h1>{% trans 'Product' %}</h1>
+                            <fieldset>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12">
                                         <h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
@@ -39,68 +39,69 @@
                                                     <label for="setTimeDate">{% trans "This tour has departure and arrival time" %} </label>
                                         </div>
                                     </div>
-	                			</div>
+                                </div>
                                 {% include 'destinations/tour/_form.html' %}
-	                		</fieldset>
-	                		<h1>{% trans 'Price' %}</h1>
-	                		<fieldset>
-	                			<div class="row">
-	                				{{ destination_detail_inlineformset.0.general_inlineformset.management_form }}
-	                                {{ destination_detail_inlineformset.0.general_inlineformset.non_form_errors|safe }}
-	                                {% for form in destination_detail_inlineformset.0.general_inlineformset %}
-	                                  {% include 'destinations/destination_detail/general/_form.html' %}
-	                                {% endfor %}
+                            </fieldset>
+                            <h1>{% trans 'Price' %}</h1>
+                            <fieldset>
+                                <div class="row">
+                                    {{ destination_detail_inlineformset.0.general_inlineformset.management_form }}
+                                    {{ destination_detail_inlineformset.0.general_inlineformset.non_form_errors|safe }}
+                                    {% for form in destination_detail_inlineformset.0.general_inlineformset %}
+                                      {% include 'destinations/destination_detail/general/_form.html' %}
+                                    {% endfor %}
 
-	                			</div>
-	                		</fieldset>
-	                		<h1>{% trans 'Inventory' %}</h1>
-	                		<fieldset>
-	                			<div class="row">
-	                				{{ destination_detail_inlineformset.0.inventario_inlineformset.management_form }}
-	                                {{ destination_detail_inlineformset.0.inventario_inlineformset.non_form_errors|safe }}
-	                                {% for form in destination_detail_inlineformset.0.inventario_inlineformset %}
-	                                  {% include 'destinations/destination_detail/inventario/_form.html' %}
-	                                {% endfor %}
-	                			</div>
-	                		</fieldset>
-	                		<h1>{% trans 'Tour Booking' %}</h1>
-	                		<fieldset>
-	                			<div class="row">
-	                                {{ destination_detail_inlineformset.0.booking_inlineformset.management_form }}
-	                                {{ destination_detail_inlineformset.0.booking_inlineformset.non_form_errors|safe }}
-	                                {% for form in destination_detail_inlineformset.0.booking_inlineformset %}
-	                                  {% include 'destinations/destination_detail/booking/_form.html' with num=forloop.counter0 %}
-	                                {% endfor %}
-								</div>
-	                		</fieldset>
-	                	</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                </div>
+                            </fieldset>
+                            <h1>{% trans 'Inventory' %}</h1>
+                            <fieldset>
+                                <div class="row">
+                                    {{ destination_detail_inlineformset.0.inventario_inlineformset.management_form }}
+                                    {{ destination_detail_inlineformset.0.inventario_inlineformset.non_form_errors|safe }}
+                                    {% for form in destination_detail_inlineformset.0.inventario_inlineformset %}
+                                      {% include 'destinations/destination_detail/inventario/_form.html' %}
+                                    {% endfor %}
+                                </div>
+                            </fieldset>
+                            <h1>{% trans 'Tour Booking' %}</h1>
+                            <fieldset>
+                                <div class="row">
+                                    {{ destination_detail_inlineformset.0.booking_inlineformset.management_form }}
+                                    {{ destination_detail_inlineformset.0.booking_inlineformset.non_form_errors|safe }}
+                                    {% for form in destination_detail_inlineformset.0.booking_inlineformset %}
+                                      {% include 'destinations/destination_detail/booking/_form.html' with num=forloop.counter0 %}
+                                    {% endfor %}
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
 
 {% block extrajs %}
-  	{{ block.super }}
-  	{{ tour_data_inlineformset.media.js }}
-  	{{ tour_data_inlineformset.0.tab_data_inlineformset.media.js }}
-  	{{ destination_detail_inlineformset.0.general_inlineformset.media.js }}
-  	<script src="{% static "inspinia/js/plugins/chosen/chosen.jquery.js" %}"></script>
-  	<script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
-	<script src="{% static "dashboard/js/plugins/steps/jquery.steps.min.js" %}"></script>
-	<script src="{% static "inspinia/js/plugins/dynamic-form.js" %}"></script>
-	<script src="{% static "dashboard/js/plugins/validate/jquery.validate.min.js" %}"></script>
-	<script type="template/tab_data">
-    	{% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
-  	</script>
-  	<script type="template/booking">
-    	{% include 'destinations/destination_detail/booking/_form.html' with form=destination_detail_inlineformset.0.booking_inlineformset.empty_form  num='__prefix__' %}
-  </script>
-  <script>
-		$("#form-tour").steps({
+        {{ block.super }}
+        {{ tour_data_inlineformset.media.js }}
+        {{ tour_data_inlineformset.0.tab_data_inlineformset.media.js }}
+        {{ destination_detail_inlineformset.0.general_inlineformset.media.js }}
+    <script src="{% static "inspinia/js/plugins/chosen/chosen.jquery.js" %}"></script>
+    <script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
+    <script src="{% static "dashboard/js/plugins/steps/jquery.steps.min.js" %}"></script>
+    <script src="{% static "inspinia/js/plugins/dynamic-form.js" %}"></script>
+    <script src="{% static "dashboard/js/plugins/validate/jquery.validate.min.js" %}"></script>
+    <script type="template/tab_data">
+        {% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
+    </script>
+    <script type="template/booking">
+        {% include 'destinations/destination_detail/booking/_form.html' with form=destination_detail_inlineformset.0.booking_inlineformset.empty_form  num='__prefix__' %}
+    </script>
+
+    <script>
+        $("#form-tour").steps({
                 bodyTag: "fieldset",
                 onStepChanging: function (event, currentIndex, newIndex)
                 {
@@ -109,7 +110,6 @@
                     {
                         return true;
                     }
-
 
                     var form = $(this);
 
@@ -155,49 +155,49 @@
                 }
             }).validate({
 
-				errorPlacement: function (error, element)
-				{
-					element.before(error);
-				},
-				rules: {
-				}
-			});
-			$('#id_categorie').select2();
-			var dynamic_form =  $("#tour_yes_no_include").dynamicForm("#tour_yes_no_include","#add", "#remove", {
-		        limit:10,
-		        formPrefix : "yes_no_include",
-		        normalizeFullForm : false
-		    });
-		    $('#setTimeDate' ).on( 'click', function() {
-			    if( $(this).is(':checked') ){
-			    	$("#time_tour").show()
-			    	$("#date_tour").show()
-			    } else {
-			    	$("#time_tour").hide()
-			   		$("#date_tour").hide()
-			    }
-			});
-			$('#id_details-0-inventario-0-manager' ).on( 'click', function() {
-			    if( $(this).is(':checked') ){
-			    	$("#option_inventary").show()
-			    } else {
-			    	$("#option_inventary").hide()
-			    }
-			});
-			$('#activate_booking' ).on( 'click', function() {
-			    if( $(this).is(':checked') ){
-			    	$("#booking").show()
-			    } else {
-			    	$("#booking").hide()
-			    }
-			});
-	</script>
+                errorPlacement: function (error, element)
+                {
+                    element.before(error);
+                },
+                rules: {
+                }
+            });
+            $('#id_categorie').select2();
+            var dynamic_form =  $("#tour_yes_no_include").dynamicForm("#tour_yes_no_include","#add", "#remove", {
+                limit:10,
+                formPrefix : "yes_no_include",
+                normalizeFullForm : false
+            });
+            $('#setTimeDate' ).on( 'click', function() {
+                if( $(this).is(':checked') ){
+                    $("#time_tour").show()
+                    $("#date_tour").show()
+                } else {
+                    $("#time_tour").hide()
+                       $("#date_tour").hide()
+                }
+            });
+            $('#id_details-0-inventario-0-manager' ).on( 'click', function() {
+                if( $(this).is(':checked') ){
+                    $("#option_inventary").show()
+                } else {
+                    $("#option_inventary").hide()
+                }
+            });
+            $('#activate_booking' ).on( 'click', function() {
+                if( $(this).is(':checked') ){
+                    $("#booking").show()
+                } else {
+                    $("#booking").hide()
+                }
+            });
+    </script>
 
-	<script>
-		initSummernote();
-	
-	    $('#id_description').summernote({
+    <script>
+        initSummernote();
+
+        $('#id_description').summernote({
             tooltip: false
         });
-	</script>
+    </script>
 {%endblock%}
