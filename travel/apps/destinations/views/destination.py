@@ -1,6 +1,6 @@
 import logging
 import datetime as dt
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import Group
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
@@ -925,12 +925,15 @@ class RequestProcessView(View):
             raise Http404
 
 
-class RequestView(CreateView):
+class RequestView(UserPassesTestMixin, CreateView):
     model = Request
     template_name = 'dashboard/leaders/_requests.html'
     form_class = RequestForm
     success_url = reverse_lazy('destinations:requests')
     object = None
+
+    def test_func(self):
+        return not self.request.user.groups.filter(name__in=['manager_country', 'Manager']).exists()
 
     @never_cache
     def dispatch(self, *args, **kwargs):
