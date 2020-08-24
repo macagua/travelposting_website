@@ -9,6 +9,7 @@ from django.http import QueryDict
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
+from django.views.decorators.cache import never_cache
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
 from django.views.generic.edit import BaseCreateView
 from django.views.generic.list import MultipleObjectMixin
@@ -893,11 +894,15 @@ class RequestDeleteView(DeleteView):
     model = Request 
     success_url = reverse_lazy('destinations:requests')
     template_name = 'dashboard/leaders/_requests_delete.html'
+
     def get_context_data(self, **kwargs):
         qs = self.get_queryset()
         kwargs['object_list'] = qs 
         kwargs['allow_new'] = qs.filter(status__in=[Request.PENDING, Request.APPROVED]).count() < 3
         return super().get_context_data(**kwargs)
+
+    def get_queryset(self):
+        return Request.objects.filter(user=self.request.user)
 
 
 class RequestManagerView(ListView):
@@ -925,11 +930,18 @@ class RequestView(CreateView):
     template_name = 'dashboard/leaders/_requests.html'
     form_class = RequestForm
     success_url = reverse_lazy('destinations:requests')
+    object = None
 
+    @never_cache
+    def dispatch(self, *args, **kwargs):
+        return super(). dispatch(*args, **kwargs)
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.save()
+        return self.render_to_response(self.get_context_data())
+
+    def form_invalid(self, form):
         return self.render_to_response(self.get_context_data())
 
     def get_form_kwargs(self):
@@ -945,7 +957,4 @@ class RequestView(CreateView):
 
     def get_queryset(self):
         return Request.objects.filter(user=self.request.user)
-
-        
-
 
