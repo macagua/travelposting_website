@@ -2,6 +2,7 @@ import logging
 import datetime as dt
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import Group
+from django.contrib.auth.views import redirect_to_login
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
@@ -931,6 +932,12 @@ class RequestView(UserPassesTestMixin, CreateView):
     form_class = RequestForm
     success_url = reverse_lazy('destinations:requests')
     object = None
+    login_url = reverse_lazy('destinations:requests_manager')
+    raise_exception = False
+
+    def  handle_no_permission(self):
+        return redirect_to_login(self.request.get_full_path(), self.get_login_url(), self.get_redirect_field_name())
+
 
     def test_func(self):
         return not self.request.user.groups.filter(name__in=['manager_country', 'Manager']).exists()
