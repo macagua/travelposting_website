@@ -1,0 +1,123 @@
+
+
+{% extends "base.html" %}
+{% load cms_tags i18n menu_tags sekizai_tags staticfiles%}
+{% block title %}{% trans 'Our Team' %}{% endblock title %}
+{% block navbar %}
+{% include 'menu/navbar_all.html' %}
+{% endblock navbar %}
+{% block content %}
+{% if request.user.is_authenticated == True %}
+<br><br><br><br>
+{% include 'community/dashboard/breadcrumb.html' %}
+<div class="container space-top-md-3 space-top-lg-2">
+{% else %}
+<div class="container space-top-md-3 space-top-lg-2">
+    <!-- Title -->
+    <br><br><br>
+    {% endif %}
+    <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <span class="btn btn-xs btn-soft-success btn-pill mb-2">{% trans "Team Travelposting"%}</span>
+    </div>
+    <!-- End Title-->
+    <h2 class="text-primary text-center">{% placeholder "nombre_equipo_01 "%}</h2>
+    <!-- Cubeportfolio -->
+    <div class="u-cubeportfolio">
+        <!-- Content -->
+        <div class="cbp"
+            data-layout="grid"
+            data-controls="#filterControls"
+            data-animation="quicksand"
+            data-x-gap="32"
+            data-y-gap="32"
+            data-media-queries='[
+            {"width": 1500, "cols": 4},
+            {"width": 1100, "cols": 4},
+            {"width": 800, "cols": 3},
+            {"width": 480, "cols": 2},
+            {"width": 300, "cols": 1}
+            ]'>
+            <!-- Item -->
+            <div class="cbp-item rounded graphic">
+                <a class="cbp-caption" href="single-page-simple.html">
+                    <div class="cbp-caption-defaultWrap">
+                        {% placeholder "equipo_01"%}
+                    </div>
+                    <div class="cbp-caption-activeWrap bg-primary">
+                        <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                                <h4 class="h6 text-white mb-0">{% placeholder "equipo_01_nombre"%}</h4>
+                                <p class="small text-white-70 mb-0">
+                                    {% placeholder "equipo_01_cargo"%}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- End Item -->
+            <!-- Item -->
+            <div class="cbp-item rounded branding">
+                <a class="cbp-caption" href="single-page-simple.html">
+                    <div class="cbp-caption-defaultWrap">
+                        {% placeholder "equipo_02"%}
+                    </div>
+                    <div class="cbp-caption-activeWrap bg-primary">
+                        <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                                <h4 class="h6 text-white mb-0">{% placeholder "equipo_02_nombre"%}</h4>
+                                <p class="small text-white-70 mb-0">
+                                    {% placeholder "equipo_02_cargo"%}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- End Item -->
+            <!-- Item -->
+            <div class="cbp-item rounded abstract illustration">
+                <a class="cbp-caption" href="single-page-simple.html">
+                    <div class="cbp-caption-defaultWrap">
+                        {% placeholder "equipo_03"%}
+                    </div>
+                    <div class="cbp-caption-activeWrap bg-primary">
+                        <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                                <h4 class="h6 text-white mb-0">{% placeholder "equipo_03_nombre"%}</h4>
+                                <p class="small text-white-70 mb-0">
+                                    {% placeholder "equipo_03_cargo"%}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- End Item -->
+            <!-- Item -->
+            <div class="cbp-item rounded abstract illustration">
+                <a class="cbp-caption" href="single-page-simple.html">
+                    <div class="cbp-caption-defaultWrap">
+                        {% placeholder "equipo_04"%}
+                    </div>
+                    <div class="cbp-caption-activeWrap bg-primary">
+                        <div class="cbp-l-caption-alignCenter">
+                            <div class="cbp-l-caption-body">
+                                <h4 class="h6 text-white mb-0">{% placeholder "equipo_04_nombre"%}</h4>
+                                <p class="small text-white-70 mb-0">
+                                    {% placeholder "equipo_04_cargo"%}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- End Item -->
+        </div>
+        <!-- End Content -->
+    </div>
+    <!-- End Cubeportfolio -->
+</div>
+<br><br><br>
+{% endblock content %}
+
