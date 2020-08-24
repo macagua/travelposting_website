@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 22:55-0400\n"
+"POT-Creation-Date: 2020-08-24 09:01-0400\n"
 "PO-Revision-Date: 2020-07-13 00:39-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -1615,6 +1615,37 @@ msgstr ""
 msgid "Tour Booking"
 msgstr ""
 
+#: apps/destinations/templates/destinations/_form.html:185
+#: apps/destinations/templates/destinations/_form_old.html:216
+#: apps/destinations/templates/destinations/_socialNetworkListEdit.html:94
+#: apps/destinations/templates/destinations/map/maps.html:105
+msgid "Cancel"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:186
+msgid "current step:"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:187
+msgid "Pagination"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:188
+msgid "Finish"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:189
+msgid "Next"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:190
+msgid "Previous"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_form.html:191
+msgid "Loading ..."
+msgstr ""
+
 #: apps/destinations/templates/destinations/_form_old.html:37
 msgid "Tour Data"
 msgstr ""
@@ -1654,10 +1685,6 @@ msgstr ""
 
 #: apps/destinations/templates/destinations/_form_old.html:197
 msgid "Add period"
-msgstr ""
-
-#: apps/destinations/templates/destinations/_form_old.html:216
-msgid "Cancelar"
 msgstr ""
 
 #: apps/destinations/templates/destinations/_list.html:5
@@ -1793,11 +1820,6 @@ msgstr ""
 #: apps/destinations/templates/destinations/social_modal.html:63
 #: apps/destinations/templates/destinations/social_modal_edit.html:63
 msgid "https://linkedin.com/youruser"
-msgstr ""
-
-#: apps/destinations/templates/destinations/_socialNetworkListEdit.html:94
-#: apps/destinations/templates/destinations/map/maps.html:105
-msgid "Cancel"
 msgstr ""
 
 #: apps/destinations/templates/destinations/_socialNetworkListEdit.html:95

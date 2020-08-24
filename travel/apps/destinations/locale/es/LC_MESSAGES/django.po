@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 22:55-0400\n"
+"POT-Creation-Date: 2020-08-24 09:01-0400\n"
 "PO-Revision-Date: 2020-08-23 03:00-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -1670,6 +1670,37 @@ msgstr "Inventario"
 msgid "Tour Booking"
 msgstr "Reserva de excursiones"
 
+#: apps/destinations/templates/destinations/_form.html:185
+#: apps/destinations/templates/destinations/_form_old.html:216
+#: apps/destinations/templates/destinations/_socialNetworkListEdit.html:94
+#: apps/destinations/templates/destinations/map/maps.html:105
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: apps/destinations/templates/destinations/_form.html:186
+msgid "current step:"
+msgstr "actual paso:"
+
+#: apps/destinations/templates/destinations/_form.html:187
+msgid "Pagination"
+msgstr "Paginación"
+
+#: apps/destinations/templates/destinations/_form.html:188
+msgid "Finish"
+msgstr "Finalizar"
+
+#: apps/destinations/templates/destinations/_form.html:189
+msgid "Next"
+msgstr "Próximo"
+
+#: apps/destinations/templates/destinations/_form.html:190
+msgid "Previous"
+msgstr "Anterior"
+
+#: apps/destinations/templates/destinations/_form.html:191
+msgid "Loading ..."
+msgstr "Cargando ..."
+
 #: apps/destinations/templates/destinations/_form_old.html:37
 msgid "Tour Data"
 msgstr "Datos del Tour"
@@ -1710,10 +1741,6 @@ msgstr "General"
 #: apps/destinations/templates/destinations/_form_old.html:197
 msgid "Add period"
 msgstr "Añadir periodo"
-
-#: apps/destinations/templates/destinations/_form_old.html:216
-msgid "Cancelar"
-msgstr "Cancelar"
 
 #: apps/destinations/templates/destinations/_list.html:5
 msgid "Destination List"
@@ -1849,11 +1876,6 @@ msgstr "https://sitioweb.com/"
 #: apps/destinations/templates/destinations/social_modal_edit.html:63
 msgid "https://linkedin.com/youruser"
 msgstr "https://linkedin.com/in/suusuario"
-
-#: apps/destinations/templates/destinations/_socialNetworkListEdit.html:94
-#: apps/destinations/templates/destinations/map/maps.html:105
-msgid "Cancel"
-msgstr "Cancelar"
 
 #: apps/destinations/templates/destinations/_socialNetworkListEdit.html:95
 msgid "Save change"
