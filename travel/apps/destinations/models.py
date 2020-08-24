@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from djmoney.models.fields import MoneyField
 from djmoney.money import Money
 from easy_thumbnails.fields import ThumbnailerImageField
-from apps.accounts.models import CustomerUser
+from apps.accounts.models import CustomerUser, COUNTRIES
 from apps.destinations.fields import DaysCommaField
 from apps.destinations.utils import TEMPLATE_DESCRIPTION
 from filer.fields.image import FilerImageField
@@ -1070,3 +1070,49 @@ class MessageDashboard(models.Model):
         if not self.id:
             self.sent_at = timezone.now()
         super(MessageDashboard, self).save(**kwargs)
+
+
+# Petitions
+class Request(models.Model):
+    MANAGER = 'MGR'
+    AGENCY = 'AGC'
+    TYPES = (
+            (MANAGER, 'Manager'),
+            (AGENCY, 'Agency'),
+            )
+    PENDING = 'PEND'
+    APPROVED = 'APPR'
+    REJECTED = 'REJE'
+    STATUS = (
+            (PENDING, 'Pending'),
+            (APPROVED, 'Approved'),
+            (REJECTED, 'Rejected'),
+            )
+    user = models.ForeignKey(
+            CustomerUser,
+            on_delete=models.CASCADE,
+            verbose_name=_("User"),
+    )
+
+    country = models.CharField(
+        'Countries',
+        choices=COUNTRIES,
+        max_length=3
+    )
+
+    type = models.CharField(
+            max_length=3, 
+            default=AGENCY,
+            choices=TYPES)
+
+    status = models.CharField(
+            default=PENDING,
+            max_length=4,
+            choices=STATUS)
+
+    class Meta:
+        unique_together = ('user', 'country')
+
+
+    def __str__(self):
+        return '%s %s' % (self.country, self.get_type_display())

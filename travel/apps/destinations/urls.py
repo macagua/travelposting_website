@@ -29,6 +29,10 @@ from apps.destinations.views.destination import (
     ItineraryCreateView,
     ItineraryUpdateView,
     ItineraryView,
+    RequestDeleteView,
+    RequestManagerView,
+    RequestProcessView,
+    RequestView,
     SocialNetworkListView,
     SocialNetworkUpdateView,
     MailboxView,
@@ -63,7 +67,7 @@ def nocommunity_access(function=None, redirect_field_name=REDIRECT_FIELD_NAME, l
         redirect_field_name=redirect_field_name
     )
     nocom_decorator = user_passes_test(
-        lambda u: not u.is_community,
+        lambda u: u.is_authenticated and not u.is_community,
         login_url=login_url,
         redirect_field_name=redirect_field_name
     )
@@ -316,6 +320,35 @@ urlpatterns = [
         'message/',
         nocommunity_access(messageView.as_view()),
         name='send_message',
+    ),
+
+    path(
+        'requests/manager',
+        nocommunity_access(RequestManagerView.as_view()),
+        name='requests_manager',
+    ),
+    path(
+        'requests/<int:pk>/approve/',
+        nocommunity_access(RequestProcessView.as_view(action='approve')),
+        name='requests_approve',
+    ),
+
+    path(
+        'requests/<int:pk>/reject/',
+        nocommunity_access(RequestProcessView.as_view(action='reject')),
+        name='requests_reject',
+    ),
+
+    path(
+        'requests/<int:pk>/delete/',
+        nocommunity_access(RequestDeleteView.as_view()),
+        name='requests_delete',
+    ),
+
+    path(
+        'requests/',
+        nocommunity_access(RequestView.as_view()),
+        name='requests',
     ),
 
     path(
