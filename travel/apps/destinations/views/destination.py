@@ -1,7 +1,8 @@
 import logging
 import datetime as dt
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import Group
+from django.contrib.auth.views import redirect_to_login
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
@@ -9,7 +10,10 @@ from django.http import QueryDict
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
+from django.views.decorators.cache import never_cache
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin
+from django.views.generic.edit import BaseCreateView
+from django.views.generic.list import MultipleObjectMixin
 from django.contrib.auth import password_validation
 from django.core import exceptions
 from apps.accounts.models import CustomerUser
@@ -44,6 +48,7 @@ from apps.destinations.forms import (
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
+    RequestForm
 )
 from apps.destinations.models import (
     Destination,
@@ -57,6 +62,7 @@ from apps.destinations.models import (
     BookingDetail,
     SocialNetwork,
     MessageDashboard,
+    Request,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -719,7 +725,6 @@ class MailboxReply(View):
 '''
 end function to reply message
 '''
-
 class MailboxDetail(View):
     template_name = 'dashboard/mailbox/_mailboxdetail.html'
 
@@ -775,7 +780,6 @@ class LeaderAddView(CreateView):
         return super().form_valid(form)
        
 
-
 class LeaderAddExistingUserView(UpdateView):
     form_class = AgencyAddExistingUserForm
     model = CustomerUser
@@ -815,7 +819,9 @@ class AgencyView(ListView):
         admins = ['Manager']
         manager = ['manager_country']
         agencies = ['agency']
+
         verify_admins = request.user.groups.get_queryset().filter(name__in=admins).exists()
+
         if verify_admins==True:
             #search all user that group is manager_country and show their country
             users_manager_country = CustomerUser.objects.filter(groups__name='manager_country')
@@ -823,14 +829,14 @@ class AgencyView(ListView):
             conteo = users_manager_country.count()
             conteo_agency = users_agency.count()
 
-            return render(request, 
-                            self.template_name, 
-                            {
-                                'users_agency':users_agency,
-                                'conteo':conteo,
-                                'conteo_agency':conteo_agency,
-                            }
-                    )
+            return render(
+                    request, 
+                    self.template_name, 
+                    {
+                        'users_agency':users_agency,
+                        'conteo':conteo,
+                        'conteo_agency':conteo_agency,
+                    })
         else:
             return render(request, self.template_name)
 
@@ -883,4 +889,82 @@ class AgencyAddExistingUserView(UpdateView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().post(request, *args, **kwargs)
+       
+
+class RequestDeleteView(DeleteView):
+    model = Request 
+    success_url = reverse_lazy('destinations:requests')
+    template_name = 'dashboard/leaders/_requests_delete.html'
+
+    def get_context_data(self, **kwargs):
+        qs = self.get_queryset()
+        kwargs['object_list'] = qs 
+        kwargs['allow_new'] = qs.filter(status__in=[Request.PENDING, Request.APPROVED]).count() < 3
+        return super().get_context_data(**kwargs)
+
+    def get_queryset(self):
+        return Request.objects.filter(user=self.request.user)
+
+
+class RequestManagerView(ListView):
+    model = Request
+    template_name = 'dashboard/leaders/_requests.html'
+    fields = ['user', 'country', 'type']
+
+
+class RequestProcessView(View):
+    http_method_names = ['get']
+    action = None
+
+    def get(self, request, pk, *args, **kwargs):
+        if self.action in ['approve', 'reject']:
+            obj = get_object_or_404(Request, pk=pk)
+            obj.status=Request.APPROVED if self.action == 'approve' else Request.REJECTED
+            obj.save()
+            return HttpResponseRedirect(reverse('dashboard:requests_manager'))
+        else:
+            raise Http404
+
+
+class RequestView(UserPassesTestMixin, CreateView):
+    model = Request
+    template_name = 'dashboard/leaders/_requests.html'
+    form_class = RequestForm
+    success_url = reverse_lazy('destinations:requests')
+    object = None
+    login_url = reverse_lazy('destinations:requests_manager')
+    raise_exception = False
+
+    def  handle_no_permission(self):
+        return redirect_to_login(self.request.get_full_path(), self.get_login_url(), self.get_redirect_field_name())
+
+
+    def test_func(self):
+        return not self.request.user.groups.filter(name__in=['manager_country', 'Manager']).exists()
+
+    @never_cache
+    def dispatch(self, *args, **kwargs):
+        return super(). dispatch(*args, **kwargs)
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.save()
+        return self.render_to_response(self.get_context_data())
+
+    def form_invalid(self, form):
+        return self.render_to_response(self.get_context_data())
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({'user': self.request.user })
+        return kwargs
+
+    def get_context_data(self, **kwargs):
+        qs = self.get_queryset()
+        kwargs['object_list'] = qs 
+        kwargs['allow_new'] = qs.filter(status__in=[Request.PENDING, Request.APPROVED]).count() < 3
+        return super().get_context_data(**kwargs)
+
+    def get_queryset(self):
+        return Request.objects.filter(user=self.request.user)
 
