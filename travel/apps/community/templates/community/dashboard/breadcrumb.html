@@ -29,7 +29,7 @@
                     <img class="img-fluid rounded-circle"
                          src="{%if not request.user.avatar %}
                          {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
-                         alt="{% trans 'Image Description' %}">
+                         alt="{{ user.get_full_name }}">
                     <span
                             class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">
                             <span class="fas fa-check"></span>
@@ -88,7 +88,7 @@
                 </a>
                 {%else%}
                 <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover" href="#addMembersModal"
-                   data-modal-target="#addMembersModal">
+                   data-modal-target="#addMembersModal" title="{% trans 'Following' %}">
                     <span class="fas fa-plus small mr-2"></span>
                     {% trans "Following" %}
                 </a>
