@@ -43,8 +43,18 @@ class DestinationForm(forms.ModelForm):
             'arrival_time',
             'number_of_reservations',
             'transfer_from',
-            'tour_include',
-            'tour_not_include',
+            'has_wifi',
+            'has_breakfast_incluided',
+            'has_gym',
+            'has_air_conditioning',
+            'has_restaurant',
+            'has_bar',
+            'has_housekeeping',
+            'has_room_service',
+            'has_business_services',
+            'has_hob_tub',
+            'has_front_desk',
+            'has_laundry',
         ]
 
         widgets = {
@@ -116,16 +126,6 @@ class DestinationForm(forms.ModelForm):
             'number_of_reservations': forms.NumberInput(),
 
             'transfer_from':forms.TextInput(),
-
-            'tour_include':SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '250px'},
-                'required':True,
-            }),
-
-            'tour_not_include':SummernoteInplaceWidget(attrs={
-                'summernote': {'width': '100%', 'height': '250px'},
-                'required':True,
-            }),
         }
 
     class Media:

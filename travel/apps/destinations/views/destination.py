@@ -169,6 +169,18 @@ class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
             destination.departure_time=request.POST.get('departure_time') or None
             destination.arrival_date=dt.datetime.strptime(request.POST.get('arrival_date'), '%M/%d/%Y') if request.POST.get('arrival_date') != '' else None
             destination.arrival_time=request.POST.get('arrival_time') or None
+            destination.has_wifi=request.POST.get('has_wifi') or None
+            destination.has_breakfast_incluided=request.POST.get('has_breakfast_incluided') or None
+            destination.has_gym=request.POST.get('has_gym') or None
+            destination.has_air_conditioning=request.POST.get('has_air_conditioning') or None
+            destination.has_restaurant=request.POST.get('has_restaurant') or None
+            destination.has_bar=request.POST.get('has_bar') or None
+            destination.has_housekeeping=request.POST.get('has_housekeeping') or None
+            destination.has_room_service=request.POST.get('has_room_service') or None
+            destination.has_business_services=request.POST.get('has_business_services') or None
+            destination.has_hob_tub=request.POST.get('has_hob_tub') or None
+            destination.has_front_desk=request.POST.get('has_front_desk') or None
+            destination.has_laundry=request.POST.get('has_laundry') or None
             destination.save()
 
             #creating the destination detail object.
