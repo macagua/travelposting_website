@@ -3,6 +3,7 @@
 {% extends 'destinations/base.html' %}
 {% load static i18n %}
 {% block title %}{% trans 'Destination List' %}{% endblock %}
+{% get_current_language as LANGUAGE_CODE %}
 {% block extracss%}
 <link href="{% static 'dashboard/css/plugins/dataTables/datatables.min.css' %}" rel="stylesheet">
 <style>
@@ -106,8 +107,10 @@
 </div>
 {% endblock content%}
 {% block extrajs %}
+<!-- DataTables -->
 <script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
 <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js' %}"></script>
+<!-- SweetAlert -->
 <script src="{% static 'dashboard/js/plugins/sweetalert/sweetalert.min.js' %}"></script>
 <script>
     $(document).ready(function(){
@@ -132,7 +135,7 @@
             });
         });
 
-        var tabla_destinos=$('#tabla-destinos').DataTable({
+        var tabla_destinos = $('#tabla-destinos').DataTable({
             pageLength: 25,
             responsive: true,
             fixedHeader: true,
@@ -151,7 +154,10 @@
                                 .css('font-size', 'inherit');
                 }
                 }
-            ]
+            ],
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.10.13/i18n/{{LANGUAGE_CODE|language_name}}.json"
+            }
         });
 
     });

@@ -240,6 +240,8 @@ THIRD_PARTY = [
     'captcha',
     'django_admin_logs',
     #'notifications',
+    'ads.apps.AdsConfig',
+    'star_ratings'
 ]
 
 LOCAL_APPS = [
@@ -339,6 +341,7 @@ CMS_TEMPLATES = (
     ('page01.html', _('Page type 01')),
     ('page02.html', _('Page type 02')),
     ('presignup.html', _('Pre-signup')),
+    ('team.html', _('Team')),
 
 )
 
@@ -459,3 +462,10 @@ CAMPAIGN_COUPON_PREFIX = 'TPCW-20'
 CAMPAIGN_COUPON_LIMIT = 10000
 
 BOT = telepot.Bot('806633169:AAFouKIb9-QwJvGnLz6eIjO3rDBLB4HT78M')
+
+
+# Django Star Ratings System
+# https://django-star-ratings.readthedocs.io/
+
+# To change the star icon height, defaults to 32
+STAR_RATINGS_STAR_HEIGHT = 12

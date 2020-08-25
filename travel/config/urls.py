@@ -18,6 +18,13 @@ from apps.landing_page.views import (
 
 from apps.destinations.views.booking import BookingSaveView
 from django.contrib.auth.decorators import login_required
+from django.conf.urls import (
+    handler400,
+    handler403,
+    handler404,
+    handler500
+)
+
 
 #import notifications.urls
 
@@ -38,6 +45,11 @@ urlpatterns = [
     path(
         'api/',
         include('apps.api.urls', namespace='api'),
+    ),
+
+    path(
+        'ratings/',
+        include('star_ratings.urls', namespace='ratings')
     ),
 ]
 
@@ -154,3 +166,9 @@ urlpatterns += i18n_patterns(
 # This is only needed when using runserver.
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Custom Defaults Pages https://docs.djangoproject.com/en/2.1/ref/views/#error-views
+handler400 = 'apps.landing_page.views.pag_400_bad_request'
+handler403 = 'apps.landing_page.views.pag_403_permission_denied'
+handler404 = 'apps.landing_page.views.pag_404_page_not_found'
+handler500 = 'apps.landing_page.views.pag_500_server_error'
