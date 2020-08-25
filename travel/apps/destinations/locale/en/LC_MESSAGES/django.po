@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-05 10:27-0400\n"
+"POT-Creation-Date: 2020-08-23 22:44-0400\n"
 "PO-Revision-Date: 2020-07-13 00:39-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -21,22 +21,22 @@ msgstr ""
 #: apps/destinations/__OLD_VIEW.py:192
 #: apps/destinations/templates/destinations/_form.html:3
 #: apps/destinations/templates/destinations/_form_old.html:4
-#: apps/destinations/views/destination.py:232
+#: apps/destinations/views/destination.py:238
 msgid "Add Destination"
 msgstr ""
 
 #: apps/destinations/__OLD_VIEW.py:204
-#: apps/destinations/views/destination.py:244
+#: apps/destinations/views/destination.py:250
 msgid "Update Destination"
 msgstr ""
 
 #: apps/destinations/__OLD_VIEW.py:316
-#: apps/destinations/views/destination.py:397
+#: apps/destinations/views/destination.py:403
 msgid "A new itinerary item has been registered"
 msgstr ""
 
 #: apps/destinations/__OLD_VIEW.py:345
-#: apps/destinations/views/destination.py:426
+#: apps/destinations/views/destination.py:432
 msgid "Itinerary information has been updated"
 msgstr ""
 
@@ -46,8 +46,8 @@ msgstr ""
 
 #: apps/destinations/__OLD_VIEW.py:401 apps/destinations/admin.py:111
 #: apps/destinations/views/booking.py:100
-#: apps/destinations/views/destination.py:558
-#: apps/destinations/views/destination.py:642
+#: apps/destinations/views/destination.py:564
+#: apps/destinations/views/destination.py:648
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 
@@ -108,64 +108,64 @@ msgstr ""
 msgid "String for storage days of lists"
 msgstr ""
 
-#: apps/destinations/forms.py:57 apps/destinations/models.py:84
+#: apps/destinations/forms.py:58 apps/destinations/models.py:84
 msgid "Category"
 msgstr ""
 
-#: apps/destinations/forms.py:64
+#: apps/destinations/forms.py:65
 msgid "Tour Name"
 msgstr ""
 
-#: apps/destinations/forms.py:201
+#: apps/destinations/forms.py:202
 msgid "Option"
 msgstr ""
 
-#: apps/destinations/forms.py:226
+#: apps/destinations/forms.py:227
 #, python-format
 msgid "The tab '%(tab)s' it is duplicated, it must be only once."
 msgstr ""
 
-#: apps/destinations/forms.py:436 apps/destinations/models.py:111
+#: apps/destinations/forms.py:437 apps/destinations/models.py:111
 msgid "Short description"
 msgstr ""
 
-#: apps/destinations/forms.py:465
+#: apps/destinations/forms.py:466
 msgid "Description for map"
 msgstr ""
 
-#: apps/destinations/forms.py:471
+#: apps/destinations/forms.py:472
 msgid "Password"
 msgstr ""
 
-#: apps/destinations/forms.py:475
+#: apps/destinations/forms.py:476
 msgid ""
 "Use at least 8 characters. Do not use a password from another site or a term "
 "that is too obvious, such as your pet's name."
 msgstr ""
 
-#: apps/destinations/forms.py:477
+#: apps/destinations/forms.py:478
 msgid "Password confirmation"
 msgstr ""
 
-#: apps/destinations/forms.py:481
+#: apps/destinations/forms.py:482
 msgid "Enter the same password as above, for verification."
 msgstr ""
 
-#: apps/destinations/forms.py:485 apps/destinations/forms.py:535
+#: apps/destinations/forms.py:486 apps/destinations/forms.py:536
 msgid "First Name"
 msgstr ""
 
-#: apps/destinations/forms.py:494 apps/destinations/forms.py:544
+#: apps/destinations/forms.py:495 apps/destinations/forms.py:545
 #: apps/destinations/models.py:869
 msgid "Last Name"
 msgstr ""
 
-#: apps/destinations/forms.py:503 apps/destinations/forms.py:553
+#: apps/destinations/forms.py:504 apps/destinations/forms.py:554
 msgid "Phone or Whatsapp"
 msgstr ""
 
-#: apps/destinations/forms.py:513 apps/destinations/forms.py:563
-#: apps/destinations/forms.py:585
+#: apps/destinations/forms.py:514 apps/destinations/forms.py:564
+#: apps/destinations/forms.py:586
 msgid "Email Address"
 msgstr ""
 
@@ -212,6 +212,7 @@ msgstr ""
 #: apps/destinations/models.py:56 apps/destinations/models.py:104
 #: apps/destinations/models.py:312 apps/destinations/models.py:375
 #: apps/destinations/models.py:489 apps/destinations/models.py:1008
+#: apps/destinations/templates/dashboard/leaders/_requests.html:40
 #: apps/destinations/templates/destinations/_booking_list.html:40
 #: apps/destinations/templates/destinations/booking_modal.html:21
 msgid "Name"
@@ -231,6 +232,7 @@ msgid "Image"
 msgstr ""
 
 #: apps/destinations/models.py:78
+#: apps/destinations/templates/dashboard/leaders/_requests.html:44
 #: apps/destinations/templates/destinations/_socialNetworkList.html:48
 #: apps/destinations/templates/destinations/booking_modal.html:24
 msgid "Status"
@@ -240,7 +242,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: apps/destinations/models.py:100
+#: apps/destinations/models.py:100 apps/destinations/models.py:1094
 msgid "User"
 msgstr ""
 
@@ -295,7 +297,7 @@ msgstr ""
 #: apps/destinations/models.py:976
 #: apps/destinations/templates/destinations/_socialNetworkList.html:14
 #: apps/destinations/templates/destinations/_socialNetworkListEdit.html:16
-#: apps/destinations/templates/destinations/navbar_left.html:88
+#: apps/destinations/templates/destinations/navbar_left.html:89
 msgid "Social Network"
 msgstr ""
 
@@ -315,7 +317,7 @@ msgstr ""
 #: apps/destinations/templates/dashboard/widgets.html:12
 #: apps/destinations/templates/dashboard/widgets.html:96
 #: apps/destinations/templates/destinations/_list.html:142
-#: apps/destinations/templates/destinations/navbar_left.html:81
+#: apps/destinations/templates/destinations/navbar_left.html:82
 msgid "Destinations"
 msgstr ""
 
@@ -422,7 +424,7 @@ msgstr ""
 
 #: apps/destinations/models.py:436 apps/destinations/models.py:453
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:16
-#: apps/destinations/templates/destinations/navbar_left.html:86
+#: apps/destinations/templates/destinations/navbar_left.html:87
 msgid "Itinerary"
 msgstr ""
 
@@ -713,6 +715,7 @@ msgstr ""
 #: apps/destinations/models.py:832 apps/destinations/models.py:890
 #: apps/destinations/templates/dashboard/leaders/_agencies.html:147
 #: apps/destinations/templates/dashboard/leaders/_leaders.html:147
+#: apps/destinations/templates/dashboard/leaders/_requests.html:41
 #: apps/destinations/templates/destinations/_booking_list.html:41
 msgid "Email"
 msgstr ""
@@ -997,6 +1000,8 @@ msgid "1 seconds ago"
 msgstr ""
 
 #: apps/destinations/templates/dashboard/index.html:24
+#: apps/destinations/templates/dashboard/leaders/_requests_delete.html:13
+#: apps/destinations/templates/dashboard/leaders/_requests_delete.html:26
 #: apps/destinations/templates/destinations/_delete.html:7
 #: apps/destinations/templates/destinations/_delete.html:20
 #: apps/destinations/templates/destinations/booking_modal.html:8
@@ -1107,6 +1112,7 @@ msgstr ""
 
 #: apps/destinations/templates/dashboard/leaders/_agencies.html:148
 #: apps/destinations/templates/dashboard/leaders/_leaders.html:148
+#: apps/destinations/templates/dashboard/leaders/_requests.html:40
 msgid "Country"
 msgstr ""
 
@@ -1144,6 +1150,7 @@ msgstr ""
 
 #: apps/destinations/templates/dashboard/leaders/_agencies.html:173
 #: apps/destinations/templates/dashboard/leaders/_leaders.html:173
+#: apps/destinations/templates/dashboard/leaders/_requests_delete.html:25
 #: apps/destinations/templates/dashboard/mailbox/tablemain.html:28
 #: apps/destinations/templates/destinations/_delete.html:19
 #: apps/destinations/templates/destinations/_list.html:93
@@ -1226,8 +1233,57 @@ msgstr ""
 
 #: apps/destinations/templates/dashboard/leaders/_leaders_add.html:23
 #: apps/destinations/templates/dashboard/leaders/_leaders_add_existing.html:23
-#: apps/destinations/templates/destinations/navbar_left.html:72
+#: apps/destinations/templates/destinations/navbar_left.html:73
 msgid "Add Manager"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:3
+msgid "Send Request - Travelposting"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:14
+msgid "Request List"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:20
+msgid "Requests"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:23
+msgid "Add Request"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:35
+msgid "Current petitions"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:44
+msgid "Request Type"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:55
+msgid "Approve"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:56
+msgid "Reject"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:75
+msgid "Send new requests"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests.html:114
+msgid "Send Request"
+msgstr ""
+
+#: apps/destinations/templates/dashboard/leaders/_requests_delete.html:19
+#, python-format
+msgid ""
+"\n"
+"                    Are you sure you want to delete the petiticion "
+"%(object)s?\n"
+"                  "
 msgstr ""
 
 #: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:3
@@ -1861,7 +1917,7 @@ msgid "Destiny"
 msgstr ""
 
 #: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:49
-#: apps/destinations/views/destination.py:335
+#: apps/destinations/views/destination.py:341
 msgid "create a new itinerary"
 msgstr ""
 
@@ -1924,32 +1980,40 @@ msgid "Admin site"
 msgstr ""
 
 #: apps/destinations/templates/destinations/navbar_left.html:71
+msgid "Pending Requests"
+msgstr ""
+
+#: apps/destinations/templates/destinations/navbar_left.html:72
 msgid "List Managers"
 msgstr ""
 
-#: apps/destinations/templates/destinations/navbar_left.html:73
+#: apps/destinations/templates/destinations/navbar_left.html:74
 msgid "List Agencies"
 msgstr ""
 
-#: apps/destinations/templates/destinations/navbar_left.html:74
+#: apps/destinations/templates/destinations/navbar_left.html:75
 msgid "Add agency"
 msgstr ""
 
-#: apps/destinations/templates/destinations/navbar_left.html:85
+#: apps/destinations/templates/destinations/navbar_left.html:86
 msgid "Your destinations"
 msgstr ""
 
-#: apps/destinations/templates/destinations/navbar_left.html:87
+#: apps/destinations/templates/destinations/navbar_left.html:88
 msgid "Maps"
 msgstr ""
 
-#: apps/destinations/templates/destinations/navbar_left.html:94
+#: apps/destinations/templates/destinations/navbar_left.html:95
 msgid "Reservations"
 msgstr ""
 
-#: apps/destinations/templates/destinations/navbar_left.html:98
+#: apps/destinations/templates/destinations/navbar_left.html:99
 msgid "Your reservations"
 msgstr ""
+
+#: apps/destinations/templates/destinations/navbar_left.html:111
+msgid "Solicitudes"
+msgstr "Requests"
 
 #: apps/destinations/templates/destinations/navbar_top.html:9
 msgid "Search for something"
@@ -2163,25 +2227,25 @@ msgid ""
 "</table>\n"
 msgstr ""
 
-#: apps/destinations/views/booking.py:133
+#: apps/destinations/views/booking.py:132
 msgid "a new map has been added to your destination"
 msgstr ""
 
-#: apps/destinations/views/destination.py:342
+#: apps/destinations/views/destination.py:348
 msgid "update itinerary"
 msgstr ""
 
-#: apps/destinations/views/destination.py:473
+#: apps/destinations/views/destination.py:479
 msgid ""
 "There is already a configuration of social networks. Do you want to update?"
 msgstr ""
 
-#: apps/destinations/views/destination.py:545
+#: apps/destinations/views/destination.py:551
 msgid "You have a new message"
 msgstr ""
 
-#: apps/destinations/views/destination.py:567
-#: apps/destinations/views/destination.py:610
-#: apps/destinations/views/destination.py:682
+#: apps/destinations/views/destination.py:573
+#: apps/destinations/views/destination.py:616
+#: apps/destinations/views/destination.py:688
 msgid "Thank you for your message, very soon we will answer back"
 msgstr ""

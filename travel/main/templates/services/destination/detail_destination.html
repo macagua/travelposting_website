@@ -398,8 +398,8 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form name="destinationsform" action="{% url 'make-booking' %}" method="POST">{% csrf_token %}
             <div class="modal-body">
-                <form name="destinationsform" action="{% url 'make-booking' %}" method="POST">{% csrf_token %}
                 <div class="form-row">
                     <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
                 </div>

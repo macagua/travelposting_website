@@ -68,10 +68,11 @@
                 <span class="fa arrow"></span>
               </a>
               <ul class="nav nav-second-level">
-                <li class=""><a href="{% url 'dashboard:manager'%}">{% trans "List Managers"%}</a></li>
-                <li class=""><a href="{% url 'dashboard:manager'%}">{% trans "Add Manager"%}</a></li>
-                <li class=""><a href="{% url 'dashboard:agencies'%}">{% trans "List Agencies"%}</a></li>
-                <li class=""><a href="{% url 'dashboard:agency-add'%}">{% trans "Add agency"%}</a></li>
+                <li class=""><a href="{% url 'dashboard:requests_manager' %}">{% trans "Pending Requests" %}</a></li>
+                <li class=""><a href="{% url 'dashboard:manager' %}">{% trans "List Managers" %}</a></li>
+                <li class=""><a href="{% url 'dashboard:manager' %}">{% trans "Add Manager" %}</a></li>
+                <li class=""><a href="{% url 'dashboard:agencies' %}">{% trans "List Agencies" %}</a></li>
+                <li class=""><a href="{% url 'dashboard:agency-add' %}">{% trans "Add agency" %}</a></li>
               </ul>
             </li>
             {% endif %}
@@ -98,6 +99,19 @@
           <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
         </ul>
       </li>
+      {% if not request.user.is_superuser %}
+       
+      <li class="">
+        {% if not perms.accounts.manager_country and not perms.accounts.manager  %}
+          <a href="{% url 'destinations:requests' %}">
+        {% else %}
+          <a href="{% url 'destinations:requests_manager' %}">
+        {% endif %}
+          <i class="fa fa-book fa-lg"></i>
+          <span class="nav-label">{% trans 'Solicitudes' %}</span>
+        </a>
+      </li>
+      {% endif %}
         </ul>
     </div>
 </nav>
