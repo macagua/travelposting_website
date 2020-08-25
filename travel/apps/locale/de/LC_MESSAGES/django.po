@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-24 09:01-0400\n"
+"POT-Creation-Date: 2020-08-25 05:07-0400\n"
 "PO-Revision-Date: 2020-08-24 09:40-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: German <DE@li.org>\n"
@@ -2033,7 +2033,7 @@ msgstr "Registrierter neuer Benutzer"
 #: apps/community/templates/community/registration/forget_password.html:4
 #: apps/community/templates/community/registration/login.html:4
 #: apps/community/templates/community/registration/signup.html:4
-#: config/settings/base.py:332 main/templates/community.html:4
+#: config/settings/base.py:331 main/templates/community.html:4
 #: main/templates/community.html:21 main/templates/hotels.html:112
 #: main/templates/page01.html:39 main/templates/pricing.html:4
 msgid "Community"
@@ -3429,74 +3429,78 @@ msgstr "de"
 msgid "es"
 msgstr "es"
 
-#: config/settings/base.py:272
+#: config/settings/base.py:271
 msgid "Travel Dashboard"
 msgstr "Reise-Dashboard"
 
-#: config/settings/base.py:273
+#: config/settings/base.py:272
 msgid "Support"
 msgstr "Technischer Support"
 
-#: config/settings/base.py:321
+#: config/settings/base.py:320
 msgid "Feature"
 msgstr "Funktion"
 
-#: config/settings/base.py:327
+#: config/settings/base.py:326
 msgid "Landing"
 msgstr "Landung"
 
-#: config/settings/base.py:330
+#: config/settings/base.py:329
 msgid "Tour"
 msgstr "Führung"
 
-#: config/settings/base.py:331 main/templates/magazine.html:34
+#: config/settings/base.py:330 main/templates/magazine.html:34
 msgid "Magazine"
 msgstr "Zeitschrift"
 
-#: config/settings/base.py:333
+#: config/settings/base.py:332
 msgid "Data protection"
 msgstr "Datenshutz"
 
-#: config/settings/base.py:334
+#: config/settings/base.py:333
 msgid "Data protection Form"
 msgstr "Datenshutz Form"
 
-#: config/settings/base.py:335
+#: config/settings/base.py:334
 msgid "Data protection Form Privacity"
 msgstr "Datenshutz Form Privacity"
 
-#: config/settings/base.py:336 main/templates/coming-soon.html:90
+#: config/settings/base.py:335 main/templates/coming-soon.html:90
 #: main/templates/coming-soon.html:99
 msgid "Coming Soon"
 msgstr "Demnächst"
 
-#: config/settings/base.py:337
+#: config/settings/base.py:336
 msgid "Hotels template"
 msgstr "Vorlage für Hotels"
 
-#: config/settings/base.py:338
+#: config/settings/base.py:337
 msgid "Pricing"
 msgstr "Preise"
 
-#: config/settings/base.py:340 main/templates/datenshutz_form_privacity.html:26
+#: config/settings/base.py:339 main/templates/datenshutz_form_privacity.html:26
 msgid "Terms"
 msgstr "Konditionen"
 
-#: config/settings/base.py:341
+#: config/settings/base.py:340
 msgid "FAQ"
 msgstr "FAQs"
 
-#: config/settings/base.py:342
+#: config/settings/base.py:341
 msgid "Page type 01"
 msgstr "Seitentyp 01"
 
-#: config/settings/base.py:343
+#: config/settings/base.py:342
 msgid "Page type 02"
 msgstr "Seitentyp 02"
 
-#: config/settings/base.py:344
+#: config/settings/base.py:343
 msgid "Pre-signup"
 msgstr "Voranmeldung"
+
+#: config/settings/base.py:344
+msgid "Team"
+msgstr "Mannschaft"
 
 #: config/settings/local.py:59
 msgid "Sidebar"
@@ -3569,8 +3573,8 @@ msgstr "Es ist kaputt, aber es ist nicht deine Schuld."
 #: main/templates/hotels.html:3 main/templates/make_page.html:3
 #: main/templates/page01.html:3 main/templates/page02.html:3
 #: main/templates/pages/request.html:3 main/templates/presignup.html:3
-#: main/templates/template_base_for_text.html:3 main/templates/term.html:3
-#: main/templates/term.html:20
+#: main/templates/team.html:5 main/templates/template_base_for_text.html:3
+#: main/templates/term.html:3 main/templates/term.html:20
 msgid "About us"
 msgstr "Über uns"
 
@@ -3578,27 +3582,39 @@ msgstr "Über uns"
 msgid "About Us"
 msgstr "Über uns"
 
-#: main/templates/about.html:57
-msgid "Please know more about us"
-msgstr "Erfahren Sie mehr über uns"
+#: main/templates/about.html:38 main/templates/team.html:18
+msgid "Our Team"
+msgstr "Unser Mannschaft"
 
-#: main/templates/about.html:77
+#: main/templates/about.html:115 main/templates/menu/notifications_inbox.html:5
+msgid "New"
+msgstr "Neu"
+
+#: main/templates/about.html:117
+msgid "We are hiring"
+msgstr "Wir stellen ein"
+
+#: main/templates/about.html:118
+msgid "Send your application"
+msgstr "Senden Sie Ihre Bewerbung"
+
+#: main/templates/about.html:131
 msgid "email"
 msgstr "E-Mail"
 
-#: main/templates/about.html:79
+#: main/templates/about.html:133
 msgid "write us"
 msgstr "schreiben Sie uns"
 
-#: main/templates/about.html:90 main/templates/page02.html:39
+#: main/templates/about.html:144 main/templates/page02.html:39
 msgid "Discover our offices very soon in:"
 msgstr "Entdecken Sie unsere Büros sehr bald in:"
 
-#: main/templates/about.html:105 main/templates/page02.html:55
+#: main/templates/about.html:159 main/templates/page02.html:55
 msgid "Stay in the know"
 msgstr "Bleiben Sie auf dem Laufenden"
 
-#: main/templates/about.html:106 main/templates/page02.html:56
+#: main/templates/about.html:160 main/templates/page02.html:56
 msgid "Get special offers on the latest travels add on our platform."
 msgstr ""
 "Holen Sie sich Sonderangebote für die neuesten Reisen auf unserer Plattform "
@@ -4968,10 +4984,6 @@ msgstr "Pläne"
 msgid "Privacy"
 msgstr "Datenschutz"
 
-#: main/templates/menu/notifications_inbox.html:5
-msgid "New"
-msgstr "Neu"
-
 #: main/templates/menu/notifications_lat.html:6
 msgid "Notifications"
 msgstr "Benachrichtigungen"
@@ -5677,10 +5689,12 @@ msgid "Book"
 msgstr "Buchen Sie"
 
 #: main/templates/services/destination/detail_destination_new.html:197
+#: main/templates/star_ratings/widget.html:7
 msgid "Califications"
 msgstr "Kalifikationen"
 
 #: main/templates/services/destination/detail_destination_new.html:197
+#: main/templates/star_ratings/widget.html:7
 msgid "Votes"
 msgstr "Abstimmungen"
 
