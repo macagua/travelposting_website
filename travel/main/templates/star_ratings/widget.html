@@ -1,0 +1,10 @@
+{% extends "star_ratings/widget_base.html" %}
+{% load i18n %}
+{% block rating_detail %}
+                    <a class="d-inline-flex small" href="#">
+                        <div class="text-warning mr-2"></div>
+                        <span class="text-secondary">
+                        {% trans 'Califications' %} {{ rating.count }}-{{ rating.count }} / {{ rating.count }} {% trans 'Votes' %}
+                        </span>
+                    </a>
+{% endblock %}

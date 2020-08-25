@@ -72,11 +72,11 @@
                             <div class="d-flex">
                                 <!-- Avatar -->
                                 <div class="position-relative u-lg-avatar mr-3">
-                                        {% if u.avatar %}
-                                        <img src="/main/media/{{ u.avatar }}" class="img-fluid  rounded-circle"/>
-                                        {% else %}
-                                        <img src="{% static 'img/user.png' %}" width="80" class="img-responsive" alt="{% trans 'Update your profile picture' %}" />
-                                        {% endif %}
+                                    {% if u.avatar %}
+                                    <img src="/main/media/{{ u.avatar }}" class="img-fluid  rounded-circle" alt="{{ u.get_full_name }}" />
+                                    {% else %}
+                                    <img src="{% static 'img/user.png' %}" width="80" class="img-responsive" alt="{% trans 'Update your profile picture' %}" />
+                                    {% endif %}
 
                                     <span
                                         class="badge badge-xs badge-outline-primary badge-pos badge-pos--bottom-left rounded-circle"></span>
@@ -95,6 +95,12 @@
                                     {% comment %}
                                     <!-- Social Networks -->
                                     <ul class="list-inline mb-0">
+                                        <li class="list-inline-item mr-0">
+                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
+                                               href="mailto://{{ u.email }}" title="{% trans 'Write us via Email' %}">
+                                                <span class="fab fa-google btn-icon__inner"></span>
+                                            </a>
+                                        </li>
                                         {% if u.facebook %}
                                         <li class="list-inline-item mr-0">
                                             <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
@@ -103,18 +109,10 @@
                                             </a>
                                         </li>
                                         {% endif %}
-                                        <li class="list-inline-item mr-0">
-                                            <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
-                                               href="mailto://{{ u.email }}" title="{% trans 'Write us via Email' %}">
-                                                <span class="fab fa-google btn-icon__inner"></span>
-                                            </a>
-                                        </li>
                                         {% if u.twitter%}
                                         <li class="list-inline-item mr-0">
                                             <a class="btn btn-sm btn-icon btn-soft-secondary rounded-circle"
                                                href="{{ u.twitter }}" title="{% trans 'Follow us at Twitter' %}">
-                                                <span class="fab fa-twitter btn-icon__inner"></span>
-                                            </a>
                                         </li>
                                         {% endif %}
                                         {% if u.instagram %}
@@ -156,7 +154,7 @@
 
             <!-- the modal-->
             <div class="modal fade bd-example-modal-lg{{u.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">
+                 aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <form method="POST" action="{% url 'send-messages' %}">{% csrf_token %}
