@@ -46,6 +46,11 @@ urlpatterns = [
         'api/',
         include('apps.api.urls', namespace='api'),
     ),
+
+    path(
+        'ratings/',
+        include('star_ratings.urls', namespace='ratings')
+    ),
 ]
 
 urlpatterns += i18n_patterns(

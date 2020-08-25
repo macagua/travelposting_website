@@ -15,22 +15,22 @@
 
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
-	{% include 'destinations/navbar_top.html' %}
-	<div class="wrapper wrapper-content animated fadeInRight">
-		<div class="row">
-		 	<div class="col-lg-12">
-				<div class="ibox">
-					<div class="ibox-title">
-						<h5 class="text-center">{% trans "Create a new Tour" %}</h5>
-					</div>
-	                <div class="ibox-content">
-	                	<form id="form-tour" method="POST" class="wizard-big">
-							{% csrf_token %}
-					        {{ tour_data_inlineformset.management_form }}
-					        {{ header_inlineformset.management_form }}
-					        {{ destination_detail_inlineformset.management_form }}
-	                		<h1>{% trans 'Product' %}</h1>
-	                		<fieldset>
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5 class="text-center">{% trans "Create a new Tour" %}</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form id="form-tour" method="POST" class="wizard-big">
+                            {% csrf_token %}
+                            {{ tour_data_inlineformset.management_form }}
+                            {{ header_inlineformset.management_form }}
+                            {{ destination_detail_inlineformset.management_form }}
+                            <h1>{% trans 'Product' %}</h1>
+                            <fieldset>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12">
                                         <h2 class="pull-left">{% trans 'Record the tour data' %}</h2>
@@ -39,68 +39,157 @@
                                                     <label for="setTimeDate">{% trans "This tour has departure and arrival time" %} </label>
                                         </div>
                                     </div>
-	                			</div>
+                                </div>
                                 {% include 'destinations/tour/_form.html' %}
-	                		</fieldset>
-	                		<h1>{% trans 'Price' %}</h1>
-	                		<fieldset>
-	                			<div class="row">
-	                				{{ destination_detail_inlineformset.0.general_inlineformset.management_form }}
-	                                {{ destination_detail_inlineformset.0.general_inlineformset.non_form_errors|safe }}
-	                                {% for form in destination_detail_inlineformset.0.general_inlineformset %}
-	                                  {% include 'destinations/destination_detail/general/_form.html' %}
-	                                {% endfor %}
+                            </fieldset>
+                            <h1>{% trans 'Price' %}</h1>
+                            <fieldset>
+                                <div class="row">
+                                    {{ destination_detail_inlineformset.0.general_inlineformset.management_form }}
+                                    {{ destination_detail_inlineformset.0.general_inlineformset.non_form_errors|safe }}
+                                    {% for form in destination_detail_inlineformset.0.general_inlineformset %}
+                                      {% include 'destinations/destination_detail/general/_form.html' %}
+                                    {% endfor %}
 
-	                			</div>
-	                		</fieldset>
-	                		<h1>{% trans 'Inventory' %}</h1>
-	                		<fieldset>
-	                			<div class="row">
-	                				{{ destination_detail_inlineformset.0.inventario_inlineformset.management_form }}
-	                                {{ destination_detail_inlineformset.0.inventario_inlineformset.non_form_errors|safe }}
-	                                {% for form in destination_detail_inlineformset.0.inventario_inlineformset %}
-	                                  {% include 'destinations/destination_detail/inventario/_form.html' %}
-	                                {% endfor %}
-	                			</div>
-	                		</fieldset>
-	                		<h1>{% trans 'Tour Booking' %}</h1>
-	                		<fieldset>
-	                			<div class="row">
-	                                {{ destination_detail_inlineformset.0.booking_inlineformset.management_form }}
-	                                {{ destination_detail_inlineformset.0.booking_inlineformset.non_form_errors|safe }}
-	                                {% for form in destination_detail_inlineformset.0.booking_inlineformset %}
-	                                  {% include 'destinations/destination_detail/booking/_form.html' with num=forloop.counter0 %}
-	                                {% endfor %}
-								</div>
-	                		</fieldset>
-	                	</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                </div>
+                            </fieldset>
+                            <h1>{% trans 'Inventory' %}</h1>
+                            <fieldset>
+                                <div class="row">
+                                    {{ destination_detail_inlineformset.0.inventario_inlineformset.management_form }}
+                                    {{ destination_detail_inlineformset.0.inventario_inlineformset.non_form_errors|safe }}
+                                    {% for form in destination_detail_inlineformset.0.inventario_inlineformset %}
+                                      {% include 'destinations/destination_detail/inventario/_form.html' %}
+                                    {% endfor %}
+                                </div>
+                            </fieldset>
+                            <h1>{% trans 'Tour Booking' %}</h1>
+                            <fieldset>
+                                <div class="row">
+                                    {{ destination_detail_inlineformset.0.booking_inlineformset.management_form }}
+                                    {{ destination_detail_inlineformset.0.booking_inlineformset.non_form_errors|safe }}
+                                    {% for form in destination_detail_inlineformset.0.booking_inlineformset %}
+                                      {% include 'destinations/destination_detail/booking/_form.html' with num=forloop.counter0 %}
+                                    {% endfor %}
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
 
 {% block extrajs %}
-  	{{ block.super }}
-  	{{ tour_data_inlineformset.media.js }}
-  	{{ tour_data_inlineformset.0.tab_data_inlineformset.media.js }}
-  	{{ destination_detail_inlineformset.0.general_inlineformset.media.js }}
-  	<script src="{% static "inspinia/js/plugins/chosen/chosen.jquery.js" %}"></script>
-  	<script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
-	<script src="{% static "dashboard/js/plugins/steps/jquery.steps.min.js" %}"></script>
-	<script src="{% static "inspinia/js/plugins/dynamic-form.js" %}"></script>
-	<script src="{% static "dashboard/js/plugins/validate/jquery.validate.min.js" %}"></script>
-	<script type="template/tab_data">
-    	{% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
-  	</script>
-  	<script type="template/booking">
-    	{% include 'destinations/destination_detail/booking/_form.html' with form=destination_detail_inlineformset.0.booking_inlineformset.empty_form  num='__prefix__' %}
-  </script>
-  <script>
-		$("#form-tour").steps({
+        {{ block.super }}
+        {{ tour_data_inlineformset.media.js }}
+        {{ tour_data_inlineformset.0.tab_data_inlineformset.media.js }}
+        {{ destination_detail_inlineformset.0.general_inlineformset.media.js }}
+    <script src="{% static "inspinia/js/plugins/chosen/chosen.jquery.js" %}"></script>
+    <script src="{% static "dashboard/js/plugins/select2/select2.full.min.js" %}"></script>
+    <script src="{% static "dashboard/js/plugins/steps/jquery.steps.min.js" %}"></script>
+    <script src="{% static "inspinia/js/plugins/dynamic-form.js" %}"></script>
+    <script src="{% static "dashboard/js/plugins/validate/jquery.validate.min.js" %}"></script>
+    <script type="template/tab_data">
+        {% include 'destinations/tab_data/_form.html' with form=tour_data_inlineformset.0.tab_data_inlineformset.empty_form  num='__prefix__' %}
+    </script>
+    <script type="template/booking">
+        {% include 'destinations/destination_detail/booking/_form.html' with form=destination_detail_inlineformset.0.booking_inlineformset.empty_form  num='__prefix__' %}
+    </script>
+
+    <!-- Start Translated default messages for the jQuery validation plugin -->
+    {% if request.user.language == 'es' %}
+    <!-- Locale: ES (Spanish, Espanol) -->
+    <script>
+        $(document).ready(function() {
+            jQuery.extend(jQuery.validator.messages, {
+                required: "Este campo es obligatorio.",
+                remote: "Por favor, rellena este campo.",
+                email: "Por favor, escribe una dirección de correo válida",
+                url: "Por favor, escribe una dirección URL válida.",
+                date: "Por favor, escribe una fecha válida.",
+                dateISO: "Por favor, escribe una fecha (ISO) válida.",
+                number: "Por favor, escribe un número entero válido.",
+                digits: "Por favor, escribe sólo dígitos.",
+                creditcard: "Por favor, escribe un número de tarjeta válido.",
+                equalTo: "Por favor, escribe el mismo valor de nuevo.",
+                accept: "Por favor, escribe un valor con una extensión aceptada.",
+                maxlength: jQuery.validator.format("Por favor, no escribas más de {0} caracteres."),
+                minlength: jQuery.validator.format("Por favor, no escribas menos de {0} caracteres."),
+                rangelength: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+                range: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+                max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+                min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+            });
+        });
+    </script>
+    {% elif request.user.language == 'de' %}
+    <!-- Locale: DE (German, Deutsch) -->
+    <script>
+        $(document).ready(function() {
+            jQuery.extend(jQuery.validator.messages, {
+                required: "Dieses Feld ist ein Pflichtfeld.",
+                remote: "Korrigieren Sie bitte dieses Feld.",
+                email: "Geben Sie bitte eine gültige E-Mail-Adresse ein.",
+                url: "Geben Sie bitte eine gültige URL ein.",
+                date: "Geben Sie bitte ein gültiges Datum ein.",
+                dateISO: "Geben Sie bitte ein gültiges Datum ein (ISO-Format).",
+                number: "Geben Sie bitte eine Nummer ein.",
+                digits: "Geben Sie bitte nur Ziffern ein.",
+                creditcard: "Geben Sie bitte eine gültige Kreditkarten-Nummer ein.",
+                equalTo: "Wiederholen Sie bitte denselben Wert.",
+                accept: "Geben Sie bitte einen Wert mit einem gültigen MIME-Typ ein.",
+                maxlength: jQuery.validator.format("Geben Sie bitte maximal {0} Zeichen ein."),
+                minlength: jQuery.validator.format("Geben Sie bitte mindestens {0} Zeichen ein."),
+                rangelength: jQuery.validator.format("Geben Sie bitte mindestens {0} und maximal {1} Zeichen ein."),
+                range: jQuery.validator.format("Geben Sie bitte einen Wert zwischen {0} und {1} ein."),
+                max: jQuery.validator.format("Geben Sie bitte einen Wert kleiner oder gleich {0} ein."),
+                min: jQuery.validator.format("Geben Sie bitte einen Wert größer oder gleich {0} ein.")
+            });
+        });
+    </script>
+    {% else %}
+    <!-- Locale: EN (English) -->
+    <script>
+        $(document).ready(function() {
+            jQuery.extend(jQuery.validator.messages, {
+                required: "This field is required.",
+                remote: "Please fix this field.",
+                email: "Please enter a valid email address.",
+                url: "Please enter a valid URL.",
+                date: "Please enter a valid date.",
+                dateISO: "Please enter a valid date (ISO).",
+                number: "Please enter a valid number.",
+                digits: "Please enter only digits.",
+                equalTo: "Please enter the same value again.",
+                maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+                minlength: jQuery.validator.format("Please enter at least {0} characters."),
+                rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+                range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+                max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+                min: jQuery.validator.format("Please enter a value greater than or equal to {0}."),
+                step: jQuery.validator.format("Please enter a multiple of {0}.")
+            });
+        });
+    </script>
+    {% endif %}
+    <!-- End Translated default messages for the jQuery validation plugin -->
+
+    <script>
+        $("#form-tour").steps({
+                // Locale: EN (English)
+                labels: {
+                    cancel:"{% trans 'Cancel' %}",
+                    current:"{% trans 'current step:' %}",
+                    pagination:"{% trans 'Pagination' %}",
+                    finish:"{% trans 'Finish' %}",
+                    next:"{% trans 'Next' %}",
+                    previous:"{% trans 'Previous' %}",
+                    loading:"{% trans 'Loading ...' %}"
+                },
                 bodyTag: "fieldset",
                 onStepChanging: function (event, currentIndex, newIndex)
                 {
@@ -109,7 +198,6 @@
                     {
                         return true;
                     }
-
 
                     var form = $(this);
 
@@ -155,49 +243,49 @@
                 }
             }).validate({
 
-				errorPlacement: function (error, element)
-				{
-					element.before(error);
-				},
-				rules: {
-				}
-			});
-			$('#id_categorie').select2();
-			var dynamic_form =  $("#tour_yes_no_include").dynamicForm("#tour_yes_no_include","#add", "#remove", {
-		        limit:10,
-		        formPrefix : "yes_no_include",
-		        normalizeFullForm : false
-		    });
-		    $('#setTimeDate' ).on( 'click', function() {
-			    if( $(this).is(':checked') ){
-			    	$("#time_tour").show()
-			    	$("#date_tour").show()
-			    } else {
-			    	$("#time_tour").hide()
-			   		$("#date_tour").hide()
-			    }
-			});
-			$('#id_details-0-inventario-0-manager' ).on( 'click', function() {
-			    if( $(this).is(':checked') ){
-			    	$("#option_inventary").show()
-			    } else {
-			    	$("#option_inventary").hide()
-			    }
-			});
-			$('#activate_booking' ).on( 'click', function() {
-			    if( $(this).is(':checked') ){
-			    	$("#booking").show()
-			    } else {
-			    	$("#booking").hide()
-			    }
-			});
-	</script>
+                errorPlacement: function (error, element)
+                {
+                    element.before(error);
+                },
+                rules: {
+                }
+            });
+            $('#id_categorie').select2();
+            var dynamic_form =  $("#tour_yes_no_include").dynamicForm("#tour_yes_no_include","#add", "#remove", {
+                limit:10,
+                formPrefix : "yes_no_include",
+                normalizeFullForm : false
+            });
+            $('#setTimeDate' ).on( 'click', function() {
+                if( $(this).is(':checked') ){
+                    $("#time_tour").show()
+                    $("#date_tour").show()
+                } else {
+                    $("#time_tour").hide()
+                       $("#date_tour").hide()
+                }
+            });
+            $('#id_details-0-inventario-0-manager' ).on( 'click', function() {
+                if( $(this).is(':checked') ){
+                    $("#option_inventary").show()
+                } else {
+                    $("#option_inventary").hide()
+                }
+            });
+            $('#activate_booking' ).on( 'click', function() {
+                if( $(this).is(':checked') ){
+                    $("#booking").show()
+                } else {
+                    $("#booking").hide()
+                }
+            });
+    </script>
 
-	<script>
-		initSummernote();
-	
-	    $('#id_description').summernote({
+    <script>
+        initSummernote();
+
+        $('#id_description').summernote({
             tooltip: false
         });
-	</script>
+    </script>
 {%endblock%}

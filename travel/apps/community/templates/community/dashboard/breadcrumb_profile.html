@@ -9,7 +9,7 @@
 						<img class="img-fluid rounded-circle"
 							 src="{%if not request.user.avatar %}
 							 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
-							 alt="user image">
+							 alt="{{ user.get_full_name }}">
 						<span class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right
 							rounded-circle">
 							<span class="fas fa-check"></span>

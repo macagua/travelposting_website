@@ -21,9 +21,9 @@
               <div class="card-body text-center">
                 <div class="mb-3">
                   <img class="u-lg-avatar rounded-circle"
-                       src="{%if not request.user.avatar %}
-                       {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
-                       alt="{% trans 'Image Description' %}">
+                       src="{% if not request.user.avatar %}
+                       {% static 'img/user.png' %}{% else %}/main/media/{{request.user.avatar}}{% endif %}"
+                       alt="{{ user.get_full_name }}">
                 </div>
 
                 <div class="mb-3">
@@ -73,7 +73,7 @@
               <li class="list-inline-item mb-3 mb-sm-0 mr-5">
                 <div class="d-flex align-items-center">
                   <img class="mr-2" src="{% static 'assets/svg/illustrations/referral.svg' %}"
-                       alt="{% trans 'Image Description' %}" style="width: 40px;">
+                       alt="{% trans 'Referred User' %}" style="width: 40px;">
                   <div class="text-secondary">
                     XXXXXXX
                   </div>
@@ -82,7 +82,7 @@
               <li class="list-inline-item mb-3 mb-sm-0">
                 <div class="d-flex align-items-center">
                   <img class="mr-2" src="{% static 'assets/svg/illustrations/verified-user.svg' %}"
-                       alt="{% trans 'Image Description' %}" style="width: 40px;">
+                       alt="{% trans 'Verified User' %}" style="width: 40px;">
                   <div class="text-secondary">
                     XXXXXXX
                   </div>
@@ -111,8 +111,12 @@
                     <div class="media">
                       <span class="fas fa-link list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">{% trans "Web page" %}:</span>
-                        <a href="#">{{request.user.web_site}}</a>
+                        <span class="d-block mb-1">{% trans 'Web page' %}:</span>
+                        {% if request.user.web_site == None %}
+                          <p>{% trans 'Not registered yet' %}</p>
+                        {% else %}
+                        <a href="#" title="{% trans 'Web page' %}">{{request.user.web_site}}</a>
+                        {% endif %}
                       </div>
                     </div>
                   </li>
@@ -128,17 +132,25 @@
                     <div class="media">
                       <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">{% trans "Location" %}:</span>
-                        <a href="#">{{request.user.business_address}}</a>
+                        <span class="d-block mb-1">{% trans 'Location' %}:</span>
+                        {% if request.user.business_address == None %}
+                          <p>{% trans 'Not registered yet' %}</p>
+                        {% else %}
+                        <a href="#" title="{{request.user.business_address}}">{{request.user.business_address}}</a>
+                        {% endif %}
                       </div>
                     </div>
                   </li>
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
+                      <span class="fas fa-address-card list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">{% trans "Postal Code" %}:</span>
+                        {% if request.user.postal_code == None %}
+                          <p>{% trans 'Not registered yet' %}</p>
+                        {% else %}
                         <span class="d-block text-muted">{{request.user.postal_code}}</span>
+                        {% endif %}
                       </div>
                     </div>
                   </li>
@@ -146,8 +158,12 @@
                     <div class="media">
                       <span class="fas fa-mobile-alt list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">{% trans "Phone number" %}:</span>
-                        <a href="#">{{request.user.mobile}}</a>
+                        <span class="d-block mb-1">{% trans 'Phone number' %}:</span>
+                        {% if request.user.mobile == None %}
+                          <p>{% trans 'Not registered yet' %}</p>
+                        {% else %}
+                        <a href="#" title="{% trans 'Phone number' %}">{{request.user.mobile}}</a>
+                        {% endif %}
                       </div>
                     </div>
                   </li>
@@ -163,7 +179,13 @@
                       <span class="fas fa-globe list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">{% trans "Language" %}:</span>
-                        <span class="d-block text-muted">{{request.user.language}}</span>
+                        {% if request.user.language == 'en' %}
+                        <span class="d-block text-muted">{% trans "English" %}</span>
+                        {% elif request.user.language == 'es' %}
+                        <span class="d-block text-muted">{% trans "Spanish" %}</span>
+                        {% else %}
+                        <span class="d-block text-muted">{% trans "German" %}</span>
+                        {% endif %}
                       </div>
                     </div>
                   </li>
@@ -172,29 +194,41 @@
                       <span class="fas fa-tags list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">{% trans "Social Profiles" %}:</span>
+                        {% if request.user.facebook == None %}
+                        {% else %}
                         <a href="{{request.user.facebook}}" target="_blank"
                            title="{% trans 'Follow us at Facebook' %}">
                           <i class="fab fa-facebook-square list-group-icon mr-3"></i>
                           {{request.user.facebook}}
                         </a>
+                        {% endif %}
                         <div class="clearfix"></div>
+                        {% if request.user.instagram == None %}
+                        {% else %}
                         <a href="{{request.user.instagram}}" target="_blank"
                            title="{% trans 'Follow us at Instagram' %}">
                           <i class="fab fa-instagram list-group-icon mr-3"></i>
                           {{request.user.instagram}}
                         </a>
+                        {% endif %}
                         <div class="clearfix"></div>
+                        {% if request.user.twitter == None %}
+                        {% else %}
                         <a href="{{request.user.twitter}}" target="_blank"
                            title="{% trans 'Follow us at Twitter' %}">
                           <i class="fab fa-twitter-square list-group-icon mr-3"></i>
                           {{request.user.twitter}}
                         </a>
+                        {% endif %}
                         <div class="clearfix"></div>
+                        {% if request.user.linkedin == None %}
+                        {% else %}
                         <a href="{{request.user.linkedin}}" target="_blank"
                            title="{% trans 'Follow us at Linkedin' %}">
                           <i class="fab fa-linkedin list-group-icon mr-3"></i>
                           {{request.user.linkedin}}
                         </a>
+                        {% endif %}
                       </div>
                     </div>
                   </li>
