@@ -339,6 +339,7 @@ CMS_TEMPLATES = (
     ('page01.html', _('Page type 01')),
     ('page02.html', _('Page type 02')),
     ('presignup.html', _('Pre-signup')),
+    ('team.html', _('Team')),
 
 )
 
