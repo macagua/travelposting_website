@@ -1109,6 +1109,7 @@ class Request(models.Model):
             default=PENDING,
             max_length=4,
             choices=STATUS)
+    created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
         unique_together = ('user', 'country')
