@@ -43,22 +43,22 @@
               {% else %}
                 <li>
               {% endif %}
-                  <a href="{% url 'dashboard:mailbox' %}">
+                  <a href="{% url 'dashboard:mailbox' %}" title="{% trans 'Mailbox' %}">
                     <i class="fa fa-envelope-o fa-lg"></i>
-                    <span class="nav-label">{% trans "Mailbox" %}</span>
+                    <span class="nav-label">{% trans 'Mailbox' %}</span>
                   </a>
                 </li>
             {% if request.user.is_staff %}
             <li class="">
-              <a href="/rosetta/">
+              <a href="/rosetta/" title="{% trans 'Translate site' %}">
                 <i class="fa fa-language fa-lg"></i>
-                <span class="nav-label">{% trans "Translate site" %}</span>
+                <span class="nav-label">{% trans 'Translate site' %}</span>
               </a>
             </li>
             <li class="">
-              <a href="/admin/">
+              <a href="/admin/" title="{% trans 'Admin site' %}">
                 <i class="fa fa-user-secret fa-lg"></i>
-                <span class="nav-label">{% trans "Admin site" %}</span>
+                <span class="nav-label">{% trans 'Admin site' %}</span>
               </a>
             </li>
             <li class="">
@@ -76,42 +76,41 @@
               </ul>
             </li>
             {% endif %}
-      <li class="">
-        <a href="#">
-          <i class="fa fa-globe fa-lg"></i>
-          <span class="nav-label">{% trans 'Destinations' %}</span>
-          <span class="fa arrow"></span>
-        </a>
-        <ul class="nav nav-second-level">
-          <li class=""><a href="{% url 'dashboard:list' %}">{% trans 'Your destinations' %}</a></li>
-          <li class=""><a href="{% url 'dashboard:itinerary-list' %}">{% trans 'Itinerary' %}</a></li>
-          <li class=""><a href="{% url 'dashboard:destination-map' %}">{% trans 'Maps' %}</a></li>
-          <li class=""><a href="{% url 'dashboard:social-network' %}">{% trans 'Social Network' %}</a></li>
-        </ul>
-      </li>
-      <li class="">
-        <a href="#">
-          <i class="fa fa-book fa-lg"></i>
-          <span class="nav-label">{% trans 'Reservations' %}</span>
-          <span class="fa arrow"></span>
-        </a>
-        <ul class="nav nav-second-level">
-          <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
-        </ul>
-      </li>
-      {% if not request.user.is_superuser %}
-       
-      <li class="">
-        {% if not perms.accounts.manager_country and not perms.accounts.manager  %}
-          <a href="{% url 'destinations:requests' %}">
-        {% else %}
-          <a href="{% url 'destinations:requests_manager' %}">
-        {% endif %}
-          <i class="fa fa-book fa-lg"></i>
-          <span class="nav-label">{% trans 'Solicitudes' %}</span>
-        </a>
-      </li>
-      {% endif %}
+            <li class="">
+              <a href="#">
+                <i class="fa fa-globe fa-lg"></i>
+                <span class="nav-label">{% trans 'Destinations' %}</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level">
+                <li class=""><a href="{% url 'dashboard:list' %}" title="{% trans 'Your destinations' %}">{% trans 'Your destinations' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:itinerary-list' %}" title="{% trans 'Itinerary' %}">{% trans 'Itinerary' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:destination-map' %}" title="{% trans 'Maps' %}">{% trans 'Maps' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:social-network' %}" title="{% trans 'Social Network' %}">{% trans 'Social Network' %}</a></li>
+              </ul>
+            </li>
+            <li class="">
+              <a href="#">
+                <i class="fa fa-book fa-lg"></i>
+                <span class="nav-label">{% trans 'Reservations' %}</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level">
+                <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
+              </ul>
+            </li>
+            {% if not request.user.is_superuser %}
+            <li class="">
+              {% if not perms.accounts.manager_country and not perms.accounts.manager  %}
+                <a href="{% url 'destinations:requests' %}">
+              {% else %}
+                <a href="{% url 'destinations:requests_manager' %}">
+              {% endif %}
+                <i class="fa fa-book fa-lg"></i>
+                <span class="nav-label">{% trans 'Requests' %}</span>
+              </a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

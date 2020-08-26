@@ -8,6 +8,7 @@ from django.views import View
 from django.utils.translation import get_language, gettext_lazy as _
 from django.core.mail import mail_managers
 from django.template.loader import render_to_string
+from django.shortcuts import render_to_response
 from django.conf import settings
 from apps.destinations.models import (
     Destination,
@@ -22,6 +23,33 @@ from apps.landing_page.forms import ContactUsForm
 from apps.landing_page.models import DeleteReg, PrivacySetting
 from easy_pdf.views import PDFTemplateView
 
+
+def pag_400_bad_request(request, exception, template_name='400.html'):
+    """ Custom Page of "400: Bad request" Error """
+    response = render_to_response('400.html')
+    response.status_code=400
+    return response
+
+
+def pag_403_permission_denied(request, exception, template_name='403.html'):
+    """ Custom Page of "403: Permission denied" Error """
+    response = render_to_response('403.html')
+    response.status_code=403
+    return response
+
+
+def pag_404_page_not_found(request, exception, template_name='404.html'):
+    """ Custom Page of "404: Page not found" Error """
+    response = render_to_response('404.html')
+    response.status_code=404
+    return response
+
+
+def pag_500_server_error(request, template_name='500.html'):
+    """ Custom Page of "500: Internal Server Error" Error """
+    response = render_to_response('500.html')
+    response.status_code=500
+    return response
 
 
 class CategoriesView(View):
@@ -89,6 +117,7 @@ class CategoriesView(View):
             'range_max':range_max
             })
 
+
 class DetailDestinationView(View):
     def get(self, request, *args, **kwargs):
         destination= get_object_or_404(Destination, id=kwargs.get('slug'))
@@ -111,6 +140,7 @@ class DetailDestinationView(View):
                 'key': key,
                 'comment': comment,
             })
+
 
 class SaveSearchView(View):
     def post(self, request, *args, **kwargs):
@@ -199,6 +229,7 @@ class DeleteRegisterView(View):
 
         return render(request, 'pages/request.html')
 
+
 class ContactUs(View):
     def post(self,request):
         updated_data = request.POST.copy()
@@ -230,6 +261,7 @@ class ContactUs(View):
             messages.error(request, _('A error has ocurred while processing your message'), extra_tags='danger')
             print(form.errors)
         return redirect('/')
+
 
 class PrivacySettingView(View):
     def post(self, request, *args, **kwargs):
@@ -316,5 +348,3 @@ class getItineraryPDF(PDFTemplateView):
             context = super(getItineraryPDF, self).get_context_data(**kwargs)
 
             return context
-
-

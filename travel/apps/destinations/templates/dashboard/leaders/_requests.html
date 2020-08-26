@@ -14,7 +14,7 @@
             <h3>{% trans "Request List"%}</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="/es/dashboard/">Inicio</a>
+                    <a href="/es/dashboard/">{% trans "Home"%}</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <a href="{% url 'destinations:requests' %}">{% trans "Requests"%}</a>
@@ -37,6 +37,7 @@
                     <div {class="ibox-content">
                         <table class="table table-hover table-bordered">
                             <thead>
+                                <th>{% trans "Date" %}</th>
                                 <th>{% trans "Country" %}</th><th>{% trans 'Name' %}</th>
                                 <th>{% trans 'Email' %}</th>
 
@@ -46,6 +47,7 @@
                             <tbody>
                                 {% for requested in object_list %}
                                 <tr>
+                                    <td>{{ requested.created_at }}
                                     <td>{{requested.get_country_display}}</td><td>{{ requested.user.get_full_name }}</td><td>{{ requested.user.email }}</td><td>{{requested.get_type_display}}</td><td>{{requested.get_status_display}}</td>
                                         <td>
                                             {% if  requested.status == requested.PENDING  %}

@@ -2,7 +2,7 @@
 {%load mathfilters %}
 
 
-<nav class="d-flex justify-content-between align-items-center" aria-label="Page navigation example">
+<nav class="d-flex justify-content-between align-items-center" aria-label="{% trans 'Page navigation example' %}">
   <ul class="pagination">
     <li class="page-item {% if not lista_destinos.has_previous %} disabled {%endif%}">
       <a class="page-link" href="{% if not lista_destinos.has_previous %} javascript:void(0) {%else%} ?page={{ lista_destinos.previous_page_number }} {%endif%}" aria-label="{% trans 'Previous' %}">
