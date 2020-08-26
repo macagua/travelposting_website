@@ -11,6 +11,7 @@ from .models import (
     OptionTabData,
     Destination,
     Photo,
+    Video,
     TourData,
     HeaderSection,
     DestinationDetail,
@@ -27,7 +28,9 @@ from .models import (
     SocialNetwork,
     DestinationVisitor,
     Advertising,
-    MessageDashboard
+    MessageDashboard,
+    BookingQuestion,
+    BookingChoice
 )
 
 @admin.register(OptionTabData)
@@ -38,6 +41,13 @@ class OptionTabDataAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
 
 class PhotoInline(admin.TabularInline):
     model = Photo
+    max_num = 12
+    min_num = 0
+    extra = 1
+
+
+class VideoInline(admin.TabularInline):
+    model = Video
     max_num = 12
     min_num = 0
     extra = 1
@@ -122,18 +132,33 @@ def make_published(modeladmin, request, queryset):
         )
 make_published.short_description = _("publish destinations")
 
+
 def make_unpublished(modeladmin, request, queryset):
     queryset.update(is_published=False)
 make_unpublished.short_description = _("unpublish destinations")
 
+
 @admin.register(Destination)
 class DestinationAdmin(SummernoteModelAdminMixin, admin.ModelAdmin):
     list_display = ('name', 'is_published', 'user', 'get_sku', 'is_deleted')
-    list_filter = (('user', admin.RelatedFieldListFilter), ('is_deleted', admin.BooleanFieldListFilter))
+    list_filter = (('user', admin.RelatedFieldListFilter), ('is_deleted', admin.BooleanFieldListFilter),
+        'has_wifi',
+        'has_breakfast_incluided',
+        'has_gym',
+        'has_air_conditioning',
+        'has_restaurant',
+        'has_bar',
+        'has_housekeeping',
+        'has_room_service',
+        'has_business_services',
+        'has_hob_tub',
+        'has_front_desk',
+        'has_laundry'
+    )
     search_fields = ('user__email', 'user__first_name', 'name', 'description')
     list_select_related = ('user',)
     autocomplete_fields = ('user',)
-    inlines = [PhotoInline, TourDataInline, HeaderSectionInline, DestinationDetailInline]
+    inlines = [PhotoInline, VideoInline, TourDataInline, HeaderSectionInline, DestinationDetailInline]
     actions = [make_published, make_unpublished]
 
     def delete_model(self, request, obj):
@@ -192,12 +217,27 @@ class MessageAdmin(admin.ModelAdmin):
 class DestinationMapAdmin(admin.ModelAdmin):
     form = DestinationMapForm
 
+
+class BookingChoiceInline(admin.TabularInline):
+    model = BookingChoice
+    max_num = 12
+    min_num = 0
+    extra = 1
+
+
+class BookingQuestionAdmin(admin.ModelAdmin):
+    model = BookingQuestion
+    inlines = [BookingChoiceInline]
+    search_fields = ('question_text',)
+    list_filter = ['question_text', 'pub_date']
+    list_display = ('question_text', 'pub_date', )
+
+
 admin.site.register(MessageDashboard, MessageAdmin)
-
-
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)
 admin.site.register(SearchLanding)
 admin.site.register(Itinerary)
 admin.site.register(BookingStats)
 admin.site.register(SocialNetwork)
+admin.site.register(BookingQuestion, BookingQuestionAdmin)

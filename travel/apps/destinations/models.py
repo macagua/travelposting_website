@@ -51,6 +51,7 @@ TEMPLATE_DESCRIPTION = _("""
 </table>
 """)
 
+
 class Categorie(models.Model):
     name = models.CharField(
         _('Name'),
@@ -178,6 +179,66 @@ class Destination(models.Model):
         editable=False,
     )
 
+    has_wifi = models.BooleanField(
+        _("Destination has Wifi?"),
+        default=False,
+    )
+
+    has_breakfast_incluided = models.BooleanField(
+        _("Destination has Breakfast included?"),
+        default=False,
+    )
+
+    has_gym = models.BooleanField(
+        _("Destination has Gym?"),
+        default=False,
+    )
+
+    has_air_conditioning = models.BooleanField(
+        _("Destination has Air conditioning?"),
+        default=False,
+    )
+
+    has_restaurant = models.BooleanField(
+        _("Destination has Restaurant?"),
+        default=False,
+    )
+
+    has_bar = models.BooleanField(
+        _("Destination has Bar?"),
+        default=False,
+    )
+
+    has_housekeeping = models.BooleanField(
+        _("Destination has Housekeeping service?"),
+        default=False,
+    )
+
+    has_room_service = models.BooleanField(
+        _("Destination has Room service?"),
+        default=False,
+    )
+
+    has_business_services = models.BooleanField(
+        _("Destination has Business services?"),
+        default=False,
+    )
+
+    has_hob_tub = models.BooleanField(
+        _("Destination has Hob Tub?"),
+        default=False,
+    )
+
+    has_front_desk = models.BooleanField(
+        _("Destination has 25/7 Front Desk?"),
+        default=False,
+    )
+
+    has_laundry = models.BooleanField(
+        _("Destination has Laundry service?"),
+        default=False,
+    )
+
     social_network = models.BooleanField(
         _('Social Network'),
         default=False,
@@ -228,6 +289,14 @@ class Destination(models.Model):
         return list_photos
 
     @property
+    def videos(self):
+        try:
+            list_videos = Video.objects.filter(destination=self)
+        except BaseException:
+            return None
+        return list_videos
+
+    @property
     def published_date(self):
         try:
             destination_details = GeneralDetail.objects.get(destination_detail__destination=self.pk)
@@ -262,6 +331,11 @@ class Destination(models.Model):
     def social(self):
         sn = SocialNetwork.objects.get(destination=self.pk)
         return sn
+
+    @property
+    def customer(self):
+        user = CustomerUser.objects.get(destination=self.pk)
+        return user
 
     @property
     def list_prices(self):
@@ -353,6 +427,62 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class Video(models.Model):
+    destination = models.ForeignKey(
+        Destination,
+        related_name='media',
+        on_delete=models.CASCADE,
+        verbose_name=_('Destination'),
+    )
+
+    name = models.CharField(
+        _('Name'),
+        max_length=50,
+        blank=True,
+        null=True,
+    )
+
+    sort = models.IntegerField(
+        _('Sort'),
+        blank=True,
+        null=True,
+    )
+
+    description = models.TextField(
+        _('Description'),
+        blank=True,
+        null=True,
+        default=_("No comment"),
+    )
+
+    thumbnail_preview = ThumbnailerImageField(
+        _('Thumbnail'),
+        blank=True,
+        null=True,
+        upload_to="gallery/thumbnail/",
+    )
+
+    video = models.FileField(
+        _("Video"),
+        blank=True,
+        null=True,
+        upload_to="gallery/video/",
+        # validators=[valid_extension]
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    class Meta:
+        ordering = ('sort', 'name')
+        verbose_name = _('Video')
+        verbose_name_plural = _('Videos')
 
 
 class DestinationRating(models.Model):
@@ -1109,6 +1239,7 @@ class Request(models.Model):
             default=PENDING,
             max_length=4,
             choices=STATUS)
+    created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
         unique_together = ('user', 'country')
@@ -1116,3 +1247,31 @@ class Request(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.country, self.get_type_display())
+
+
+class BookingQuestion(models.Model):
+    question_text = models.CharField(_("Question text"), max_length=200)
+    pub_date = models.DateTimeField(_("date published"))
+
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+    def __str__(self):
+            return self.question_text
+
+    class Meta:
+        verbose_name = _("Booking Question")
+        verbose_name_plural = _("Booking Questions")
+
+
+class BookingChoice(models.Model):
+    question = models.ForeignKey(BookingQuestion, verbose_name=_("Question"), on_delete=models.CASCADE)
+    choice_text = models.CharField(_("Choice text"), max_length=200)
+    votes = models.IntegerField(_("Votes"), default=0)
+
+    def __str__(self):
+        return self.choice_text
+
+    class Meta:
+        verbose_name = _("Booking Choice")
+        verbose_name_plural = _("Booking Choices")

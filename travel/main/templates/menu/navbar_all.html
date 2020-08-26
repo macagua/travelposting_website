@@ -93,9 +93,9 @@
                             <span class="position-relative">
                                 <span class="u-sidebar--account__toggle-text">{{ user.email }}</span>
 								<img class="u-sidebar--account__toggle-img"
-									 src="{%if not request.user.avatar %}
-									 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
-									 alt="{% trans 'Image Description' %}">
+									 src="{%if not user.avatar %}
+									 {% static 'img/user.png' %}{%else%} /main/media/{{user.avatar}} {%endif%}"
+									 alt="{{ user.get_full_name }}">
 								{% notifications_message %}
 
                             </span>
@@ -134,7 +134,7 @@
 				<!-- End On Scroll Logo -->
 				<!-- Responsive Toggle Button -->
 				<button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
-						aria-label="Toggle navigation"
+						aria-label="{% trans 'Toggle navigation' %}"
 						aria-expanded="false"
 						aria-controls="navBar"
 						data-toggle="collapse"
@@ -186,7 +186,7 @@
 							<img class="u-sidebar--account__holder-img"
 								 src="{%if not request.user.avatar %}
 								 {% static 'img/user.png' %}{%else%} /main/media/{{request.user.avatar}} {%endif%}"
-								 alt="{% trans 'Image Description' %}">
+								 alt="{{ user.get_full_name }}<">
 						</div>
 						<div class="ml-3">
 							<span class="font-weight-semi-bold">{{ user.get_full_name }}</span>
