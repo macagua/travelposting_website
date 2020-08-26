@@ -36,6 +36,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.datastructures import MultiValueDictKeyError
+
 
 
 
@@ -1010,3 +1012,34 @@ class DocumentAdd(CreateView):
         self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
+
+
+class DocumentUpdateView(UpdateView):
+    template_name = 'dashboard/file/_file_update.html'
+    form_class = FileAddForm
+    success_url = reverse_lazy('destinations:documents')
+
+    def get(self, request, *args, **kwargs):
+        archivo = File.objects.filter(id=kwargs['pk'])
+        return render(request, self.template_name, {'archivo':archivo})
+
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        description = request.POST.get('description')
+
+
+        try:
+            file_rules = request.FILES['image']
+            data = File.objects.get(pk=kwargs['pk'])
+            data.image = request.FILES['image']    
+            data.save()
+        except MultiValueDictKeyError:
+            file_rules = ''
+
+
+        File.objects.filter(pk=kwargs['pk']).update(
+            name = name,
+            description = description,
+        )
+
+        return HttpResponseRedirect(self.success_url)

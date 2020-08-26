@@ -47,6 +47,7 @@ from apps.destinations.views.destination import (
     LeaderDeleteView,
     DocumentView,
     DocumentAdd,
+    DocumentUpdateView,
 )
 
 from apps.destinations.views.booking import (
@@ -99,6 +100,11 @@ urlpatterns = [
         'documents/delete',
         nocommunity_access(DocumentView.as_view()),
         name='documents-delete',
+    ),
+    path(
+        'documents/<int:pk>/update/',
+        nocommunity_access(DocumentUpdateView.as_view()),
+        name='documents-update',
     ),
     path(
         'managers',

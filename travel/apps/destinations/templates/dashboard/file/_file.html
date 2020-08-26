@@ -82,7 +82,7 @@
                                         <div class="btn-group">
                                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle"> {% trans "Action" %} </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#"><i class="fa fa-lg fa-edit"></i>{% trans "Edit"%}</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'destinations:documents-update' requested.pk %}"><i class="fa fa-lg fa-edit"></i>{% trans "Edit"%}</a></li>
                                                 <li><span class="dropdown-item" onClick="delete_setting({{ requested.id }})"><i class="fa fa-lg fa-trash "></i> {% trans "Delete"%}</span></li>
                                             </ul>
                                         </div>                     
