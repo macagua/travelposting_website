@@ -45,6 +45,8 @@ from apps.destinations.views.destination import (
     LeaderAddView,
     LeaderAddExistingUserView,
     LeaderDeleteView,
+    DocumentView,
+    DocumentAdd,
 )
 
 from apps.destinations.views.booking import (
@@ -83,6 +85,15 @@ urlpatterns = [
         '',
         nocommunity_access(DashboardIndex),
         name='dashboard-index',
+    ),
+    path(
+        'documents',
+        nocommunity_access(DocumentView.as_view()),
+        name='documents',
+    ),
+    path('documents/add/',
+        nocommunity_access(DocumentAdd.as_view()),
+        name='documents-add'
     ),
     path(
         'managers',

@@ -48,7 +48,8 @@ from apps.destinations.forms import (
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
-    RequestForm
+    RequestForm,
+    FileAddForm
 )
 from apps.destinations.models import (
     Destination,
@@ -63,6 +64,7 @@ from apps.destinations.models import (
     SocialNetwork,
     MessageDashboard,
     Request,
+    File,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -980,3 +982,21 @@ class RequestView(UserPassesTestMixin, CreateView):
     def get_queryset(self):
         return Request.objects.filter(user=self.request.user)
 
+
+
+class DocumentView(ListView):
+    model = File
+    template_name = 'dashboard/file/_file.html'
+    fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
+
+
+class DocumentAdd(CreateView):
+    template_name = 'dashboard/file/_file_add.html'
+    form_class = FileAddForm
+    success_url = reverse_lazy('dashboard:documents')
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
