@@ -989,6 +989,16 @@ class DocumentView(ListView):
     template_name = 'dashboard/file/_file.html'
     fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
 
+    def delete(self,request):
+        pk_document = QueryDict(request.body)
+        document = get_object_or_404(File, pk=pk_document['pk'])
+        if document.delete():
+            return JsonResponse(
+                {
+                'status':True
+                },
+                safe=False,
+            )
 
 class DocumentAdd(CreateView):
     template_name = 'dashboard/file/_file_add.html'

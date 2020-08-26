@@ -96,6 +96,11 @@ urlpatterns = [
         name='documents-add'
     ),
     path(
+        'documents/delete',
+        nocommunity_access(DocumentView.as_view()),
+        name='documents-delete',
+    ),
+    path(
         'managers',
         nocommunity_access(LeaderView.as_view()),
         name='manager',
