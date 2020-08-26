@@ -68,6 +68,7 @@
                 <span class="fa arrow"></span>
               </a>
               <ul class="nav nav-second-level">
+                <li class=""><a href="{% url 'dashboard:documents'%}"><i class="fa fa-file-pdf-o"></i>{% trans "Documents"%}</a></li>
                 <li class=""><a href="{% url 'dashboard:requests_manager' %}">{% trans "Pending Requests" %}</a></li>
                 <li class=""><a href="{% url 'dashboard:manager' %}">{% trans "List Managers" %}</a></li>
                 <li class=""><a href="{% url 'dashboard:manager' %}">{% trans "Add Manager" %}</a></li>

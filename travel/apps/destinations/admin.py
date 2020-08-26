@@ -30,7 +30,8 @@ from .models import (
     Advertising,
     MessageDashboard,
     BookingQuestion,
-    BookingChoice
+    BookingChoice,
+    File
 )
 
 @admin.register(OptionTabData)
@@ -233,6 +234,12 @@ class BookingQuestionAdmin(admin.ModelAdmin):
     list_display = ('question_text', 'pub_date', )
 
 
+class FileAdmin(admin.ModelAdmin):
+    model = File
+    search_fields = ('user','name','description',)
+    list_filter = ['user','name','description']
+    list_display = ('user','name','description',)
+
 admin.site.register(MessageDashboard, MessageAdmin)
 admin.site.register(GeneralDetail)
 admin.site.register(TourData)
@@ -241,3 +248,4 @@ admin.site.register(Itinerary)
 admin.site.register(BookingStats)
 admin.site.register(SocialNetwork)
 admin.site.register(BookingQuestion, BookingQuestionAdmin)
+admin.site.register(File, FileAdmin)
