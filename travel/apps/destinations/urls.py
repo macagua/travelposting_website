@@ -48,6 +48,7 @@ from apps.destinations.views.destination import (
     DocumentView,
     DocumentAdd,
     DocumentUpdateView,
+    FileDocumentsView,
 )
 
 from apps.destinations.views.booking import (
@@ -105,6 +106,11 @@ urlpatterns = [
         'documents/<int:pk>/update/',
         nocommunity_access(DocumentUpdateView.as_view()),
         name='documents-update',
+    ),
+    path(
+        'files/',
+        nocommunity_access(FileDocumentsView.as_view()),
+        name='files-documents',
     ),
     path(
         'managers',

@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 import datetime
 from filer.fields.file import FilerFileField
-
+import os
 
 
 
@@ -1299,5 +1299,7 @@ class File(models.Model):
     def __str__(self):
         return self.name
 
-
+    def extension(self):
+        name, extension = os.path.splitext(self.image.name)
+        return extension
     

@@ -1,0 +1,94 @@
+
+
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Files - Travelposting' %}{% endblock %}
+{% block extracss %}
+<!-- FooTable -->
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h3>{% trans "Available Files"%}</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/es/dashboard/">{% trans "Home" %}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% url "dashboard:documents" %}">{% trans "Documents"%}</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <br>
+    <!--file list -->
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12 animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% if object_list %}
+                        {% for file in object_list %}
+                        <div class="file-box">
+                            <div class="file">
+                                <a href="#">
+                                    <span class="corner"></span>
+                                    <a href="{{ MEDIA_URL }}{{ file.image }}">
+                                    {% if file.extension == '.pdf' or  file.extension == '.docx' or  file.extension == '.doc'  %}
+                                    <div class="icon">
+                                        <i class="fa fa-file"></i>
+                                    </div>
+                                    {% elif file.extension == '.png' or file.extension == '.jpg' or file.extension == '.gif' or file.extension == '.jpge' %}
+                                    <div class="image">
+                                        <img alt="image" class="img-fluid" src="{{MEDIA_URL}}{{ file.image}}">
+                                    </div>
+                                    {% elif file.extension == '.mp3' or file.extension == '.m4p' or file.extension == '.wav' %}
+                                    <div class="icon">
+                                            <i class="fa fa-music"></i>
+                                    </div>
+                                    {% elif file.extension == '.mp4' or file.extension == '.mpg' or file.extension == '.ogv' or file.extension == '.webm' or file.extension == '.mkv' %}
+                                    <div class="icon">
+                                            <i class="img-fluid fa fa-film"></i>
+                                    </div>
+                                    {% elif file.extension == '.xls' %}
+                                    <div class="icon">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                    </div>
+                                    {% else %}
+                                    <div class="icon">
+                                        <i class="fa fa-file"></i>
+                                    </div>
+                                    {% endif %}
+                                    </a>
+                                    <div class="file-name">
+                                        <a href="{{ MEDIA_URL }}{{ file.image }}">{{ file.name }}</a>
+                                        <br>
+                                        <small>{% trans "Added" %}: 
+                                        {{ file.created_on }}                                     
+                                        </small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Files list -->
+</div>
+{% endblock content %}
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/#.#.#/jquery.jscroll.min.js"></script>
+<script>
+$(function() {
+    $('.jscroll').jscroll();    
+});
+</script>
+{% endblock js%}

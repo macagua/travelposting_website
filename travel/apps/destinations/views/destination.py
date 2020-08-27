@@ -1043,3 +1043,9 @@ class DocumentUpdateView(UpdateView):
         )
 
         return HttpResponseRedirect(self.success_url)
+
+class FileDocumentsView(ListView):
+    model = File
+    template_name = 'dashboard/file/_file_documents.html'
+    fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
+

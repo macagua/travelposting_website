@@ -112,6 +112,15 @@
               </a>
             </li>
             {% endif %}
+            {% if not request.user.is_staff %}
+            <li class="">
+                <a href="{% url "dashboard:files-documents"%}">
+                <i class="fa fa-file-pdf-o"></i>
+                <span class="nav-label">{% trans "Documents"%}</span>
+              </a>
+            </li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>
