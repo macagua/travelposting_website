@@ -522,7 +522,7 @@
                         <input type="hidden" id="user_id" name="user_id" value="{{ request.user.pk }}">
                     </div>
                     <div class="form-row">
-                        <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
+                        <input type="hidden" id="destination_id" name="destination" value="{{ destino.pk }}">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -562,7 +562,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="destinationsform" action="{% url 'make-booking' %}" method="POST">{% csrf_token %}
+            <form name="destinationsform" action="" method="POST">{% csrf_token %}
             <div class="modal-body">
                 <div class="form-row">
                     <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
@@ -581,7 +581,7 @@
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" maxlength="50" class="form-control" required
-                                   name="name" aria-label="{% trans 'Small' %}"
+                                   name="firts_name" aria-label="{% trans 'Small' %}"
                                    aria-describedby="inputGroup-sizing-sm"
                                    placeholder="{% trans 'Name' %}">
                         </div>
@@ -629,7 +629,7 @@
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
                             </div>
                             <input type="text" maxlength="2" class="form-control" required
-                                   name="people_travel" aria-label="{% trans 'Small' %}"
+                                   name="number_travel" aria-label="{% trans 'Small' %}"
                                    aria-describedby="inputGroup-sizing-sm"
                                    placeholder="{% trans 'Number of people travelling' %}">
                         </div>
@@ -639,7 +639,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" name="destination"
+                            <input type="text" maxlength="50" class="form-control" name="name_booking"
                                    aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm"
                                    placeholder="{% trans 'Do you have a plan you want to book?' %}">
                         </div>
@@ -657,7 +657,8 @@
             </div>
             <div class="modal-footer">
                 <!-- start reCAPTCHA input -->
-                <div id="g-recaptcha"></div>
+                {{ form.captcha.errors }}
+                {{ form.captcha }}
                 <!-- end reCAPTCHA input -->
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
                 <button type="submit" class="btn btn-primary">{% trans 'Book' %}</button>
@@ -667,7 +668,6 @@
     </div>
 </div>
 <!-- End Booking Modal -->
-
 <!-- Start Comments Section -->
 {% include 'services/destination/comments.html' %}
 <!-- End Comments Section -->
@@ -702,18 +702,12 @@
 
         infowindow.open(map, marker);
     }
+{% if form.errors %}
+        $('#BookModal').modal('show');
+{% endif %}
 </script>
 <!-- start reCAPTCHA assets -->
-<script type="text/javascript">
-  var onloadCallback = function() {
-    grecaptcha.render('g-recaptcha', {
-      'sitekey' : '6Ld03sgUAAAAAFj2SbpktazIW-C8bWL2ILCrq-KP',
-      'theme' : 'dark'
-    });
-  };
-</script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer></script>
+{{ form.media }}
 <!-- end reCAPTCHA assets -->
 <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=myMap&language={{ LANGUAGE_CODE }}"></script>
 
