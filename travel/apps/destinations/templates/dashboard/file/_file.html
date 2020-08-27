@@ -36,8 +36,9 @@
                             <a href="#" class="file-control active">{% trans "All" %}</a>
                             <div class="hr-line-dashed"></div>
                             <a href="{% url "dashboard:documents-add"%}" class="btn btn-primary btn-block">
-                            <i class="fa fa-plus-square-o"> </i> Upload Files
-                            </a>
+                            <i class="fa fa-plus-square-o"> </i> {% trans "Upload Files" %}
+                            </a><br>
+                            <a href="{% url 'dashboard:files-documents' %}" class="btn btn-info btn-block">{% trans "See file"%}</a>
                             <div class="hr-line-dashed"></div>
                             <h5>{{ request.user.email }}</h5>
                             <div class="clearfix"></div>
