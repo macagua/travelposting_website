@@ -65,7 +65,7 @@
                       <tr>
                         <td>{{ forloop.counter }}</td>
                         <td>
-                            <a href="{% url 'destinations:update' object.pk %}">{{ object.name }}</a>
+                            <a href="{% url 'destinations:update' object.pk %}" title="{{ object.name }}">{{ object.name }}</a>
                         </td>
                         <td>{{ object.details.inventario.sku }}</td>
                         <td>
@@ -85,11 +85,11 @@
                           {% endif %}
                         </td>
                         <td>
-                            <a class="btn btn-success btn-sm" href="{% url 'destinations:gallery-list' object.pk %}">
+                            <a class="btn btn-success btn-sm" href="{% url 'destinations:gallery-list' object.pk %}" title="{% trans 'View the Photos Gallery' %}">
                                 <i class="fa fa-photo"></i>
                                 {% trans 'Gallery' %}
                             </a>
-                            <a class="btn btn-success btn-sm" href="{% url 'destinations:video-list' object.pk %}">
+                            <a class="btn btn-success btn-sm" href="{% url 'destinations:video-list' object.pk %}" title="{% trans 'View the Videos Gallery' %}">
                                 <i class="fa fa-video-camera"></i>
                                 {% trans 'Video' %}
                             </a>
