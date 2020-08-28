@@ -991,6 +991,7 @@ class DocumentView(ListView):
     template_name = 'dashboard/file/_file.html'
     fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
 
+
     def delete(self,request):
         pk_document = QueryDict(request.body)
         document = get_object_or_404(File, pk=pk_document['pk'])
@@ -1026,8 +1027,12 @@ class DocumentUpdateView(UpdateView):
     def post(self, request, *args, **kwargs):
         name = request.POST.get('name')
         description = request.POST.get('description')
-
-
+        status = request.POST.get('status')
+        if status == 1:
+            status == True
+        else: 
+            status == False
+            
         try:
             file_rules = request.FILES['image']
             data = File.objects.get(pk=kwargs['pk'])
@@ -1040,6 +1045,7 @@ class DocumentUpdateView(UpdateView):
         File.objects.filter(pk=kwargs['pk']).update(
             name = name,
             description = description,
+            status = status
         )
 
         return HttpResponseRedirect(self.success_url)
@@ -1048,4 +1054,5 @@ class FileDocumentsView(ListView):
     model = File
     template_name = 'dashboard/file/_file_documents.html'
     fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
+    queryset = File.objects.filter(status=True)
 

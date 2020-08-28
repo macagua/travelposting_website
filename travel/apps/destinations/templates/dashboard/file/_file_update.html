@@ -64,6 +64,15 @@
                                    <input type="file" name="image" id="id_image">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{% trans "Active"%}</label>
+                                <div class="col-sm-10">
+                                <select class="form-control m-b" name="status">
+                                        <option value="1">{% trans "Publish"%}</option>
+                                        <option value="0">{% trans "Don't publish"%}</option>
+                                    </select>
+                                </div>
+                            </div>
                             {% endfor %}
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
