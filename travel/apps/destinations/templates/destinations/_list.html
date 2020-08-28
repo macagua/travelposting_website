@@ -89,6 +89,10 @@
                                 <i class="fa fa-photo"></i>
                                 {% trans 'Gallery' %}
                             </a>
+                            <a class="btn btn-success btn-sm" href="{% url 'destinations:video-list' object.pk %}">
+                                <i class="fa fa-video-camera"></i>
+                                {% trans 'Video' %}
+                            </a>
                         </td>
                         <td>
                             <span class="btn btn-danger btn-sm" onClick="delete_destination({{ object.id }})"><i class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
