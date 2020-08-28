@@ -25,6 +25,7 @@ from apps.destinations.views.destination import (
     DestinationUpdateView,
     DestinationDeleteView,
     GalleryListView,
+    VideoListView,
     OptionTabDataTemplateAjaxView,
     ItineraryCreateView,
     ItineraryUpdateView,
@@ -211,6 +212,12 @@ urlpatterns = [
         '<int:pk>/gallery/',
         nocommunity_access(GalleryListView.as_view()),
         name='gallery-list',
+    ),
+
+    path(
+        '<int:pk>/video/',
+        nocommunity_access(VideoListView.as_view()),
+        name='video-list',
     ),
 
     path(

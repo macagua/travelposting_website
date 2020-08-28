@@ -1,0 +1,153 @@
+{% extends 'destinations/base.html' %}
+
+{% load static i18n %}
+
+{% block title %}{% trans 'Video Gallery' %} - {{ destination }}{% endblock %}
+
+{% block css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'destinations/css/gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="p-w-md m-t-sm">
+        <div class="row">
+          <div class="col-lg-12">
+                    <div class="ibox-content text-center p-md">
+                        <a id="create_map" class="btn btn-warning pull-right" href="{% url 'destinations:list' %}">{% trans 'Back to list' %}</a>
+                        <h2>
+                            <span class="text-navy">{% trans "Video Gallery for: " %}{{ destination }}</span>
+                        </h2>
+                        <p>
+                            {% trans "By clicking the 'add videos' you can access to upload your own videos to your destination." %}<br>
+                            {% trans "You can also delete each one as you required or add comments to be displayed in our system." %}<br>
+                            {% trans "You can delete a video by click on the video and then click on 'remove' button " %}
+                        </p>
+                    </div>
+            <div class="ibox">
+              <div class="ibox-content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="gallery"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block js %}
+  {{ block.super }}
+  <script type="text/javascript" src="{% static 'destinations/js/videos.js' %}"></script>
+  <script type="text/javascript">
+    $(function () {
+        $('#gallery').gallery({
+            title: '{% trans "Video Gallery" %} - {{ destination }}', // titulo que se muestra en el modal para nombre de tour
+            inputFile: {
+                name: 'video',       // nombre del imput type file para hacer un $_FILES['name']
+                maxFiles: 12,        // maximos archivos permitidos en la galeria
+            },
+            inputComment: {
+                name: 'description', // index $_POST para actualizar texto descriptivo del video
+            },
+            routes: {
+                list: "/api/destinations/{{ destination.pk }}/gallery/",          // ruta para mostrar todos los videos
+                create: "/api/destinations/{{ destination.pk }}/gallery/create/", // ruta para hacer el post de crear
+                update: "/api/destinations/{{ destination.pk }}/gallery/update/", // ruta para hacer el post de actualizar
+                delete: "/api/destinations/{{ destination.pk }}/gallery/delete/", // ruta para hacer el post de eliminar
+            },
+            events: {
+                afterRender: function () {
+                    // el contenido de esta funcion se ejecuta cuando se termina de construir el box de galeria
+                    console.log('events.afterRender');
+                },
+
+                beforeUpdateComment: function (items, index, element) {
+                    // el contenido de esta funcion se ejecuta antes de actualizar un comentario de un video
+                    // si no retorna true no se ejecuta el post via ajax
+                    return true;
+                },
+                afterUpdateComment: function (data) {
+                    // el contenido de esta funcion se ejecuta despues de enviar el ajax
+                    console.log(data); // data == reponse jqXHR . ver update. puede haber un status.true o un status.false
+                    /*
+                        se podria usar lo siguiente:
+                        if(data.status == false)
+                        {
+                            alert(data.statusText);
+                            alert('otro mensaje de error. bla,bla, bla')
+                        }
+                    */
+                },
+                errorOnUpdateComment: function (data) {
+                    // error al hacer una peticion ajax al route routes.update
+                    console.log(data); // data == response jqXHR on fail
+                    // se podria redirigir a la pagina de login si se perdio la session. etc..
+                    // se podria dar un error de no hay internet cuando data.status = 0
+                },
+                errorOnUploadImage: function (data) {
+                    // error al hacer una peticion ajax al route routes.create
+                    console.log(data); // data == response jqXHR on fail
+                    // se podria redirigir a la pagina de login si se perdio la session. etc..
+                    // se podria dar un error de no hay internet cuando data.status = 0
+                },
+                afterUploadImage: function (data) {
+                    // el contenido de esta funcion se ejecuta despues de enviar el video via ajax
+                    console.log(data); // data == reponse jqXHR . ver update. puede haber un status.true o un status.false
+                    /*
+                        se podria usar lo siguiente:
+                        if(data.status == false)
+                        {
+                            alert(data.statusText);
+                            alert('otro mensaje de error. bla,bla, bla')
+                        }
+                    */
+                },
+                onMaxImages: function (items) {
+                    // esta funcion se ejecuta cuando llega al maximo el numero de archivos permitidos
+                    // items es la lista de registros
+                },
+                beforeDelete: function (items, index, element) {
+                    // el contenido de esta funcion se ejecuta antes de eliminar un video
+                    // si no retorna true no se ejecuta el post via ajax
+                    return true;
+                },
+                afterDelete: function (data) {
+                    // el contenido de esta funcion se ejecuta despues de la peticion de eliminar
+                    console.log(data); // data == reponse jqXHR on done
+                },
+
+                errorOnDelete: function (data) {
+                    console.log(data); // data == response jqXHR on fail
+                },
+                errorOnLoad: function (data) {
+                    // esta funcion se ejecuta cuando falla la carga inicial de la galeria
+                    // para la ruta routes.list
+                    console.log(data); // data == response jqXHR on fail
+
+                },
+            },
+            // textos que pueden ser traducible
+            labels: {
+                addItem: "{% trans 'Adding videos' %}",
+                rmItem: "{% trans 'Delete' %}",
+                addComment: "{% trans 'Write a comment' %}...",
+                viewItem: "{% trans 'Show details' %}",
+                confirm: {
+                    'cancel': "{% trans 'No' %}",
+                    'continue': "{% trans 'Yes' %}",
+                    'title': "{% trans 'Confirm action' %}",
+                    'msn': "{% trans 'Are you sure you want to delete this record?' %}",
+                },
+            }
+        });
+    });
+  </script>
+{% endblock %}
