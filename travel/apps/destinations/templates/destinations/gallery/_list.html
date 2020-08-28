@@ -49,19 +49,19 @@
   <script type="text/javascript">
     $(function () {
         $('#gallery').gallery({
-            title: '{% trans "Gallery" %} - {{ destination }}', //titulo que se muestra en el modal para nombre de tour
+            title: '{% trans "Gallery" %} - {{ destination }}', // titulo que se muestra en el modal para nombre de tour
             inputFile: {
-                name: 'image',      // nombre del imput type file para hacer un $_FILES['name'] ver create.php
-                maxFiles: 12,           // maximos archivos permitidos en la galeria
+                name: 'image',       // nombre del imput type file para hacer un $_FILES['name']
+                maxFiles: 12,        // maximos archivos permitidos en la galeria
             },
             inputComment: {
-                name: 'description',// index $_POST para actualizar texto descriptivo de imagen ver update.php
+                name: 'description', // index $_POST para actualizar texto descriptivo de imagen
             },
             routes: {
-                list: "/api/destinations/{{ destination.pk }}/gallery/",      // ruta para mostrar todas las galerias ver list.php
-                create: "/api/destinations/{{ destination.pk }}/gallery/create/",      // ruta para hacer el post de crear
-                update: "/api/destinations/{{ destination.pk }}/gallery/update/",      // ruta para hacer el post de actualizar
-                delete: "/api/destinations/{{ destination.pk }}/gallery/delete/",      // ruta para hacer el post de eliminar
+                list: "/api/destinations/{{ destination.pk }}/gallery/",          // ruta para mostrar todas las galerias
+                create: "/api/destinations/{{ destination.pk }}/gallery/create/", // ruta para hacer el post de crear
+                update: "/api/destinations/{{ destination.pk }}/gallery/update/", // ruta para hacer el post de actualizar
+                delete: "/api/destinations/{{ destination.pk }}/gallery/delete/", // ruta para hacer el post de eliminar
             },
             events: {
                 afterRender: function () {
@@ -115,7 +115,7 @@
                     // items es la lista de registros
                 },
                 beforeDelete: function (items, index, element) {
-                    // el contenido de esta funcion se ejecuta antes de eliminar una  imagen
+                    // el contenido de esta funcion se ejecuta antes de eliminar una imagen
                     // si no retorna true no se ejecuta el post via ajax
                     return true;
                 },
