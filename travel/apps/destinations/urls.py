@@ -49,6 +49,7 @@ from apps.destinations.views.destination import (
     DocumentAdd,
     DocumentUpdateView,
     FileDocumentsView,
+    SearchDocumentsView
 )
 
 from apps.destinations.views.booking import (
@@ -111,6 +112,11 @@ urlpatterns = [
         'files/',
         nocommunity_access(FileDocumentsView.as_view()),
         name='files-documents',
+    ),
+    path(
+        'files/search',
+        nocommunity_access(SearchDocumentsView.as_view()),
+        name='files-search',
     ),
     path(
         'managers',

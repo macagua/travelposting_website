@@ -16,7 +16,7 @@ from django.views.generic.edit import BaseCreateView
 from django.views.generic.list import MultipleObjectMixin
 from django.contrib.auth import password_validation
 from django.core import exceptions
-from apps.accounts.models import CustomerUser
+from django.db.models import Q # new
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -37,6 +37,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.datastructures import MultiValueDictKeyError
+from apps.accounts.models import CustomerUser
 
 
 
@@ -1056,3 +1057,14 @@ class FileDocumentsView(ListView):
     fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
     queryset = File.objects.filter(status=True)
 
+
+class SearchDocumentsView(ListView):
+    model = File
+    template_name = 'dashboard/file/_file_search.html'
+
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = File.objects.filter(
+            Q(name__icontains=query) | Q(description__icontains=query) | Q(image__icontains=query)
+        )
+        return object_list
