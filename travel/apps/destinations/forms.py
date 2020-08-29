@@ -628,7 +628,40 @@ class BookingForm(BaseBootstrapForm, forms.ModelForm):
                 'mail',
                 'number_travel',
                 'name_booking',
-                'comment', ]
+                'comment'
+                ]
+        widgets = {
+                'firts_name': forms.TextInput(attrs={
+                    'placeholder': _('Name'),
+                    'class': 'form-control'
+                    }),
+                'last_name': forms.TextInput(attrs={
+                    'placeholder': _('Last Name'),
+                    'class': 'form-control'
+                    }),
+                'cellphone': forms.TextInput(attrs={
+                    'placeholder': _('+49 123 456 789'),
+                    'class': 'form-control'
+                    }),
+                'mail': forms.TextInput(attrs={
+                    'placeholder': _('Email'),
+                    'class': 'form-control'
+                    }),
+                'number_travel': forms.TextInput(attrs={
+                    'placeholder': _('Number of people travelling'),
+                    'class': 'form-control'
+                    }),
+                'name_booking': forms.TextInput(attrs={
+                    'placeholder': _('Do you have a plan you want to book?'),
+                    'class': 'form-control'
+                    }),
+                'comment': forms.Textarea(attrs={
+                    'rows': 3,
+                    'placeholder': _('Do you may have some comments or remarks about your booking?'),
+                    'class': 'form-control'
+                    }),
+
+                }
 
 
 

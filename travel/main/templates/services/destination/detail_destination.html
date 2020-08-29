@@ -580,10 +580,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required
-                                   name="firts_name" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Name' %}">
+                            {{ form.firts_name }}
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -591,10 +588,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required
-                                   name="last_name" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Last Name' %}">
+                            {{ form.last_name }}
                         </div>
                     </div>
                 </div>
@@ -604,10 +598,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required
-                                   name="cellphone" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans '+49 123 456 789' %}">
+                            {{ form.cellphone }}
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -615,10 +606,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
                             </div>
-                            <input id="mail" type="email" maxlength="100" class="form-control" required
-                                   name="mail" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Email' %}">
+                            {{ form.mail }}
                         </div>
                     </div>
                 </div>
@@ -628,10 +616,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
                             </div>
-                            <input type="text" maxlength="2" class="form-control" required
-                                   name="number_travel" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Number of people travelling' %}">
+                            {{ form.number_travel }}
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -639,15 +624,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" name="name_booking"
-                                   aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Do you have a plan you want to book?' %}">
+                            {{ form.name_booking }}
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"
-                              placeholder="{% trans 'Do you may have some comments or remarks about your booking?' %}"></textarea>
+                    {{ form.comment }}
                 </div>
                 <div class="form-group">
                     <p style="font-size: 10px;">

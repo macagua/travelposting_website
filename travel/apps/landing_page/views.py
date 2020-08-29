@@ -181,6 +181,7 @@ class DetailDestinationView(CreateView):
                 'key': key,
                 'comment': comment,
             })
+
         return ctx
 
 
