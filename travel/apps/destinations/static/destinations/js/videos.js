@@ -640,7 +640,6 @@
 		var inputFile = $("<input>").attr({
 			type     : 'file',
 			multiple : true,
-			// accept   : 'image/jpeg,image/jpg,image/png',
 			accept   : 'image/mp4',
 		});
 

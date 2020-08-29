@@ -58,10 +58,10 @@
                 name: 'description', // index $_POST para actualizar texto descriptivo del video
             },
             routes: {
-                list: "/api/destinations/{{ destination.pk }}/gallery/",          // ruta para mostrar todos los videos
-                create: "/api/destinations/{{ destination.pk }}/gallery/create/", // ruta para hacer el post de crear
-                update: "/api/destinations/{{ destination.pk }}/gallery/update/", // ruta para hacer el post de actualizar
-                delete: "/api/destinations/{{ destination.pk }}/gallery/delete/", // ruta para hacer el post de eliminar
+                list: "/api/destinations/{{ destination.pk }}/video/list",      // ruta para mostrar todos los videos
+                create: "/api/destinations/{{ destination.pk }}/video/create/", // ruta para hacer el post de crear
+                update: "/api/destinations/{{ destination.pk }}/video/update/", // ruta para hacer el post de actualizar
+                delete: "/api/destinations/{{ destination.pk }}/video/delete/", // ruta para hacer el post de eliminar
             },
             events: {
                 afterRender: function () {

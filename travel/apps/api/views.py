@@ -35,7 +35,6 @@ class DestinationViewSet(ModelViewSet):
         return Response(serializer.data)
 
     @action(detail=True, methods=['post'], url_path="gallery/create", permission_classes=[AllowAny])
-
     def gallery_create(self, request, pk=None):
         data = request.data.copy()
         data['destination'] = pk
@@ -103,10 +102,10 @@ class DestinationViewSet(ModelViewSet):
         return Response(data, status=status.HTTP_200_OK)
 
     # Video Gallery for a Destination
-    @action(detail=True, methods=['get'], permission_classes=[AllowAny])
+    @action(detail=True, methods=['get'], url_path="video/list", permission_classes=[AllowAny])
     def video(self, request, pk=None):
         obj = self.get_object()
-        queryset = obj.video.all()
+        queryset = obj.media.all()
         serializer = self.serializer_video_class(queryset, many=True)
         return Response(serializer.data)
 
