@@ -522,7 +522,7 @@
                         <input type="hidden" id="user_id" name="user_id" value="{{ request.user.pk }}">
                     </div>
                     <div class="form-row">
-                        <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
+                        <input type="hidden" id="destination_id" name="destination" value="{{ destino.pk }}">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -562,7 +562,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="destinationsform" action="{% url 'make-booking' %}" method="POST">{% csrf_token %}
+            <form name="destinationsform" action="" method="POST">{% csrf_token %}
             <div class="modal-body">
                 <div class="form-row">
                     <input type="hidden" id="destination_id" name="destination_id" value="{{ destino.pk }}">
@@ -580,10 +580,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required
-                                   name="name" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Name' %}">
+                            {{ form.firts_name }}
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -591,10 +588,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required
-                                   name="last_name" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Last Name' %}">
+                            {{ form.last_name }}
                         </div>
                     </div>
                 </div>
@@ -604,10 +598,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" required
-                                   name="cellphone" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans '+49 123 456 789' %}">
+                            {{ form.cellphone }}
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -615,10 +606,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="far fa-envelope-open"></i></span>
                             </div>
-                            <input id="mail" type="email" maxlength="100" class="form-control" required
-                                   name="mail" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Email' %}">
+                            {{ form.mail }}
                         </div>
                     </div>
                 </div>
@@ -628,10 +616,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-users"></i></span>
                             </div>
-                            <input type="text" maxlength="2" class="form-control" required
-                                   name="people_travel" aria-label="{% trans 'Small' %}"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Number of people travelling' %}">
+                            {{ form.number_travel }}
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -639,15 +624,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-check-circle"></i></span>
                             </div>
-                            <input type="text" maxlength="50" class="form-control" name="destination"
-                                   aria-label="{% trans 'Small' %}" aria-describedby="inputGroup-sizing-sm"
-                                   placeholder="{% trans 'Do you have a plan you want to book?' %}">
+                            {{ form.name_booking }}
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"
-                              placeholder="{% trans 'Do you may have some comments or remarks about your booking?' %}"></textarea>
+                    {{ form.comment }}
                 </div>
                 <div class="form-group">
                     <p style="font-size: 10px;">
@@ -657,7 +639,8 @@
             </div>
             <div class="modal-footer">
                 <!-- start reCAPTCHA input -->
-                <div id="g-recaptcha"></div>
+                {{ form.captcha.errors }}
+                {{ form.captcha }}
                 <!-- end reCAPTCHA input -->
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
                 <button type="submit" class="btn btn-primary">{% trans 'Book' %}</button>
@@ -667,7 +650,6 @@
     </div>
 </div>
 <!-- End Booking Modal -->
-
 <!-- Start Comments Section -->
 {% include 'services/destination/comments.html' %}
 <!-- End Comments Section -->
@@ -702,18 +684,12 @@
 
         infowindow.open(map, marker);
     }
+{% if form.errors %}
+        $('#BookModal').modal('show');
+{% endif %}
 </script>
 <!-- start reCAPTCHA assets -->
-<script type="text/javascript">
-  var onloadCallback = function() {
-    grecaptcha.render('g-recaptcha', {
-      'sitekey' : '6Ld03sgUAAAAAFj2SbpktazIW-C8bWL2ILCrq-KP',
-      'theme' : 'dark'
-    });
-  };
-</script>
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer></script>
+{{ form.media }}
 <!-- end reCAPTCHA assets -->
 <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=myMap&language={{ LANGUAGE_CODE }}"></script>
 

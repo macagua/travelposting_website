@@ -1056,6 +1056,8 @@ class Booking(models.Model):
         help_text=_('Means if receive following or not.'),
     )
 
+    created_at = models.DateTimeField(auto_now_add=True)
+
     class Meta:
         verbose_name_plural = _("Booking's")
         verbose_name = _('Booking')

@@ -54,7 +54,6 @@ from apps.destinations.views.destination import (
 
 from apps.destinations.views.booking import (
     BookingListView,
-    BookingSaveView,
     BookingSaveStat,
     UpdateBooking
 )
