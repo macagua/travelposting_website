@@ -677,7 +677,7 @@
 				.appendTo(dItem);
 
 			var icon = $('<i>');
-				icon.addClass('gallery-icon-action gallery-icon-photo')
+				icon.addClass('gallery-icon-action gallery-icon-video')
 				    .attr('title', config.labels.viewItem)
 				    .appendTo(d2);
 
@@ -749,7 +749,7 @@
 
 		function renderBoxAdd(append){
 
-			if($(el).find(".main-box-gallery .gallery-icon-photos").length > 0)
+			if($(el).find(".main-box-gallery .gallery-icon-videos").length > 0)
 				return;
 
 			append = isBoolean(append) ? true : false;
@@ -762,7 +762,7 @@
 
 			var btnAdd = $('<div>');
 				btnAdd.addClass('box-add-item')
-				.html('<div><div class="icon gallery-icon-photos"></div><div><span>'+ config.labels.addItem +'</span></div></div>')
+				.html('<div><div class="icon gallery-icon-videos"></div><div><span>'+ config.labels.addItem +'</span></div></div>')
 				.appendTo(boxAdd);
 
 			//@todo add event drop
@@ -1129,7 +1129,7 @@
 			})();
 
 			modal.reset.default(true);
-			modal.icon.attr("class", "gallery-icon-photo");
+			modal.icon.attr("class", "gallery-icon-video");
 			modal.size('modal-lg');
 			modal.title.html( function(){
 				var html = '<span>'+ config.title + ' ' + (index+1) + '/' + items.length + '</span> <div class="pull-right" style="margin-right:15px;font-size:12px;line-height:20px	">'+ data.created_at+'</div>';
