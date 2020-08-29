@@ -12,6 +12,8 @@ from filer.fields.image import FilerImageField
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 import datetime
+from filer.fields.file import FilerFileField
+import os
 
 
 
@@ -1275,3 +1277,29 @@ class BookingChoice(models.Model):
     class Meta:
         verbose_name = _("Booking Choice")
         verbose_name_plural = _("Booking Choices")
+
+
+class File(models.Model):
+    user = models.ForeignKey(
+        CustomerUser,
+        on_delete=False,
+        verbose_name=_("Users"),
+    )
+    name = models.CharField(_('Name'), max_length=200)
+    description = models.CharField(_("Description"), max_length=50)
+    image = models.FileField(upload_to='file_image/')
+    created_on = models.DateTimeField(_('Created'), auto_now_add=True)
+    status = models.BooleanField(_('Active'), default=True, help_text=(
+                                    _('Indicate Status')))
+    
+    class Meta:
+        verbose_name = _("File")
+        verbose_name_plural = _("Files")
+
+    def __str__(self):
+        return self.name
+
+    def extension(self):
+        name, extension = os.path.splitext(self.image.name)
+        return extension
+    

@@ -21,6 +21,7 @@ from apps.destinations.models import (
     Request,
     Itinerary,
     DestinationMap,
+    File,
 )
 from apps.accounts.models import CustomerUser
 
@@ -610,3 +611,27 @@ class RequestForm(BaseBootstrapForm, forms.ModelForm):
                 'country',
                 'type'
                 ]
+
+
+class FileAddForm(forms.ModelForm):
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Name for document'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    description = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Description for document'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    class Meta:
+        model = File
+        fields = ('name', 'description', 'image')
