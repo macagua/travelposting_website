@@ -112,8 +112,8 @@ class VideoSerializer(serializers.ModelSerializer):
             'description': instance.description,
             'created_at': instance.created_at.strftime("%d/%m/%Y"),
             'url': {
-                'thumnails': instance.thumbnail_preview.url if instance.thumbnail_preview else '',
-                'large': instance.video.url if instance.video else ''
+                'thumbnail_preview': instance.thumbnail_preview.url if instance.thumbnail_preview else '',
+                'video': instance.video.url if instance.video else ''
             }
         }
 

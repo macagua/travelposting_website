@@ -103,7 +103,7 @@ class DestinationViewSet(ModelViewSet):
 
     # Video Gallery for a Destination
     @action(detail=True, methods=['get'], url_path="video/list", permission_classes=[AllowAny])
-    def video(self, request, pk=None):
+    def video_list(self, request, pk=None):
         obj = self.get_object()
         queryset = obj.media.all()
         serializer = self.serializer_video_class(queryset, many=True)
