@@ -561,7 +561,7 @@
 		var config = {
 
 			inputFile : {
-				name        : 'image',
+				name        : 'video',
 				maxFiles    : 12,
 			},
 			inputComment : {
@@ -640,13 +640,14 @@
 		var inputFile = $("<input>").attr({
 			type     : 'file',
 			multiple : true,
-			accept   : 'image/mp4',
+			accept   : 'image/mp4', // format type video accepted
 		});
 
 		function upload(file, src)
 		{
 		}
 
+		// render video file used for routes of list/update functions
 		function renderItem(model, index)
 		{
 			if(typeof index == 'undefined')
@@ -656,7 +657,7 @@
 				dItem
 					.addClass('item')
 					.css({
-						'background-image'    	: 'url('+ model.url.large +')',
+						'background-image'    	: 'url('+ model.url.thumbnail_preview +')',
 						'background-repeat'   	: 'no-repeat',
 						'background-position' 	: 'center',
 						'background-size'		: 'cover',
@@ -689,7 +690,6 @@
 				imput.addClass('form-control gallery-textarea-comment');
 				imput.text(model.description);
 				imput.attr({
-
 					'maxlength'	   : 255,
 					'placeholder'  : config.labels.addComment,
 				})
@@ -706,6 +706,8 @@
 						$(this).blur();
 					}
 				})
+
+				// route of update function for a video file
 				.on('change', function(e){
 					e.preventDefault();
 					e.stopPropagation();
@@ -772,6 +774,8 @@
 				inputFile.click();
 			});
         }
+
+        // route of list function for a video file
         function loadData(callback){
 			el.empty().addLoader();
 			dGrid.empty();
@@ -847,6 +851,7 @@
 			});
 		}
 
+		// create route for upload file
 		function upload(file, src){
 			var imgCached       = src;
 			var jqxhr    		= null;
@@ -889,6 +894,8 @@
 					}, 200);
 				}
             }
+
+            // route of create function for a video file
             function send(){
 				var formData = new FormData();
 					formData.append([config.inputFile.name], file , [config.inputFile.name]);
@@ -1073,6 +1080,7 @@
 					obj
 					.addClass('btn text-right btn-danger')
 					.text(config.labels.rmItem)
+					// route of delete function for a video file
 					.on('click', function(){
 
 						if(config.events.beforeDelete(items, index, pic) != true)
