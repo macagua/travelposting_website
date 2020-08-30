@@ -590,15 +590,15 @@
 					console.log(data); // data == response jqXHR on fail
 				},
 
-				errorOnUploadImage : function(data){
+				errorOnUploadVideo : function(data){
 					console.log(data); // data == response jqXHR on fail
 				},
 
-				afterUploadImage : function(data){
+				afterUploadVideo : function(data){
 					console.log(data); // data == response jqXHR on fail
 				},
 
-				onMaxImages : function(items){
+				onMaxVideos : function(items){
 					console.log(items); // data == response jqXHR on fail
 				},
 
@@ -640,7 +640,7 @@
 		var inputFile = $("<input>").attr({
 			type     : 'file',
 			multiple : true,
-			accept   : 'image/mp4', // format type video accepted
+			accept   : 'video/mp4', // format type video accepted
 		});
 
 		function upload(file, src)
@@ -767,7 +767,7 @@
 				.html('<div><div class="icon gallery-icon-videos"></div><div><span>'+ config.labels.addItem +'</span></div></div>')
 				.appendTo(boxAdd);
 
-			//@todo add event drop
+			// @todo add event drop
 			btnAdd.on('click', function(e){
 				e.preventDefault();
 				e.stopPropagation();
@@ -800,7 +800,7 @@
 						{
 							$(boxAdd).fadeOut().remove();
 							boxAdd = $('<div>');
-							config.events.onMaxImages();
+							config.events.onMaxVideos();
 							return;
 						}
 
@@ -810,16 +810,16 @@
 							{
 								$(boxAdd).fadeOut().remove();
 								boxAdd = $('<div>');
-								config.events.onMaxImages();
+								config.events.onMaxVideos();
 								return false;
 							}
 
-							//@todo validaciones aqui:
-							//@todo validacon minmo tamaño (v.size);
-							//@todo validacon minimo with ; minimo height (v.width || v.height);
-							//@todo maximo with ; maximo height (v.width || v.height);
+							// @todo validaciones aqui:
+							// @todo validacon minmo tamaño (v.size);
+							// @todo validacon minimo with ; minimo height (v.width || v.height);
+							// @todo maximo with ; maximo height (v.width || v.height);
 
-							if((/\.(png|jpeg|jpg)$/i).test(v.name) == false)
+							if((/\.(mp4)$/i).test(v.name) == false)
 								return;
 
 							var img = new Image();
@@ -922,14 +922,14 @@
 				.fail(function(data){
 					/// @todo add error report
 					$("#" + idNode).fadeOut();
-					config.events.errorOnUploadImage(data);
+					config.events.errorOnUploadVideo(data);
 				})
 				.done(function(data){
 					if(data.status == true)
 					{
 						data.model.url = {
-							thumnails : imgCached ,
-							large     : imgCached ,
+							thumbnail_preview : imgCached ,
+							video     : imgCached ,
 						};
 
 						items.push(data.model);
@@ -940,7 +940,7 @@
 						///@todo add Exception not save
 						//window.location.reload(true);
 						$("#" + idNode).fadeOut();
-						config.events.afterUploadImage(data);
+						config.events.afterUploadVideo(data);
 					}
 				});
 
@@ -977,7 +977,7 @@
 					abort();
 				});
 
-				//sendAjax
+				// sendAjax
 				send();
 			})();
 		}
@@ -1000,7 +1000,7 @@
 			var pic = (function(){
 				var obj = $('<div>');
 				obj.css({
-					'background-image'    	: 'url('+  data.url.thumnails +')',
+					'background-image'    	: 'url('+  data.url.thumbnail_preview +')',
 					'background-repeat'   	: 'no-repeat',
 					'background-position' 	: 'center',
 					'background-size'		: 'cover',
@@ -1177,4 +1177,3 @@
 		loadData();
 	};
 })(jQuery);
-
