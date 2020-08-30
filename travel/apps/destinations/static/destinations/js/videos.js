@@ -613,6 +613,7 @@
 				errorOnDelete : function(data){
 					console.log(data); // data == response jqXHR on fail
 				},
+
 				errorOnLoad   : function(data){
 					console.log(data); // data == response jqXHR on fail
 				},
@@ -822,12 +823,11 @@
 							if((/\.(mp4)$/i).test(v.name) == false)
 								return;
 
-							var img = new Image();
-							img.addEventListener("load", function () {
+							var video = document.createElement("video");
+							video.addEventListener("load", function () {
 								upload(v, this.src);
 							});
-
-							img.src = URL.createObjectURL(e.target.files[k]);
+							video.src = URL.createObjectURL(e.target.files[k]);
 
 							setTimeout(function(){
 								 $(e.target).val("");
@@ -920,7 +920,7 @@
 					}
 				})
 				.fail(function(data){
-					/// @todo add error report
+					// @todo add error report
 					$("#" + idNode).fadeOut();
 					config.events.errorOnUploadVideo(data);
 				})
@@ -937,8 +937,8 @@
 						$("#" + idNode).fadeOut();
 					}
 					else{
-						///@todo add Exception not save
-						//window.location.reload(true);
+						// @todo add Exception not save
+						// window.location.reload(true);
 						$("#" + idNode).fadeOut();
 						config.events.afterUploadVideo(data);
 					}
