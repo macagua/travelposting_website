@@ -641,7 +641,7 @@
 		var inputFile = $("<input>").attr({
 			type     : 'file',
 			multiple : true,
-			accept   : 'video/mp4', // format type video accepted
+			accept   : 'video/mp4,video/ogg,video/webm', // format type video accepted
 		});
 
 		function upload(file, src)

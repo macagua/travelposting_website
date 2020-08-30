@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.gis.db import models
 from django.db.models import Count, Max, F
@@ -7,6 +8,7 @@ from djmoney.money import Money
 from easy_thumbnails.fields import ThumbnailerImageField
 from apps.accounts.models import CustomerUser, COUNTRIES
 from apps.destinations.fields import DaysCommaField
+from apps.destinations.validators import valid_video_extension
 from apps.destinations.utils import TEMPLATE_DESCRIPTION
 from filer.fields.image import FilerImageField
 from django.utils import timezone
@@ -469,7 +471,8 @@ class Video(models.Model):
         blank=True,
         null=True,
         upload_to="gallery/video/",
-        # validators=[valid_extension]
+        default='{}img/video-poster.png'.format(settings.STATIC_URL),
+        validators=[valid_video_extension]
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
