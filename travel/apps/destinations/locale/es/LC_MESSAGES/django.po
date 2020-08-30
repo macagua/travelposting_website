@@ -115,7 +115,7 @@ msgstr "Categoría"
 
 #: apps/destinations/forms.py:75
 msgid "Tour Name"
-msgstr "Nombre del tour"
+msgstr "Nombre del paseo guiado"
 
 #: apps/destinations/forms.py:202
 msgid "Option"
@@ -320,11 +320,11 @@ msgstr "Transferir desde"
 
 #: apps/destinations/models.py:161
 msgid "Tour include"
-msgstr "Incluir el Tour"
+msgstr "Incluir el paseo guiado"
 
 #: apps/destinations/models.py:166
 msgid "Tour not include"
-msgstr "No incluir el Tour"
+msgstr "No incluir el paseo guiado"
 
 #: apps/destinations/models.py:171
 msgid "is published?"
@@ -426,7 +426,7 @@ msgstr "Destinos"
 
 #: apps/destinations/models.py:264 apps/destinations/models.py:824
 msgid "SKU"
-msgstr "SKU (Numero del Tour)"
+msgstr "SKU (Numero del paseo guiado)"
 
 #: apps/destinations/models.py:358
 msgid "Map Destination"
@@ -528,11 +528,11 @@ msgstr "Ocio +"
 
 #: apps/destinations/models.py:555 apps/destinations/models.py:592
 msgid "Tour"
-msgstr "Tour"
+msgstr "Paseo guiado"
 
 #: apps/destinations/models.py:556
 msgid "Tours"
-msgstr "Tours"
+msgstr "Paseos guiados"
 
 #: apps/destinations/models.py:566 apps/destinations/models.py:583
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:16
@@ -634,7 +634,7 @@ msgstr "Sección de encabezado"
 
 #: apps/destinations/models.py:727
 msgid "Variable tour"
-msgstr "Tour Variable (Solo para los Tours con 2 o más variantes)"
+msgstr "Paseo guiado Variable (Solo para los paseos guiados con 2 o más variantes)"
 
 #: apps/destinations/models.py:732
 msgid "Virtual"
@@ -1717,7 +1717,7 @@ msgstr ""
 
 #: apps/destinations/templates/destinations/_form.html:24
 msgid "Create a new Tour"
-msgstr "Crear un nuevo tour"
+msgstr "Crear un nuevo paseo guiado"
 
 #: apps/destinations/templates/destinations/_form.html:32
 #: apps/destinations/templates/destinations/_form_old.html:31
@@ -1744,7 +1744,7 @@ msgstr "Inventario"
 #: apps/destinations/templates/destinations/_form.html:66
 #: apps/destinations/templates/destinations/_form_old.html:164
 msgid "Tour Booking"
-msgstr "Reserva de excursiones"
+msgstr "Reserva de paseos guiados"
 
 #: apps/destinations/templates/destinations/_form.html:185
 #: apps/destinations/templates/destinations/_form_old.html:216
@@ -1779,7 +1779,7 @@ msgstr "Cargando ..."
 
 #: apps/destinations/templates/destinations/_form_old.html:37
 msgid "Tour Data"
-msgstr "Datos del Tour"
+msgstr "Datos del paseo guiado"
 
 #: apps/destinations/templates/destinations/_form_old.html:44
 msgid "Header Section"
@@ -2168,7 +2168,7 @@ msgstr "crear un nuevo itinerario"
 
 #: apps/destinations/templates/destinations/map/maps.html:3
 msgid "Add Maps for Tour"
-msgstr "Añadir mapas para el tour"
+msgstr "Añadir mapas para el paseo guiado"
 
 #: apps/destinations/templates/destinations/map/maps.html:24
 #: apps/destinations/templates/destinations/map/maps.html:68
@@ -2257,7 +2257,7 @@ msgstr "Reservas"
 
 #: apps/destinations/templates/destinations/navbar_left.html:99
 msgid "Your reservations"
-msgstr "Sus Reservaciones"
+msgstr "Sus Reservas"
 
 #: apps/destinations/templates/destinations/navbar_top.html:9
 msgid "Search for something"
@@ -2306,7 +2306,7 @@ msgstr "No incluye"
 
 #: apps/destinations/templates/destinations/tour/_form.html:113
 msgid "Description Tour Include/Doesn't Include"
-msgstr "Incluye/No Incluye la Descripción del Tour"
+msgstr "Incluye/No Incluye la Descripción del paseo guiado"
 
 #: apps/destinations/templates/destinations/tour/_form.html:116
 msgid "Food"
