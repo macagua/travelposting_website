@@ -18,7 +18,13 @@
         <div class="row">
           <div class="col-lg-12">
                     <div class="ibox-content text-center p-md">
-                        <a id="create_map" class="btn btn-warning pull-right" href="{% url 'destinations:list' %}">{% trans 'Back to list' %}</a>
+                        <a id="create_map" class="btn btn-success pull-right" href="{% url 'destinations:gallery-list' destination.pk %}" title="{% trans 'View the Photos Gallery' %}">
+                            <i class="fa fa-video-camera"></i>&nbsp;&nbsp;{% trans 'Photos Gallery' %}
+                        </a>
+                        <br><br>
+                        <a id="create_map" class="btn btn-warning pull-right" href="{% url 'destinations:list' %}">
+                            <i class="fa fa-list"></i>&nbsp;&nbsp;{% trans 'Back to list' %}
+                        </a>
                         <h2>
                             <span class="text-navy">{% trans "Video Gallery for: " %}{{ destination }}</span>
                         </h2>
@@ -32,7 +38,7 @@
               <div class="ibox-content">
                 <div class="row">
                   <div class="col-md-12">
-                    <div id="gallery"></div>
+                    <div id="video-gallery"></div>
                   </div>
                 </div>
               </div>
@@ -49,7 +55,7 @@
   <script type="text/javascript" src="{% static 'destinations/js/videos.js' %}"></script>
   <script type="text/javascript">
     $(function () {
-        $('#gallery').gallery({
+        $('#video-gallery').gallery({
             title: '{% trans "Video Gallery" %} - {{ destination }}', // titulo que se muestra en el modal para nombre de tour
             inputFile: {
                 name: 'video',       // nombre del imput type file para hacer un $_FILES['name']
