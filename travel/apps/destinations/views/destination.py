@@ -166,13 +166,13 @@ class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
 
     def post(self, request, *args, **kwargs):
         try:
-            #Step 1: Saving destination data.
+            # Step 1 - Saving destination data.
             destination, created = Destination.objects.update_or_create(
                 user=CustomerUser.objects.get(id=request.POST.get('user')),
                 name=request.POST.get('name'),
             )
 
-            #Set the categories.
+            # Step 1 - Set the categories.
             destination.categorie.set(request.POST.get('categorie'))
             destination.short_description=request.POST.get('short_description')
             destination.description=request.POST.get('description')
@@ -180,29 +180,29 @@ class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
             destination.departure_time=request.POST.get('departure_time') or None
             destination.arrival_date=dt.datetime.strptime(request.POST.get('arrival_date'), '%M/%d/%Y') if request.POST.get('arrival_date') != '' else None
             destination.arrival_time=request.POST.get('arrival_time') or None
-            destination.has_wifi=request.POST.get('has_wifi') or None
-            destination.has_breakfast_incluided=request.POST.get('has_breakfast_incluided') or None
-            destination.has_gym=request.POST.get('has_gym') or None
-            destination.has_air_conditioning=request.POST.get('has_air_conditioning') or None
-            destination.has_restaurant=request.POST.get('has_restaurant') or None
-            destination.has_bar=request.POST.get('has_bar') or None
-            destination.has_housekeeping=request.POST.get('has_housekeeping') or None
-            destination.has_room_service=request.POST.get('has_room_service') or None
-            destination.has_business_services=request.POST.get('has_business_services') or None
-            destination.has_hob_tub=request.POST.get('has_hob_tub') or None
-            destination.has_front_desk=request.POST.get('has_front_desk') or None
-            destination.has_laundry=request.POST.get('has_laundry') or None
+            # destination.has_wifi=request.POST.get('has_wifi') or None
+            # destination.has_breakfast_incluided=request.POST.get('id_has_breakfast_incluided') or None
+            # destination.has_gym=request.POST.get('id_has_gym') or None
+            # destination.has_air_conditioning=request.POST.get('id_has_air_conditioning') or None
+            # destination.has_restaurant=request.POST.get('id_has_restaurant') or None
+            # destination.has_bar=request.POST.get('id_has_bar') or None
+            # destination.has_housekeeping=request.POST.get('id_has_housekeeping') or None
+            # destination.has_room_service=request.POST.get('id_has_room_service') or None
+            # destination.has_business_services=request.POST.get('id_has_business_services') or None
+            # destination.has_hob_tub=request.POST.get('id_has_hob_tub') or None
+            # destination.has_front_desk=request.POST.get('id_has_front_desk') or None
+            # destination.has_laundry=request.POST.get('id_has_laundry') or None
             destination.save()
 
-            #creating the destination detail object.
+            # Step 1 - Creating the destination detail object.
             detail, created = DestinationDetail.objects.get_or_create(destination=destination)
 
-            #Step 2: Saving DestinationDetail data.
+            # Step 2 - Saving DestinationDetail data.
             general_detail, create = GeneralDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
             )
 
-            #Updating necessary fields.
+            # Step 2 - Updating necessary fields.
             general_detail.regular_price=request.POST.get('details-0-general-0-regular_price_0')
             general_detail.sale_price=request.POST.get('details-0-general-0-sale_price_0')
             general_detail.date_on_sale_from=request.POST.get('details-0-general-0-date_on_sale_from') or None
@@ -211,7 +211,7 @@ class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
             general_detail.class_imp=request.POST.get('details-0-general-0-class_imp')
             general_detail.save()
 
-            #Step 3: Saving the Inventario data.
+            # Step 3 - Saving the Inventario data.
             datedigit = (dt.datetime.now()).strftime('%y')
             count_dest = str(Destination.objects.filter(user=request.POST.get('user')).count())
             sku_destination = (datedigit + '0' + count_dest + destination.name[:4].upper())
@@ -219,7 +219,7 @@ class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
             )
 
-            #Updating changes and Set the new sku.
+            # Step 3 - Updating changes and Set the new sku.
             inventario.manager=True if request.POST.get('details-0-inventario-0-manager') == 'on' else False
             inventario.quantity=request.POST.get('details-0-inventario-0-quantity')
             inventario.reserva=request.POST.get('details-0-inventario-0-reserva')
@@ -228,13 +228,13 @@ class BaseDestinationView(NoCommunityRequiredMixin, BaseInlineModelFormMixin):
             inventario.sku=sku_destination
             inventario.save()
 
-            #Step 4: Saving the Booking preference data.
+            # Step 4 - Saving the Booking preference data.
             booking, created = BookingDetail.objects.update_or_create(
                 destination_detail=DestinationDetail.objects.get(id=detail.id),
                 is_active='1',
             )
 
-            #Updating fields.
+            # Step 4 - Updating fields.
             booking.start_date=request.POST.get('details-0-booking-0-start_date') if request.POST.get('details-0-booking-0-start_date') != '' else None
             booking.end_date=request.POST.get('details-0-booking-0-end_date') if request.POST.get('details-0-booking-0-end_date') != '' else None
             booking.days=request.POST.get('details-0-booking-0-days')
@@ -334,6 +334,23 @@ class GalleryListView(NoCommunityRequiredMixin, SingleObjectMixin, ListView):
 
     def get_queryset(self):
         return self.object.gallery.all()
+
+
+class VideoListView(NoCommunityRequiredMixin, SingleObjectMixin, ListView):
+    template_name = 'destinations/gallery/_list_video.html'
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object(queryset=Destination.objects.all())
+        return super(VideoListView, self).get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(VideoListView, self).get_context_data(**kwargs)
+        context['destination'] = self.object
+        return context
+
+    def get_queryset(self):
+        return self.object.media.all()
+
 
 class BaseItineraryMixin(object):
     form_class = ItineraryForm
