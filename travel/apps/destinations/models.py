@@ -13,6 +13,7 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 import datetime
 from filer.fields.file import FilerFileField
+from apps.destinations.formatChecker import ContentTypeRestrictedFileField
 import os
 
 
@@ -1287,7 +1288,35 @@ class File(models.Model):
     )
     name = models.CharField(_('Name'), max_length=200)
     description = models.CharField(_("Description"), max_length=50)
-    image = models.FileField(upload_to='file_image/')
+    image = ContentTypeRestrictedFileField(
+        upload_to='file_image/', 
+        content_types=[
+            'video/x-msvideo', 
+            'video/mp4',
+            'video/webm',
+            'video/ogg',
+            'video/x-msvideo',
+            'audio/mpeg',
+            'audio/ogg',
+            'audio/x-wav',
+            'application/x-7z-compressed',
+            'application/pdf',
+            'application/pdf',
+            'application/msword', 
+            'application/vnd.ms-powerpoint',
+            'application/x-rar-compressed',
+            'application/x-tar',
+            'application/vnd.ms-excel',
+            'application/zip',
+            'image/jpeg',
+            'image/gif',
+            'image/png',
+            'image/vnd.adobe.photoshop',
+            'image/psd',
+            ], 
+        max_upload_size=5242880, 
+        blank=True, 
+        null=True)
     created_on = models.DateTimeField(_('Created'), auto_now_add=True)
     status = models.BooleanField(_('Active'), default=True, help_text=(
                                     _('Indicate Status')))
