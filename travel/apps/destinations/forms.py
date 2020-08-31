@@ -1,35 +1,39 @@
 from django import forms
-
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from mapwidgets.widgets import GooglePointFieldWidget
-from django_summernote.widgets import SummernoteInplaceWidget
-from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
-from django_registration.forms import RegistrationForm as BaseRegistrationForm
+
 from apps.accounts.forms import BaseBootstrapForm
 from apps.destinations.widgets import BootstrapMoneyWidget
 from apps.destinations.models import (
-    TourData,
-    HeaderSection,
-    Destination,
-    DestinationDetail,
-    TabData, GeneralDetail,
-    InventarioDetail,
-    BookingDetail,
-    Photo,
-    Request,
-    Itinerary,
-    DestinationMap,
+        Booking,
+        BookingDetail,
+        DestinationMap,
+        Destination,
+        DestinationDetail,
+        File,
+        HeaderSection,
+        TabData, GeneralDetail,
+        InventarioDetail,
+        Itinerary,
+        Photo,
+        Request,
+        TourData,
 )
 from apps.accounts.models import CustomerUser
 
+from bootstrap_datepicker_plus import DatePickerInput,TimePickerInput
+from captcha.fields import ReCaptchaField
+from django_registration.forms import RegistrationForm as BaseRegistrationForm
+from django_summernote.widgets import SummernoteInplaceWidget
+from mapwidgets.widgets import GooglePointFieldWidget
 
 
 class DestinationForm(forms.ModelForm):
     """
         Form for save new destinations thru the frontend dashboard.
     """
+
     class Meta:
         model = Destination
         fields = [
@@ -389,6 +393,7 @@ InventarioDetailInlineFormSet = forms.inlineformset_factory(
 
 
 class BookingDetailForm(BaseBootstrapForm, forms.ModelForm):
+
     class Meta:
         model = BookingDetail
         fields = '__all__'
@@ -610,3 +615,75 @@ class RequestForm(BaseBootstrapForm, forms.ModelForm):
                 'country',
                 'type'
                 ]
+
+
+class BookingForm(BaseBootstrapForm, forms.ModelForm):
+    captcha = ReCaptchaField()
+
+    class Meta:
+        model = Booking
+        fields = [
+                'firts_name',
+                'last_name',
+                'cellphone',
+                'mail',
+                'number_travel',
+                'name_booking',
+                'comment'
+                ]
+        widgets = {
+                'firts_name': forms.TextInput(attrs={
+                    'placeholder': _('Name'),
+                    'class': 'form-control'
+                    }),
+                'last_name': forms.TextInput(attrs={
+                    'placeholder': _('Last Name'),
+                    'class': 'form-control'
+                    }),
+                'cellphone': forms.TextInput(attrs={
+                    'placeholder': _('+49 123 456 789'),
+                    'class': 'form-control'
+                    }),
+                'mail': forms.TextInput(attrs={
+                    'placeholder': _('Email'),
+                    'class': 'form-control'
+                    }),
+                'number_travel': forms.TextInput(attrs={
+                    'placeholder': _('Number of people travelling'),
+                    'class': 'form-control'
+                    }),
+                'name_booking': forms.TextInput(attrs={
+                    'placeholder': _('Do you have a plan you want to book?'),
+                    'class': 'form-control'
+                    }),
+                'comment': forms.Textarea(attrs={
+                    'rows': 3,
+                    'placeholder': _('Do you may have some comments or remarks about your booking?'),
+                    'class': 'form-control'
+                    }),
+
+                }
+
+
+class FileAddForm(forms.ModelForm):
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Name for document'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    description = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': _('Description for document'),
+                'class': 'form-control',
+                'required': 'required',
+            },
+        ),
+    )
+    class Meta:
+        model = File
+        fields = ('name', 'description', 'image')

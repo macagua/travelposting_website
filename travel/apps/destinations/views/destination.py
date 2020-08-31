@@ -16,7 +16,7 @@ from django.views.generic.edit import BaseCreateView
 from django.views.generic.list import MultipleObjectMixin
 from django.contrib.auth import password_validation
 from django.core import exceptions
-from apps.accounts.models import CustomerUser
+from django.db.models import Q # new
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -36,6 +36,9 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.datastructures import MultiValueDictKeyError
+from apps.accounts.models import CustomerUser
+
 
 
 
@@ -48,7 +51,8 @@ from apps.destinations.forms import (
     HeaderSectionInlineForm,
     DestinationDetailForm,
     ItineraryForm,
-    RequestForm
+    RequestForm,
+    FileAddForm
 )
 from apps.destinations.models import (
     Destination,
@@ -63,6 +67,7 @@ from apps.destinations.models import (
     SocialNetwork,
     MessageDashboard,
     Request,
+    File,
 )
 from apps.destinations.utils import (
     BaseInlineModelFormMixin,
@@ -997,3 +1002,86 @@ class RequestView(UserPassesTestMixin, CreateView):
     def get_queryset(self):
         return Request.objects.filter(user=self.request.user)
 
+
+
+class DocumentView(ListView):
+    model = File
+    template_name = 'dashboard/file/_file.html'
+    fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
+
+
+    def delete(self,request):
+        pk_document = QueryDict(request.body)
+        document = get_object_or_404(File, pk=pk_document['pk'])
+        if document.delete():
+            return JsonResponse(
+                {
+                'status':True
+                },
+                safe=False,
+            )
+
+class DocumentAdd(CreateView):
+    template_name = 'dashboard/file/_file_add.html'
+    form_class = FileAddForm
+    success_url = reverse_lazy('dashboard:documents')
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+
+class DocumentUpdateView(UpdateView):
+    template_name = 'dashboard/file/_file_update.html'
+    form_class = FileAddForm
+    success_url = reverse_lazy('destinations:documents')
+
+    def get(self, request, *args, **kwargs):
+        archivo = File.objects.filter(id=kwargs['pk'])
+        return render(request, self.template_name, {'archivo':archivo})
+
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        description = request.POST.get('description')
+        status = request.POST.get('status')
+        if status == 1:
+            status == True
+        else: 
+            status == False
+            
+        try:
+            file_rules = request.FILES['image']
+            data = File.objects.get(pk=kwargs['pk'])
+            data.image = request.FILES['image']    
+            data.save()
+        except MultiValueDictKeyError:
+            file_rules = ''
+
+
+        File.objects.filter(pk=kwargs['pk']).update(
+            name = name,
+            description = description,
+            status = status
+        )
+
+        return HttpResponseRedirect(self.success_url)
+
+class FileDocumentsView(ListView):
+    model = File
+    template_name = 'dashboard/file/_file_documents.html'
+    fields = ['user', 'name', 'description', 'image', 'created_on', 'status']
+    queryset = File.objects.filter(status=True)
+
+
+class SearchDocumentsView(ListView):
+    model = File
+    template_name = 'dashboard/file/_file_search.html'
+
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = File.objects.filter(
+            Q(name__icontains=query) | Q(description__icontains=query) | Q(image__icontains=query)
+        )
+        return object_list

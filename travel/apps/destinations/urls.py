@@ -46,11 +46,15 @@ from apps.destinations.views.destination import (
     LeaderAddView,
     LeaderAddExistingUserView,
     LeaderDeleteView,
+    DocumentView,
+    DocumentAdd,
+    DocumentUpdateView,
+    FileDocumentsView,
+    SearchDocumentsView
 )
 
 from apps.destinations.views.booking import (
     BookingListView,
-    BookingSaveView,
     BookingSaveStat,
     UpdateBooking
 )
@@ -84,6 +88,35 @@ urlpatterns = [
         '',
         nocommunity_access(DashboardIndex),
         name='dashboard-index',
+    ),
+    path(
+        'documents',
+        nocommunity_access(DocumentView.as_view()),
+        name='documents',
+    ),
+    path('documents/add/',
+        nocommunity_access(DocumentAdd.as_view()),
+        name='documents-add'
+    ),
+    path(
+        'documents/delete',
+        nocommunity_access(DocumentView.as_view()),
+        name='documents-delete',
+    ),
+    path(
+        'documents/<int:pk>/update/',
+        nocommunity_access(DocumentUpdateView.as_view()),
+        name='documents-update',
+    ),
+    path(
+        'files/',
+        nocommunity_access(FileDocumentsView.as_view()),
+        name='files-documents',
+    ),
+    path(
+        'files/search',
+        nocommunity_access(SearchDocumentsView.as_view()),
+        name='files-search',
     ),
     path(
         'managers',

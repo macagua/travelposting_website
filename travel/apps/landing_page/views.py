@@ -1,22 +1,24 @@
-from django.shortcuts import render, redirect, get_object_or_404 
-from django.contrib import messages
-from django.core.paginator import Paginator
-from django.db.models import Q
-from django.utils import timezone
-from django.db.models import  Max, Min
-from django.views import View
-from django.utils.translation import get_language, gettext_lazy as _
-from django.core.mail import mail_managers
-from django.template.loader import render_to_string
-from django.shortcuts import render_to_response
 from django.conf import settings
+from django.contrib import messages
+from django.core.mail import mail_managers, send_mail
+from django.core.paginator import Paginator
+from django.db.models import Q, Max, Min
+from django.shortcuts import render, redirect, get_object_or_404, render_to_response
+from django.template.loader import render_to_string
+from django.utils.translation import get_language, gettext_lazy as _
+from django.utils import timezone
+from django.views import View
+from django.views.generic import CreateView
+
 from apps.destinations.models import (
-    Destination,
-    Categorie,
-    GeneralDetail,
-    SearchLanding,
-    DestinationMap
+        Booking,
+        Destination,
+        Categorie,
+        GeneralDetail,
+        SearchLanding,
+        DestinationMap
 )
+from apps.destinations.forms import BookingForm
 from apps.destinations.utils import get_client_ip
 from apps.accounts.models import Comment
 from apps.landing_page.forms import ContactUsForm
@@ -118,28 +120,70 @@ class CategoriesView(View):
             })
 
 
-class DetailDestinationView(View):
-    def get(self, request, *args, **kwargs):
-        destination= get_object_or_404(Destination, id=kwargs.get('slug'))
-        key = settings.GOOGLE_MAPS_API_KEY
-        comment = Comment.objects.filter(post=kwargs.get('slug')).order_by('-created')[0:3]
+class DetailDestinationView(CreateView):
+    form_class = BookingForm
+    template_name = 'services/destination/detail_destination.html'
 
-        try:
-            destino_map = DestinationMap.objects.get(destination_id=kwargs.get('slug'))
-            return render(request, 'services/destination/detail_destination.html',{
+    def form_valid(self, form):
+        dest = Destination.objects.get(id=self.request.POST.get('destination_id'))
+
+        form.instance.destination = dest
+        form.instance.save()
+        subject = _('New Booking registered')
+
+        ctx = {
+            'destination' : dest.name,
+            'firts_name' : form.instance.firts_name,
+            'last_name' : form.instance.last_name,
+            'cellphone' : form.instance.cellphone,
+            'mail' : form.instance.mail,
+            'number_travel' : form.instance.number_travel,
+            'name_booking' : form.instance.name_booking,
+            'comment' : form.instance.comment,
+        }
+
+        html_message = render_to_string(
+            'pages/booking_email.html',
+            context=ctx
+        )
+
+        message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+
+        mail_managers(subject,
+                    message,
+                    fail_silently=True,
+                    html_message=html_message
+                )
+
+        send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [dest.user.email],
+            fail_silently=False,
+            html_message=html_message
+        )
+
+        return  render(self.request, 'pages/saveBooking.html')
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        destination= get_object_or_404(Destination, id=self.kwargs.get('slug'))
+        key = settings.GOOGLE_MAPS_API_KEY
+        comment = Comment.objects.filter(post=self.kwargs.get('slug')).order_by('-created')[0:3]
+        destino_map = DestinationMap.objects.filter(destination_id=self.kwargs.get('slug'))
+        destino_map = destino_map.last() if destino_map.exists() else None
+        data = _("Don't have exist map yet!") if destino_map else None
+        ctx.update({
                 'destino':destination,
                 'map': destino_map,
-                'key': key,
-                'comment': comment,
-            })
-        except:
-            data = _("Don't have exist map yet!")
-            return render(request, 'services/destination/detail_destination.html',{
-                'destino':destination,
                 'data': data,
                 'key': key,
                 'comment': comment,
             })
+
+        return ctx
+
 
 
 class SaveSearchView(View):
