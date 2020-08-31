@@ -15,6 +15,7 @@ from apps.destinations.models import (
     BookingDetail,
     OptionTabData,
     Photo,
+    Video,
 )
 
 
@@ -99,11 +100,35 @@ class PhotoWithDestinationSerializer(PhotoSerializer):
         fields = '__all__'
 
 
+class VideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Video
+        fields = ('name', 'sort', 'description', 'video', 'thumbnail_preview', 'created_at')
+
+    def to_representation(self, instance: Any) -> Any:
+        return {
+            'id': instance.pk,
+            'sort': instance.sort,
+            'description': instance.description,
+            'created_at': instance.created_at.strftime("%d/%m/%Y"),
+            'url': {
+                'thumbnail_preview': instance.thumbnail_preview.url if instance.thumbnail_preview else '',
+                'video': instance.video.url if instance.video else ''
+            }
+        }
+
+
+class VideoWithDestinationSerializer(VideoSerializer):
+    class Meta(VideoSerializer.Meta):
+        fields = '__all__'
+
+
 class DestinationSerializer(JSONFormSerializer, WritableNestedModelSerializer):
     tour = TourDataSerializer(many=False, read_only=False, required=False)
     header = HeaderSectionSerializer(many=False, read_only=False)
     details = DestinationDetailSerializer(many=False, read_only=False, required=False)
     gallery = PhotoSerializer(many=True, read_only=False, required=False)
+    video = VideoSerializer(many=True, read_only=False, required=False)
 
     class Meta:
         model = Destination

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-25 05:07-0400\n"
-"PO-Revision-Date: 2020-08-05 12:05-0400\n"
+"POT-Creation-Date: 2020-08-29 19:34-0400\n"
+"PO-Revision-Date: 2020-08-29 19:42-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: German <DE@li.org>\n"
 "Language: de\n"
@@ -31,12 +31,12 @@ msgid "Update Destination"
 msgstr "Aktualisieren Reiseziel"
 
 #: apps/destinations/__OLD_VIEW.py:316
-#: apps/destinations/views/destination.py:415
+#: apps/destinations/views/destination.py:432
 msgid "A new itinerary item has been registered"
 msgstr "Eine neue Reiseroute wurde registriert"
 
 #: apps/destinations/__OLD_VIEW.py:345
-#: apps/destinations/views/destination.py:444
+#: apps/destinations/views/destination.py:461
 msgid "Itinerary information has been updated"
 msgstr "Die Informationen zur Reiseroute wurden aktualisiert"
 
@@ -46,8 +46,8 @@ msgstr "Neue Buchung registriert"
 
 #: apps/destinations/__OLD_VIEW.py:401 apps/destinations/admin.py:121
 #: apps/destinations/views/booking.py:100
-#: apps/destinations/views/destination.py:576
-#: apps/destinations/views/destination.py:660
+#: apps/destinations/views/destination.py:593
+#: apps/destinations/views/destination.py:677
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 "wenn du die Admin-Site https://travelposting.com/admin/ sehen möchtest "
@@ -424,7 +424,7 @@ msgstr "Reiseziele"
 #: apps/destinations/models.py:254
 #: apps/destinations/templates/dashboard/widgets.html:12
 #: apps/destinations/templates/dashboard/widgets.html:96
-#: apps/destinations/templates/destinations/_list.html:145
+#: apps/destinations/templates/destinations/_list.html:149
 #: apps/destinations/templates/destinations/navbar_left.html:82
 msgid "Destinations"
 msgstr "Reisezielen"
@@ -475,6 +475,7 @@ msgid "Photos"
 msgstr "Fotos"
 
 #: apps/destinations/models.py:468 apps/destinations/models.py:484
+#: apps/destinations/templates/destinations/_list.html:94
 msgid "Video"
 msgstr "Video"
 
@@ -804,6 +805,7 @@ msgstr "Ist aktiv"
 #: apps/destinations/templates/dashboard/leaders/_agencies.html:195
 #: apps/destinations/templates/dashboard/leaders/_leaders.html:195
 #: apps/destinations/templates/destinations/gallery/_list.html:144
+#: apps/destinations/templates/destinations/gallery/_list_video.html:145
 msgid "No"
 msgstr "Nein"
 
@@ -811,6 +813,7 @@ msgstr "Nein"
 #: apps/destinations/templates/dashboard/leaders/_agencies.html:192
 #: apps/destinations/templates/dashboard/leaders/_leaders.html:192
 #: apps/destinations/templates/destinations/gallery/_list.html:145
+#: apps/destinations/templates/destinations/gallery/_list_video.html:146
 msgid "Yes"
 msgstr "Ja"
 
@@ -1307,9 +1310,10 @@ msgstr "Bearbeiten"
 #: apps/destinations/templates/dashboard/leaders/_requests_delete.html:25
 #: apps/destinations/templates/dashboard/mailbox/tablemain.html:28
 #: apps/destinations/templates/destinations/_delete.html:19
-#: apps/destinations/templates/destinations/_list.html:94
+#: apps/destinations/templates/destinations/_list.html:98
 #: apps/destinations/templates/destinations/_socialNetworkList.html:62
 #: apps/destinations/templates/destinations/gallery/_list.html:140
+#: apps/destinations/templates/destinations/gallery/_list_video.html:141
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:60
 #: apps/destinations/templates/destinations/map/maps.html:49
 #: apps/destinations/templates/destinations/tab_data/_form.html:17
@@ -1530,7 +1534,7 @@ msgid "Inbox"
 msgstr "Posteingang"
 
 #: apps/destinations/templates/dashboard/mailbox/_mailboxmain.html:43
-#: apps/destinations/templates/destinations/_list.html:169
+#: apps/destinations/templates/destinations/_list.html:173
 #: apps/destinations/templates/destinations/_socialNetworkList.html:91
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:92
 #: apps/destinations/templates/destinations/map/maps.html:136
@@ -1543,7 +1547,7 @@ msgstr ""
 "Wenn Sie diese Nachricht löschen, können Sie sie nicht wiederherstellen"
 
 #: apps/destinations/templates/dashboard/mailbox/_mailboxmain.html:48
-#: apps/destinations/templates/destinations/_list.html:174
+#: apps/destinations/templates/destinations/_list.html:178
 #: apps/destinations/templates/destinations/_socialNetworkList.html:96
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:97
 #: apps/destinations/templates/destinations/map/maps.html:141
@@ -1551,7 +1555,7 @@ msgid "Yes, delete it!"
 msgstr "Ja, löschen Sie es!"
 
 #: apps/destinations/templates/dashboard/mailbox/_mailboxmain.html:62
-#: apps/destinations/templates/destinations/_list.html:184
+#: apps/destinations/templates/destinations/_list.html:188
 #: apps/destinations/templates/destinations/_socialNetworkList.html:110
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:111
 #: apps/destinations/templates/destinations/map/maps.html:155
@@ -1702,8 +1706,8 @@ msgstr "Alle Details anzeigen"
 
 #: apps/destinations/templates/destinations/_booking_list.html:113
 #: apps/destinations/templates/destinations/_booking_list.html:115
-#: apps/destinations/templates/destinations/_list.html:122
-#: apps/destinations/templates/destinations/_list.html:124
+#: apps/destinations/templates/destinations/_list.html:126
+#: apps/destinations/templates/destinations/_list.html:128
 msgid "Search"
 msgstr "Suche"
 
@@ -1846,31 +1850,39 @@ msgstr "Verkaufspreis"
 msgid "There is existence"
 msgstr "Es gibt eine Existenz"
 
+#: apps/destinations/templates/destinations/_list.html:88
+msgid "View the Photos Gallery"
+msgstr ""
+
 #: apps/destinations/templates/destinations/_list.html:90
 #: apps/destinations/templates/destinations/gallery/_list.html:5
 #: apps/destinations/templates/destinations/gallery/_list.html:52
 msgid "Gallery"
 msgstr "Galerie"
 
-#: apps/destinations/templates/destinations/_list.html:144
+#: apps/destinations/templates/destinations/_list.html:92
+msgid "View the Videos Gallery"
+msgstr ""
+
+#: apps/destinations/templates/destinations/_list.html:148
 msgid "copy"
 msgstr "kopie"
 
-#: apps/destinations/templates/destinations/_list.html:145
+#: apps/destinations/templates/destinations/_list.html:149
 msgid "pdf"
 msgstr "pdf"
 
-#: apps/destinations/templates/destinations/_list.html:147
+#: apps/destinations/templates/destinations/_list.html:151
 msgid "print"
 msgstr "zu drucken"
 
-#: apps/destinations/templates/destinations/_list.html:170
+#: apps/destinations/templates/destinations/_list.html:174
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:93
 msgid "If you delete this itinerary you will not be able to recover it"
 msgstr ""
 "Wenn Sie diese Reiseroute löschen, können Sie sie nicht wiederherstellen"
 
-#: apps/destinations/templates/destinations/_list.html:184
+#: apps/destinations/templates/destinations/_list.html:188
 msgid "Destination has been deleted."
 msgstr "Das Reiseziel wurde gelöscht."
 
@@ -2015,6 +2027,7 @@ msgid "All Rights Reserved Site Map Disclaimer."
 msgstr "Alle Rechte vorbehalten Site Map Disclaimer."
 
 #: apps/destinations/templates/destinations/gallery/_list.html:20
+#: apps/destinations/templates/destinations/gallery/_list_video.html:21
 msgid "Back to list"
 msgstr "Zurück zur Liste"
 
@@ -2031,6 +2044,7 @@ msgstr ""
 "Fotos hochladenIhr Reiseziel."
 
 #: apps/destinations/templates/destinations/gallery/_list.html:26
+#: apps/destinations/templates/destinations/gallery/_list_video.html:27
 msgid ""
 "You can also delete each one as you required or add comments to be displayed "
 "in our system."
@@ -2051,20 +2065,53 @@ msgid "Adding images"
 msgstr "Hinzufügen von Bildern"
 
 #: apps/destinations/templates/destinations/gallery/_list.html:141
+#: apps/destinations/templates/destinations/gallery/_list_video.html:142
 msgid "Write a comment"
 msgstr "Schreibe einen Kommentar"
 
 #: apps/destinations/templates/destinations/gallery/_list.html:142
+#: apps/destinations/templates/destinations/gallery/_list_video.html:143
 msgid "Show details"
 msgstr "Details anzeigen"
 
 #: apps/destinations/templates/destinations/gallery/_list.html:146
+#: apps/destinations/templates/destinations/gallery/_list_video.html:147
 msgid "Confirm action"
 msgstr "Aktion bestätigen"
 
 #: apps/destinations/templates/destinations/gallery/_list.html:147
+#: apps/destinations/templates/destinations/gallery/_list_video.html:148
 msgid "Are you sure you want to delete this record?"
 msgstr "Sind Sie sicher, dass Sie diesen Datensatz löschen möchten?"
+
+#: apps/destinations/templates/destinations/gallery/_list_video.html:5
+#: apps/destinations/templates/destinations/gallery/_list_video.html:53
+msgid "Video Gallery"
+msgstr "Videogalerie"
+
+#: apps/destinations/templates/destinations/gallery/_list_video.html:23
+msgid "Video Gallery for: "
+msgstr "Videogalerie für: "
+
+#: apps/destinations/templates/destinations/gallery/_list_video.html:26
+msgid ""
+"By clicking the 'add videos' you can access to upload your own videos to "
+"your destination."
+msgstr ""
+"Durch Klicken auf 'Videos hinzufügen' können Sie Ihre eigenen "
+"Videos an Ihr Ziel hochladen."
+
+#: apps/destinations/templates/destinations/gallery/_list_video.html:28
+msgid ""
+"You can delete a video by click on the video and then click on 'remove' "
+"button "
+msgstr ""
+"Sie können ein Video löschen, indem Sie auf das Video klicken und dann auf die "
+"Schaltfläche 'Entfernen' klicken "
+
+#: apps/destinations/templates/destinations/gallery/_list_video.html:140
+msgid "Adding videos"
+msgstr "Hinzufügen von Videos"
 
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:22
 #: apps/destinations/templates/destinations/itinerary/itinerary_create.html:25
@@ -2123,7 +2170,7 @@ msgid "Destiny"
 msgstr "Reiseziel"
 
 #: apps/destinations/templates/destinations/itinerary/modal_itinerary.html:49
-#: apps/destinations/views/destination.py:353
+#: apps/destinations/views/destination.py:370
 msgid "create a new itinerary"
 msgstr "einen neuen Reiseplan erstellen"
 
@@ -2507,23 +2554,23 @@ msgstr ""
 msgid "a new map has been added to your destination"
 msgstr "eine neue Karte wurde zu Ihrem Reiseziel hinzugefügt"
 
-#: apps/destinations/views/destination.py:360
+#: apps/destinations/views/destination.py:377
 msgid "update itinerary"
 msgstr "reiseplan aktualisieren"
 
-#: apps/destinations/views/destination.py:491
+#: apps/destinations/views/destination.py:508
 msgid ""
 "There is already a configuration of social networks. Do you want to update?"
 msgstr ""
 "Es gibt bereits eine Konfiguration von sozialen Netzwerken. Möchten Sie ein "
 "Update durchführen?"
 
-#: apps/destinations/views/destination.py:563
+#: apps/destinations/views/destination.py:580
 msgid "You have a new message"
 msgstr "Du hast eine neue Nachricht"
 
-#: apps/destinations/views/destination.py:585
-#: apps/destinations/views/destination.py:628
-#: apps/destinations/views/destination.py:700
+#: apps/destinations/views/destination.py:602
+#: apps/destinations/views/destination.py:645
+#: apps/destinations/views/destination.py:717
 msgid "Thank you for your message, very soon we will answer back"
 msgstr "Vielen Dank für Ihre Nachricht, sehr bald werden wir Ihnen antworten"

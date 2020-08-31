@@ -14,10 +14,9 @@ urlpatterns = [
         '',
         include(router.urls),
     ),
-
-  path(
-    'oauth2/token/',
-    TokenView.as_view(),
-    name='token',
+    path(
+        'oauth2/token/',
+        TokenView.as_view(),
+        name='token',
     ),
 ]
