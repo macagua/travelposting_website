@@ -104,6 +104,7 @@ class DestinationViewSet(ModelViewSet):
     # Video Gallery for a Destination
     @action(detail=True, methods=['get'], url_path="video/list", permission_classes=[AllowAny])
     def video_list(self, request, pk=None):
+        ''' route for list video files for a Destination '''
         obj = self.get_object()
         queryset = obj.media.all()
         serializer = self.serializer_video_class(queryset, many=True)
@@ -111,15 +112,13 @@ class DestinationViewSet(ModelViewSet):
 
     @action(detail=True, methods=['post'], url_path="video/create", permission_classes=[AllowAny])
     def video_create(self, request, pk=None):
+        ''' route for create a video files for a Destination '''
         data = request.data.copy()
         data['destination'] = pk
         data.setdefault('sort', 999)
         name = f"{data['video'].name}.{data['video'].content_type.split('/')[1]}"
         data['video'].name = name
         data.setdefault('name', name.split('.')[0])
-        data.setdefault('thumbnail', get_thumbnailer(
-            data['video'],
-            f"{name.split('.')[0]}_thumbnail.{data['video'].content_type.split('/')[1]}"))
         serializer = self.serializer_video_class(data=data)
 
         if serializer.is_valid():
@@ -142,6 +141,7 @@ class DestinationViewSet(ModelViewSet):
 
     @action(detail=True, methods=['post', 'put', 'patch'], url_path="video/update", permission_classes=[AllowAny])
     def video_update(self, request, pk=None):
+        ''' route for update a video files for a Destination '''
         id = request.POST.get('id')
 
         try:
@@ -162,6 +162,7 @@ class DestinationViewSet(ModelViewSet):
 
     @action(detail=True, methods=['post', 'delete'], url_path='video/delete', permission_classes=[AllowAny])
     def video_delete(self, request, pk=None):
+        ''' route for delete a video files for a Destination '''
         id = request.POST.get('id')
 
         try:
@@ -175,4 +176,3 @@ class DestinationViewSet(ModelViewSet):
             'statusText': 'success'
         }
         return Response(data, status=status.HTTP_200_OK)
-
