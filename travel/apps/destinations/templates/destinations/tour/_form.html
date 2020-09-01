@@ -3,6 +3,7 @@
     {{ hidden_field }}
 {% endfor %}
 
+<!-- Start categorie and name destination -->
     <div class ="row">
         <div class="col-md-6 col-lg-6">
             <div class="form-group">
@@ -27,9 +28,9 @@
             {{ form.name.error|safe }}
         </div>
     </div>
+<!-- End categorie and name destination -->
 
-
-
+<!-- Start departure and arrival dates -->
 <div class="form-group" id="date_tour" style="display:none">
     <div class ="row">
         <div class="col-md-6 col-lg-6">
@@ -50,7 +51,9 @@
         </div>
     </div>
 </div>
+<!-- End departure and arrival dates -->
 
+<!-- Start short and large descriptions -->
 <div class="form-group" id="time_tour" style="display:none">
     <div class ="row">
         <div class="col-md-6 col-lg-6">
@@ -92,7 +95,7 @@
         </div>
     </div>
 </div>
-
+<!-- End short and large descriptions -->
 <!--
 <div class="form-group" id="tour_yes_no_include">
     <div class="row">
@@ -126,61 +129,88 @@
 </div>
 -->
 
-<div class="form-group" id="tour_yes_no_include">
-    <div class="row">
-        <div class="col-lg-5 col-md-6">
-            <div class="form-check">
-                <input type="checkbox" name="has_wifi" id="has_wifi" class="form-check-input" value="">
-                <label class="form-check-label" for="has_wifi">{% trans "Destination has Wifi?" %}</label>
+<!-- Destionation Include/Doesn't Include -->
+<div class="form-group" id="destination_yes_no_includes">
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">{% trans "Destionation Include/Doesn't Include" %}</legend>
+            <div class="col-lg-5 col-md-6">
+                <div class="form-check">
+                    {{form.has_wifi}}&nbsp;&nbsp;
+                    <label class="form-check-label" for="{{ form.has_wifi.id }}">
+                        {{ form.has_wifi.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_breakfast_incluided}}&nbsp;&nbsp;
+                    <label for="{{ form.has_breakfast_incluided.id }}">
+                            {{ form.has_breakfast_incluided.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_gym}}&nbsp;&nbsp;
+                    <label for="{{ form.has_gym.id }}">
+                            {{ form.has_gym.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_air_conditioning}}&nbsp;&nbsp;
+                    <label for="{{ form.has_air_conditioning.id }}">
+                            {{ form.has_air_conditioning.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_restaurant}}&nbsp;&nbsp;
+                    <label for="{{ form.has_restaurant.id }}">
+                            {{ form.has_restaurant.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_bar}}&nbsp;&nbsp;
+                    <label for="{{ form.has_bar.id }}">
+                            {{ form.has_bar.label }}.
+                    </label>
+                </div>
             </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_breakfast_incluided" id="has_breakfast_incluided" class="form-check-input" value="">
-                <label class="form-check-label" for="has_breakfast_incluided">{% trans "Destination has Breakfast included?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_gym" id="has_gym" class="form-check-input" value="">
-                <label class="form-check-label" for="has_gym">{% trans "Destination has Gym?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_air_conditioning" id="has_air_conditioning" class="form-check-input" value="">
-                <label class="form-check-label" for="has_air_conditioning">{% trans "Destination has Air conditioning?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_restaurant" id="has_restaurant" class="form-check-input" value="">
-                <label class="form-check-label" for="has_restaurant">{% trans "Destination has Restaurant?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_bar" id="has_bar" class="form-check-input" value="">
-                <label class="form-check-label" for="has_bar">{% trans "Destination has Bar?" %}</label>
+            <div class="col-lg-5 col-md-6">
+                <div class="form-check">
+                    {{form.has_housekeeping}}&nbsp;&nbsp;
+                    <label for="{{ form.has_housekeeping.id }}">
+                            {{ form.has_housekeeping.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_room_service}}&nbsp;&nbsp;
+                    <label for="{{ form.has_room_service.id }}">
+                            {{ form.has_room_service.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_business_services}}&nbsp;&nbsp;
+                    <label for="{{ form.has_business_services.id }}">
+                            {{ form.has_business_services.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_hob_tub}}&nbsp;&nbsp;
+                    <label for="{{ form.has_hob_tub.id }}">
+                            {{ form.has_hob_tub.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_front_desk}}&nbsp;&nbsp;
+                    <label for="{{ form.has_front_desk.id }}">
+                            {{ form.has_front_desk.label }}.
+                    </label>
+                </div>
+                <div class="form-check">
+                    {{form.has_laundry}}&nbsp;&nbsp;
+                    <label for="{{ form.has_laundry.id }}">
+                            {{ form.has_laundry.label }}.
+                    </label>
+                </div>
             </div>
         </div>
-        <div class="col-lg-7 col-md-6">
-            <div class="form-check">
-                <input type="checkbox" name="has_housekeeping" id="has_housekeeping" class="form-check-input" value="">
-                <label class="form-check-label" for="has_housekeeping">{% trans "Destination has Housekeeping service?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_room_service" id="has_room_service" class="form-check-input" value="">
-                <label class="form-check-label" for="has_room_service">{% trans "Destination has Room service?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_business_services" id="has_business_services" class="form-check-input" value="">
-                <label class="form-check-label" for="has_business_services">{% trans "Destination has Business services?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_hob_tub" id="has_hob_tub" class="form-check-input" value="">
-                <label class="form-check-label" for="has_hob_tub">{% trans "Destination has Hob Tub?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_front_desk" id="has_front_desk" class="form-check-input" value="">
-                <label class="form-check-label" for="has_front_desk">{% trans "Destination has 25/7 Front Desk?" %}</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="has_laundry" id="has_laundry" class="form-check-input" value="">
-                <label class="form-check-label" for="has_laundry">{% trans "Destination has Laundry service?" %}</label>
-            </div>
-        </div>
-
-    </div>
-
+    </fieldset>
 </div>
+<!-- End Destionation Include/Doesn't Include -->

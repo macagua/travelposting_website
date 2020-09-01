@@ -229,7 +229,7 @@
 
                     // Disable validation on fields that are disabled.
                     // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
-                    //form.validate().settings.ignore = ":disabled";
+                    // form.validate().settings.ignore = ":disabled";
 
                     // Start validation; Prevent form submission if false
                     return form.valid();
@@ -250,12 +250,12 @@
                 rules: {
                 }
             });
-            $('#id_categorie').select2();
-            var dynamic_form =  $("#tour_yes_no_include").dynamicForm("#tour_yes_no_include","#add", "#remove", {
-                limit:10,
-                formPrefix : "yes_no_include",
-                normalizeFullForm : false
-            });
+            // $('#id_categorie').select2();
+            // var dynamic_form =  $("#tour_yes_no_include").dynamicForm("#tour_yes_no_include","#add", "#remove", {
+            //     limit:10,
+            //     formPrefix : "yes_no_include",
+            //     normalizeFullForm : false
+            // });
             $('#setTimeDate' ).on( 'click', function() {
                 if( $(this).is(':checked') ){
                     $("#time_tour").show()
