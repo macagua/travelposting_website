@@ -1,3 +1,5 @@
+
+
 {% extends 'destinations/base.html' %}
 {% load static i18n destinations_tags static %}
 {% block title %}{% trans 'Mailbox - Travelposting' %}{% endblock %}
@@ -22,8 +24,6 @@
                         {% trans "View Message" %}
                     </h2>
                     <div class="mail-tools tooltip-demo m-t-md">
-    
-    
                         <h3>
                             <span class="font-normal">{% trans "Subject" %}: </span> {{ msg.subject }}
                         </h3>
@@ -34,11 +34,9 @@
                     </div>
                 </div>
                 <div class="mail-box">
-
-
                     <div class="mail-body">
                         <p>
-                            {{ msg.content}}
+                            {{ msg.content|safe}}
                         </p>
                     </div>
                     <div class="mail-body text-right tooltip-demo">
@@ -46,18 +44,15 @@
                         <button title="{% trans 'Remove' %}"  class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i> {% trans 'Remove' %}</button>
                     </div>
                 </div>
-
-                            <div class="clearfix"></div>
-    
-    
-                    </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
     {% include 'destinations/footer.html' %}
 </div>
+
+
 {% endblock content %}
 {% block extrajs %}
-
 {% endblock extrajs %}
 
