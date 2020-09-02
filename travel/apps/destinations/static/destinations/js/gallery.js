@@ -165,7 +165,7 @@
 					$('body').prepend(obj.bsModal);
 					obj.bsModal.modal({
 						'backdrop' : 'static',
-						'keyboard' : 'true',
+						'keyboard' : true,
 					});
 				}
 			};
