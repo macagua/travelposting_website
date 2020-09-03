@@ -1,0 +1,133 @@
+
+
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Ad Advertiser Create - Travelposting' %}{% endblock %}
+{% block extracss %}
+<!-- FooTable -->
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h3>{% trans "Ad Advertisers"%}</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/es/dashboard/">{% trans "Home" %}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% url 'advertisements:advertisers-list' %}">{% trans "Ad Advertisers"%}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    {% trans "Ad Advertiser Create"%}
+                </li>
+            </ol>
+        </div>
+    </div>
+    <br>
+    <!-- Form -->
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>{% trans "Ad Advertiser Create to show"%}</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action="#" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% if form.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.errors }}
+                            </div>
+                            {% endif %}
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.title.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.title }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.url.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.url }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.publication_date.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.publication_date }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.publication_date_end.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.publication_date_end }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.advertiser.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.advertiser }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.category.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.category }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.zone.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.zone }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.weight.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.weight }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.created_at.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.created_at }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.modified_at.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.modified_at }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.created_by.label }}</label>
+                                <div class="col-sm-10">
+                                    {{ form.created_by }}
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <a class="btn btn-white btn-sm">{% trans "Cancel" %}</a>
+                                    <button class="btn btn-primary btn-sm" type="submit">{% trans "Save changes" %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Form -->
+</div>
+{% endblock content %}

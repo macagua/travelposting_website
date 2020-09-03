@@ -120,6 +120,12 @@ urlpatterns += i18n_patterns(
     ),
 
     path(
+        'advertisements/',
+        include("apps.advertisements.urls",
+                namespace='advertisements'),
+    ),
+
+    path(
         'personal-search/',
         SaveSearchView.as_view(),
         name='personal-search',

@@ -1,0 +1,90 @@
+
+
+{% extends 'destinations/base.html' %}
+{% load static i18n destinations_tags static %}
+{% block title %}{% trans 'Ad Image - Travelposting' %}{% endblock %}
+{% block extracss %}
+<!-- FooTable -->
+<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
+<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
+{% endblock extracss%}
+{% block content %}
+<div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h3>{% trans "Ad Images"%}</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/es/dashboard/" title="{% trans 'Home' %}">{% trans 'Home' %}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% url 'advertisements:ad-images-list' %}" title="{% trans 'Ad Images' %}">{% trans 'Ad Images' %}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    {% trans "Update Ad Image"%}
+                </li>
+            </ol>
+        </div>
+    </div>
+    <br>
+    <!-- Form -->
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>{% trans "Update Ad Image"%}</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action=".">
+                            {% csrf_token %}
+                            <div class="form group row">
+                                <label class="col-sm-2 col-form-label">
+                                    {{ form.ad.label }}
+                                </label>
+                                <div class="col-sm-10">
+                                    {{ form.ad }}
+                                    <span class="form-text m-b-none">
+                                        {{ form.ad.help_text|safe }}
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="hr-line-dashed">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">
+                                    {{ form.device.label }}
+                                </label>
+                                <div class="col-sm-10">
+                                    {{ form.device }}
+                                    <span class="form-text m-b-none">
+                                        {{ form.device.help_text|safe }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form group row">
+                                <label class="col-sm-2 col-form-label">
+                                    {{ form.image.label }}
+                                </label>
+                                <div class="col-sm-10">
+                                    {{ form.image }}
+                                    <span class="form-text m-b-none">
+                                        {{ form.image.help_text|safe }}
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="hr-line-dashed">
+                            <button type="submit" class="btn btn-block btn-outline btn-primary">{% trans 'Save Ad Image' %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
