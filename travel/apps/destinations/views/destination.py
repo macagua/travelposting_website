@@ -704,11 +704,25 @@ class MailboxAdd(View):
                 attached=file_rules
             )  
 
-            send_mail(
+            subject = subject
+
+            ctx = {
+                'user' : request.user.email,
+                'name' : request.user.get_full_name,
+            }
+
+            html_message = render_to_string(
+                'dashboard/dashboard_email.html',
+                context=ctx
+            )
+
+            message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+
+            send_mail(subject,
                 subject,
-                message,
                 request.user.email,
-                [recipient.email],
+                [recipient],
+                html_message=html_message
             )          
 
 
@@ -747,12 +761,12 @@ class MailboxReply(View):
             attached=file_rules
         )
         #now we send the mail
-        subject = subject
 
+        subject = subject
+        
         ctx = {
             'user' : request.user.email,
             'name' : request.user.get_full_name,
-            'message': request.POST.get('message')
         }
 
         html_message = render_to_string(
@@ -760,12 +774,14 @@ class MailboxReply(View):
             context=ctx
         )
 
-        send_mail(
+        message = _(f'if you want see the admin site https://travelposting.com/admin/ ')
+
+        send_mail(subject,
             subject,
-            message,
             request.user.email,
-            [mensaje.sender],
-        )          
+            [recipient],
+            html_message=html_message
+        )
 
         return HttpResponseRedirect(self.success_url)
 
