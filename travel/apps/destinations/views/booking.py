@@ -116,6 +116,7 @@ class BookingSaveView(View):
 
         return render(request, 'pages/saveBooking.html')
 
+
 class BookingListView(LoginRequiredMixin, ListView):
     template_name = 'destinations/_booking_list.html'
     queryset = Booking.objects.all()

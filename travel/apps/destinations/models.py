@@ -462,11 +462,12 @@ class Video(models.Model):
         default=_("No comment"),
     )
 
-    thumbnail_preview = ThumbnailerImageField(
+    thumbnail_preview = models.FileField(
         _('Thumbnail'),
         blank=True,
         null=True,
         upload_to="gallery/thumbnail/",
+        default='{}img/video-poster.png'.format(settings.STATIC_URL),
     )
 
     video = models.FileField(
@@ -474,7 +475,6 @@ class Video(models.Model):
         blank=True,
         null=True,
         upload_to="gallery/video/",
-        default='{}img/video-poster.png'.format(settings.STATIC_URL),
         validators=[valid_video_extension]
     )
 
