@@ -4,7 +4,6 @@
 {% block extracss %}
 <!-- FooTable -->
 <link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
-<!--<link href="{% static 'dashboard/css/plugins/summernote/summernote-bs4.css' %}" rel="stylesheet">-->
 <link href="{% static 'dashboard/extras/summernote/summernote.min.css'%}" rel="stylesheet">
 <link href="{% static 'dashboard/css/plugins/select2/select2.min.css' %}" rel="stylesheet">
 <link href="{% static 'dashboard/css/plugins/select2/select2-bootstrap4.min.css' %}" rel="stylesheet">
@@ -24,7 +23,7 @@
                     </h2>
                 </div>
                 <div class="mail-box">
-                    <form method="POST">{% csrf_token %}
+                    <form method="POST"  enctype="multipart/form-data">{% csrf_token %}
                         {% if user.groups.all.0.name == "Manager" %}
                         <div class="mail-body">
                             <label class="col-form-label"><b>{% trans "Select an user" %}:</b></label>
@@ -51,6 +50,15 @@
                             </div>
                             <div class="clearfix"></div>
                         </div>
+
+                        <div class="mail-body">
+                                <div class="form-group row">
+                                    <label><b>{% trans "Attach file"%}</b></label>
+                                    <div class="custom-file">        
+                                        <input type="file" name="attach">
+                                    </div> 
+                                </div>
+                        </div>
                         <div class="mail-body text-right tooltip-demo">
                             <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-reply"></i> {% trans "Send" %}</button>
                             <a href="{% url 'dashboard:mailbox' %}" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> {% trans "Discard" %}</a>
@@ -66,7 +74,6 @@
 {% endblock content %}
 {% block extrajs%}
 <!-- SUMMERNOTE -->
-<!--<script src="{% static 'dashboard/js/plugins/summernote/summernote-bs4.js' %}"></script>-->
 <script src="{% static 'dashboard/extras/summernote/summernote.min.js' %}"></script>
 <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
 <script>

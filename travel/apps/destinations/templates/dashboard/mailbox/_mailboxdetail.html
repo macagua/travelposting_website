@@ -30,6 +30,12 @@
                         <h5>
                             <span class="float-right font-normal">{{ msg.sent_at }}</span>
                             <span class="font-normal">{% trans "From" %}: </span>{{ msg.sender.email }}
+                            <br>
+                            {% if msg.attached %}
+                            <span class="font-normal">{% trans "Attach"%}: </span> 
+                            <a href="{{ MEDIA_URL }}{{ msg.attached }}"><i class="fa fa-cloud-download"></i> {% trans "Download attached files"%}</a>
+                            {% endif %}
+                            
                         </h5>
                     </div>
                 </div>

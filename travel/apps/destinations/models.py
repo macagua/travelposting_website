@@ -1180,6 +1180,36 @@ class MessageDashboard(models.Model):
     subject = models.CharField(
         _('Subject'), blank=False, null=False, max_length=1000)
     content = models.TextField(_('Content'))
+    attached = ContentTypeRestrictedFileField(
+        upload_to='file_image/', 
+        content_types=[
+            'video/x-msvideo', 
+            'video/mp4',
+            'video/webm',
+            'video/ogg',
+            'video/x-msvideo',
+            'audio/mpeg',
+            'audio/ogg',
+            'audio/x-wav',
+            'application/x-7z-compressed',
+            'application/pdf',
+            'application/pdf',
+            'application/msword', 
+            'application/vnd.ms-powerpoint',
+            'application/x-rar-compressed',
+            'application/x-tar',
+            'application/vnd.ms-excel',
+            'application/zip',
+            'image/jpeg',
+            'image/gif',
+            'image/png',
+            'image/vnd.adobe.photoshop',
+            'image/psd',
+        ], 
+        max_upload_size=5242880, 
+        blank=True, 
+        null=True
+    )
     sender = models.ForeignKey(
         CustomerUser, related_name='dash_sender', verbose_name=_("Sender"), on_delete=models.CASCADE)
     # the variable recipient will be active when we'll work that the group

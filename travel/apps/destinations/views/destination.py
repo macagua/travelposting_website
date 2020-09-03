@@ -651,6 +651,11 @@ class MailboxAdd(View):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
         user_sender = CustomerUser.objects.get(pk=request.user.id)
+        try:
+            file_rules = request.FILES['attach']
+        except MultiValueDictKeyError:
+            file_rules = ''
+
         #this filter will be used when we apply all the group for magnament the other dashboard!
         admins = ['Manager']
         gr = request.user.groups.get_queryset().filter(name__in=admins).exists()
@@ -662,7 +667,8 @@ class MailboxAdd(View):
                 subject=subject,
                 content=message,
                 sender=user_sender,
-                recipient= re_admin
+                recipient= re_admin,
+                attached=file_rules
             )
 
             #now we send the mail
@@ -689,11 +695,13 @@ class MailboxAdd(View):
             )
         else:
             recipient = CustomerUser.objects.get(id=request.POST.get('recipient'))
+
             MessageDashboard.objects.create(
                 subject=subject,
                 content=message,
                 sender=user_sender,
-                recipient= recipient
+                recipient= recipient,
+                attached=file_rules
             )  
 
             send_mail(
@@ -725,14 +733,19 @@ class MailboxReply(View):
         pk = kwargs['int']
         mensaje = MessageDashboard.objects.get(id=pk)
         subject = str("Rw: "+mensaje.subject) 
+        #verify files
+        try:
+            file_rules = request.FILES['attach']
+        except MultiValueDictKeyError:
+            file_rules = ''
 
         MessageDashboard.objects.create(
             subject=subject,
             content=message,
             sender=user_sender,
-            recipient= mensaje.sender
+            recipient= mensaje.sender,
+            attached=file_rules
         )
-
         #now we send the mail
         subject = subject
 
