@@ -111,6 +111,35 @@
             </li>
             <li class="">
               <a href="#">
+                <i class="fa fa-buysellads fa-lg"></i>
+                <span class="nav-label">{% trans 'Ads' %}</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level collapse" aria-expanded="false">
+                <li class="">
+                  <a href="{% url 'advertisements:advertisers-list' %}" title="{% trans 'Ad Advertisers' %}">
+                    <i class="fa fa-users fa-lg"></i>{% trans 'Ad Advertisers' %}
+                  </a>
+                </li>
+                <li class="">
+                  <a href="{% url 'advertisements:categories-list' %}" title="{% trans 'Ad Categories' %}">
+                    <i class="fa fa-folder fa-lg"></i>{% trans 'Ad Categories' %}
+                  </a>
+                </li>
+                <li class="">
+                  <a href="{% url 'advertisements:ads-list' %}" title="{% trans 'Advertisements' %}">
+                    <i class="fa fa-cog fa-lg"></i>{% trans 'Advertisements' %}
+                  </a>
+                </li>
+                <li class="">
+                  <a href="{% url 'advertisements:ad-images-list' %}" title="{% trans 'Your Ad Images' %}">
+                    <i class="fa fa-image fa-lg"></i>{% trans 'Your Ad Images' %}
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="">
+              <a href="#">
                 <i class="fa fa-book fa-lg"></i>
                 <span class="nav-label">{% trans 'Reservations' %}</span>
                 <span class="fa arrow"></span>
