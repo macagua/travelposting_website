@@ -21,9 +21,18 @@
                       <b class="caret"></b></span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                      <li><a href="{% url 'accounts:user-details' request.user.pk %}">{% trans 'Information' %}</a></li>
-                      <li><a href="{% url 'accounts:password-change' %}">{% trans 'Change password' %}</a></li>
-                      <li><a href="{% url 'accounts:logout' %}">{% trans 'Close session' %}</a></li>
+                      <li>
+                        <a href="{% url 'accounts:user-details' request.user.pk %}"
+                           title="{% trans 'Information' %}">{% trans 'Information' %}</a>
+                      </li>
+                      <li>
+                        <a href="{% url 'accounts:password-change' %}"
+                           title="{% trans 'Change password' %}">{% trans 'Change password' %}</a>
+                      </li>
+                      <li>
+                        <a href="{% url 'accounts:logout' %}"
+                           title="{% trans 'Close session' %}">{% trans 'Close session' %}</a>
+                      </li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -35,7 +44,9 @@
             {% else %}
             <li>
             {% endif %}
-              <a href="{% url 'dashboard:dashboard-index' %}"><i class="fa fa-th-large"></i> <span class="nav-label">{% trans 'Home' %}</span></a>
+              <a href="{% url 'dashboard:dashboard-index' %}" title="{% trans 'Home' %}">
+                <i class="fa fa-th-large"></i> <span class="nav-label">{% trans 'Home' %}</span>
+              </a>
             </li>
               {% if request.get_full_path == '/es/dashboard/mailbox' or request.get_full_path == '/en/dashboard/mailbox' or request.get_full_path == '/de/dashboard/mailbox' %}
 
@@ -68,12 +79,12 @@
                 <span class="fa arrow"></span>
               </a>
               <ul class="nav nav-second-level">
-                <li class=""><a href="{% url 'dashboard:documents'%}"><i class="fa fa-file-pdf-o"></i>{% trans "Documents"%}</a></li>
-                <li class=""><a href="{% url 'dashboard:requests_manager' %}">{% trans "Pending Requests" %}</a></li>
-                <li class=""><a href="{% url 'dashboard:manager' %}">{% trans "List Managers" %}</a></li>
-                <li class=""><a href="{% url 'dashboard:manager' %}">{% trans "Add Manager" %}</a></li>
-                <li class=""><a href="{% url 'dashboard:agencies' %}">{% trans "List Agencies" %}</a></li>
-                <li class=""><a href="{% url 'dashboard:agency-add' %}">{% trans "Add agency" %}</a></li>
+                <li class=""><a href="{% url 'dashboard:documents'%}" title="{% trans 'Documents' %}"><i class="fa fa-file-pdf-o"></i>{% trans 'Documents' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:requests_manager' %}" title="{% trans 'Pending Requests' %}">{% trans 'Pending Requests' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:manager' %}" title="{% trans 'List Managers' %}">{% trans 'List Managers' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:manager' %}" title="{% trans 'Add Manager' %}">{% trans 'Add Manager' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:agencies' %}" title="{% trans 'Agencies List' %}">{% trans 'Agencies List' %}</a></li>
+                <li class=""><a href="{% url 'dashboard:agency-add' %}" title="{% trans 'Add agency' %}">{% trans 'Add agency' %}</a></li>
               </ul>
             </li>
             {% endif %}
@@ -84,10 +95,18 @@
                 <span class="fa arrow"></span>
               </a>
               <ul class="nav nav-second-level">
-                <li class=""><a href="{% url 'dashboard:list' %}" title="{% trans 'Your destinations' %}">{% trans 'Your destinations' %}</a></li>
-                <li class=""><a href="{% url 'dashboard:itinerary-list' %}" title="{% trans 'Itinerary' %}">{% trans 'Itinerary' %}</a></li>
-                <li class=""><a href="{% url 'dashboard:destination-map' %}" title="{% trans 'Maps' %}">{% trans 'Maps' %}</a></li>
-                <li class=""><a href="{% url 'dashboard:social-network' %}" title="{% trans 'Social Network' %}">{% trans 'Social Network' %}</a></li>
+                <li class="">
+                  <a href="{% url 'dashboard:list' %}" title="{% trans 'Your destinations' %}">{% trans 'Your destinations' %}</a>
+                </li>
+                <li class="">
+                  <a href="{% url 'dashboard:itinerary-list' %}" title="{% trans 'Itinerary' %}">{% trans 'Itinerary' %}</a>
+                </li>
+                <li class="">
+                  <a href="{% url 'dashboard:destination-map' %}" title="{% trans 'Maps' %}">{% trans 'Maps' %}</a>
+                </li>
+                <li class="">
+                  <a href="{% url 'dashboard:social-network' %}" title="{% trans 'Social Network' %}">{% trans 'Social Network' %}</a>
+                </li>
               </ul>
             </li>
             <li class="">
@@ -97,15 +116,16 @@
                 <span class="fa arrow"></span>
               </a>
               <ul class="nav nav-second-level">
-                <li class=""><a href="{% url 'dashboard:booking-list' %}">{% trans 'Your reservations' %}</a></li>
+                <li class="">
+                  <a href="{% url 'dashboard:booking-list' %}" title="{% trans 'Your reservations' %}">{% trans 'Your reservations' %}</a></li>
               </ul>
             </li>
             {% if not request.user.is_superuser %}
             <li class="">
               {% if not perms.accounts.manager_country and not perms.accounts.manager  %}
-                <a href="{% url 'destinations:requests' %}">
+                <a href="{% url 'destinations:requests' %}" title="{% trans 'Requests' %}">
               {% else %}
-                <a href="{% url 'destinations:requests_manager' %}">
+                <a href="{% url 'destinations:requests_manager' %}" title="{% trans 'Requests' %}">
               {% endif %}
                 <i class="fa fa-book fa-lg"></i>
                 <span class="nav-label">{% trans 'Requests' %}</span>
@@ -114,9 +134,9 @@
             {% endif %}
             {% if not request.user.is_staff %}
             <li class="">
-                <a href="{% url "dashboard:files-documents"%}">
+                <a href="{% url 'dashboard:files-documents' %}" title="{% trans 'Documents' %}">
                 <i class="fa fa-file-pdf-o"></i>
-                <span class="nav-label">{% trans "Documents"%}</span>
+                <span class="nav-label">{% trans 'Documents' %}</span>
               </a>
             </li>
             {% endif %}
