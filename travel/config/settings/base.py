@@ -462,6 +462,7 @@ EMAIL_BACKEND = 'django_yubin.smtp_queue.EmailBackend'
 
 #FOR GOOGLE-MAP-WIDGETS
 #https://django-map-widgets.readthedocs.io/en/latest/widgets/point_field_map_widgets.html#usage
+# ---------------------------------------------------------------------------------------------------
 
 GOOGLE_MAPS_API_KEY = env('GOOGLE_MAPS_API_KEY', default="AIzaSyB_CmhhFa-mzxnprFS9hxgfY5Fh_IsHpoo")
 
@@ -482,11 +483,13 @@ BOT = telepot.Bot('806633169:AAFouKIb9-QwJvGnLz6eIjO3rDBLB4HT78M')
 
 # Django Star Ratings System
 # https://django-star-ratings.readthedocs.io/
+# ---------------------------------------------------------------------------------------------------
 
 # To change the star icon height, defaults to 32
 STAR_RATINGS_STAR_HEIGHT = 12
 
 # Django Ads System
+# ---------------------------------------------------------------------------------------------------
 ADS_GOOGLE_ADSENSE_CLIENT = None  # 'ca-pub-xxxxxxxxxxxxxxxx'
 
 ADS_ZONES = {
@@ -545,6 +548,8 @@ ADS_VIEWPORTS = {
 }
 
 # Configurations for axes 
+# https://django-axes.readthedocs.io/
+# ---------------------------------------------------------------------------------------------------
 AXES_ENABLED= True
 
 from datetime import timedelta
