@@ -165,7 +165,7 @@
 					$('body').prepend(obj.bsModal);
 					obj.bsModal.modal({
 						'backdrop' : 'static',
-						'keyboard' : 'true',
+						'keyboard' : true,
 					});
 				}
 			};
@@ -820,13 +820,13 @@
 							// @todo validacon minimo with ; minimo height (v.width || v.height);
 							// @todo maximo with ; maximo height (v.width || v.height);
 
-							if((/\.(mp4)$/i).test(v.name) == false)
-								return;
 
 							var video = document.createElement("video");
-							video.addEventListener("load", function () {
+
+							video.addEventListener("loadstart", function () {
 								upload(v, this.src);
 							});
+                            video.setAttribute('controls', 'controls');
 							video.src = URL.createObjectURL(e.target.files[k]);
 
 							setTimeout(function(){

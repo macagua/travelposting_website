@@ -16,10 +16,10 @@
             <h3>{% trans "Available Files"%}</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="/es/dashboard/">{% trans "Home" %}</a>
+                    <a href="/es/dashboard/" title="{% trans 'Home' %}">{% trans 'Home' %}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{% url "dashboard:documents" %}">{% trans "Documents"%}</a>
+                    <a href="{% url 'dashboard:documents' %}" title="{% trans 'Documents' %}">{% trans 'Documents' %}</a>
                 </li>
             </ol>
         </div>
@@ -31,14 +31,16 @@
             <div class="col-lg-12 animated fadeInRight">
                 <form action="{% url 'dashboard:files-search' %}" method="get">
                     <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="{% trans "Please search your file"%}"> 
+                        <input type="text" name="q" class="form-control" placeholder="{% trans 'Please search your file' %}">
                         <span class="input-group-append"> 
-                            <button type="button" class="btn btn-primary">{% trans "Search"%}</button> 
+                            <button type="button" class="btn btn-primary">{% trans "Search" %}</button>
                         </span>
                     </div>
                 </form>
                 <br>
-                <a href="{% url "dashboard:files-documents"%}"><span class="label label-info">{% trans "See all files" %} </span></a>
+                <a href="{% url 'dashboard:files-documents' %}" title="{% trans 'See all files' %}">
+                    <span class="label label-info">{% trans 'See all files' %}</span>
+                </a>
             </div>
         </div>
         <div class="row">
@@ -105,4 +107,4 @@ $(function() {
     $('.jscroll').jscroll();    
 });
 </script>
-{% endblock js%}
+{% endblock js %}

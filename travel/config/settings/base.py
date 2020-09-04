@@ -254,6 +254,7 @@ LOCAL_APPS = [
     'apps.api.apps.ApiConfig',
     'apps.community.apps.CommunityConfig',
     'apps.directmessages.apps.DirectmessagesConfig',
+    'apps.advertisements.apps.AdvertisementsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
@@ -485,8 +486,65 @@ BOT = telepot.Bot('806633169:AAFouKIb9-QwJvGnLz6eIjO3rDBLB4HT78M')
 # To change the star icon height, defaults to 32
 STAR_RATINGS_STAR_HEIGHT = 12
 
+# Django Ads System
+ADS_GOOGLE_ADSENSE_CLIENT = None  # 'ca-pub-xxxxxxxxxxxxxxxx'
 
-#configurations for axes 
+ADS_ZONES = {
+    'header': {
+        'name': gettext('Header'),
+        'ad_size': {
+            'xs': '720x150',
+            'sm': '800x90',
+            'md': '800x90',
+            'lg': '800x90',
+            'xl': '800x90'
+        },
+        'google_adsense_slot': None,  # 'xxxxxxxxx',
+        'google_adsense_format': None,  # 'auto'
+    },
+    'content': {
+        'name': gettext('Content'),
+        'ad_size': {
+            'xs': '720x150',
+            'sm': '800x90',
+            'md': '800x90',
+            'lg': '800x90',
+            'xl': '800x90'
+        },
+        'google_adsense_slot': None,  # 'xxxxxxxxx',
+        'google_adsense_format': None,  # 'auto'
+    },
+    'sidebar': {
+        'name': gettext('Sidebar'),
+        'ad_size': {
+            'xs': '720x150',
+            'sm': '200x130',
+            'md': '800x90',
+            'lg': '800x90',
+            'xl': '800x90'
+        }
+    }
+}
+
+ADS_DEFAULT_AD_SIZE = '720x150'
+
+ADS_DEVICES = (
+    ('xs', _('Extra small devices')),
+    ('sm', _('Small devices')),
+    ('md', _('Medium devices (Tablets)')),
+    ('lg', _('Large devices (Desktops)')),
+    ('xl', _('Extra large devices (Large Desktops)')),
+)
+
+ADS_VIEWPORTS = {
+    'xs': 'd-block img-fluid d-sm-none',
+    'sm': 'd-none img-fluid d-sm-block d-md-none',
+    'md': 'd-none img-fluid d-md-block d-lg-none',
+    'lg': 'd-none img-fluid d-lg-block d-xl-none',
+    'xl': 'd-none img-fluid d-xl-block',
+}
+
+# Configurations for axes 
 AXES_ENABLED= True
 
 from datetime import timedelta

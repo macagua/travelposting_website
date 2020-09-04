@@ -16,10 +16,10 @@
             <h3>{% trans "Documents"%}</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="/es/dashboard/">{% trans "Home" %}</a>
+                    <a href="/es/dashboard/" title="{% trans 'Home' %}">{% trans 'Home' %}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{% url "dashboard:documents" %}">{% trans "Documents"%}</a>
+                    <a href="{% url 'dashboard:documents' %}" title="{% trans 'Documents' %}">{% trans 'Documents' %}</a>
                 </li>
             </ol>
         </div>
@@ -35,10 +35,10 @@
                             <h5>{% trans "Show" %}:</h5>
                             <a href="#" class="file-control active">{% trans "All" %}</a>
                             <div class="hr-line-dashed"></div>
-                            <a href="{% url "dashboard:documents-add"%}" class="btn btn-primary btn-block">
-                            <i class="fa fa-plus-square-o"> </i> {% trans "Upload Files" %}
+                            <a class="btn btn-primary btn-block" href="{% url 'dashboard:documents-add' %}" title="{% trans 'Upload Files' %}">
+                            <i class="fa fa-plus-square-o"> </i> {% trans 'Upload Files' %}
                             </a><br>
-                            <a href="{% url 'dashboard:files-documents' %}" class="btn btn-info btn-block">{% trans "See file"%}</a>
+                            <a class="btn btn-info btn-block" href="{% url 'dashboard:files-documents' %}" title="{% trans 'See file' %}">{% trans 'See file' %}</a>
                             <div class="hr-line-dashed"></div>
                             <h5>{{ request.user.email }}</h5>
                             <div class="clearfix"></div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="ibox-content">
                         <input type="text" class="form-control form-control-sm m-b-xs" id="filter"
-                        placeholder="{% trans "Search documents"%}">
+                        placeholder="{% trans 'Search documents' %}">
                         <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
                             <thead>
                                 <tr>
@@ -78,9 +78,9 @@
                                     <td>{{ requested.user.email }}</td>
                                     <td>{{ requested.name }}</td>
                                     <td>
-                                        <a href="{{ MEDIA_URL }}{{ requested.image}}"> 
+                                        <a href="{{ MEDIA_URL }}{{ requested.image}}" title="{% trans 'Download file' %}">
                                         <i class="fa fa-cloud-download"></i> 
-                                        <b>{% trans "Download file"%}</b>
+                                        <b>{% trans 'Download file' %}</b>
                                         </a>
                                     </td>
                                     <td>{{ requested.created_on}}</td>
@@ -95,8 +95,14 @@
                                         <div class="btn-group">
                                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle"> {% trans "Action" %} </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{% url 'destinations:documents-update' requested.pk %}"><i class="fa fa-lg fa-edit"></i>{% trans "Edit"%}</a></li>
-                                                <li><span class="dropdown-item" onClick="delete_setting({{ requested.id }})"><i class="fa fa-lg fa-trash "></i> {% trans "Delete"%}</span></li>
+                                                <li>
+                                                    <a class="dropdown-item" href="{% url 'destinations:documents-update' requested.pk %}" title="{% trans 'Edit' %}">
+                                                        <i class="fa fa-lg fa-edit"></i>{% trans 'Edit' %}
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <span class="dropdown-item" onClick="delete_setting({{ requested.id }})"><i class="fa fa-lg fa-trash "></i> {% trans "Delete" %}</span>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>
@@ -142,7 +148,7 @@
     });
 </script>
 <script>
-    //Delete fuction
+    // Delete fuction
     function delete_setting(pk_i){
           swal({
               title: "{% trans 'Are you sure?' %}",
@@ -177,4 +183,3 @@
     }    
 </script>
 {% endblock js %}
-

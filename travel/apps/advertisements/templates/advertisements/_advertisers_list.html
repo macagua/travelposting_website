@@ -1,0 +1,159 @@
+{% extends 'destinations/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'Ad Advertisers List' %}{% endblock %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block extracss%}
+
+    <style>
+        .dataTables_filter, .dataTables_info { display: none; }
+        .dataTables_length{ display: none; }
+    </style>
+{% endblock extracss%}
+{% block content %}
+  <div id="page-wrapper" class="gray-bg">
+    {% include 'destinations/navbar_top.html' %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{% trans "Ad Advertisers" %}</h2>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'dashboard:dashboard-index' %}">{% trans "Home" %}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a>{% trans "Ad Advertisers List" %}</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="p-w-md m-t-sm">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ibox">
+              <div class="ibox-title">
+                  <a id="create_map" class="btn btn-success"
+                     href="{% url 'advertisements:advertiser-create' %}" title="{% trans 'Ad Advertiser Create' %}">
+                    {% trans 'Ad Advertiser Create' %}
+                  </a>
+                  <div class="ibox-tools">
+
+                      <a class="collapse-link">
+
+                      <i class="fa fa-chevron-up"></i>
+                      </a>
+                      <a class="close-link">
+                      <i class="fa fa-times"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="ibox-content">
+                <div class="table-responsive">
+                  <table id ="advertisers-table" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th data-filter="false"></th>
+                            <th>{% trans "Company Name" %}</th>
+                            <th>{% trans "Company Site" %}</th>
+                            <th>{% trans "Created by" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for object in object_list %}
+                      <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{% url 'advertisements:advertiser-update' object.pk %}" title="Ad Advertiser Update">{{ object.company_name }}</a></td>
+                        <td><a href="{{ object.website }}" title="{{ object.website }}" target="_blank">{{ object.website }}</td>
+                        <td>{{ object.created_by }}</td>
+                        <td>
+                            <span class="btn btn-danger btn-sm" onClick="advertiser_delete({{ object.id }})"><i class="fa fa-lg fa-trash "></i>{% trans "Delete" %}</span>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+            {% for object in object_list %}
+                {% include 'destinations/booking_modal.html' %}
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% include 'destinations/footer.html' %}
+  </div>
+{% endblock content%}
+
+{% block extrajs %}
+  {{ block.super }}
+  <!-- DataTables -->
+  <script src="{% static 'dashboard/js/plugins/dataTables/datatables.min.js' %}"></script>
+  <script src="{% static 'dashboard/js/plugins/dataTables/dataTables.bootstrap4.min.js' %}"></script>
+
+  <script>
+    $(document).ready(function(){
+        $('#advertisers-table thead tr').clone(true).appendTo( '#advertisers-table thead' );
+        $('#advertisers-table thead tr:eq(1) th').each( function (i) {
+            var title = $(this).text();
+            if ($(this).data('filter') != false ){
+                if ($(this).data('type')=='number'){
+                    $(this).html( '<input class="form-control" type="number" placeholder="{% trans 'Search' %} '+title+'" />' );
+                }else{
+                    $(this).html( '<input class="form-control" type="text" placeholder="{% trans 'Search' %} '+title+'" />' );
+                }
+            }
+
+            $( 'input', this ).on( 'keyup change', function () {
+                if ( tabla_destinos.column(i).search() !== this.value ) {
+                    tabla_destinos
+                        .column(i)
+                        .search( this.value )
+                        .draw();
+                }
+            });
+        });
+
+        var tabla_destinos = $('#advertisers-table').DataTable({
+            pageLength: 25,
+            responsive: true,
+            fixedHeader: true,
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.10.13/i18n/{{LANGUAGE_CODE|language_name}}.json"
+            }
+        });
+
+    });
+    
+    // Delete fuction
+    function advertiser_delete(pk_i){
+      const advertiser_idk = pk_i;
+      swal({
+          title: "{% trans 'Are you sure?' %}",
+          text: "{% trans 'If you delete this Ad Advertiser you will not be able to recover it' %}",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "{% trans 'Yes, delete it!' %}",
+          closeOnConfirm: false
+      }, function () {
+        $.ajax({
+              method:'POST',
+              // /advertiser/75/delete/
+              url: "../" + advertiser_idk +"/delete/",
+              beforeSend: function(xhr) {
+                  xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+              },
+              success: function (request) {
+                swal("{% trans 'Deleted!' %}", "{% trans 'Ad Advertiser has been deleted.' %}", "success");
+                setTimeout(function(){
+                    window.location.href = "{% url 'advertisements:advertisers-list' %}";
+                }, 2000);
+              }
+          });
+      });
+    }
+    </script>
+  <script type="text/javascript" src="{% static 'destinations/js/modal.js' %}"></script>
+{% endblock extrajs %}

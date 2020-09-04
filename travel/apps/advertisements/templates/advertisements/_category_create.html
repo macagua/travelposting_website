@@ -2,7 +2,7 @@
 
 {% extends 'destinations/base.html' %}
 {% load static i18n destinations_tags static %}
-{% block title %}{% trans 'Add Documents - Travelposting' %}{% endblock %}
+{% block title %}{% trans 'Ad Category Create - Travelposting' %}{% endblock %}
 {% block extracss %}
 <!-- FooTable -->
 <link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
@@ -13,16 +13,16 @@
     {% include 'destinations/navbar_top.html' %}
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h3>{% trans "Documents"%}</h3>
+            <h3>{% trans "Ad Categories"%}</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="/es/dashboard/" title="{% trans 'Home' %}">{% trans 'Home' %}</a>
+                    <a href="/es/dashboard/">{% trans "Home" %}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{% url 'dashboard:documents' %}" title="{% trans 'Documents' %}">{% trans 'Documents' %}</a>
+                    <a href="{% url 'advertisements:advertisers-list' %}">{% trans "Ad Categories"%}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    {% trans " Update Documents"%}
+                    {% trans "Ad Category Create"%}
                 </li>
             </ol>
         </div>
@@ -34,7 +34,7 @@
             <div class="col-lg-12">
                 <div class="ibox ">
                     <div class="ibox-title">
-                        <h5>{% trans "Update Documents"%}</h5>
+                        <h5>{% trans "Ad Category Create to show"%}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -44,42 +44,33 @@
                     <div class="ibox-content">
                         <form method="post" action="#" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {% for archivo in archivo%}
-                            <div class="form-group  row">
-                                <label class="col-sm-2 col-form-label">{% trans "Name"%}</label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="name" class="form-control"  value="{{ archivo.name }}">
-                                </div>
+                            {% if form.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.errors }}
                             </div>
-                            <div class="form-group  row">
-                                <label class="col-sm-2 col-form-label">{% trans "Description" %}</label>
+                            {% endif %}
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{{ form.title.label }}</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="description" class="form-control" placeholder="{% trans 'Add Description' %}" value="{{ archivo.description }}">
+                                    {{ form.title }}
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">{% trans "File"%}</label>
+                                <label class="col-sm-2 col-form-label">{{ form.description.label }}</label>
                                 <div class="col-sm-10">
-                                    <a href="{{ MEDIA_URL }}{{ archivo.image }}" title="{% trans 'See archive upload' %}">
-                                        <span class="badge"> <i class="fa fa-file-pdf-o"></i> {% trans 'See archive upload' %}</span>
-                                    </a><br><br>
-                                   <input type="file" name="image" id="id_image">
+                                    {{ form.description }}
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">{% trans "Active"%}</label>
+                                <label class="col-sm-2 col-form-label">{{ form.created_by.label }}</label>
                                 <div class="col-sm-10">
-                                <select class="form-control m-b" name="status">
-                                    <option value="1">{% trans "Publish"%}</option>
-                                    <option value="0">{% trans "Don't publish"%}</option>
-                                </select>
+                                    {{ form.created_by }}
                                 </div>
                             </div>
-                            {% endfor %}
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <a class="btn btn-white btn-sm" title="{% trans 'Cancel' %}">{% trans 'Cancel' %}</a>
+                                    <a class="btn btn-white btn-sm">{% trans "Cancel" %}</a>
                                     <button class="btn btn-primary btn-sm" type="submit">{% trans "Save changes" %}</button>
                                 </div>
                             </div>
@@ -89,5 +80,6 @@
             </div>
         </div>
     </div>
+    <!-- Form -->
 </div>
 {% endblock content %}
