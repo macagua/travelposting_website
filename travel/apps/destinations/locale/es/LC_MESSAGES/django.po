@@ -1941,11 +1941,11 @@ msgstr "Producto"
 
 #: apps/destinations/templates/destinations/_form.html:36
 msgid "Record the tour data"
-msgstr "Registrar los datos"
+msgstr "Registrar datos de paseo guiado"
 
 #: apps/destinations/templates/destinations/_form.html:39
 msgid "This tour has departure and arrival time"
-msgstr "Este tour tiene horario de salida y llegada"
+msgstr "Este paseo guiado tiene horario de salida y llegada"
 
 #: apps/destinations/templates/destinations/_form.html:45
 msgid "Price"
@@ -1959,7 +1959,7 @@ msgstr "Inventario"
 #: apps/destinations/templates/destinations/_form.html:66
 #: apps/destinations/templates/destinations/_form_old.html:164
 msgid "Tour Booking"
-msgstr "Reserva de paseos guiados"
+msgstr "Reserva de paseo guiado"
 
 #: apps/destinations/templates/destinations/_form.html:186
 msgid "current step:"
@@ -2004,7 +2004,7 @@ msgstr "Ingrese los datos solicitados"
 
 #: apps/destinations/templates/destinations/_form_old.html:88
 msgid "Register the tour data"
-msgstr "Registrar los datos del tour"
+msgstr "Registrar los datos del paseo guiado"
 
 #: apps/destinations/templates/destinations/_form_old.html:106
 msgid "Add another tab"
@@ -2387,7 +2387,7 @@ msgstr "Añadir mapas para el paseo guiado"
 #: apps/destinations/templates/destinations/map/maps.html:24
 #: apps/destinations/templates/destinations/map/maps.html:68
 msgid "Add Maps for yours tours"
-msgstr "Añade mapas para tus tours"
+msgstr "Añade mapas para tus paseos guiados"
 
 #: apps/destinations/templates/destinations/map/maps.html:32
 msgid "Map"
@@ -2463,19 +2463,16 @@ msgstr "Mapas"
 
 #: apps/destinations/templates/destinations/navbar_left.html:120
 #: apps/destinations/templates/destinations/navbar_left.html:121
-#| msgid "Advertising"
 msgid "Ad Advertisers"
 msgstr "Anunciantes de anuncios"
 
 #: apps/destinations/templates/destinations/navbar_left.html:125
 #: apps/destinations/templates/destinations/navbar_left.html:126
-#| msgid "Categories"
 msgid "Ad Categories"
 msgstr "Categorías de anuncio"
 
 #: apps/destinations/templates/destinations/navbar_left.html:130
 #: apps/destinations/templates/destinations/navbar_left.html:131
-#| msgid "Advertising"
 msgid "Advertisements"
 msgstr "Anuncios"
 
@@ -2546,7 +2543,6 @@ msgid "Food"
 msgstr "Comida"
 
 #: apps/destinations/templates/destinations/tour/_form.html:136
-#| msgid "Description Tour Include/Doesn't Include"
 msgid "Destionation Include/Doesn't Include"
 msgstr "El destino Incluye/No Incluye"
 
