@@ -179,7 +179,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'impersonate.middleware.ImpersonateMiddleware',
-    'apps.community.middleware.CampaignMiddleware'
+    'apps.community.middleware.CampaignMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 
 DJANGO_APPS = [
@@ -241,7 +242,8 @@ THIRD_PARTY = [
     'django_admin_logs',
     #'notifications',
     'ads.apps.AdsConfig',
-    'star_ratings'
+    'star_ratings',
+    'axes',
 ]
 
 LOCAL_APPS = [
@@ -272,12 +274,22 @@ MANAGERS = [
     (_('Support'), 'support@travelpostig.com'),
 ]
 
+AUTHENTICATION_BACKENDS = [
+    # AxesBackend should be the first backend in the AUTHENTICATION_BACKENDS list.html.
+    #'axes.backends.AxesBackend',
+    # Django ModelBackend is the default authentication backend.
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 # Authentication options
 AUTH_USER_MODEL = 'accounts.CustomerUser'
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'dashboard:dashboard-index'
 LOGOUT_URL = 'accounts:logout'
 LOGOUT_REDIRECT_URL = 'accounts:logout'
+
+
+
 
 THUMBNAIL_HIGH_RESOLUTION = True
 
@@ -381,6 +393,9 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
+    },
+    'axes_cache': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
 
@@ -469,3 +484,18 @@ BOT = telepot.Bot('806633169:AAFouKIb9-QwJvGnLz6eIjO3rDBLB4HT78M')
 
 # To change the star icon height, defaults to 32
 STAR_RATINGS_STAR_HEIGHT = 12
+
+
+#configurations for axes 
+AXES_ENABLED= True
+
+from datetime import timedelta
+AXES_COOLOFF_TIME =  timedelta(seconds = 3600)
+
+AXES_IP_WHITELIST = []
+
+AXES_LOGIN_FAILURE_LIMIT = 3
+
+SESSION_COOKIE_AGE = 600
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
