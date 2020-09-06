@@ -102,6 +102,12 @@ You need collect static files in a single location for your project, executing t
 $ python manage.py collectstatic
 ```
 
+Also the following command:
+
+``` bash
+$ python manage.py collectstatic_js_reverse
+```
+
 You need create the background images directory and set a background image for your project, executing the following command:
 
 ``` bash

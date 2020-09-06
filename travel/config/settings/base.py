@@ -241,6 +241,7 @@ THIRD_PARTY = [
     'captcha',
     'django_admin_logs',
     #'notifications',
+    'django_js_reverse',
     'ads.apps.AdsConfig',
     'star_ratings',
     'axes',
