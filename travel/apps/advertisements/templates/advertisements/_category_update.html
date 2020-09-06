@@ -3,11 +3,6 @@
 {% extends 'destinations/base.html' %}
 {% load static i18n destinations_tags static %}
 {% block title %}{% trans 'Ad Category - Travelposting' %}{% endblock %}
-{% block extracss %}
-<!-- FooTable -->
-<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
-<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
-{% endblock extracss%}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
@@ -79,7 +74,7 @@
                                 </div>
                             </div>
                             <hr class="hr-line-dashed">
-                            <button type="submit" class="btn btn-block btn-outline btn-primary">{% trans 'Save Ad Category' %}</button>
+                            <button type="submit" class="btn btn-block btn-outline btn-primary">{% trans 'Save Changes' %}</button>
                         </form>
                     </div>
                 </div>

@@ -4,10 +4,10 @@
 {% load static i18n destinations_tags static %}
 {% block title %}{% trans 'Ad Category Create - Travelposting' %}{% endblock %}
 {% block extracss %}
-<!-- FooTable -->
-<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
-<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
-{% endblock extracss%}
+        <!-- select2 -->
+        <link href="{% static 'dashboard/css/plugins/select2/select2.min.css' %}" rel="stylesheet">
+        <link href="{% static 'dashboard/css/plugins/select2/select2-bootstrap4.min.css' %}" rel="stylesheet">
+{% endblock extracss %}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
@@ -19,7 +19,7 @@
                     <a href="/es/dashboard/">{% trans "Home" %}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{% url 'advertisements:advertisers-list' %}">{% trans "Ad Categories"%}</a>
+                    <a href="{% url 'advertisements:categories-list' %}">{% trans "Ad Categories"%}</a>
                 </li>
                 <li class="breadcrumb-item">
                     {% trans "Ad Category Create"%}
@@ -62,16 +62,27 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">{{ form.created_by.label }}</label>
-                                <div class="col-sm-10">
-                                    {{ form.created_by }}
+                                <label class="col-sm-2 col-form-label">{% trans "Select a User" %}</label>
+                                <div class="col-md-10">
+                                    <select data-placeholder="{% trans 'Choose a User...' %}"
+                                            class="select2_demo_2 chosen-select" name="created_by"
+                                            id="select_created_by" tabindex="2" style ="width:100%"
+                                            required="required">
+                                        {% for user in users_list %}
+                                            <option value="{{ user.id }}"
+                                                {% if user == object.user %}selected="selected"{% endif %}>
+                                                {{ user.email }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group row">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <a class="btn btn-white btn-sm">{% trans "Cancel" %}</a>
-                                    <button class="btn btn-primary btn-sm" type="submit">{% trans "Save changes" %}</button>
+                                    <a class="btn btn-white btn-sm" title="{% trans 'Cancel' %}"
+                                       onClick="window.location.href = '{% url 'advertisements:advertisers-list' %}';">{% trans 'Cancel' %}</a>
+                                    <button class="btn btn-primary btn-sm" type="submit">{% trans "Save Changes" %}</button>
                                 </div>
                             </div>
                         </form>
@@ -83,3 +94,15 @@
     <!-- Form -->
 </div>
 {% endblock content %}
+
+{% block extrajs %}
+  <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
+  <script>
+    // Load select2 widget with bootstrap4 theme
+    $(document).ready(function(){
+        $(".select2_demo_2").select2({
+            theme: 'bootstrap4',
+        });
+    });
+  </script>
+{% endblock %}

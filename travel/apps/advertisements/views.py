@@ -12,7 +12,7 @@ from django.shortcuts import (
     get_object_or_404,
 )
 from django.urls import reverse_lazy
-
+from apps.accounts.models import CustomerUser
 from apps.utils.mixins  import NoCommunityRequiredMixin
 from .models import (
     Advertiser,
@@ -48,6 +48,11 @@ class AdvertiserCreateView(CreateView):
     form_class = AdvertiserCreateForm
     success_url = reverse_lazy('advertisements:advertisers-list')
 
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['users_list'] = CustomerUser.objects.all().order_by('email')
+        return c
+
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
@@ -61,6 +66,11 @@ class AdvertiserUpdateView(UpdateView):
     form_class = AdvertiserUpdateForm
     template_name = 'advertisements/_advertiser_update.html'
     success_url = reverse_lazy('advertisements:advertisers-list')
+
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['users_list'] = CustomerUser.objects.all().order_by('email')
+        return c
 
     def form_valid(self, form):
         print(form.cleaned_data)
@@ -92,6 +102,11 @@ class CategoryCreateView(CreateView):
     form_class = CategoryCreateForm
     success_url = reverse_lazy('advertisements:categories-list')
 
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['users_list'] = CustomerUser.objects.all().order_by('email')
+        return c
+
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
@@ -105,6 +120,11 @@ class CategoryUpdateView(UpdateView):
     form_class = CategoryUpdateForm
     template_name = 'advertisements/_category_update.html'
     success_url = reverse_lazy('advertisements:categories-list')
+
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['users_list'] = CustomerUser.objects.all().order_by('email')
+        return c
 
     def form_valid(self, form):
         print(form.cleaned_data)
@@ -141,6 +161,13 @@ class AdCreateView(CreateView):
     form_class = AdCreateForm
     success_url = reverse_lazy('advertisements:ads-list')
 
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['advertisers_list'] = Advertiser.objects.filter(created_by=self.request.user)
+        c['categories_list'] = Category.objects.all()
+        c['users_list'] = CustomerUser.objects.all().order_by('email')
+        return c
+
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
@@ -154,6 +181,13 @@ class AdUpdateView(UpdateView):
     form_class = AdUpdateForm
     template_name = 'advertisements/_ad_update.html'
     success_url = reverse_lazy('advertisements:ads-list')
+
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['advertisers_list'] = Advertiser.objects.filter(created_by=self.request.user)
+        c['categories_list'] = Category.objects.all()
+        c['users_list'] = CustomerUser.objects.all().order_by('email')
+        return c
 
     def form_valid(self, form):
         print(form.cleaned_data)
@@ -194,6 +228,11 @@ class AdImageCreateView(CreateView):
     form_class = AdImageCreateForm
     success_url = reverse_lazy('advertisements:ad-images-list')
 
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['ads_list'] = Ad.objects.all()
+        return c
+
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
@@ -207,6 +246,11 @@ class AdImageUpdateView(UpdateView):
     form_class = AdImageUpdateForm
     template_name = 'advertisements/_ad_image_update.html'
     success_url = reverse_lazy('advertisements:ad-images-list')
+
+    def get_context_data(self, **kwargs):
+        c = super().get_context_data(**kwargs)
+        c['ads_list'] = Ad.objects.all()
+        return c
 
     def form_valid(self, form):
         print(form.cleaned_data)

@@ -4,10 +4,10 @@
 {% load static i18n destinations_tags static %}
 {% block title %}{% trans 'Ad - Travelposting' %}{% endblock %}
 {% block extracss %}
-<!-- FooTable -->
-<link href="{% static 'dashboard/css/plugins/footable/footable.core.css' %}" rel="stylesheet">
-<link href="{% static 'dashboard/css/plugins/iCheck/custom.css' %}" rel="stylesheet">
-{% endblock extracss%}
+        <!-- select2 -->
+        <link href="{% static 'dashboard/css/plugins/select2/select2.min.css' %}" rel="stylesheet">
+        <link href="{% static 'dashboard/css/plugins/select2/select2-bootstrap4.min.css' %}" rel="stylesheet">
+{% endblock extracss %}
 {% block content %}
 <div id="page-wrapper" class="gray-bg">
     {% include 'destinations/navbar_top.html' %}
@@ -89,26 +89,36 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="form group row">
-                                <label class="col-sm-2 col-form-label">
-                                    {{ form.advertiser.label }}
-                                </label>
-                                <div class="col-sm-10">
-                                    {{ form.advertiser }}
-                                    <span class="form-text m-b-none">
-                                        {{ form.advertiser.help_text|safe }}
-                                    </span>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{% trans "Select an" %} {{ form.advertiser.label }}</label>
+                                <div class="col-md-10">
+                                    <select data-placeholder="{% trans 'Choose a Advertiser...' %}"
+                                            class="select2_demo_2 chosen-select" name="advertiser"
+                                            id="select_advertiser" tabindex="2" style ="width:100%"
+                                            required="required">
+                                        {% for advertiser in advertisers_list %}
+                                            <option value="{{ advertiser.id }}"
+                                                {% if advertiser == object.advertiser %}selected="selected"{% endif %}>
+                                                {{ advertiser.company_name|capfirst }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form group row">
-                                <label class="col-sm-2 col-form-label">
-                                    {{ form.category.label }}
-                                </label>
-                                <div class="col-sm-10">
-                                    {{ form.category }}
-                                    <span class="form-text m-b-none">
-                                        {{ form.category.help_text|safe }}
-                                    </span>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">{% trans "Select an" %} {{ form.category.label }}</label>
+                                <div class="col-md-10">
+                                    <select data-placeholder="{% trans 'Choose a Category...' %}"
+                                            class="select2_demo_2 chosen-select" name="category"
+                                            id="select_category" tabindex="2" style ="width:100%"
+                                            required="required">
+                                        {% for category in categories_list %}
+                                            <option value="{{ category.id }}"
+                                                {% if category == object.category %}selected="selected"{% endif %}>
+                                                {{ category.title|capfirst }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
                             </div>
                             <div class="form group row">
@@ -133,8 +143,19 @@
                                     </span>
                                 </div>
                             </div>
+                            <div class="form group row">
+                                <label class="col-sm-2 col-form-label">
+                                    {{ form.created_by.label }}
+                                </label>
+                                <div class="col-sm-10">
+                                    {{ form.created_by }}
+                                    <span class="form-text m-b-none">
+                                        {{ form.created_by.help_text|safe }}
+                                    </span>
+                                </div>
+                            </div>
                             <hr class="hr-line-dashed">
-                            <button type="submit" class="btn btn-block btn-outline btn-primary">{% trans 'Save Ad' %}</button>
+                            <button type="submit" class="btn btn-block btn-outline btn-primary">{% trans 'Save Changes' %}</button>
                         </form>
                     </div>
                 </div>
@@ -143,3 +164,15 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block extrajs %}
+  <script src="{% static 'dashboard/js/plugins/select2/select2.full.min.js' %}"></script>
+  <script>
+    // Load select2 widget with bootstrap4 theme
+    $(document).ready(function(){
+        $(".select2_demo_2").select2({
+            theme: 'bootstrap4',
+        });
+    });
+  </script>
+{% endblock %}
