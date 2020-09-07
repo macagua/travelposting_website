@@ -1,6 +1,6 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
-from bootstrap_datepicker_plus import DateTimePickerInput
+from bootstrap_datepicker_plus import DatePickerInput
 from apps.advertisements.models import (
     Advertiser,
     Category,
@@ -113,7 +113,7 @@ class AdCreateForm(forms.ModelForm):
             'url': forms.URLInput(
                 attrs={'class': 'form-control',},
             ),
-            'publication_date': DateTimePickerInput(
+            'publication_date': DatePickerInput(
                 attrs ={
                     'required':True,
                 },
@@ -127,7 +127,7 @@ class AdCreateForm(forms.ModelForm):
                     },
                 }
             ).start_of('event days'),
-            'publication_date_end': DateTimePickerInput(
+            'publication_date_end': DatePickerInput(
                 attrs ={
                     'required':True,
                 },
@@ -170,7 +170,7 @@ class AdUpdateForm(forms.ModelForm):
             'url': forms.URLInput(
                 attrs={'class': 'form-control',},
             ),
-            'publication_date': DateTimePickerInput(
+            'publication_date': DatePickerInput(
                 attrs ={
                     'required':True,
                 },
@@ -184,7 +184,7 @@ class AdUpdateForm(forms.ModelForm):
                     },
                 }
             ).start_of('event days'),
-            'publication_date_end': DateTimePickerInput(
+            'publication_date_end': DatePickerInput(
                 attrs ={
                     'required':True,
                 },
