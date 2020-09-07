@@ -519,13 +519,33 @@ ADS_ZONES = {
     #     'google_adsense_format': None,  # 'auto'
     # },
     'sidebar': {
-        'name': gettext('Sidebar'),
+        'name': gettext('Sidebar Big Banner'),
         'ad_size': {
             'xs': '720x150',
             'sm': '200x130',
-            'md': '137x417',
-            'lg': '137x417',
-            'xl': '137x417'
+            'md': '140x426',
+            'lg': '140x426',
+            'xl': '140x426'
+        }
+    },
+    'sidebar_sm_1': {
+        'name': gettext('Sidebar Small Banner 1'),
+        'ad_size': {
+            'xs': '720x150',
+            'sm': '200x130',
+            'md': '140x70',
+            'lg': '140x70',
+            'xl': '140x70'
+        }
+    },
+    'sidebar_sm_2': {
+        'name': gettext('Sidebar Small Banner 2'),
+        'ad_size': {
+            'xs': '720x150',
+            'sm': '200x130',
+            'md': '140x70',
+            'lg': '140x70',
+            'xl': '140x70'
         }
     }
 }

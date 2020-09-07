@@ -3,6 +3,8 @@
 {% extends "base.html" %}
 {% load cms_tags i18n menu_tags sekizai_tags staticfiles destinations_tags %}
 {% load ratings %}
+{% load ads_tags %}
+{% load js_reverse %}
 {% block title %}{% trans 'Categories' %}{% endblock title %}
 {% block extracss %}
 <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
@@ -485,17 +487,14 @@
         <!-- Ads Sidebar section -->
         <div class="col col-lg-1">
             <a class="" target="_blank" href="https://ads.website.com/" title="Main Banner Ads">
-                <!-- <img src="https://via.placeholder.com/120x340?text=Vertical+Banner" alt="Placeholder Banner Ads" /> -->
                 <img width="120" height="340" src="{% static 'img/ads/ads_1.jpg' %}" alt="Main Banner Ads" />
             </a>
             <br /><br />
             <a class="" target="_blank" href="https://ads.website.com/" title="Second Banner Ads">
-                <!-- <img src="https://via.placeholder.com/120x70?text=Vertical+Banner" alt="Placeholder Banner Ads" /> -->
                 <img width="120" height="70" src="{% static 'img/ads/ads_2.jpg' %}" alt="Second Banner Ads" />
             </a>
             <br /><br />
             <a class="" target="_blank" href="https://ads.website.com/" title="Third Banner Ads">
-                <!-- <img src="https://via.placeholder.com/120x70?text=Vertical+Banner" alt="Placeholder Banner Ads" /> -->
                 <img width="120" height="70" src="{% static 'img/ads/ads_3.jpg' %}" alt="Third Banner Ads" />
             </a>
             <br /><br />
@@ -661,6 +660,8 @@
 {% endblock content %}
 {% block extrajs %}
 <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'django_js_reverse/js/reverse.js' %}"></script>
+<script type="text/javascript" src="{% static 'ads/ads.js' %}"></script>
 <script type="text/javascript">
     $( document ).ready(function() {
        $.get('/destinations/visitor',{"destination":{{ destino.id }} })

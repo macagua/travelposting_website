@@ -85,7 +85,9 @@ ADS_ZONES = (
     ('', u'--------'),
 #     (1, _('Header')),
 #     (2, _('Content')),
-    (3, _('Sidebar'))
+    (3, _('Sidebar Big Banner')),
+    (4, _('Sidebar Small Banner 1')),
+    (5, _('Sidebar Small Banner 2'))
 )
 
 
