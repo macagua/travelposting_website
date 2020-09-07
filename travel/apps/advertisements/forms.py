@@ -1,5 +1,6 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
+from bootstrap_datepicker_plus import DateTimePickerInput
 from apps.advertisements.models import (
     Advertiser,
     Category,
@@ -110,6 +111,30 @@ class AdCreateForm(forms.ModelForm):
             'url': forms.URLInput(
                 attrs={'class': 'form-control',},
             ),
+            'publication_date': DateTimePickerInput(
+                attrs ={
+                    'required':True,
+                },
+                options={
+                    "showClose": True,
+                    "showClear": True,
+                    "showTodayButton": True,
+                    "widgetPositioning": {
+                        "horizontal":"auto",
+                        "vertical":"bottom",
+                    },
+                }
+            ).start_of('event days'),
+            'publication_date_end': DateTimePickerInput(
+                attrs ={
+                    'required':True,
+                },
+                options={
+                    "showClose": True,
+                    "showClear": True,
+                    "showTodayButton": True,
+                }
+            ).end_of('event days'),
             'category': forms.Select(
                 attrs={'class': 'form-control',},
             ),
@@ -143,9 +168,30 @@ class AdUpdateForm(forms.ModelForm):
             'url': forms.URLInput(
                 attrs={'class': 'form-control',},
             ),
-            'publication_date': forms.DateInput(
-                attrs={'class': 'form-control',},
-            ),
+            'publication_date': DateTimePickerInput(
+                attrs ={
+                    'required':True,
+                },
+                options={
+                    "showClose": True,
+                    "showClear": True,
+                    "showTodayButton": True,
+                    "widgetPositioning": {
+                        "horizontal":"auto",
+                        "vertical":"bottom",
+                    },
+                }
+            ).start_of('event days'),
+            'publication_date_end': DateTimePickerInput(
+                attrs ={
+                    'required':True,
+                },
+                options={
+                    "showClose": True,
+                    "showClear": True,
+                    "showTodayButton": True,
+                }
+            ).end_of('event days'),
             'advertiser': forms.Select(
                 attrs={'class': 'form-control',},
             ),
