@@ -1,5 +1,6 @@
 from django import forms
 from django.urls import reverse_lazy
+from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
@@ -104,6 +105,9 @@ class DestinationForm(forms.ModelForm):
                         "horizontal":"auto",
                         "vertical":"bottom",
                     },
+                    # "format": "MM/DD/YYYY",
+                    # "locale": "es",
+                    "locale": get_language(),
                 }).start_of('event days'),
 
             'arrival_date': DatePickerInput(
