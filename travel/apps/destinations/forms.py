@@ -106,8 +106,7 @@ class DestinationForm(forms.ModelForm):
                         "vertical":"bottom",
                     },
                     # "format": "MM/DD/YYYY",
-                    # "locale": "es",
-                    "locale": get_language(),
+                    # "locale": get_language(),
                 }).start_of('event days'),
 
             'arrival_date': DatePickerInput(
