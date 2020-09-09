@@ -644,9 +644,6 @@
 			accept   : 'video/mp4,video/ogg,video/webm', // format type video accepted
 		});
 
-		function upload(file, src)
-		{
-		}
 
 		// render video file used for routes of list/update functions
 		function renderItem(model, index)
@@ -655,6 +652,9 @@
 				var index = (items.length-1 < 0) ? 0 : items.length-1;
 
 			var dItem = $('<div>');
+                var video = $("<video>");
+                video.src = model.url.video;
+            dItem.html(video);
 				dItem
 					.addClass('item')
 					.css({
@@ -826,8 +826,10 @@
 							video.addEventListener("loadstart", function () {
 								upload(v, this.src);
 							});
-                            video.setAttribute('controls', 'controls');
 							video.src = URL.createObjectURL(e.target.files[k]);
+                            video.autoplay = true;
+                            video.controls = true;
+                            video.load()
 
 							setTimeout(function(){
 								 $(e.target).val("");
@@ -929,7 +931,7 @@
 					{
 						data.model.url = {
 							thumbnail_preview : imgCached ,
-							video     : imgCached ,
+							video     : data.model.url.video,
 						};
 
 						items.push(data.model);
@@ -1007,6 +1009,13 @@
 					'width'					: '100%',
 					'height'                : '100%',
 				});
+                var video = $("<video/>", {
+                    src: data.url.video,
+                    controls: true
+
+                });
+                video.appendTo(obj);
+                //obj.appendTo(video);
 
 				// render btn next | prev
 				if(items.length > 1)
@@ -1136,7 +1145,7 @@
 				return obj;
 			})();
 
-			modal.reset.default(true);
+			//modal.reset.default(true);
 			modal.icon.attr("class", "gallery-icon-video");
 			modal.size('modal-lg');
 			modal.title.html( function(){
