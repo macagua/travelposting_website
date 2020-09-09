@@ -550,7 +550,7 @@ ADS_ZONES = {
     }
 }
 
-ADS_DEFAULT_AD_SIZE = '720x150'
+ADS_DEFAULT_AD_SIZE = '140x70'
 
 ADS_DEVICES = (
     ('xs', _('Extra small devices')),

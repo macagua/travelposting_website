@@ -6,6 +6,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
+from django_js_reverse import views
 from apps.landing_page.views import (
     CategoriesView,
     DetailDestinationView,
@@ -50,6 +51,11 @@ urlpatterns = [
     path(
         'ratings/',
         include('star_ratings.urls', namespace='ratings')
+    ),
+
+    url(
+        r'^jsreverse/$',
+        views.urls_js, name='js_reverse'
     ),
 ]
 
