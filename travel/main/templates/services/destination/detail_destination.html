@@ -485,6 +485,12 @@
         <!-- End Destination Description -->
 
         <!-- Ads Sidebar section -->
+        {% render_ads_zone 'sidebar' %}
+        {% render_ads_zone 'sidebar_sm_1' %}
+        {% render_ads_zone 'sidebar_sm_2' %}
+        {% get_ads_count 'sidebar' as ads_count %}
+        {{ get_ads_count 'sidebar,sidebar_sm_1,sidebar_sm_2' as ads_count %}
+	        <!--
         <div class="col col-lg-1">
             <a class="" target="_blank" href="https://ads.website.com/" title="Main Banner Ads">
                 <img width="120" height="340" src="{% static 'img/ads/ads_1.jpg' %}" alt="Main Banner Ads" />
@@ -502,6 +508,7 @@
                 <img width="120" height="110" src="{% static 'img/ads/call_center.jpg' %}" alt="Contact with us Call Center" />
             </a>
         </div>
+        -->
         <!-- End Ads Sidebar section -->
     </div>
 </div>

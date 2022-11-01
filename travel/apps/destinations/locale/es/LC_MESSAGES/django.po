@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 18:10-0400\n"
-"PO-Revision-Date: 2020-09-03 18:14-0400\n"
+"POT-Creation-Date: 2020-09-06 19:02-0400\n"
+"PO-Revision-Date: 2020-09-05 00:14-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -47,7 +47,9 @@ msgstr "Nueva Reserva Registrada"
 #: apps/destinations/__OLD_VIEW.py:401 apps/destinations/admin.py:122
 #: apps/destinations/views/booking.py:100
 #: apps/destinations/views/destination.py:598
-#: apps/destinations/views/destination.py:682
+#: apps/destinations/views/destination.py:688
+#: apps/destinations/views/destination.py:719
+#: apps/destinations/views/destination.py:777
 msgid "if you want see the admin site https://travelposting.com/admin/ "
 msgstr ""
 "si quieres ver el sitio de administración https://travelposting.com/admin/ "
@@ -189,7 +191,7 @@ msgstr "Dirección de correo electrónico"
 #: apps/destinations/models.py:110 apps/destinations/models.py:391
 #: apps/destinations/models.py:446 apps/destinations/models.py:511
 #: apps/destinations/models.py:625 apps/destinations/models.py:1146
-#: apps/destinations/models.py:1294
+#: apps/destinations/models.py:1324
 #: apps/destinations/templates/dashboard/file/_file.html:67
 #: apps/destinations/templates/dashboard/file/_file_update.html:49
 #: apps/destinations/templates/dashboard/leaders/_requests.html:41
@@ -332,14 +334,14 @@ msgstr "Estatus"
 msgid "Categories"
 msgstr "Categorías"
 
-#: apps/destinations/models.py:106 apps/destinations/models.py:1232
+#: apps/destinations/models.py:106 apps/destinations/models.py:1262
 #: apps/destinations/templates/dashboard/file/_file.html:66
 msgid "User"
 msgstr "Usuario"
 
 #: apps/destinations/models.py:123 apps/destinations/models.py:404
 #: apps/destinations/models.py:459 apps/destinations/models.py:516
-#: apps/destinations/models.py:630 apps/destinations/models.py:1295
+#: apps/destinations/models.py:630 apps/destinations/models.py:1325
 #: apps/destinations/templates/dashboard/file/_file_update.html:55
 #: apps/destinations/templates/destinations/itinerary/itinerary.html:50
 #: apps/destinations/templates/destinations/map/maps.html:31
@@ -916,7 +918,7 @@ msgstr "Significa si recibe seguimiento o no."
 msgid "Booking's"
 msgstr "Reservaciones"
 
-#: apps/destinations/models.py:1083 apps/destinations/models.py:1292
+#: apps/destinations/models.py:1083 apps/destinations/models.py:1322
 msgid "Users"
 msgstr "Usuarios"
 
@@ -1039,7 +1041,7 @@ msgstr "Inicio de la publicidad"
 msgid "End of advertising"
 msgstr "Fin de la publicidad"
 
-#: apps/destinations/models.py:1164 apps/destinations/models.py:1326
+#: apps/destinations/models.py:1164 apps/destinations/models.py:1356
 #: apps/destinations/templates/dashboard/file/_file_update.html:70
 msgid "Active"
 msgstr "Activar"
@@ -1052,7 +1054,7 @@ msgstr "Indique el estado de la publicidad"
 msgid "URL"
 msgstr "Dirección URL"
 
-#: apps/destinations/models.py:1167 apps/destinations/models.py:1325
+#: apps/destinations/models.py:1167 apps/destinations/models.py:1355
 msgid "Created"
 msgstr "Creado"
 
@@ -1072,80 +1074,80 @@ msgstr "Publicidad"
 msgid "Subject"
 msgstr "Asunto"
 
-#: apps/destinations/models.py:1184
+#: apps/destinations/models.py:1214
 msgid "Sender"
 msgstr "Emisor"
 
-#: apps/destinations/models.py:1186
+#: apps/destinations/models.py:1216
 msgid "Recipient"
 msgstr "Receptor"
 
-#: apps/destinations/models.py:1187
+#: apps/destinations/models.py:1217
 msgid "sent at"
 msgstr "enviado a"
 
-#: apps/destinations/models.py:1188
+#: apps/destinations/models.py:1218
 msgid "read at"
 msgstr "leído el"
 
-#: apps/destinations/models.py:1191
+#: apps/destinations/models.py:1221
 msgid "Messages Dashboard"
 msgstr "Mensajes de Tablero"
 
-#: apps/destinations/models.py:1192
+#: apps/destinations/models.py:1222
 msgid "Message Dashboard"
 msgstr "Mensaje de Tablero"
 
-#: apps/destinations/models.py:1206
+#: apps/destinations/models.py:1236
 msgid "You can't send messages to yourself"
 msgstr "No puedes enviarte mensajes a ti mismo"
 
-#: apps/destinations/models.py:1261
+#: apps/destinations/models.py:1291
 msgid "Question text"
 msgstr "Texto de la pregunta"
 
-#: apps/destinations/models.py:1262
+#: apps/destinations/models.py:1292
 msgid "date published"
 msgstr "fecha de publicación"
 
-#: apps/destinations/models.py:1271
+#: apps/destinations/models.py:1301
 msgid "Booking Question"
 msgstr "Pregunta de reserva"
 
-#: apps/destinations/models.py:1272
+#: apps/destinations/models.py:1302
 msgid "Booking Questions"
 msgstr "Preguntas de reserva"
 
-#: apps/destinations/models.py:1276
+#: apps/destinations/models.py:1306
 msgid "Question"
 msgstr "Pregunta"
 
-#: apps/destinations/models.py:1277
+#: apps/destinations/models.py:1307
 msgid "Choice text"
 msgstr "Texto de elección"
 
-#: apps/destinations/models.py:1278
+#: apps/destinations/models.py:1308
 msgid "Votes"
 msgstr "Votos"
 
-#: apps/destinations/models.py:1284
+#: apps/destinations/models.py:1314
 msgid "Booking Choice"
 msgstr "Elección de reserva"
 
-#: apps/destinations/models.py:1285
+#: apps/destinations/models.py:1315
 msgid "Booking Choices"
 msgstr "Elecciones de reserva"
 
-#: apps/destinations/models.py:1327
+#: apps/destinations/models.py:1357
 msgid "Indicate Status"
 msgstr "Indique estatus"
 
-#: apps/destinations/models.py:1330
+#: apps/destinations/models.py:1360
 #: apps/destinations/templates/dashboard/file/_file_update.html:61
 msgid "File"
 msgstr "Archivo"
 
-#: apps/destinations/models.py:1331
+#: apps/destinations/models.py:1361
 msgid "Files"
 msgstr "Archivos"
 
@@ -1179,7 +1181,7 @@ msgstr "Usuario: "
 msgid "Full Name:"
 msgstr "Primer Nombre:"
 
-#: apps/destinations/templates/dashboard/dashboard_email.html:308
+#: apps/destinations/templates/dashboard/dashboard_email.html:306
 msgid "See all your messages"
 msgstr "Vea todos sus mensajes"
 
@@ -1686,7 +1688,7 @@ msgstr "Añadir Solicitud"
 
 #: apps/destinations/templates/dashboard/leaders/_requests.html:35
 msgid "Current petitions"
-msgstr "ASctuales solicitudes"
+msgstr "Actuales solicitudes"
 
 #: apps/destinations/templates/dashboard/leaders/_requests.html:40
 #: apps/destinations/templates/destinations/_booking_list.html:40
@@ -1726,7 +1728,7 @@ msgstr ""
 
 #: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:3
 #: apps/destinations/templates/dashboard/mailbox/_mailboxadd.html:3
-#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:3
+#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:5
 #: apps/destinations/templates/dashboard/mailbox/_mailboxmain.html:5
 #: apps/destinations/templates/dashboard/mailbox/_mailboxsent.html:3
 msgid "Mailbox - Travelposting"
@@ -1741,19 +1743,18 @@ msgstr "Mensaje de respuesta a "
 msgid "Message"
 msgstr "Mensaje"
 
-#: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:37
-#: apps/destinations/templates/dashboard/mailbox/_mailboxadd.html:48
-msgid ""
-"If you have any questions or comments, do not hesitate to send us a message"
-msgstr "Si tiene alguna pregunta o comentario, no dude en enviarnos un mensaje"
-
 #: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:42
-#: apps/destinations/templates/dashboard/mailbox/_mailboxadd.html:53
+#: apps/destinations/templates/dashboard/mailbox/_mailboxadd.html:56
+msgid "Attach file"
+msgstr "Adjuntar archivo"
+
+#: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:49
+#: apps/destinations/templates/dashboard/mailbox/_mailboxadd.html:63
 msgid "Send"
 msgstr "Enviar"
 
-#: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:43
-#: apps/destinations/templates/dashboard/mailbox/_mailboxadd.html:54
+#: apps/destinations/templates/dashboard/mailbox/_mailboxReply.html:50
+#: apps/destinations/templates/dashboard/mailbox/_mailboxadd.html:64
 msgid "Discard"
 msgstr "Descartar"
 
@@ -1766,12 +1767,12 @@ msgstr "Redactar el mensaje"
 msgid "Select an user"
 msgstr "Seleccione un usuario"
 
-#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:17
-#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:45
+#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:19
+#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:49
 msgid "Reply"
 msgstr "Responder"
 
-#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:22
+#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:24
 msgid "View Message"
 msgstr "Ver Mensaje"
 
@@ -1779,7 +1780,15 @@ msgstr "Ver Mensaje"
 msgid "From"
 msgstr "De"
 
-#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:46
+#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:35
+msgid "Attach"
+msgstr "Adjuntar"
+
+#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:36
+msgid "Download attached files"
+msgstr "Descargar archivos adjuntos"
+
+#: apps/destinations/templates/dashboard/mailbox/_mailboxdetail.html:50
 msgid "Remove"
 msgstr "Eliminar"
 
@@ -2479,7 +2488,7 @@ msgstr "Anuncios"
 #: apps/destinations/templates/destinations/navbar_left.html:135
 #: apps/destinations/templates/destinations/navbar_left.html:136
 msgid "Your Ad Images"
-msgstr "Sus imágenes de anuncio"
+msgstr "Banners"
 
 #: apps/destinations/templates/destinations/navbar_left.html:144
 msgid "Reservations"
@@ -2796,6 +2805,6 @@ msgstr "Usted tiene un nuevo mensaje"
 
 #: apps/destinations/views/destination.py:607
 #: apps/destinations/views/destination.py:650
-#: apps/destinations/views/destination.py:722
+#: apps/destinations/views/destination.py:744
 msgid "Thank you for your message, very soon we will answer back"
 msgstr "Gracias por su mensaje, muy pronto le responderemos"

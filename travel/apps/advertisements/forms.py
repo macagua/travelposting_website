@@ -21,8 +21,11 @@ class AdvertiserCreateForm(forms.ModelForm):
             'website': forms.URLInput(
                 attrs={'class': 'form-control',},
             ),
-            'created_by': forms.Select(
-                attrs={'class': 'form-control',},
+            # 'created_by': forms.Select(
+            #     attrs={'class': 'form-control',},
+            # ),
+            'created_by': forms.HiddenInput(
+            	attrs={'read_only': True, }
             ),
         }
 
@@ -42,6 +45,9 @@ class AdvertiserUpdateForm(forms.ModelForm):
             'created_by': forms.Select(
                 attrs={'class': 'form-control',},
             ),
+            # 'created_by': forms.HiddenInput(attrs={
+            #     'read_only': True
+            # }),
         }
 
 
@@ -60,6 +66,9 @@ class CategoryCreateForm(forms.ModelForm):
             'created_by': forms.Select(
                 attrs={'class': 'form-control',},
             ),
+            # 'created_by': forms.HiddenInput(attrs={
+            #     'read_only': True
+            # }),
         }
 
 
@@ -78,6 +87,9 @@ class CategoryUpdateForm(forms.ModelForm):
             'created_by': forms.Select(
                 attrs={'class': 'form-control',},
             ),
+            # 'created_by': forms.HiddenInput(attrs={
+            #     'read_only': True
+            # }),
         }
 
 
@@ -137,6 +149,9 @@ class AdCreateForm(forms.ModelForm):
                     "showTodayButton": True,
                 }
             ).end_of('event days'),
+            # 'advertiser': forms.Select(
+            #     attrs={'class': 'form-control',},
+            # ),
             'category': forms.Select(
                 attrs={'class': 'form-control',},
             ),
@@ -145,6 +160,9 @@ class AdCreateForm(forms.ModelForm):
                 },
                 choices = ADS_ZONES,
             ),
+            # 'created_by': forms.HiddenInput(attrs={
+            #     'read_only': True
+            # }),
         }
 
 
@@ -205,6 +223,9 @@ class AdUpdateForm(forms.ModelForm):
                 },
                 choices = ADS_ZONES,
             ),
+            # 'created_by': forms.HiddenInput(attrs={
+            #     'read_only': True
+            # }),
         }
 
 

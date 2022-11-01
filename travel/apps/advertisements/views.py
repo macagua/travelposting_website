@@ -164,6 +164,8 @@ class AdCreateView(CreateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['advertisers_list'] = Advertiser.objects.filter(created_by=self.request.user)
+        # c['advertisers_list'] = Advertiser.objects.all()
+        # c['categories_list'] = Category.objects.filter(created_by=self.request.user)
         c['categories_list'] = Category.objects.all()
         c['users_list'] = CustomerUser.objects.all().order_by('email')
         return c
@@ -185,6 +187,8 @@ class AdUpdateView(UpdateView):
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
         c['advertisers_list'] = Advertiser.objects.filter(created_by=self.request.user)
+        # c['advertisers_list'] = Advertiser.objects.all()
+        # c['categories_list'] = Category.objects.filter(created_by=self.request.user)
         c['categories_list'] = Category.objects.all()
         c['users_list'] = CustomerUser.objects.all().order_by('email')
         return c
@@ -230,6 +234,7 @@ class AdImageCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
+        # c['ads_list'] = Ad.objects.filter(created_by=self.request.user)
         c['ads_list'] = Ad.objects.all()
         return c
 
@@ -249,6 +254,7 @@ class AdImageUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         c = super().get_context_data(**kwargs)
+        # c['ads_list'] = Ad.objects.filter(created_by=self.request.user)
         c['ads_list'] = Ad.objects.all()
         return c
 

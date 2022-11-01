@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 18:10-0400\n"
+"POT-Creation-Date: 2020-09-06 19:02-0400\n"
 "PO-Revision-Date: 2020-07-13 14:43-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -1207,10 +1207,10 @@ msgstr ""
 #: apps/community/templates/community/dashboard/profile_user.html:77
 #: apps/community/templates/community/dashboard/profile_user.html:80
 #: apps/community/templates/community/dashboard/profile_user.html:83
-#: main/templates/services/destination/detail_destination.html:201
 #: main/templates/services/destination/detail_destination.html:202
-#: main/templates/services/destination/detail_destination.html:242
+#: main/templates/services/destination/detail_destination.html:203
 #: main/templates/services/destination/detail_destination.html:243
+#: main/templates/services/destination/detail_destination.html:244
 #: main/templates/services/destination/detail_destination_new.html:201
 #: main/templates/services/destination/detail_destination_new.html:202
 #: main/templates/services/destination/detail_destination_new.html:242
@@ -1219,10 +1219,10 @@ msgid "Facebook"
 msgstr ""
 
 #: apps/accounts/models.py:444
-#: main/templates/services/destination/detail_destination.html:208
 #: main/templates/services/destination/detail_destination.html:209
-#: main/templates/services/destination/detail_destination.html:249
+#: main/templates/services/destination/detail_destination.html:210
 #: main/templates/services/destination/detail_destination.html:250
+#: main/templates/services/destination/detail_destination.html:251
 #: main/templates/services/destination/detail_destination_new.html:208
 #: main/templates/services/destination/detail_destination_new.html:209
 #: main/templates/services/destination/detail_destination_new.html:249
@@ -1236,10 +1236,10 @@ msgstr ""
 #: apps/community/templates/community/dashboard/profile_user.html:70
 #: apps/landing_page/models.py:494
 #: main/templates/datenshutz_form_privacity.html:110
-#: main/templates/services/destination/detail_destination.html:215
 #: main/templates/services/destination/detail_destination.html:216
-#: main/templates/services/destination/detail_destination.html:256
+#: main/templates/services/destination/detail_destination.html:217
 #: main/templates/services/destination/detail_destination.html:257
+#: main/templates/services/destination/detail_destination.html:258
 #: main/templates/services/destination/detail_destination_new.html:215
 #: main/templates/services/destination/detail_destination_new.html:216
 #: main/templates/services/destination/detail_destination_new.html:256
@@ -1248,10 +1248,10 @@ msgid "Twitter"
 msgstr ""
 
 #: apps/accounts/models.py:458
-#: main/templates/services/destination/detail_destination.html:222
 #: main/templates/services/destination/detail_destination.html:223
-#: main/templates/services/destination/detail_destination.html:263
+#: main/templates/services/destination/detail_destination.html:224
 #: main/templates/services/destination/detail_destination.html:264
+#: main/templates/services/destination/detail_destination.html:265
 #: main/templates/services/destination/detail_destination_new.html:222
 #: main/templates/services/destination/detail_destination_new.html:223
 #: main/templates/services/destination/detail_destination_new.html:263
@@ -1269,10 +1269,10 @@ msgstr ""
 
 #: apps/accounts/models.py:478 apps/landing_page/models.py:495
 #: main/templates/datenshutz_form_privacity.html:132
-#: main/templates/services/destination/detail_destination.html:229
 #: main/templates/services/destination/detail_destination.html:230
-#: main/templates/services/destination/detail_destination.html:270
+#: main/templates/services/destination/detail_destination.html:231
 #: main/templates/services/destination/detail_destination.html:271
+#: main/templates/services/destination/detail_destination.html:272
 #: main/templates/services/destination/detail_destination_new.html:229
 #: main/templates/services/destination/detail_destination_new.html:230
 #: main/templates/services/destination/detail_destination_new.html:270
@@ -1815,11 +1815,11 @@ msgstr ""
 #: apps/advertisements/templates/advertisements/_ad_update.html:19
 #: apps/advertisements/templates/advertisements/_ads_list.html:21
 #: apps/advertisements/templates/advertisements/_advertiser_create.html:19
-#: apps/advertisements/templates/advertisements/_advertiser_update.html:19
+#: apps/advertisements/templates/advertisements/_advertiser_update.html:14
 #: apps/advertisements/templates/advertisements/_advertisers_list.html:21
 #: apps/advertisements/templates/advertisements/_categories_list.html:21
 #: apps/advertisements/templates/advertisements/_category_create.html:19
-#: apps/advertisements/templates/advertisements/_category_update.html:19
+#: apps/advertisements/templates/advertisements/_category_update.html:14
 #: apps/community/templates/community/dashboard/breadcrumb.html:58
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:39
 #: apps/community/templates/community/dashboard/breadcrumb_profile.html:40
@@ -2005,35 +2005,77 @@ msgstr ""
 msgid "Advertisements"
 msgstr ""
 
+#: apps/advertisements/config.py:6 apps/landing_page/models.py:369
+msgid "Header"
+msgstr ""
+
+#: apps/advertisements/config.py:7
+#: apps/community/templates/community/dashboard/mail.html:169
+#: apps/community/templates/community/dashboard/mail.html:358
+#: apps/directmessages/models.py:15
+msgid "Content"
+msgstr ""
+
+#: apps/advertisements/config.py:8 apps/advertisements/forms.py:101
+#: config/settings/base.py:521
+msgid "Sidebar"
+msgstr ""
+
 #: apps/advertisements/templates/advertisements/_ad_create.html:5
-#: apps/advertisements/templates/advertisements/_advertiser_create.html:5
-msgid "Ad Advertiser Create - Travelposting"
+msgid "Ad Create - Travelposting"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_create.html:16
+msgid "Ad"
+msgstr ""
+
 #: apps/advertisements/templates/advertisements/_ad_create.html:22
-#: apps/advertisements/templates/advertisements/_advertiser_create.html:16
-#: apps/advertisements/templates/advertisements/_advertiser_create.html:22
-#: apps/advertisements/templates/advertisements/_advertisers_list.html:18
-msgid "Ad Advertisers"
+#: apps/advertisements/templates/advertisements/_ad_update.html:16
+#: apps/advertisements/templates/advertisements/_ad_update.html:22
+#: apps/advertisements/templates/advertisements/_ads_list.html:18
+msgid "Ads"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_create.html:25
-#: apps/advertisements/templates/advertisements/_advertiser_create.html:25
-#: apps/advertisements/templates/advertisements/_advertisers_list.html:36
-#: apps/advertisements/templates/advertisements/_advertisers_list.html:37
-msgid "Ad Advertiser Create"
+msgid "Ad Create"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_create.html:37
-#: apps/advertisements/templates/advertisements/_advertiser_create.html:37
-msgid "Ad Advertiser Create to show"
+msgid "Ad Create to show"
 msgstr ""
 
-#: apps/advertisements/templates/advertisements/_ad_create.html:121
+#: apps/advertisements/templates/advertisements/_ad_create.html:77
+#: apps/advertisements/templates/advertisements/_ad_create.html:93
+#: apps/advertisements/templates/advertisements/_ad_create.html:133
+#: apps/advertisements/templates/advertisements/_ad_update.html:93
+#: apps/advertisements/templates/advertisements/_ad_update.html:109
+msgid "Select an"
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_ad_create.html:79
+#: apps/advertisements/templates/advertisements/_ad_update.html:95
+msgid "Choose a Advertiser..."
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_ad_create.html:95
+#: apps/advertisements/templates/advertisements/_ad_update.html:111
+msgid "Choose a Category..."
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_ad_create.html:135
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:67
+#: apps/advertisements/templates/advertisements/_category_create.html:67
+msgid "Choose a User..."
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_ad_create.html:151
+#: apps/advertisements/templates/advertisements/_ad_create.html:152
 #: apps/advertisements/templates/advertisements/_ad_image_create.html:73
-#: apps/advertisements/templates/advertisements/_advertiser_create.html:73
-#: apps/advertisements/templates/advertisements/_category_create.html:73
+#: apps/advertisements/templates/advertisements/_ad_image_create.html:74
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:83
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:84
+#: apps/advertisements/templates/advertisements/_category_create.html:83
+#: apps/advertisements/templates/advertisements/_category_create.html:84
 #: apps/community/templates/accounts/change_password.html:101
 #: apps/community/templates/accounts/customeruser_list.html:184
 #: apps/community/templates/community/dashboard/mail.html:242
@@ -2044,11 +2086,17 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: apps/advertisements/templates/advertisements/_ad_create.html:122
-#: apps/advertisements/templates/advertisements/_ad_image_create.html:74
-#: apps/advertisements/templates/advertisements/_advertiser_create.html:74
-#: apps/advertisements/templates/advertisements/_category_create.html:74
-msgid "Save changes"
+#: apps/advertisements/templates/advertisements/_ad_create.html:153
+#: apps/advertisements/templates/advertisements/_ad_image_create.html:75
+#: apps/advertisements/templates/advertisements/_ad_image_update.html:82
+#: apps/advertisements/templates/advertisements/_ad_update.html:158
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:85
+#: apps/advertisements/templates/advertisements/_advertiser_update.html:77
+#: apps/advertisements/templates/advertisements/_category_create.html:85
+#: apps/advertisements/templates/advertisements/_category_update.html:77
+#: apps/community/templates/community/profile/complete_profile.html:80
+#: apps/community/templates/community/profile/edit_profile.html:209
+msgid "Save Changes"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_delete.html:7
@@ -2062,10 +2110,10 @@ msgstr ""
 #: main/templates/pages/pollBooking.html:43
 #: main/templates/services/destination/comments.html:51
 #: main/templates/services/destination/comments.html:83
-#: main/templates/services/destination/detail_destination.html:518
-#: main/templates/services/destination/detail_destination.html:548
-#: main/templates/services/destination/detail_destination.html:564
-#: main/templates/services/destination/detail_destination.html:648
+#: main/templates/services/destination/detail_destination.html:519
+#: main/templates/services/destination/detail_destination.html:549
+#: main/templates/services/destination/detail_destination.html:565
+#: main/templates/services/destination/detail_destination.html:649
 #: main/templates/services/destination/detail_destination_new.html:518
 #: main/templates/services/destination/detail_destination_new.html:548
 #: main/templates/services/destination/detail_destination_new.html:564
@@ -2121,10 +2169,6 @@ msgstr ""
 msgid "Update Ad Image"
 msgstr ""
 
-#: apps/advertisements/templates/advertisements/_ad_image_update.html:82
-msgid "Save Ad Image"
-msgstr ""
-
 #: apps/advertisements/templates/advertisements/_ad_images_list.html:4
 #: apps/advertisements/templates/advertisements/_ad_images_list.html:24
 msgid "Ad Images List"
@@ -2147,27 +2191,27 @@ msgid "Ad Image Update"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_images_list.html:68
-#: config/settings/base.py:520
+#: config/settings/base.py:535
 msgid "Extra small devices"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_images_list.html:70
-#: config/settings/base.py:521
+#: config/settings/base.py:536
 msgid "Small devices"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_images_list.html:72
-#: config/settings/base.py:522
+#: config/settings/base.py:537
 msgid "Medium devices (Tablets)"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_images_list.html:74
-#: config/settings/base.py:523
+#: config/settings/base.py:538
 msgid "Large devices (Desktops)"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ad_images_list.html:76
-#: config/settings/base.py:524
+#: config/settings/base.py:539
 msgid "Extra large devices (Large Desktops)"
 msgstr ""
 
@@ -2215,19 +2259,9 @@ msgstr ""
 msgid "Ad - Travelposting"
 msgstr ""
 
-#: apps/advertisements/templates/advertisements/_ad_update.html:16
-#: apps/advertisements/templates/advertisements/_ad_update.html:22
-#: apps/advertisements/templates/advertisements/_ads_list.html:18
-msgid "Ads"
-msgstr ""
-
 #: apps/advertisements/templates/advertisements/_ad_update.html:25
 #: apps/advertisements/templates/advertisements/_ad_update.html:37
 msgid "Update Ad"
-msgstr ""
-
-#: apps/advertisements/templates/advertisements/_ad_update.html:137
-msgid "Save Ad"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_ads_list.html:4
@@ -2246,8 +2280,8 @@ msgstr ""
 #: main/templates/pages/pollBooking.html:33
 #: main/templates/services/destination/comments.html:68
 #: main/templates/services/destination/comments.html:70
-#: main/templates/services/destination/detail_destination.html:532
-#: main/templates/services/destination/detail_destination.html:535
+#: main/templates/services/destination/detail_destination.html:533
+#: main/templates/services/destination/detail_destination.html:536
 #: main/templates/services/destination/detail_destination_new.html:532
 #: main/templates/services/destination/detail_destination_new.html:535
 msgid "Title"
@@ -2278,22 +2312,43 @@ msgstr ""
 msgid "Advertisement has been deleted."
 msgstr ""
 
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:5
+msgid "Ad Advertiser Create - Travelposting"
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:16
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:22
+#: apps/advertisements/templates/advertisements/_advertisers_list.html:18
+msgid "Ad Advertisers"
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:25
+#: apps/advertisements/templates/advertisements/_advertisers_list.html:36
+#: apps/advertisements/templates/advertisements/_advertisers_list.html:37
+msgid "Ad Advertiser Create"
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:37
+msgid "Ad Advertiser Create to show"
+msgstr ""
+
+#: apps/advertisements/templates/advertisements/_advertiser_create.html:65
+#: apps/advertisements/templates/advertisements/_category_create.html:65
+msgid "Select a User"
+msgstr ""
+
 #: apps/advertisements/templates/advertisements/_advertiser_update.html:5
 msgid "Advertiser - Travelposting"
 msgstr ""
 
-#: apps/advertisements/templates/advertisements/_advertiser_update.html:16
-#: apps/advertisements/templates/advertisements/_advertiser_update.html:22
+#: apps/advertisements/templates/advertisements/_advertiser_update.html:11
+#: apps/advertisements/templates/advertisements/_advertiser_update.html:17
 msgid "Advertisers"
 msgstr ""
 
-#: apps/advertisements/templates/advertisements/_advertiser_update.html:25
-#: apps/advertisements/templates/advertisements/_advertiser_update.html:37
+#: apps/advertisements/templates/advertisements/_advertiser_update.html:20
+#: apps/advertisements/templates/advertisements/_advertiser_update.html:32
 msgid "Update Advertiser"
-msgstr ""
-
-#: apps/advertisements/templates/advertisements/_advertiser_update.html:82
-msgid "Save Advertiser"
 msgstr ""
 
 #: apps/advertisements/templates/advertisements/_advertisers_list.html:4
@@ -2330,8 +2385,8 @@ msgstr ""
 #: apps/advertisements/templates/advertisements/_categories_list.html:18
 #: apps/advertisements/templates/advertisements/_category_create.html:16
 #: apps/advertisements/templates/advertisements/_category_create.html:22
-#: apps/advertisements/templates/advertisements/_category_update.html:16
-#: apps/advertisements/templates/advertisements/_category_update.html:22
+#: apps/advertisements/templates/advertisements/_category_update.html:11
+#: apps/advertisements/templates/advertisements/_category_update.html:17
 msgid "Ad Categories"
 msgstr ""
 
@@ -2369,13 +2424,9 @@ msgstr ""
 msgid "Ad Category - Travelposting"
 msgstr ""
 
-#: apps/advertisements/templates/advertisements/_category_update.html:25
-#: apps/advertisements/templates/advertisements/_category_update.html:37
+#: apps/advertisements/templates/advertisements/_category_update.html:20
+#: apps/advertisements/templates/advertisements/_category_update.html:32
 msgid "Update Ad Category"
-msgstr ""
-
-#: apps/advertisements/templates/advertisements/_category_update.html:82
-msgid "Save Ad Category"
 msgstr ""
 
 #: apps/community/apps.py:7
@@ -2391,7 +2442,7 @@ msgstr ""
 #: apps/community/templates/community/registration/forget_password.html:4
 #: apps/community/templates/community/registration/login.html:4
 #: apps/community/templates/community/registration/signup.html:4
-#: config/settings/base.py:333 main/templates/community.html:4
+#: config/settings/base.py:344 main/templates/community.html:4
 #: main/templates/community.html:21 main/templates/hotels.html:112
 #: main/templates/page01.html:39 main/templates/pricing.html:4
 msgid "Community"
@@ -2564,7 +2615,7 @@ msgstr ""
 #: apps/community/templates/community/dashboard/mail.html:473
 #: apps/community/templates/community/dashboard/profile_user.html:307
 #: apps/community/templates/community/dashboard/profile_user.html:309
-#: apps/directmessages/models.py:13
+#: apps/directmessages/models.py:14
 msgid "Subject"
 msgstr ""
 
@@ -2572,7 +2623,7 @@ msgstr ""
 #: apps/community/templates/community/dashboard/mail.html:236
 #: apps/community/templates/community/dashboard/mail.html:477
 #: apps/community/templates/community/dashboard/profile_user.html:313
-#: apps/directmessages/models.py:24 apps/landing_page/models.py:512
+#: apps/directmessages/models.py:55 apps/landing_page/models.py:512
 msgid "Message"
 msgstr ""
 
@@ -2583,7 +2634,7 @@ msgstr ""
 #: main/templates/pages/pollBooking.html:44
 #: main/templates/pages/show_header.html:108
 #: main/templates/services/destination/comments.html:84
-#: main/templates/services/destination/detail_destination.html:549
+#: main/templates/services/destination/detail_destination.html:550
 #: main/templates/services/destination/detail_destination_new.html:549
 msgid "Send"
 msgstr ""
@@ -2948,14 +2999,8 @@ msgid "Date"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:163
-#: apps/directmessages/models.py:16
+#: apps/directmessages/models.py:47
 msgid "Sender"
-msgstr ""
-
-#: apps/community/templates/community/dashboard/mail.html:169
-#: apps/community/templates/community/dashboard/mail.html:358
-#: apps/directmessages/models.py:14 config/settings/base.py:494
-msgid "Content"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:181
@@ -2986,7 +3031,7 @@ msgid "To"
 msgstr ""
 
 #: apps/community/templates/community/dashboard/mail.html:352
-#: apps/directmessages/models.py:18
+#: apps/directmessages/models.py:49
 msgid "Recipient"
 msgstr ""
 
@@ -3145,11 +3190,6 @@ msgstr ""
 msgid "Upload New Picture"
 msgstr ""
 
-#: apps/community/templates/community/profile/complete_profile.html:80
-#: apps/community/templates/community/profile/edit_profile.html:209
-msgid "Save Changes"
-msgstr ""
-
 #: apps/community/templates/community/profile/edit_profile.html:158
 msgid "Social profiles"
 msgstr ""
@@ -3284,19 +3324,19 @@ msgstr ""
 msgid "Direct Messages"
 msgstr ""
 
-#: apps/directmessages/models.py:19
+#: apps/directmessages/models.py:50
 msgid "sent at"
 msgstr ""
 
-#: apps/directmessages/models.py:20
+#: apps/directmessages/models.py:51
 msgid "read at"
 msgstr ""
 
-#: apps/directmessages/models.py:23
+#: apps/directmessages/models.py:54
 msgid "Messages"
 msgstr ""
 
-#: apps/directmessages/models.py:38
+#: apps/directmessages/models.py:69
 msgid "You can't send messages to yourself"
 msgstr ""
 
@@ -3334,7 +3374,7 @@ msgstr ""
 
 #: apps/landing_page/models.py:53 apps/payments/models/paypal.py:26
 #: main/templates/services/destination/detail.back.html:150
-#: main/templates/services/destination/detail_destination.html:308
+#: main/templates/services/destination/detail_destination.html:309
 #: main/templates/services/destination/detail_destination_new.html:308
 msgid "Price"
 msgstr ""
@@ -3467,10 +3507,6 @@ msgstr ""
 
 #: apps/landing_page/models.py:366
 msgid "type"
-msgstr ""
-
-#: apps/landing_page/models.py:369 config/settings/base.py:482
-msgid "Header"
 msgstr ""
 
 #: apps/landing_page/models.py:376
@@ -3671,81 +3707,77 @@ msgstr ""
 msgid "es"
 msgstr ""
 
-#: config/settings/base.py:273
+#: config/settings/base.py:274
 msgid "Travel Dashboard"
 msgstr ""
 
-#: config/settings/base.py:274
+#: config/settings/base.py:275
 msgid "Support"
 msgstr ""
 
-#: config/settings/base.py:322
+#: config/settings/base.py:333
 msgid "Feature"
 msgstr ""
 
-#: config/settings/base.py:328
+#: config/settings/base.py:339
 msgid "Landing"
 msgstr ""
 
-#: config/settings/base.py:331
+#: config/settings/base.py:342
 msgid "Tour"
 msgstr ""
 
-#: config/settings/base.py:332 main/templates/magazine.html:34
+#: config/settings/base.py:343 main/templates/magazine.html:34
 msgid "Magazine"
 msgstr ""
 
-#: config/settings/base.py:334
+#: config/settings/base.py:345
 msgid "Data protection"
 msgstr ""
 
-#: config/settings/base.py:335
+#: config/settings/base.py:346
 msgid "Data protection Form"
 msgstr ""
 
-#: config/settings/base.py:336
+#: config/settings/base.py:347
 msgid "Data protection Form Privacity"
 msgstr ""
 
-#: config/settings/base.py:337 main/templates/coming-soon.html:90
+#: config/settings/base.py:348 main/templates/coming-soon.html:90
 #: main/templates/coming-soon.html:99
 msgid "Coming Soon"
 msgstr ""
 
-#: config/settings/base.py:338
+#: config/settings/base.py:349
 msgid "Hotels template"
 msgstr ""
 
-#: config/settings/base.py:339
+#: config/settings/base.py:350
 msgid "Pricing"
 msgstr ""
 
-#: config/settings/base.py:341 main/templates/datenshutz_form_privacity.html:26
+#: config/settings/base.py:352 main/templates/datenshutz_form_privacity.html:26
 msgid "Terms"
 msgstr ""
 
-#: config/settings/base.py:342
+#: config/settings/base.py:353
 msgid "FAQ"
 msgstr ""
 
-#: config/settings/base.py:343
+#: config/settings/base.py:354
 msgid "Page type 01"
 msgstr ""
 
-#: config/settings/base.py:344
+#: config/settings/base.py:355
 msgid "Page type 02"
 msgstr ""
 
-#: config/settings/base.py:345
+#: config/settings/base.py:356
 msgid "Pre-signup"
 msgstr ""
 
-#: config/settings/base.py:346
+#: config/settings/base.py:357
 msgid "Team"
-msgstr ""
-
-#: config/settings/base.py:506
-msgid "Sidebar"
 msgstr ""
 
 #: main/templates/400.html:3
@@ -3994,9 +4026,9 @@ msgstr ""
 #: main/templates/services/destination/detail.back.html:45
 #: main/templates/services/destination/detail.back.html:56
 #: main/templates/services/destination/detail.back.html:66
-#: main/templates/services/destination/detail_destination.html:59
-#: main/templates/services/destination/detail_destination.html:71
-#: main/templates/services/destination/detail_destination.html:83
+#: main/templates/services/destination/detail_destination.html:60
+#: main/templates/services/destination/detail_destination.html:72
+#: main/templates/services/destination/detail_destination.html:84
 #: main/templates/services/destination/detail_destination_new.html:59
 #: main/templates/services/destination/detail_destination_new.html:71
 #: main/templates/services/destination/detail_destination_new.html:83
@@ -4588,8 +4620,8 @@ msgid ""
 msgstr ""
 
 #: main/templates/hotels.html:67
-#: main/templates/services/destination/detail_destination.html:196
-#: main/templates/services/destination/detail_destination.html:237
+#: main/templates/services/destination/detail_destination.html:197
+#: main/templates/services/destination/detail_destination.html:238
 #: main/templates/services/destination/detail_destination_new.html:196
 #: main/templates/services/destination/detail_destination_new.html:237
 msgid "Follow us"
@@ -4847,7 +4879,7 @@ msgstr ""
 #: main/templates/services/destination/destinations_for_categorie.html:5
 #: main/templates/services/destination/destinations_for_categorie_backup.html:5
 #: main/templates/services/destination/detail.back.html:3
-#: main/templates/services/destination/detail_destination.html:6
+#: main/templates/services/destination/detail_destination.html:7
 #: main/templates/services/destination/detail_destination_new.html:6
 msgid "Categories"
 msgstr ""
@@ -4972,28 +5004,28 @@ msgstr ""
 
 #: main/templates/pages/pollBooking.html:33
 #: main/templates/services/destination/comments.html:71
-#: main/templates/services/destination/detail_destination.html:536
+#: main/templates/services/destination/detail_destination.html:537
 #: main/templates/services/destination/detail_destination_new.html:536
 msgid "Amount (to the nearest dollar)"
 msgstr ""
 
 #: main/templates/pages/pollBooking.html:38
 #: main/templates/services/destination/comments.html:76
-#: main/templates/services/destination/detail_destination.html:541
+#: main/templates/services/destination/detail_destination.html:542
 #: main/templates/services/destination/detail_destination_new.html:541
 msgid "Body"
 msgstr ""
 
 #: main/templates/pages/pollBooking.html:40
 #: main/templates/services/destination/comments.html:78
-#: main/templates/services/destination/detail_destination.html:544
+#: main/templates/services/destination/detail_destination.html:545
 #: main/templates/services/destination/detail_destination_new.html:544
 msgid "Please let us your message"
 msgstr ""
 
 #: main/templates/pages/pollBooking.html:40
 #: main/templates/services/destination/comments.html:79
-#: main/templates/services/destination/detail_destination.html:545
+#: main/templates/services/destination/detail_destination.html:546
 #: main/templates/services/destination/detail_destination_new.html:545
 msgid "With textarea"
 msgstr ""
@@ -5303,7 +5335,7 @@ msgid "Was this helpful?"
 msgstr ""
 
 #: main/templates/services/destination/comments.html:50
-#: main/templates/services/destination/detail_destination.html:517
+#: main/templates/services/destination/detail_destination.html:518
 #: main/templates/services/destination/detail_destination_new.html:517
 msgid "Let us your comment"
 msgstr ""
@@ -5351,13 +5383,13 @@ msgid "Photos"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:59
-#: main/templates/services/destination/detail_destination.html:74
+#: main/templates/services/destination/detail_destination.html:75
 #: main/templates/services/destination/detail_destination_new.html:74
 msgid "Detail"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:69
-#: main/templates/services/destination/detail_destination.html:86
+#: main/templates/services/destination/detail_destination.html:87
 #: main/templates/services/destination/detail_destination_new.html:86
 msgid "Map"
 msgstr ""
@@ -5375,145 +5407,145 @@ msgid "We still don't have the itinerary for this destination"
 msgstr ""
 
 #: main/templates/services/destination/detail.back.html:227
-#: main/templates/services/destination/detail_destination.html:478
+#: main/templates/services/destination/detail_destination.html:479
 #: main/templates/services/destination/detail_destination_new.html:478
 msgid "Reserve"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:62
+#: main/templates/services/destination/detail_destination.html:63
 #: main/templates/services/destination/detail_destination_new.html:62
 msgid "Graphics"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:153
+#: main/templates/services/destination/detail_destination.html:154
 #: main/templates/services/destination/detail_destination_new.html:153
 msgid "Your browser does not support the video tag."
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:180
 #: main/templates/services/destination/detail_destination.html:181
+#: main/templates/services/destination/detail_destination.html:182
 #: main/templates/services/destination/detail_destination_new.html:180
 #: main/templates/services/destination/detail_destination_new.html:181
 msgid "back to list"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:277
 #: main/templates/services/destination/detail_destination.html:278
+#: main/templates/services/destination/detail_destination.html:279
 #: main/templates/services/destination/detail_destination_new.html:277
 #: main/templates/services/destination/detail_destination_new.html:278
 msgid "Website"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:284
 #: main/templates/services/destination/detail_destination.html:285
+#: main/templates/services/destination/detail_destination.html:286
 #: main/templates/services/destination/detail_destination_new.html:284
 #: main/templates/services/destination/detail_destination_new.html:285
 msgid "Telegram"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:313
+#: main/templates/services/destination/detail_destination.html:314
 #: main/templates/services/destination/detail_destination_new.html:313
 msgid "Offer until"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:324
+#: main/templates/services/destination/detail_destination.html:325
 #: main/templates/services/destination/detail_destination_new.html:324
 msgid "Departure date"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:330
+#: main/templates/services/destination/detail_destination.html:331
 #: main/templates/services/destination/detail_destination_new.html:330
 msgid "Arrival date"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:345
+#: main/templates/services/destination/detail_destination.html:346
 #: main/templates/services/destination/detail_destination_new.html:345
 msgid "Free Wifi"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:351
+#: main/templates/services/destination/detail_destination.html:352
 #: main/templates/services/destination/detail_destination_new.html:351
 msgid "Breakfast included"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:357
+#: main/templates/services/destination/detail_destination.html:358
 #: main/templates/services/destination/detail_destination_new.html:357
 msgid "Gym"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:367
+#: main/templates/services/destination/detail_destination.html:368
 #: main/templates/services/destination/detail_destination_new.html:367
 msgid "Air Conditioning"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:373
+#: main/templates/services/destination/detail_destination.html:374
 #: main/templates/services/destination/detail_destination_new.html:373
 msgid "Restaurant"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:379
+#: main/templates/services/destination/detail_destination.html:380
 #: main/templates/services/destination/detail_destination_new.html:379
 msgid "Bar"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:389
+#: main/templates/services/destination/detail_destination.html:390
 #: main/templates/services/destination/detail_destination_new.html:389
 msgid "Housekeeping"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:395
+#: main/templates/services/destination/detail_destination.html:396
 #: main/templates/services/destination/detail_destination_new.html:395
 msgid "Room Service"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:401
+#: main/templates/services/destination/detail_destination.html:402
 #: main/templates/services/destination/detail_destination_new.html:401
 msgid "Business Services"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:411
+#: main/templates/services/destination/detail_destination.html:412
 #: main/templates/services/destination/detail_destination_new.html:411
 msgid "Hob Tub"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:417
+#: main/templates/services/destination/detail_destination.html:418
 #: main/templates/services/destination/detail_destination_new.html:417
 msgid "25/7 Front Desk"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:423
+#: main/templates/services/destination/detail_destination.html:424
 #: main/templates/services/destination/detail_destination_new.html:423
 msgid "Laundry"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:441
+#: main/templates/services/destination/detail_destination.html:442
 #: main/templates/services/destination/detail_destination_new.html:441
 msgid "Our itinerary here"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:456
+#: main/templates/services/destination/detail_destination.html:457
 #: main/templates/services/destination/detail_destination_new.html:456
 msgid "Download PDF"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:467
+#: main/templates/services/destination/detail_destination.html:468
 #: main/templates/services/destination/detail_destination_new.html:467
 msgid "Add comment"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:471
 #: main/templates/services/destination/detail_destination.html:472
+#: main/templates/services/destination/detail_destination.html:473
 #: main/templates/services/destination/detail_destination_new.html:471
 #: main/templates/services/destination/detail_destination_new.html:472
 msgid "Make a recommendation"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:563
+#: main/templates/services/destination/detail_destination.html:564
 #: main/templates/services/destination/detail_destination_new.html:563
 msgid "Book your destination!"
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:639
+#: main/templates/services/destination/detail_destination.html:640
 #: main/templates/services/destination/detail_destination_new.html:639
 msgid ""
 "By clicking 'Book' you agree that Travelposting use your data for "
@@ -5522,7 +5554,7 @@ msgid ""
 "and request the cancellation of your data."
 msgstr ""
 
-#: main/templates/services/destination/detail_destination.html:649
+#: main/templates/services/destination/detail_destination.html:650
 #: main/templates/services/destination/detail_destination_new.html:648
 msgid "Book"
 msgstr ""
